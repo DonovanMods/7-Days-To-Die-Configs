@@ -40,7 +40,7 @@
 			<hold_type id="34" newmodel="false" ray_cast="0.75" holster="0" unholster="0.2" two_handed="true"  />     <!-- bucket -->
 			<hold_type id="35" newmodel="false" ray_cast="0.18" holster="0" unholster="0.2" />                        <!-- dog, vulture, wolf -->
 			<hold_type id="36" newmodel="false" ray_cast="0.43" holster="0" unholster="0.2" two_handed="true" />      <!-- knife -->
-			<hold_type id="37" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- nailgun -->
+			<hold_type id="37" newmodel="false" ray_cast="0.1" holster="0" unholster="0.2" two_handed="true" />         <!-- nailgun -->
 			<hold_type id="38" newmodel="false" ray_cast="0" holster="0" unholster="0.2" />                           <!-- cobblestones -->
 			<hold_type id="39" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- blunderbuss -->
 			<hold_type id="40" newmodel="false" ray_cast="0.3" holster="0" unholster="0.2" />                         <!-- rock small -->
@@ -79,6 +79,13 @@
 			<hold_type id="76" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 76 auto shotgun -->
 			<hold_type id="77" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 77 sharp shooter rifle -->
 			<hold_type id="78" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 78 junk drone -->
+			<hold_type id="79" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 79 knuckles spiked -->
+			<hold_type id="80" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 80 pipe baton -->
+			<hold_type id="81" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 81 pipe machine gun -->
+			<hold_type id="82" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 82 pipe rifle -->
+			<hold_type id="83" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 83 pipe revolver -->
+			<hold_type id="84" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 84 pipe shotgun -->
+			<hold_type id="85" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 85 lever action rifle -->
 		</animation>
     <!--
          Add noisy sounds here

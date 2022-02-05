@@ -112,6 +112,7 @@
 
 		<effect_group>
 			<requirement name="ItemHasTags" tags="attFortitude"/>
+			<requirement name="!IsAttachedToEntity" />
 				<passive_effect name="DamageModifier" operation="perc_add" level="2,8" value="0.1,.7" tags="head"/>
 				<passive_effect name="DamageModifier" operation="perc_add" level="9,10" value=".85,1" tags="head"/>
 				<passive_effect name="DismemberChance" operation="base_add" level="2,10" value=".05,.45"/>
@@ -274,7 +275,7 @@
 
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunRifleT1HuntingRifle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunRifleT2MarksmanRifle"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunRifleT2LeverActionRifle"/> -->
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkDeadEye"/>
 
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDeadEye"/>
@@ -317,15 +318,15 @@
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="thrownAmmoPipeBomb,mineCookingPot,rScrapIronPlateMine"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="thrownDynamite,mineHubcap"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1" tags="thrownGrenade,resourceGunPowderBundle"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunExplosivesT3RocketLauncher,ammoRocketHE,ammoRocketFrag,resourceRocketTip,resourceRocketCasing"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="ammoRocketHE,ammoRocketFrag,resourceRocketTip,resourceRocketCasing"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,5" value="1" tags="thrownGrenadeContact,thrownTimedCharge,mineAirFilter"/>
 
 		</effect_group>
 
 		<effect_group>
 				<passive_effect name="DismemberChance" operation="base_add" level="1,2,3,4,5" value=".05,.1,.2,.3,.45" tags="perkDemolitionsExpert"/>
-				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="WeaponHandling" operation="perc_add" level="1,5" value="0.1,0.5" tags="perkDemolitionsExpert"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.15,0.35" tags="perkDemolitionsExpert"/>
 
@@ -393,7 +394,7 @@
 			<passive_effect name="TrapDoorTriggerDelay" operation="base_add" level="1,2,3" value=".5,1,2"/>
 			<passive_effect name="LandMineTriggerDelay" operation="base_add" level="1,2,3" value=".5,1,2"/>
 			<passive_effect name="TrapIncomingDamage" operation="perc_add" level="1,2,3" value="-.2,-.35,-.5"/>
-			<passive_effect name="BlockPickup" operation="base_set" level="5" value="1" tags="Mine" />
+			<passive_effect name="BlockPickup" operation="base_set" level="3" value="1" tags="Mine" />
 
 			<effect_description level="1" desc_key="perkInfiltratorRank1Desc" long_desc_key="perkInfiltratorRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkInfiltratorRank2Desc" long_desc_key="perkInfiltratorRank2LongDesc"/>
@@ -424,7 +425,8 @@
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="6" desc_key="reqPerceptionLevel06"/></level_requirements>
 		<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="8" desc_key="reqPerceptionLevel08"/></level_requirements>
 		<effect_group>
-			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.15,-.25,-.35,-.35" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkPenetrator,perkArchery,perkJavelinMaster"/>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.10,-.15,-.2,-.2" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,turretRanged,perkPenetrator,perkArchery"/>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1,2,3,4" value="-.2,-.3,-.4-.5" tags="perkJavelinMaster"/>
 
 			<!-- Note: the 1 penetration effect is on <item name="ammo762mmBulletAP"> and other AP bullets -->
 			<passive_effect name="EntityPenetrationCount" operation="perc_add" level="2,4" value="1,3" tags="perkDeadEye"/>
@@ -464,7 +466,7 @@
 		<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="7" desc_key="reqPerceptionLevel07"/></level_requirements>
 
 		<effect_group>
-			<passive_effect name="TreasureBlocksPerReduction" operation="base_set" level="0,1,2,3" value="10,7,5,3"/>
+			<passive_effect name="TreasureBlocksPerReduction" operation="base_add" level="0,1,2,3" value="0,-3,-5,-7"/><!-- base value in quests is 10 -->
 			<passive_effect name="LootQuantity" operation="perc_add" level="1,2,3" value=".1,.3" tags="buriedTreasure"/>
 			<!-- <passive_effect name="TreasureRadius" operation="base_subtract" level="1,3" value="2,6"/> -->
 			<!--<triggered_effect trigger="onSelfOpenLootContainer" action="AddBuff" buff="buffTreasureHunter">
@@ -518,7 +520,7 @@
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkBoomstick"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunShotgunT1DoubleBarrel"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunShotgunT2PumpShotgun"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunShotgunT2PumpShotgun"/> -->
 
 			<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1" tags="perkBoomstick"/>
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkBoomstick"/>
@@ -921,20 +923,20 @@
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkMachineGunner"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunMGT1AK47"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunMGT2TacticalAR"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunMGT2TacticalAR"/> -->
 
-				<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1" tags="perkMachineGunner"/>
-				<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkMachineGunner"/>
+			<passive_effect name="BlockDamage" operation="perc_add" level="1,5" value=".2,1" tags="perkMachineGunner"/>
+			<passive_effect name="EntityDamage" operation="perc_add" level="1,5" value=".1,.5" tags="perkMachineGunner"/>
 
-				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,5" value="0.05,0.25" tags="perkMachineGunner"/>
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.1,0.3" tags="perkMachineGunner"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,5" value="0.05,0.25" tags="perkMachineGunner"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1,5" value="0.1,0.3" tags="perkMachineGunner"/>
 
-				<passive_effect name="KickDegreesVerticalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
-				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
-				<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
-				<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
+			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
+			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
+			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" level="0,5" value="0,-.03" tags="perkMachineGunner"/>
+			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" level="0,5" value="0,-.15" tags="perkMachineGunner"/>
 
-				<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="1,5" value="-.03,-.15" tags="perkMachineGunner"/>
+			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="1,5" value="-.03,-.15" tags="perkMachineGunner"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkMachineGunner"/>
@@ -1013,9 +1015,10 @@
 			<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkLivingOffTheLandCrafting"/><!-- fake crafting perk that is used to scale resources -->
 
 			<passive_effect name="HarvestCount" operation="perc_add" level="1,2,3" value="1,1,2" tags="cropHarvest,wildCropsHarvest"/>
-
+			<passive_effect name="HarvestCount" operation="base_set" level="2,3" value="1,1" tags="bonusCropHarvest"/>
+			
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,3" value="1" tags="plantedAloe1,plantedChrysanthemum1,plantedGoldenrod1,plantedYucca1"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="plantedBlueberry1,plantedCoffee1,plantedCorn1,plantedCotton1,plantedMushroom1,plantedPotato1,plantedHop1,plantedPumpkin1"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,3" value="1" tags="plantedBlueberry1,plantedCoffee1,plantedCorn1,plantedCotton1,plantedMushroom1,plantedPotato1,plantedHop1,plantedPumpkin1,plantedGraceCorn1"/>
 
 			<effect_description level="1" desc_key="perkLivingOffTheLandRank1Desc" long_desc_key="perkLivingOffTheLandRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkLivingOffTheLandRank2Desc" long_desc_key="perkLivingOffTheLandRank2LongDesc"/>
@@ -1054,8 +1057,8 @@
 			<!-- crit hit effects heal rate is assigned in  buffStatusCheck02 -->
 
 			<!-- You cannot regen without food or water -->
-			<requirement name="NotHasBuff" buff="buffStatusHungry02"/>
-			<requirement name="NotHasBuff" buff="buffStatusThirsty02"/>
+			<requirement name="NotHasBuff" buff="buffStatusHungry03"/>
+			<requirement name="NotHasBuff" buff="buffStatusThirsty03"/>
 				<passive_effect name="HealthChangeOT" operation="base_add" level="1,2,3,4,5" value=".011,.022,.05,.1,.16"/>
 
 			<!--<requirement name="NotHasBuff" buff="buffStatusHungry02"/>
@@ -1079,8 +1082,9 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/></level_requirements>
 
 		<effect_group>
-			<passive_effect name="WaterLossPerHealthPointGained" operation="perc_subtract" level="1,5" value="0.05,0.25"/>
-			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_subtract" level="1,5" value="0.05,0.25"/>
+			<passive_effect name="WaterLossPerHealthPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
+			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
+			<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" level="1,5" value="-.05,-.25"/>
 			<!-- see <buff name="buffPerkAbilityUpdate"> for cvar based ability changes -->
 			<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 
@@ -1126,7 +1130,7 @@
 
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".1,.15,.25,.35,.5" tags="bowDrawPenalty"/>
 
-			<effect_description level="1" desc_key="perkArcheryRank1Desc" long_desc_key="perkArcheryRank1LongDesc"/>/>
+			<effect_description level="1" desc_key="perkArcheryRank1Desc" long_desc_key="perkArcheryRank1LongDesc"/>
 			<effect_description level="2" desc_key="perkArcheryRank2Desc" long_desc_key="perkArcheryRank2LongDesc"/>
 			<effect_description level="3" desc_key="perkArcheryRank3Desc" long_desc_key="perkArcheryRank3LongDesc"/>
 			<effect_description level="4" desc_key="perkArcheryRank4Desc" long_desc_key="perkArcheryRank4LongDesc"/>
@@ -1144,7 +1148,7 @@
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkGunslinger"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunHandgunT1Pistol"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunHandgunT2Magnum44"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunHandgunT2Magnum44"/> -->
 			<passive_effect name="BlockDamage" operation="perc_add" level="0,5" value="0,1" tags="perkGunslinger"/>
 			<passive_effect name="EntityDamage" operation="perc_add" level="0,5" value="0,.5" tags="perkGunslinger"/>
 
@@ -1440,7 +1444,7 @@
 		<effect_group>
 			<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
 				<passive_effect name="LightMultiplier" operation="perc_add" level="0,5" value="0,-.65">
-					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="50"/>
+					<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
 				</passive_effect>
 				<passive_effect name="NoiseMultiplier" operation="perc_add" level="0,5" value="0,-.5"/>
 				<passive_effect name="CrouchSpeed" operation="perc_add" level="0,5" value="0,0.5"/>
@@ -1487,13 +1491,15 @@
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,4" tags="perkTurrets"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,5" value="1" tags="gunBotT1JunkSledge"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunBotT2JunkTurret"/>
+			<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="gunBotT2JunkTurret"/> -->
 
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".125,.25,.375,.5,.5" tags="turretMelee"/>
 			<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".125,.25,.375,.5,.5" tags="turretMelee,deployed"/> -->
 
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="4,5" value="0.1,0.2" tags="perkTurrets"/>
-			<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50" tags="perkTurrets"/>
+			<passive_effect name="MagazineSize" operation="base_add" level="1,5" value="10,50" tags="perkTurrets">
+				<requirement name="!ItemHasTags" tags="turretMelee"/>
+			</passive_effect>
 
 			<passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.7,1.1,1.5,1.5" tags="turretRanged"/>
 			<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" level="1,2,3,4,5" value=".3,.6,.9,1.2,1.2" tags="turretRanged"/> -->
@@ -1501,6 +1507,7 @@
 
 			<passive_effect name="EntityDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="perkTurrets"/>
 			<!-- <passive_effect name="EntityDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="perkTurrets,deployed"/> -->
+			<passive_effect name="BlockDamage" operation="perc_add" level="1,2,3,4,5" value=".1,.2,.3,.4,.4" tags="turretMelee"/>
 
 			<passive_effect name="JunkTurretActiveCount" operation="base_set" value="0"/>
 			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="5" value="1"/>
@@ -1524,8 +1531,8 @@
 		<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/></level_requirements>
 
 		<effect_group>
-			<passive_effect name="BarteringBuying" operation="base_add" level="1,2,3,4,5" value="0.05,0.1,0.15,0.2,0.25"/>
-			<passive_effect name="BarteringSelling" operation="base_add" level="1,2,3,4,5" value="0.05,0.1,0.15,0.2,0.25"/>
+			<passive_effect name="BarteringBuying" operation="base_add" level="1,2,3,4,5" value=".05,.1,.15,.2,.25"/>
+			<passive_effect name="BarteringSelling" operation="base_add" level="1,2,3,4,5" value=".05,.1,.15,.2,.25"/>
 			<passive_effect name="SecretStash" operation="base_add" level="3,5" value="3000,5000"/>
 
 			<effect_description level="1" desc_key="perkBetterBarterRank1Desc" long_desc_key="perkBetterBarterRank1LongDesc"/>
@@ -1612,7 +1619,7 @@
 			<triggered_effect trigger="onPerkLevelChanged" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,4" value="1" tags="chemistryStation,medicalFirstAidBandage,medicalPlasterCast"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="drugPainkillers"/>
+			<!--<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,4" value="1" tags="drugPainkillers"/>-->
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,4" value="1" tags="medicalFirstAidKit,drugSteroids"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4" value="1" tags="drugFortBites,drugRecog,drugAntibiotics"/>
 
@@ -1640,7 +1647,7 @@
 			<passive_effect name="CraftingTime" operation="perc_add" level="2,5" value="-0.2" tags="workbenchCrafting,cementMixerCrafting"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1" tags="resourceMilitaryFiber,generatorbank,electricwirerelay,switch,ceilingLight01_player,industrialLight01_player,industrialLight02_player,armorMiningHelmet,spotlightPlayer,speaker,pressureplate,pressureplateLong,dartTrap,electrictimerrelay,motionsensor,tripwirepost,electricfencepost,bladeTrap"/>
 			<passive_effect name="ElectricalTrapXP" operation="base_set" level="3,4,5" value="0.2,0.35,0.5"/>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="batterybank,shotgunTurret,meleeToolRepairT3Nailgun,meleeToolPickT3Auger,meleeToolAxeT3Chainsaw,garageDoorMetal_v1Powered,garageDoorIndustrial_Powered,metalReinforcedWoodDrawBridgePowered,vaultHatch_v3_Powered,vaultDoor03_Powered"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="4,5" value="1" tags="batterybank,shotgunTurret,meleeToolRepairT3Nailgun,garageDoorMetal_v1Powered,garageDoorIndustrial_Powered,metalReinforcedWoodDrawBridgePowered,vaultHatch_v3_Powered,vaultDoor03_Powered"/>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5" value="1" tags="toolForgeCrucible,autoTurret"/>
 
 			<effect_description level="1" desc_key="perkAdvancedEngineeringRank1Desc" long_desc_key="perkAdvancedEngineeringRank1LongDesc"/>
@@ -1718,11 +1725,19 @@
 
 	<perk name="perkFiremansAlmanacComplete" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" desc_key="perkFiremansAlmanacCompleteDesc" long_desc_key="perkFiremansAlmanacCompleteLongDesc">
 		<effect_group>
+			<requirement name="InBiome" biome="8"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
+				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
+		</effect_group>
+
+		<effect_group>
 			<requirement name="InBiome" biome="9"/>
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.2"/>
 				<passive_effect name="StaminaChangeOT" operation="perc_add" level="1" value="0.2" tags="running"/>
 				<passive_effect name="CarryCapacity" operation="base_add" level="1" value="45"/>
 		</effect_group>
+
 	</perk>
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -2342,7 +2357,7 @@
 	</perk>
 	<perk name="perkShotgunMessiahComplete" parent="skillShotguns" max_level="1" base_skill_point_cost="0" name_key="perkShotgunMessiahCompleteName" desc_key="perkShotgunMessiahCompleteDesc" long_desc_key="perkShotgunMessiahCompleteLongDesc">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleShotgunShell,ammoBundleShotgunSlug,ammoBundleShotgunBreachingSlug,ammoBundleBlunderbuss"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleShotgunShell,ammoBundleShotgunSlug,ammoBundleShotgunBreachingSlug"/>
 			<passive_effect name="BlockDamage" operation="perc_add" level="1" value="3" tags="wood">
 				<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
 			</passive_effect>
@@ -2659,6 +2674,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling3KillerInstinct" operation="Equals" value="1"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBarBrawling3KillerInstinct"/>
 		</effect_group>
 	</perk>
@@ -2666,6 +2682,7 @@
 		<!-- Do 20% extra damage to knocked down and stunned opponents. -->
 		<effect_group>
 			<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".2" tags="perkBrawler"/>
 		</effect_group>
 	</perk>
@@ -2676,6 +2693,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling5AdrenalineHealing" operation="Equals" value="1"/>
 			<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
 			<requirement name="IsAlive" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="add" value="1"/>
 		</effect_group>
 	</perk>
@@ -2684,6 +2702,7 @@
 		<effect_group>
 			<requirement name="ItemHasTags" tags="perkBrawler"/>
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling6RageMode" operation="Equals" value="1"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" buff="buffBarBrawling6RageMode"/>
 		</effect_group>
 	</perk>
@@ -2700,6 +2719,7 @@
 			<requirement name="ProgressionLevel" progression_name="perkBarBrawling8Complete" operation="Equals" value="1"/>
 			<requirement name="NotHasBuff" buff="buffPerkBarBrawling8CompleteBonus"/>
 			<requirement name="IsAlive" target="other"/>
+			<requirement name="!IsAttachedToEntity" />
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".BarBrawling8CompleteCombo" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffPerkBarBrawling8Complete"/>
 		</effect_group>
@@ -2719,7 +2739,7 @@
 			<passive_effect name="DegradationPerUse" operation="perc_add" level="1" value="-.2" tags="perkJavelinMaster"/>
 		</effect_group>
 	</perk>
-	<perk name="perkSpearHunter3SteelSpears" parent="skillSpearHunter" max_level="1" base_skill_point_cost="0" name_key="bookSpearHunter2Maintenance" desc_key="perkSpearHunter3SteelSpearsDesc" long_desc_key="perkSpearHunter3SteelSpearsLongDesc">
+	<perk name="perkSpearHunter3SteelSpears" parent="skillSpearHunter" max_level="1" base_skill_point_cost="0" name_key="bookSpearHunter3SteelSpears" desc_key="perkSpearHunter3SteelSpearsDesc" long_desc_key="perkSpearHunter3SteelSpearsLongDesc">
 		<!-- Craft steel spears that can penetrate armor, have high durability and do massive damage. -->
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="meleeWpnSpearT3SteelSpear"/>

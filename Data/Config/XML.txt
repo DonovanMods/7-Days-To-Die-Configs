@@ -718,15 +718,16 @@ That makes the system modular and gives me fewer headaches.
 	0051	cube with 1 broken tile on top
 	0053	cube with 1 baseboard
 	0054	cube with 4 baseboard
-	0055	cube wit stone applications, cornerstone
-
+	0055	cube with 1 chair rail, cornerstones
+	0056	cube with 4 chair rail
+	
 	00561	cube_trim_half_split			  
 	00562	cube_trim_half_split_diagonal		  
 	00563	cube_trim_half_split_4sided		  
 	00564	cube_trim_quarter_edge			  
 	00565	cube_trim_quarter_edge_twosided		  
 	00566	cube_trim_quarter_corner_inside		  
-		cube_trim_quarter_corner_inside_triangle
+	00566	cube_trim_quarter_corner_inside_triangle
 	00567	cube_trim_quarter_corner_outside	  
 	00568	cube_trim_quarter_corner_outside_twosided 
 	00569	cube_trim_quarter_corner_outside_triangle 
@@ -2719,9 +2720,7 @@ damage = (Utils.FastMin(block.blockMaterial.Hardness.Value * block.blockMaterial
 		p_wire_tool_dust.prefab
 		p_wire_tool_sparks.prefab
 		RadiatedParticlesOnMesh.prefab
-		SharkNato.prefab
 		Smoke_Unlit.prefab
-		TestParticle.prefab
 
 =====================================================================
 =====================================================================

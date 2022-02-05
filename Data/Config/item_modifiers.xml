@@ -13,7 +13,6 @@ revolver,
 noSilencer,
 shortRange,
 barrelAttachments,
-flaredBarrel,
 sideAttachments,
 smallTopAttachments,
 mediumTopAttachments, (may end up redundant)
@@ -30,6 +29,9 @@ knife,machete,axe,shovel,club,hammer,sledge
 
 ? oneHanded
 ? twoHanded
+
+blocking tags:
+dBarrel,noMods,noSilencer,noScopes
 -->
 
 
@@ -42,17 +44,25 @@ Example of using the seed (creation time) on a weapon to activate an effect
 -->
 
 <item_modifiers>
+	<item_modifier name="modGeneralMaster" type="attachment">
+		<property name="CreativeMode" value="None"/>
+		<property name="Stacknumber" value="1"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Group" value="Mods,Tool/Weapon Mods"/>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+
 	<!--Weapon Attachments
-		<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer,flaredBarrel" type="attachment">
+		<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment">
 		A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" can not be removed.
 	-->
 
 	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunBarrelExtenderSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--DamageFalloffRange increased by x meters-->
-
 		<effect_group tiered="false">
 			<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2"/>
 			<passive_effect name="MaxRange" operation="perc_add" value=".2"/>
@@ -68,13 +78,11 @@ Example of using the seed (creation time) on a weapon to activate an effect
 				<requirement name="NotHasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modGunMuzzleBrake" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modGunMuzzleBrake" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,shotgun" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMuzzleBrakeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!-- Muzzle brake: Directs some of the gases upwards to reduce recoil. Typically increases visibility of the gun/shooter as a result. -->
 		<effect_group tiered="false">
 			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="-.25"/>
@@ -84,16 +92,14 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<passive_effect name="WeaponHandling" operation="perc_add" value=".08"/>
 		</effect_group>
 			<!-- <passive_effect name="DamageFalloffRange" operation="base_add" value="-5"/> -->
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!-- Muzzle weight / stabilizer / compensator: Any piece of... stuff attached near the muzzle in order to make that bit heavier and counteract recoil. -->
 
 	<!--
 	<item_modifier name="modGunFlashSuppressor" installable_tags="barrelAttachments" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunFlashSuppressorSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 				<property name="Particles_muzzle_fire" value=""/>
@@ -101,19 +107,23 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 		<effect_group tiered="false">
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 	-->
 
 
-	<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer,flaredBarrel" type="attachment">
+	<!-- visible -->
+	<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunSoundSuppressorSilencerSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--Decreases sound footprint by x% -->
 		<item_property_overrides name="*">
 			<property name="Sound_start" value="pistol_s_fire"/>
 			<property name="Sound_end" value=""/>
+			<property name="Sound_loop" value="pistol_s_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT0PipePistol">
+			<property name="Sound_start" value="pistol_s_fire"/>
 			<property name="Sound_loop" value="pistol_s_fire"/>
 		</item_property_overrides>
 
@@ -124,13 +134,19 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="Sound_start" value="mp5_s_fire"/>
+			<property name="Sound_start" value="smg_s_fire"/>
 			<property name="Sound_end" value="silencefiller"/>
-			<property name="Sound_loop" value="mp5_s_fire"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
 			<property name="BarrelOffset" value="0,0,0"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			<property name="BarrelOffset" value="0,.028,.165"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+		
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="Sound_start" value="pump_shotgun_s_fire"/>
 			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
@@ -138,59 +154,56 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
 
-		<!--<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="BarrelOffset" value="0,0.0418,-0.0207"/>
-			<property name="BarrelScale" value="0.8,0.8,1.5"/>
-		</item_property_overrides>
-		USING SNIPER RIFLE SILENCER INSTEAD OF THE MP5 ONE
-		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="BarrelOffset" value="0,0.0477,-0.1593"/>
-			<property name="BarrelScale" value="1,1,1"/>
-			<property name="BarrelCameraOffset" value="0,0,0"/>
-		</item_property_overrides>-->
-
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
 			<property name="Sound_start" value="pump_shotgun_s_fire"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
 			<property name="Sound_start" value="pump_shotgun_s_fire"/>
-			<property name="BarrelOffset" value="0,-0.0322,0.4516"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
 			<property name="BarrelScale" value="1.1,1.1,1.5"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT3AutoShotgun">
 			<property name="Sound_start" value="pump_shotgun_s_fire"/>
 			<property name="Sound_loop" value="pump_shotgun_s_fire"/>
-			<property name="BarrelOffset" value="0,-0.0322,0.4516"/>
+			<property name="BarrelOffset" value="0,-.0322,.4516"/>
 			<property name="BarrelScale" value="1.1,1.1,1.5"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
 			<property name="Sound_start" value="hunting_rifle_s_fire"/>
-			<property name="BarrelOffset" value="0,-0.009,0.551"/>
+			<property name="BarrelOffset" value="0,-.009,.551"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
 			<property name="Sound_start" value="sniperrifle_s_fire"/>
 			<property name="Sound_loop" value="sniperrifle_s_fire"/>
-			<property name="BarrelOffset" value="0,-0.02,0.2182"/>
-			<property name="BarrelScale" value="0.88,0.88,0.88"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT3SniperRifle">
 			<property name="Sound_start" value="sniperrifle_s_fire"/>
 			<property name="Sound_loop" value="sniperrifle_s_fire"/>
-			<property name="BarrelOffset" value="0,-0.02,0.2182"/>
-			<property name="BarrelScale" value="0.88,0.88,0.88"/>
+			<property name="BarrelOffset" value="0,-.02,.2182"/>
+			<property name="BarrelScale" value=".88,.88,.88"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
 			<property name="Sound_start" value="ak47_s_fire"/>
 			<property name="Sound_end" value="silencefiller"/>
 			<property name="Sound_loop" value="ak47_s_fire"/>
-			<property name="BarrelOffset" value="-0.001,-0.0197,0.3197"/>
+			<property name="BarrelOffset" value="-.001,-.0197,.3197"/>
+			<property name="BarrelScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="Sound_start" value="ak47_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="ak47_s_fire"/>
+			<property name="BarrelOffset" value="0,.005,.275"/>
 			<property name="BarrelScale" value="1,1,1"/>
 		</item_property_overrides>
 
@@ -203,7 +216,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 		<!-- visible attachment: silencer -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
-			<requirement name="!HoldingItemHasTags" tags="doubleBarrel"/>
+			<requirement name="!HoldingItemHasTags" tags="dBarrel"/>
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Barrels/SilencerPrefab.prefab" parent_transform="Attachments/Barrel"/>
 		</effect_group>
@@ -223,71 +236,84 @@ Example of using the seed (creation time) on a weapon to activate an effect
 				<requirement name="RandomRoll" seed_type="Item" min_max="1,100" operation="LTE" value="80"/>
 			</passive_effect>-->
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
+	<!-- visible -->
 	<item_modifier name="modGunLaserSight" installable_tags="sideAttachments" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunLaserSightSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT1Pistol">
-			<property name="SideOffset" value="0,0.0148,0.0479"/>
+			<property name="SideOffset" value="0,.0148,.0479"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="gunRifleT0PipeRifle">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT0Blunderbuss">
+			<property name="SideOffset" value="0,-.026,.27"/>
+		</item_property_overrides>
+
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
-			<property name="SideOffset" value="0,-0.0,0.41"/>
+			<property name="SideOffset" value="0,0,.41"/>
 			<property name="SideScale" value="1.12,1.12,1.12"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
-			<property name="SideOffset" value="0.0,-.055,0.07"/>
+			<property name="SideOffset" value="0,-.055,.07"/>
 			<property name="SideScale" value=".4,.4,.4"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="SideOffset" value="0,0,0.31"/>
+			<property name="SideOffset" value="0,0,.31"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="SideOffset" value="0,0.021,0.258"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT3M60">
-			<property name="SideOffset" value="-0.0386,0.0382,0.3735"/>
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
 			<property name="SideRotation" value="0,0,-90"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="SideOffset" value="0,0.065,0.14"/>
-			<property name="SideScale" value="0.75,0.75,0.75"/>
+			<property name="SideOffset" value="0,.065,.14"/>
+			<property name="SideScale" value=".75,.75,.75"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="SideOffset" value="0,0.0108,0.0148"/>
+			<property name="SideOffset" value="0,.0108,.0148"/>
 			<property name="SideScale" value="1.25,1.25,1.25"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
-			<property name="SideOffset" value="0,0.003,0.1674"/>
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="SideOffset" value="0,.003,.1674"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
-			<property name="SideOffset" value="0.037,-.1,.19"/>
+			<property name="SideOffset" value=".037,-.1,.19"/>
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,20"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="SideOffset" value="0.0,-0.038,0.32"/>
+			<property name="SideOffset" value="0,-.038,.32"/>
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,0"/>
 		</item_property_overrides>
-		<item_property_overrides name="gunBowT3CompoundCrossbow">
+		<item_property_overrides name="gunHandgunT3DesertVulture ">
 			<property name="SideOffset" value="0,0,.32"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
@@ -304,80 +330,86 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser"/>
 
-				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="gunlaser" transform_path="laser"/>
-				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="laser"/>
-				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="laser"/>
-
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.2"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value=".2"/>
 		</effect_group>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
+	<!-- visible -->
 	<item_modifier name="modGunFlashlight" installable_tags="sideAttachments,turretMelee" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunFlashlightSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<property name="LightValue" value="0.7"/>
+		<property name="LightValue" value=".5"/>
 
 		<item_property_overrides name="gunHandgunT1Pistol">
-			<property name="SideOffset" value="0,0.0198,0.0475"/>
-			<property name="SideScale" value="0.75,0.75,0.75"/>
+			<property name="SideOffset" value="0,.0198,.0475"/>
+			<property name="SideScale" value=".75,.75,.75"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunShotgunT2PumpShotgun">
-			<property name="SideOffset" value="0,-0.0,0.41"/>
-			<property name="SideScale" value="1.12,1.12,1.12"/>
+		<item_property_overrides name="gunShotgunT0Blunderbuss">
+			<property name="SideOffset" value="0,-.026,.27"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
-			<property name="SideOffset" value="0.0,-.03,0.066"/>
+			<property name="SideOffset" value="0,-.03,.066"/>
 			<property name="SideScale" value=".4,.4,.4"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="SideOffset" value="0,0,0.28"/>
+			<property name="SideOffset" value="0,0,.28"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="SideOffset" value="0,0.0,0.23"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT3M60">
-			<property name="SideOffset" value="-0.0386,0.0382,0.3519"/>
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
 			<property name="SideRotation" value="0,0,-90"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="SideOffset" value="0,0.0621,0.095"/>
-			<property name="SideScale" value="0.75,0.75,0.75"/>
+			<property name="SideOffset" value="0,.0621,.095"/>
+			<property name="SideScale" value=".75,.75,.75"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="SideOffset" value="0,0.0065,0"/>
+			<property name="SideOffset" value="0,.0065,0"/>
 			<property name="SideScale" value="1.5,1.5,1.5"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
-			<property name="SideOffset" value="0,0.0061,0.2455"/>
+			<property name="SideOffset" value="0,.0061,.2455"/>
 			<property name="SideScale" value="1,1,1"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
-			<property name="SideOffset" value="0,-0.0025,0.175"/>
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="SideOffset" value="0,-.0025,.175"/>
 			<property name="SideScale" value="1.12,1.12,1.12"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
-			<property name="SideOffset" value="0.037,-.1,.16"/>
+			<property name="SideOffset" value=".037,-.1,.16"/>
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,20"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="SideOffset" value="0.0,-0.038,0.32"/>
+			<property name="SideOffset" value="0,-.038,.32"/>
 			<property name="SideScale" value="1,1,1"/>
 			<property name="SideRotation" value="0,0,0"/>
 		</item_property_overrides>
@@ -401,18 +433,15 @@ Example of using the seed (creation time) on a weapon to activate an effect
 				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
 				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
 				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Gunjoint" transform_path="flashlight_lightSource"/>
-
 		</effect_group>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!-- ACOG is a trademarked acronym. Do not use. -->
 
+	<!-- visible -->
 	<item_modifier name="modGunScopeSmall" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunScopeSmallSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
@@ -424,58 +453,74 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<item_property_overrides name="gunHandgunT1Pistol">
 			<property name="ScopeOffset" value="0,.074,.078"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-0.0225,0"/>
+			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="ScopeOffset" value="0,.056,.013"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT0PipeMachineGun">
+			<property name="ScopeOffset" value="0,12,15"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="ScopeOffset" value="0,0.088,-.2"/>
+			<property name="ScopeOffset" value="0,.088,-.2"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-0.04,0"/>
+			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="ScopeOffset" value="0,0.1037,0.0689"/>
+			<property name="ScopeOffset" value="0,.1037,.0689"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="ScopeOffset" value="0,0.0999,-0.2534"/>
-			<property name="ScopeScale" value="0.9,0.9,0.9"/>
+			<property name="ScopeOffset" value="0,.0999,-.2534"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
-			<property name="ScopeOffset" value="-0.0006,0.081,0.005"/>
+			<property name="ScopeOffset" value="-.0006,.081,.005"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-0.01,0"/>
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
-			<property name="ScopeOffset" value="0,0.0736,-0.1497"/>
-			<property name="ScopeScale" value="0.9,0.9,0.9"/>
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeOffset" value="0,.0736,-.1497"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
-			<property name="ScopeOffset" value="-.082,0.012,.186"/>
-			<property name="ScopeScale" value="0.9,0.9,0.9"/>
+			<property name="ScopeOffset" value="-.082,.012,.186"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeRotation" value="0,0,80"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="ScopeOffset" value="0,0.061,-0.0761"/>
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
-			<property name="ScopeOffset" value="0,0.092,-0.06"/>
+			<property name="ScopeOffset" value="0,.092,-.06"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
-			<property name="ScopeCameraOffset" value="0,-0.03,-0.2"/>
+			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
 		</item_property_overrides>
 
 		<!-- visible attachment: scope x2 -->
@@ -489,22 +534,21 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
-			<!-- removed shotgun perk -->
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1" tags="perkGunslinger,revolver,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1" tags="perkGunslinger,revolver,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin">
+			<!-- removed shotgun perk, turrets -->
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1" tags="perkGunslinger,perkDeadEye,perkMachineGunner,perkArchery,admin"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1" tags="perkDeadEye,perkArchery,admin">
 				<requirement name="ItemHasTags" tags="perkDeadEye,crossbow"/></passive_effect>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1">
 				<requirement name="ProgressionLevel" progression_name="perkSniperDamage" operation="Equals" value="1"/>
 				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modGunScopeMedium" installable_tags="mediumTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes,shotguns" type="attachment">
+	<!-- visible -->
+	<item_modifier name="modGunScopeMedium" installable_tags="mediumTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunScopeMediumSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
@@ -514,36 +558,42 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="ScopeOffset" value="0,0.088,-.14"/>
+			<property name="ScopeOffset" value="0,.085,-.14"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-0.022,0"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeOffset" value="0,0.1,-0.117"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="ScopeOffset" value="-0.0012,0.098,-0.2405"/>
-			<property name="ScopeScale" value="0.8,0.8,0.8"/>
+			<property name="ScopeOffset" value="-.0012,.098,-.2405"/>
+			<property name="ScopeScale" value=".8,.8,.8"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
-			<property name="ScopeOffset" value="-0.0018,0.075,0.015"/>
+			<property name="ScopeOffset" value="-.0018,.075,.015"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-0.0238,0"/>
+			<property name="ScopeCameraOffset" value="0,-.0238,0"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
-			<property name="ScopeOffset" value="-0.0018,0.07,-.10"/>
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeOffset" value="-.0018,.07,-.10"/>
 			<property name="ScopeScale" value="1.6,1.6,1.6"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="ScopeOffset" value="0,0.061,-0.0761"/>
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
-			<property name="ScopeOffset" value="0,0.092,-0.06"/>
+			<property name="ScopeOffset" value="0,.092,-.06"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 		</item_property_overrides>
 
@@ -558,21 +608,20 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.18"/>
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.18">
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.18" tags="perkGunslinger,perkDeadEye,perkMachineGunner,perkArchery,admin"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.18" tags="perkDeadEye,perkArchery,admin">
 				<requirement name="ItemHasTags" tags="perkDeadEye,crossbow"/></passive_effect>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1">
 				<requirement name="ProgressionLevel" progression_name="perkSniperDamage" operation="Equals" value="1"/>
 				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modGunScopeLarge" installable_tags="largeTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes,shotguns" type="attachment">
+	<!-- visible -->
+	<item_modifier name="modGunScopeLarge" installable_tags="largeTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunScopeLargeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
@@ -582,36 +631,36 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="ScopeOffset" value="0,-0.0523,0.1686"/>
+			<property name="ScopeOffset" value="0,-.0523,.1686"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
-			<property name="ScopeOffset" value="-0.0006,0.0,0.14"/>
+			<property name="ScopeOffset" value="-.0006,0,.14"/>
 			<property name="ScopeScale" value="1.2,1.2,1.2"/>
-			<property name="ScopeCameraOffset" value="0,-0.022,0"/>
+			<property name="ScopeCameraOffset" value="0,-.022,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="ScopeOffset" value="0,-0.1029,-0.1373"/>
+			<property name="ScopeOffset" value="0,-.1029,-.1373"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="ScopeOffset" value="0,0.061,-0.0761"/>
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
-			<property name="ScopeOffset" value="0,0.061,-0.0761"/>
+			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
 		</item_property_overrides>
@@ -628,103 +677,146 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.25"/>
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.25">
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.25" tags="perkGunslinger,perkDeadEye,perkMachineGunner,perkArchery,admin"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.25" tags="perkDeadEye,perkArchery,admin">
 				<requirement name="ItemHasTags" tags="perkDeadEye,crossbow"/></passive_effect>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1">
 				<requirement name="ProgressionLevel" progression_name="perkSniperDamage" operation="Equals" value="1"/>
 				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
+	<!-- visible -->
 	<item_modifier name="modGunReflexSight" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,bow" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunReflexSightSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
-			<property name="CrosshairOnAim" value="true"/>
+			<!--<property name="CrosshairOnAim" value="true"/>-->
 			<property name="Zoom_max_out" value="55"/>
 			<property name="Zoom_max_in" value="55"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT1Pistol">
-			<property name="ScopeOffset" value="0,0.072,0.11"/>
-			<property name="ScopeScale" value="0.7,0.7,0.7"/>
-			<property name="ScopeCameraOffset" value="0,-0.037,0"/>
+			<property name="ScopeOffset" value="0,.072,.11"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.013,-.2"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
-			<property name="ScopeOffset" value="0,0.11,0.12"/>
-			<property name="ScopeScale" value="0.5,0.5,0.5"/>
-			<property name="ScopeCameraOffset" value="0,-.04,0.15"/>
+			<property name="ScopeOffset" value="0,.11,.12"/>
+			<property name="ScopeScale" value=".5,.5,.5"/>
+			<property name="ScopeCameraOffset" value="0,-.015,-.03"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
-			<property name="ScopeOffset" value=".0001,0.1,-0.15"/>
-			<property name="ScopeScale" value="0.55,0.55,0.55"/>
-			<property name="ScopeCameraOffset" value="-.00005,-.0214,.15"/>
+			<property name="ScopeOffset" value=".0001,.1,-.15"/>
+			<property name="ScopeScale" value=".55,.55,.55"/>
+			<property name="ScopeCameraOffset" value="0,-.015,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT0Blunderbuss">
-			<property name="ScopeOffset" value="0.00,0.056,0.05"/>
-			<property name="ScopeScale" value="0.7,0.7,0.7"/>
-			<property name="ScopeCameraOffset" value="0,-0.0297,0"/>
+			<property name="ScopeOffset" value="0,.056,.05"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.0297,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT1DoubleBarrel">
-			<property name="ScopeOffset" value="0,0.0816,0.2104"/>
-			<property name="ScopeScale" value="0.25,0.3,0.3"/>
+			<property name="ScopeOffset" value="0,.0816,.2104"/>
+			<property name="ScopeScale" value=".25,.3,.3"/>
 			<property name="ScopeCameraOffset" value="-.0004,-.034,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
-			<property name="ScopeOffset" value="0.00,0.056,0.05"/>
-			<property name="ScopeScale" value="0.7,0.7,0.7"/>
-			<property name="ScopeCameraOffset" value="0,-0.0375,0"/>
+			<property name="ScopeOffset" value="0,.056,.05"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.0255,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT0PipePistol">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.003,.15"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT0PipeShotgun">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value=".0002,-0.0185,-.075"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT0PipeMachineGun">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.018,-.075"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT3M60">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-0.01,.1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
-			<property name="ScopeOffset" value="0,0.08,-0.2035"/>
-			<property name="ScopeScale" value="0.63,0.63,0.63"/>
-			<property name="ScopeCameraOffset" value="0,-.009,.35"/>
+			<property name="ScopeOffset" value="0,.08,-.2035"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0.0005,-.019,.22"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
+			<property name="ScopeScale" value=".63,.63,.63"/>
+			<property name="ScopeCameraOffset" value="0,-.018,0.0016"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT0PipeRifle">
+			<property name="ScopeOffset" value="0,0,0"/>
+			<property name="ScopeScale" value="1,1,1"/>
+			<property name="ScopeCameraOffset" value="0,0,.1"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
-			<property name="ScopeOffset" value="-0.0006,0.06,0.08"/>
-			<property name="ScopeScale" value="0.7,0.7,0.7"/>
-			<property name="ScopeCameraOffset" value=".0003,-0.0185,0.1"/>
+			<property name="ScopeOffset" value="-.0006,.06,.08"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="0,-.012,-.07"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="gunRifleT2MarksmanRifle">
-			<property name="ScopeOffset" value="0,0.073,-0.13"/>
-			<property name="ScopeScale" value="0.7,0.7,0.7"/>
-			<property name="ScopeCameraOffset" value="0,-.0147,0.12"/>
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeOffset" value="0,.073,-.13"/>
+			<property name="ScopeScale" value=".7,.7,.7"/>
+			<property name="ScopeCameraOffset" value="-0.0011,-0.014,-.025"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
-			<property name="ScopeOffset" value="-.08,0.011,.186"/>
-			<property name="ScopeScale" value="0.9,0.9,0.9"/>
+			<property name="ScopeOffset" value="-.08,.011,.186"/>
+			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeRotation" value="0,0,80"/>
-			<property name="ScopeCameraOffset" value="0.0495,0.0715,0"/>
+			<property name="ScopeCameraOffset" value=".0495,.0715,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
-			<property name="ScopeOffset" value="0,0.052,-0.05"/>
-			<property name="ScopeScale" value="0.6,0.6,0.6"/>
-			<property name="ScopeCameraOffset" value="0.00008,-0.0166,0.1"/>
+			<property name="ScopeOffset" value="0,.052,-.05"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value=".00008,0.0025,0"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
-			<property name="ScopeOffset" value="0,0.09,-0.055"/>
-			<property name="ScopeScale" value="0.6,0.6,0.6"/>
-			<property name="ScopeCameraOffset" value="0.00008,-0.021,0.03"/>
+			<property name="ScopeOffset" value="0,0,-.2"/>
+			<property name="ScopeScale" value=".6,.6,.6"/>
+			<property name="ScopeCameraOffset" value="0,-.007,-.025"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
-			<property name="ScopeCameraOffset" value="0,-0.0145,0"/>
+			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT3AutoShotgun">
+			<property name="ScopeCameraOffset" value=".00095,-.019,.10"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="ScopeCameraOffset" value="0,-.0055,0"/>
 		</item_property_overrides>
 
 		<!-- visible attachment: holosight -->
@@ -738,28 +830,24 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</effect_group>
 
 		<effect_group tiered="false" name="mod effects">
-			<passive_effect name="WeaponHandling" operation="perc_add" value="0.3"/>
+			<passive_effect name="WeaponHandling" operation="perc_add" value=".3"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunTriggerGroupSemi" installable_tags="firingMode" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupSemiSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".1"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".05"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunTriggerGroupBurst3" installable_tags="firingMode,turretRanged" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupBurst3Schematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="modGunTriggerGroupBurst"/>
 
 		<effect_group tiered="false">
@@ -767,26 +855,22 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".1"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".05"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunTriggerGroupAutomatic" installable_tags="firingMode,turretRanged" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupAutomaticSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".12"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".06"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunBipod" installable_tags="bottomAttachments" modifier_tags="accuracy" blocked_tags="noMods,shortRange" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunBipodSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.08"/>
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.09">
@@ -798,13 +882,11 @@ Example of using the seed (creation time) on a weapon to activate an effect
 				<requirement name="HasBuff" buff="buffHoldBreathAiming01"/>
 			</passive_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunForegrip" installable_tags="bottomAttachments,turretRanged" modifier_tags="grips" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunForegripSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.15"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.15"/>
@@ -818,42 +900,36 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value="-.5"/>
 			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value="-.5"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunRetractingStock" installable_tags="stock" modifier_tags="stocks" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunRetractingStockSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-0.15"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.15"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 
 		<!--Reduces vertical kick when firing by x%, increases move speed by a small amount when holding the weapon is attached to
 	<item_modifier name="modGunFoldingStock" installable_tags="stock" modifier_tags="stocks" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunFoldingStockSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="partsAK47_stock"/>
 
 		<effect_group tiered="false">
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 -->
 
-	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun" modifier_tags="barrelAttachment" blocked_tags="noMods,doubleBarrel,flaredBarrel" type="attachment" icon="resourceScrapIron">
+	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun" modifier_tags="barrelAttachment" blocked_tags="noMods,dBarrel" type="attachment" icon="resourceScrapIron">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modShotgunSawedOffBarrelSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
-		<item_property_overrides name="gunShotgunT2PumpShotgun">
+		<!--<item_property_overrides name="gunShotgunT2PumpShotgun">
 			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/SawedOffPumpShotgun/SawedOffPumpShotgunPrefab.prefab"/>
-		</item_property_overrides>
+		</item_property_overrides>-->
 
 		<effect_group tiered="false" name="Base Effects">
 			<passive_effect name="MaxRange" operation="perc_add" value="-.15"/>
@@ -862,71 +938,59 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<passive_effect name="SpreadDegreesVertical" operation="perc_set" value="1.2"/>
 			<passive_effect name="SpreadDegreesHorizontal" operation="perc_set" value="1.2"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modGunDuckbill" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,flaredBarrel" type="attachment">
+	<item_modifier name="modGunDuckbill" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunDuckbillSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!--flattens vertical and increases horizontal spread of damage for shotguns-->
 		<effect_group tiered="false">
 			<passive_effect name="SpreadDegreesVertical" operation="perc_add" value="-.45"/>
 			<passive_effect name="SpreadDegreesHorizontal" operation="perc_add" value=".75"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modGunChoke" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,flaredBarrel" type="attachment">
+	<item_modifier name="modGunChoke" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunChokeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!--Adds increased DamageFalloffRange by x meters and decreases spread by x%-->
 		<effect_group tiered="false">
 			<passive_effect name="SpreadDegreesVertical" operation="perc_add" value="-.4"/>
 			<passive_effect name="SpreadDegreesHorizontal" operation="perc_add" value="-.4"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunMagazineExtender" installable_tags="magazine,turretRanged" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMagazineExtenderSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunDrumMagazineExtender" installable_tags="drumMagazine" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkAutoWeaponsDrumMag"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunShotgunTubeExtenderMagazine" installable_tags="modGunShotgunTubeExtenderMagazine" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkShotgunMessiahMagazine"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".375"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!--Weapon Mods-->
 	<item_modifier name="modGunButtkick3000" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Test"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="apparelGothBoots"/>
 		<property name="CustomIconTint" value="255,0,255"/>
 		<effect_group tiered="false">
@@ -943,10 +1007,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunButtkick4000" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunButtkick4000Schematic"/>
 		<property name="CreativeMode" value="Test"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="apparelGothBoots"/>
 		<property name="CustomIconTint" value="0,0,255"/>
 		<effect_group tiered="false">
@@ -957,9 +1020,8 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modMeleeGunToolDecapitizer" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Dev"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="meleeWpnBladeT1CandyKnife"/>
 		<property name="CustomIconTint" value="255,0,255"/>
 		<effect_group tiered="false">
@@ -971,32 +1033,27 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 	<!-- Each successive shot within 2 seconds does an extra .1 damage
 	<item_modifier name="modGunMeleeFeelTheHeat" installable_tags="weapon" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMeleeFeelTheHeatSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 	-->
 
 		<!--	<item_modifier name="modGunBoreYouToDeath" installable_tags="pistol,smg" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunBoreYouToDeathSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="partsPistol_barrel"/>
 
 		<effect_group tiered="false">
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firing because that's 7-8x as much energy.-->
 
 	<item_modifier name="modGunCrippleEm" installable_tags="ranged" modifier_tags="crippling" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunCrippleEmSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--Each shot has a chance to cripple-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="walker"/>
@@ -1010,87 +1067,73 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,800" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryCrippled01"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunBowPolymerString" installable_tags="perkArchery" modifier_tags="velocity" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunBowPolymerStringSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunBowArrowRest" installable_tags="bow" modifier_tags="accuracy" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunBowArrowRestSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.1"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
 	<item_modifier name="modGunMeleeTheHunter" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMeleeTheHunterSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--Do double damage to living enemies-->
 		<effect_group tiered="false">
-			<requirement name="EntityTagCompare" target="other" tags="player,animal"/>
-				<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
+			<requirement name="EntityTagCompare" target="other" tags="animal"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".25"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeRadRemover" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!-- Increases damage against irradiated enemies, all melee only -->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
 				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffRadiatedRegenBlock"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMeleeBlessedMetalSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!--Do double damage to evil / undead-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!--	Allows the player to enter a custom item name, extra faction reputation bonus
 	<item_modifier name="modGunMeleeNamePlate" installable_tags="weapon" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunMeleeNamePlateSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="candle"/>
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 	-->
 
 	<item_modifier name="modGunMeleeNiCdBattery" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Test"/>
 		<!-- <property name="UnlockedBy" value="modGunMeleeNiCdBatterySchematic"/> -->
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Changes damage type to electric -->
 		<item_property_overrides name="*">
@@ -1100,15 +1143,13 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeFlammableOil" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Test"/>
 
 		<!-- <property name="UnlockedBy" value="modGunMeleeFlammableOilSchematic"/> -->
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Changes damage type to heat -->
 		<item_property_overrides name="*">
@@ -1118,14 +1159,12 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeLiquidNitrogen" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Test"/>
 		<!-- <property name="UnlockedBy" value="modGunMeleeLiquidNitrogenSchematic"/> -->
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Changes damage type to cold -->
 		<item_property_overrides name="*">
@@ -1135,28 +1174,24 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeTemperedBladeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!-- reduce DR of armor by x, blade weapons -->
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.15" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modMeleeSerratedBlade" installable_tags="knife,machete,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modMeleeSerratedBlade" installable_tags="knife,machete,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeSerratedBladeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
@@ -1166,37 +1201,31 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="damage" blocked_tags="noMods,perkDeepCuts" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeWeightedHeadSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!-- Increases stun chance; increases stamina use, axe, hammer, club -->
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeStructuralBrace" installable_tags="melee,perkArchery" modifier_tags="durability" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeStructuralBraceSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Increases durability, increases block efficiency, all melee -->
 		<effect_group tiered="false">
 			<passive_effect name="DegradationPerUse" operation="perc_add" value="-.25" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeErgonomicGrip" installable_tags="melee,bow" modifier_tags="health" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeErgonomicGripSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Reduces Stamina usage on all attacks, all melee -->
 		<effect_group tiered="false">
@@ -1207,26 +1236,22 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<requirement name="HoldingItemHasTags" tags="perkArchery"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value=".1"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeFortifyingGrip" installable_tags="melee" modifier_tags="health" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeFortifyingGripSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!-- Gain HP/sec when under 50% HP -->
 		<effect_group tiered="false">
 			<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LTE" value=".5"/>
-			<passive_effect name="HealthChangeOT" operation="base_add" value="0.2"/>
+			<passive_effect name="HealthChangeOT" operation="base_add" value=".2"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubBarbedWire" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeClubBarbedWireSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1240,35 +1265,32 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batBarbed_Prefab.prefab"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<!-- <property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_BarbedPrefab.prefab"/> -->
-		</item_property_overrides>
+		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_BarbedPrefab.prefab"/>
+		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronBarbPrefab.prefab"/>
+			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronBarbPrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingTwo"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/>
 		</effect_group>
 		<effect_group tiered="false" name="Power Attack">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingTwo"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/>
 		</effect_group>
 		<effect_group tiered="false" name="Always extend bleeding">
 			<requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubMetalSpikes" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeClubMetalSpikesSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1283,24 +1305,22 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batSpikes_Prefab.prefab"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<!-- <property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/> -->
-		</item_property_overrides>
+		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
+		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronSpikePrefab.prefab"/>
+			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronSpikePrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffArmorShredding"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubMetalChain" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkBatterUpMetalChain"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1314,28 +1334,26 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batChained_Prefab.prefab"/>
 		</item_property_overrides>
 
-		<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<!-- <property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/> -->
-		</item_property_overrides>
+		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
+		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronChainPrefab.prefab"/>
+			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronChainPrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="10"/>
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubBurningShaft" installable_tags="longShaft" modifier_tags="fire" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeClubBurningShaftSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<item_property_overrides name="*">
-			<property name="LightValue" value="0.45"/>
+			<property name="LightValue" value=".25"/> <!-- has no effect on a mod -->
 			<property name="LightSource" value="lightSource"/>
 			<property name="ActivateObject" value="lightSource"/>
 			<property name="AlwaysActive" value="true"/>
@@ -1345,6 +1363,18 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 		<item_property_overrides name="meleeWpnClubT1BaseballBat">
 			<property name="FlameEffect" value="ItemModEffects/mod_bat_flamePrefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolRepairT1ClawHammer">
+			<property name="FlameEffect" value="ItemModEffects/mod_hammer_firePrefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammer">
+			<property name="FlameEffect" value="ItemModEffects/mod_sledge_flamePrefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammer">
+			<property name="FlameEffect" value="ItemModEffects/mod_stone_sledge_flamePrefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
@@ -1384,7 +1414,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 
 		<effect_group tiered="false" name="SpecialEffects">
-			<passive_effect name="LightMultiplier" operation="base_add" value="0.28"/>
+			<passive_effect name="LightMultiplier" operation="base_add" value=".28"/>
 			<passive_effect name="HypothermalResist" operation="base_add" value="4">
 				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
 			</passive_effect>
@@ -1425,117 +1455,98 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
 					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeFiremansAxeMod" installable_tags="axe" modifier_tags="damageDirt,damageStone,damageIron" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkFiremansAlmanacAxes"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="EntityDamage" operation="perc_add" value="-.25"/>
 			<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeGraveDigger" installable_tags="melee" modifier_tags="damageDirt" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeGraveDiggerSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="earth"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeBunkerBuster" installable_tags="melee" modifier_tags="damageStone" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeBunkerBusterSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="stone"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeIronBreaker" installable_tags="melee" modifier_tags="damageIron" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeIronBreakerSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="metal"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modMeleeWoodSplitter" installable_tags="melee" modifier_tags="damageWood" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modMeleeWoodSplitterSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="wood"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modMeleeDiamondTip" installable_tags="tool,perkBrawler,perkJavelinMaster,perkDeepCuts" modifier_tags="durability" blocked_tags="noMods" type="attachment">
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<item_modifier name="modMeleeDiamondTip" installable_tags="tool,perkBrawler,perkJavelinMaster,perkDeepCuts" modifier_tags="durability" blocked_tags="noMods,noBlades" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkArtOfMiningDiamondTools"/>
 		<effect_group tiered="false">
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.4" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modMeleeStunBatonRepulsor" installable_tags="perkElectrocutioner" modifier_tags="knockback" blocked_tags="noMods" type="attachment">
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<item_modifier name="modMeleeStunBatonRepulsor" installable_tags="perkElectrocutioner" modifier_tags="knockback" blocked_tags="noMods,noStunEffect" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkTechJunkie5Repulsor"/>
 		<effect_group tiered="false">
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="40"/>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="3" force="200"/>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="4" force="200"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modFuelTankSmall" installable_tags="motorTool" modifier_tags="fuel" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modFuelTankSmallSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modFuelTankLarge" installable_tags="motorTool" modifier_tags="fuel" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modFuelTankLargeSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
 	<!--Clothing Attachments-->
 	<item_modifier name="modArmorBandolier" installable_tags="armorChest,armorLegs" modifier_tags="ammo" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorBandolierSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<!-- Reload Guns X% faster;  would like to add it to "legs" but buffs dont stack like that -->
 		<effect_group tiered="false">
 			<requirement name="ItemHasTags" tags="armorChest"/>
@@ -1547,39 +1558,33 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBandolierLegs"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierLegs"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!--Increase fire resistance by x%
 	<item_modifier name="modYoureFired" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modYoureFiredSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<effect_group tiered="false">
 			<passive_effect name="ElementalDamageResist" operation="perc_add" value=".5" tags="heat"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>-->
 
 	<!--Clothing Mods-->
 	<item_modifier name="modRadiationReady" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Test"/>
 		<!-- <property name="UnlockedBy" value="modRadiationReadySchematic"/> -->
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<!--Increase radiation resistance by x%-->
 		<effect_group tiered="false">
 			<passive_effect name="ElementalDamageResist" operation="perc_add" value=".5" tags="radiation"/>
 		</effect_group>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modArmorInsulatedLiner" installable_tags="armor" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorInsulatedLinerSchematic"/>
 		<property name="DisplayType" value="modTempResist"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="HypothermalResist" operation="base_add" value="5"/>
@@ -1588,10 +1593,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="temperature" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorCoolingMeshSchematic"/>
 		<property name="DisplayType" value="modTempResist"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="HyperthermalResist" operation="base_add" value="5"/>
@@ -1600,38 +1604,35 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorImprovedFittingsSchematic"/>
 		<property name="DisplayType" value="modArmorMobility"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="Mobility" operation="perc_add" value="0.02"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.014" tags="walking"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.028" tags="running"/>
-			<display_value name="dStaminaChangeOT" value="0.028"/>
+			<passive_effect name="Mobility" operation="perc_add" value=".02"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".014" tags="walking"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".028" tags="running"/>
+			<display_value name="dStaminaChangeOT" value=".028"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorCustomizedFittingsSchematic"/>
 		<property name="DisplayType" value="modArmorMobility"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
-			<passive_effect name="Mobility" operation="perc_add" value="0.03"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.021" tags="walking"/>
-			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.0562" tags="running"/>
-			<display_value name="dStaminaChangeOT" value="0.0562"/>
+			<passive_effect name="Mobility" operation="perc_add" value=".03"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".021" tags="walking"/>
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".0562" tags="running"/>
+			<display_value name="dStaminaChangeOT" value=".0562"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorPlatingBasic" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorPlatingBasicSchematic"/>
 		<property name="DisplayType" value="modArmor"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="1"/>
@@ -1640,10 +1641,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 	<!-- modArmorPlatingSteel -->
 	<item_modifier name="modArmorPlatingReinforced" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>
 		<property name="DisplayType" value="modArmor"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="DescriptionKey" value="modArmorPlatingBasicDesc"/>
 		<effect_group tiered="false">
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="2"/>
@@ -1651,11 +1651,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorStoragePocketSchematic"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
@@ -1664,11 +1663,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorDoubleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorDoubleStoragePocketSchematic"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="2"/>
@@ -1677,10 +1675,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorTripleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorTripleStoragePocketSchematic"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="Material" value="Mleather"/>
 
 		<effect_group tiered="false">
@@ -1689,24 +1686,22 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorMuffledConnectorsSchematic"/>
 		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.04"/><display_value name="dNoiseMultiplier" value="-.04"/>
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods" type="attachment">
+	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorAdvancedMuffledConnectorsSchematic"/>
 		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.08"/><display_value name="dNoiseMultiplier" value="-.08"/>
@@ -1714,10 +1709,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorImpactBracing" installable_tags="armorFeet" modifier_tags="falldamage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorImpactBracingSchematic"/>
 		<property name="Material" value="Msteel"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 
 		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffImpactBracing"/>
@@ -1726,9 +1720,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorWaterPurifier" installable_tags="armorHead" modifier_tags="waterPurifier" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorWaterPurifierSchematic"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
@@ -1737,10 +1730,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorJumpJets" installable_tags="armorChest" modifier_tags="misc" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="Dev"/>
 		<!-- <property name="UnlockedBy" value="modArmorJumpJetsSchematic"/> -->
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="flamethrowerTrap"/>
 		<effect_group tiered="false">
 				<!-- <triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffJumpJetsActivated"/>
@@ -1766,11 +1758,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorHelmetLight" installable_tags="head" modifier_tags="misc,modArmorHelmetLight" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modArmorHelmetLightSchematic,perkArtOfMiningLantern"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="Material" value="Msteel"/>
-		<property name="LightValue" value="0.7"/>
+		<property name="LightValue" value=".4"/>
 		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLight" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="Spotlight" localPos="0,0,0" localRot="90,0,0"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="HeadLightCam" prefab="Entities/Lighting/miningHelmetLightSource" parentTransform="CameraNode" localPos="0,0,0" localRot="-90,0,0"/>
@@ -1784,10 +1775,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 <!-- Clothing mods = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 	<item_modifier name="modClothingStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods,clothing"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="1"/>
@@ -1796,11 +1787,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modClothingCargoStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="perkNeedleAndThreadPockets"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods,clothing"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="CarryCapacity" operation="base_add" value="2"/>
@@ -1809,6 +1800,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+	<!-- Dyes and cosmetic / skin mods -->
 	<!-- How pre-installed dyes are picked for looted items:
 			All dyes are checked and roll for their cosmetic_install_chance.
 			If that's a hit, the item goes in the list.
@@ -1816,25 +1808,23 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			When done, one dye is picked from the list. -->
 
 	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="149,52,54"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="149,52,54"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 
 		<item_property_overrides name="*">
-			<property name="TintColor" value="255,0,0"/>
+			<property name="TintColor" value="212,84,84"/>
 			<property name="CustomIconTint" value="149,52,54"/>
 			<property name="UMA.Overlay0Tint" value="180,52,54"/>
 		</item_property_overrides>
@@ -1874,20 +1864,18 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="apparelSuitJacket">
 			<property name="UMA.Overlay0Tint" value="60,19,19"/>
 		</item_property_overrides>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0.13">
+	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="128,152,120"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="128,152,120"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 
 		<item_property_overrides name="*">
-			<property name="TintColor" value="0,255,0"/>
+			<property name="TintColor" value="74,130,74"/>
 			<property name="CustomIconTint" value="128,152,120"/>
 			<property name="UMA.Overlay0Tint" value="128,152,120"/>
 		</item_property_overrides>
@@ -1921,14 +1909,13 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="CustomIconTint" value="200,255,200"/>
 			<property name="UMA.Overlay0Tint" value="200,255,200"/>
 		</item_property_overrides>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="47,47,47"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="47,47,47"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 
@@ -1994,19 +1981,18 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="CustomIconTint" value="57,57,57"/>
 			<property name="UMA.Overlay0Tint" value="27,27,27"/>
 		</item_property_overrides>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="74,93,134"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="74,93,134"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 
 		<item_property_overrides name="*">
-			<property name="TintColor" value="100,100,180"/><!-- this if for guns and handheld items -->
+			<property name="TintColor" value="70,89,127"/><!-- this if for guns and handheld items -->
 			<property name="CustomIconTint" value="74,93,134"/>
 			<property name="UMA.Overlay0Tint" value="74,93,134"/>
 		</item_property_overrides>
@@ -2054,13 +2040,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="110,173,255"/>
 		</item_property_overrides>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".16">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="132,105,84"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
@@ -2094,21 +2078,19 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="UMA.Overlay0Tint" value="skin"/>
 			<property name="UMA.Overlay1Tint" value="132,105,84"/>
 		</item_property_overrides>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".08">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 
 		<item_property_overrides name="*">
-			<property name="TintColor" value="240,162,251"/>
-			<property name="CustomIconTint" value="240,162,251"/>
-			<property name="UMA.Overlay0Tint" value="240,162,251"/>
+			<property name="TintColor" value="188,148,188"/>
+			<property name="CustomIconTint" value="188,148,188"/>
+			<property name="UMA.Overlay0Tint" value="188,148,188"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="apparelTankTop">
@@ -2147,14 +2129,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="apparelSuitJacket">
 			<property name="UMA.Overlay0Tint" value="159,101,168"/>
 		</item_property_overrides>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="113,97,129"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
@@ -2196,14 +2175,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="apparelSuitJacket">
 			<property name="UMA.Overlay0Tint" value="93,77,99"/>
 		</item_property_overrides>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
@@ -2245,13 +2221,12 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<item_property_overrides name="apparelSuitJacket">
 			<property name="UMA.Overlay0Tint" value="152,149,93"/>
 		</item_property_overrides>
-
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
 	<!--
 
-	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0.05">
+	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 
 		<item_property_overrides name="*">
@@ -2259,65 +2234,12 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="CustomIconTint" value="255,128,0"/>
 			<property name="UMA.Overlay0Tint" value="255,128,0"/>
 		</item_property_overrides>
-		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 -->
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-	<!--Vehicle mods-->
-
-	<item_modifier name="modVehicleMega" installable_tags="vehicle" modifier_tags="test" blocked_tags="noMods" type="attachment">
-		<property name="CreativeMode" value="Test"/>
-		<property name="UnlockedBy" value="modVehicleMegaSchematic"/>
-		<property name="CustomIcon" value="armorSantaHat"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<effect_group tiered="false">
-			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value="0"/>
-			<passive_effect name="LightIntensity" operation="perc_set" value="3"/>
-			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="2"/>
-			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="2"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modVehicleFuelSaver" installable_tags="vehicle" modifier_tags="fuel" blocked_tags="noMods" type="attachment">
-		<property name="CreativeMode" value="Test"/>
-		<property name="UnlockedBy" value="modVehicleFuelSaverSchematic"/>
-		<property name="CustomIcon" value="ammoGasCan"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<effect_group tiered="false">
-			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value=".5"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modVehicleHeadlights" installable_tags="vehicle" modifier_tags="light" blocked_tags="noMods" type="attachment">
-		<property name="CreativeMode" value="Test"/>
-		<property name="UnlockedBy" value="modVehicleHeadlightsSchematic"/>
-		<property name="CustomIcon" value="resourceHeadlight"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<effect_group tiered="false">
-			<passive_effect name="LightIntensity" operation="perc_set" value="1.8"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modVehicleSpeed" installable_tags="vehicle" modifier_tags="speed" blocked_tags="noMods" type="attachment">
-		<property name="CreativeMode" value="Test"/>
-		<property name="UnlockedBy" value="modVehicleSpeedSchematic"/>
-		<property name="CustomIcon" value="smallEngine"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-		<effect_group tiered="false">
-			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.25"/>
-			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.15"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modArmorCowboyHat" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+  <item_modifier name="modArmorCowboyHat" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CustomIcon" value="apparelCowboyHat"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
 		<item_property_overrides name="*">
@@ -2333,9 +2255,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorSkullCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CustomIcon" value="apparelSkullCap"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
 		<item_property_overrides name="*">
@@ -2351,9 +2272,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorPressboyCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CustomIcon" value="apparelPressboyCap"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
 		<item_property_overrides name="*">
@@ -2369,9 +2289,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorBallCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CustomIcon" value="apparelBallCap"/>
-		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
 		<item_property_overrides name="*">
@@ -2386,14 +2305,132 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
+
+	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+	<!--Vehicle mods-->
+
+	<item_modifier name="modVehicleMega" installable_tags="vehicle" modifier_tags="test" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Test"/>
+		<property name="UnlockedBy" value="modVehicleMegaSchematic"/>
+		<property name="CustomIcon" value="armorSantaHat"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value="0"/>
+			<passive_effect name="LightIntensity" operation="perc_set" value="3"/>
+			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="2"/>
+			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="2"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleFuelSaver" installable_tags="vengine" modifier_tags="fuelsaver" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleFuelSaverSchematic"/>
+		<property name="CustomIcon" value="modVehicleFuelSaver"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value=".5"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleOffRoadHeadlights" installable_tags="vlight" modifier_tags="light" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleOffRoadHeadlightsSchematic"/>
+		<property name="CustomIcon" value="modVehicleOffRoadHeadlights"/>
+		<effect_group tiered="false">
+			<passive_effect name="LightIntensity" operation="perc_set" value="2.2"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleSuperCharger" installable_tags="vengine" modifier_tags="speed" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleSuperChargerSchematic"/>
+		<property name="CustomIcon" value="modVehicleSuperCharger"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.25"/>
+			<passive_effect name="VehicleVelocityMaxTurboPer" operation="perc_set" value="1.15"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleExpandedSeat" installable_tags="vseat" modifier_tags="seat" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleExpandedSeatSchematic"/>
+		<property name="CustomIcon" value="modVehicleExpandedSeat"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleSeats" operation="base_add" value="2"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modVehicleReserveFuelTank" installable_tags="vfuel" modifier_tags="fueltank" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modVehicleReserveFuelTankSchematic"/>
+		<property name="CustomIcon" value="modVehicleReserveFuelTank"/>
+		<effect_group tiered="false">
+			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.5"/>
+		</effect_group>
+	</item_modifier>
+
+	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+	<!--Robotic Drone Mods-->
+
+	<item_modifier name="modRoboticDroneArmorPlatingMod" installable_tags="drone" modifier_tags="droneArmor" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modRoboticDroneArmorPlatingModSchematic"/>
+	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneCargoMod" installable_tags="drone" modifier_tags="droneStorage" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modRoboticDroneCargoModSchematic"/>
+	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneMoraleBoosterMod" installable_tags="drone" modifier_tags="droneMorale" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modRoboticDroneMoraleBoosterModSchematic"/>
+	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneHeadlampMod" installable_tags="drone" modifier_tags="droneLamp" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modRoboticDroneHeadlampModSchematic"/>
+		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneMedicMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="UnlockedBy" value="modRoboticDroneMedicModSchematic"/>
+	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+	    <property name="CreativeMode" value="None"/>
+		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
+		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+	</item_modifier>
+
+	<item_modifier name="modRoboticDroneStunWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="None"/>
+		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
+		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<!-- Stun atk mod -->
+		<!-- <effect_group tiered="false">
+		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01"/>
+		</effect_group> -->
+	</item_modifier>
+
+
 	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 	<!-- Quest items : These are here so that the icons are baked into the atlas. -->
 
 	<item_modifier name="questWhiteRiverSupplies"><property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="questSuppliesGroupDesc"/>
 	</item_modifier>
 
 	<item_modifier name="questCassadoreSupplies"><property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="questSuppliesGroupDesc"/>
 	</item_modifier>
 

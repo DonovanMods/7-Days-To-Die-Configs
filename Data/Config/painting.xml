@@ -118,17 +118,9 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="13" name="txName_Gravestone1">
-	<property name="TextureId" value="24"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
-</paint>
+<!-- 13 free, was old madmole gravestone texture -->
 
-<paint id="14" name="txName_Pillcase">
-	<property name="TextureId" value="25"/>
-	<property name="Group" value="txGroupDecoration"/>
-	<property name="PaintCost" value="1" />
-</paint>
+<!-- 14 free, was old pill case texture -->
 
 <paint id="15" name="txName_Rust_black">
 	<property name="TextureId" value="443"/>
@@ -388,11 +380,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="3" />
 </paint>
 
-<paint id="58" name="txName_Dead_grass">
-	<property name="TextureId" value="196"/>
-	<property name="Group" value="txGroupFaux"/>
-	<property name="PaintCost" value="1" />
-</paint>
+<!-- 58 free, was dead grass/haybale texture -->
 
 <paint id="59" name="txName_Woodfloor01">
 	<property name="TextureId" value="214"/>
@@ -851,12 +839,7 @@ Textures we might want for (terrain) imposters
 	<property name="PaintCost" value="1" />
 </paint>
 
-<paint id="138" name="txName_Drywall_orange">
-	<property name="TextureId" value="430"/>
-	<property name="Group" value="txGroupPainted"/>
-	<property name="PaintCost" value="1" />
-	<property name="Hidden" value="true" />
-</paint>
+<!-- 138 free, was old Drywall_orange texture -->
 
 <paint id="139" name="txName_Concrete_mustard">
 	<property name="TextureId" value="592"/>
@@ -1111,6 +1094,18 @@ Textures we might want for (terrain) imposters
 	<property name="TextureId" value="602"/>
 	<property name="Group" value="txGroupWood"/>
 	<property name="PaintCost" value="1" />
+</paint>
+
+<paint id="182" name="txName_concrete_broken">
+  <property name="TextureId" value="606"/>
+  <property name="Group" value="txGroupMasonry"/>
+  <property name="PaintCost" value="1" />
+</paint>
+
+<paint id="183" name="txName_metal_roof">
+  <property name="TextureId" value="607"/>
+  <property name="Group" value="txGroupMetal"/>
+  <property name="PaintCost" value="1" />
 </paint>
 
 <!-- Localised up to here -->

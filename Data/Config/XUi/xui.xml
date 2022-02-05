@@ -1,20 +1,19 @@
 <xui>
-	<ruleset name="default" scale="1.255" stackpanel_scale="1.05">
+	<ruleset name="default" scale="1.255" stackpanel_scale="1.05" ignore_missing_class="false">
 	
-		<window_group name="crafting" controller="XUiC_CraftingWindowGroup">
+		<window_group name="crafting" controller="XUiC_CraftingWindowGroup" open_backpack_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
 		</window_group>
 		
-		<window_group name="character" controller="XUiC_CharacterSheetWindowGroup">
+		<window_group name="character" controller="XUiC_CharacterSheetWindowGroup" open_backpack_on_open="true">
 			<window name="CharacterFrameWindow"/>
 			<window name="buffInfoPanel"/>
-			<!-- <window name="PlayerStatsWindow" /> -->
 			<window name="ActiveBuffsWindow" />
 		</window_group>		
 		
-		<window_group name="workstation_campfire" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_campfire" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -24,7 +23,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="workstation_forge" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_forge" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -35,7 +34,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="workstation_cementMixer" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_cementMixer" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -43,7 +42,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>		
 		
-		<window_group name="workstation_workbench" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_workbench" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -52,7 +51,7 @@
 			<!-- <window name="windowCombine" /> -->
 		</window_group>				
 
-		<window_group name="workstation_chemistryStation" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_chemistryStation" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -61,13 +60,17 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="looting" left_panel_valign_top="false" controller="XUiC_LootWindowGroup">
+		<window_group name="looting" left_panel_valign_top="false" controller="XUiC_LootWindowGroup" close_compass_on_open="true">
 			<window name="windowLooting"/>
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="creative" controller="XUiC_CreativeWindowGroup">
+		<window_group name="creativeOld" controller="XUiC_CreativeWindowGroup" open_backpack_on_open="true">
 			<window name="windowCreative" />
+		</window_group>
+		
+		<window_group name="creative" controller="XUiC_Creative2WindowGroup" open_backpack_on_open="true">
+			<window name="windowCreative2" />
 		</window_group>
 		
 		<!--#$-IGS BEGIN: Needed to disable input in new system -$#-->
@@ -75,6 +78,10 @@
 			<window name="itemInfoPanel"/>
 			<window name="emptyInfoPanel" />
 			<window name="windowBackpack"/>
+		</window_group>
+		
+		<window_group name="death">
+			<window name="windowDeathBar" anchor="CenterBottom" />
 		</window_group>
 		
 		<window_group name="dragAndDrop" actionSet="false">
@@ -90,10 +97,15 @@
 		<window_group name="toolTip" actionSet="false">
 			<window name="toolTip" />
 			<window name="popupMenu" />
+			<window name="toolTipPopups" />
 		</window_group>
 		
 		<window_group name="interactionPrompt" actionSet="false">
 			<window name="interactionPrompt" />
+		</window_group>
+		
+		<window_group name="focusedBlockHealth" actionSet="false">
+			<window name="focusedBlockHealth" />
 		</window_group>
 		
 		<window_group name="tipWindow">
@@ -104,7 +116,7 @@
 			<window name="windowQuestOffer" />
 		</window_group>
 		
-		<window_group name="questTurnIn" controller="XUiC_QuestTurnInWindowGroup">
+		<window_group name="questTurnIn" controller="XUiC_QuestTurnInWindowGroup" open_backpack_on_open="true">
 			<window name="windowQuestTurnInDescription" />
 			<window name="windowQuestTurnInRewards" />
 		</window_group>
@@ -125,19 +137,23 @@
 			<window name="windowGroupBars" anchor="LeftTop" />
 		</window_group>
 		
-		<window_group name="vehicle" controller="XUiC_VehicleWindowGroup">
+		<window_group name="twitch" actionSet="false">
+			<window name="windowTwitch" anchor="RightCenter" />
+		</window_group>
+		
+		<window_group name="vehicle" controller="XUiC_VehicleWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowVehicle"/>
 			<window name="windowNonPagingHeader" />
 			<!-- <window name="windowVehicleStats" /> -->
 			<!-- <window name="windowVehicleStorage" /> -->
 		</window_group>
 		
-		<window_group name="vehicleStorage" controller="XUiC_VehicleStorageWindowGroup">
+		<window_group name="vehicleStorage" controller="XUiC_VehicleStorageWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowNonPagingHeader" />
 			<window name="windowVehicleStorage" />
 		</window_group>
 		
-		<window_group name="windowpaging" actionSet="false">
+		<window_group name="windowpaging" actionSet="false" close_compass_on_open="true">
 			<window name="windowPagingHeader" anchor="CenterTop"/>
 		</window_group>
 
@@ -155,7 +171,7 @@
 			<window name="players" />
 		</window_group>
 		
-		<window_group name="assemble" controller="XUiC_AssembleWindowGroup">
+		<window_group name="assemble" controller="XUiC_AssembleWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowAssemble" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
@@ -166,8 +182,6 @@
 		
 		<window_group name="skills" controller="XUiC_SkillWindowGroup">
 			<window name="windowSkillList"/>
-			<window name="windowSkillInfo"/>
-			<!-- <window name="windowSkillStats"/> -->
 			<window name="windowSkillAttributeInfo" />
 			<window name="windowSkillSkillInfo" />
 			<window name="windowSkillPerkInfo" />
@@ -187,13 +201,20 @@
 			<window name="windowJournalEntryDescription" />
 		</window_group>
 		
+		<window_group name="twitchInfo" controller="XUiC_TwitchInfoWindowGroup" close_compass_on_open="true">
+			<window name="windowTwitchInfoList" />
+			<window name="windowTwitchInfoDescription" />
+			<window name="windowTwitchInfoHowTo" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
+		
 		<!--#$-IGS BEGIN: Adding window to hold gampad callouts -$#-->
 		<window_group name="CalloutGroup"  actionSet="false">
 			<window name="GamepadCallouts" />
 		</window_group>
 		<!--*#$-IGS END.-$#-->
 
-		<window_group name="trader" controller="XUiC_TraderWindowGroup">
+		<window_group name="trader" controller="XUiC_TraderWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowTrader"/>
 			<window name="windowNonPagingHeader" />
 			<window name="serviceInfoPanel"/>
@@ -213,19 +234,19 @@
 			<window name="windowKeypadEdit" />
 		</window_group>
 
-		<window_group name="powersource" controller="XUiC_PowerSourceWindowGroup">
+		<window_group name="powersource" controller="XUiC_PowerSourceWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowPowerSourceStats" />
 			<window name="windowPowerSourceSlots" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="powertrigger" controller="XUiC_PowerTriggerWindowGroup">
+		<window_group name="powertrigger" controller="XUiC_PowerTriggerWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowPowerTriggerOptions" />
 			<window name="windowPowerCameraControlPreview" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="powerrangedtrap" controller="XUiC_PowerRangedTrapWindowGroup">
+		<window_group name="powerrangedtrap" controller="XUiC_PowerRangedTrapWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowPowerRangedTrapOptions" />
 			<window name="windowPowerTrapSlots" />
 			<window name="windowPowerCameraControlPreview" />
@@ -233,28 +254,35 @@
 			
 		</window_group>
 		
-		<window_group name="powercamera" controller="XUiC_PowerCameraWindowGroup" actionSet="controller">
+		<window_group name="powercamera" controller="XUiC_PowerCameraWindowGroup" actionSet="controller" close_compass_on_open="true">
 			<window name="windowPowerCameraControl" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="powerspotlight" controller="XUiC_PoweredSpotlightWindowGroup">
+		<window_group name="powerspotlight" controller="XUiC_PoweredSpotlightWindowGroup" close_compass_on_open="true">
 			<window name="windowPowerCameraControlPreview" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 
-		<window_group name="materials">
+		<window_group name="materials" close_compass_on_open="true">
 			<window name="windowMaterials" />
 			<window name="windowMaterialInfo" />
+			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="shapes">
+		<window_group name="shapes" close_compass_on_open="true">
 			<window name="windowShapeBlocks" />
 			<window name="windowShapeInfo" />
+			<window name="windowShapeMaterial" />
+			<window name="windowNonPagingHeader" />
 		</window_group>
 
 		<window_group name="spawnMenu">
 			<window name="spawnMenu" />
+		</window_group>
+		
+		<window_group name="gameEventMenu">
+			<window name="gameEventMenu" />
 		</window_group>
 		
 		<window_group name="poiTeleportMenu">
@@ -273,6 +301,10 @@
 			<window name="woPropsSleeperVolume" />
 		</window_group>
 		
+		<window_group name="woPropsPOIMarkers">
+			<window name="woPropsPOIMarkers" />
+		</window_group>
+		
 		<window_group name="woPropsSleeperBlock">
 			<window name="woPropsSleeperBlock" />
 		</window_group>
@@ -283,6 +315,18 @@
 		
 		<window_group name="prefabProperties">
 			<window name="prefabProperties" />
+		</window_group>
+		
+		<window_group name="prefabTags">
+			<window name="prefabTags" />
+		</window_group>
+		
+		<window_group name="prefabMarkers">
+			<window name="prefabMarkers" />
+		</window_group>
+		
+		<window_group name="startPointEditor">
+			<window name="startPointEditor" />
 		</window_group>
 		
 		<window_group name="editorPanelSelector">
@@ -302,6 +346,10 @@
 			<window name="levelTools2" />
 		</window_group>
 		
+		<window_group name="worldTools">
+			<window name="worldTools" />
+		</window_group>
+		
 		<window_group name="prefabList">
 			<window name="prefabList" />
 		</window_group>
@@ -316,6 +364,14 @@
 
 		<window_group name="lightProperties">
 			<window name="lightProperties" />
+		</window_group>
+
+    <window_group name="doorProperties">
+      <window name="doorProperties" />
+    </window_group>
+	
+		<window_group name="triggerProperties">
+			<window name="triggerProperties" />
 		</window_group>
 
 		<window_group name="reportPlayer">

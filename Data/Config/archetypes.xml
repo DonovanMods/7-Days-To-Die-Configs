@@ -140,9 +140,6 @@
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="male_shirt">
@@ -259,9 +256,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -380,9 +374,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -508,9 +499,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="female_base_chest">
@@ -628,9 +616,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -752,9 +737,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="female_shirt">
@@ -873,9 +855,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -1001,9 +980,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="female_shirt">
@@ -1119,9 +1095,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -1246,9 +1219,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="head" layer="inner" mesh="unisex_armor_cloth_hood">
@@ -1365,9 +1335,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -1492,9 +1459,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="female_shirt">
@@ -1616,9 +1580,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -1748,9 +1709,6 @@
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="female_shirt">
@@ -1867,9 +1825,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -1990,9 +1945,6 @@
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="inner" mesh="male_armor_hide_chest">
@@ -2111,9 +2063,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
@@ -2239,9 +2188,6 @@
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="head" layer="outer" mesh="unisex_gear_cowboyhat">
@@ -2342,725 +2288,8 @@
 			<gene name="breastSize" value="0"/>
 		</dna>
 	</archetype>
-	<!--	
-	<archetype name="BanditMelee" male="true" hair_color="10,10,10" eye_color="30,30,25" skin_color="175,175,175" type="None" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="male_base_face">
-				<texture name="male_head" color="skin"/>
-				<texture name="unisex_tattoo_tribal" color="15,20,25"/>
-			</part>
-			<part slot="head" layer="inner" mesh="unisex_viking_braid">
-				<texture name="unisex_viking_braid" color="hair"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="male_base_eyes">
-				<texture name="unisex_eye_shaded" color="255,255,255"/>
-				<texture name="unisex_iris" color="eye"/>
-			</part>
-			<part slot="hands" layer="base" mesh="male_base_hands">
-				<texture name="male_hands" color="skin"/>
-			</part>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_base_legs">
-				<texture name="male_legs" color="skin"/>
-			</part>
-			<part slot="feet" layer="base" mesh="male_base_feet">
-				<texture name="male_feet" color="skin"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-				<texture name="male_tanktop" color="90,80,70"/>
-			</part>
-			<part slot="chest" layer="outer" mesh="male_armor_heavy_bandit_chest">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="hands" layer="inner" mesh="male_armor_heavy_bandit_gloves">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_clothes_denim_pants">
-				<texture name="male_pants_01" color="90,80,70"/>
-			</part>
-			<part slot="legs" layer="outer" mesh="male_armor_heavy_bandit_legarmor">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="armor_heavy_bandit_feet">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.383"/>
-			<gene name="rightMouthSmile_Frown" value="-0.383"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0.23"/>
-			<gene name="rightBrowUp_Down" value="0.23"/>
-			<gene name="midBrowUp_Down" value="-0.774"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.89"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.5"/>
-			<gene name="handsSize" value="0.69"/>
-			<gene name="feetSize" value="0.47"/>
-			<gene name="muscle" value="0.86"/>
-			<gene name="weight" value="0.505"/>
-			<gene name="gluteusSize" value="0.5"/>
-			<gene name="earsSize" value="0.5"/>
-			<gene name="earsPosition" value="0.5"/>
-			<gene name="earsRotation" value="0.5"/>
-			<gene name="noseSize" value="0.5"/>
-			<gene name="noseCurve" value="0.5"/>
-			<gene name="noseWidth" value="0.5"/>
-			<gene name="noseInclination" value="0.125"/>
-			<gene name="nosePosition" value="0.595"/>
-			<gene name="nosePronounced" value="0.64"/>
-			<gene name="noseFlatten" value="0.795"/>
-			<gene name="chinSize" value="0.23"/>
-			<gene name="chinPronounced" value="0"/>
-			<gene name="chinPosition" value="0.005"/>
-			<gene name="mandibleSize" value="0.59"/>
-			<gene name="jawsSize" value="0"/>
-			<gene name="jawsPosition" value="0.76"/>
-			<gene name="cheekSize" value="0.315"/>
-			<gene name="cheekPosition" value="0.08"/>
-			<gene name="lowCheekPronounced" value="0.08"/>
-			<gene name="lowCheekPosition" value="0.995"/>
-			<gene name="foreheadSize" value="0.01"/>
-			<gene name="foreheadPosition" value="0.45"/>
-			<gene name="lipsSize" value="0.205"/>
-			<gene name="mouthSize" value="0.5"/>
-			<gene name="eyeRotation" value="0.985"/>
-			<gene name="eyeSize" value="0.05"/>
-			<gene name="breastSize" value="0.5"/>
-		</dna>
-	</archetype>
-	<archetype name="BanditFemaleMelee" male="false" hair_color="9,7,7" eye_color="100,75,100" skin_color="185,175,175" type="None" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="female_base_face">
-				<texture name="female_head" color="skin"/>
-				<texture name="female_hair_overlay" color="hair"/>
-				<texture name="unisex_tattoo_tribal" color="5,10,15"/>
-			</part>
-			<part slot="head" layer="outer" mesh="female_asian_eyelashes">
-				<texture name="female_eyelashes" color="hair"/>
-			</part>
-			<part slot="head" layer="inner" mesh="female_sideshave_hair">
-				<texture name="female_shaggy_hair" color="hair"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="female_base_eyes">
-				<texture name="unisex_eye_shaded" color="174,140,140,255"/>
-				<texture name="unisex_iris_large" color="eye"/>
-			</part>
-			<part slot="hands" layer="base" mesh="female_base_hands">
-				<texture name="female_hands" color="skin"/>
-			</part>
-			<part slot="chest" layer="base" mesh="female_base_chest">
-				<texture name="female_torso" color="skin"/>
-			</part>
-			<part slot="legs" layer="base" mesh="female_base_legs">
-				<texture name="female_legs" color="skin"/>
-			</part>
-			<part slot="feet" layer="base" mesh="female_base_feet">
-				<texture name="female_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-			<part slot="legs" layer="base" mesh="female_clothes_denim_pants">
-				<texture name="female_pants_01" color="60,60,60"/>
-			</part>
-			<part slot="chest" layer="outer" mesh="female_armor_heavy_bandit_chest">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="hands" layer="inner" mesh="female_armor_heavy_bandit_gloves">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="legs" layer="outer" mesh="female_armor_heavy_bandit_legarmor">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="female_armor_heavy_bandit_feet">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.2"/>
-			<gene name="rightMouthSmile_Frown" value="-0.2"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0"/>
-			<gene name="rightBrowUp_Down" value="0"/>
-			<gene name="midBrowUp_Down" value="0"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.5"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.78"/>
-			<gene name="handsSize" value="0.6"/>
-			<gene name="feetSize" value="0.58"/>
-			<gene name="muscle" value="0.555"/>
-			<gene name="weight" value="0.63"/>
-			<gene name="gluteusSize" value="1"/>
-			<gene name="earsSize" value="0.31"/>
-			<gene name="earsPosition" value="0.49"/>
-			<gene name="earsRotation" value="0.52"/>
-			<gene name="noseSize" value="0.995"/>
-			<gene name="noseCurve" value="1"/>
-			<gene name="noseWidth" value="0.89"/>
-			<gene name="noseInclination" value="0.41"/>
-			<gene name="nosePosition" value="0.47"/>
-			<gene name="nosePronounced" value="0.51"/>
-			<gene name="noseFlatten" value="0.47"/>
-			<gene name="chinSize" value="0.925"/>
-			<gene name="chinPronounced" value="0"/>
-			<gene name="chinPosition" value="0.52"/>
-			<gene name="mandibleSize" value="0.38"/>
-			<gene name="jawsSize" value="0.96"/>
-			<gene name="jawsPosition" value="0"/>
-			<gene name="cheekSize" value="0.745"/>
-			<gene name="cheekPosition" value="0.995"/>
-			<gene name="lowCheekPronounced" value="0.21"/>
-			<gene name="lowCheekPosition" value="0.37"/>
-			<gene name="foreheadSize" value="0"/>
-			<gene name="foreheadPosition" value="0"/>
-			<gene name="lipsSize" value="0.77"/>
-			<gene name="mouthSize" value="0.9"/>
-			<gene name="eyeRotation" value="0.495"/>
-			<gene name="eyeSize" value="0.535"/>
-			<gene name="breastSize" value="0.845"/>
-		</dna>
-	</archetype>
-	<archetype name="BanditLeader" male="true" hair_color="148,74,40" eye_color="68,68,60" skin_color="175,175,175" type="None" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="male_base_face">
-				<texture name="male_head" color="skin"/>
-				<texture name="male_head_old" color="skin"/>
-				<texture name="unisex_tattoo_tribal" color="15,20,25"/>
-				<texture name="male_head_beard" color="hair"/>
-				<texture name="male_shaggy_eyebrows" color="hair"/>
-			</part>
-			<part slot="head" layer="inner" mesh="unisex_hair_raider">
-				<texture name="male_shaggy_hair" color="hair"/>
-			</part>
-			<part slot="face" layer="base" mesh="male_shaggy_beard">
-				<texture name="male_shaggy_hair" color="hair"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="male_base_eyes">
-				<texture name="unisex_eye_shaded" color="153,131,131,255"/>
-				<texture name="unisex_iris" color="eye"/>
-			</part>
-			<part slot="hands" layer="base" mesh="male_base_hands">
-				<texture name="male_hands" color="skin"/>
-			</part>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_base_legs">
-				<texture name="male_legs" color="skin"/>
-			</part>
-			<part slot="feet" layer="base" mesh="male_base_feet">
-				<texture name="male_feet" color="skin"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-				<texture name="male_tanktop" color="90,80,70"/>
-			</part>
-			<part slot="chest" layer="outer" mesh="male_armor_heavy_bandit_chest">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="hands" layer="inner" mesh="male_armor_heavy_bandit_gloves">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_clothes_denim_pants">
-				<texture name="male_pants_01" color="90,80,70"/>
-			</part>
-			<part slot="legs" layer="outer" mesh="male_armor_heavy_bandit_legarmor">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="armor_heavy_bandit_feet">
-				<texture name="unisex_bandit_armor" color="255,255,255"/>
-			</part>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.383"/>
-			<gene name="rightMouthSmile_Frown" value="-0.383"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0.23"/>
-			<gene name="rightBrowUp_Down" value="0.23"/>
-			<gene name="midBrowUp_Down" value="-0.774"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.89"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.5"/>
-			<gene name="handsSize" value="0.69"/>
-			<gene name="feetSize" value="0.47"/>
-			<gene name="muscle" value="0.99"/>
-			<gene name="weight" value="0.58"/>
-			<gene name="gluteusSize" value="0.57"/>
-			<gene name="earsSize" value="0.665"/>
-			<gene name="earsPosition" value="0.5"/>
-			<gene name="earsRotation" value="0.5"/>
-			<gene name="noseSize" value="0.995"/>
-			<gene name="noseCurve" value="0.995"/>
-			<gene name="noseWidth" value="0.96"/>
-			<gene name="noseInclination" value="0.135"/>
-			<gene name="nosePosition" value="0.345"/>
-			<gene name="nosePronounced" value="0.72"/>
-			<gene name="noseFlatten" value="1"/>
-			<gene name="chinSize" value="0.94"/>
-			<gene name="chinPronounced" value="0.64"/>
-			<gene name="chinPosition" value="0.455"/>
-			<gene name="mandibleSize" value="0.995"/>
-			<gene name="jawsSize" value="0.98"/>
-			<gene name="jawsPosition" value="0.76"/>
-			<gene name="cheekSize" value="0.71"/>
-			<gene name="cheekPosition" value="0.52"/>
-			<gene name="lowCheekPronounced" value="0.64"/>
-			<gene name="lowCheekPosition" value="0.995"/>
-			<gene name="foreheadSize" value="0.34"/>
-			<gene name="foreheadPosition" value="0.45"/>
-			<gene name="lipsSize" value="0.29"/>
-			<gene name="mouthSize" value="0.5"/>
-			<gene name="eyeRotation" value="0.985"/>
-			<gene name="eyeSize" value="0.05"/>
-			<gene name="breastSize" value="0.5"/>
-		</dna>
-	</archetype>
-	<archetype name="BanditRanged" male="true" hair_color="10,10,10" eye_color="30,30,25" skin_color="175,175,175" type="Bandit" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="male_base_face">
-				<texture name="male_head" color="skin"/>
-				<texture name="male_skull_overlay" color="255,255,255"/>
-				<texture name="unisex_face_dirt_overlay" color="255,255,255"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="male_base_eyes">
-				<texture name="unisex_eye_shaded" color="255,255,255"/>
-				<texture name="unisex_iris" color="30,30,25"/>
-			</part>
-			<part slot="hands" layer="base" mesh="male_base_hands">
-				<texture name="male_hands" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="255,255,255"/>
-			</part>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="255,255,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_base_legs">
-				<texture name="male_legs" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="255,255,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="male_base_feet">
-				<texture name="male_feet" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="255,255,255"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-				<texture name="male_tanktop" color="90,80,70"/>
-			</part>
-			<part slot="hands" layer="outer" mesh="armor_scrap_metal_chest">
-				<texture name="scrap_metal_armor" color="255,255,255"/>
-			</part>
-			<part slot="hands" layer="inner" mesh="armor_scrap_metal_hands">
-				<texture name="scrap_metal_armor" color="255,255,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_clothes_denim_pants">
-				<texture name="male_pants_01" color="90,80,70"/>
-			</part>
-			<part slot="feet" layer="base" mesh="armor_scrap_metal_feet">
-				<texture name="armor_scrap_metal_feet" color="255,255,255"/>
-			</part>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.383"/>
-			<gene name="rightMouthSmile_Frown" value="-0.383"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0.23"/>
-			<gene name="rightBrowUp_Down" value="0.23"/>
-			<gene name="midBrowUp_Down" value="-0.774"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.89"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.5"/>
-			<gene name="handsSize" value="0.69"/>
-			<gene name="feetSize" value="0.47"/>
-			<gene name="muscle" value="0.57"/>
-			<gene name="weight" value="0.63"/>
-			<gene name="gluteusSize" value="0.5"/>
-			<gene name="earsSize" value="0.5"/>
-			<gene name="earsPosition" value="0.5"/>
-			<gene name="earsRotation" value="0.5"/>
-			<gene name="noseSize" value="0.5"/>
-			<gene name="noseCurve" value="0.5"/>
-			<gene name="noseWidth" value="0.5"/>
-			<gene name="noseInclination" value="0.125"/>
-			<gene name="nosePosition" value="0.595"/>
-			<gene name="nosePronounced" value="0.64"/>
-			<gene name="noseFlatten" value="0.795"/>
-			<gene name="chinSize" value="0.23"/>
-			<gene name="chinPronounced" value="0.335"/>
-			<gene name="chinPosition" value="0.47"/>
-			<gene name="mandibleSize" value="0.655"/>
-			<gene name="jawsSize" value="0.525"/>
-			<gene name="jawsPosition" value="0.56"/>
-			<gene name="cheekSize" value="0.43"/>
-			<gene name="cheekPosition" value="0.44"/>
-			<gene name="lowCheekPronounced" value="0.655"/>
-			<gene name="lowCheekPosition" value="0.995"/>
-			<gene name="foreheadSize" value="0.13"/>
-			<gene name="foreheadPosition" value="0.45"/>
-			<gene name="lipsSize" value="0.395"/>
-			<gene name="mouthSize" value="0.76"/>
-			<gene name="eyeRotation" value="0.985"/>
-			<gene name="eyeSize" value="0.985"/>
-			<gene name="breastSize" value="0.5"/>
-		</dna>
-	</archetype>
-	<archetype name="ZombieMaleUMA" male="true" hair_color="255,255,255" eye_color="184,169,166" skin_color="135,170,186" type="Zombie" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="male_base_face">
-				<texture name="male_head_zombie" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="male_base_eyes">
-				<texture name="unisex_eye_shaded" color="185,154,154,255"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="hands" layer="base" mesh="male_base_hands">
-				<texture name="male_hands" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="chest" layer="base" mesh="male_base_chest">
-				<texture name="male_torso" color="skin"/>
-				<texture name="male_tshirt" color="116,97,76,255"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="male_clothes_denim_pants">
-				<texture name="male_pants_01" color="104,98,84,255"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="male_base_feet">
-				<texture name="male_feet" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.53"/>
-			<gene name="rightMouthSmile_Frown" value="-0.53"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0.23"/>
-			<gene name="rightBrowUp_Down" value="0.23"/>
-			<gene name="midBrowUp_Down" value="-0.43"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.5"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.5"/>
-			<gene name="handsSize" value="0.5"/>
-			<gene name="feetSize" value="0.5"/>
-			<gene name="muscle" value="0.5"/>
-			<gene name="weight" value="0.5"/>
-			<gene name="gluteusSize" value="0.5"/>
-			<gene name="earsSize" value="0.61"/>
-			<gene name="earsPosition" value="0.62"/>
-			<gene name="earsRotation" value="0.5"/>
-			<gene name="noseSize" value="0.855"/>
-			<gene name="noseCurve" value="1"/>
-			<gene name="noseWidth" value="0.85"/>
-			<gene name="noseInclination" value="0.31"/>
-			<gene name="nosePosition" value="0.68"/>
-			<gene name="nosePronounced" value="0.58"/>
-			<gene name="noseFlatten" value="0.5"/>
-			<gene name="chinSize" value="0.5"/>
-			<gene name="chinPronounced" value="0.5"/>
-			<gene name="chinPosition" value="0.5"/>
-			<gene name="mandibleSize" value="0.95"/>
-			<gene name="jawsSize" value="0.795"/>
-			<gene name="jawsPosition" value="0.5"/>
-			<gene name="cheekSize" value="0.355"/>
-			<gene name="cheekPosition" value="0.5"/>
-			<gene name="lowCheekPronounced" value="0.5"/>
-			<gene name="lowCheekPosition" value="0.44"/>
-			<gene name="foreheadSize" value="0.5"/>
-			<gene name="foreheadPosition" value="0.455"/>
-			<gene name="lipsSize" value="0.5"/>
-			<gene name="mouthSize" value="1"/>
-			<gene name="eyeRotation" value="0.505"/>
-			<gene name="eyeSize" value="0.995"/>
-			<gene name="breastSize" value="0.5"/>
-		</dna>
-	</archetype>
-	<archetype name="ZombieFemaleUMA" male="false" hair_color="255,255,255" eye_color="184,169,166" skin_color="135,170,186" type="Zombie" stance="Like" voice_set="trader">
-		<base_mesh_parts>
-			<part slot="head" layer="base" mesh="female_base_face">
-				<texture name="female_head_zombie" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="eyes" layer="inner" mesh="female_base_eyelashes">
-				<texture name="female_eyelashes" color="hair"/>
-			</part>
-			<part slot="head" layer="inner" mesh="female_shaggy_hair_ponytail">
-				<texture name="female_shaggy_hair" color="hair"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="eyes" layer="base" mesh="female_base_eyes">
-				<texture name="unisex_eye_shaded" color="255,255,255"/>
-			</part>
-			<part slot="hands" layer="base" mesh="female_base_hands">
-				<texture name="female_hands" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="chest" layer="base" mesh="female_base_chest">
-				<texture name="female_torso" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="legs" layer="base" mesh="female_base_legs">
-				<texture name="female_legs" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-			<part slot="feet" layer="base" mesh="female_base_feet">
-				<texture name="female_feet" color="skin"/>
-				<texture name="unisex_face_dirt_overlay" color="78,15,15,255"/>
-			</part>
-		</base_mesh_parts>
-		<preview_mesh_parts>
-		</preview_mesh_parts>
-		<expression blink="true" blink_duration="0.15" blink_min_delay="5" blink_max_delay="15" saccades="true">
-			<gene name="neckUp_Down" value="0"/>
-			<gene name="neckLeft_Right" value="0"/>
-			<gene name="neckTiltLeft_Right" value="0"/>
-			<gene name="headUp_Down" value="0"/>
-			<gene name="headLeft_Right" value="0"/>
-			<gene name="headTiltLeft_Right" value="0"/>
-			<gene name="jawOpen_Close" value="0"/>
-			<gene name="jawForward_Back" value="0"/>
-			<gene name="jawLeft_Right" value="0"/>
-			<gene name="mouthLeft_Right" value="0"/>
-			<gene name="mouthUp_Down" value="0"/>
-			<gene name="mouthNarrow_Pucker" value="0"/>
-			<gene name="tongueOut" value="0"/>
-			<gene name="tongueCurl" value="0"/>
-			<gene name="tongueUp_Down" value="0"/>
-			<gene name="tongueLeft_Right" value="0"/>
-			<gene name="tongueWide_Narrow" value="0"/>
-			<gene name="leftMouthSmile_Frown" value="-0.53"/>
-			<gene name="rightMouthSmile_Frown" value="-0.53"/>
-			<gene name="leftLowerLipUp_Down" value="0"/>
-			<gene name="rightLowerLipUp_Down" value="0"/>
-			<gene name="leftUpperLipUp_Down" value="0"/>
-			<gene name="rightUpperLipUp_Down" value="0"/>
-			<gene name="leftCheekPuff_Squint" value="0"/>
-			<gene name="rightCheekPuff_Squint" value="0"/>
-			<gene name="noseSneer" value="0"/>
-			<gene name="leftEyeOpen_Close" value="0"/>
-			<gene name="rightEyeOpen_Close" value="0"/>
-			<gene name="leftEyeUp_Down" value="0"/>
-			<gene name="rightEyeUp_Down" value="0"/>
-			<gene name="leftEyeIn_Out" value="0"/>
-			<gene name="rightEyeIn_Out" value="0"/>
-			<gene name="browsIn" value="0"/>
-			<gene name="leftBrowUp_Down" value="0.23"/>
-			<gene name="rightBrowUp_Down" value="0.23"/>
-			<gene name="midBrowUp_Down" value="-0.43"/>
-		</expression>
-		<dna>
-			<gene name="height" value="0.5"/>
-			<gene name="headSize" value="0.5"/>
-			<gene name="headWidth" value="0.5"/>
-			<gene name="handsSize" value="0.5"/>
-			<gene name="feetSize" value="0.5"/>
-			<gene name="muscle" value="0.5"/>
-			<gene name="weight" value="0.5"/>
-			<gene name="gluteusSize" value="0.5"/>
-			<gene name="earsSize" value="0.61"/>
-			<gene name="earsPosition" value="0.62"/>
-			<gene name="earsRotation" value="0.5"/>
-			<gene name="noseSize" value="1"/>
-			<gene name="noseCurve" value="1"/>
-			<gene name="noseWidth" value="0.735"/>
-			<gene name="noseInclination" value="0.615"/>
-			<gene name="nosePosition" value="0.68"/>
-			<gene name="nosePronounced" value="0.58"/>
-			<gene name="noseFlatten" value="0.5"/>
-			<gene name="chinSize" value="0.5"/>
-			<gene name="chinPronounced" value="0.5"/>
-			<gene name="chinPosition" value="0.5"/>
-			<gene name="mandibleSize" value="0.95"/>
-			<gene name="jawsSize" value="0.975"/>
-			<gene name="jawsPosition" value="0.5"/>
-			<gene name="cheekSize" value="0.945"/>
-			<gene name="cheekPosition" value="0.495"/>
-			<gene name="lowCheekPronounced" value="0.5"/>
-			<gene name="lowCheekPosition" value="0.57"/>
-			<gene name="foreheadSize" value="0.5"/>
-			<gene name="foreheadPosition" value="0.455"/>
-			<gene name="lipsSize" value="0.2"/>
-			<gene name="mouthSize" value="1"/>
-			<gene name="eyeRotation" value="0.505"/>
-			<gene name="eyeSize" value="0.995"/>
-			<gene name="breastSize" value="0.5"/>
-		</dna>
-	</archetype>
--->	
+
+
 	<archetype name="Madmole" male="true" hair_color="85,70,60" eye_color="100,110,115" skin_color="230,230,230" type="Player" stance="Like" voice_set="trader">
 		<base_mesh_parts>
 			<part slot="head" layer="base" mesh="male_base_face">
@@ -3214,9 +2443,6 @@
 			<part slot="feet" layer="base" mesh="male_base_feet">
 				<texture name="male_feet" color="skin"/>
 			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
-			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>
 			<part slot="chest" layer="base" mesh="male_clothes_suit_jacket">
@@ -3338,9 +2564,6 @@
 			</part>
 			<part slot="feet" layer="base" mesh="female_base_feet">
 				<texture name="female_feet" color="skin"/>
-			</part>
-			<part slot="back" layer="base" mesh="unisex_gear_backpack01">
-				<texture name="unisex_gear_backpack01" color="255,255,255"/>
 			</part>
 		</base_mesh_parts>
 		<preview_mesh_parts>

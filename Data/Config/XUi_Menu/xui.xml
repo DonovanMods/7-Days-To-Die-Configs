@@ -23,10 +23,6 @@
 			<window name="worldGeneration" />
 		</window_group>
 		
-		<window_group name="loadingProgress" controller="ProgressWindowGroup">
-			<window name="loadingProgress"/>
-		</window_group>
-		
 		<window_group name="messageBox" controller="MessageBoxWindowGroup">
 			<window name="messageBox" />
 		</window_group>
@@ -35,7 +31,7 @@
 			<window name="editingTools" />
 		</window_group>
 		
-		<window_group name="createWorld" controller="CreateWorld">
+		<window_group name="createWorld">
 			<window name="createWorld" />
 		</window_group>
 		
@@ -78,7 +74,7 @@
 		<window_group name="optionsAudio">
 			<window name="optionsAudio" />
 		</window_group>
-
+		
 		<window_group name="optionsControls">
 			<window name="optionsControls" />
 		</window_group>
@@ -113,6 +109,10 @@
 		
 		<window_group name="spawnselection">
 			<window name="spawnselection" />
+		</window_group>
+		
+		<window_group name="optionsTwitch">
+			<window name="optionsTwitch" />
 		</window_group>
 		
 	</ruleset>

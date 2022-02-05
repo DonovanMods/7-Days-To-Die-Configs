@@ -8,7 +8,8 @@
 		portrait="npc_joel"
 		greeting_type="nearby"
 		stance="Like" voice_set="trader"
-		trader_id="1" dialog_id="trader" />
+		trader_id="1" dialog_id="trader" quest_faction="1" />
+		
 	<npc_info
 		id="traderjen"
 		name="Trader Jen"
@@ -17,7 +18,7 @@
 		portrait="npc_jen"
 		greeting_type="nearby"
 		stance="Like" voice_set="trader_jen"
-		trader_id="2" dialog_id="trader" />
+		trader_id="2" dialog_id="trader" quest_faction="2" />
 
 	<npc_info
 		id="traderbob"
@@ -27,7 +28,7 @@
 		portrait="npc_bob"
 		greeting_type="nearby"
 		stance="Like" voice_set="trader"
-		trader_id="6" dialog_id="trader" />
+		trader_id="6" dialog_id="trader" quest_faction="3" />
 
 	<npc_info
 		id="traderhugh"
@@ -37,7 +38,7 @@
 		portrait="npc_hugh"
 		greeting_type="nearby"
 		stance="Neutral" voice_set="trader"
-		trader_id="7" dialog_id="trader" />
+		trader_id="7" dialog_id="trader" quest_faction="4" />
 
 
 	<npc_info
@@ -48,7 +49,7 @@
 		portrait="npc_rekt"
 		greeting_type="nearby"
 		stance="Dislike" voice_set="trader"
-		trader_id="8" dialog_id="trader" />
+		trader_id="8" dialog_id="trader" quest_faction="5" />
 
 
 	<npc_info

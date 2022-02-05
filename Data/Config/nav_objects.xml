@@ -53,7 +53,7 @@
 				<property name="max_distance" value="20"/>
 				<property name="color" value="255,0,0,255"/>
 				<property name="has_pulse" value="false"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="offset" value="0,0,0" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -84,7 +84,7 @@
 				<property name="max_distance" value="50"/>
 				<property name="color" value="255,255,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 			</onscreen_settings>
 		</nav_object_class>
 
@@ -114,7 +114,7 @@
 				<property name="max_distance" value="20"/>
 				<property name="color" value="255,255,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="offset" value="0.5,2,0.5" />
 			</onscreen_settings>
 
@@ -146,7 +146,7 @@
 				<property name="max_distance" value="500"/>
 				<property name="color" value="255,255,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 			</onscreen_settings>
 		</nav_object_class>
 
@@ -168,16 +168,17 @@
 				<property name="color" value="255,0,0,255"/>
 				<property name="has_pulse" value="true"/>
 				<property name="icon_clamped" value="false" />
+				<property name="depth_offset" value="50" />
 			</compass_settings>
 
-			<!-- <onscreen_settings> -->
-				<!-- <property name="sprite_name" value="ui_game_symbol_map_waypoint_set"/> -->
-				<!-- <property name="min_distance" value="0"/> -->
-				<!-- <property name="max_distance" value="-1"/> -->
-				<!-- <property name="color" value="255,255,0,255"/> -->
-				<!-- <property name="has_pulse" value="true"/> -->
-				<!-- <property name="show_distance" value="true"/> -->
-			<!-- </onscreen_settings> -->
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_map_waypoint_set"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="255,0,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="Distance"/>
+			</onscreen_settings>
 		</nav_object_class>
 
 		<nav_object_class name="waypoint">
@@ -219,7 +220,7 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,255,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 			</onscreen_settings>
 		</nav_object_class>
 
@@ -261,7 +262,7 @@
 				<!-- <property name="max_distance" value="-1"/> -->
 				<!-- <property name="color" value="255,255,0,255"/> -->
 				<!-- <property name="has_pulse" value="true"/> -->
-				<!-- <property name="show_distance" value="true"/> -->
+				<!-- <property name="text_type" value="Distance"/> -->
 			<!-- </inactive_onscreen_settings> -->
 		</nav_object_class>
 
@@ -282,7 +283,7 @@
 			  <property name="max_distance" value="20"/>
 			  <property name="color" value="255,255,0,255"/>
 			  <property name="has_pulse" value="true"/>
-			  <property name="show_distance" value="true"/>
+			  <property name="text_type" value="Distance"/>
 			  <property name="offset" value="0,2.1,0" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -370,6 +371,7 @@
 				<property name="color" value="255,0,0,255"/>
 				<property name="offset" value="0,1.9,0"/>
 			</onscreen_settings>
+			
 		</nav_object_class>
 
 		<nav_object_class name="animaltracking_bear" extends="animaltracking_hostile">
@@ -505,7 +507,7 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="offset" value="0,0,0" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -597,7 +599,7 @@
 				<property name="sprite_name" value="ui_game_symbol_treasure"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="show_offscreen" value="true" />
 				<property name="offset" value="0,0.25,0" />
 			</onscreen_settings>
@@ -633,7 +635,7 @@
 				<property name="max_distance" value="100"/>
 				<property name="color" value="0,255,255,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="offset" value="0,0.4,0" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -641,7 +643,7 @@
   	<nav_object_class name="NOJunkDrone">
 
 			<compass_settings>
-				<property name="sprite_name" value="ui_game_symbol_assemble"/>
+				<property name="sprite_name" value="ui_game_symbol_drone"/>
 				<property name="min_distance" value="0"/>
 				<property name="max_distance" value="-1"/>
 				<property name="max_scale_distance" value="1024"/>
@@ -651,15 +653,23 @@
 			</compass_settings>
 
 			<onscreen_settings>
-				<property name="sprite_name" value="ui_game_symbol_assemble"/>
+				<property name="sprite_name" value="ui_game_symbol_drone"/>
 				<property name="min_distance" value="6"/>
 				<property name="max_distance" value="20"/>
 				<property name="max_scale_distance" value="64"/>
 				<property name="color" value="255,255,0,255"/>
 				<property name="has_pulse" value="false"/>
-        <property name="offset" value="0,0.9,0" />
-        <property name="show_offscreen" value="true" />
+				<property name="offset" value="0,-0.3,0" />
+				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
+
+			<map_settings>
+			  <property name="sprite_name" value="ui_game_symbol_drone"/>
+			  <property name="min_distance" value="0"/>
+			  <property name="max_distance" value="-1"/>
+			  <property name="color" value="255,255,0,255"/>
+			  <property name="has_pulse" value="false"/>
+			</map_settings>
 		</nav_object_class>
 
 		<nav_object_class name="bicycle">
@@ -732,6 +742,30 @@
 				<property name="sprite_name" value="ui_game_symbol_gyrocopter"/>
 			</onscreen_settings>
 		</nav_object_class>
+		
+		<nav_object_class name="junk_turret" extends="bicycle">
+			<property name="requirement_type" value="IsVehicleOwner" />
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_junk_turret"/>
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_junk_turret"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="junk_sledge" extends="bicycle">
+			<property name="requirement_type" value="IsVehicleOwner" />
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_junk_sledge"/>
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_junk_sledge"/>
+			</onscreen_settings>
+		</nav_object_class>
 
 		<nav_object_class name="quest">
 
@@ -775,7 +809,7 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -822,7 +856,7 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
 
@@ -870,7 +904,7 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -917,8 +951,8 @@
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
-				<property name="offset" value="-0.5,2.1,-0.5" />
+				<property name="text_type" value="Distance"/>
+				<property name="offset" value="0,2.1,0" />
 				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -942,7 +976,31 @@
 				<property name="max_distance" value="5"/>
 				<property name="color" value="255,180,0,255"/>
 				<property name="has_pulse" value="true"/>
-				<property name="show_distance" value="true"/>
+				<property name="text_type" value="Distance"/>
+				<property name="show_offscreen" value="true" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="restore_power">
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_electric_generator"/>
+				<property name="up_sprite_name" value="ui_game_symbol_electric_generator_up"/>
+				<property name="down_sprite_name" value="ui_game_symbol_electric_generator_down"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_scale_distance" value="32"/>
+				<property name="color" value="255,180,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="icon_clamped" value="true" />
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_electric_generator"/>
+				<property name="min_distance" value="2"/>
+				<property name="max_distance" value="5"/>
+				<property name="color" value="255,180,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="Distance"/>
 				<property name="show_offscreen" value="true" />
 			</onscreen_settings>
 		</nav_object_class>
@@ -1020,6 +1078,189 @@
 				<property name="offset" value="0,0,0" />
 			</onscreen_settings>
 		</nav_object_class>
+		
+		<nav_object_class name="editor_block_trigger">
+			<property name="use_override_icon" value="true" />
 
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_fetch_loot"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="255,0,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="Name"/>
+				<property name="show_distance" value="false"/>
+				<property name="offset" value="0,0,0" />
+			</onscreen_settings>
+			
+		</nav_object_class>
+		
+		<nav_object_class name="quest_resource">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_resource"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="255,180,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="offset" value="0,0.5,0" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_supply">
+		<property name="requirement_type" value="IsTwitchSpawnedSelf" />
 
+			<map_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="has_pulse" value="true"/>
+			</map_settings>
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="500"/>
+				<property name="max_scale_distance" value="1024"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="icon_clamped" value="false" />
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="500"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="SpawnName"/>
+			</onscreen_settings>
+		</nav_object_class>
+
+		<nav_object_class name="twitch_supply_other">
+		<property name="requirement_type" value="IsTwitchSpawnedOther" />
+		
+			<map_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="255,255,255,255"/>
+			</map_settings>
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="500"/>
+				<property name="max_scale_distance" value="1024"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="icon_clamped" value="false" />
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_drop"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="500"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="text_type" value="SpawnName"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_spawn">
+			<property name="requirement_type" value="IsTwitchSpawnedSelf" />
+			
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_zombie"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="10"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="SpawnName"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,0.75,0" />
+			</onscreen_settings>
+		</nav_object_class>
+
+		<nav_object_class name="twitch_spawn_other">
+			<property name="requirement_type" value="IsTwitchSpawnedOther" />
+			
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_zombie"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="10"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="text_type" value="SpawnName"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,0.75,0" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1.25,0" />
+				<property name="sprite_size" value="64" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+				
+				<!-- <property name="sub_sprite_name" value="ui_game_symbol_twitch_overhead_level_4" /> -->
+				<!-- <property name="sub_sprite_offset" value="-32,0" /> -->
+				<!-- <property name="sub_sprite_size" value="16" /> -->
+				
+			</onscreen_settings>
+		</nav_object_class>
+
+		<nav_object_class name="twitch_vote_minion">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+				
+				<!-- <property name="sub_sprite_name" value="ui_game_symbol_twitch_overhead_level_3" /> -->
+				<!-- <property name="sub_sprite_offset" value="0,-20" /> -->
+				<!-- <property name="sub_sprite_size" value="8" /> -->
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_shield">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_shield_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,255,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_minion_shield">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_shield_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,255,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
 </nav_object_classes>

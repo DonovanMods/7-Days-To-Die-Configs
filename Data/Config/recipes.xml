@@ -78,7 +78,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammo44MagnumBulletHP" operation="set" value="1"/>
 -->
 
-
 <recipe name="resourceRockSmallBundle" count="1" craft_time="10" tags="learnable">
 	<ingredient name="resourceRockSmall" count="6000"/>
 </recipe>
@@ -132,12 +131,13 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="ammo9mmBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="1"/>
+	<ingredient name="resourceBulletTip" count="2"/>
 	<ingredient name="resourceGunPowder" count="2"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle9mmBulletAP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="80"/>
+	<ingredient name="resourceBulletTip" count="160"/>
 	<ingredient name="resourceGunPowder" count="160"/>
 	<ingredient name="resourceBulletCasing" count="80"/>
 </recipe>
@@ -147,6 +147,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGunPowder" count="2"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle44MagnumBulletBall" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="80"/>
 	<ingredient name="resourceGunPowder" count="160"/>
@@ -158,6 +159,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGunPowder" count="2"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle44MagnumBulletHP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="160"/>
 	<ingredient name="resourceGunPowder" count="160"/>
@@ -165,12 +167,13 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="ammo44MagnumBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="1"/>
+	<ingredient name="resourceBulletTip" count="2"/>
 	<ingredient name="resourceGunPowder" count="3"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle44MagnumBulletAP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="80"/>
+	<ingredient name="resourceBulletTip" count="160"/>
 	<ingredient name="resourceGunPowder" count="240"/>
 	<ingredient name="resourceBulletCasing" count="80"/>
 </recipe>
@@ -180,6 +183,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGunPowder" count="3"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle762mmBulletBall" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="80"/>
 	<ingredient name="resourceGunPowder" count="240"/>
@@ -191,6 +195,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGunPowder" count="3"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle762mmBulletHP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="160"/>
 	<ingredient name="resourceGunPowder" count="240"/>
@@ -198,26 +203,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="ammo762mmBulletAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="1"/>
+	<ingredient name="resourceBulletTip" count="2"/>
 	<ingredient name="resourceGunPowder" count="5"/>
 	<ingredient name="resourceBulletCasing" count="1"/>
 </recipe>
+
 <recipe name="ammoBundle762mmBulletAP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceBulletTip" count="80"/>
+	<ingredient name="resourceBulletTip" count="160"/>
 	<ingredient name="resourceGunPowder" count="400"/>
 	<ingredient name="resourceBulletCasing" count="80"/>
-</recipe>
-
-<recipe name="ammoBlunderbuss" count="1">
-	<ingredient name="resourceRockSmall" count="1"/>
-	<ingredient name="resourceGunPowder" count="2"/>
-	<ingredient name="resourcePaper" count="1"/>
-</recipe>
-
-<recipe name="ammoBundleBlunderbuss" count="1" craft_time="240" tags="learnable">
-	<ingredient name="resourceRockSmall" count="80"/>
-	<ingredient name="resourceGunPowder" count="320"/>
-	<ingredient name="resourcePaper" count="80"/>
 </recipe>
 
 <recipe name="ammoShotgunShell" count="1" craft_area="workbench" tags="workbenchCrafting">
@@ -225,6 +219,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGunPowder" count="4"/>
 	<ingredient name="resourcePaper" count="1"/>
 </recipe>
+
 <recipe name="ammoBundleShotgunShell" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBuckshot" count="80"/>
 	<ingredient name="resourceGunPowder" count="320"/>
@@ -233,23 +228,25 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="ammoShotgunSlug" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="2"/>
-	<ingredient name="resourceGunPowder" count="4"/>
+	<ingredient name="resourceGunPowder" count="5"/>
 	<ingredient name="resourceScrapPolymers" count="1"/>
 </recipe>
+
 <recipe name="ammoBundleShotgunSlug" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceBulletTip" count="160"/>
-	<ingredient name="resourceGunPowder" count="320"/>
+	<ingredient name="resourceGunPowder" count="400"/>
 	<ingredient name="resourceScrapPolymers" count="80"/>
 </recipe>
 
 <recipe name="ammoShotgunBreachingSlug" count="1" craft_time="9" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceForgedSteel" count="4"/>
+	<ingredient name="resourceForgedSteel" count="3"/>
 	<ingredient name="resourceClayLump" count="2"/>
 	<ingredient name="resourceGunPowder" count="4"/>
 	<ingredient name="resourceScrapPolymers" count="1"/>
 </recipe>
+
 <recipe name="ammoBundleShotgunBreachingSlug" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceForgedSteel" count="320"/>
+	<ingredient name="resourceForgedSteel" count="240"/>
 	<ingredient name="resourceClayLump" count="160"/>
 	<ingredient name="resourceGunPowder" count="320"/>
 	<ingredient name="resourceScrapPolymers" count="80"/>
@@ -258,6 +255,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="ammoJunkTurretRegular" count="1">
 	<ingredient name="resourceScrapIron" count="3"/>
 </recipe>
+
 <recipe name="ammoBundleJunkTurretRegular" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceScrapIron" count="2400"/>
 </recipe>
@@ -266,16 +264,18 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceScrapIron" count="1"/>
 	<ingredient name="resourceBuckshot" count="1"/>
 </recipe>
+
 <recipe name="ammoBundleJunkTurretShell" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceScrapIron" count="800"/>
 	<ingredient name="resourceBuckshot" count="800"/>
 </recipe>
 
 <recipe name="ammoJunkTurretAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceScrapIron" count="6"/>
 </recipe>
+
 <recipe name="ammoBundleJunkTurretAP" count="1" craft_time="360" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="3200"/>
+	<ingredient name="resourceScrapIron" count="4800"/>
 </recipe>
 
 <recipe name="ammoArrowFlaming" count="1" craft_time="12" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -384,12 +384,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceFeather" count="80"/>
 </recipe>
 
-<recipe name="ammoCrossbowBoltSteelAP" count="1" tags="learnable">
+<recipe name="ammoCrossbowBoltSteelAP" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceArrowHeadSteelAP" count="1"/>
 	<ingredient name="resourceScrapPolymers" count="2"/>
 </recipe>
 
-<recipe name="ammoBundleCrossbowBoltSteelAP" count="1" craft_time="240" tags="learnable">
+<recipe name="ammoBundleCrossbowBoltSteelAP" count="1" craft_time="240" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceArrowHeadSteelAP" count="80"/>
 	<ingredient name="resourceScrapPolymers" count="160"/>
 </recipe>
@@ -410,13 +410,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="3"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_iron"/>
 	</effect_group>
 </recipe>
 
 <recipe name="ammoGasCan" count="10" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 	<ingredient name="resourceOilShale" count="1"/>
 </recipe>
+
 <recipe name="ammoGasCanBundle" count="1" craft_time="600" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 	<ingredient name="resourceOilShale" count="800"/>
 </recipe>
@@ -561,7 +562,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="armorLeatherPants" count="1" craft_area="workbench" tags="learnable,perkLightArmor">
 	<ingredient name="resourceLeather" count="5"/>
 	<ingredient name="resourceDuctTape" count="1"/>
-	<ingredient name="resourceSewingKit" count="2"/>
+	<ingredient name="resourceSewingKit" count="1"/>
 	<effect_group>
 		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceLeather,resourceDuctTape"/>
 	</effect_group>
@@ -574,18 +575,18 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
 <recipe name="armorMilitaryStealthBoots" count="1" craft_area="workbench" tags="learnable,perkLightArmor">
 	<ingredient name="armorMilitarySetParts" count="4"/>
 	<ingredient name="resourceMilitaryFiber" count="1"/>
-	<ingredient name="resourceLeather" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="2"/>
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
@@ -596,7 +597,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
@@ -607,7 +608,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
@@ -618,7 +619,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
@@ -629,7 +630,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceSewingKit" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceLeather,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="armorMilitarySetParts,resourceMilitaryFiber,resourceScrapPolymers,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
@@ -760,14 +761,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceOil" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedSteel,gunHandgunT1PistolParts,resourceOil,resourceScrapPolymers"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedSteel,gunHandgunT1PistolParts,resourceOil,resourceScrapPolymers"/>
 	</effect_group>
 </recipe>
 
-<recipe name="awningBlockVariantHelper" count="1">
-	<ingredient name="resourceWood" count="4"/>
-	<ingredient name="resourceCloth" count="10"/>
-</recipe>
+<!-- <recipe name="awningBlockVariantHelper" count="1"> -->
+	<!-- <ingredient name="resourceWood" count="4"/> -->
+	<!-- <ingredient name="resourceCloth" count="10"/> -->
+<!-- </recipe> -->
 
 <recipe name="apparelBallCap" count="1" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceCloth" count="4"/>
@@ -794,13 +795,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceScrapPolymers" count="6"/>
 </recipe>
 
-<recipe name="bed01" count="1">
-	<ingredient name="resourceCloth" count="20"/>
-	<ingredient name="resourceCropCottonPlant" count="20"/>
-	<ingredient name="resourceSpring" count="10"/>
-	<ingredient name="resourceMetalPipe" count="10"/>
-</recipe>
-
 <recipe name="bed02" count="1">
 	<ingredient name="resourceCloth" count="40"/>
 	<ingredient name="resourceCropCottonPlant" count="40"/>
@@ -809,7 +803,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMetalPipe" count="10"/>
 </recipe>
 
-<recipe name="bedroll" count="1">
+<recipe name="bedrollBlockVariantHelper" count="1">
 	<ingredient name="resourceYuccaFibers" count="10"/>
 </recipe>
 
@@ -820,17 +814,17 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceElectricParts" count="6"/>
 	<ingredient name="resourceOil" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceForgedSteel,resourceMechanicalParts,resourceElectricParts,resourceOil"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceForgedSteel,resourceMechanicalParts,resourceElectricParts,resourceOil"/>
 	</effect_group>
 </recipe>
 
-<recipe name="brickBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_stone" count="10"/>
-	<ingredient name="unit_clay" count="60"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_stone"/>
-	</effect_group>
-</recipe>
+<!-- <recipe name="brickBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> -->
+	<!-- <ingredient name="unit_stone" count="10"/> -->
+	<!-- <ingredient name="unit_clay" count="60"/> -->
+	<!-- <effect_group> -->
+		<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_stone"/> -->
+	<!-- </effect_group> -->
+<!-- </recipe> -->
 
 <recipe name="bucketEmpty" count="1">
 	<ingredient name="resourceForgedIron" count="7"/>
@@ -839,6 +833,34 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="burningBarrelPlayer" count="1" craft_area="workbench" tags="workbenchCrafting">
 	<ingredient name="resourceForgedIron" count="3"/>
 	<ingredient name="resourceWood" count="10"/>
+</recipe>
+
+<recipe name="cellarDoorDoubleWood" count="1">
+	<ingredient name="resourceWood" count="10"/>
+</recipe>
+
+<recipe name="cellarDoorDoubleIron" count="1">
+	<ingredient name="resourceForgedIron" count="10"/>
+</recipe>
+
+<recipe name="cellarDoorDoubleSteel" count="1" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="12"/>
+	<ingredient name="resourceSpring" count="2"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="shuttersWoodBlockVariantHelper" count="1">
+	<ingredient name="resourceWood" count="10"/>
+</recipe>
+
+<recipe name="shuttersIronBlockVariantHelper" count="1">
+	<ingredient name="resourceForgedIron" count="10"/>
+</recipe>
+
+<recipe name="shuttersSteelBlockVariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="12"/>
+	<ingredient name="resourceSpring" count="2"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
 </recipe>
 
 <recipe name="campfire" count="1">
@@ -858,7 +880,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="2"/>
 	<ingredient name="resourceElectricParts" count="4"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -866,7 +888,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="4"/>
 	<ingredient name="resourceElectricParts" count="4"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -874,7 +896,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="4"/>
 	<ingredient name="resourceElectricParts" count="4"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -923,11 +945,41 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="3"/>
 </recipe>
 
+<recipe name="cntMailBox01VariantHelper" count="1">
+	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceWood" count="5"/>
+</recipe>
+
+<recipe name="cntMailBox02VariantHelper" count="1">
+	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceWood" count="5"/>
+</recipe>
+
+<recipe name="cntMailBox03VariantHelper" count="1">
+	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceWood" count="5"/>
+</recipe>
+
 <recipe name="cntSecureStorageChest" count="1">
 	<ingredient name="resourceWood" count="10"/>
 </recipe>
 
+<recipe name="cntStorageGenericSigned" count="1">
+	<ingredient name="resourceNail" count="10"/>
+	<ingredient name="resourceWood" count="12"/>
+</recipe>
+
+<recipe name="cntStorageGeneric" count="1">
+	<ingredient name="resourceNail" count="10"/>
+	<ingredient name="resourceWood" count="12"/>
+</recipe>
+
 <recipe name="cntWoodFurnitureBlockVariantHelper" count="1">
+	<ingredient name="resourceNail" count="10"/>
+	<ingredient name="resourceWood" count="12"/>
+</recipe>
+
+<recipe name="cntWoodFurnitureBlockVariantHelper2" count="1">
 	<ingredient name="resourceNail" count="10"/>
 	<ingredient name="resourceWood" count="12"/>
 </recipe>
@@ -956,7 +1008,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceElectricParts" count="4"/>
 	<ingredient name="resourceOil" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts,resourceOil"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts,resourceOil"/>
 	</effect_group>
 </recipe>
 
@@ -964,7 +1016,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_glass" count="10"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_glass"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_glass"/>
 	</effect_group>
 </recipe>
 
@@ -972,18 +1024,8 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="5"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_iron"/>
 	</effect_group>
-</recipe>
-
-<recipe name="drinkJarGrainAlcohol" count="1" craft_area="campfire" craft_tool="toolBeaker">
-	<ingredient name="foodCornMeal" count="3"/>
-	<ingredient name="drinkJarBoiledWater" count="1"/>
-</recipe>
-
-<recipe name="drinkJarGrainAlcohol" count="1" craft_area="chemistryStation" tags="chemStationCrafting">
-	<ingredient name="foodCornMeal" count="1"/>
-	<ingredient name="drinkJarRiverWater" count="1"/>
 </recipe>
 
 <recipe name="drinkJarBeer" count="1" craft_area="chemistryStation" tags="perkMasterChef,learnable,chemStationCrafting">
@@ -1029,6 +1071,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="foodHoney" count="5"/>
 	<ingredient name="foodCropMushrooms" count="5"/>
 	<ingredient name="ammoGasCan" count="10"/>
+	<ingredient name="foodCropGraceCorn" count="1"/>
 	<effect_group>
 		<passive_effect name="CraftingIngredientCount" level="4,5" operation="perc_add" value="-.2" tags="casinoCoin,foodHoney,foodCropMushrooms,ammoGasCan"/>
 	</effect_group>
@@ -1039,13 +1082,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="drinkJarRedTea" count="2"/>
 	<ingredient name="resourceAcid" count="1"/>
 	<ingredient name="drinkJarBeer" count="1"/>
+	<ingredient name="foodCropGraceCorn" count="1"/>
 </recipe>
 
 <recipe name="drinkJarGrandpasMoonshine" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 	<ingredient name="foodCornMeal" count="5"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 	<ingredient name="foodCropBlueberries" count="5"/>
 	<ingredient name="resourceAcid" count="1"/>
+	<ingredient name="foodCropGraceCorn" count="1"/>
 	<effect_group>
 		<passive_effect name="CraftingIngredientCount" level="4,5" operation="base_add" value="-1" tags="foodCornMeal,foodCropBlueberries"/>
 	</effect_group>
@@ -1061,9 +1106,9 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="drinkJarEmpty" count="1"/>
 </recipe>
 
-<recipe name="drinkJarYuccaJuice" count="1" tags="perkMasterChef">
+<recipe name="drinkJarYuccaJuice" count="1" craft_area="campfire" tags="perkMasterChef">
 	<ingredient name="foodCropYuccaFruit" count="2"/>
-	<ingredient name="drinkJarBoiledWater" count="1"/>
+	<ingredient name="drinkJarEmpty" count="1"/>
 </recipe>
 
 <recipe name="drinkYuccaJuiceSmoothie" count="1" tags="perkMasterChef,learnable">
@@ -1077,20 +1122,20 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="drugAntibiotics" count="1" craft_area="campfire" craft_tool="toolBeaker" tags="learnable">
-	<ingredient name="foodMoldyBread" count="4"/>
+	<ingredient name="foodShamSandwich" count="4"/>
 	<ingredient name="resourcePotassiumNitratePowder" count="3"/>
 	<ingredient name="drinkJarBoiledWater" count="1"/>
 </recipe>
 
 <recipe name="drugAntibiotics" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
-	<ingredient name="foodMoldyBread" count="1"/>
+	<ingredient name="foodShamSandwich" count="1"/>
 	<ingredient name="resourcePotassiumNitratePowder" count="1"/>
 	<ingredient name="drinkJarRiverWater" count="1"/>
 </recipe>
 
 <recipe name="drugFortBites" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 	<ingredient name="medicalBloodBag" count="5"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 	<ingredient name="foodRottingFlesh" count="20"/>
 	<ingredient name="drugVitamins" count="1"/>
 </recipe>
@@ -1112,15 +1157,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="drugRecog" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
-	<ingredient name="resourceAcid" count="5"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="resourceAcid" count="2"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
 	<ingredient name="drugVitamins" count="1"/>
 </recipe>
 
 <recipe name="drugSteroids" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting">
 	<ingredient name="resourceOil" count="1"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 	<ingredient name="resourceTestosteroneExtract" count="1"/>
 </recipe>
 
@@ -1128,7 +1173,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="5"/>
 	<ingredient name="resourceElectricParts" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -1136,7 +1181,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="2"/>
 	<ingredient name="resourceElectricParts" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -1144,7 +1189,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="2"/>
 	<ingredient name="resourceElectricParts" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron"/>
 	</effect_group>
 </recipe>
 
@@ -1164,7 +1209,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceOil" count="5"/>
 </recipe>
 
-<recipe name="farmPlotBlockPlayer" count="1" tags="perkLivingOffTheLandCrafting" craft_time="20">
+<recipe name="farmPlotBlockVariantHelper" count="1" tags="perkLivingOffTheLandCrafting" craft_time="20">
 	<ingredient name="resourceWood" count="4"/>
 	<ingredient name="foodRottingFlesh" count="10"/>
 	<ingredient name="resourcePotassiumNitratePowder" count="25"/>
@@ -1174,9 +1219,19 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="flagstoneBlockVariantHelper" count="1">
-	<ingredient name="resourceCobblestones" count="4"/>
-</recipe>
+<!-- <recipe name="farmPlotBlockPlayerRaised" count="1" tags="perkLivingOffTheLandCrafting" craft_time="20"> -->
+	<!-- <ingredient name="resourceWood" count="4"/> -->
+	<!-- <ingredient name="foodRottingFlesh" count="10"/> -->
+	<!-- <ingredient name="resourcePotassiumNitratePowder" count="25"/> -->
+	<!-- <ingredient name="resourceClayLump" count="100"/> -->
+	<!-- <effect_group> -->
+		<!-- <passive_effect name="CraftingIngredientCount" level="1,2,3" operation="perc_add" value="-.3,-.5,-.5" tags="foodRottingFlesh,resourcePotassiumNitratePowder,resourceClayLump"/> -->
+	<!-- </effect_group> -->
+<!-- </recipe> -->
+
+<!-- <recipe name="flagstoneBlockVariantHelper" count="1"> -->
+	<!-- <ingredient name="resourceCobblestones" count="4"/> -->
+<!-- </recipe> -->
 
 <recipe name="foodBaconAndEggs" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 	<ingredient name="foodRawMeat" count="5"/>
@@ -1214,7 +1269,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="foodEgg" count="1"/>
 	<ingredient name="foodCornMeal" count="1"/>
 	<ingredient name="resourceAnimalFat" count="1"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 </recipe>
 
 <recipe name="foodPumpkinBread" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
@@ -1266,6 +1321,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="foodCornMeal" count="1">
 	<ingredient name="foodCropCorn" count="1"/>
 </recipe>
+
+<!--
+<recipe name="foodCornMeal" count="2">
+	<ingredient name="foodCropGraceCorn" count="1"/>
+</recipe>
+-->
 
 <recipe name="foodCornOnTheCob" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 	<ingredient name="foodCropCorn" count="1"/>
@@ -1355,11 +1416,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="foodMoldyBread" count="1" craft_area="chemistryStation" tags="chemStationCrafting">
-	<ingredient name="foodShamSandwich" count="10"/>
-	<ingredient name="drinkJarRiverWater" count="1"/>
-</recipe>
-
 <recipe name="foodShamChowder" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
 	<ingredient name="foodCanSham" count="1"/>
 	<ingredient name="foodCropPotato" count="2"/>
@@ -1404,7 +1460,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="12"/>
 	<ingredient name="resourceElectricParts" count="12"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceScrapIron,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceScrapIron,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -1420,8 +1476,26 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="24"/>
 	<ingredient name="resourceElectricParts" count="20"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
+</recipe>
+
+<recipe name="rollUpDoor3x3VariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceForgedIron" count="100"/>
+	<ingredient name="resourceSpring" count="12"/>
+	<ingredient name="resourceMechanicalParts" count="15"/>
+</recipe>
+
+<recipe name="rollUpDoor5x4VariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceForgedIron" count="150"/>
+	<ingredient name="resourceSpring" count="12"/>
+	<ingredient name="resourceMechanicalParts" count="15"/>
+</recipe>
+
+<recipe name="rollUpDoor7x4VariantHelper" count="1" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceForgedIron" count="200"/>
+	<ingredient name="resourceSpring" count="12"/>
+	<ingredient name="resourceMechanicalParts" count="15"/>
 </recipe>
 
 <recipe name="metalReinforcedWoodDrawBridge" count="1" craft_area="workbench" >
@@ -1438,7 +1512,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="30"/>
 	<ingredient name="resourceElectricParts" count="30"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceWood,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceWood,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -1447,7 +1521,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="10"/>
 	<ingredient name="resourceElectricParts" count="14"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -1458,7 +1532,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="20"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_stone,unit_glass,unit_iron,unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_stone,unit_glass,unit_iron,unit_lead"/>
 	</effect_group>
 </recipe>
 
@@ -1467,7 +1541,17 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="5"/>
 	<ingredient name="unit_clay" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_glass,unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_glass,unit_lead"/>
+	</effect_group>
+</recipe>
+
+
+<recipe name="gunHandgunT0PipePistol" count="1" tags="perkGunslinger">
+	<ingredient name="resourceMetalPipe" count="4"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceWood" count="6"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMetalPipe,resourceGlue,resourceWood"/>
 	</effect_group>
 </recipe>
 
@@ -1504,6 +1588,109 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
+<recipe name="gunHandgunT3SMG5" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
+	<ingredient name="gunHandgunT1PistolParts" count="5"/>
+	<ingredient name="resourceForgedSteel" count="10"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceSpring" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunHandgunT1PistolParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunShotgunT0PipeShotgun" count="1" tags="perkBoomstick">
+	<ingredient name="resourceMetalPipe" count="4"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceWood" count="6"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMetalPipe,resourceGlue,resourceWood"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunShotgunT1DoubleBarrel" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+	<ingredient name="gunShotgunT1DoubleBarrelParts" count="4"/>
+	<ingredient name="resourceForgedIron" count="10"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceSpring" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunShotgunT2PumpShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+	<ingredient name="gunShotgunT1DoubleBarrelParts" count="5"/>
+	<ingredient name="resourceForgedSteel" count="15"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="resourceScrapPolymers" count="20"/>
+	<ingredient name="resourceSpring" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunShotgunT3AutoShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+	<ingredient name="gunShotgunT1DoubleBarrelParts" count="6"/>
+	<ingredient name="resourceForgedSteel" count="30"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="resourceScrapPolymers" count="40"/>
+	<ingredient name="resourceSpring" count="4"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunRifleT0PipeRifle" count="1" tags="perkDeadEye">
+	<ingredient name="resourceMetalPipe" count="4"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceWood" count="6"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMetalPipe,resourceGlue,resourceWood"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunRifleT1HuntingRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+	<ingredient name="gunRifleT1HuntingRifleParts" count="4"/>
+	<ingredient name="resourceForgedIron" count="10"/>
+	<ingredient name="resourceDuctTape" count="2"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceSpring" count="2"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunRifleT2LeverActionRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+	<ingredient name="gunRifleT1HuntingRifleParts" count="5"/>
+	<ingredient name="resourceForgedSteel" count="15"/>
+	<ingredient name="resourceDuctTape" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="20"/>
+	<ingredient name="resourceSpring" count="10"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunRifleT3SniperRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
+	<ingredient name="gunRifleT1HuntingRifleParts" count="6"/>
+	<ingredient name="resourceForgedSteel" count="30"/>
+	<ingredient name="resourceDuctTape" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="40"/>
+	<ingredient name="resourceSpring" count="12"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+	</effect_group>
+</recipe>
+
+<recipe name="gunMGT0PipeMachineGun" count="1" tags="perkMachineGunner">
+	<ingredient name="resourceMetalPipe" count="4"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceWood" count="6"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMetalPipe,resourceGlue,resourceWood"/>
+	</effect_group>
+</recipe>
 
 <recipe name="gunMGT1AK47" count="1" craft_area="workbench" tags="learnable,perkMachineGunner">
 	<ingredient name="gunMGT1AK47Parts" count="4"/>
@@ -1538,38 +1725,16 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="gunBotT1JunkSledge" count="1" craft_area="workbench" tags="learnable,perkTurrets">
-	<ingredient name="gunBotRoboticsParts" count="4"/>
-	<ingredient name="resourceForgedIron" count="40"/>
-	<ingredient name="resourceDuctTape" count="10"/>
-	<ingredient name="resourceScrapPolymers" count="10"/>
-	<ingredient name="resourceSpring" count="10"/>
+<recipe name="gunExplosivesT3RocketLauncher" count="1" craft_area="workbench" tags="learnable,perkDemolitionsExpert">
+	<ingredient name="gunExplosivesT3RocketLauncherParts" count="4"/>
+	<ingredient name="resourceForgedSteel" count="20"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="resourceElectricParts" count="5"/>
+	<ingredient name="resourceSpring" count="3"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunExplosivesT3RocketLauncherParts,resourceForgedSteel,resourceDuctTape,resourceElectricParts,resourceSpring"/>
 	</effect_group>
 </recipe>
-
-<recipe name="gunBotT2JunkTurret" count="1" craft_area="workbench" tags="learnable,perkTurrets">
-	<ingredient name="gunBotRoboticsParts" count="4"/>
-	<ingredient name="resourceForgedSteel" count="40"/>
-	<ingredient name="resourceDuctTape" count="10"/>
-	<ingredient name="resourceScrapPolymers" count="10"/>
-	<ingredient name="resourceSpring" count="10"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<!--<recipe name="gunBotT3JunkDrone" count="1" craft_area="workbench" tags="learnable,perkTurrets">
-	<ingredient name="gunBotRoboticsParts" count="5"/>
-	<ingredient name="resourceForgedSteel" count="10"/>
-	<ingredient name="resourceDuctTape" count="15"/>
-	<ingredient name="resourceScrapPolymers" count="15"/>
-	<ingredient name="motionsensor" count="2"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,motionsensor"/>
-	</effect_group>
-</recipe>-->
 
 <recipe name="gunBowT0PrimitiveBow" count="1" tags="perkArchery">
 	<ingredient name="resourceWood" count="8"/>
@@ -1620,97 +1785,36 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="gunRifleT1HuntingRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
-	<ingredient name="gunRifleT1HuntingRifleParts" count="4"/>
-	<ingredient name="resourceForgedIron" count="10"/>
-	<ingredient name="resourceDuctTape" count="2"/>
-	<ingredient name="resourceScrapPolymers" count="10"/>
-	<ingredient name="resourceSpring" count="2"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<recipe name="gunRifleT2MarksmanRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
-	<ingredient name="gunRifleT1HuntingRifleParts" count="5"/>
-	<ingredient name="resourceForgedSteel" count="15"/>
+<recipe name="gunBotT1JunkSledge" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+	<ingredient name="gunBotRoboticsParts" count="4"/>
+	<ingredient name="resourceForgedIron" count="40"/>
 	<ingredient name="resourceDuctTape" count="10"/>
-	<ingredient name="resourceScrapPolymers" count="20"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
 	<ingredient name="resourceSpring" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
 	</effect_group>
 </recipe>
 
-<recipe name="gunRifleT3SniperRifle" count="1" craft_area="workbench" tags="learnable,perkDeadEye">
-	<ingredient name="gunRifleT1HuntingRifleParts" count="6"/>
-	<ingredient name="resourceForgedSteel" count="30"/>
+<recipe name="gunBotT2JunkTurret" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+	<ingredient name="gunBotRoboticsParts" count="4"/>
+	<ingredient name="resourceForgedSteel" count="40"/>
 	<ingredient name="resourceDuctTape" count="10"/>
-	<ingredient name="resourceScrapPolymers" count="40"/>
-	<ingredient name="resourceSpring" count="12"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunRifleT1HuntingRifleParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<recipe name="gunShotgunT0Blunderbuss" count="1" tags="perkBoomstick">
-	<ingredient name="resourceMetalPipe" count="4"/>
-	<ingredient name="resourceGlue" count="2"/>
-	<ingredient name="resourceWood" count="6"/>
-</recipe>
-
-<recipe name="gunShotgunT1DoubleBarrel" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
-	<ingredient name="gunShotgunT1DoubleBarrelParts" count="4"/>
-	<ingredient name="resourceForgedIron" count="10"/>
-	<ingredient name="resourceDuctTape" count="2"/>
 	<ingredient name="resourceScrapPolymers" count="10"/>
-	<ingredient name="resourceSpring" count="2"/>
+	<ingredient name="resourceSpring" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedIron,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
 	</effect_group>
 </recipe>
 
-<recipe name="gunShotgunT2PumpShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
-	<ingredient name="gunShotgunT1DoubleBarrelParts" count="5"/>
-	<ingredient name="resourceForgedSteel" count="15"/>
-	<ingredient name="resourceDuctTape" count="3"/>
-	<ingredient name="resourceScrapPolymers" count="20"/>
-	<ingredient name="resourceSpring" count="3"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<recipe name="gunShotgunT3AutoShotgun" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
-	<ingredient name="gunShotgunT1DoubleBarrelParts" count="6"/>
-	<ingredient name="resourceForgedSteel" count="30"/>
-	<ingredient name="resourceDuctTape" count="3"/>
-	<ingredient name="resourceScrapPolymers" count="40"/>
-	<ingredient name="resourceSpring" count="4"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunShotgunT1DoubleBarrelParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<recipe name="gunExplosivesT3RocketLauncher" count="1" craft_area="workbench" tags="learnable,perkDemolitionsExpert">
-	<ingredient name="gunExplosivesT3RocketLauncherParts" count="4"/>
-	<ingredient name="resourceForgedSteel" count="20"/>
-	<ingredient name="resourceDuctTape" count="3"/>
-	<ingredient name="resourceElectricParts" count="5"/>
-	<ingredient name="resourceSpring" count="3"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunExplosivesT3RocketLauncherParts,resourceForgedSteel,resourceDuctTape,resourceElectricParts,resourceSpring"/>
-	</effect_group>
-</recipe>
-
-<recipe name="gunHandgunT3SMG5" count="1" craft_area="workbench" tags="learnable,perkGunslinger">
-	<ingredient name="gunHandgunT1PistolParts" count="5"/>
+<recipe name="gunBotT3JunkDrone" count="1" craft_area="workbench" tags="learnable,perkTurrets">
+	<ingredient name="gunBotRoboticsParts" count="5"/>
 	<ingredient name="resourceForgedSteel" count="10"/>
-	<ingredient name="resourceDuctTape" count="3"/>
-	<ingredient name="resourceScrapPolymers" count="10"/>
-	<ingredient name="resourceSpring" count="3"/>
+	<ingredient name="resourceDuctTape" count="15"/>
+	<ingredient name="resourceScrapPolymers" count="15"/>
+	<ingredient name="motionsensor" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunHandgunT1PistolParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,resourceSpring"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="gunBotRoboticsParts,resourceForgedSteel,resourceDuctTape,resourceScrapPolymers,motionsensor"/>
 	</effect_group>
 </recipe>
 
@@ -1722,7 +1826,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceSpring" count="5"/>
 </recipe>
 
-<recipe name="hayBaleBlock" count="1">
+<recipe name="hayBaleSquare" count="1">
 	<ingredient name="resourceYuccaFibers" count="10"/>
 </recipe>
 
@@ -1730,7 +1834,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="100"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -1738,7 +1842,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="100"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
+	</effect_group>
+</recipe>
+
+<recipe name="ironBarsCNR" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+	<ingredient name="unit_iron" count="100"/>
+	<ingredient name="unit_clay" count="20"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -1811,7 +1923,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="medicalFirstAidKit" count="1" craft_area="chemistryStation" tags="learnable,chemStationCrafting" >
 	<ingredient name="medicalBloodBag" count="1"/>
-	<ingredient name="drinkJarGrainAlcohol" count="1"/>
+	<ingredient name="drinkJarBeer" count="1"/>
 	<ingredient name="medicalBandage" count="1"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
@@ -1847,7 +1959,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceWood" count="5"/>
 </recipe>
 
-<recipe name="meleeWpnClubT3SteelClub" count="1" tags="learnable,perkPummelPete">
+<recipe name="meleeWpnClubT3SteelClub" count="1" craft_area="workbench" tags="learnable,perkPummelPete">
 	<ingredient name="meleeWpnClubT3SteelClubParts" count="5"/>
 	<ingredient name="resourceForgedSteel" count="10"/>
 	<ingredient name="resourceWood" count="10"/>
@@ -1942,6 +2054,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="4"/>
 	<ingredient name="resourceScrapPolymers" count="4"/>
 </recipe>
+
 <!--
 <recipe name="meleeToolFarmT1IronHoe" count="1" tags="learnable,perkLivingOffTheLand">
 	<ingredient name="resourceForgedIron" count="16"/>
@@ -2057,6 +2170,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceWood" count="2"/>
 </recipe>
 
+<recipe name="meleeWpnBatonT0PipeBaton" count="1" tags="perkElectrocutioner">
+	<ingredient name="resourceMetalPipe" count="4"/>
+	<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceLeather" count="3"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceMetalPipe,resourceGlue,resourceLeather"/>
+	</effect_group>
+</recipe>
+
 <recipe name="meleeWpnBatonT2StunBaton" count="1" craft_area="workbench" tags="learnable,perkElectrocutioner">
 	<ingredient name="meleeWpnBatonT2StunBatonParts" count="4"/>
 	<ingredient name="resourceForgedIron" count="5"/>
@@ -2088,22 +2210,23 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="meleeToolSalvageT2Ratchet" count="1" tags="learnable,perkSalvageOperations">
-	<ingredient name="resourceForgedIron" count="16"/>
+<recipe name="meleeToolSalvageT2Ratchet" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
+	<ingredient name="meleeToolAllSteelParts" count="5"/>
+	<ingredient name="resourceForgedSteel" count="8"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
-	<ingredient name="resourceDuctTape" count="2"/>
 	<ingredient name="resourceSpring" count="2"/>
+	<ingredient name="resourceDuctTape" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="resourceForgedIron,resourceMechanicalParts,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="meleeToolAllSteelParts,resourceForgedSteel,resourceMechanicalParts,resourceSpring,resourceDuctTape"/>
 	</effect_group>
 </recipe>
 
-<recipe name="meleeToolSalvageT3ImpactDriver" count="1" tags="learnable,perkSalvageOperations">
+<recipe name="meleeToolSalvageT3ImpactDriver" count="1" craft_area="workbench" tags="learnable,perkSalvageOperations">
 	<ingredient name="meleeToolAxeT3ChainsawParts" count="5"/>
 	<ingredient name="resourceForgedSteel" count="16"/>
 	<ingredient name="resourceMechanicalParts" count="6"/>
-	<ingredient name="resourceDuctTape" count="3"/>
 	<ingredient name="resourceSpring" count="3"/>
+	<ingredient name="resourceDuctTape" count="3"/>
 	<effect_group>
 		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value=".5,2.5" tags="meleeToolAxeT3ChainsawParts,resourceForgedSteel,resourceMechanicalParts,resourceDuctTape"/>
 	</effect_group>
@@ -2134,48 +2257,48 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="metalSignLetterNumberBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="15"/>
-	<ingredient name="unit_clay" count="3"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
+<!-- <recipe name="metalSignLetterNumberBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> -->
+	<!-- <ingredient name="unit_iron" count="15"/> -->
+	<!-- <ingredient name="unit_clay" count="3"/> -->
+	<!-- <effect_group> -->
+		<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/> -->
+	<!-- </effect_group> -->
+<!-- </recipe> -->
 
 <recipe name="metalTrussingIBeamBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="40"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
-<recipe name="mineCandyTin" count="1" craft_area="workbench" > <!-- trap size 1 -->
+<recipe name="mineCandyTin" count="1" > <!-- trap size 1 -->
 	<ingredient name="resourceScrapIron" count="4"/>
 	<ingredient name="resourceGunPowder" count="4"/>
-	<ingredient name="resourceCandyTin" count="1"/>
 	<ingredient name="resourceNail" count="1"/>
+	<ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
 <recipe name="mineHubcap" count="1" craft_area="workbench" tags="learnable,workbenchCrafting"> <!-- trap size 2 -->
-	<ingredient name="resourceScrapIron" count="8"/>
+	<ingredient name="resourceForgedIron" count="1"/>
 	<ingredient name="resourceGunPowder" count="8"/>
-	<ingredient name="resourceHubcap" count="1"/>
-	<ingredient name="resourceSpring" count="1"/>
+	<ingredient name="resourceNail" count="1"/>
+	<ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
 <recipe name="mineAirFilter" count="1" craft_area="workbench" tags="learnable,workbenchCrafting"> <!-- trap size 3 -->
-	<ingredient name="resourceScrapIron" count="12"/>
+	<ingredient name="resourceForgedIron" count="1"/>
 	<ingredient name="resourceGunPowder" count="12"/>
-	<ingredient name="resourceAirFilter" count="1"/>
 	<ingredient name="resourceSpring" count="1"/>
+	<ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
 <recipe name="mineCookingPot" count="1" craft_area="workbench" tags="learnable,workbenchCrafting"> <!-- trap size 1.1 -->
-	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceForgedIron" count="1"/>
 	<ingredient name="resourceGunPowder" count="5"/>
-	<ingredient name="toolCookingPot" count="1"/>
 	<ingredient name="resourceNail" count="1"/>
+	<ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
 <recipe name="modArmorAdvancedMuffledConnectors" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -2626,12 +2749,89 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceSpring" count="10"/>
 </recipe>
 
+<recipe name="modRoboticDroneArmorPlatingMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modRoboticDroneCargoMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modRoboticDroneMedicMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modRoboticDroneHeadlampMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceHeadlight" count="1"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modRoboticDroneMoraleBoosterMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceCloth" count="10"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<!-- <recipe name="modRoboticDroneWeaponMod" count="1" craft_area="workbench" tags="learnable,workbenchCrafting"> -->
+	<!-- <ingredient name="resourceForgedSteel" count="5"/> -->
+	<!-- <ingredient name="resourceScrapPolymers" count="10"/> -->
+	<!-- <ingredient name="resourceElectricParts" count="4"/> -->
+	<!-- <ingredient name="resourceMechanicalParts" count="4"/> -->
+<!-- </recipe> -->
+
+<recipe name="modVehicleFuelSaver" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceAcid" count="4"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modVehicleOffRoadHeadlights" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+	<ingredient name="resourceHeadlight" count="4"/>
+</recipe>
+
+<recipe name="modVehicleSuperCharger" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="10"/>
+	<ingredient name="resourceMetalPipe" count="10"/>
+	<ingredient name="resourceRadiator" count="1"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
+<recipe name="modVehicleExpandedSeat" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceCloth" count="10"/>
+	<ingredient name="resourceLeather" count="4"/>
+	<ingredient name="resourceSpring" count="4"/>
+</recipe>
+
+<recipe name="modVehicleReserveFuelTank" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceDuctTape" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceMechanicalParts" count="4"/>
+</recipe>
+
 <recipe name="motionsensor" count="1" craft_area="workbench" tags="perkAdvancedEngineering,learnable">
 	<ingredient name="resourceForgedIron" count="2"/>
 	<ingredient name="resourceElectricParts" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -2640,6 +2840,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceLeather" count="8"/>
 	<ingredient name="resourceMechanicalParts" count="4"/>
 	<ingredient name="resourceCropCottonPlant" count="10"/>
+</recipe>
+
+<recipe name="oldChair1VariantHelper" count="1">
+	<ingredient name="resourceWood" count="10"/>
+	<ingredient name="resourceScrapIron" count="5"/>
+	<ingredient name="resourceCloth" count="5"/>
 </recipe>
 
 <!-- Clothing = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -2863,16 +3069,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceYuccaFibers" count="5"/>
 </recipe>
 
-<recipe name="pouredConcreteBlockVariantHelper" count="1" craft_area="cementMixer" tags="cementMixerCrafting">
-	<ingredient name="resourceConcreteMix" count="10"/>
-</recipe>
-
 <recipe name="pressureplate" count="1" craft_area="workbench" tags="perkAdvancedEngineering,learnable">
 	<ingredient name="resourceForgedIron" count="10"/>
 	<ingredient name="resourceMechanicalParts" count="2"/>
 	<ingredient name="resourceElectricParts" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -2881,33 +3083,22 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="8"/>
 	<ingredient name="resourceElectricParts" count="6"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
 <recipe name="rScrapIronPlateMine" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
 	<ingredient name="resourceScrapIron" count="30"/>
 	<ingredient name="resourceGunPowder" count="8"/>
+	<ingredient name="resourceSpring" count="1"/>
 	<ingredient name="resourceDuctTape" count="1"/>
-</recipe>
-
-<recipe name="rebarFrameBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="5"/>
-	<ingredient name="unit_clay" count="1"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="resourceAirFilter" count="1" craft_area="workbench" tags="workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="15"/>
 </recipe>
 
 <recipe name="resourceArrowHeadIron" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="2"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -2915,7 +3106,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="5"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -2923,7 +3114,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="3"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_lead"/>
 	</effect_group>
 </recipe>
 
@@ -2931,7 +3122,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_brass" count="5"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_brass"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_brass"/>
 	</effect_group>
 </recipe>
 
@@ -2939,18 +3130,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="2"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_lead"/>
 	</effect_group>
-</recipe>
-
-<recipe name="resourceCandyTin" count="1" craft_area="workbench" tags="workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="5"/>
 </recipe>
 
 <recipe name="resourceCement" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
 	<ingredient name="unit_stone" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_stone"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_stone"/>
 	</effect_group>
 </recipe>
 
@@ -2986,7 +3173,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="10"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -2994,7 +3181,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="20"/>
 	<ingredient name="unit_clay" count="10"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3036,15 +3223,11 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourcePotassiumNitratePowder" count="2"/>
 </recipe>
 
-<recipe name="resourceHubcap" count="1" craft_area="workbench" tags="workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="10"/>
-</recipe>
-
 <recipe name="resourceMetalPipe" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="10"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3069,9 +3252,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="drinkCanEmpty" count="1"/>
 </recipe>
 
-<recipe name="resourcePaint" count="100" craft_area="chemistryStation" tags="chemStationCrafting">
+<recipe name="resourcePaint" count="200" craft_area="chemistryStation" tags="chemStationCrafting">
 	<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
-	<ingredient name="resourceOil" count="1"/>
+	<ingredient name="drinkJarRiverWater" count="1"/>
+</recipe>
+
+<recipe name="resourcePaint" count="100" craft_area="campfire" craft_tool="toolCookingPot">
+	<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+	<ingredient name="drinkJarRiverWater" count="1"/>
 </recipe>
 
 <recipe name="resourcePaper" count="10" craft_area="chemistryStation" tags="chemStationCrafting">
@@ -3089,7 +3277,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="50"/>
 	<ingredient name="unit_clay" count="30"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3097,68 +3285,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="50"/>
 	<ingredient name="unit_clay" count="30"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_lead"/>
 	</effect_group>
 </recipe>
 
 <recipe name="scrapHatch_v1" count="1" >
 	<ingredient name="resourceScrapIron" count="40"/>
-</recipe>
-
-<recipe name="scrapIronFrameBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="15"/>
-	<ingredient name="unit_clay" count="4"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronSheet" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronStairs25" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronStairsFilledRailingLeft" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronStairsFilledRailingRight" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronArrowSlitHalf" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
-</recipe>
-
-<recipe name="scrapIronCTRpole" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
-	<ingredient name="unit_iron" count="40"/>
-	<ingredient name="unit_clay" count="5"/>
-	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
-	</effect_group>
 </recipe>
 
 <recipe name="sandbagBlockVariantHelper" count="1">
@@ -3173,6 +3305,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="sectionalPlaidCouchSofaBlockVariantHelper" count="1">
+	<ingredient name="resourceCloth" count="5"/>
+	<ingredient name="resourceNail" count="10"/>
+	<ingredient name="resourceWood" count="10"/>
+</recipe>
+
+<recipe name="couchModernBlockVariantHelper" count="1">
 	<ingredient name="resourceCloth" count="5"/>
 	<ingredient name="resourceNail" count="10"/>
 	<ingredient name="resourceWood" count="10"/>
@@ -3213,7 +3351,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="motionsensor" count="1"/>
 	<ingredient name="gunShotgunT1DoubleBarrelParts" count="3"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedSteel,gunShotgunT1DoubleBarrelParts,resourceOil,resourceScrapPolymers"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedSteel,gunShotgunT1DoubleBarrelParts,resourceOil,resourceScrapPolymers"/>
 	</effect_group>
 </recipe>
 
@@ -3221,7 +3359,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceForgedIron" count="4"/>
 	<ingredient name="resourceElectricParts" count="3"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -3231,7 +3369,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="2"/>
 	<ingredient name="resourceScrapIron" count="50"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceElectricParts,resourceDuctTape,resourceScrapIron"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceElectricParts,resourceDuctTape,resourceScrapIron"/>
 	</effect_group>
 </recipe>
 
@@ -3240,7 +3378,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="1"/>
 	<ingredient name="resourceElectricParts" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedIron"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedIron"/>
 	</effect_group>
 </recipe>
 
@@ -3313,10 +3451,9 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="thrownTimedCharge" count="1" craft_time="30" craft_area="workbench" tags="learnable,workbenchCrafting">
-	<ingredient name="resourceScrapIron" count="50"/>
-	<ingredient name="resourceGunPowder" count="25"/>
-	<ingredient name="resourceElectricParts" count="10"/>
-	<ingredient name="resourceAcid" count="1"/>
+	<ingredient name="resourceScrapIron" count="20"/>
+	<ingredient name="resourceGunPowder" count="10"/>
+	<ingredient name="resourceElectricParts" count="1"/>
 </recipe>
 
 <recipe name="thrownDynamite" count="1" craft_time="15" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -3330,7 +3467,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="1000"/>
 	<ingredient name="unit_clay" count="100"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3354,7 +3491,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="25"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3362,7 +3499,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="25"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_iron"/>
 	</effect_group>
 </recipe>
 
@@ -3372,7 +3509,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="5"/>
 	<ingredient name="unit_clay" count="3"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_stone,unit_glass,unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_stone,unit_glass,unit_lead"/>
 	</effect_group>
 </recipe>
 
@@ -3382,7 +3519,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_lead" count="5"/>
 	<ingredient name="unit_clay" count="3"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_clay,unit_stone,unit_glass,unit_lead"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_clay,unit_stone,unit_glass,unit_lead"/>
 	</effect_group>
 </recipe>
 
@@ -3440,7 +3577,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="12"/>
 	<ingredient name="resourceElectricParts" count="24"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -3450,7 +3587,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMechanicalParts" count="12"/>
 	<ingredient name="resourceElectricParts" count="24"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".5,.5,.5,.3,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
+		<passive_effect name="CraftingIngredientCount" level="0,1,2,3,4" operation="perc_add" value=".56,.56,.56,.34,.15" tags="resourceForgedSteel,resourceSpring,resourceMechanicalParts,resourceElectricParts"/>
 	</effect_group>
 </recipe>
 
@@ -3619,23 +3756,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="glassBlockVariantHelper" count="1"/>
 </recipe>
 
-<recipe name="woodBars" count="1">
-	<ingredient name="resourceWood" count="6"/>
-</recipe>
-
-<recipe name="woodBarsCentered" count="1">
-	<ingredient name="resourceWood" count="6"/>
-</recipe>
-
-<recipe name="woodCatwalkBlockVariantHelper" count="1">
-	<ingredient name="resourceWood" count="8"/>
-</recipe>
-
 <recipe name="woodFenceRailingTrellisSheetBlockVariantHelper" count="1">
-	<ingredient name="resourceWood" count="2"/>
-</recipe>
-
-<recipe name="woodFrameBlockVariantHelper" count="1">
 	<ingredient name="resourceWood" count="2"/>
 </recipe>
 
@@ -3659,40 +3780,46 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="unit_iron" count="15"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.177,.12" tags="unit_iron"/>
+		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_iron"/>
 	</effect_group>
 </recipe>
 
-</recipes>
-<!-- To do (maybe / later)
-<recipe name="resourceArrowHeadSteelAP" count="1" craft_area="forge" craft_tool="toolCalipers" material_based="true">
-
-<recipe name="book" count="1">
-	<ingredient name="resourcePaper" count="64"/>
+<!-- A20_SHAPE_MENU_VARIANT_HELPER_BLOCKS -->
+<recipe name="frameShapes:VariantHelper" count="1">
+	<ingredient name="resourceWood" count="2"/>
 </recipe>
 
-mattress?
-boardedWindowsSheet4
-window02
-storeShelving01Double
-storeShelving01Top
-storeShelving01TopDouble
-Bookcases
+<recipe name="woodShapes:VariantHelper" count="1">
+	<ingredient name="resourceWood" count="10"/>
+</recipe>
 
-Standardised order for mod ingredients
-	resourceCloth
-	resourceScrapIron
-	resourceForgedIron
-	resourceForgedSteel
-	resourceScrapPolymers
-	resourceLeather
-	resourceGlue
-	resourceDuctTape
-	resourceOil
-	resourceElectricParts
-	resourceMechanicalParts
-	resourceSpring
-	resourceSewingKit
-	resourceAcid
-	oddball resources like a flashlight at the bottom
--->
+<recipe name="cobblestoneShapes:VariantHelper" count="1">
+	<ingredient name="resourceCobblestones" count="10"/>
+</recipe>
+
+<recipe name="concreteShapes:VariantHelper" count="1">
+	<ingredient name="resourceConcreteMix" count="10"/>
+</recipe>
+
+<recipe name="steelShapes:VariantHelper" count="1">
+	<ingredient name="resourceForgedSteel" count="10"/>
+</recipe>
+
+</recipes>
+
+<!-- Standardized order for mod ingredients -->
+	<!-- resourceCloth -->
+	<!-- resourceScrapIron -->
+	<!-- resourceForgedIron -->
+	<!-- resourceForgedSteel -->
+	<!-- resourceScrapPolymers -->
+	<!-- resourceLeather -->
+	<!-- resourceGlue -->
+	<!-- resourceDuctTape -->
+	<!-- resourceOil -->
+	<!-- resourceElectricParts -->
+	<!-- resourceMechanicalParts -->
+	<!-- resourceSpring -->
+	<!-- resourceSewingKit -->
+	<!-- resourceAcid -->
+	<!-- oddball resources like a flashlight at the bottom -->
