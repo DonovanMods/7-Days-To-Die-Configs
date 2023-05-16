@@ -49,6 +49,7 @@
 
 		<window_group name="mainMenu">
 			<window name="mainMenu" />
+			<window name="newsWindow" />
 		</window_group>
 		
 		<window_group name="newContinueGame">

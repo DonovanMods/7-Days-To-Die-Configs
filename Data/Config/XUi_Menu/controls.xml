@@ -9,27 +9,26 @@
 	</mainmenubutton>
 	
 	<videooption pos="0,0" 
-			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" >
-		<rect pos="${pos}" width="660" height="32">
+			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" width="655">
+		<rect pos="${pos}" width="${width}" height="32">
 			<label depth="4" pos="0,0" width="350" height="30" style="hover" tooltip_key="xuiOptionsVideo${name}Tooltip" text_key="xuiOptionsVideo${name}" font_size="28" color="[white]" justify="right" pivot="topleft" visible="${visible}" />
-			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="300" height="32" visible="${visible}" />
+			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="${width-355}" height="32" visible="${visible}" />
 		</rect>
 	</videooption>
 
 	<audiooption pos="0,0"
-			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" >
-		<rect pos="${pos}" width="660" height="32">
+			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" width="1380">
+		<rect pos="${pos}" width="${width}" height="32">
 			<label depth="4" pos="0,0" width="350" height="30" style="hover" tooltip_key="xuiOptionsAudio${name}Tooltip" text_key="xuiOptionsAudio${name}" font_size="28" color="[white]" justify="right" pivot="topleft" visible="${visible}" />
-			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="300" height="32" visible="${visible}" />
+			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="${width-355}" height="32" visible="${visible}" />
 		</rect>
 	</audiooption>
 
-
 	<controloption pos="0,0"
-			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" >
-		<rect pos="${pos}" width="660" height="32">
-			<label depth="4" pos="0,0" width="350" height="30" style="hover" tooltip_key="xuiOptionsControls${name}Tooltip" text_key="xuiOptionsControls${name}" font_size="28" color="[white]" justify="right" pivot="topleft" />
-			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="300" height="32" />
+			visible="true" value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" width="655">
+		<rect pos="${pos}" width="${width}" height="32">
+			<label depth="4" pos="0,0" width="350" height="30" style="hover" tooltip_key="xuiOptionsControls${name}Tooltip" text_key="xuiOptionsControls${name}" font_size="28" color="[white]" justify="right" pivot="topleft" visible="${visible}" />
+			<combobox name="${name}" type="${type}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="355,0" width="${width-355}" height="32" visible="${visible}" />
 		</rect>
 	</controloption>
 
@@ -41,40 +40,51 @@
 		<label name="${name}" pos="${pos}" depth="4" height="32" width="350" pivot="left" justify="left" on_hover="true" />
 	</controller_button_caption_right>
 
-	<gameoption pos="0,0"
-			is_textinput="false" display_names="" value_localization_prefix="" password_field="false" 
+	<gameoption pos="0,0" width="570" visible="true"
+			is_textinput="false" display_names="" value_localization_prefix="" password_field="false" has_default="true" always_show="false"
 			value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="">
-		<rect name="${name}" pos="${pos}" width="570" height="32" is_textinput="${is_textinput}" value_type="${value_type}" controller="GamePrefSelector"
-			values="${values}" display_names="${display_names}" value_localization_prefix="${value_localization_prefix}">
+		<rect name="${name}" pos="${pos}" width="${width}" height="32" is_textinput="${is_textinput}" value_type="${value_type}" controller="GamePrefSelector" has_default="${has_default}" always_show="${always_show}"
+			values="${values}" display_names="${display_names}" value_localization_prefix="${value_localization_prefix}" visible="${visible}">
 			<label name="ControlLabel" depth="4" pos="0,0" width="262" height="30" style="hover" tooltip_key="${title}Desc" text_key="${title}" font_size="28" color="[white]" justify="right" pivot="topleft" />
-			<combobox name="ControlCombo" type="ComboBoxList`1[XUiC_GamePrefSelector+GameOptionValue]" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="269,0" width="300" height="32" />
-			<textfield name="ControlText" depth="5" pos="303,0" width="${Defined(password_field) and password_field ? 232+32+10 : 232}" height="32" pivot="topLeft" password_field="${password_field}" />
+			<combobox name="ControlCombo" type="ComboBoxList`1[XUiC_GamePrefSelector+GameOptionValue]" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="269,0" width="${width-270}" height="32" />
+			<textfield name="ControlText" depth="5" pos="303,0" width="${Defined(password_field) and password_field ? 570-338+32+10 : width-338}" height="32" pivot="topLeft" password_field="${password_field}" />
 		</rect>
 	</gameoption>
 	
-	<browsergameoptioncombined pos="0,0"
-			display_names="" value_localization_prefix="" allow_custom="true" force_custom="false"
+	<browsergameoptioncombined pos="0,0" width="710" visible="true"
+			display_names="" value_localization_prefix="" allow_any="true" allow_custom="true" force_custom="false" default="" default_min="" default_max="" default_string=""
 			value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="">
-		<rect name="${name}" pos="${pos}" width="530" height="32" controller="ServerBrowserGamePrefSelectorCombo"
-			values="${values}" display_names="${display_names}" value_localization_prefix="${value_localization_prefix}" allow_custom="${allow_custom}" force_custom="${force_custom}" >
+		<rect name="${name}" pos="${pos}" width="${width}" height="32" controller="ServerBrowserGamePrefSelectorCombo"
+			values="${values}" display_names="${display_names}" value_localization_prefix="${value_localization_prefix}" allow_any="${allow_any}" allow_custom="${allow_custom}" force_custom="${force_custom}" default="${default}" default_min="${default_min}" default_max="${default_max}" default_string="${default_string}" visible="${visible}">
 			<label depth="4" pos="0,0" width="220" height="30" style="hover" tooltip_key="${title}Desc" text_key="${title}" font_size="28" color="[white]" justify="right" pivot="topleft" />
-			<combobox name="ControlCombo" type="ComboBoxList`1[XUiC_ServerBrowserGamePrefSelectorCombo+GameOptionValue]" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="225,0" width="300" height="32" />
+			<combobox name="ControlCombo" type="ComboBoxList`1[XUiC_ServerBrowserGamePrefSelectorCombo+GameOptionValue]" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" pos="225,0" width="${width-230}" height="32" />
 			<panel createuipanel="true" disableautobackground="true" depth="10" visible="{iscustomrange}">
-				<textfield name="valuemin" depth="5" pos="259,0" width="100" height="32" pivot="topLeft" validation="integer" />
-				<sprite depth="3" name="background" pos="259,1" width="232" height="35" color="[mediumGrey]" type="sliced" pivot="topleft" globalopacity="false" />
-				<label name="comparison" depth="4" pos="360,0" width="30" height="32" text="-" font_size="32" color="[white]" justify="center" pivot="topleft" />
-				<textfield name="valuemax" depth="5" pos="391,0" width="100" height="32" pivot="topLeft" validation="integer" />
+				<textfield name="valuemin" depth="5" pos="259,0" width="${Round((width-298-32)/2, 0)}" height="32" pivot="topLeft" validation="integer" character_limit="9" on_scroll="true" />
+				<sprite depth="3" name="background" pos="259,1" width="${width-298}" height="35" color="[mediumGrey]" type="sliced" pivot="topleft" globalopacity="false" />
+				<label name="comparison" depth="4" pos="${259+1+Round((width-298-32)/2, 0)},0" width="30" height="32" text="-" font_size="32" color="[white]" justify="center" pivot="topleft" />
+				<textfield name="valuemax" depth="5" pos="${259+1+32+Round((width-298-32)/2, 0)},0" width="${Round((width-298-32)/2, 0)}" height="32" pivot="topLeft" validation="integer" character_limit="9" on_scroll="true" />
+			</panel>
+			<panel createuipanel="true" disableautobackground="true" depth="10" visible="{iscustomstring}">
+				<textfield name="valuestring" depth="5" pos="259,0" width="${width-298}" height="32" pivot="topLeft" on_scroll="true" />
+				<sprite depth="3" name="background" pos="259,1" width="${width-298}" height="35" color="[mediumGrey]" type="sliced" pivot="topleft" globalopacity="false" />
 			</panel>
 		</rect>
 	</browsergameoptioncombined>
-
-	<browsergameoptioninfo pos="0,0"
-			display_names="" value_localization_prefix="">
-		<rect name="${name}" pos="${pos}" width="560" height="32" controller="ServerBrowserGamePrefInfo"
-			display_names="${display_names}" value_localization_prefix="${value_localization_prefix}">
+	
+	<browsergameoptionstring pos="0,0" width="710" visible="true">
+		<rect name="${name}" pos="${pos}" width="${width}" height="32" controller="ServerBrowserGamePrefString" visible="${visible}">
 			<label depth="4" pos="0,0" width="220" height="30" style="hover" tooltip_key="${title}Desc" text_key="${title}" font_size="28" color="[white]" justify="right" pivot="topleft" />
-			<sprite depth="5" pos="225,0" width="332" height="32" pivot="topLeft" name="background" color="[black]" type="sliced" />
-			<label depth="6" pos="225,0" width="332" height="32" name="value" justify="center" font_size="32" pivot="topleft" />
+			<textfield name="value" depth="5" pos="259,0" width="${width-298}" height="32" pivot="topLeft" />
+		</rect>
+	</browsergameoptionstring>
+
+	<browsergameoptioninfo pos="0,0" width="560" visible="true"
+			display_names="" value_localization_prefix="">
+		<rect name="${name}" pos="${pos}" width="${width}" height="32" controller="ServerBrowserGamePrefInfo"
+			display_names="${display_names}" value_localization_prefix="${value_localization_prefix}" visible="${visible}">
+			<label depth="4" pos="0,0" width="220" height="30" style="hover" tooltip_key="${title}Desc" text_key="${title}" font_size="28" color="[white]" justify="right" pivot="topleft" />
+			<sprite depth="5" pos="225,0" width="${width-228}" height="32" pivot="topLeft" name="background" color="[black]" type="sliced" />
+			<label depth="6" pos="225,0" width="${width-228}" height="32" name="value" justify="center" font_size="32" pivot="topleft" />
 		</rect>
 	</browsergameoptioninfo>
 	

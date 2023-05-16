@@ -6078,8 +6078,25 @@
 	<MaxVoices value="2"/> <MaxRepeatRate value="0.01"/>
  </SoundDataNode>
 
+  <SoundDataNode name="service_vehicle"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+    <Noise ID="3" noise="30" time="3" muffled_when_crouched="0.45" heat_map_strength="0.05" heat_map_time="60"/>
+    <AudioClip ClipName="Sounds/UseActions/open_vehicle"/>
+    <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.45"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/>
+  </SoundDataNode>
 
-	<!-- Bicycle      -->
+  <SoundDataNode name="vehicle_storage_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+    <Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+    <AudioClip ClipName="Sounds/Drone/drone_storage_open"/>
+    <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/>
+  </SoundDataNode>
+
+  <SoundDataNode name="vehicle_storage_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+    <Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+    <AudioClip ClipName="Sounds/Drone/drone_storage_close"/>
+    <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/>
+  </SoundDataNode>
+
+  <!-- Bicycle      -->
   <SoundDataNode name="bicycle_pedal"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="2" muffled_when_crouched=".5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_pedal1"/>
@@ -8564,16 +8581,6 @@
   </SoundDataNode>
 
 	<!-- Drone Sound Effects -->
-
-<SoundDataNode name="drone_storage_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
-	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/Drone/drone_storage_open"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="drone_storage_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
-	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/Drone/drone_storage_close"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
   <SoundDataNode name="drone_healeffect"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>

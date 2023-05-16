@@ -141,10 +141,8 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 		<stack_type value="ignore"/>
 		<display_value_key value="buffGodModeNameShort"/> <display_value value="xxx"/>
 		<effect_group>
-			<passive_effect name="HealthLoss" operation="base_set" value="0"/>
-			<passive_effect name="HealthLoss" operation="perc_set" value="0"/>
-			<passive_effect name="HealthLoss" operation="perc_add" value="-1.2"/>
-			<!--
+      <passive_effect name="GeneralDamageResist" operation="base_add" value="1"/>
+      <!--
 			<passive_effect name="HealthChangeOT" operation="perc_set" value="0"/>
 			<passive_effect name="FoodChangeOT" operation="perc_set" value="0"/>
 			<passive_effect name="WaterChangeOT" operation="perc_set" value="0"/>
@@ -1368,7 +1366,9 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffPerkGunslinger"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="buffPerkGunslinger"/>
-		</effect_group>
+				<triggered_effect trigger="onSelfRangedBurstShotEnd" action="AddBuff" buff="buffPerkGunslingerBonus"/>
+				<triggered_effect trigger="onSelfRangedBurstShotEnd" action="RemoveBuff" buff="buffPerkGunslinger"/>
+    </effect_group>
 
 		<effect_group name="cleanup">
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".GunslingerCombo" operation="set" value="0"/>
@@ -1390,7 +1390,8 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			<requirement name="CVarCompare" cvar=".GunslingerBonusRemove" operation="GT" value="0"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffPerkGunslingerBonus"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="buffPerkGunslingerBonus"/>
-		</effect_group>
+				<triggered_effect trigger="onSelfRangedBurstShotEnd" action="RemoveBuff" buff="buffPerkGunslingerBonus"/>
+    </effect_group>
 	</buff>
 
 	<buff name="buffDeadEye" name_key="buffDeadEyeName" description_key="buffDeadEyeDesc" icon="ui_game_symbol_map_cursor" icon_color="0,255,0" icon_blink="true">
@@ -1465,8 +1466,8 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 		</effect_group>
 		<effect_group>
 			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="3"/>
-				<passive_effect name="HealthLoss" operation="perc_add" value="-.1"/>
-		</effect_group>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>
+			</effect_group>
 		<effect_group>
 			<requirement name="CVarCompare" cvar="CharismaticNatureLevel" operation="GTE" value="4"/>
 				<passive_effect name="AttributeLevel" operation="base_add" value="1"/>
@@ -5621,8 +5622,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="HealthLoss" operation="perc_add" value="-.1"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.218"/>
+      <passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>
+      <passive_effect name="WaterChangeOT" operation="base_subtract" value="0.218"/>
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01CHTrigger,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
 		</effect_group>
 	</buff>
@@ -6069,9 +6070,9 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<passive_effect name="EntityDamage" operation="perc_add" value="4">
 				<requirement name="HoldingItemHasTags" tags="melee"/>
 			</passive_effect>
+      <passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.6"/>
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
-			<passive_effect name="HealthLoss" operation="perc_add" value="-.5"/>
 			<passive_effect name="HealthChangeOT" operation="base_add" value="20"/>
 			<passive_effect name="FoodLossPerHealthPointGained" operation="base_set" value="0" />
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="4" effect_name="Drunk"/>
@@ -6256,7 +6257,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="HealthLoss" operation="perc_add" value="-.5"/>
+      <passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".25"/>
 		</effect_group>
 	</buff>
@@ -6801,8 +6802,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 
 			<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="-10" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
-			<passive_effect name="HealthLoss" operation="perc_add" value="-.2"/>
-		</effect_group>
+      <passive_effect name="GeneralDamageResist" operation="base_add" value="0.2"/>
+    </effect_group>
 	</buff>
 
 	<buff name="buffWatchYourAim" name_key="buffWatchYourAimName" description_key="buffWatchYourAimDesc" tooltip_key="buffWatchYourAimTooltip" icon="ui_game_symbol_rifle" icon_color="0,240,0" remove_on_death="false">
@@ -8013,9 +8014,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
-
-			<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSillyHidden"/>
 
 		</effect_group>
 
@@ -8042,12 +8041,30 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 
 		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSillyHidden"/>
+		</effect_group>
+
+	</buff>
+	
+	<buff name="buffSillyHidden" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="0"/><update_rate value="1"/>
+		
+		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AltSounds" enabled="true"/>
 
 			<triggered_effect trigger="onSelfBuffRemove" action="AltSounds" enabled="false"/>
 
 		</effect_group>
 
+		<effect_group> <!-- terminate only if all silly buffs are gone -->
+			<requirements>
+				<requirement name="!HasBuff" buff="twitch_voteSillySounds"/>
+				<requirement name="!HasBuff" buff="twitch_buffSillySounds"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSillyHidden"/>
+		</effect_group>
+		
 	</buff>
 
 	<buff name="twitch_buffDeafen" name_key="TwitchBuff_Deafen" description_key="TwitchBuff_DeafenDesc" icon="ui_game_symbol_twitch_deafen" icon_color="255,175,175">

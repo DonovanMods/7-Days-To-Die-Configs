@@ -311,6 +311,8 @@
 			<response_entry id="shop" />
       <response_entry id="follow" />
       <response_entry id="sentry" />
+      <response_entry id="dont_heal_allies" />
+      <response_entry id="heal_allies" />
       <response_entry id="heal" />
 			<response_entry id="done" />
 		</statement>
@@ -326,6 +328,14 @@
     <response id="sentry" text="dialog_drone_command_stay">
 		<requirement type="DroneState" value="Follow" requirementtype="Hide" />
       <action type="Trader" id="drone_sentry" />
+    </response>
+    <response id="dont_heal_allies" text="entitycommand_drone_dont_heal_allies">
+      <requirement type="DroneState" value="HealAllies" requirementtype="Hide" />
+      <action type="Trader" id="drone_dont_heal_allies" />
+    </response>
+    <response id="heal_allies" text="entitycommand_drone_heal_allies">
+      <requirement type="DroneState" value="DoNotHeal" requirementtype="Hide" />
+      <action type="Trader" id="drone_heal_allies" />
     </response>
     <response id="heal" text="dialog_drone_command_heal">
       <requirement type="DroneState" value="Heal" requirementtype="Hide" />
