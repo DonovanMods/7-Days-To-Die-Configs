@@ -11,6 +11,7 @@
 			<response_entry id="jobshave3" />
 			<response_entry id="jobshave4" />
 			<response_entry id="jobshave5" />
+			<response_entry id="jobshave6" />
 			<response_entry id="specialjobshave" />
 			<!-- <response_entry id="background" /> -->
 			<response_entry id="admin" />
@@ -47,6 +48,7 @@
 			<response_entry id="jobsnext3" uniqueid="next" />
 			<response_entry id="jobsnext4" uniqueid="next" />
 			<response_entry id="jobsnext5" uniqueid="next" />
+			<response_entry id="jobsnext6" uniqueid="next" />
 			<response_entry id="nevermind" />
 		</statement>
 		
@@ -62,6 +64,7 @@
 			<response_entry id="jobsnext3" uniqueid="next" />
 			<response_entry id="jobsnext4" uniqueid="next" />
 			<response_entry id="jobsnext5" uniqueid="next" />
+			<response_entry id="jobsnext6" uniqueid="next" />
 			<response_entry id="nevermind" />
 		</statement>
 		
@@ -77,6 +80,7 @@
 			
 			<response_entry id="jobsnext4" uniqueid="next" />
 			<response_entry id="jobsnext5" uniqueid="next" />
+			<response_entry id="jobsnext6" uniqueid="next" />
 			<response_entry id="nevermind" />
 		</statement>
 		
@@ -92,6 +96,7 @@
 			<response_entry id="jobsprev1" uniqueid="prev" />
 			
 			<response_entry id="jobsnext5" uniqueid="next" />
+			<response_entry id="jobsnext6" uniqueid="next" />
 			<response_entry id="nevermind" />
 		</statement>
 		
@@ -102,6 +107,24 @@
 			<quest_entry listindex="3" tier="5" />
 			<quest_entry listindex="4" tier="5" />
 			
+			<response_entry id="jobsprev4" uniqueid="prev" />
+			<response_entry id="jobsprev3" uniqueid="prev" />
+			<response_entry id="jobsprev2" uniqueid="prev" />
+			<response_entry id="jobsprev1" uniqueid="prev" />
+			
+			<response_entry id="jobsnext6" uniqueid="next" />
+			
+			<response_entry id="nevermind" />
+		</statement>
+		
+		<statement id="currentjobs6" text="dialog_trader_statement_currentjobs" nextstatementid="start" >
+			<quest_entry listindex="0" tier="6" />
+			<quest_entry listindex="1" tier="6" />
+			<quest_entry listindex="2" tier="6" />
+			<quest_entry listindex="3" tier="6" />
+			<quest_entry listindex="4" tier="6" />
+			
+			<response_entry id="jobsprev5" uniqueid="prev" />
 			<response_entry id="jobsprev4" uniqueid="prev" />
 			<response_entry id="jobsprev3" uniqueid="prev" />
 			<response_entry id="jobsprev2" uniqueid="prev" />
@@ -166,36 +189,50 @@
 			<action type="AddJournalEntry" id="questTip" />
 		</response>
 		
-		<response id="jobsprev1" text="Previous Tier" nextstatementid="currentjobs1" >
+		<response id="jobshave6" text="dialog_trader_response_jobshave" nextstatementid="currentjobs6" >
+			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+			<requirement type="QuestTierHighest" value="6" requirementtype="Hide" />
+			<action type="AddJournalEntry" id="questTip" />
+		</response>
+		
+		<response id="jobsprev1" text="dialog_trader_response_prevtier" nextstatementid="currentjobs1" >
 			<requirement type="QuestTier" value="1" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsprev2" text="Previous Tier" nextstatementid="currentjobs2" >
+		<response id="jobsprev2" text="dialog_trader_response_prevtier" nextstatementid="currentjobs2" >
 			<requirement type="QuestTier" value="2" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsprev3" text="Previous Tier" nextstatementid="currentjobs3" >
+		<response id="jobsprev3" text="dialog_trader_response_prevtier" nextstatementid="currentjobs3" >
 			<requirement type="QuestTier" value="3" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsprev4" text="Previous Tier" nextstatementid="currentjobs4" >
+		<response id="jobsprev4" text="dialog_trader_response_prevtier" nextstatementid="currentjobs4" >
 			<requirement type="QuestTier" value="4" requirementtype="Hide" />
+		</response>
+		
+		<response id="jobsprev5" text="dialog_trader_response_prevtier" nextstatementid="currentjobs5" >
+			<requirement type="QuestTier" value="5" requirementtype="Hide" />
 		</response>
 			
-		<response id="jobsnext2" text="Next Tier" nextstatementid="currentjobs2" >
+		<response id="jobsnext2" text="dialog_trader_response_nexttier" nextstatementid="currentjobs2" >
 			<requirement type="QuestTier" value="2" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsnext3" text="Next Tier" nextstatementid="currentjobs3" >
+		<response id="jobsnext3" text="dialog_trader_response_nexttier" nextstatementid="currentjobs3" >
 			<requirement type="QuestTier" value="3" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsnext4" text="Next Tier" nextstatementid="currentjobs4" >
+		<response id="jobsnext4" text="dialog_trader_response_nexttier" nextstatementid="currentjobs4" >
 			<requirement type="QuestTier" value="4" requirementtype="Hide" />
 		</response>
 		
-		<response id="jobsnext5" text="Next Tier" nextstatementid="currentjobs5" >
+		<response id="jobsnext5" text="dialog_trader_response_nexttier" nextstatementid="currentjobs5" >
 			<requirement type="QuestTier" value="5" requirementtype="Hide" />
+		</response>
+		
+		<response id="jobsnext6" text="dialog_trader_response_nexttier" nextstatementid="currentjobs6" >
+			<requirement type="QuestTier" value="6" requirementtype="Hide" />
 		</response>
 		
 		<response id="specialjobshave" text="dialog_trader_response_specialjobshave" nextstatementid="currentjobsspecial" >
@@ -261,6 +298,8 @@
 			<quest_entry id="test_fetchsleep" type="add" listindex="2" />
 			<quest_entry id="test_hiddensleep" type="add" listindex="3" />
 			<quest_entry id="test_restorepower" type="add" listindex="4" />
+			<quest_entry id="test_sleepers_infested" type="add" listindex="5" />
+			<quest_entry id="test_fetchinfested" type="add" listindex="6" />
 			<response_entry id="nevermind" />
 		</statement>
 		

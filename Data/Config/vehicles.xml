@@ -52,11 +52,14 @@ Forces:
 		<property name="waterDrag_y_velScale_velMaxScale" value="1.5, .9, 1"/>
 		<property name="waterLift_y_depth_force" value="1, .5, .1"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
+		<property name="hornSound" value="gyrocopter_horn"/>
 
 		<property class="engine">
 			<property name="class" value="Engine"/>
 			<property name="slot_type" value="engine"/>
+			<property name="particleOn" value="p_on"/>
+			<property name="particleDamaged" value="p_damaged"/>
+			<property name="particleBroken" value="p_broken"/>
 			<property name="fuelKmPerL" value="0.15"/>
 			<property name="foodDrain" value=".002,.00811"/><!-- driving/turbo, gyro -->
 			<property name="gear1" value="
@@ -201,7 +204,7 @@ Forces:
 		<property name="velocityMax" value="18, 26"/>
 		<property name="waterY_VelMaxScale" value="2, .2"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
+		<property name="hornSound" value="minibike_horn"/>
 
 		<property class="engine">
 			<property name="class" value="Engine"/>
@@ -282,7 +285,7 @@ Forces:
 		<property name="waterDrag_y_velScale_velMaxScale" value="1.7, .9, .2"/>
 		<property name="wheelPtlScale" value=".6"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
+		<property name="hornSound" value="bicycle_horn"/>
 
 		<property class="chassis">
 			<property name="class" value="Chassis"/>
@@ -316,6 +319,9 @@ Forces:
 			<property name="IKFootRRotation" value="0, 0, 0"/>
 			<property name="pedalSound" value="bicycle_pedal"/>
 			<property name="staminaDrain" value="0,0"/><!-- stamina drain walking/running. It now uses movement tags so regular passives apply -->
+			<property name="chain" value="chain"/>
+			<property name="particleDamaged" value="p_damaged"/>
+			<property name="particleBroken" value="p_broken"/>
 		</property>
 
 		<property class="seat0">
@@ -367,7 +373,7 @@ Forces:
 		<property name="waterDrag_y_velScale_velMaxScale" value="1.5, .9, .15"/>
 		<property name="wheelPtlScale" value=".6"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
+		<property name="hornSound" value="minibike_horn"/>
 
 		<property class="chassis">
 			<property name="class" value="Chassis"/>
@@ -418,22 +424,14 @@ Forces:
 			<property name="torqueScale_motor_brake" value="1, 1"/>
 		</property>
 
-		<property class="battery">
-			<property name="class" value="Battery"/>
-			<property name="slot_type" value="battery"/>
-			<property name="mesh" value="battery"/>
-			<property name="transform" value="battery"/>
-		</property>
-
 		<property class="engine">
 			<property name="class" value="Engine"/>
 			<property name="slot_type" value="engine"/>
-			<property name="mesh" value="engine_small"/>
-			<property name="transform" value="engine_small"/>
-			<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine_fire"/>
+			<property name="particleOn" value="engine_small/p_on"/>
+			<property name="particleDamaged" value="engine_small/p_damaged"/>
+			<property name="particleBroken" value="engine_small/p_broken"/>
 			<property name="fuelKmPerL" value=".4"/>
-			<property name="foodDrain" value=".002,.0122"/><!-- driving/turbo, minibike -->
-				<!-- this value is written to the _vehicleFood cvar and then added to the food/water drain of the player -->
+			<property name="foodDrain" value=".002,.0122"/><!-- driving/turbo, minibike --><!-- this value is written to the _vehicleFood cvar and then added to the food/water drain of the player -->
 			<property name="gear1" value="
 								500,2500, -1400,800,0, 1500,9999,9999,
 								Vehicles/Minibike/minibike_accel_OFF,
@@ -444,11 +442,6 @@ Forces:
 			<property name="sound_start" value="Vehicles/Minibike/minibike_start_"/>
 			<property name="sound_shut_off" value="Vehicles/Minibike/minibike_shutoff_"/>
 			<property name="sound_no_fuel_shut_off" value="Vehicles/Minibike/minibike_empty_"/>
-		</property>
-
-		<property class="exhaust">
-			<property name="class" value="Exhaust"/>
-			<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine"/>
 		</property>
 
 		<property class="chain">
@@ -499,14 +492,7 @@ Forces:
 		<property name="waterDrag_y_velScale_velMaxScale" value="1.7, .9, .1"/>
 		<property name="wheelPtlScale" value="1"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
-
-		<property class="battery">
-			<property name="class" value="Battery"/>
-			<property name="slot_type" value="battery"/>
-			<property name="mesh" value="battery"/>
-			<property name="transform" value="battery"/>
-		</property>
+		<property name="hornSound" value="motorbike_horn"/>
 
 		<property class="chassis">
 			<property name="class" value="Chassis"/>
@@ -521,11 +507,12 @@ Forces:
 		<property class="engine">
 			<property name="class" value="Engine"/>
 			<property name="slot_type" value="engine"/>
-			<property name="mesh" value="engine_small"/>
-			<property name="transform" value="engine_small"/>
-			<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine_fire"/>
+			<property name="particleOn" value="p_on"/>
+			<property name="particleDamaged" value="p_damaged"/>
+			<property name="particleBroken" value="p_broken"/>
 			<property name="fuelKmPerL" value=".2"/>
 			<property name="foodDrain" value=".002,.0101"/><!-- driving/turbo, motorcycle -->
+
 			<property name="gear1" value="
 								500,2500, -1400,800,0, 700,2000,900,
 								Vehicles/Motorbike/motorbike_accel_1,
@@ -551,6 +538,7 @@ Forces:
 								Vehicles/Motorbike/motorbike_decel,
 								-.25, -.08, .55, .45, -1, 1, .1, Vehicles/Motorbike/motorbike_run_lp
 								"/>
+
 			<property name="sound_start" value="Vehicles/Motorbike/minibike_start_"/>
 			<property name="sound_shut_off" value="Vehicles/Motorbike/minibike_shutoff_"/>
 			<property name="sound_no_fuel_shut_off" value="Vehicles/Motorbike/motorbike_empty"/>
@@ -643,14 +631,7 @@ Forces:
 		<property name="waterDrag_y_velScale_velMaxScale" value="1.8, .9, .1"/>
 		<property name="wheelPtlScale" value="1"/>
 
-		<property name="hornSound" value="vehicle/minibike/minibike_horn"/>
-
-		<property class="battery">
-			<property name="class" value="Battery"/>
-			<property name="slot_type" value="battery"/>
-			<property name="mesh" value="battery"/>
-			<property name="transform" value="battery"/>
-		</property>
+		<property name="hornSound" value="suv_horn"/>
 
 		<property class="chassis">
 			<property name="class" value="Chassis"/>
@@ -664,9 +645,9 @@ Forces:
 		<property class="engine">
 			<property name="class" value="Engine"/>
 			<property name="slot_type" value="engine"/>
-			<property name="mesh" value="engine_small"/>
-			<property name="transform" value="engine_small"/>
-			<property name="particle_transform" value="engine_small/MinibikeParticles/p_engine_fire"/>
+			<property name="particleOn" value="p_on"/>
+			<property name="particleDamaged" value="p_damaged"/>
+			<property name="particleBroken" value="p_broken"/>
 			<property name="fuelKmPerL" value=".1"/>
 			<property name="foodDrain" value=".002,.00811"/><!-- driving/turbo, truck -->
 			<property name="gear1" value="
@@ -716,20 +697,29 @@ Forces:
 		</property>
 
 		<property class="seat0">
-			<property name="position" value="-.4, .36, .06"/>
+			<property name="class" value="Seat"/>
+			<property name="position" value="-.41, .33, .06"/>
 			<property name="rotation" value="-25, 0, 0"/>
 			<property name="exit" value="-1.6,0,0 ~ 1.6,0,-1 ~ -.4,0,-2.8 ~ -.4,0,2.6 ~ -.4,2.1,0"/>
+			<property name="IKFootLPosition" value="-.1, .34, .25"/>
+			<property name="IKFootLRotation" value="-33, 0, 0"/>
+			<property name="IKFootRPosition" value=".08, .34, .25"/>
+			<property name="IKFootRRotation" value="-33, 0, 0"/>
 		</property>
 
 		<property class="seat1">
 			<property name="class" value="Seat"/>
-			<property name="position" value=".4, .36, .1"/>
+			<property name="position" value=".45, .33, .06"/>
 			<property name="rotation" value="-27, 0, 0"/>
 			<property name="exit" value="1.6,0,0 ~ -1.6,0,-1 ~ .4,0,-2.8 ~ .4,0,2.6 ~ .4,2.1,0"/>
 			<property name="IKHandLPosition" value="-.27, .87, .14"/>
 			<property name="IKHandLRotation" value="41, -30, 18"/>
 			<property name="IKHandRPosition" value=".27, .87, .14"/>
 			<property name="IKHandRRotation" value="41, 30, -18"/>
+			<property name="IKFootLPosition" value="-.2, .31, .25"/>
+			<property name="IKFootLRotation" value="-15, 0, 0"/>
+			<property name="IKFootRPosition" value=".2, .31, .25"/>
+			<property name="IKFootRRotation" value="-15, 0, 0"/>
 		</property>
 
 		<property class="seat2">

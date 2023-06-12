@@ -65,8 +65,9 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-		<window_group name="creativeOld" controller="XUiC_CreativeWindowGroup" open_backpack_on_open="true">
-			<window name="windowCreative" />
+		<window_group name="dewcollector" left_panel_valign_top="false" controller="XUiC_DewCollectorWindowGroup" close_compass_on_open="true">
+			<window name="windowDewCollector"/>
+			<window name="windowNonPagingHeader" />
 		</window_group>
 		
 		<window_group name="creative" controller="XUiC_Creative2WindowGroup" open_backpack_on_open="true">
@@ -90,6 +91,7 @@
 		
 		<window_group name="compass" actionSet="false">
 			<window name="windowCompass" />
+			<window name="windowEntering" anchor="CenterTop" />
 			<window name="windowTargetBar" anchor="CenterTop" />
 			<window name="onScreenIcons" />
 		</window_group>
@@ -116,7 +118,7 @@
 			<window name="windowQuestOffer" />
 		</window_group>
 		
-		<window_group name="questTurnIn" controller="XUiC_QuestTurnInWindowGroup" open_backpack_on_open="true">
+		<window_group name="questTurnIn" controller="XUiC_QuestTurnInWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowQuestTurnInDescription" />
 			<window name="windowQuestTurnInRewards" />
 		</window_group>
@@ -133,7 +135,9 @@
 			<window name="windowToolbelt" anchor="CenterBottom" />
 			<window name="HUDLeftStatBars" anchor="LeftBottom" />
 			<window name="HUDRightStatBars" anchor="RightBottom" />
+			<window name="windowLocation" anchor="RightTop" />
 			<window name="windowQuestTracker" anchor="RightTop" />
+			<window name="windowRecipeTracker" anchor="RightTop" />
 			<window name="windowGroupBars" anchor="LeftTop" />
 		</window_group>
 		
@@ -191,6 +195,7 @@
 			<window name="windowSkillSkillInfo" />
 			<window name="windowSkillPerkInfo" />
 			<window name="windowSkillBookInfo" />
+			<window name="windowSkillCraftingInfo" />
 		</window_group>
 		
 		<window_group name="quests" controller="XUiC_QuestWindowGroup">
@@ -225,7 +230,7 @@
 			<window name="serviceInfoPanel"/>
 		</window_group>
 		
-		<window_group name="dialog" controller="XUiC_DialogWindowGroup">
+		<window_group name="dialog" controller="XUiC_DialogWindowGroup" close_compass_on_open="true">
 			<window name="windowRespondentName" />
 			<window name="windowStatement" />
 			<window name="windowResponses" />
@@ -318,12 +323,8 @@
 			<window name="saveDirtyPrefab" />
 		</window_group>
 		
-		<window_group name="prefabProperties">
-			<window name="prefabProperties" />
-		</window_group>
-		
-		<window_group name="prefabTags">
-			<window name="prefabTags" />
+		<window_group name="prefabPropertiesEditor">
+			<window name="prefabPropertiesEditor" />
 		</window_group>
 		
 		<window_group name="prefabMarkers">
@@ -349,6 +350,10 @@
 		
 		<window_group name="levelTools2">
 			<window name="levelTools2" />
+		</window_group>
+		
+		<window_group name="levelTools3">
+			<window name="levelTools3" />
 		</window_group>
 		
 		<window_group name="worldTools">

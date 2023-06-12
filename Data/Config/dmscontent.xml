@@ -35,19 +35,19 @@
         
         <!--Singles-->
 
-        <content type="SingleClip" name="HomeDay" source ="Sounds/AudioSource_Home" section="HomeDay" path="#Sounds/Music?HomeDay.wav"/>
+        <content type="SingleClip" name="HomeDay" source ="Sounds/AudioSource_Home" section="HomeDay" path="@:Sounds/Music/HomeDay.wav"/>
 
-        <content type="SingleClip" name="HomeNight" source ="Sounds/AudioSource_Home" section="HomeNight" path="#Sounds/Music?HomeNight.wav"/>
+        <content type="SingleClip" name="HomeNight" source ="Sounds/AudioSource_Home" section="HomeNight" path="@:Sounds/Music/HomeNight.wav"/>
 
-        <content type="SingleClip" name="TraderBob" source ="Sounds/AudioSource_TraderTheme" section="TraderBob" path="#Sounds/Music?TraderBob.wav"/>
+        <content type="SingleClip" name="TraderBob" source ="Sounds/AudioSource_TraderTheme" section="TraderBob" path="@:Sounds/Music/TraderBob.wav"/>
 
-        <content type="SingleClip" name="TraderJoel" source ="Sounds/AudioSource_TraderTheme" section="TraderJoel" path="#Sounds/Music?TraderJoel.wav"/>
+        <content type="SingleClip" name="TraderJoel" source ="Sounds/AudioSource_TraderTheme" section="TraderJoel" path="@:Sounds/Music/TraderJoel.wav"/>
 
-        <content type="SingleClip" name="TraderJen" source ="Sounds/AudioSource_TraderTheme" section="TraderJen" path="#Sounds/Music?TraderJen.wav"/>
+        <content type="SingleClip" name="TraderJen" source ="Sounds/AudioSource_TraderTheme" section="TraderJen" path="@:Sounds/Music/TraderJen.wav"/>
 
-        <content type="SingleClip" name="TraderHugh" source ="Sounds/AudioSource_TraderTheme" section="TraderHugh" path="#Sounds/Music?TraderHugh.wav"/>
+        <content type="SingleClip" name="TraderHugh" source ="Sounds/AudioSource_TraderTheme" section="TraderHugh" path="@:Sounds/Music/TraderHugh.wav"/>
 
-        <content type="SingleClip" name="TraderRekt" source ="Sounds/AudioSource_TraderTheme" section="TraderRekt" path="#Sounds/Music?TraderRekt.wav"/>
+        <content type="SingleClip" name="TraderRekt" source ="Sounds/AudioSource_TraderTheme" section="TraderRekt" path="@:Sounds/Music/TraderRekt.wav"/>
 
     </contents>
 

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <Sounds>
 <!-- For stealth purposes I am putting sounds into 5 buckets so I can search&massReplace.
 	1 minor sounds, earth/cloth hit
@@ -355,52 +357,6 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.4002"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 	<!--///////////////////////-->
-	<!-- Creaky Trap Footsteps -->
-	<!--///////////////////////-->
-
-  <SoundDataNode name="stepwoodsmallcreak"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
-	<Noise ID="1" noise="7" time="1.3" muffled_when_crouched="0.507"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodsmallcreak1"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodsmallcreak2"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodsmallcreak3"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodsmallcreak4"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
-
-  <SoundDataNode name="stepwoodbigcreak"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
-	<Noise ID="1" noise="7" time="1.3" muffled_when_crouched="0.507"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodbigcreak1"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodbigcreak2"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodbigcreak3"/>
-	<AudioClip ClipName="Sounds/Step/stepwoodbigcreak4"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
-
-  <SoundDataNode name="stepmetalbigcreak"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
-	<Noise ID="1" noise="7" time="1.3" muffled_when_crouched="0.507"/>
-	<AudioClip ClipName="Sounds/Step/stepmetalbigcreak1"/>
-	<AudioClip ClipName="Sounds/Step/stepmetalbigcreak2"/>
-	<AudioClip ClipName="Sounds/Step/stepmetalbigcreak3"/>
-	<AudioClip ClipName="Sounds/Step/stepmetalbigcreak4"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
-
-  <SoundDataNode name="stepglasssmallcreak"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
-	<Noise ID="1" noise="7" time="1.3" muffled_when_crouched="0.507"/>
-	<AudioClip ClipName="Sounds/Step/stepglasssmallcreak1"/>
-	<AudioClip ClipName="Sounds/Step/stepglasssmallcreak2"/>
-	<AudioClip ClipName="Sounds/Step/stepglasssmallcreak3"/>
-	<AudioClip ClipName="Sounds/Step/stepglasssmallcreak4"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
-
-
-
-	<!--///////////////////////-->
 	<!-- Player feelings sounds -->
 	<!--///////////////////////-->
 
@@ -521,7 +477,7 @@
 
 <SoundDataNode name="FridgeLP"> <AudioSource name="Sounds/AudioSource_FridgeLP"/>
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_frig1_lp" Loop="true"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.0"/> </SoundDataNode>
 
 <SoundDataNode name="NeonSignLP"> <AudioSource name="Sounds/AudioSource_Amb_XSmall"/>
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_signbuzz_lp" Loop="true"/>
@@ -539,13 +495,197 @@
 	<AudioClip ClipName="Sounds/Ambient_Loops/flies_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0"/> <NoiseScale value="0"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
+<!-- Fists -->
+
+  <SoundDataNode name="fists_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swinglight1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swinglight2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swinglight3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="fists_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/fists_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_wrap_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swinglight1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swinglight2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swinglight3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_wrap_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_wrap_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_iron_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swinglight1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swinglight2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swinglight3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_iron_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_iron_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_steel_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swinglight1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swinglight2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swinglight3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knuckles_steel_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Fists/knuckles_steel_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- Harvest Tools -->
+
+  <SoundDataNode name="axe_fire_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="axe_fire_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Tools/axe_fire_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="axe_stone_swing"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/axe_stone_swing1"/>
+	<AudioClip ClipName="Sounds/Tools/axe_stone_swing2"/>
+	<AudioClip ClipName="Sounds/Tools/axe_stone_swing3"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="4"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="hammer_small_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/hammer_small_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/hammer_small_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/hammer_small_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/hammer_small_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="4"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="harvest_animal"> <AudioSource name="Sounds/AudioSource_HandTool"/>
+	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Tools/harvest_animal1"/>
+	<AudioClip ClipName="Sounds/Tools/harvest_animal2"/>
+	<AudioClip ClipName="Sounds/Tools/harvest_animal3"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.0"/>
+<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="impactdriver"> <AudioSource name="Sounds/AudioSource_HandTool"/>
+	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Tools/impactdriver1"/>
+ 	<LowestPitch name="0.95"/>
+ 	<HighestPitch name="1.12"/>
+<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="impact_driver_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/impact_driver_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/impact_driver_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/impact_driver_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/impact_driver_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="4"/> <MaxRepeatRate value="0.00"/> </SoundDataNode>
+
+  <SoundDataNode name="knife_bone_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knife_bone_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Tools/knife_bone_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knife_metal_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="knife_metal_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Tools/knife_metal_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="ratchet"> <AudioSource name="Sounds/AudioSource_HandTool"/>
+		<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
+		<AudioClip ClipName="Sounds/Tools/ratchet1"/>
+		<AudioClip ClipName="Sounds/Tools/ratchet2"/>
+		<AudioClip ClipName="Sounds/Tools/ratchet3"/>
+		 <LowestPitch name="0.9"/>
+		 <HighestPitch name="1.0"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="ratchet_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/ratchet_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/ratchet_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/ratchet_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/ratchet_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="shovel_stone_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_stone_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_stone_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_stone_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_stone_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="shovel_metal_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_metal_swinglight1"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_metal_swinglight2"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_metal_swinglight3"/>
+	<AudioClip ClipName="Sounds/Tools/shovel_metal_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="wrench_harvest"> <AudioSource name="Sounds/AudioSource_HandTool"/>
+	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_harvest"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.0"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="wrench_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_swinglight1"/>
+ 	<AudioClip ClipName="Sounds/Tools/wrench_swinglight2"/>
+ 	<AudioClip ClipName="Sounds/Tools/wrench_swinglight3"/>
+ 	<AudioClip ClipName="Sounds/Tools/wrench_swinglight4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="wrench_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Tools/wrench_swingheavy4"/>
+	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
 	<!-- Weapon Sounds -->
-
-
-
-
 
 	<!-- Melee -->
 
@@ -587,12 +727,18 @@
 	<AudioClip ClipName="Sounds/Weapons/Melee/Sledge/sledge_swingheavy"/>
 	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-    <SoundDataNode name="axe_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
-	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_swinglight"/>
+    <SoundDataNode name="axe_steel_swinglight"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swinglight1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swinglight2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swinglight3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swinglight4"/>
 	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-  <SoundDataNode name="axe_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
-	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_swingheavy"/>
+  <SoundDataNode name="axe_steel_swingheavy"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swingheavy1"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swingheavy2"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swingheavy3"/>
+	<AudioClip ClipName="Sounds/Weapons/Melee/Axe/axe_steel_swingheavy4"/>
 	<LocalCrouchVolumeScale value="0.25"/> <CrouchNoiseScale value="0.05"/> <NoiseScale value=".1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
   <SoundDataNode name="spear_fire"> <AudioSource name="Sounds/AudioSource_Melee"/> <NetworkAudioSource name="Sounds/AudioSource_Melee"/>
@@ -685,11 +831,11 @@
 
 <SoundDataNode name="auger_idle">
 	<Noise ID="3" noise="30" time="2" muffled_when_crouched="0.65"/>
-    <AudioClip ClipName="Sounds/Weapons/Motorized/Auger/auger_idle" AudioSourceName="Sounds/Weapons/Motorized/Auger/AugerAudioSourceLoop"/>
+    <AudioClip ClipName="Sounds/Weapons/Motorized/Auger/auger_idle" AudioSourceName="Sounds/AudioSource_MotorWeapIdle"/>
     <AudioClip ClipName="Sounds/Twitch/Silly/auger_idle_silly"  Loop="true" AltSound="true"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="Auger_Fire_Start"> <AudioSource name="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/>
+<SoundDataNode name="Auger_Fire_Start"> <AudioSource name="Sounds/AudioSource_MotorWeap"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="1.0" heat_map_time="90"/>
 	<Sequence/>
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/Auger_Fire_Start"/>
@@ -718,13 +864,23 @@
     <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_equip_silly" AltSound="true"/>
     <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="chainsaw_idle"> <AudioSource name="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+<SoundDataNode name="chainsaw_unholster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+	<AudioClip ClipName="Sounds/Weapons/Motorized/Chainsaw/chainsaw_unholster"/>
+    <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_equip_silly" AltSound="true"/>
+    <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="chainsaw_holster"> <AudioSource name="Sounds/AudioSource_MotorWeap"/>
+	<AudioClip ClipName="Sounds/Weapons/Motorized/Chainsaw/chainsaw_holster"/>
+    <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_equip_silly" AltSound="true"/>
+    <LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="chainsaw_idle"> <AudioSource name="Sounds/AudioSource_MotorWeapIdle"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="3" noise="30" time="2" muffled_when_crouched="0.65"/>
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Chainsaw/chainsaw_idle" Loop="true"/>
     <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_idle_silly" Loop="true" AltSound="true"/>
     <LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="3"/><MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.01"/></SoundDataNode>
 
-<SoundDataNode name="chainsaw_fire_start"> <AudioSource name="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+<SoundDataNode name="chainsaw_fire_start"> <AudioSource name="Sounds/AudioSource_MotorWeap"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="1.0" heat_map_time="90"/>
 	<Sequence/>
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Chainsaw/chainsaw_fire_start"/>
@@ -733,6 +889,8 @@
     <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_fire_silly_lp" Loop="true" AltSound="true"/>
     <AudioClip ClipName="Sounds/Weapons/Motorized/Chainsaw/chainsaw_fire_end"/>
     <AudioClip ClipName="Sounds/Twitch/Silly/chainsaw_fire_silly_end" AltSound="true"/>
+   	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.1"/>
     <LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="chainsaw_fire_rev"> <AudioSource name="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
@@ -1358,7 +1516,7 @@
 -	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/></SoundDataNode>
 
 <SoundDataNode name="smg_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
-	<Noise ID="0" noise="18" time="2" muffled_when_crouched="0.8" heat_map_strength="0.4" heat_map_time="180"/>
+	<Noise ID="0" noise="43" time="2" muffled_when_crouched="0.8" heat_map_strength="0.4" heat_map_time="180"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/SMG/smg_s_fire1"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/SMG/smg_s_fire2"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/SMG/smg_s_fire3"/>
@@ -1795,7 +1953,7 @@
   <!-- M60 -->
 
 <SoundDataNode name="m60_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
-	<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.65" heat_map_time="180"/>
+	<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_fire1"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_fire2"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_fire3"/>
@@ -1812,7 +1970,7 @@
     <LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/></SoundDataNode>
 
 <SoundDataNode name="m60_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
-	<Noise ID="0" noise="47" time="2" muffled_when_crouched="0.8" heat_map_strength="0.7" heat_map_time="180"/>
+	<Noise ID="0" noise="47" time="2" muffled_when_crouched="0.8" heat_map_strength="0.65" heat_map_time="180"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_s_fire1"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_s_fire2"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/M60/m60_s_fire3"/>
@@ -1956,8 +2114,20 @@
 	<AudioClip ClipName="Sounds/Weapons/weapon_empty3"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
+<SoundDataNode name="generic_holster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+	<AudioClip ClipName="Sounds/Player_Common/item_holster"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="generic_unholster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+	<AudioClip ClipName="Sounds/Player_Common/item_unholster"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
 <SoundDataNode name="weapon_holster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/weapon_holster"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="weapon_unholster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+	<AudioClip ClipName="Sounds/Weapons/weapon_unholster"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="weapon_jam"> <AudioSource name="Sounds/AudioSource_Reloads"/>
@@ -1966,10 +2136,6 @@
 	<AudioClip ClipName="Sounds/Weapons/weapon_jam2"/>
 	<AudioClip ClipName="Sounds/Weapons/weapon_jam3"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="weapon_unholster"> <AudioSource name="Sounds/AudioSource_Reloads"/>
-	<AudioClip ClipName="Sounds/Weapons/weapon_unholster"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="player_swim"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Misc/player_swim1"/>
@@ -3983,6 +4149,14 @@
 	<AudioClip ClipName="Sounds/Misc/item_pickup"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
+<SoundDataNode name="pickup_meat"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Pickups/pickup_meat1"/>
+	<AudioClip ClipName="Sounds/Pickups/pickup_meat2"/>
+	<AudioClip ClipName="Sounds/Pickups/pickup_meat3"/>
+	<AudioClip ClipName="Sounds/Pickups/pickup_meat4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
 <SoundDataNode name="item_plant_pickup"> <AudioSource name="Sounds/AudioSource_UseAction"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Misc/item_plant_pickup"/>
@@ -4148,6 +4322,21 @@
   <SoundDataNode name="read_skillbook_final"> <AudioSource name="Sounds/AudioSource_Notifications"/>
 	<AudioClip ClipName="Sounds/Misc/read_skillbook_final"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- Magazine Reading Sounds -->
+
+  <SoundDataNode name="ui_mag_read"> <AudioSource name="Sounds/AudioSource_Notifications"/>
+	<AudioClip ClipName="Sounds/UI/ui_mag_read1"/>
+	<AudioClip ClipName="Sounds/UI/ui_mag_read2"/>
+	<AudioClip ClipName="Sounds/UI/ui_mag_read3"/>
+	<AudioClip ClipName="Sounds/UI/ui_mag_read4"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+  <SoundDataNode name="ui_mag_read_set"> <AudioSource name="Sounds/AudioSource_Notifications"/>
+	<AudioClip ClipName="Sounds/UI/ui_mag_read_set"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- End Magazine Sounds -->
 
 <SoundDataNode name="rotateblock"> <AudioSource name="Sounds/AudioSource_Impact"/>
 	<AudioClip ClipName="Sounds/Misc/rotateblock1"/>
@@ -4351,7 +4540,7 @@
 	<AudioClip ClipName="Sounds/UseActions/close_shutters_metal"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<!-- Cellars -->
+<!-- Doors -->
 
 <SoundDataNode name="open_cellar_wood"> <AudioSource name="Sounds/AudioSource_UseAction"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
@@ -4384,6 +4573,18 @@
 	<AudioClip ClipName="Sounds/UseActions/door_metal_close1"/>
 	<AudioClip ClipName="Sounds/UseActions/door_metal_close2"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="close_door_metal"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/UseActions/close_door_metal"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="open_door_metal"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/UseActions/open_door_metal"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+
 
 <SoundDataNode name="open_door_vault"> <AudioSource name="Sounds/AudioSource_Door"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
@@ -4440,6 +4641,289 @@
 	<AudioClip ClipName="Sounds/UseActions/door_steel_close1"/>
 	<AudioClip ClipName="Sounds/UseActions/door_steel_close2"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_screen_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_screen_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_screen_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_automatic_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_automatic_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_automatic_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_double_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_double_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_double_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_single_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_single_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_single_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_sliding_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_glass_sliding_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_glass_sliding_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_stall_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_stall_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_stall_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_trailer_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_trailer_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_trailer_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_fence_wood_close"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_close_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_close_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_close_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_close_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_fence_wood_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_open_01"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_open_02"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_open_03"/>
+	<AudioClip ClipName="Sounds/Doors/door_fence_wood_open_04"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- Iron Doors -->
+
+<SoundDataNode name="door_iron_single_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_iron_single_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_single_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_iron_double_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_iron_double_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_double_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_iron_locked"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Doors/door_iron_locked1"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+
+
+	<!-- Jail Doors -->
+
+<SoundDataNode name="door_jail_single_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_jail_single_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_jail_single_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_jail_single_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_jail_double_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_jail_double_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_jail_double_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_jail_double_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_jail_locked"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Doors/door_jail_locked1"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- Elevator Doors -->
+
+<SoundDataNode name="doors_elevator_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/doors_elevator_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="doors_elevator_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/doors_elevator_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_elevator_locked"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Doors/doors_elevator_locked1"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- French Doors -->
+
+<SoundDataNode name="door_french_single_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_french_single_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_single_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_french_double_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_french_double_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_french_double_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- Bifold Closet Doors -->
+
+<SoundDataNode name="door_closet_single_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_closet_single_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_single_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_closet_double_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_open1"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_open2"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_open3"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_open4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_closet_double_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_close1"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_close2"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_close3"/>
+	<AudioClip ClipName="Sounds/Doors/door_closet_double_close4"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- Open/Close Deco -->
 
 <SoundDataNode name="open_drawer"> <AudioSource name="Sounds/AudioSource_UseAction"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
@@ -4733,7 +5217,9 @@
 
 <SoundDataNode name="player_eating"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/UseActions/player_eating"/>
+	<AudioClip ClipName="Sounds/Player_Common/player_eating1"/>
+	<AudioClip ClipName="Sounds/Player_Common/player_eating2"/>
+	<AudioClip ClipName="Sounds/Player_Common/player_eating3"/>
 	<LowestPitch name="0.9"/>
 	<HighestPitch name="1.0"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -4768,38 +5254,6 @@
 	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/UseActions/takeall1"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="wrench_harvest"> <AudioSource name="Sounds/AudioSource_HandTool"/>
-	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/UseActions/wrench_harvest"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="harvest_animal"> <AudioSource name="Sounds/AudioSource_HandTool"/>
-	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/UseActions/harvest_animal1"/>
-	<AudioClip ClipName="Sounds/UseActions/harvest_animal2"/>
-	<AudioClip ClipName="Sounds/UseActions/harvest_animal3"/>
-	<LowestPitch name="0.9"/>
-	<HighestPitch name="1.0"/>
-<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="ratchet"> <AudioSource name="Sounds/AudioSource_HandTool"/>
-<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
-<AudioClip ClipName="Sounds/UseActions/ratchet1"/>
-<AudioClip ClipName="Sounds/UseActions/ratchet2"/>
-<AudioClip ClipName="Sounds/UseActions/ratchet3"/>
- <LowestPitch name="0.9"/>
- <HighestPitch name="1.0"/>
-<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="impactdriver"> <AudioSource name="Sounds/AudioSource_HandTool"/>
-<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
-<AudioClip ClipName="Sounds/UseActions/impactdriver1"/>
- <LowestPitch name="0.95"/>
- <HighestPitch name="1.12"/>
-<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="open_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
@@ -4924,8 +5378,107 @@
 	<AudioClip ClipName="Sounds/UseActions/close_garageindustrial_powered"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
+<SoundDataNode name="rollup_gate_open"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/rollup_gate_open"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="rollup_gate_close"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/rollup_gate_close"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_metal_open"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_metal_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_metal_close"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_metal_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_metal_locked"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_metal_locked1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_wood_open"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_wood_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_wood_close"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_wood_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_garage_wood_locked"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_garage_wood_locked1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+
+
 <!-- End of Rollup Doors & Garage Doors -->
 
+<!-- Chain Link Doors & Gates -->
+
+<SoundDataNode name="door_chainlink_single_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_chainlink_single_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_chainlink_single_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_chainlink_single_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_chainlink_double_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_chainlink_double_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="door_chainlink_double_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/door_chainlink_double_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="gate_chainlink_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_chainlink_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="gate_chainlink_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_chainlink_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- End of Chain Link Doors & Gates -->
+
+<!-- Trader Gates -->
+
+<SoundDataNode name="gate_wood_large_open"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_wood_large_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="gate_wood_large_close"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_wood_large_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="gate_chainlink_trader_open"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_chainlink_trader_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="gate_chainlink_trader_close"> <AudioSource name="Sounds/AudioSource_Interact_Large"/>
+	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<AudioClip ClipName="Sounds/Doors/gate_chainlink_trader_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<!-- End of Trader Gates -->
 
 <SoundDataNode name="open_vending"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
@@ -4985,26 +5538,23 @@
 
 	<!-- Radiation -->
 
-<SoundDataNode name="a_radiated_kill_lp"> <AudioSource name="Sounds/Sounds/AudioSource_Player"/>
-	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_kill_lp" Loop="true"/>
+<SoundDataNode name="a_radiated_kill_lp"> <AudioSource name="Sounds/AudioSource_Player"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_kill_lp" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="a_radiated_medium_lp"> <AudioSource name="Sounds/Sounds/AudioSource_Player"/>
-	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_medium_lp" Loop="true"/>
+<SoundDataNode name="a_radiated_medium_lp"> <AudioSource name="Sounds/AudioSource_Player"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_medium_lp" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="a_radiated_strong_lp"> <AudioSource name="Sounds/Sounds/AudioSource_Player"/>
-	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_strong_lp" Loop="true"/>
+<SoundDataNode name="a_radiated_strong_lp"> <AudioSource name="Sounds/AudioSource_Player"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_strong_lp" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="a_radiated_weak_lp"> <AudioSource name="Sounds/Sounds/AudioSource_Player"/>
-	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_weak_lp" Loop="true"/>
+<SoundDataNode name="a_radiated_weak_lp"> <AudioSource name="Sounds/AudioSource_Player"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/a_radiated_weak_lp" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-	<!-- Buffs         -->
-
-
-
+	<!-- Buffs -->
 <SoundDataNode name="buff_cold_female"> <AudioSource name="Sounds/AudioSource_Player"/>
 	<AudioClip ClipName="Sounds/Buffs/buff_cold_female1"/>
 	<AudioClip ClipName="Sounds/Buffs/buff_cold_female2"/>
@@ -5356,28 +5906,28 @@
 
 	<!-- Generator   -->
 
-<SoundDataNode name="generator_start"> <AudioSource name="Sounds/AudioSource_Interact"/>
+<SoundDataNode name="generator_start"> <AudioSource name="Sounds/AudioSource_Generators"/>
 	<Noise ID="0" noise="10" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Electricity/Generator/generator_start"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="generator_run"> <AudioSource name="Sounds/AudioSource_Interact"/>
+<SoundDataNode name="generator_run"> <AudioSource name="Sounds/AudioSource_Generators"/>
 	<AudioClip ClipName="Sounds/Electricity/Generator/generator_run_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="generator_stop"> <AudioSource name="Sounds/AudioSource_Interact"/>
+<SoundDataNode name="generator_stop"> <AudioSource name="Sounds/AudioSource_Generators"/>
 	<Noise ID="1" noise="5" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Electricity/Generator/generator_end"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 	<!-- Generator Large -->
 
-<SoundDataNode name="generator_large_start"> <AudioSource name="Sounds/AudioSource_Interact"/>
+<SoundDataNode name="generator_large_start"> <AudioSource name="Sounds/AudioSource_Generators"/>
 	<Noise ID="0" noise="10" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Quests/Restore_Power/Generators/generator_large_start"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="generator_large_run_lp"> <AudioSource name="Sounds/AudioSource_Interact"/>
+<SoundDataNode name="generator_large_run_lp"> <AudioSource name="Sounds/AudioSource_Generators"/>
 	<AudioClip ClipName="Sounds/Quests/Restore_Power/Generators/generator_large_run_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
@@ -5496,6 +6046,16 @@
 <SoundDataNode name="alarm1"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<AudioClip ClipName="Sounds/Electricity/Alarms/alarm1_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
+	
+<SoundDataNode name="caralarm1_lp"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/caralarm1_lp" Loop="true"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
+	
+<SoundDataNode name="caralarm1_dying"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Ambient_Loops/caralarm1_dying"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
 
 	<!-- Turret   -->
 
@@ -5520,6 +6080,11 @@
 <SoundDataNode name="turret_retarget_lp"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Electricity/Turret/turret_retarget_lp" Loop="true"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+
+<SoundDataNode name="turret_idle_lp"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Electricity/Turret/turret_idle_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
   <!-- Junk Turret   -->
@@ -5675,6 +6240,147 @@
 	<Noise ID="1" noise="7" time="1.3"/>
 	<AudioClip ClipName="Sounds/Ambient_Oneshots/a_woodcrack_oneshot1"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- Trap Block Triggers & Destroys -->                          	  
+
+	<SoundDataNode name="trap3x3ConcDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcDestroy4"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcDestroy5"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trap3x3ConcTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcTrigger4"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3ConcTrigger5"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trap3x3WoodDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodDestroy4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trap3x3WoodTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trap3x3WoodTrigger4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapCatwalkMetalDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalDestroy2"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapCatwalkMetalTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger4"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger5"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger6"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger7"/>
+	<AudioClip ClipName="Sounds/Traps/trapCatwalkMetalTrigger8"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapCeilTileDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileDestroy4"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileDestroy5"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapCeilTileTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trapCeilTileTrigger4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapConcDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcDestroy4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapConcTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trapConcTrigger4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapGlassPaneDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneDestroy4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapGlassPaneTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger4"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger5"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger6"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger7"/>
+	<AudioClip ClipName="Sounds/Traps/trapGlassPaneTrigger8"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapWoodTrigger"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodTrigger1"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodTrigger2"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodTrigger3"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodTrigger4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<SoundDataNode name="trapWoodDestroy"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+	<Noise ID="1" noise="7" time="1.3"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodDestroy1"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodDestroy2"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodDestroy3"/>
+	<AudioClip ClipName="Sounds/Traps/trapWoodDestroy4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+
+	<!-- Hazards    -->
+
+<SoundDataNode name="flametrap_start"> <AudioSource name="Sounds/AudioSource_Hazard"/>
+<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+<AudioClip ClipName="Sounds/Hazards/Flame/flametrap_start"/>
+<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
+
+<SoundDataNode name="flametrap_lp"> <AudioSource name="Sounds/AudioSource_Hazard"/>
+<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+<AudioClip ClipName="Sounds/Hazards/Flame/flametrap_lp" Loop="true"/>
+<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
+
+<SoundDataNode name="flametrap_end"> <AudioSource name="Sounds/AudioSource_Hazard"/>
+<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+<AudioClip ClipName="Sounds/Hazards/Flame/flametrap_end"/>
+<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0"/> </SoundDataNode>
 
 
 	<!-- Explosions    -->
@@ -6101,8 +6807,16 @@
 	<Noise ID="1" noise="7" time="2" muffled_when_crouched=".5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_pedal1"/>
   <AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_pedal2"/>
+	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal1" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal2" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<MaxVoices value="2"/> <MaxRepeatRate value=".01"/>
 </SoundDataNode>
+	
+	<SoundDataNode name="bicycle_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
+	<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_horn"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_horn" AltSound="true"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxEntities name="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
   <SoundDataNode name="bicycle_coast_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_coast_lp" Loop="true"/>
@@ -6131,29 +6845,32 @@
 <SoundDataNode name="minibike_accel_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_accel_1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_decel_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_decel_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_decel_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_empty_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_empty_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
 	<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_horn1"/>
-	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_horn2"/>
-	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_horn3"/>
+	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_horn"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_horn" AltSound="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxEntities name="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_idle_lp_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_idle_lp_1" Loop="true"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_idle_lp_2" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_impact_"> <AudioSource name="Sounds/AudioSource_Impact"/>
@@ -6162,23 +6879,27 @@
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_impact_2"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_impact_3"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_impact_4"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_crash" AltSound="true"/>
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="1.2"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_run_lp_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_run_lp_1" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_shutoff_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_shutoff_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_shutoff_1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_start_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_start_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_start_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_suspension_"> <AudioSource name="Sounds/AudioSource_Impact"/>
@@ -6192,38 +6913,52 @@
 <SoundDataNode name="motorbike_accel_1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_accel_2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_accel_3"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_3"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Max"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
+	
+	<SoundDataNode name="motorbike_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
+	<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorcycle_horn"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_horn" AltSound="true"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxEntities name="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
 <SoundDataNode name="motorbike_decel"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_decel_1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_empty"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_idle_lp_1" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_mid_speed_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_mid_speed_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_run_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_max_speed_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
@@ -6233,59 +6968,76 @@
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_startup1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_startup2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_shutoff"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_shutoff"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel3"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel3"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_turbo"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_turbo"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
+	
+	<SoundDataNode name="suv_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
+	<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Vehicles/Suv/truck_horn"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_horn" AltSound="true"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxEntities name="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_decel1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_decel1"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_decel2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_decel2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_reverse"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_reverse1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_reverse2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_empty"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_idle_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_max_speed_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_max_speed_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
@@ -6294,24 +7046,35 @@
 <SoundDataNode name="gyrocopter_start"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_start"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_shutoff"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_shutoff"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_idle_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_med_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_med_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_blades_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_blades_lp" Loop="true"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	
+		<SoundDataNode name="gyrocopter_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
+	<Noise ID="4" noise="60" time="3" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_horn"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_horn" AltSound="true"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxEntities name="6"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_damage"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
@@ -6321,6 +7084,7 @@
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage4"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage6"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_crash" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -6336,6 +7100,7 @@
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter7"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter8"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter9"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_sputter" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -6344,6 +7109,7 @@
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 	<!-- Enemies Shared -->
@@ -7326,15 +8092,14 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
 
+	<!-- Zombie Lumberjack -->
 
-
-	<!-- Snow Zombie Female -->
-
-<SoundDataNode name="zombiefemalesnowalert"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowalert1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowalert2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowalert3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowalert4"/>
+<SoundDataNode name="zombielumberjack_alert"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_alert1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_alert2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_alert3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_alert4"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_alert5"/>
 	<Channel name="Mouth"/>
 	<Priority name="3"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7342,11 +8107,15 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
 
-<SoundDataNode name="zombiefemalesnowattack"> <AudioSource name="Sounds/AudioSource_Creatures"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowattack1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowattack2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowattack3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowattack4"/>
+<SoundDataNode name="zombielumberjack_attack"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack4"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack5"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack6"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack7"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_attack8"/>
 	<Channel name="Mouth"/>
 	<Priority name="2"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7354,14 +8123,15 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/> </SoundDataNode>
 
-<SoundDataNode name="zombiefemalesnowdeath"> <AudioSource name="Sounds/AudioSource_Pain"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath4"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath5"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath6"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowdeath7"/>
+<SoundDataNode name="zombielumberjack_death"> <AudioSource name="Sounds/AudioSource_Pain"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death4"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death5"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death6"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death7"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_death8"/>
 	<Channel name="Mouth"/>
 	<Priority name="0"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7369,11 +8139,15 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
-<SoundDataNode name="zombiefemalesnowpain"> <AudioSource name="Sounds/AudioSource_Pain"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowpain1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowpain2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowpain3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowpain4"/>
+<SoundDataNode name="zombielumberjack_pain"> <AudioSource name="Sounds/AudioSource_Pain"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain4"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain5"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain6"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain7"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_pain8"/>
 	<Channel name="Mouth"/>
 	<Priority name="1"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7381,11 +8155,15 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/> </SoundDataNode>
 
-<SoundDataNode name="zombiefemalesnowroam"> <AudioSource name="Sounds/AudioSource_Creatures"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowroam1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowroam2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowroam3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowroam4"/>
+<SoundDataNode name="zombielumberjack_roam"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam4"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam5"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam6"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam7"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_roam8"/>
 	<Channel name="Mouth"/>
 	<Priority name="5"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7393,11 +8171,10 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
 
-<SoundDataNode name="zombiefemalesnowsense"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowsense1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowsense2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowsense3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Female/zombiefemalesnowsense4"/>
+<SoundDataNode name="zombielumberjack_sense"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_sense1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_sense2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_sense3"/>
 	<Channel name="Mouth"/>
 	<Priority name="4"/>
 	<maxVoicesPerEntity value="1"/>
@@ -7405,93 +8182,11 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
 
-
-
-
-	<!-- Snow Zombie Male -->
-
-<SoundDataNode name="zombiemalesnowalert"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowalert1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowalert2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowalert3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowalert4"/>
-	<Channel name="Mouth"/>
-	<Priority name="3"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
-
-<SoundDataNode name="zombiemalesnowattack"> <AudioSource name="Sounds/AudioSource_Creatures"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack4"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack5"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack6"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack7"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack8"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowattack9"/>
-	<Channel name="Mouth"/>
-	<Priority name="2"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/> </SoundDataNode>
-
-<SoundDataNode name="zombiemalesnowdeath"> <AudioSource name="Sounds/AudioSource_Pain"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowdeath1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowdeath2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowdeath3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowdeath4"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowdeath5"/>
-	<Channel name="Mouth"/>
-	<Priority name="0"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
-
-<SoundDataNode name="zombiemalesnowpain"> <AudioSource name="Sounds/AudioSource_Pain"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowpain1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowpain2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowpain3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowpain4"/>
-	<Channel name="Mouth"/>
-	<Priority name="1"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/> </SoundDataNode>
-
-<SoundDataNode name="zombiemalesnowroam"> <AudioSource name="Sounds/AudioSource_Creatures"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowroam1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowroam2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowroam3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowroam4"/>
-	<Channel name="Mouth"/>
-	<Priority name="5"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
-
-<SoundDataNode name="zombiemalesnowsense"> <AudioSource name="Sounds/AudioSource_CreatureSenseAlert"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowsense1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowsense2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiemalesnowsense3"/>
-	<Channel name="Mouth"/>
-	<Priority name="4"/>
-	<maxVoicesPerEntity value="1"/>
-	<LowestPitch name="0.95"/>
-	<HighestPitch name="1.05"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="3"/> </SoundDataNode>
-
-<SoundDataNode name="zombielumberjackfootstep"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiesnowfootstep1"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiesnowfootstep2"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiesnowfootstep3"/>
-	<AudioClip ClipName="Sounds/Enemies/Snow_Zombie_Male/zombiesnowfootstep4"/>
+<SoundDataNode name="zombielumberjack_footstep"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_footstep1"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_footstep2"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_footstep3"/>
+	<AudioClip ClipName="Sounds/Enemies/Zombie_Lumberjack/zombielumberjack_footstep4"/>
 	<maxVoicesPerEntity value="1"/>
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
@@ -7655,296 +8350,294 @@
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
-
-  	<!-- Trader Jen -->
-
+	<!-- Trader Jen -->
 <SoundDataNode name="trader_jenlikeannounceopen"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_01" Subtitle="trader_jen_announce_open_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_02" Subtitle="trader_jen_announce_open_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_open_03" Subtitle="trader_jen_announce_open_03"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.79"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikeannounceclosing"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_01" Subtitle="trader_jen_announce_closing_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_02" Subtitle="trader_jen_announce_closing_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closing_03" Subtitle="trader_jen_announce_closing_03"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="6.92"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikeannounceclosed"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_01" Subtitle="trader_jen_announce_closed_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_02" Subtitle="trader_jen_announce_closed_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_closed_03" Subtitle="trader_jen_announce_closed_03"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.36"/> </SoundDataNode>
 
   <!-- Specials 10% All Items -->
 
 <SoundDataNode name="trader_jenlikeannouncespecial01"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_01" Subtitle="trader_jen_announce_special_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.36"/> </SoundDataNode>
 
     <!-- Specials 15% Medical Items -->
 
   <SoundDataNode name="trader_jenlikeannouncespecial02"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_02" Subtitle="trader_jen_announce_special_02"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.36"/> </SoundDataNode>
 
       <!-- Specials 15% Firearms and ammo -->
 
 <SoundDataNode name="trader_jenlikeannouncespecial03"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_announce_special_03" Subtitle="trader_jen_announce_special_03"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.36"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikebuyrareitem_"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_01" Subtitle="trader_jen_buy_rare_item_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_02" Subtitle="trader_jen_buy_rare_item_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_03" Subtitle="trader_jen_buy_rare_item_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_buy_rare_item_04" Subtitle="trader_jen_buy_rare_item_04"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikefirstgreet"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_01" Subtitle="trader_jen_firstgreet_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_02" Subtitle="trader_jen_firstgreet_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_firstgreet_03" Subtitle="trader_jen_firstgreet_03" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreetaft"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_01" Subtitle="trader_jen_greetaft_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_02" Subtitle="trader_jen_greetaft_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_03" Subtitle="trader_jen_greetaft_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_04" Subtitle="trader_jen_greetaft_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetaft_05" Subtitle="trader_jen_greetaft_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreetbloodmoon"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_01" Subtitle="trader_jen_greetbloodmoon_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_02" Subtitle="trader_jen_greetbloodmoon_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_03" Subtitle="trader_jen_greetbloodmoon_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_04" Subtitle="trader_jen_greetbloodmoon_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetbloodmoon_05" Subtitle="trader_jen_greetbloodmoon_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreeteve"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_01" Subtitle="trader_jen_greeteve_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_02" Subtitle="trader_jen_greeteve_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_03" Subtitle="trader_jen_greeteve_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_04" Subtitle="trader_jen_greeteve_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeteve_05" Subtitle="trader_jen_greeteve_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreeting"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_11"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_12"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_13"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_14"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_15"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_16"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_01" Subtitle="trader_jen_greeting_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_02" Subtitle="trader_jen_greeting_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_03" Subtitle="trader_jen_greeting_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_04" Subtitle="trader_jen_greeting_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_05" Subtitle="trader_jen_greeting_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_06" Subtitle="trader_jen_greeting_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_07" Subtitle="trader_jen_greeting_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_08" Subtitle="trader_jen_greeting_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_09" Subtitle="trader_jen_greeting_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_10" Subtitle="trader_jen_greeting_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_11" Subtitle="trader_jen_greeting_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_12" Subtitle="trader_jen_greeting_12"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_13" Subtitle="trader_jen_greeting_13"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_14" Subtitle="trader_jen_greeting_14"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_15" Subtitle="trader_jen_greeting_15"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greeting_16" Subtitle="trader_jen_greeting_16"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreetmorn"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_01" Subtitle="trader_jen_greetmorn_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_02" Subtitle="trader_jen_greetmorn_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_03" Subtitle="trader_jen_greetmorn_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_04" Subtitle="trader_jen_greetmorn_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetmorn_05" Subtitle="trader_jen_greetmorn_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikegreetnightfall"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_01" Subtitle="trader_jen_greetnightfall_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_02" Subtitle="trader_jen_greetnightfall_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_03" Subtitle="trader_jen_greetnightfall_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_greetnightfall_04" Subtitle="trader_jen_greetnightfall_04"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikehealplayer"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_01" Subtitle="trader_jen_healplayer_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_02" Subtitle="trader_jen_healplayer_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_03" Subtitle="trader_jen_healplayer_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_04" Subtitle="trader_jen_healplayer_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_healplayer_05" Subtitle="trader_jen_healplayer_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikeidle"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_11"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_12"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_13"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_14"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_15"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_16"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_17"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_18"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_19"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_20"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_21"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_01" Subtitle="trader_jen_idle_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_02" Subtitle="trader_jen_idle_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_03" Subtitle="trader_jen_idle_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_04" Subtitle="trader_jen_idle_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_05" Subtitle="trader_jen_idle_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_06" Subtitle="trader_jen_idle_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_07" Subtitle="trader_jen_idle_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_08" Subtitle="trader_jen_idle_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_09" Subtitle="trader_jen_idle_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_10" Subtitle="trader_jen_idle_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_11" Subtitle="trader_jen_idle_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_12" Subtitle="trader_jen_idle_12"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_13" Subtitle="trader_jen_idle_13"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_14" Subtitle="trader_jen_idle_14"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_15" Subtitle="trader_jen_idle_15"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_16" Subtitle="trader_jen_idle_16"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_17" Subtitle="trader_jen_idle_17"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_18" Subtitle="trader_jen_idle_18"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_19" Subtitle="trader_jen_idle_19"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_20" Subtitle="trader_jen_idle_20"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_idle_21" Subtitle="trader_jen_idle_21"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikequestaccepted"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_01" Subtitle="trader_jen_quest_accepted_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_02" Subtitle="trader_jen_quest_accepted_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_03" Subtitle="trader_jen_quest_accepted_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_04" Subtitle="trader_jen_quest_accepted_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_05" Subtitle="trader_jen_quest_accepted_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_06" Subtitle="trader_jen_quest_accepted_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_07" Subtitle="trader_jen_quest_accepted_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_08" Subtitle="trader_jen_quest_accepted_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_09" Subtitle="trader_jen_quest_accepted_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_10" Subtitle="trader_jen_quest_accepted_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_accepted_11" Subtitle="trader_jen_quest_accepted_11"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikequestcomplete"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_01" Subtitle="trader_jen_quest_complete_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_02" Subtitle="trader_jen_quest_complete_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_03" Subtitle="trader_jen_quest_complete_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_04" Subtitle="trader_jen_quest_complete_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_05" Subtitle="trader_jen_quest_complete_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_06" Subtitle="trader_jen_quest_complete_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_07" Subtitle="trader_jen_quest_complete_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_08" Subtitle="trader_jen_quest_complete_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_09" Subtitle="trader_jen_quest_complete_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_complete_10" Subtitle="trader_jen_quest_complete_10"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikequestdeclined"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_01" Subtitle="trader_jen_quest_declined_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_02" Subtitle="trader_jen_quest_declined_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_03" Subtitle="trader_jen_quest_declined_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_04" Subtitle="trader_jen_quest_declined_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_05" Subtitle="trader_jen_quest_declined_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_06" Subtitle="trader_jen_quest_declined_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_07" Subtitle="trader_jen_quest_declined_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_08" Subtitle="trader_jen_quest_declined_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_09" Subtitle="trader_jen_quest_declined_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_10" Subtitle="trader_jen_quest_declined_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_declined_11" Subtitle="trader_jen_quest_declined_11"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikequestincomplete"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_01" Subtitle="trader_jen_quest_incomplete_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_02" Subtitle="trader_jen_quest_incomplete_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_03" Subtitle="trader_jen_quest_incomplete_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_04" Subtitle="trader_jen_quest_incomplete_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_incomplete_05" Subtitle="trader_jen_quest_incomplete_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikequestoffer"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_11"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_12"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_13"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_14"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_01" Subtitle="trader_jen_quest_offer_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_02" Subtitle="trader_jen_quest_offer_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_03" Subtitle="trader_jen_quest_offer_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_04" Subtitle="trader_jen_quest_offer_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_05" Subtitle="trader_jen_quest_offer_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_06" Subtitle="trader_jen_quest_offer_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_07" Subtitle="trader_jen_quest_offer_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_08" Subtitle="trader_jen_quest_offer_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_09" Subtitle="trader_jen_quest_offer_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_10" Subtitle="trader_jen_quest_offer_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_11" Subtitle="trader_jen_quest_offer_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_12" Subtitle="trader_jen_quest_offer_12"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_13" Subtitle="trader_jen_quest_offer_13"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_quest_offer_14" Subtitle="trader_jen_quest_offer_14"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumorberzerkerbills"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_berzerker_bills_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_berzerker_bills_01" Subtitle="trader_jen_rumor_berzerker_bills_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumorevil"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_evil_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_evil_01" Subtitle="trader_jen_rumor_evil_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumorfates"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_fates_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_fates_01" Subtitle="trader_jen_rumor_fates_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumorford"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_ford_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_ford_01" Subtitle="trader_jen_rumor_ford_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumorjohnnytown"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_johnnytown_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_johnnytown_01" Subtitle="trader_jen_rumor_johnnytown_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikerumormotivation"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_motivation_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_rumor_motivation_01" Subtitle="trader_jen_rumor_motivation_01"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikesaleaccepted"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_01" Subtitle="trader_jen_sale_accepted_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_02" Subtitle="trader_jen_sale_accepted_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_03" Subtitle="trader_jen_sale_accepted_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_04" Subtitle="trader_jen_sale_accepted_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_05" Subtitle="trader_jen_sale_accepted_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_06" Subtitle="trader_jen_sale_accepted_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_07" Subtitle="trader_jen_sale_accepted_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_08" Subtitle="trader_jen_sale_accepted_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_09" Subtitle="trader_jen_sale_accepted_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_10" Subtitle="trader_jen_sale_accepted_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_accepted_11" Subtitle="trader_jen_sale_accepted_11"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="trader_jenlikesaledeclined"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_03"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_04"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_05"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_06"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_07"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_08"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_09"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_10"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_11"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_12"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_13"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_14"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_01" Subtitle="trader_jen_sale_declined_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_02" Subtitle="trader_jen_sale_declined_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_03" Subtitle="trader_jen_sale_declined_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_04" Subtitle="trader_jen_sale_declined_04"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_05" Subtitle="trader_jen_sale_declined_05"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_06" Subtitle="trader_jen_sale_declined_06"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_07" Subtitle="trader_jen_sale_declined_07"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_08" Subtitle="trader_jen_sale_declined_08"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_09" Subtitle="trader_jen_sale_declined_09"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_10" Subtitle="trader_jen_sale_declined_10"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_11" Subtitle="trader_jen_sale_declined_11"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_12" Subtitle="trader_jen_sale_declined_12"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_13" Subtitle="trader_jen_sale_declined_13"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Jen/trader_jen_sale_declined_14" Subtitle="trader_jen_sale_declined_14"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 
@@ -8629,7 +9322,83 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
+	
+	<SoundDataNode name="twitch_baseball_start">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_start"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
 
+	<SoundDataNode name="twitch_baseball_zombie_hit">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_zombie_hit_01"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_zombie_hit_02"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_zombie_hit_03"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_baseball_balloon_pop">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_balloon_pop_01"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_balloon_pop_02"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_balloon_pop_03"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_bucket_hit">
+		<AudioSource name="Sounds/AudioSource_Impact_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_bucket_hit_00"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_bucket_hit_01"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_bucket_hit_02"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_balloon_spawn">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_balloon_spawn"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_balloon_despawn">
+		<AudioSource name="Sounds/AudioSource_Twitch_High"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_balloon_despawn"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_baseball_end">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/twitch_baseball_end"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
     <SoundDataNode name="twitch_cooldown_ended">
         <AudioSource name="Sounds/AudioSource_UI"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_cooldown_ended"/>
@@ -8639,7 +9408,17 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
-
+	
+	<SoundDataNode name="twitch_countdown_tick">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_countdown_tick"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
     <SoundDataNode name="twitch_new_commands">
         <AudioSource name="Sounds/AudioSource_UI"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_new_commands"/>
@@ -8649,7 +9428,27 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
-
+	
+	<SoundDataNode name="twitch_timechange">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_timechange"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_timevanish">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_timevanish"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
     <SoundDataNode name="twitch_bad_spawn">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_bad_spawn"/>
@@ -8719,7 +9518,364 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
+	
+	<SoundDataNode name="twitch_auto_pull">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_auto_pull"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_bloodmoon_today">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_bloodmoon_today"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
 
+	<SoundDataNode name="twitch_no_help">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_no_help"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_buckethead">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_buckethead"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_cripple_zombies">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_cripple_zombies"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_crit_immune">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_crit_immune"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_end_cooldown">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_end_cooldown"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_increase_pp">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_increase_pp"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_donation">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_donation"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_donation_bad">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_donation_bad"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_nourish">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_nourish"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="attribute_loser">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/attribute_loser"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="regen_instant">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/regen_instant"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_jumpscare">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_01"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_02"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_03"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_04"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_05"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_06"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_07"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_08"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_09"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_10"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_11"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_12"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_13"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_14"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_15"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_16"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_17"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_18"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_19"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_20"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_21"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_22"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_23"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_24"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_25"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumpscare_26"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+	
+
+	<SoundDataNode name="twitch_clumsy_runner">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_clumsy_runner"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_empty_boxes">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_empty_boxes"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_event_blocks_add">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_event_blocks_add"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_event_blocks_remove">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_event_blocks_remove"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_fill_fuel">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_fill_fuel"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_remove_fuel">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_remove_fuel"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_grow_plants">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_grow_plants"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_destroy_station">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_destroy_station"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_destroy_base">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_destroy_base"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_fill_base">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_fill_base"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_mind_wipe">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_mind_wipe"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weather_fog">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weather_fog"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weather_rain">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weather_rain"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weather_snow">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weather_snow"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weather_thunder">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weather_thunder"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="xp_gainer">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/xp_gainer"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1.0"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_infinite_ammo">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_infinite_ammo"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_infinite_ammo_end">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_infinite_ammo_end"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
+	<SoundDataNode name="twitch_shuffle_boxes">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_shuffle_boxes"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
     <SoundDataNode name="twitch_good_action">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_good_action"/>
@@ -8732,16 +9888,60 @@
 
 <SoundDataNode name="twitch_nostealth"> <AudioSource name="Sounds/AudioSource_Explosion"/>
 	<Noise ID="5" noise="120" time="4" heat_map_strength="5" heat_map_time="300"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth1"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth2"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth3"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth4"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth5"/>
-	<AudioClip ClipName="Sounds/Twitch/twitch_nostealth6"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_00"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_01"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_02"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_03"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_04"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_05"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_06"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_07"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_08"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_09"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_10"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_11"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_12"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_13"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_14"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_15"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_16"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_17"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_18"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_19"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_20"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_21"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_22"/>
 	<LowestPitch name="0.9"/>
 	<HighestPitch name="1.0"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
+	
+	<SoundDataNode name="twitch_nostealth_fem">
+		<AudioSource name="Sounds/AudioSource_Explosion"/>
+		<Noise ID="5" noise="120" time="4" heat_map_strength="5" heat_map_time="300"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_00"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_01"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_02"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_03"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_04"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_05"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_06"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_07"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_08"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_09"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_10"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_11"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_12"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_13"/>
+		<AudioClip ClipName="Sounds/Twitch/Silly/No Stealth/twitch_nostealth_fem_14"/>
+		<LowestPitch name="0.9"/>
+		<HighestPitch name="1.0"/>
+		<LocalCrouchVolumeScale value="1"/>
+		<CrouchNoiseScale value="1"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
     <SoundDataNode name="twitch_pull">
         <AudioSource name="Sounds/AudioSource_UI"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_pull"/>
@@ -8752,7 +9952,57 @@
         <MaxRepeatRate value="1"/>
     </SoundDataNode>
 
-    <SoundDataNode name="twitch_spoil">
+	<SoundDataNode name="party_invite_receive">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/UI/party_invite_receive"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="party_join">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/UI/party_join"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="party_leave">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/UI/party_leave"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="party_member_join">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/UI/party_member_join"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="party_member_leave">
+		<AudioSource name="Sounds/AudioSource_UI"/>
+		<AudioClip ClipName="Sounds/UI/party_member_leave"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="1"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_spoil">
         <AudioSource name="Sounds/AudioSource_Twitch_Spoil"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_spoil"/>
         <LocalCrouchVolumeScale value="1.0"/>
@@ -8791,6 +10041,16 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
+
+	<SoundDataNode name="twitch_custom_event">
+		<AudioSource name="Sounds/AudioSource_Twitch_Medium"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_custom_event"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.25"/>
+	</SoundDataNode>
 
 	<SoundDataNode name="twitch_vote_horde_success">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
@@ -8881,6 +10141,26 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
+
+	<SoundDataNode name="twitch_insta_regen">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_insta_regen"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_revive_zombies">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_revive_zombies"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
 
 	<SoundDataNode name="twitch_shield_buff">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
@@ -9062,6 +10342,126 @@
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
 
+	<SoundDataNode name="twitch_silent_actions">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_silent_actions"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_pack_mule">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_pack_mule"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_top_helper">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_top_helper"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_dont_miss">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_dont_miss"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_drop_toolbelt">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_drop_toolbelt"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_no_running">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_no_running"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_shield_enemies">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_shield_enemies"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_unlock_actions">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_unlock_actions"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weaken_blocks">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weaken_blocks"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_no_safe">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_no_safe"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_no_trader">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_no_trader"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_weak_jump">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_weak_jump"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
 	<SoundDataNode name="twitch_no_use_debuff">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_no_use_debuff"/>
@@ -9112,6 +10512,46 @@
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
 
+	<SoundDataNode name="twitch_double_spawns">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_double_spawns"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_empower_zombies">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_empower_zombies"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_jumbled_backpack">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_jumbled_backpack"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
+	<SoundDataNode name="twitch_tougher_enemies">
+		<AudioSource name="Sounds/AudioSource_Twitch_Max"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_tougher_enemies"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+
 	<SoundDataNode name="twitch_kaboom">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_kaboom"/>
@@ -9131,7 +10571,17 @@
         <MaxVoices value="3"/>
         <MaxRepeatRate value="0.01"/>
     </SoundDataNode>
-
+	
+	<SoundDataNode name="twitch_repair_all">
+		<AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
+		<AudioClip ClipName="Sounds/Twitch/twitch_repair_all"/>
+		<LocalCrouchVolumeScale value="1.0"/>
+		<CrouchNoiseScale value="0.5"/>
+		<NoiseScale value="1"/>
+		<MaxVoices value="3"/>
+		<MaxRepeatRate value="0.01"/>
+	</SoundDataNode>
+	
 	<SoundDataNode name="twitch_degrade">
         <AudioSource name="Sounds/AudioSource_Twitch_Loud"/>
         <AudioClip ClipName="Sounds/Twitch/twitch_degrade"/>
@@ -9257,5 +10707,26 @@
 	<HighestPitch name="1.1"/>
 	<LocalCrouchVolumeScale value="0.3"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/>
 	</SoundDataNode>
+
+	<SoundDataNode name="twitch_refund">
+    <AudioSource name="Sounds/AudioSource_UI"/>
+    <AudioClip ClipName="Sounds/Twitch/twitch_refund"/>
+    <MaxVoices value="3"/>
+    <MaxRepeatRate value="0.01"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="twitch_pause">
+    <AudioSource name="Sounds/AudioSource_UI"/>
+    <AudioClip ClipName="Sounds/Twitch/twitch_pause"/>
+    <MaxVoices value="3"/>
+    <MaxRepeatRate value="0.01"/>
+    </SoundDataNode>
+
+    <SoundDataNode name="twitch_unpause">
+    <AudioSource name="Sounds/AudioSource_UI"/>
+    <AudioClip ClipName="Sounds/Twitch/twitch_unpause"/>
+    <MaxVoices value="3"/>
+    <MaxRepeatRate value="0.01"/>
+    </SoundDataNode>
 
 </Sounds>

@@ -68,6 +68,10 @@
 			<window name="optionsMenu" />
 		</window_group>
 		
+		<window_group name="optionsGeneral">
+			<window name="optionsGeneral" />
+		</window_group>
+		
 		<window_group name="optionsVideo">
 			<window name="optionsVideo" />
 		</window_group>

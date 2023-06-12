@@ -742,7 +742,19 @@
 				<property name="sprite_name" value="ui_game_symbol_gyrocopter"/>
 			</onscreen_settings>
 		</nav_object_class>
-		
+
+		<nav_object_class name="raft" extends="bicycle">
+			<property name="requirement_type" value="IsVehicleOwner" />
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_swim"/>
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_swim"/>
+			</onscreen_settings>
+		</nav_object_class>
+	
 		<nav_object_class name="junk_turret" extends="bicycle">
 			<property name="requirement_type" value="IsVehicleOwner" />
 
@@ -1165,6 +1177,20 @@
 			</onscreen_settings>
 		</nav_object_class>
 		
+		<nav_object_class name="twitch_dropped_loot">
+		<property name="requirement_type" value="IsTwitchSpawnedSelf" />
+		
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_backpack"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="100"/>
+				<property name="color" value="255,175,175,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="Distance"/>
+				<property name="offset" value="0,0.4,0" />
+			</onscreen_settings>
+		</nav_object_class>
+		
 		<nav_object_class name="twitch_spawn">
 			<property name="requirement_type" value="IsTwitchSpawnedSelf" />
 			
@@ -1206,11 +1232,6 @@
 				<property name="sprite_fill_type" value="Health" />
 				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
 				<property name="sprite_fill_color" value="255,0,0,255" />
-				
-				<!-- <property name="sub_sprite_name" value="ui_game_symbol_twitch_overhead_level_4" /> -->
-				<!-- <property name="sub_sprite_offset" value="-32,0" /> -->
-				<!-- <property name="sub_sprite_size" value="16" /> -->
-				
 			</onscreen_settings>
 		</nav_object_class>
 
@@ -1226,10 +1247,81 @@
 				<property name="sprite_fill_type" value="Health" />
 				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
 				<property name="sprite_fill_color" value="255,0,0,255" />
-				
-				<!-- <property name="sub_sprite_name" value="ui_game_symbol_twitch_overhead_level_3" /> -->
-				<!-- <property name="sub_sprite_offset" value="0,-20" /> -->
-				<!-- <property name="sub_sprite_size" value="8" /> -->
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_pistols">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_weapon_pistol_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_shotguns">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_weapon_shotgun_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_rifles">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_weapon_rifle_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_machinegunner">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_weapon_smg_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_boss_bows">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_boss_weapon_arrows_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
 			</onscreen_settings>
 		</nav_object_class>
 		
@@ -1248,6 +1340,81 @@
 			</onscreen_settings>
 		</nav_object_class>
 		
+		<nav_object_class name="twitch_vote_minion_pistols">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_weapon_pistol_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_minion_shotguns">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_weapon_shotgun_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_minion_rifles">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_weapon_rifle_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_minion_machinegunner">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_weapon_smg_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_vote_minion_bows">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_minion_weapon_arrows_overhead"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="64"/>
+				<property name="color" value="255,255,255,255"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,1,0" />
+				<property name="sprite_size" value="48" />
+				<property name="sprite_fill_type" value="Health" />
+				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
+				<property name="sprite_fill_color" value="255,0,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
 		<nav_object_class name="twitch_vote_minion_shield">
 			<onscreen_settings>
 				<property name="sprite_name" value="ui_game_symbol_twitch_minion_shield_overhead"/>
@@ -1260,6 +1427,44 @@
 				<property name="sprite_fill_type" value="Health" />
 				<property name="sprite_fill_name" value="ui_game_symbol_twitch_overhead_hp_ring" />
 				<property name="sprite_fill_color" value="255,255,0,255" />
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_score">
+			
+			<onscreen_settings>
+				<property name="sprite_name" value=""/>
+				<property name="font_size" value="50" />
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="50"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="text_type" value="Name"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_explode">
+			
+			<onscreen_settings>
+				<property name="sprite_name" value=""/>
+				<property name="font_size" value="50" />
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="50"/>
+				<property name="color" value="145,70,255,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="SpawnName"/>
+				<property name="use_head_offset" value="true"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<nav_object_class name="twitch_explode_v2">
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_twitch_bomb"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="200"/>
+				<property name="color" value="255,0,0,0"/>
+				<property name="text_type" value="SpawnName"/>
+				<property name="use_head_offset" value="true"/>
+				<property name="offset" value="0,0.75,0" />
 			</onscreen_settings>
 		</nav_object_class>
 		

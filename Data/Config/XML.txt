@@ -1,21 +1,11 @@
 =====================================================================
 =====================================================================
 
-To Whom It May Concern:
 
-This file is a courtesy to modders, prefab builders, or anyone else incorrigibly curious and snooping around the XML config files.
-
-This information comes with no guarantees whatsoever.
-Tags and properties are added and removed in every major update and what they do or in which cases can change as well.
-
-Keeping all that information in "their" files started to become awkward because of the amount of notes so this file was added.
-
-Robert Hentschke aka Gazz.
 
 
 =====================================================================
 =====================================================================
-Index... kind of
 
 File: BLOCKS.XML
 Use of "Extends" in blocks.xml:
@@ -75,8 +65,6 @@ What this does is that the creative menu can display different sets of blocks in
 
 "Test" items are only enabled in the Unity editor AND if the Dev button is active in the creative menu.
 
-
-(A17)
 If you turn on the "dev button" on the creative menu you always see both "dev" and "player".
 
 With this button OFF:
@@ -2220,21 +2208,6 @@ An entity will be aggro again if attacked after it has stopped pursueing.
 (bug in 16.0: Zombies never seem to stop pursueing)
 
 
-
-(A18) XP buckets for balancing:
-
-<property name="ExperienceGain" value="550"/> <!-- XP grunt -->
-<property name="ExperienceGain" value="800"/> <!-- XP strong -->
-
-<property name="ExperienceGain" value="1000"/> <!-- XP grunt feral -->
-<property name="ExperienceGain" value="1250"/> <!-- XP strong feral -->
-
-<property name="ExperienceGain" value="1600"/> <!-- XP grunt radiated -->
-<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
-
-Moved to here because HTML is particular about it's comments.
-
-
 =====================================================================
 =====================================================================
 
@@ -2302,7 +2275,7 @@ Sleepers
 (A17)
 Sleeper spawner blocks:
 
-<property name="ExcludeWalkType" value="4"/>
+<property name="ExcludeWalkType" value="Crawler"/>
 	Exclude crawlers from spawning in standing poses.
 
 <property name="Pose" value="5"/>

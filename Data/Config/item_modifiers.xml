@@ -1,67 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Item/Installable Tags:
-weapon,
-ranged,
-gun,
-launcher,
-perkArchery,
-bow,
-crossbow,
-shotgun,
-revolver,
-noSilencer,
-shortRange,
-barrelAttachments,
-sideAttachments,
-smallTopAttachments,
-mediumTopAttachments, (may end up redundant)
-largeTopAttachments,
-bottomAttachments,
-stock,
-magazine,
-firingMode,
-
-melee,
-clothing,
-chest,leg,...
-knife,machete,axe,shovel,club,hammer,sledge
-
-? oneHanded
-? twoHanded
-
-blocking tags:
-dBarrel,noMods,noSilencer,noScopes
--->
-
-
-
-<!--
-Example of using the seed (creation time) on a weapon to activate an effect
-<passive_effect name="WeaponHandling" operation="perc_add" value="-.3">
-				<requirement name="RandomRoll" seed_type="Item" target="self" min_max="1,100" operation="LTE" value="20"/>
-			</passive_effect>
--->
+<!-- Table_of_Contents -->
+<!-- Search_Find_All_for *** -->
 
 <item_modifiers>
 	<item_modifier name="modGeneralMaster" type="attachment">
 		<property name="CreativeMode" value="None"/>
+		<property name="CustomIcon" value="missingIcon"/>
 		<property name="Stacknumber" value="1"/>
 		<property name="HoldType" value="45"/>
-		<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
-		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+		<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 		<property name="Group" value="Mods,Tool/Weapon Mods"/>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
 
-	<!--Weapon Attachments
-		<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment">
-		A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" can not be removed.
-	-->
-
+	<!-- *** Weapon_Attachments -->
+	
+	<!-- <item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment"> -->
+	<!-- A  type="attachment"  can be taken back out of an item after it has been installed. A type="mod" can not be removed. -->
+	
 	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBarrelExtenderSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<!--DamageFalloffRange increased by x meters-->
 		<effect_group tiered="false">
 			<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2"/>
@@ -81,8 +43,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunMuzzleBrake" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods,shotgun" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMuzzleBrakeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<!-- Muzzle brake: Directs some of the gases upwards to reduce recoil. Typically increases visibility of the gun/shooter as a result. -->
 		<effect_group tiered="false">
 			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="-.25"/>
@@ -94,27 +57,11 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<!-- <passive_effect name="DamageFalloffRange" operation="base_add" value="-5"/> -->
 	</item_modifier>
 
-	<!-- Muzzle weight / stabilizer / compensator: Any piece of... stuff attached near the muzzle in order to make that bit heavier and counteract recoil. -->
-
-	<!--
-	<item_modifier name="modGunFlashSuppressor" installable_tags="barrelAttachments" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunFlashSuppressorSchematic"/>
-
-		<item_property_overrides name="*">
-				<property name="Particles_muzzle_fire" value=""/>
-		</item_property_overrides>
-
-		<effect_group tiered="false">
-		</effect_group>
-	</item_modifier>
-	-->
-
-
 	<!-- visible -->
 	<item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunSoundSuppressorSilencerSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<!--Decreases sound footprint by x% -->
 		<item_property_overrides name="*">
 			<property name="Sound_start" value="pistol_s_fire"/>
@@ -214,11 +161,17 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="BarrelOffset" value="0,-.005,.31"/>
 		</item_property_overrides>
 
+		<item_property_overrides name="gunMGT0PipeMachineGun">
+			<property name="Sound_start" value="smg_s_fire"/>
+			<property name="Sound_end" value="silencefiller"/>
+			<property name="Sound_loop" value="smg_s_fire"/>
+		</item_property_overrides>
+
 		<!-- visible attachment: silencer -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="dBarrel"/>
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Barrels/SilencerPrefab.prefab" parent_transform="Attachments/Barrel"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Barrels/SilencerPrefab.prefab" parent_transform="Attachments/Barrel"/>
 		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
@@ -240,8 +193,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 	<!-- visible -->
 	<item_modifier name="modGunLaserSight" installable_tags="sideAttachments" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunLaserSightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
@@ -321,7 +275,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<!-- visible attachment: gunlaser -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Sides/side_attachment_laserPrefab.prefab" parent_transform="Attachments/Side" local_rotation="0,0,0"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_laserPrefab.prefab" parent_transform="Attachments/Side" local_rotation="0,0,0"/>
 				<triggered_effect trigger="onSelfItemActivate" action="SetTransformChildrenActive" active="true" parent_transform="Side" transform_path="gun_laser"/>
 				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
 				<triggered_effect trigger="onSelfEquipStop" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
@@ -342,10 +296,12 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<!-- visible -->
-	<item_modifier name="modGunFlashlight" installable_tags="sideAttachments,turretMelee" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+	<item_modifier name="modGunFlashlight" installable_tags="sideAttachments" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunFlashlightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="LightValue" value=".5"/>
+		<property name="Material" value="Mplastics"/>
 
 		<item_property_overrides name="gunHandgunT1Pistol">
 			<property name="SideOffset" value="0,.0198,.0475"/>
@@ -421,7 +377,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<!-- visible attachment: flashlight -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Sides/side_attachment_flashlightPrefab.prefab" parent_transform="Attachments/Side"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_flashlightPrefab.prefab" parent_transform="Attachments/Side"/>
 				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="Side" transform_path="lightSource"/>
 				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
 				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
@@ -436,16 +392,15 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		</effect_group>
 	</item_modifier>
 
-	<!-- ACOG is a trademarked acronym. Do not use. -->
-
 	<!-- visible -->
 	<item_modifier name="modGunScopeSmall" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunScopeSmallSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
-			<property name="Zoom_overlay" value="#Other/Items?Weapons/HUD/sniper_zoom_overlay.tga"/>
+			<property name="Zoom_overlay" value="@:Other/Items/Weapons/HUD/sniper_zoom_overlay.tga"/>
 			<property name="Zoom_max_out" value="40"/>
 			<property name="Zoom_max_in" value="40"/>
 		</item_property_overrides>
@@ -454,52 +409,79 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="ScopeOffset" value="0,.074,.078"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.0225,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT2PumpShotgun">
 			<property name="ScopeOffset" value="0,.056,.013"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT0PipeMachineGun">
 			<property name="ScopeOffset" value="0,12,15"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT1AK47">
 			<property name="ScopeOffset" value="0,.088,-.2"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.04,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunMGT2TacticalAR">
 			<property name="ScopeOffset" value="0,0.1047,-0.2"/>
 			<property name="ScopeScale" value="1,1,1"/>
-			<property name="ScopeCameraOffset" value="0,-.022,0"/>
+			<property name="ScopeCameraOffset" value="0,-.05,.01"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT2Magnum44">
 			<property name="ScopeOffset" value="0,.1037,.0689"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3SMG5">
 			<property name="ScopeOffset" value="0,.0999,-.2534"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
 			<property name="ScopeOffset" value="-.0006,.081,.005"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT2LeverActionRifle">
 			<property name="ScopeOffset" value="0,.0736,-.1497"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunExplosivesT3RocketLauncher">
@@ -507,26 +489,38 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeRotation" value="0,0,80"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
 			<property name="ScopeOffset" value="0,.092,-.06"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="ScopeCameraOffset" value="0,-.03,-.2"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<!-- visible attachment: scope x2 -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Scopes/scope_2xPrefab.prefab" parent_transform="Attachments/Scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_2xPrefab.prefab" parent_transform="Attachments/Scope"/>
 		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
@@ -547,12 +541,13 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 	<!-- visible -->
 	<item_modifier name="modGunScopeMedium" installable_tags="mediumTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunScopeMediumSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
-			<property name="Zoom_overlay" value="#Other/Items?Weapons/HUD/sniper_zoom_overlay.tga"/>
+			<property name="Zoom_overlay" value="@:Other/Items/Weapons/HUD/sniper_zoom_overlay.tga"/>
 			<property name="Zoom_max_out" value="30"/>
 			<property name="Zoom_max_in" value="20"/>
 		</item_property_overrides>
@@ -600,7 +595,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<!-- visible attachment: scope x4 -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Scopes/scope_4xPrefab.prefab" parent_transform="Attachments/Scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_4xPrefab.prefab" parent_transform="Attachments/Scope"/>
 		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
@@ -620,12 +615,13 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 	<!-- visible -->
 	<item_modifier name="modGunScopeLarge" installable_tags="largeTopAttachments" modifier_tags="scope" blocked_tags="noMods,noScopes" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunScopeLargeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<item_property_overrides name="*">
 			<property name="CrosshairOnAim" value="true"/>
-			<property name="Zoom_overlay" value="#Other/Items?Weapons/HUD/sniper_zoom_overlay.tga"/>
+			<property name="Zoom_overlay" value="@:Other/Items/Weapons/HUD/sniper_zoom_overlay.tga"/>
 			<property name="Zoom_max_out" value="20"/>
 			<property name="Zoom_max_in" value="10"/>
 		</item_property_overrides>
@@ -634,6 +630,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="ScopeOffset" value="0,-.0523,.1686"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT1HuntingRifle">
@@ -652,24 +651,33 @@ Example of using the seed (creation time) on a weapon to activate an effect
 			<property name="ScopeOffset" value="0,0,0"/>
 			<property name="ScopeScale" value="1,1,1"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunBowT1IronCrossbow">
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 		<item_property_overrides name="gunBowT3CompoundCrossbow">
 			<property name="ScopeOffset" value="0,.061,-.0761"/>
 			<property name="ScopeScale" value=".9,.9,.9"/>
 			<property name="ScopeCameraOffset" value="0,0,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<!--Add scope overlay, increase zoom x amount-->
 		<!-- visible attachment: scope x8 -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Scopes/scope_8xPrefab.prefab" parent_transform="Attachments/Scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_8xPrefab.prefab" parent_transform="Attachments/Scope"/>
 		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
@@ -689,8 +697,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 	<!-- visible -->
 	<item_modifier name="modGunReflexSight" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,bow" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunReflexSightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<item_property_overrides name="*">
 			<!--<property name="CrosshairOnAim" value="true"/>-->
@@ -767,7 +776,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<item_property_overrides name="gunMGT2TacticalAR">
 			<property name="ScopeOffset" value="-.00099,0.0972,-0.098"/>
 			<property name="ScopeScale" value=".63,.63,.63"/>
-			<property name="ScopeCameraOffset" value="0,-.018,0.0016"/>
+			<property name="ScopeCameraOffset" value="0,.000,0.0016"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunRifleT0PipeRifle">
@@ -809,6 +818,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 		<item_property_overrides name="gunHandgunT3DesertVulture">
 			<property name="ScopeCameraOffset" value="0,-.01,0"/>
+			<property name="zoomTriggerEffectPullDualsense" value="Pistol Trigger"/>
+			<property name="zoomTriggerEffectShootDualsense" value="PistolZoom2"/>
+			<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="gunShotgunT3AutoShotgun">
@@ -822,7 +834,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 		<!-- visible attachment: holosight -->
 		<effect_group tiered="false" name="external attachment prefab (old way)">
 			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#Other/Items?Mods/Scopes/scope_laser_reflexPrefab.prefab" parent_transform="Attachments/Scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_laser_reflexPrefab.prefab" parent_transform="Attachments/Scope"/>
 		</effect_group>
 		<effect_group tiered="false" name="internal attachment prefab (A19)">
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
@@ -835,8 +847,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunTriggerGroupSemi" installable_tags="firingMode" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupSemiSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
@@ -848,6 +861,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	<item_modifier name="modGunTriggerGroupBurst3" installable_tags="firingMode,turretRanged" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupBurst3Schematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modGunTriggerGroupBurst"/>
 
 		<effect_group tiered="false">
@@ -858,8 +872,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunTriggerGroupAutomatic" installable_tags="firingMode,turretRanged" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunTriggerGroupAutomaticSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
@@ -869,8 +884,10 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunBipod" installable_tags="bottomAttachments" modifier_tags="accuracy" blocked_tags="noMods,shortRange" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBipodSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.08"/>
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.09">
@@ -885,8 +902,10 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunForegrip" installable_tags="bottomAttachments,turretRanged" modifier_tags="grips" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunForegripSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.15"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.15"/>
@@ -903,8 +922,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunRetractingStock" installable_tags="stock" modifier_tags="stocks" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunRetractingStockSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.15"/>
@@ -912,7 +932,7 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 
-		<!--Reduces vertical kick when firing by x%, increases move speed by a small amount when holding the weapon is attached to
+	<!--Reduces vertical kick when firing by x%, increases move speed by a small amount when holding the weapon is attached to
 	<item_modifier name="modGunFoldingStock" installable_tags="stock" modifier_tags="stocks" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modGunFoldingStockSchematic"/>
@@ -920,15 +940,15 @@ Example of using the seed (creation time) on a weapon to activate an effect
 
 		<effect_group tiered="false">
 		</effect_group>
-	</item_modifier>
--->
+	</item_modifier>-->
 
 	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun" modifier_tags="barrelAttachment" blocked_tags="noMods,dBarrel" type="attachment" icon="resourceScrapIron">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modShotgunSawedOffBarrelSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<!--<item_property_overrides name="gunShotgunT2PumpShotgun">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/SawedOffPumpShotgun/SawedOffPumpShotgunPrefab.prefab"/>
+			<property name="HandMeshfile" value="@:Other/Items/Weapons/Ranged/SawedOffPumpShotgun/SawedOffPumpShotgunPrefab.prefab"/>
 		</item_property_overrides>-->
 
 		<effect_group tiered="false" name="Base Effects">
@@ -941,8 +961,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunDuckbill" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunDuckbillSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<!--flattens vertical and increases horizontal spread of damage for shotguns-->
 		<effect_group tiered="false">
@@ -952,8 +973,9 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunChoke" installable_tags="shotgun,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunChokeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<!--Adds increased DamageFalloffRange by x meters and decreases spread by x%-->
 		<effect_group tiered="false">
@@ -963,16 +985,20 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunMagazineExtender" installable_tags="magazine,turretRanged" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMagazineExtenderSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modGunDrumMagazineExtender" installable_tags="drumMagazine" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkAutoWeaponsDrumMag"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25"/>
@@ -980,80 +1006,20 @@ Example of using the seed (creation time) on a weapon to activate an effect
 	</item_modifier>
 
 	<item_modifier name="modGunShotgunTubeExtenderMagazine" installable_tags="modGunShotgunTubeExtenderMagazine" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkShotgunMessiahMagazine"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".375"/>
 		</effect_group>
 	</item_modifier>
 
-	<!--Weapon Mods-->
-	<item_modifier name="modGunButtkick3000" installable_tags="weapon,tool" type="attachment" rarity="1">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
-		<property name="CustomIcon" value="apparelGothBoots"/>
-		<property name="CustomIconTint" value="255,0,255"/>
-		<effect_group tiered="false">
-			<passive_effect name="DamageFalloffRange" operation="perc_add" value=".25"/>
-			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
-			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.25"/>
-			<passive_effect name="WeaponHandling" operation="perc_add" value=".3"/>
-			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".5"/>
-			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.3"/>
-			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value=".4"/>
-			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value=".4"/>
-			<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".4"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modGunButtkick4000" installable_tags="weapon,tool" type="attachment" rarity="1">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunButtkick4000Schematic"/>
-		<property name="CreativeMode" value="Test"/>
-		<property name="CustomIcon" value="apparelGothBoots"/>
-		<property name="CustomIconTint" value="0,0,255"/>
-		<effect_group tiered="false">
-			<passive_effect name="AttributeLevel" operation="base_set" value="10"/>
-			<passive_effect name="SkillLevel" operation="base_set" value="1"/>
-			<passive_effect name="PerkLevel" operation="base_set" value="5"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modMeleeGunToolDecapitizer" installable_tags="weapon,tool" type="attachment" rarity="1">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Dev"/>
-		<property name="CustomIcon" value="meleeWpnBladeT1CandyKnife"/>
-		<property name="CustomIconTint" value="255,0,255"/>
-		<effect_group tiered="false">
-			<passive_effect name="EntityDamage" operation="base_set" value="0"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value="-5"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="90"/>
-		</effect_group>
-	</item_modifier>
-
-	<!-- Each successive shot within 2 seconds does an extra .1 damage
-	<item_modifier name="modGunMeleeFeelTheHeat" installable_tags="weapon" modifier_tags="damage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunMeleeFeelTheHeatSchematic"/>
-
-		<effect_group tiered="false">
-		</effect_group>
-	</item_modifier>
-	-->
-
-		<!--	<item_modifier name="modGunBoreYouToDeath" installable_tags="pistol,smg" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunBoreYouToDeathSchematic"/>
-		<property name="CustomIcon" value="partsPistol_barrel"/>
-
-		<effect_group tiered="false">
-		</effect_group>
-	</item_modifier>
-Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firing because that's 7-8x as much energy.-->
-
 	<item_modifier name="modGunCrippleEm" installable_tags="ranged" modifier_tags="crippling" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunCrippleEmSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<!--Each shot has a chance to cripple-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="walker"/>
@@ -1070,27 +1036,32 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modGunBowPolymerString" installable_tags="perkArchery" modifier_tags="velocity" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBowPolymerStringSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="Material" value="Mplastics"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="ProjectileVelocity" operation="perc_add" value=".15"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modGunBowArrowRest" installable_tags="bow" modifier_tags="accuracy" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunBowArrowRestSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.1"/>
 			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.1"/>
 		</effect_group>
 	</item_modifier>
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-
 	<item_modifier name="modGunMeleeTheHunter" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeTheHunterSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<!--Do double damage to living enemies-->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="animal"/>
@@ -1099,8 +1070,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeRadRemover" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modGunMeleeRadRemoverSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
 		<!-- Increases damage against irradiated enemies, all melee only -->
 		<effect_group tiered="false">
 			<requirement name="EntityTagCompare" target="other" tags="radiated"/>
@@ -1108,32 +1081,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunMeleeBlessedMetalSchematic"/>
-		<!--Do double damage to evil / undead-->
-		<effect_group tiered="false">
-			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
-		</effect_group>
-	</item_modifier>
-
-	<!--	Allows the player to enter a custom item name, extra faction reputation bonus
-	<item_modifier name="modGunMeleeNamePlate" installable_tags="weapon" modifier_tags="damage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modGunMeleeNamePlateSchematic"/>
-		<property name="CustomIcon" value="candle"/>
-		<effect_group tiered="false">
-			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
-		</effect_group>
-	</item_modifier>
-	-->
-
 	<item_modifier name="modGunMeleeNiCdBattery" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CreativeMode" value="None"/>
 		<!-- <property name="UnlockedBy" value="modGunMeleeNiCdBatterySchematic"/> -->
+		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
 
 		<!-- Changes damage type to electric -->
 		<item_property_overrides name="*">
@@ -1146,10 +1098,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeFlammableOil" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
-
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CreativeMode" value="None"/>
 		<!-- <property name="UnlockedBy" value="modGunMeleeFlammableOilSchematic"/> -->
+		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
 
 		<!-- Changes damage type to heat -->
 		<item_property_overrides name="*">
@@ -1162,9 +1114,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modGunMeleeLiquidNitrogen" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CreativeMode" value="None"/>
 		<!-- <property name="UnlockedBy" value="modGunMeleeLiquidNitrogenSchematic"/> -->
+		<!-- <property name="TraderStageTemplate" value="modsTier3"/> -->
 
 		<!-- Changes damage type to cold -->
 		<item_property_overrides name="*">
@@ -1176,12 +1129,12 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-
+	<!-- *** Melee_Mods -->
 	<item_modifier name="modMeleeTemperedBlade" installable_tags="perkDeepCuts,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeTemperedBladeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
 		<!-- reduce DR of armor by x, blade weapons -->
 		<effect_group tiered="false">
 			<passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
@@ -1190,8 +1143,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeSerratedBlade" installable_tags="knife,machete,axe,shovel,perkBrawler,perkJavelinMaster" modifier_tags="damage" blocked_tags="noMods,noBlades" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeSerratedBladeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
@@ -1204,8 +1159,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeWeightedHead" installable_tags="light,medium,heavy,turretMelee" modifier_tags="damage" blocked_tags="noMods,perkDeepCuts" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWeightedHeadSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<!-- Increases stun chance; increases stamina use, axe, hammer, club -->
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
@@ -1214,8 +1171,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeStructuralBrace" installable_tags="melee,perkArchery" modifier_tags="durability" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeStructuralBraceSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 
 		<!-- Increases durability, increases block efficiency, all melee -->
 		<effect_group tiered="false">
@@ -1224,8 +1182,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeErgonomicGrip" installable_tags="melee,bow" modifier_tags="health" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeErgonomicGripSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<!-- Reduces Stamina usage on all attacks, all melee -->
 		<effect_group tiered="false">
@@ -1239,8 +1198,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeFortifyingGrip" installable_tags="melee" modifier_tags="health" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeFortifyingGripSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<!-- Gain HP/sec when under 50% HP -->
 		<effect_group tiered="false">
@@ -1250,47 +1210,67 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubBarbedWire" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubBarbedWireSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT0WoodenClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubWood/ClubWoodBarbPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubWood/clubWoodBarbPrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT1BaseballBat">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batBarbed_Prefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batBarbed_Prefab.prefab"/>
 		</item_property_overrides>
 
 		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_BarbedPrefab.prefab"/>
+			<property name="HandMeshfile" value="@:Other/Items/Weapons/Melee/Club/Club_Wood_BarbedPrefab.prefab"/>
 		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronBarbPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronBarbPrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
-		<effect_group tiered="false" name="Power Attack">
+		<effect_group tiered="false">
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
 		</effect_group>
-		<effect_group tiered="false" name="Always extend bleeding">
-			<requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/>
+		<effect_group tiered="false">
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
+
+		<!-- <effect_group tiered="false"> -->
+			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/> -->
+				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="LogMessage" message="Barbed Wire Primary Hit"/> -->
+				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/> -->
+		<!-- </effect_group> -->
+		<!-- <effect_group tiered="false" name="Power Attack"> -->
+			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/> -->
+				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="LogMessage" message="Barbed Wire Secondary Hit"/> -->
+				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire"/> -->
+		<!-- </effect_group> -->
+		<!-- <effect_group tiered="false" name="Always extend bleeding"> -->
+			<!-- <requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/> -->
+				<!-- <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/> -->
+				<!-- <triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/> -->
+		<!-- </effect_group> -->
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubMetalSpikes" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubMetalSpikesSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -1298,19 +1278,19 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT0WoodenClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubWood/ClubWoodSpikePrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubWood/clubWoodSpikePrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT1BaseballBat">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batSpikes_Prefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batSpikes_Prefab.prefab"/>
 		</item_property_overrides>
 
 		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
+			<property name="HandMeshfile" value="@:Other/Items/Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
 		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronSpikePrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronSpikePrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
@@ -1319,27 +1299,28 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubMetalChain" installable_tags="club" modifier_tags="shaft" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkBatterUpMetalChain"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT0WoodenClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubWood/ClubWoodChainPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubWood/clubWoodChainPrefab.prefab"/>
 		</item_property_overrides>
 
 		<item_property_overrides name="meleeWpnClubT1BaseballBat">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/Bat/batChained_Prefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batChained_Prefab.prefab"/>
 		</item_property_overrides>
 
 		<!--<item_property_overrides name="meleeWpnClubT1CandyClub">
-			<property name="HandMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
+			<property name="HandMeshfile" value="@:Other/Items/Weapons/Melee/Club/Club_Wood_SpikedPrefab.prefab"/>
 		</item_property_overrides>-->
 
 		<item_property_overrides name="meleeWpnClubT3SteelClub">
-			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubIron/ClubIronChainPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/ClubIron/clubIronChainPrefab.prefab"/>
 		</item_property_overrides>
 
 		<effect_group tiered="false">
@@ -1349,8 +1330,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubBurningShaft" installable_tags="longShaft" modifier_tags="fire" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeClubBurningShaftSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 
 		<item_property_overrides name="*">
 			<property name="LightValue" value=".25"/> <!-- has no effect on a mod -->
@@ -1421,7 +1403,6 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 
 		<effect_group name="light/douse torch always" tiered="false">
-
 			<triggered_effect trigger="onSelfWaterSurface" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
 			<triggered_effect trigger="onSelfWaterSubmerge" action="RemovePart" part="Flames"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Flames"/>
@@ -1458,8 +1439,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeFiremansAxeMod" installable_tags="axe" modifier_tags="damageDirt,damageStone,damageIron" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkFiremansAlmanacAxes"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="EntityDamage" operation="perc_add" value="-.25"/>
 			<passive_effect name="BlockDamage" operation="perc_add" value=".25"/>
@@ -1469,28 +1452,34 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeGraveDigger" installable_tags="melee" modifier_tags="damageDirt" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeGraveDiggerSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="earth"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="earth"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeBunkerBuster" installable_tags="melee" modifier_tags="damageStone" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeBunkerBusterSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
-			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="stone"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="stone"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
 			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHarvestXPBalance"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeIronBreaker" installable_tags="melee" modifier_tags="damageIron" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeIronBreakerSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="metal"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
@@ -1499,8 +1488,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeWoodSplitter" installable_tags="melee" modifier_tags="damageWood" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modMeleeWoodSplitterSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".15" tags="wood"/>
 			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHarvestXPBalance"/>
@@ -1509,16 +1500,20 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeDiamondTip" installable_tags="tool,perkBrawler,perkJavelinMaster,perkDeepCuts" modifier_tags="durability" blocked_tags="noMods,noBlades" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkArtOfMiningDiamondTools"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		
 		<effect_group tiered="false">
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.4" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modMeleeStunBatonRepulsor" installable_tags="perkElectrocutioner" modifier_tags="knockback" blocked_tags="noMods,noStunEffect" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkTechJunkie5Repulsor"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffmodMeleeStunBatonRepulsor"/>
@@ -1526,27 +1521,34 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modFuelTankSmall" installable_tags="motorTool" modifier_tags="fuel" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankSmallSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value=".5"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modFuelTankLarge" installable_tags="motorTool" modifier_tags="fuel" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modFuelTankLargeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="MagazineSize" operation="perc_add" value="1"/>
 		</effect_group>
 	</item_modifier>
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+	<!-- *** Armor_Mods -->
 
 	<!--Clothing Attachments-->
 	<item_modifier name="modArmorBandolier" installable_tags="armorChest,armorLegs" modifier_tags="ammo" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorBandolierSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
+		<property name="Material" value="Mcloth"/>
+		
 		<!-- Reload Guns X% faster;  would like to add it to "legs" but buffs dont stack like that -->
 		<effect_group tiered="false">
 			<requirement name="ItemHasTags" tags="armorChest"/>
@@ -1559,20 +1561,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierLegs"/>
 		</effect_group>
 	</item_modifier>
-
-	<!--Increase fire resistance by x%
-	<item_modifier name="modYoureFired" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modYoureFiredSchematic"/>
-		<effect_group tiered="false">
-			<passive_effect name="ElementalDamageResist" operation="perc_add" value=".5" tags="heat"/>
-		</effect_group>
-	</item_modifier>-->
-
-	<!--Clothing Mods-->
+	
 	<item_modifier name="modRadiationReady" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CreativeMode" value="None"/>
+		<!-- <property name="TraderStageTemplate" value="modsTier2"/> -->
 		<!-- <property name="UnlockedBy" value="modRadiationReadySchematic"/> -->
 
 		<!--Increase radiation resistance by x%-->
@@ -1582,9 +1575,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorInsulatedLiner" installable_tags="armor" modifier_tags="thermal" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorInsulatedLinerSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modTempResist"/>
+		<property name="Material" value="Mcloth"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="HypothermalResist" operation="base_add" value="5"/>
@@ -1593,9 +1588,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorCoolingMesh" installable_tags="armor" modifier_tags="temperature" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorCoolingMeshSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modTempResist"/>
+		<property name="Material" value="Mplastics"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="HyperthermalResist" operation="base_add" value="5"/>
@@ -1604,9 +1601,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorImprovedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorImprovedFittingsSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modArmorMobility"/>
+		<property name="Material" value="Mplastics"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="Mobility" operation="perc_add" value=".02"/>
@@ -1617,9 +1616,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorCustomizedFittings" installable_tags="armor" modifier_tags="movement" blocked_tags="noMods,padded" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorCustomizedFittingsSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="DisplayType" value="modArmorMobility"/>
+		<property name="Material" value="Mplastics"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="Mobility" operation="perc_add" value=".03"/>
@@ -1630,29 +1631,33 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorPlatingBasic" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorPlatingBasicSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modArmor"/>
+		<property name="Material" value="Mleather"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="1"/>
 		</effect_group>
 	</item_modifier>
 
-	<!-- modArmorPlatingSteel -->
 	<item_modifier name="modArmorPlatingReinforced" installable_tags="armor" modifier_tags="resistance" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorPlatingReinforcedSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="DisplayType" value="modArmor"/>
 		<property name="DescriptionKey" value="modArmorPlatingBasicDesc"/>
+		
 		<effect_group tiered="false">
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="2"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorStoragePocketSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
 
@@ -1663,8 +1668,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorDoubleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorDoubleStoragePocketSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
 
@@ -1675,8 +1681,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorTripleStoragePocket" installable_tags="armor" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorTripleStoragePocketSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
 
@@ -1687,8 +1694,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorMuffledConnectorsSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
 
@@ -1698,8 +1706,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorAdvancedMuffledConnectors" installable_tags="armor" modifier_tags="stealth" blocked_tags="noMods,padded" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorAdvancedMuffledConnectorsSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="DisplayType" value="modNoiseReduction"/>
 		<property name="Material" value="Msteel"/>
 
@@ -1709,8 +1718,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorImpactBracing" installable_tags="armorFeet" modifier_tags="falldamage" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorImpactBracingSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
@@ -1720,46 +1730,22 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modArmorWaterPurifier" installable_tags="armorHead" modifier_tags="waterPurifier" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modArmorWaterPurifierSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="Material" value="Msteel"/>
 
 		<effect_group tiered="false">
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffDysenteryCatchDrink"/>
-		</effect_group>
-	</item_modifier>
-
-	<item_modifier name="modArmorJumpJets" installable_tags="armorChest" modifier_tags="misc" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Dev"/>
-		<!-- <property name="UnlockedBy" value="modArmorJumpJetsSchematic"/> -->
-		<property name="CustomIcon" value="flamethrowerTrap"/>
-		<effect_group tiered="false">
-				<!-- <triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffJumpJetsActivated"/>
-				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffJumpJetsActivated"/>
-				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffJumpJetsActivated"/> -->
-			<triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="generator_start" play_in_head="true"/>
-			<triggered_effect trigger="onSelfItemActivate" action="FadeOutSound" target="self" sound="generator_start" play_in_head="true"/>
-			<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="generator_stop" play_in_head="true"/>
-			<triggered_effect trigger="onSelfItemDeactivate" action="FadeOutSound" target="self" sound="generator_stop" play_in_head="true"/>
-		</effect_group>
-
-		<effect_group tiered="false">
-			<passive_effect name="WalkSpeed" operation="perc_subtract" value=".35"/>
-			<passive_effect name="RunSpeed" operation="perc_subtract" value=".35"/>
-			<passive_effect name="JumpStrength" operation="perc_add" value="3.2"/>
-			<passive_effect name="StaminaLoss" operation="perc_subtract" value=".75" tags="jumping"/>
-
-			<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="true">
-				<requirement name="IsItemActive"/>
-			</triggered_effect>
-			<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffJumpJetsAirborne"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffWaterPurifier"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffWaterPurifier"/>
 		</effect_group>
 	</item_modifier>
 
 	<item_modifier name="modArmorHelmetLight" installable_tags="head" modifier_tags="misc,modArmorHelmetLight" blocked_tags="noMods,clothing" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
-		<property name="UnlockedBy" value="modArmorHelmetLightSchematic,perkArtOfMiningLantern"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modArmorHelmetLightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="Material" value="Msteel"/>
 		<property name="LightValue" value=".4"/>
 		<effect_group tiered="false">
@@ -1773,9 +1759,12 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLightCam" active="false"/>
 		</effect_group>
 	</item_modifier>
-<!-- Clothing mods = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+	<!-- *** Clothing_Pocket_Mods -->
+
 	<item_modifier name="modClothingStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
 		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
@@ -1787,8 +1776,9 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modClothingCargoStoragePocket" installable_tags="pocketMod" modifier_tags="carryweight" blocked_tags="noMods" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="perkNeedleAndThreadPockets"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="DisplayType" value="modCarryCapacity"/>
 		<property name="Material" value="Mleather"/>
 		<property name="Group" value="Mods,Tool/Weapon Mods,clothing"/>
@@ -1799,8 +1789,8 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-	<!-- Dyes and cosmetic / skin mods -->
+	<!-- *** Dye_Mods -->
+	
 	<!-- How pre-installed dyes are picked for looted items:
 			All dyes are checked and roll for their cosmetic_install_chance.
 			If that's a hit, the item goes in the list.
@@ -1808,14 +1798,14 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			When done, one dye is picked from the list. -->
 
 	<item_modifier name="modDyeWhite" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="CreativeMode" value="None"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 	</item_modifier>
 
-	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeRed" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1866,7 +1856,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeGreen" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeGreen" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1911,7 +1901,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
+	<item_modifier name="modDyeBlack" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlack" type="attachment" cosmetic_install_chance=".05">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -1983,7 +1973,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".13">
+	<item_modifier name="modDyeBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBlue" type="attachment" cosmetic_install_chance=".13">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/>
@@ -2042,7 +2032,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".16">
+	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".16">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="132,105,84"/>
@@ -2080,7 +2070,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".08">
+	<item_modifier name="modDyePink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePink" type="attachment" cosmetic_install_chance=".08">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="240,162,251"/>
@@ -2131,7 +2121,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyePurple" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyePurple" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="113,97,129"/>
@@ -2177,7 +2167,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 	</item_modifier>
 
-	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+	<item_modifier name="modDyeYellow" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeYellow" type="attachment" cosmetic_install_chance=".1">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
 		<property name="CustomIcon" value="modDyeWhite"/> <property name="CustomIconTint" value="218,200,135"/>
@@ -2224,7 +2214,6 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<!--
-
 	<item_modifier name="modDyeOrange" installable_tags="clothing,armor,weapon,tool,vehicle" modifier_tags="dye" type="attachment" cosmetic_install_chance=".05">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="DescriptionKey" value="modDyeGroupDesc"/>
@@ -2235,10 +2224,13 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 			<property name="UMA.Overlay0Tint" value="255,128,0"/>
 		</item_property_overrides>
 	</item_modifier>
--->
-
-  <item_modifier name="modArmorCowboyHat" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
+	-->
+	
+	<!-- *** Helmet_Mods -->
+	
+	<item_modifier name="modArmorCowboyHat" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="CustomIcon" value="apparelCowboyHat"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
@@ -2256,6 +2248,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 	<item_modifier name="modArmorSkullCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="CustomIcon" value="apparelSkullCap"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
@@ -2273,6 +2266,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 	<item_modifier name="modArmorPressboyCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="CustomIcon" value="apparelPressboyCap"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
@@ -2290,6 +2284,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 	<item_modifier name="modArmorBallCap" installable_tags="head" modifier_tags="rare" blocked_tags="noMods,clothing" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="CustomIcon" value="apparelBallCap"/>
 		<property name="EconomicValue" value="440"/>
 		<property name="DisplayType" value="clothing"/>
@@ -2305,15 +2300,14 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 	</item_modifier>
 
-
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-	<!--Vehicle mods-->
+	<!-- *** Vehicle_Mods -->
 
 	<item_modifier name="modVehicleMega" installable_tags="vehicle" modifier_tags="test" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
-		<property name="CreativeMode" value="Test"/>
+		<property name="CreativeMode" value="Dev"/>
 		<property name="UnlockedBy" value="modVehicleMegaSchematic"/>
-		<property name="CustomIcon" value="armorSantaHat"/>
+		<property name="CustomIcon" value="modVehicleSuperCharger"/>
+		<property name="CustomIconTint" value="255,0,255"/>
 		<effect_group tiered="false">
 			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value="0"/>
 			<passive_effect name="LightIntensity" operation="perc_set" value="3"/>
@@ -2325,6 +2319,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	<item_modifier name="modVehicleFuelSaver" installable_tags="vengine" modifier_tags="fuelsaver" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modVehicleFuelSaverSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modVehicleFuelSaver"/>
 		<effect_group tiered="false">
 			<passive_effect name="VehicleFuelUsePer" operation="perc_set" value=".5"/>
@@ -2334,6 +2329,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	<item_modifier name="modVehicleOffRoadHeadlights" installable_tags="vlight" modifier_tags="light" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modVehicleOffRoadHeadlightsSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
 		<property name="CustomIcon" value="modVehicleOffRoadHeadlights"/>
 		<effect_group tiered="false">
 			<passive_effect name="LightIntensity" operation="perc_set" value="2.2"/>
@@ -2343,6 +2339,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	<item_modifier name="modVehicleSuperCharger" installable_tags="vengine" modifier_tags="speed" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modVehicleSuperChargerSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="CustomIcon" value="modVehicleSuperCharger"/>
 		<effect_group tiered="false">
 			<passive_effect name="VehicleVelocityMaxPer" operation="perc_set" value="1.25"/>
@@ -2353,6 +2350,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	<item_modifier name="modVehicleExpandedSeat" installable_tags="vseat" modifier_tags="seat" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modVehicleExpandedSeatSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="CustomIcon" value="modVehicleExpandedSeat"/>
 		<effect_group tiered="false">
 			<passive_effect name="VehicleSeats" operation="base_add" value="2"/>
@@ -2362,57 +2360,59 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	<item_modifier name="modVehicleReserveFuelTank" installable_tags="vfuel" modifier_tags="fueltank" blocked_tags="noMods" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="UnlockedBy" value="modVehicleReserveFuelTankSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
 		<property name="CustomIcon" value="modVehicleReserveFuelTank"/>
 		<effect_group tiered="false">
 			<passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.5"/>
 		</effect_group>
 	</item_modifier>
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-	<!--Robotic Drone Mods-->
+	<!-- *** Robotic_Drone_Mods -->
 
 	<item_modifier name="modRoboticDroneArmorPlatingMod" installable_tags="drone" modifier_tags="droneArmor" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneArmorPlatingModSchematic"/>
-	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneCargoMod" installable_tags="drone" modifier_tags="droneStorage" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneCargoModSchematic"/>
-	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneMoraleBoosterMod" installable_tags="drone" modifier_tags="droneMorale" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneMoraleBoosterModSchematic"/>
-	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneHeadlampMod" installable_tags="drone" modifier_tags="droneLamp" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneHeadlampModSchematic"/>
-		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneMedicMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
-		<property name="Extends" value="modGeneralMaster"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneMedicModSchematic"/>
-	    <!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 	    <property name="CreativeMode" value="None"/>
+		<property name="CustomIcon" value="missingIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
-		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 	</item_modifier>
 
 	<item_modifier name="modRoboticDroneStunWeaponMod" installable_tags="drone" modifier_tags="droneWeapon" type="attachment">
 		<property name="Extends" value="modGeneralMaster"/>
 		<property name="CreativeMode" value="None"/>
+		<property name="CustomIcon" value="missingIcon"/>
 		<property name="UnlockedBy" value="modRoboticDroneWeaponModSchematic"/>
-		<!-- <property name="Group" value="Mods,Tool/Weapon Mods,Robotics"/> -->
+		<property name="TraderStageTemplate" value="modsTier3"/>
 		<!-- Stun atk mod -->
 		<!-- <effect_group tiered="false">
 		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
@@ -2420,46 +2420,165 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group> -->
 	</item_modifier>
 
+	<!-- *** Quest_Items -->
 
-	<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-	<!-- Quest items : These are here so that the icons are baked into the atlas. -->
-
-	<item_modifier name="questWhiteRiverSupplies"><property name="CreativeMode" value="Test"/>
-		<property name="Extends" value="modGeneralMaster"/>
+	<!-- These are here so that the icons are baked into the atlas. -->
+	<item_modifier name="questWhiteRiverSupplies">
+		<property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="DescriptionKey" value="questSuppliesGroupDesc"/>
 	</item_modifier>
 
-	<item_modifier name="questCassadoreSupplies"><property name="CreativeMode" value="Test"/>
-		<property name="Extends" value="modGeneralMaster"/>
+	<item_modifier name="questCassadoreSupplies">
+		<property name="CreativeMode" value="Test"/>
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 		<property name="DescriptionKey" value="questSuppliesGroupDesc"/>
+	</item_modifier>
+
+	<!-- *** Admin_Mods -->
+
+	<item_modifier name="modGunButtkick3000" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Test"/>
+		<property name="CustomIcon" value="apparelGothBoots"/>
+		<property name="CustomIconTint" value="255,0,255"/>
+		<effect_group tiered="false">
+			<passive_effect name="DamageFalloffRange" operation="perc_add" value=".25"/>
+			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.25"/>
+			<passive_effect name="WeaponHandling" operation="perc_add" value=".3"/>
+			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".5"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.3"/>
+			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value=".4"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value=".4"/>
+			<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".4"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modGunButtkick4000" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Test"/>
+		<property name="CustomIcon" value="apparelGothBoots"/>
+		<property name="CustomIconTint" value="0,0,255"/>
+		<effect_group tiered="false">
+			<passive_effect name="AttributeLevel" operation="base_set" value="10"/>
+			<passive_effect name="SkillLevel" operation="base_set" value="1"/>
+			<passive_effect name="PerkLevel" operation="base_set" value="5"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modMeleeGunToolDecapitizer" installable_tags="weapon,tool" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Dev"/>
+		<property name="CustomIcon" value="meleeWpnBladeT1CandyKnife"/>
+		<property name="CustomIconTint" value="255,0,255"/>
+		<effect_group tiered="false">
+			<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="-5"/>
+			<passive_effect name="DismemberChance" operation="base_add" value="90"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modArmorJumpJets" installable_tags="armorChest" modifier_tags="misc" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Dev"/>
+		<property name="CustomIcon" value="flamethrowerTrap"/>
+		<effect_group tiered="false">
+				<!-- <triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffJumpJetsActivated"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffJumpJetsActivated"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffJumpJetsActivated"/> -->
+			<triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="generator_start" play_in_head="true"/>
+			<triggered_effect trigger="onSelfItemActivate" action="FadeOutSound" target="self" sound="generator_start" play_in_head="true"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="generator_stop" play_in_head="true"/>
+			<triggered_effect trigger="onSelfItemDeactivate" action="FadeOutSound" target="self" sound="generator_stop" play_in_head="true"/>
+		</effect_group>
+
+		<effect_group tiered="false">
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value=".35"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value=".35"/>
+			<passive_effect name="JumpStrength" operation="perc_add" value="3.2"/>
+			<passive_effect name="StaminaLoss" operation="perc_subtract" value=".75" tags="jumping"/>
+
+			<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="true">
+				<requirement name="IsItemActive"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffJumpJetsAirborne"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modGunBowAdminArcheryReloadRecovery" installable_tags="perkArchery" type="attachment" rarity="1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="CreativeMode" value="Dev"/>
+		<property name="CustomIcon" value="modGunBowArrowRest"/>
+		<property name="CustomIconTint" value="FF00FF"/>
+		<effect_group tiered="false">
+			<passive_effect name="ProjectileStickChance" operation="perc_add" value="1"/>
+			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="2"/>
+		</effect_group>
 	</item_modifier>
 
 </item_modifiers>
 
+<!-- *** Notes: -->
 
+<!-- Item/Installable Tags: -->
+<!--
+weapon,
+ranged,
+gun,
+launcher,
+perkArchery,
+bow,
+crossbow,
+shotgun,
+revolver,
+noSilencer,
+shortRange,
+barrelAttachments,
+sideAttachments,
+smallTopAttachments,
+mediumTopAttachments, (may end up redundant)
+largeTopAttachments,
+bottomAttachments,
+stock,
+magazine,
+firingMode,
 
+melee,
+clothing,
+chest,leg,...
+knife,machete,axe,shovel,club,hammer,sledge
 
+? oneHanded
+? twoHanded
 
+blocking tags:
+dBarrel,noMods,noSilencer,noScopes
+-->
 
 <!--
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-<item_modifier> node
+Example of using the seed (creation time) on a weapon to activate an effect
+<passive_effect name="WeaponHandling" operation="perc_add" value="-.3">
+				<requirement name="RandomRoll" seed_type="Item" target="self" min_max="1,100" operation="LTE" value="20"/>
+			</passive_effect>
+-->
 
-name
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- <item_modifier> node -->
+
+<!-- name
 description_key
 installable_tags
 modifier_tags
 type
 icon
-icon_color
+icon_color -->
 
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-
-PASSIVE EFFECT LIST
-
-		CraftingTime,
+<!-- PASSIVE EFFECT LIST -->
+<!-- 
+	CraftingTime,
 	CraftingQuality,
 
 	RepairAmount,
@@ -2531,9 +2650,7 @@ PASSIVE EFFECT LIST
 	CoreTemp,
 	SpeedModifier,
 
-
 	CriticalChance,
-
 
 	EntityDamage,
 	BlockDamage,
@@ -2588,10 +2705,11 @@ PASSIVE EFFECT LIST
 	BatteryMaxLoadInVolts,
 	BatteryDischargeTimeInMinutes,
 
-	LightIntensity,
--->
+	LightIntensity, -->
 
-<!-- TRIGGER LIST
+<!--
+	TRIGGER LIST
+	
 	onSelfBuffStart,
 	onSelfBuffUpdate,
 	onSelfBuffFinish,

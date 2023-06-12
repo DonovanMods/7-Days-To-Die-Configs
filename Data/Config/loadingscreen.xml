@@ -22,6 +22,8 @@
 		<tip key="loadingTipWorkstations" />
 		<tip key="loadingTipUnlockingRecipes" />
 		<tip key="loadingTipCraftingBetterQL" />
+		<tip key="loadingTipMagazines" />
+		<tip key="loadingTipPerkLootBoost" />
 		<tip key="loadingTipBaseUpgrading" />
 		<tip key="loadingTipRadials" />
 		<tip key="loadingTipHarvestingCorpses" />

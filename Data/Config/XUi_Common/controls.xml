@@ -50,23 +50,24 @@
 	<textfield depth="3" pos="0,0" width="200" height="32"
 			value="" active_text_color="[labelColor]" caret_color="[labelColor]" selection_color="[mediumGrey_half_alpha]" 
 			character_limit="0" validation="none" backgroundcolor="[black]" on_hover="false" on_scroll="false" virtual_keyboard_prompt=""
-			pivot="topleft" visible="true" on_return="submit" tooltip_key="" search_field="false" password_field="false" focus_on_open="false" clear_on_open="false" close_group_on_tab="false" open_vk_on_open="false"
+			pivot="topleft" visible="true" on_return="submit" tooltip_key="" search_field="false" password_field="false" clear_button="false" focus_on_open="false" clear_on_open="false" close_group_on_tab="false" open_vk_on_open="false"
 			foregroundlayer="false" justify="center" overflow="ShrinkContent" max_line_count="0" font_face="ReferenceFont" crispness="Never">
 		<panel name="${name}" depth="${depth}" controller="TextInput" pos="${pos}" width="${width}" height="${height}" value="${value}"
 			active_text_color="${active_text_color}" caret_color="${caret_color}" selection_color="${selection_color}" 
 			character_limit="${character_limit}" validation="${validation}" backgroundcolor="${backgroundcolor}" style="press, select" on_hover="${on_hover}" on_scroll="${on_scroll}" snapCursor="true" virtual_keyboard_prompt="${virtual_keyboard_prompt}"
 			disableautobackground="true" pivot="${pivot}" visible="${visible}" on_return="${on_return}" tooltip_key="${tooltip_key}"
-			search_field="${search_field}" password_field="${password_field}" focus_on_open="${focus_on_open}" clear_on_open="${clear_on_open}" close_group_on_tab="${close_group_on_tab}" open_vk_on_open="${open_vk_on_open}">
-			<sprite depth="0" name="background" color="${backgroundcolor}" type="sliced" pivot="${pivot}" foregroundlayer="${foregroundlayer}" width="${Defined(password_field) and password_field ? width-height-10 : width}" />
-			<label depth="1" name="text" justify="${justify}" font_size="${Defined(font_size) ? font_size : height}" pivot="${pivot}" overflow="${overflow}" max_line_count="${max_line_count}" font_face="${font_face}" crispness="${crispness}" width="${Defined(password_field) and password_field ? width-height-10 : width}" />
+			search_field="${search_field}" password_field="${password_field}" clear_button="${clear_button}" focus_on_open="${focus_on_open}" clear_on_open="${clear_on_open}" close_group_on_tab="${close_group_on_tab}" open_vk_on_open="${open_vk_on_open}">
+			<sprite depth="0" name="background" color="${backgroundcolor}" type="sliced" pivot="${pivot}" foregroundlayer="${foregroundlayer}" width="${password_field ? width-height-10 : width}" />
+			<label depth="1" name="text" justify="${justify}" font_size="${Defined(font_size) ? font_size : height}" pivot="${pivot}" overflow="${overflow}" max_line_count="${max_line_count}" font_face="${font_face}" crispness="${crispness}" width="${width - (password_field ? 10+height : 0) - (clear_button ? 6+min(height,36) : 0)}" />
 			<button name="btnShowPassword" pos="${Round(width-height/2-5,0)},-${Round(height/2,0)}" width="${height-2}" height="${height-2}" sprite="ui_game_symbol_stealth" defaultcolor="180,180,180" hovercolor="[white]" selectedcolor="[selectedColor]" foregroundlayer="true" type="simple" hoverscale="1.1" pivot="center" tooltip_key="xuiShowPassword" selected="{showpassword}" visible="{passwordfield}" />
+			<button name="btnClearInput" pos="${password_field ? width-height-Round(min(height,36)/2,0)-12 : width-Round(min(height,36)/2,0)-3},-${Round(height/2,0)}" width="${4+min(height,36)}" height="${min(height,36)-4}" pivot="center" sprite="ui_game_symbol_clear_textfield" hoverscale="1.1" tooltip_key="xuiClearTextInput" visible="{clearbutton}" />
 		</panel>
 	</textfield>
 
 	<combobox depth="3" pos="0,0" width="200" height="30"
 			value_min="@DEF" value_max="@DEF" value_wrap="@DEF" value_increment="@DEF" values="@DEF" reverse_list="@DEF" localization_prefix="" format_string="" enabled_color="[white]" disabled_color="[lightGrey]" visible="true"
-			tooltip_key="" foregroundlayer="false" >
-		<rect name="${name}" controller="${type}" depth="${depth}" pos="${pos}" width="${width}" height="${height}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" enabled_color="${enabled_color}" disabled_color="${disabled_color}" pivot="left" visible="${visible}">
+			tooltip_key="" foregroundlayer="false" index_markers="false" >
+		<rect name="${name}" controller="${type}" depth="${depth}" pos="${pos}" width="${width}" height="${height}" value_min="${value_min}" value_max="${value_max}" value_wrap="${value_wrap}" value_increment="${value_increment}" values="${values}" reverse_list="${reverse_list}" localization_prefix="${localization_prefix}" format_string="${format_string}" enabled_color="${enabled_color}" disabled_color="${disabled_color}" pivot="left" visible="${visible}" index_markers="${index_markers}" >
 			<button name="back"        depth="${1+depth}" style="icon30px, press, hover" pos="${height/2},${-height/2}" width="${height}" height="${height}" pivot="center" sprite="ui_game_symbol_arrow_menu" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key}" />
 			<sprite name="background"  depth="${1+depth}" style="icon30px" pos="${2+height},0" width="${width-height*2-4}" height="${height}" pivot="topleft" color="[black]" type="sliced" foregroundlayer="${foregroundlayer}" />
 			<filledsprite name="fill"  depth="${2+depth}" pos="${2+height},0" width="${width-height*2-4}" height="${height}" pivot="topleft" color="[white]" fill="{fillvalue}" filldirection="horizontal" visible="{isnumber}" foregroundlayer="true" />
@@ -111,11 +112,11 @@
 				<button depth="2" name="btnDropdown" style="icon30px" pos="${width-height/2},${-height/2}" width="${height-2}" height="${height-2}" sprite="ui_game_symbol_drop" flip="{flip_dropdownbutton}" pivot="center" />
 			</rect>
 			
-			<panel depth="8" name="dropdown" createuipanel="true" disableautobackground="true" on_scroll="true" pos="0,${Defined(dropdown_above) and dropdown_above ? (Defined(dropdown_size) and Defined(dropdown_lineheight) ? dropdown_size*dropdown_lineheight+4 : 120 ) : -height}" width="${width}" height="${dropdown_size*dropdown_lineheight+4}" visible="{dropdown_open}">
+			<panel depth="8" name="dropdown" createuipanel="true" disableautobackground="true" on_scroll="true" pos="0,${Defined(dropdown_above) and dropdown_above ? ( dropdown_size*dropdown_lineheight+4 ) : -height}" width="${width}" height="${dropdown_size*dropdown_lineheight+4}" visible="{dropdown_open}">
 				<sprite depth="4" name="border" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" color="[darkGrey]" type="sliced" fillcenter="true" />
 
-				<grid name="list" depth="2" rows="${Defined(dropdown_size) and Defined(dropdown_lineheight) ? dropdown_size : 5}" cols="1" pos="4,-2" height="${dropdown_size*dropdown_lineheight}" cell_width="${width-8-30}" cell_height="${dropdown_lineheight}" repeat_content="true" arrangement="vertical" >
+				<grid name="list" depth="2" rows="${dropdown_size}" cols="1" pos="4,-2" height="${dropdown_size*dropdown_lineheight}" cell_width="${width-8-30}" cell_height="${dropdown_lineheight}" repeat_content="true" arrangement="vertical" >
 					<dropdown_entry width="${width-8-30}" height="${dropdown_lineheight}" />
 				</grid>
 

@@ -29,3 +29,8 @@ Data/Prefabs
 Data/Stamps
 Data/UMATextures
 Data/Worlds
+Data/Addressables
+Data/Music
+
+*.pdb
+

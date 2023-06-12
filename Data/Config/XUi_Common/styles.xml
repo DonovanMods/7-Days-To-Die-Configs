@@ -85,6 +85,12 @@
 	<style type="label" name="icon30px">
 		<style_entry name="width" value="30"/>
 		<style_entry name="height" value="30"/>
+	</style>	
+	
+	<style type="label" name="subtitle">
+		<style_entry name="font_size" value="36"/>
+		<style_entry name="effect" value="shadow"/>
+		<style_entry name="overflow" value="ResizeHeight"/>
 	</style>
 	
 	<!--SPRITES-->
@@ -274,7 +280,7 @@
 	
 	<!--PAGING WINDOW-->
 	<style name="paging.window" type="window">
-		<style_entry name="pos" value="-310,-9"/>
+		<style_entry name="pos" value="-300,-9"/>
 		<style_entry name="size" value="600,43"/>
 		<style_entry name="anchor" value="CenterTop"/>
 		<style_entry name="normal_color" value="[iconColor]" />

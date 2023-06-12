@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
 
-Game stage spawning: All game stage spawning starts with a "Spawner" which is a named object referenced in the code
-or other data (like POIs). The spawner itself contains all of the gamestage information for that particular spawner.
+Game Stage Spawning: All game stage spawning starts with a "Spawner" which is a named object referenced in the code
+or other data (like POIs). The spawner itself contains all of the game stage information for that particular spawner.
 Examples: BloodMoonHorde spawner, or a large POI spawn, or a POI spawn that contains janitor zombies.
 
 Each spawner defines a set of game stages. An individual game stage defines the actual spawning and spawning progression
@@ -31,12 +32,12 @@ lower game stages.
 </spawner>
 
 The code will use the highest stage that is less than or equal to your computed stage.
-There is no cap on gamestage. If you feel like defining a stage="5000" - go nuts.
+There is no cap on game stage. If you feel like defining a stage="5000" - go nuts.
 
-The gamestage is calculated once, when the "event" occurs.
-When the blood moon rises the game considers nearby players as "a party" and figures out the accumulated gamestage.
-This gamestage will be in effect for the duration of the event.
-If players log in later or drop out, such as during the blood moon event, the gamestage will not change.
+The game stage is calculated once, when the "event" occurs.
+When the blood moon rises the game considers nearby players as "a party" and figures out the accumulated game stage.
+This game stage will be in effect for the duration of the event.
+If players log in later or drop out, such as during the blood moon event, the game stage will not change.
 
 - - - - - - -
 
@@ -64,9 +65,9 @@ If the same player was level 10 and had survived 25 days and died 2x:
 	Then daysAlive of 21 gets capped to player level so 10.
 
 
-This is how the gamestage of a PARTY is calculated:
-The gamestage of all (up to) 6 players is calculated.
-The players are sorted by gamestage.
+This is how the game stage of a PARTY is calculated:
+The game stage of all (up to) 6 players is calculated.
+The players are sorted by game stage.
 
 The highest GS number is multiplied by "startingWeight".
 This then loops down the list and "startingWeight" is multiplied by "diminishingReturns" every time.
@@ -111,27 +112,39 @@ Console command: gamestage
 		lootBonusEvery = "12"
 		lootBonusMaxCount = "30"
 		lootBonusScale = "25"
+		lootWanderingBonusEvery = "3"
+		lootWanderingBonusScale = "15"
 	/>
-	<!-- the DifficultyBonus parameters are now flat multipliers. 2.0 = 2x the gamestage. Simple. -->
-	<!-- lootBonus changes blood moon drop rates every x zombies, up to max chances, by scale -->
+	<!-- difficultyBonus - a flat multiplier. 2.0 = 2x the gamestage. Simple. -->
+	
+	<!-- Blood Moon Zombie Loot Drop Bonus Config: -->
+	<!-- The following settings change blood moon zombie loot drop rates every X zombies, up to max chances, by scale -->
+	<!-- lootBonusEvery -  Zombie kill count minimum for spawning loot drops with lootBonusScale added to the probability -->
+	<!-- lootBonusMaxCount - Used to divide the number of game stage zombies to spawn to get the max count for the bonus i.e game stage zombie count of 500 would be 16.7 max -->
+	<!-- lootBonusScale - Multiplies the loot drop chance of the zombie by this number. i.e. zombie drop chance is 3%, the bonus would push it to 75% -->
+	
+	<!-- Wandering Horde Loot Drop Bonus Config: -->
+	<!-- The following settings change wandering horde zombie loot drop rates every X zombies by scale -->
+	<!-- lootWanderingBonusEvery - Same as lootBonusEvery, but for wandering hordes -->
+	<!-- lootWanderingBonusScale - Same as lootBonusScale, but for wandering hordes -->
 
-	<!-- <group name="S_Default_XS" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 
-	1. emptyChance:	the chance of the entire sleeper VOLUME having no zombies
-	2. count:			after emptyChance has been checked, the total number of SLEEPERS spawned is determined by the count
-	3. decoyChance:	determines how many OF the spawned sleepers will be DECOYS
-	4. decoy1hpChance:	determines how many OF the spawned decoys will be ONE HIT POINT DECOYS
+	<!-- <group name="S_Default_XS" emptyChance="0" decoyChance="0" decoy1hpChance="0"> -->
 
-	Full hit point decoys:	Will never wake up due to sight/sound events. Will wake up if attacked.
-	1 HP decoys:			Will never wake up due to sight/sound events. Will die instantly if attacked.
+	<!-- emptyChance - the chance of the entire sleeper VOLUME having no zombies -->
+	<!-- count - after emptyChance has been checked, the total number of SLEEPERS spawned is determined by the count -->
+	<!-- decoyChance - determines how many OF the spawned sleepers will be DECOYS -->
+	<!-- decoy1hpChance - determines how many OF the spawned decoys will be ONE HIT POINT DECOYS -->
 
-	The gamestage for a specific sleeper volume can be adjusted up/down in the volume settings, not here.
+	<!-- Full hit point decoys - Will never wake up due to sight/sound events. Will wake up if attacked. -->
+	<!-- 1 HP decoys - Will never wake up due to sight/sound events. Will die instantly if attacked. -->
 
--->
+	<!-- The game stage for a specific sleeper volume can be adjusted up/down in the volume settings, not here. -->
 
-	<!-- On Sorting:  The leading minus as well as the leading S_ is suppressed from the display in code.
-	The minus is used as a sorting aid as it sorts before letters.
-	A leading space sorts after letters. -->
+	<!-- On Sorting:  The leading minus as well as the leading S_ is suppressed from the display in code. -->
+	<!-- The minus is used as a sorting aid as it sorts before letters. -->
+	<!-- A leading space sorts after letters. -->
+
 	<group name="S_-Group_Generic_Zombie" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 		<spawner name="SleeperGSList" count="5,6"/>
 	</group>
@@ -174,6 +187,10 @@ Console command: gamestage
 
 	<group name="S_-_Group_Zom_Badass_Only" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 		<spawner name="ZombieBadassOnlyHorde" count="5,6"/>
+	</group>
+
+	<group name="S_-_Group_Zom_Police_Car_Horde" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+		<spawner name="ZombiePoliceCarHorde" count="5,6"/>
 	</group>
 
 	<group name="S_Zom_Lumber_Jack" emptyChance="0" decoyChance="0" decoy1hpChance="0">
@@ -484,28 +501,28 @@ Console command: gamestage
 	<!-- No Sleeper blocks for these Animals -->
 
 	<group name="animalChicken" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalChicken" count="1"/>
+		<spawner name="animalChicken" count="1"/>
 	</group>
 	<group name="animalCoyote" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalCoyote" count="1"/>
+		<spawner name="animalCoyote" count="1"/>
 	</group>
 	<group name="animalDireWolf" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalDireWolf" count="1"/>
+		<spawner name="animalDireWolf" count="1"/>
 	</group>
 	<group name="animalDoe" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalDoe" count="1"/>
+		<spawner name="animalDoe" count="1"/>
 	</group>
 	<group name="animalMountainLion" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalMountainLion" count="1"/>
+		<spawner name="animalMountainLion" count="1"/>
 	</group>
 	<group name="animalRabbit" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalRabbit" count="1"/>
+		<spawner name="animalRabbit" count="1"/>
 	</group>
 	<group name="animalSnake" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 		<spawner name="animalSnake" count="1"/>
 	</group>
 	<group name="animalStag" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-	<spawner name="animalStag" count="1"/>
+		<spawner name="animalStag" count="1"/>
 	</group>
 	<group name="animalWolf" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 		<spawner name="animalWolf" count="1"/>
@@ -675,17 +692,18 @@ Console command: gamestage
 			<spawn group="zombieBusinessMan" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieBusinessManFeral">
 		<gamestage stage="1">
 			<spawn group="zombieBusinessManFeral" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieBusinessManRadiated">
 		<gamestage stage="1">
 			<spawn group="zombieBusinessManRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
-
 
 	<spawner name="zombieBurnt">
 		<gamestage stage="1">
@@ -1072,17 +1090,18 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
-		<spawner name="animalMountainLion">
+	<spawner name="animalMountainLion">
 		<gamestage stage="1">
 			<spawn group="animalMountainLion" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
 
-			<spawner name="animalRabbit">
+	<spawner name="animalRabbit">
 		<gamestage stage="1">
 			<spawn group="animalRabbit" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="animalSnake">
 		<gamestage stage="1">
 			<spawn group="animalSnake" num="1" maxAlive="1" duration="10"/>
@@ -1094,16 +1113,19 @@ Console command: gamestage
 			<spawn group="animalStag" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="animalWolf">
 		<gamestage stage="1">
 			<spawn group="animalWolf" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="animalZombieBear">
 		<gamestage stage="1">
 			<spawn group="animalZombieBear" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="animalZombieDog">
 		<gamestage stage="1">
 			<spawn group="animalZombieDog" num="1" maxAlive="1" duration="10"/>
@@ -1126,33 +1148,33 @@ Console command: gamestage
 		<gamestage stage="1">
 			<spawn group="sleeperHordeStageGS1" num="1" maxAlive="1" duration="1"/>
 		</gamestage>
+
 		<gamestage stage="400">
 			<spawn group="ZombieBadassGroup" num="1" maxAlive="1" duration="1"/>
 		</gamestage>
+
 		<gamestage stage="600">
 			<spawn group="ZombieFeralRadiatedGroup" num="1" maxAlive="1" duration="1"/>
 		</gamestage>
 	</spawner>
 
-
-
-	<spawner name="WanderingHorde">
+	<spawner name="WanderingHorde"> <!-- Name is used in code -->
 		<!-- These will wrap around at 50. -->
 		<!-- Will probably have to undo that later. Rev 19924 /19944 -->
 		<gamestage stage="01">
-			<spawn group="wanderingHordeStageGS1"		num="05" maxAlive="30" duration="09"/>
+			<spawn group="wanderingHordeStageGS1"	num="05" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="02">
-			<spawn group="wanderingHordeStageGS2"		num="10" maxAlive="30" duration="09"/>
+			<spawn group="wanderingHordeStageGS2"	num="10" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="03">
-			<spawn group="EnemyAnimalsCoyote"			num="04" maxAlive="30" duration="09"/>
+			<spawn group="FwanderingHordeStageGS1"	num="04" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="04">
 			<spawn group="FwanderingHordeStageGS1"	num="09" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="05">
-			<spawn group="ZombieDogGroup"				num="04" maxAlive="30" duration="09"/>
+			<spawn group="FwanderingHordeStageGS1"	num="04" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="06">
 			<spawn group="FwanderingHordeStageGS2"	num="07" maxAlive="30" duration="09"/>
@@ -1161,10 +1183,10 @@ Console command: gamestage
 			<spawn group="FwanderingHordeStageGS4"	num="08" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="08">
-			<spawn group="VultureGroup"				num="05" maxAlive="30" duration="09"/>
+			<spawn group="wanderingHordeStageGS8"	num="05" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="09">
-			<spawn group="wanderingHordeStageGS8"		num="06" maxAlive="30" duration="09"/>
+			<spawn group="wanderingHordeStageGS8"	num="06" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="10">
 			<spawn group="wanderingHordeStageGS11"	num="09" maxAlive="30" duration="09"/>
@@ -1173,7 +1195,7 @@ Console command: gamestage
 			<spawn group="wanderingHordeStageGS14"	num="06" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="12">
-			<spawn group="WolfGroup"					num="03" maxAlive="30" duration="09"/>
+			<spawn group="wanderingHordeStageGS14"	num="03" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="13">
 			<spawn group="FwanderingHordeStageGS7"	num="07" maxAlive="30" duration="09"/>
@@ -1197,7 +1219,7 @@ Console command: gamestage
 			<spawn group="wanderingHordeStageGS27"	num="08" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="20">
-			<spawn group="ZombieDogGroup"				num="06" maxAlive="30" duration="09"/>
+			<spawn group="ZombieDogGroup"			num="06" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="21">
 			<spawn group="FwanderingHordeStageGS16"	num="10" maxAlive="30" duration="09"/>
@@ -1239,7 +1261,7 @@ Console command: gamestage
 			<spawn group="wanderingHordeStageGS52"	num="06" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="34">
-			<spawn group="ZombieDogGroup"				num="07" maxAlive="30" duration="09"/>
+			<spawn group="ZombieDogGroup"			num="07" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="35">
 			<spawn group="wanderingHordeStageGS58"	num="09" maxAlive="30" duration="09"/>
@@ -1251,7 +1273,7 @@ Console command: gamestage
 			<spawn group="FwanderingHordeStageGS40"	num="10" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="38">
-			<spawn group="ZombieAnimalsGroup"			num="05" maxAlive="30" duration="09"/>
+			<spawn group="ZombieAnimalsGroup"		num="05" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="39">
 			<spawn group="FwanderingHordeStageGS44"	num="05" maxAlive="30" duration="09"/>
@@ -1269,7 +1291,7 @@ Console command: gamestage
 			<spawn group="wanderingHordeStageGS76"	num="09" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="44">
-			<spawn group="ZombieSoldierGroup"			num="09" maxAlive="30" duration="09"/>
+			<spawn group="ZombieSoldierGroup"		num="09" maxAlive="30" duration="09"/>
 		</gamestage>
 		<gamestage stage="45">
 			<spawn group="wanderingHordeStageGS82"	num="10" maxAlive="30" duration="09"/>
@@ -1848,8 +1870,6 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
-
-	<!-- https://7daystodie.com/forums/showthread.php?56533-Gamestage-Blood-Moon-Horde-generator -->
 	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  start: auto generated sleeper horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 	<spawner name="SleeperGSList">
 		<gamestage stage="1">
@@ -5396,5 +5416,1090 @@ Console command: gamestage
 	</spawner>
 	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  end: auto generated feral horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
+	<spawner name="ZombiePoliceCarHorde">
+		<gamestage stage="1">
+			<spawn group="policeCarHordeStageGS1" num="1" maxAlive="2" duration="1"/>
+		</gamestage>
+		<gamestage stage="3">
+			<spawn group="policeCarHordeStageGS3" num="2" maxAlive="4" duration="1"/>
+		</gamestage>
+		<gamestage stage="8">
+			<spawn group="policeCarHordeStageGS8" num="4" maxAlive="9" duration="1"/>
+		</gamestage>
+		<gamestage stage="13">
+			<spawn group="policeCarHordeStageGS13" num="7" maxAlive="13" duration="1"/>
+		</gamestage>
+		<gamestage stage="21">
+			<spawn group="policeCarHordeStageGS21" num="11" maxAlive="20" duration="1"/>
+		</gamestage>
+		<gamestage stage="30">
+			<spawn group="policeCarHordeStageGS30" num="15" maxAlive="29" duration="1"/>
+		</gamestage>
+		<gamestage stage="40">
+			<spawn group="policeCarHordeStageGS40" num="20" maxAlive="38" duration="1"/>
+		</gamestage>
+		<gamestage stage="51">
+			<spawn group="policeCarHordeStageGS51" num="26" maxAlive="47" duration="1"/>
+		</gamestage>
+		<gamestage stage="65">
+			<spawn group="policeCarHordeStageGS65" num="29" maxAlive="60" duration="1"/>
+		</gamestage>
+		<gamestage stage="79">
+			<spawn group="policeCarHordeStageGS79" num="31" maxAlive="73" duration="1"/>
+		</gamestage>
+		<gamestage stage="95">
+			<spawn group="policeCarHordeStageGS95" num="35" maxAlive="87" duration="1"/>
+		</gamestage>
+		<gamestage stage="112">
+			<spawn group="policeCarHordeStageGS112" num="38" maxAlive="102" duration="1"/>
+		</gamestage>
+		<gamestage stage="130">
+			<spawn group="policeCarHordeStageGS130" num="42" maxAlive="119" duration="1"/>
+		</gamestage>
+		<gamestage stage="150">
+			<spawn group="policeCarHordeStageGS150" num="46" maxAlive="137" duration="1"/>
+		</gamestage>
+		<gamestage stage="171">
+			<spawn group="policeCarHordeStageGS171" num="50" maxAlive="155" duration="1"/>
+		</gamestage>
+		<gamestage stage="194">
+			<spawn group="policeCarHordeStageGS194" num="54" maxAlive="176" duration="1"/>
+		</gamestage>
+		<gamestage stage="217">
+			<spawn group="policeCarHordeStageGS217" num="59" maxAlive="197" duration="1"/>
+		</gamestage>
+		<gamestage stage="242">
+			<spawn group="policeCarHordeStageGS242" num="64" maxAlive="219" duration="1"/>
+		</gamestage>
+		<gamestage stage="268">
+			<spawn group="policeCarHordeStageGS268" num="69" maxAlive="243" duration="1"/>
+		</gamestage>
+		<gamestage stage="296">
+			<spawn group="policeCarHordeStageGS296" num="75" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="325">
+			<spawn group="policeCarHordeStageGS325" num="81" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="355">
+			<spawn group="policeCarHordeStageGS355" num="87" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="386">
+			<spawn group="policeCarHordeStageGS386" num="93" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="419">
+			<spawn group="policeCarHordeStageGS419" num="99" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="452">
+			<spawn group="policeCarHordeStageGS452" num="106" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="488">
+			<spawn group="policeCarHordeStageGS488" num="113" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="524">
+			<spawn group="policeCarHordeStageGS524" num="120" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="561">
+			<spawn group="policeCarHordeStageGS561" num="128" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="600">
+			<spawn group="policeCarHordeStageGS600" num="136" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="640">
+			<spawn group="policeCarHordeStageGS640" num="144" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="681">
+			<spawn group="policeCarHordeStageGS681" num="152" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="724">
+			<spawn group="policeCarHordeStageGS724" num="160" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="767">
+			<spawn group="policeCarHordeStageGS767" num="169" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="812">
+			<spawn group="policeCarHordeStageGS812" num="178" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="858">
+			<spawn group="policeCarHordeStageGS858" num="187" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="905">
+			<spawn group="policeCarHordeStageGS905" num="197" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="954">
+			<spawn group="policeCarHordeStageGS954" num="206" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="1003">
+			<spawn group="policeCarHordeStageGS1003" num="216" maxAlive="256" duration="1"/>
+		</gamestage>
+	</spawner>
 
+	<!-- Survival_Defense_Spawn_Group -->
+	<spawner name="defenseGSList">
+		<gamestage stage="1">
+			<spawn group="defenseHordeStageGS1" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="2">
+			<spawn group="defenseHordeStageGS2" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="5">
+			<spawn group="defenseHordeStageGS5" num="3" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="8">
+			<spawn group="defenseHordeStageGS8" num="4" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="11">
+			<spawn group="defenseHordeStageGS11" num="6" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="14">
+			<spawn group="defenseHordeStageGS14" num="7" maxAlive="2" duration="1"/>
+		</gamestage>
+		<gamestage stage="18">
+			<spawn group="defenseHordeStageGS18" num="9" maxAlive="2" duration="1"/>
+		</gamestage>
+		<gamestage stage="22">
+			<spawn group="defenseHordeStageGS22" num="11" maxAlive="2" duration="1"/>
+		</gamestage>
+		<gamestage stage="27">
+			<spawn group="defenseHordeStageGS27" num="14" maxAlive="3" duration="1"/>
+		</gamestage>
+		<gamestage stage="31">
+			<spawn group="defenseHordeStageGS31" num="16" maxAlive="3" duration="1"/>
+		</gamestage>
+		<gamestage stage="36">
+			<spawn group="defenseHordeStageGS36" num="16" maxAlive="3" duration="1"/>
+		</gamestage>
+		<gamestage stage="41">
+			<spawn group="defenseHordeStageGS41" num="16" maxAlive="4" duration="1"/>
+		</gamestage>
+		<gamestage stage="46">
+			<spawn group="defenseHordeStageGS46" num="16" maxAlive="4" duration="1"/>
+		</gamestage>
+		<gamestage stage="52">
+			<spawn group="defenseHordeStageGS52" num="16" maxAlive="5" duration="1"/>
+		</gamestage>
+		<gamestage stage="58">
+			<spawn group="defenseHordeStageGS58" num="16" maxAlive="5" duration="1"/>
+		</gamestage>
+		<gamestage stage="64">
+			<spawn group="defenseHordeStageGS64" num="16" maxAlive="6" duration="1"/>
+		</gamestage>
+		<gamestage stage="70">
+			<spawn group="defenseHordeStageGS70" num="16" maxAlive="6" duration="1"/>
+		</gamestage>
+		<gamestage stage="76">
+			<spawn group="defenseHordeStageGS76" num="16" maxAlive="7" duration="1"/>
+		</gamestage>
+		<gamestage stage="82">
+			<spawn group="defenseHordeStageGS82" num="16" maxAlive="7" duration="1"/>
+		</gamestage>
+		<gamestage stage="89">
+			<spawn group="defenseHordeStageGS89" num="17" maxAlive="8" duration="1"/>
+		</gamestage>
+		<gamestage stage="96">
+			<spawn group="defenseHordeStageGS96" num="17" maxAlive="8" duration="1"/>
+		</gamestage>
+		<gamestage stage="103">
+			<spawn group="defenseHordeStageGS103" num="17" maxAlive="9" duration="1"/>
+		</gamestage>
+		<gamestage stage="110">
+			<spawn group="defenseHordeStageGS110" num="17" maxAlive="9" duration="1"/>
+		</gamestage>
+		<gamestage stage="117">
+			<spawn group="defenseHordeStageGS117" num="17" maxAlive="10" duration="1"/>
+		</gamestage>
+		<gamestage stage="125">
+			<spawn group="defenseHordeStageGS125" num="17" maxAlive="11" duration="1"/>
+		</gamestage>
+		<gamestage stage="132">
+			<spawn group="defenseHordeStageGS132" num="17" maxAlive="11" duration="1"/>
+		</gamestage>
+		<gamestage stage="140">
+			<spawn group="defenseHordeStageGS140" num="17" maxAlive="12" duration="1"/>
+		</gamestage>
+		<gamestage stage="148">
+			<spawn group="defenseHordeStageGS148" num="17" maxAlive="12" duration="1"/>
+		</gamestage>
+		<gamestage stage="156">
+			<spawn group="defenseHordeStageGS156" num="17" maxAlive="13" duration="1"/>
+		</gamestage>
+		<gamestage stage="164">
+			<spawn group="defenseHordeStageGS164" num="17" maxAlive="14" duration="1"/>
+		</gamestage>
+		<gamestage stage="172">
+			<spawn group="defenseHordeStageGS172" num="18" maxAlive="14" duration="1"/>
+		</gamestage>
+		<gamestage stage="181">
+			<spawn group="defenseHordeStageGS181" num="18" maxAlive="15" duration="1"/>
+		</gamestage>
+		<gamestage stage="189">
+			<spawn group="defenseHordeStageGS189" num="18" maxAlive="16" duration="1"/>
+		</gamestage>
+		<gamestage stage="198">
+			<spawn group="defenseHordeStageGS198" num="18" maxAlive="16" duration="1"/>
+		</gamestage>
+		<gamestage stage="207">
+			<spawn group="defenseHordeStageGS207" num="18" maxAlive="17" duration="1"/>
+		</gamestage>
+		<gamestage stage="216">
+			<spawn group="defenseHordeStageGS216" num="18" maxAlive="18" duration="1"/>
+		</gamestage>
+		<gamestage stage="225">
+			<spawn group="defenseHordeStageGS225" num="18" maxAlive="19" duration="1"/>
+		</gamestage>
+		<gamestage stage="234">
+			<spawn group="defenseHordeStageGS234" num="18" maxAlive="19" duration="1"/>
+		</gamestage>
+		<gamestage stage="243">
+			<spawn group="defenseHordeStageGS243" num="18" maxAlive="20" duration="1"/>
+		</gamestage>
+		<gamestage stage="252">
+			<spawn group="defenseHordeStageGS252" num="19" maxAlive="21" duration="1"/>
+		</gamestage>
+		<gamestage stage="262">
+			<spawn group="defenseHordeStageGS262" num="19" maxAlive="21" duration="1"/>
+		</gamestage>
+		<gamestage stage="272">
+			<spawn group="defenseHordeStageGS272" num="19" maxAlive="22" duration="1"/>
+		</gamestage>
+		<gamestage stage="281">
+			<spawn group="defenseHordeStageGS281" num="19" maxAlive="23" duration="1"/>
+		</gamestage>
+		<gamestage stage="291">
+			<spawn group="defenseHordeStageGS291" num="19" maxAlive="24" duration="1"/>
+		</gamestage>
+		<gamestage stage="301">
+			<spawn group="defenseHordeStageGS301" num="19" maxAlive="25" duration="1"/>
+		</gamestage>
+		<gamestage stage="311">
+			<spawn group="defenseHordeStageGS311" num="19" maxAlive="25" duration="1"/>
+		</gamestage>
+		<gamestage stage="322">
+			<spawn group="defenseHordeStageGS322" num="19" maxAlive="26" duration="1"/>
+		</gamestage>
+		<gamestage stage="332">
+			<spawn group="defenseHordeStageGS332" num="19" maxAlive="27" duration="1"/>
+		</gamestage>
+		<gamestage stage="343">
+			<spawn group="defenseHordeStageGS343" num="20" maxAlive="28" duration="1"/>
+		</gamestage>
+		<gamestage stage="353">
+			<spawn group="defenseHordeStageGS353" num="20" maxAlive="29" duration="1"/>
+		</gamestage>
+		<gamestage stage="364">
+			<spawn group="defenseHordeStageGS364" num="20" maxAlive="30" duration="1"/>
+		</gamestage>
+		<gamestage stage="374">
+			<spawn group="defenseHordeStageGS374" num="20" maxAlive="30" duration="1"/>
+		</gamestage>
+		<gamestage stage="385">
+			<spawn group="defenseHordeStageGS385" num="20" maxAlive="31" duration="1"/>
+		</gamestage>
+		<gamestage stage="396">
+			<spawn group="defenseHordeStageGS396" num="20" maxAlive="32" duration="1"/>
+		</gamestage>
+		<gamestage stage="407">
+			<spawn group="defenseHordeStageGS407" num="20" maxAlive="33" duration="1"/>
+		</gamestage>
+		<gamestage stage="419">
+			<spawn group="defenseHordeStageGS419" num="21" maxAlive="34" duration="1"/>
+		</gamestage>
+		<gamestage stage="430">
+			<spawn group="defenseHordeStageGS430" num="21" maxAlive="35" duration="1"/>
+		</gamestage>
+		<gamestage stage="441">
+			<spawn group="defenseHordeStageGS441" num="21" maxAlive="36" duration="1"/>
+		</gamestage>
+		<gamestage stage="453">
+			<spawn group="defenseHordeStageGS453" num="21" maxAlive="37" duration="1"/>
+		</gamestage>
+		<gamestage stage="464">
+			<spawn group="defenseHordeStageGS464" num="21" maxAlive="38" duration="1"/>
+		</gamestage>
+		<gamestage stage="476">
+			<spawn group="defenseHordeStageGS476" num="21" maxAlive="39" duration="1"/>
+		</gamestage>
+		<gamestage stage="488">
+			<spawn group="defenseHordeStageGS488" num="21" maxAlive="40" duration="1"/>
+		</gamestage>
+		<gamestage stage="500">
+			<spawn group="defenseHordeStageGS500" num="22" maxAlive="41" duration="1"/>
+		</gamestage>
+		<gamestage stage="512">
+			<spawn group="defenseHordeStageGS512" num="22" maxAlive="41" duration="1"/>
+		</gamestage>
+		<gamestage stage="524">
+			<spawn group="defenseHordeStageGS524" num="22" maxAlive="42" duration="1"/>
+		</gamestage>
+		<gamestage stage="536">
+			<spawn group="defenseHordeStageGS536" num="22" maxAlive="43" duration="1"/>
+		</gamestage>
+		<gamestage stage="548">
+			<spawn group="defenseHordeStageGS548" num="22" maxAlive="44" duration="1"/>
+		</gamestage>
+		<gamestage stage="560">
+			<spawn group="defenseHordeStageGS560" num="22" maxAlive="45" duration="1"/>
+		</gamestage>
+		<gamestage stage="573">
+			<spawn group="defenseHordeStageGS573" num="22" maxAlive="46" duration="1"/>
+		</gamestage>
+		<gamestage stage="585">
+			<spawn group="defenseHordeStageGS585" num="23" maxAlive="47" duration="1"/>
+		</gamestage>
+		<gamestage stage="598">
+			<spawn group="defenseHordeStageGS598" num="23" maxAlive="48" duration="1"/>
+		</gamestage>
+		<gamestage stage="610">
+			<spawn group="defenseHordeStageGS610" num="23" maxAlive="49" duration="1"/>
+		</gamestage>
+		<gamestage stage="623">
+			<spawn group="defenseHordeStageGS623" num="23" maxAlive="50" duration="1"/>
+		</gamestage>
+		<gamestage stage="636">
+			<spawn group="defenseHordeStageGS636" num="23" maxAlive="51" duration="1"/>
+		</gamestage>
+		<gamestage stage="649">
+			<spawn group="defenseHordeStageGS649" num="23" maxAlive="52" duration="1"/>
+		</gamestage>
+		<gamestage stage="662">
+			<spawn group="defenseHordeStageGS662" num="23" maxAlive="53" duration="1"/>
+		</gamestage>
+		<gamestage stage="675">
+			<spawn group="defenseHordeStageGS675" num="24" maxAlive="55" duration="1"/>
+		</gamestage>
+		<gamestage stage="688">
+			<spawn group="defenseHordeStageGS688" num="24" maxAlive="56" duration="1"/>
+		</gamestage>
+		<gamestage stage="702">
+			<spawn group="defenseHordeStageGS702" num="24" maxAlive="57" duration="1"/>
+		</gamestage>
+		<gamestage stage="715">
+			<spawn group="defenseHordeStageGS715" num="24" maxAlive="58" duration="1"/>
+		</gamestage>
+		<gamestage stage="729">
+			<spawn group="defenseHordeStageGS729" num="24" maxAlive="59" duration="1"/>
+		</gamestage>
+		<gamestage stage="742">
+			<spawn group="defenseHordeStageGS742" num="24" maxAlive="60" duration="1"/>
+		</gamestage>
+		<gamestage stage="756">
+			<spawn group="defenseHordeStageGS756" num="25" maxAlive="61" duration="1"/>
+		</gamestage>
+		<gamestage stage="769">
+			<spawn group="defenseHordeStageGS769" num="25" maxAlive="62" duration="1"/>
+		</gamestage>
+		<gamestage stage="783">
+			<spawn group="defenseHordeStageGS783" num="25" maxAlive="63" duration="1"/>
+		</gamestage>
+		<gamestage stage="797">
+			<spawn group="defenseHordeStageGS797" num="25" maxAlive="64" duration="1"/>
+		</gamestage>
+		<gamestage stage="811">
+			<spawn group="defenseHordeStageGS811" num="25" maxAlive="65" duration="1"/>
+		</gamestage>
+		<gamestage stage="825">
+			<spawn group="defenseHordeStageGS825" num="25" maxAlive="67" duration="1"/>
+		</gamestage>
+		<gamestage stage="839">
+			<spawn group="defenseHordeStageGS839" num="26" maxAlive="68" duration="1"/>
+		</gamestage>
+		<gamestage stage="853">
+			<spawn group="defenseHordeStageGS853" num="26" maxAlive="69" duration="1"/>
+		</gamestage>
+		<gamestage stage="868">
+			<spawn group="defenseHordeStageGS868" num="26" maxAlive="70" duration="1"/>
+		</gamestage>
+		<gamestage stage="882">
+			<spawn group="defenseHordeStageGS882" num="26" maxAlive="71" duration="1"/>
+		</gamestage>
+		<gamestage stage="896">
+			<spawn group="defenseHordeStageGS896" num="26" maxAlive="72" duration="1"/>
+		</gamestage>
+		<gamestage stage="911">
+			<spawn group="defenseHordeStageGS911" num="26" maxAlive="73" duration="1"/>
+		</gamestage>
+		<gamestage stage="925">
+			<spawn group="defenseHordeStageGS925" num="27" maxAlive="75" duration="1"/>
+		</gamestage>
+		<gamestage stage="940">
+			<spawn group="defenseHordeStageGS940" num="27" maxAlive="76" duration="1"/>
+		</gamestage>
+		<gamestage stage="955">
+			<spawn group="defenseHordeStageGS955" num="27" maxAlive="77" duration="1"/>
+		</gamestage>
+		<gamestage stage="970">
+			<spawn group="defenseHordeStageGS970" num="27" maxAlive="78" duration="1"/>
+		</gamestage>
+		<gamestage stage="985">
+			<spawn group="defenseHordeStageGS985" num="27" maxAlive="79" duration="1"/>
+		</gamestage>
+		<gamestage stage="1000">
+			<spawn group="defenseHordeStageGS1000" num="28" maxAlive="81" duration="1"/>
+		</gamestage>
+		<gamestage stage="1015">
+			<spawn group="defenseHordeStageGS1015" num="28" maxAlive="82" duration="1"/>
+		</gamestage>
+		<gamestage stage="1030">
+			<spawn group="defenseHordeStageGS1030" num="28" maxAlive="83" duration="1"/>
+		</gamestage>
+		<gamestage stage="1045">
+			<spawn group="defenseHordeStageGS1045" num="28" maxAlive="84" duration="1"/>
+		</gamestage>
+		<gamestage stage="1060">
+			<spawn group="defenseHordeStageGS1060" num="28" maxAlive="85" duration="1"/>
+		</gamestage>
+		<gamestage stage="1075">
+			<spawn group="defenseHordeStageGS1075" num="28" maxAlive="87" duration="1"/>
+		</gamestage>
+		<gamestage stage="1091">
+			<spawn group="defenseHordeStageGS1091" num="29" maxAlive="88" duration="1"/>
+		</gamestage>
+		<gamestage stage="1106">
+			<spawn group="defenseHordeStageGS1106" num="29" maxAlive="89" duration="1"/>
+		</gamestage>
+		<gamestage stage="1122">
+			<spawn group="defenseHordeStageGS1122" num="29" maxAlive="90" duration="1"/>
+		</gamestage>
+		<gamestage stage="1137">
+			<spawn group="defenseHordeStageGS1137" num="29" maxAlive="91" duration="1"/>
+		</gamestage>
+		<gamestage stage="1153">
+			<spawn group="defenseHordeStageGS1153" num="29" maxAlive="93" duration="1"/>
+		</gamestage>
+		<gamestage stage="1169">
+			<spawn group="defenseHordeStageGS1169" num="30" maxAlive="94" duration="1"/>
+		</gamestage>
+		<gamestage stage="1185">
+			<spawn group="defenseHordeStageGS1185" num="30" maxAlive="95" duration="1"/>
+		</gamestage>
+		<gamestage stage="1201">
+			<spawn group="defenseHordeStageGS1201" num="30" maxAlive="97" duration="1"/>
+		</gamestage>
+		<gamestage stage="1217">
+			<spawn group="defenseHordeStageGS1217" num="30" maxAlive="98" duration="1"/>
+		</gamestage>
+		<gamestage stage="1233">
+			<spawn group="defenseHordeStageGS1233" num="30" maxAlive="99" duration="1"/>
+		</gamestage>
+		<gamestage stage="1249">
+			<spawn group="defenseHordeStageGS1249" num="30" maxAlive="100" duration="1"/>
+		</gamestage>
+		<gamestage stage="1265">
+			<spawn group="defenseHordeStageGS1265" num="31" maxAlive="102" duration="1"/>
+		</gamestage>
+		<gamestage stage="1281">
+			<spawn group="defenseHordeStageGS1281" num="31" maxAlive="103" duration="1"/>
+		</gamestage>
+		<gamestage stage="1298">
+			<spawn group="defenseHordeStageGS1298" num="31" maxAlive="104" duration="1"/>
+		</gamestage>
+		<gamestage stage="1314">
+			<spawn group="defenseHordeStageGS1314" num="31" maxAlive="106" duration="1"/>
+		</gamestage>
+		<gamestage stage="1331">
+			<spawn group="defenseHordeStageGS1331" num="31" maxAlive="107" duration="1"/>
+		</gamestage>
+		<gamestage stage="1347">
+			<spawn group="defenseHordeStageGS1347" num="32" maxAlive="108" duration="1"/>
+		</gamestage>
+		<gamestage stage="1364">
+			<spawn group="defenseHordeStageGS1364" num="32" maxAlive="110" duration="1"/>
+		</gamestage>
+		<gamestage stage="1380">
+			<spawn group="defenseHordeStageGS1380" num="32" maxAlive="111" duration="1"/>
+		</gamestage>
+		<gamestage stage="1397">
+			<spawn group="defenseHordeStageGS1397" num="32" maxAlive="112" duration="1"/>
+		</gamestage>
+		<gamestage stage="1414">
+			<spawn group="defenseHordeStageGS1414" num="32" maxAlive="114" duration="1"/>
+		</gamestage>
+		<gamestage stage="1431">
+			<spawn group="defenseHordeStageGS1431" num="33" maxAlive="115" duration="1"/>
+		</gamestage>
+		<gamestage stage="1448">
+			<spawn group="defenseHordeStageGS1448" num="33" maxAlive="116" duration="1"/>
+		</gamestage>
+		<gamestage stage="1465">
+			<spawn group="defenseHordeStageGS1465" num="33" maxAlive="118" duration="1"/>
+		</gamestage>
+		<gamestage stage="1482">
+			<spawn group="defenseHordeStageGS1482" num="33" maxAlive="119" duration="1"/>
+		</gamestage>
+		<gamestage stage="1499">
+			<spawn group="defenseHordeStageGS1499" num="33" maxAlive="120" duration="1"/>
+		</gamestage>
+		<gamestage stage="1516">
+			<spawn group="defenseHordeStageGS1516" num="34" maxAlive="122" duration="1"/>
+		</gamestage>
+		<gamestage stage="1533">
+			<spawn group="defenseHordeStageGS1533" num="34" maxAlive="123" duration="1"/>
+		</gamestage>
+		<gamestage stage="1551">
+			<spawn group="defenseHordeStageGS1551" num="34" maxAlive="125" duration="1"/>
+		</gamestage>
+		<gamestage stage="1568">
+			<spawn group="defenseHordeStageGS1568" num="34" maxAlive="126" duration="1"/>
+		</gamestage>
+		<gamestage stage="1586">
+			<spawn group="defenseHordeStageGS1586" num="35" maxAlive="127" duration="1"/>
+		</gamestage>
+		<gamestage stage="1603">
+			<spawn group="defenseHordeStageGS1603" num="35" maxAlive="129" duration="1"/>
+		</gamestage>
+		<gamestage stage="1621">
+			<spawn group="defenseHordeStageGS1621" num="35" maxAlive="130" duration="1"/>
+		</gamestage>
+		<gamestage stage="1638">
+			<spawn group="defenseHordeStageGS1638" num="35" maxAlive="132" duration="1"/>
+		</gamestage>
+		<gamestage stage="1656">
+			<spawn group="defenseHordeStageGS1656" num="35" maxAlive="133" duration="1"/>
+		</gamestage>
+		<gamestage stage="1674">
+			<spawn group="defenseHordeStageGS1674" num="36" maxAlive="134" duration="1"/>
+		</gamestage>
+		<gamestage stage="1692">
+			<spawn group="defenseHordeStageGS1692" num="36" maxAlive="136" duration="1"/>
+		</gamestage>
+		<gamestage stage="1710">
+			<spawn group="defenseHordeStageGS1710" num="36" maxAlive="137" duration="1"/>
+		</gamestage>
+		<gamestage stage="1728">
+			<spawn group="defenseHordeStageGS1728" num="36" maxAlive="139" duration="1"/>
+		</gamestage>
+		<gamestage stage="1746">
+			<spawn group="defenseHordeStageGS1746" num="36" maxAlive="140" duration="1"/>
+		</gamestage>
+		<gamestage stage="1764">
+			<spawn group="defenseHordeStageGS1764" num="37" maxAlive="142" duration="1"/>
+		</gamestage>
+		<gamestage stage="1782">
+			<spawn group="defenseHordeStageGS1782" num="37" maxAlive="143" duration="1"/>
+		</gamestage>
+		<gamestage stage="1800">
+			<spawn group="defenseHordeStageGS1800" num="37" maxAlive="145" duration="1"/>
+		</gamestage>
+		<gamestage stage="1818">
+			<spawn group="defenseHordeStageGS1818" num="37" maxAlive="146" duration="1"/>
+		</gamestage>
+		<gamestage stage="1837">
+			<spawn group="defenseHordeStageGS1837" num="38" maxAlive="147" duration="1"/>
+		</gamestage>
+		<gamestage stage="1855">
+			<spawn group="defenseHordeStageGS1855" num="38" maxAlive="149" duration="1"/>
+		</gamestage>
+		<gamestage stage="1873">
+			<spawn group="defenseHordeStageGS1873" num="38" maxAlive="150" duration="1"/>
+		</gamestage>
+		<gamestage stage="1892">
+			<spawn group="defenseHordeStageGS1892" num="38" maxAlive="152" duration="1"/>
+		</gamestage>
+		<gamestage stage="1911">
+			<spawn group="defenseHordeStageGS1911" num="38" maxAlive="153" duration="1"/>
+		</gamestage>
+		<gamestage stage="1929">
+			<spawn group="defenseHordeStageGS1929" num="39" maxAlive="155" duration="1"/>
+		</gamestage>
+		<gamestage stage="1948">
+			<spawn group="defenseHordeStageGS1948" num="39" maxAlive="156" duration="1"/>
+		</gamestage>
+		<gamestage stage="1967">
+			<spawn group="defenseHordeStageGS1967" num="39" maxAlive="158" duration="1"/>
+		</gamestage>
+		<gamestage stage="1986">
+			<spawn group="defenseHordeStageGS1986" num="39" maxAlive="159" duration="1"/>
+		</gamestage>
+		<gamestage stage="2004">
+			<spawn group="defenseHordeStageGS2004" num="40" maxAlive="161" duration="1"/>
+		</gamestage>
+		<gamestage stage="2023">
+			<spawn group="defenseHordeStageGS2023" num="40" maxAlive="162" duration="1"/>
+		</gamestage>
+		<gamestage stage="2042">
+			<spawn group="defenseHordeStageGS2042" num="40" maxAlive="164" duration="1"/>
+		</gamestage>
+		<gamestage stage="2061">
+			<spawn group="defenseHordeStageGS2061" num="40" maxAlive="165" duration="1"/>
+		</gamestage>
+		<gamestage stage="2081">
+			<spawn group="defenseHordeStageGS2081" num="40" maxAlive="167" duration="1"/>
+		</gamestage>
+		<gamestage stage="2100">
+			<spawn group="defenseHordeStageGS2100" num="41" maxAlive="169" duration="1"/>
+		</gamestage>
+		<gamestage stage="2119">
+			<spawn group="defenseHordeStageGS2119" num="41" maxAlive="170" duration="1"/>
+		</gamestage>
+		<gamestage stage="2138">
+			<spawn group="defenseHordeStageGS2138" num="41" maxAlive="172" duration="1"/>
+		</gamestage>
+		<gamestage stage="2158">
+			<spawn group="defenseHordeStageGS2158" num="41" maxAlive="173" duration="1"/>
+		</gamestage>
+		<gamestage stage="2177">
+			<spawn group="defenseHordeStageGS2177" num="42" maxAlive="175" duration="1"/>
+		</gamestage>
+		<gamestage stage="2197">
+			<spawn group="defenseHordeStageGS2197" num="42" maxAlive="176" duration="1"/>
+		</gamestage>
+		<gamestage stage="2216">
+			<spawn group="defenseHordeStageGS2216" num="42" maxAlive="178" duration="1"/>
+		</gamestage>
+		<gamestage stage="2236">
+			<spawn group="defenseHordeStageGS2236" num="42" maxAlive="179" duration="1"/>
+		</gamestage>
+		<gamestage stage="2255">
+			<spawn group="defenseHordeStageGS2255" num="43" maxAlive="181" duration="1"/>
+		</gamestage>
+		<gamestage stage="2275">
+			<spawn group="defenseHordeStageGS2275" num="43" maxAlive="183" duration="1"/>
+		</gamestage>
+		<gamestage stage="2295">
+			<spawn group="defenseHordeStageGS2295" num="43" maxAlive="184" duration="1"/>
+		</gamestage>
+		<gamestage stage="2315">
+			<spawn group="defenseHordeStageGS2315" num="43" maxAlive="186" duration="1"/>
+		</gamestage>
+		<gamestage stage="2334">
+			<spawn group="defenseHordeStageGS2334" num="44" maxAlive="187" duration="1"/>
+		</gamestage>
+		<gamestage stage="2354">
+			<spawn group="defenseHordeStageGS2354" num="44" maxAlive="189" duration="1"/>
+		</gamestage>
+		<gamestage stage="2374">
+			<spawn group="defenseHordeStageGS2374" num="44" maxAlive="190" duration="1"/>
+		</gamestage>
+		<gamestage stage="2394">
+			<spawn group="defenseHordeStageGS2394" num="44" maxAlive="192" duration="1"/>
+		</gamestage>
+		<gamestage stage="2414">
+			<spawn group="defenseHordeStageGS2414" num="44" maxAlive="194" duration="1"/>
+		</gamestage>
+		<gamestage stage="2435">
+			<spawn group="defenseHordeStageGS2435" num="45" maxAlive="195" duration="1"/>
+		</gamestage>
+		<gamestage stage="2455">
+			<spawn group="defenseHordeStageGS2455" num="45" maxAlive="197" duration="1"/>
+		</gamestage>
+		<gamestage stage="2475">
+			<spawn group="defenseHordeStageGS2475" num="45" maxAlive="199" duration="1"/>
+		</gamestage>
+		<gamestage stage="2495">
+			<spawn group="defenseHordeStageGS2495" num="45" maxAlive="200" duration="1"/>
+		</gamestage>
+		<gamestage stage="2516">
+			<spawn group="defenseHordeStageGS2516" num="46" maxAlive="202" duration="1"/>
+		</gamestage>
+		<gamestage stage="2536">
+			<spawn group="defenseHordeStageGS2536" num="46" maxAlive="203" duration="1"/>
+		</gamestage>
+		<gamestage stage="2557">
+			<spawn group="defenseHordeStageGS2557" num="46" maxAlive="205" duration="1"/>
+		</gamestage>
+		<gamestage stage="2577">
+			<spawn group="defenseHordeStageGS2577" num="46" maxAlive="207" duration="1"/>
+		</gamestage>
+		<gamestage stage="2598">
+			<spawn group="defenseHordeStageGS2598" num="47" maxAlive="208" duration="1"/>
+		</gamestage>
+		<gamestage stage="2618">
+			<spawn group="defenseHordeStageGS2618" num="47" maxAlive="210" duration="1"/>
+		</gamestage>
+		<gamestage stage="2639">
+			<spawn group="defenseHordeStageGS2639" num="47" maxAlive="212" duration="1"/>
+		</gamestage>
+		<gamestage stage="2660">
+			<spawn group="defenseHordeStageGS2660" num="47" maxAlive="213" duration="1"/>
+		</gamestage>
+		<gamestage stage="2681">
+			<spawn group="defenseHordeStageGS2681" num="48" maxAlive="215" duration="1"/>
+		</gamestage>
+		<gamestage stage="2702">
+			<spawn group="defenseHordeStageGS2702" num="48" maxAlive="217" duration="1"/>
+		</gamestage>
+		<gamestage stage="2723">
+			<spawn group="defenseHordeStageGS2723" num="48" maxAlive="218" duration="1"/>
+		</gamestage>
+		<gamestage stage="2744">
+			<spawn group="defenseHordeStageGS2744" num="48" maxAlive="220" duration="1"/>
+		</gamestage>
+		<gamestage stage="2765">
+			<spawn group="defenseHordeStageGS2765" num="49" maxAlive="222" duration="1"/>
+		</gamestage>
+		<gamestage stage="2786">
+			<spawn group="defenseHordeStageGS2786" num="49" maxAlive="223" duration="1"/>
+		</gamestage>
+		<gamestage stage="2807">
+			<spawn group="defenseHordeStageGS2807" num="49" maxAlive="225" duration="1"/>
+		</gamestage>
+		<gamestage stage="2828">
+			<spawn group="defenseHordeStageGS2828" num="49" maxAlive="227" duration="1"/>
+		</gamestage>
+		<gamestage stage="2849">
+			<spawn group="defenseHordeStageGS2849" num="50" maxAlive="228" duration="1"/>
+		</gamestage>
+		<gamestage stage="2870">
+			<spawn group="defenseHordeStageGS2870" num="50" maxAlive="230" duration="1"/>
+		</gamestage>
+		<gamestage stage="2892">
+			<spawn group="defenseHordeStageGS2892" num="50" maxAlive="232" duration="1"/>
+		</gamestage>
+		<gamestage stage="2913">
+			<spawn group="defenseHordeStageGS2913" num="50" maxAlive="234" duration="1"/>
+		</gamestage>
+		<gamestage stage="2935">
+			<spawn group="defenseHordeStageGS2935" num="51" maxAlive="235" duration="1"/>
+		</gamestage>
+		<gamestage stage="2956">
+			<spawn group="defenseHordeStageGS2956" num="51" maxAlive="237" duration="1"/>
+		</gamestage>
+		<gamestage stage="2978">
+			<spawn group="defenseHordeStageGS2978" num="51" maxAlive="239" duration="1"/>
+		</gamestage>
+		<gamestage stage="2999">
+			<spawn group="defenseHordeStageGS2999" num="51" maxAlive="240" duration="1"/>
+		</gamestage>
+		<gamestage stage="3021">
+			<spawn group="defenseHordeStageGS3021" num="52" maxAlive="242" duration="1"/>
+		</gamestage>
+		<gamestage stage="3043">
+			<spawn group="defenseHordeStageGS3043" num="52" maxAlive="244" duration="1"/>
+		</gamestage>
+		<gamestage stage="3064">
+			<spawn group="defenseHordeStageGS3064" num="52" maxAlive="246" duration="1"/>
+		</gamestage>
+		<gamestage stage="3086">
+			<spawn group="defenseHordeStageGS3086" num="53" maxAlive="247" duration="1"/>
+		</gamestage>
+		<gamestage stage="3108">
+			<spawn group="defenseHordeStageGS3108" num="53" maxAlive="249" duration="1"/>
+		</gamestage>
+		<gamestage stage="3130">
+			<spawn group="defenseHordeStageGS3130" num="53" maxAlive="251" duration="1"/>
+		</gamestage>
+		<gamestage stage="3152">
+			<spawn group="defenseHordeStageGS3152" num="53" maxAlive="253" duration="1"/>
+		</gamestage>
+		<gamestage stage="3174">
+			<spawn group="defenseHordeStageGS3174" num="54" maxAlive="254" duration="1"/>
+		</gamestage>
+		<gamestage stage="3196">
+			<spawn group="defenseHordeStageGS3196" num="54" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3218">
+			<spawn group="defenseHordeStageGS3218" num="54" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3240">
+			<spawn group="defenseHordeStageGS3240" num="54" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3263">
+			<spawn group="defenseHordeStageGS3263" num="55" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3285">
+			<spawn group="defenseHordeStageGS3285" num="55" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3307">
+			<spawn group="defenseHordeStageGS3307" num="55" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3330">
+			<spawn group="defenseHordeStageGS3330" num="55" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3352">
+			<spawn group="defenseHordeStageGS3352" num="56" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3375">
+			<spawn group="defenseHordeStageGS3375" num="56" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3397">
+			<spawn group="defenseHordeStageGS3397" num="56" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3420">
+			<spawn group="defenseHordeStageGS3420" num="57" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3442">
+			<spawn group="defenseHordeStageGS3442" num="57" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3465">
+			<spawn group="defenseHordeStageGS3465" num="57" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3488">
+			<spawn group="defenseHordeStageGS3488" num="57" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3510">
+			<spawn group="defenseHordeStageGS3510" num="58" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3533">
+			<spawn group="defenseHordeStageGS3533" num="58" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3556">
+			<spawn group="defenseHordeStageGS3556" num="58" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3579">
+			<spawn group="defenseHordeStageGS3579" num="58" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3602">
+			<spawn group="defenseHordeStageGS3602" num="59" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3625">
+			<spawn group="defenseHordeStageGS3625" num="59" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3648">
+			<spawn group="defenseHordeStageGS3648" num="59" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3671">
+			<spawn group="defenseHordeStageGS3671" num="60" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3694">
+			<spawn group="defenseHordeStageGS3694" num="60" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3718">
+			<spawn group="defenseHordeStageGS3718" num="60" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3741">
+			<spawn group="defenseHordeStageGS3741" num="60" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3764">
+			<spawn group="defenseHordeStageGS3764" num="61" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3787">
+			<spawn group="defenseHordeStageGS3787" num="61" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3811">
+			<spawn group="defenseHordeStageGS3811" num="61" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3834">
+			<spawn group="defenseHordeStageGS3834" num="62" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3858">
+			<spawn group="defenseHordeStageGS3858" num="62" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3881">
+			<spawn group="defenseHordeStageGS3881" num="62" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3905">
+			<spawn group="defenseHordeStageGS3905" num="62" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3929">
+			<spawn group="defenseHordeStageGS3929" num="63" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3952">
+			<spawn group="defenseHordeStageGS3952" num="63" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="3976">
+			<spawn group="defenseHordeStageGS3976" num="63" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4000">
+			<spawn group="defenseHordeStageGS4000" num="64" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4024">
+			<spawn group="defenseHordeStageGS4024" num="64" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4048">
+			<spawn group="defenseHordeStageGS4048" num="64" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4072">
+			<spawn group="defenseHordeStageGS4072" num="64" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4096">
+			<spawn group="defenseHordeStageGS4096" num="65" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4120">
+			<spawn group="defenseHordeStageGS4120" num="65" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4144">
+			<spawn group="defenseHordeStageGS4144" num="65" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4168">
+			<spawn group="defenseHordeStageGS4168" num="66" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4192">
+			<spawn group="defenseHordeStageGS4192" num="66" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4216">
+			<spawn group="defenseHordeStageGS4216" num="66" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4240">
+			<spawn group="defenseHordeStageGS4240" num="66" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4265">
+			<spawn group="defenseHordeStageGS4265" num="67" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4289">
+			<spawn group="defenseHordeStageGS4289" num="67" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4313">
+			<spawn group="defenseHordeStageGS4313" num="67" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4338">
+			<spawn group="defenseHordeStageGS4338" num="68" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4362">
+			<spawn group="defenseHordeStageGS4362" num="68" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4387">
+			<spawn group="defenseHordeStageGS4387" num="68" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4411">
+			<spawn group="defenseHordeStageGS4411" num="68" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4436">
+			<spawn group="defenseHordeStageGS4436" num="69" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4461">
+			<spawn group="defenseHordeStageGS4461" num="69" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4485">
+			<spawn group="defenseHordeStageGS4485" num="69" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4510">
+			<spawn group="defenseHordeStageGS4510" num="70" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4535">
+			<spawn group="defenseHordeStageGS4535" num="70" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4560">
+			<spawn group="defenseHordeStageGS4560" num="70" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4585">
+			<spawn group="defenseHordeStageGS4585" num="71" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4610">
+			<spawn group="defenseHordeStageGS4610" num="71" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4635">
+			<spawn group="defenseHordeStageGS4635" num="71" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4660">
+			<spawn group="defenseHordeStageGS4660" num="71" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4685">
+			<spawn group="defenseHordeStageGS4685" num="72" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4710">
+			<spawn group="defenseHordeStageGS4710" num="72" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4735">
+			<spawn group="defenseHordeStageGS4735" num="72" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4760">
+			<spawn group="defenseHordeStageGS4760" num="73" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4786">
+			<spawn group="defenseHordeStageGS4786" num="73" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4811">
+			<spawn group="defenseHordeStageGS4811" num="73" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4836">
+			<spawn group="defenseHordeStageGS4836" num="74" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4862">
+			<spawn group="defenseHordeStageGS4862" num="74" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4887">
+			<spawn group="defenseHordeStageGS4887" num="74" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4913">
+			<spawn group="defenseHordeStageGS4913" num="74" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4938">
+			<spawn group="defenseHordeStageGS4938" num="75" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4964">
+			<spawn group="defenseHordeStageGS4964" num="75" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="4989">
+			<spawn group="defenseHordeStageGS4989" num="75" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5015">
+			<spawn group="defenseHordeStageGS5015" num="76" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5041">
+			<spawn group="defenseHordeStageGS5041" num="76" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5066">
+			<spawn group="defenseHordeStageGS5066" num="76" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5092">
+			<spawn group="defenseHordeStageGS5092" num="77" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5118">
+			<spawn group="defenseHordeStageGS5118" num="77" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5144">
+			<spawn group="defenseHordeStageGS5144" num="77" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5170">
+			<spawn group="defenseHordeStageGS5170" num="78" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5196">
+			<spawn group="defenseHordeStageGS5196" num="78" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5222">
+			<spawn group="defenseHordeStageGS5222" num="78" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5248">
+			<spawn group="defenseHordeStageGS5248" num="78" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5274">
+			<spawn group="defenseHordeStageGS5274" num="79" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5300">
+			<spawn group="defenseHordeStageGS5300" num="79" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5326">
+			<spawn group="defenseHordeStageGS5326" num="79" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5352">
+			<spawn group="defenseHordeStageGS5352" num="80" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5379">
+			<spawn group="defenseHordeStageGS5379" num="80" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5405">
+			<spawn group="defenseHordeStageGS5405" num="80" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5431">
+			<spawn group="defenseHordeStageGS5431" num="81" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5458">
+			<spawn group="defenseHordeStageGS5458" num="81" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5484">
+			<spawn group="defenseHordeStageGS5484" num="81" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5511">
+			<spawn group="defenseHordeStageGS5511" num="82" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5537">
+			<spawn group="defenseHordeStageGS5537" num="82" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5564">
+			<spawn group="defenseHordeStageGS5564" num="82" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5590">
+			<spawn group="defenseHordeStageGS5590" num="83" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5617">
+			<spawn group="defenseHordeStageGS5617" num="83" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5644">
+			<spawn group="defenseHordeStageGS5644" num="83" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5670">
+			<spawn group="defenseHordeStageGS5670" num="84" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5697">
+			<spawn group="defenseHordeStageGS5697" num="84" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5724">
+			<spawn group="defenseHordeStageGS5724" num="84" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5751">
+			<spawn group="defenseHordeStageGS5751" num="85" maxAlive="256" duration="1"/>
+		</gamestage>
+		<gamestage stage="5778">
+			<spawn group="defenseHordeStageGS5778" num="85" maxAlive="256" duration="1"/>
+		</gamestage>
+	</spawner>
 </gamestages>

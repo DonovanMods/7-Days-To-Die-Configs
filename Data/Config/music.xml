@@ -2,7 +2,7 @@
 
 <root>
 
-  <property name="BundleLocation" value="#Sounds/Music?"/>
+  <property name="LocationRoot" value="@:Sounds/Music/"/>
   <music_groups>
     <group id="0" sample-rate="44100" hyperbar-length="4">
 
