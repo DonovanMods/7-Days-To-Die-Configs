@@ -1739,7 +1739,7 @@
 			</rect>
 		</rect>
 		
-		<label depth="4" pos="940,-663" width="250" height="30" text="{twitchstatus}" font_size="32" color="255,180,0,255" justify="right" pivot="topleft" />
+		<label depth="4" pos="640,-663" width="550" height="30" text="{twitchstatus}" font_size="32" color="255,180,0,255" justify="right" pivot="topleft" />
 		
 		<rect pos="0, -720">
 			<simplebutton name="btnBack" depth="3" pos="0, 0" width="200" height="36" font_size="32" caption_key="xuiBack" upper_case="true" />
@@ -2100,9 +2100,9 @@
 				<label style="header.name" pos="6,-6" width="550" text_key="respawnTitleMessage" />
 			</panel>
 			
-			<simplebutton name="btnSpawnOnBedroll" depth="3" pos="200,-70" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnOnBedroll" />
-			<simplebutton name="btnSpawnNearBedroll" depth="3" pos="200,-130" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnNearBedroll" />
-			<simplebutton name="btnSpawnNearBackpack" depth="3" pos="200,-190" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnNearBackpack" />
+			<simplebutton name="btnOption1" depth="3" pos="200,-70" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnOnBedroll" />
+			<simplebutton name="btnOption2" depth="3" pos="200,-130" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnNearBedroll" />
+			<simplebutton name="btnOption3" depth="3" pos="200,-190" pivot="center" width="400" height="42" font_size="36" caption_key="lblSpawnNearBackpack" />
 		</rect>
 	</window>
 

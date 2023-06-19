@@ -6807,8 +6807,8 @@
 	<Noise ID="1" noise="7" time="2" muffled_when_crouched=".5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_pedal1"/>
   <AudioClip ClipName="Sounds/Vehicles/Bicycle/bicycle_pedal2"/>
-	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal1" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
-	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal2" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal1" AltSound="true" />
+	  <AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/bike_silly_pedal2" AltSound="true" />
 	<MaxVoices value="2"/> <MaxRepeatRate value=".01"/>
 </SoundDataNode>
 	
@@ -6845,20 +6845,20 @@
 <SoundDataNode name="minibike_accel_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_accel_1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_decel_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_decel_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_decel_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_decel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_empty_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_empty_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_no_gas" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
@@ -6870,7 +6870,7 @@
 <SoundDataNode name="minibike_idle_lp_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_idle_lp_1" Loop="true"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_idle_lp_2" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_idle_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_impact_"> <AudioSource name="Sounds/AudioSource_Impact"/>
@@ -6886,20 +6886,20 @@
 
 <SoundDataNode name="minibike_run_lp_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_run_lp_1" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_shutoff_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_shutoff_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_shutoff_1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_off" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_start_"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_start_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Minibike/minibike_start_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/minibike_silly_start" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="minibike_suspension_"> <AudioSource name="Sounds/AudioSource_Impact"/>
@@ -6913,19 +6913,19 @@
 <SoundDataNode name="motorbike_accel_1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_accel_2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_accel_3"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_accel_3"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Max"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 	
 	<SoundDataNode name="motorbike_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
@@ -6936,29 +6936,29 @@
 	
 <SoundDataNode name="motorbike_decel"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_decel_1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_decel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_empty"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_no_gas" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_idle_lp_1" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_idle_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_mid_speed_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_mid_speed_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="motorbike_run_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_max_speed_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/moto_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
@@ -6968,37 +6968,37 @@
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_startup1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_startup2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_start" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_shutoff"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_shutoff"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_off" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_accel3"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_accel3"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_turbo"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_turbo"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_accel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 	
 	<SoundDataNode name="suv_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
@@ -7009,35 +7009,35 @@
 
 <SoundDataNode name="suv_decel1"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_decel1"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_decel2"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_decel2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_decel" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_reverse"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_reverse1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_reverse2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_empty"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_no_gas" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_idle_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_idle_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="suv_max_speed_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Suv/suv_max_speed_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/truck_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
@@ -7046,28 +7046,28 @@
 <SoundDataNode name="gyrocopter_start"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_start"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_start" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_start" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_shutoff"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_shutoff"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_off" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_off" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_idle_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_idle_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_idle_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_med_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_med_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="gyrocopter_blades_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_blades_lp" Loop="true"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_run_lp" AltSound="true" Loop="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 	
 		<SoundDataNode name="gyrocopter_horn"> <AudioSource name="Sounds/AudioSource_SmallHorn"/>
@@ -7084,7 +7084,7 @@
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage4"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage6"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_crash" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_crash" AltSound="true" />
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -7100,7 +7100,7 @@
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter7"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter8"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter9"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_sputter" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_sputter" AltSound="true" />
 	<LowestPitch name="0.95"/>
 	<HighestPitch name="1.05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -7109,7 +7109,7 @@
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_2"/>
-	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_no_gas" AltSound="true" AudioSourceName="Sounds/AudioSource_Twitch_Loud"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/Silly Vehicle Sounds/gyro_silly_no_gas" AltSound="true" />
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 	<!-- Enemies Shared -->

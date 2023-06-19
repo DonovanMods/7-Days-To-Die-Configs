@@ -3315,31 +3315,31 @@ If there is no hit the default quality is used.
 </lootgroup>
 
 <lootgroup name="groupQuestRewardSkillMagazinesAll01" count="3" >
-	<item name="bowsSkillMagazine" count="3"/>
-	<item name="spearsSkillMagazine" count="3"/>
-	<item name="clubsSkillMagazine" count="3"/>
-	<item name="sledgehammersSkillMagazine" count="3"/>
-	<item name="harvestingToolsSkillMagazine" count="3"/>
-	<item name="knucklesSkillMagazine" count="3"/>
-	<item name="bladesSkillMagazine" count="3"/>
-	<item name="repairToolsSkillMagazine" count="3"/>
-	<item name="salvageToolsSkillMagazine" count="3"/>
+	<item name="bowsSkillMagazine" count="2"/>
+	<item name="spearsSkillMagazine" count="2"/>
+	<item name="clubsSkillMagazine" count="2"/>
+	<item name="sledgehammersSkillMagazine" count="2"/>
+	<item name="harvestingToolsSkillMagazine" count="2"/>
+	<item name="knucklesSkillMagazine" count="2"/>
+	<item name="bladesSkillMagazine" count="2"/>
+	<item name="repairToolsSkillMagazine" count="2"/>
+	<item name="salvageToolsSkillMagazine" count="2"/>
 
-	<item name="handgunsSkillMagazine" count="3"/>
-	<item name="shotgunsSkillMagazine" count="3"/>
-	<item name="riflesSkillMagazine" count="3"/>
-	<item name="machineGunsSkillMagazine" count="3"/>
-	<item name="explosivesSkillMagazine" count="3"/>
-	<item name="armorSkillMagazine" count="3"/>
-	<item name="roboticsSkillMagazine" count="3"/>
+	<item name="handgunsSkillMagazine" count="2"/>
+	<item name="shotgunsSkillMagazine" count="2"/>
+	<item name="riflesSkillMagazine" count="2"/>
+	<item name="machineGunsSkillMagazine" count="2"/>
+	<item name="explosivesSkillMagazine" count="2"/>
+	<item name="armorSkillMagazine" count="2"/>
+	<item name="roboticsSkillMagazine" count="2"/>
 
-	<item name="workstationSkillMagazine" count="3"/>
-	<item name="medicalSkillMagazine" count="3"/>
-	<item name="foodSkillMagazine" count="3"/>
-	<item name="seedSkillMagazine" count="3"/>
-	<item name="vehiclesSkillMagazine" count="3"/>
-	<item name="electricianSkillMagazine" count="3"/>
-	<item name="trapsSkillMagazine" count="3"/>
+	<item name="workstationSkillMagazine" count="2"/>
+	<item name="medicalSkillMagazine" count="2"/>
+	<item name="foodSkillMagazine" count="2"/>
+	<item name="seedSkillMagazine" count="2"/>
+	<item name="vehiclesSkillMagazine" count="2"/>
+	<item name="electricianSkillMagazine" count="2"/>
+	<item name="trapsSkillMagazine" count="2"/>
 </lootgroup>
 
 <lootgroup name="groupQuestRewardSkillMagazinesAll" count="all">
@@ -5961,7 +5961,7 @@ If there is no hit the default quality is used.
 <!-- *** File_Cabinet -->
 <lootgroup name="groupFileCabinet01">
 	<item name="resourcePaper" count="4,10" loot_prob_template="low"/>
-	<item group="skillMagazines" count="1,3" loot_prob_template="high"/>
+	<item group="skillMagazines" count="1" loot_prob_template="high"/>
 </lootgroup>
 
 <lootgroup name="groupFileCabinet02">
@@ -6507,14 +6507,14 @@ If there is no hit the default quality is used.
 <!-- *** Mailbox_Loot -->
 <lootgroup name="groupMailbox01">
 	<item group="perkBooks" loot_prob_template="high"/>
-	<item group="skillMagazines" count="1,3" loot_prob_template="med"/>
+	<item group="skillMagazines" count="1" loot_prob_template="med"/>
 	<item name="resourcePaper" count="3,6" loot_prob_template="medLow"/>
 </lootgroup>
 
 <lootgroup name="groupMailbox02">
 	<item name="resourcePaper" count="3,6" loot_prob_template="medHigh"/>
 	<item group="booksAllScaled" loot_prob_template="med"/>
-	<item group="skillMagazines" count="1,3" loot_prob_template="low"/>
+	<item group="skillMagazines" count="1" loot_prob_template="low"/>
 </lootgroup>
 
 <lootgroup name="groupMailbox" count="all">
@@ -6524,7 +6524,7 @@ If there is no hit the default quality is used.
 
 <!-- *** Book_Pile -->
 <lootgroup name="groupBookPile01">
-	<item group="skillMagazines" count="1,3" loot_prob_template="high"/>
+	<item group="skillMagazines" count="1,2" loot_prob_template="high"/>
 	<item group="booksAllScaled" loot_prob_template="medLow"/>
 </lootgroup>
 
@@ -6545,7 +6545,7 @@ If there is no hit the default quality is used.
 <!-- *** Crackabook_Shelves -->
 <lootgroup name="groupCrackabookShelves01">
 	<item name="resourcePaper" count="1,5" loot_prob_template="low"/>
-	<item group="skillMagazines" count="1,3" loot_prob_template="high"/>
+	<item group="skillMagazines" count="1" loot_prob_template="high"/>
 	<item group="booksAllScaled" loot_prob_template="medLow"/>
 </lootgroup>
 
@@ -6786,7 +6786,7 @@ If there is no hit the default quality is used.
 
 <lootgroup name="groupZpackStrong02">
 	<item group="groupApparelClothes" loot_prob_template="low"/>
-	<item group="groupApparelHazmat" loot_prob_template="medHigh"/>
+	<!-- <item group="groupApparelHazmat" loot_prob_template="medHigh"/> -->
 	<item group="booksAllScaled" loot_prob_template="medHigh"/>
 	<item group="skillMagazines" loot_prob_template="high"/>
 	<item group="groupToolsTiered" loot_prob_template="medHigh"/>

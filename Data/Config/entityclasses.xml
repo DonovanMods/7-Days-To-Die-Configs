@@ -530,10 +530,14 @@
 	</effect_group>
 </entity_class>
 
+<entity_class name="zombieTemplateShort" extends="zombieTemplateMale">
+	<property name="HandItem" value="meleeHandZombieShort"/>
+</entity_class>
+
 <!-- *** ZOMBIES_SLIM -->
 <!-- Slightly lower HP, but faster -->
 
- <entity_class name="zombieTemplateSlimFemale" extends="zombieTemplateMale">
+ <entity_class name="zombieTemplateSlimFemale" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="None"/>
 	<property name="SizeScale" value="0.9"/>
 	<property name="Tags" value="entity,zombie,walker"/>
@@ -559,7 +563,7 @@
     </effect_group>
   </entity_class>
 
-<entity_class name="zombieArlene" extends="zombieTemplateMale">
+<entity_class name="zombieArlene" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="SizeScale" value="0.9"/>
 	<property name="Tags" value="entity,zombie,walker"/>
@@ -577,8 +581,7 @@
 	<property name="AIPathCostScale" value=".4, .4"/>
 	<property name="NavObjectHeadOffset" value="0,-0.15,0" />
 	<property name="DanceType" value="2" />
-	
-	
+
 	<!--Dismemberment -->
 
 	<property name="DismemberTag_L_HeadGore"
@@ -673,6 +676,7 @@
 
 	<!-- Gameplay zombieArlene -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
+	
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 	<!--
@@ -693,7 +697,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -722,7 +726,7 @@
 </entity_class>
 
 
-<entity_class name="zombieMarlene" extends="zombieTemplateMale">
+<entity_class name="zombieMarlene" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="SizeScale" value="0.97"/>
 	<property name="Tags" value="entity,zombie,walker"/>
@@ -848,7 +852,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -992,7 +996,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1021,7 +1025,7 @@
 	</effect_group>
 </entity_class>
 
-<entity_class name="zombieNurse" extends="zombieTemplateMale">
+<entity_class name="zombieNurse" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/>
@@ -1131,7 +1135,6 @@
 
 	<!-- Gameplay zombieNurse -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
-	<property name="HandItem" value="meleeHandZombie01"/>
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 	</effect_group>
@@ -1147,7 +1150,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1294,7 +1297,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1325,7 +1328,7 @@
 </entity_class>
 
 		<!-- *** ZOMBIE_STEVE -->
-<entity_class name="zombieSteve" extends="zombieTemplateMale">
+<entity_class name="zombieSteve" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="SizeScale" value="0.95"/>
 	<property name="Tags" value="entity,zombie,walker"/>
@@ -1355,6 +1358,7 @@
 
 	<!-- Gameplay zombieSteve -->
 	<property name="MoveSpeedAggro" value="0.3, 1.35"/> <!-- slim, regular -->
+
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 	</effect_group>
@@ -1371,7 +1375,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1402,7 +1406,7 @@
 </entity_class>
 
 		<!-- *** ZOMBIE_TOM_CLARK-->
-<entity_class name="zombieTomClark" extends="zombieTemplateMale">
+<entity_class name="zombieTomClark" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="SizeScale" value="0.95"/>
 	<property name="Tags" value="entity,zombie,walker"/>
@@ -1526,7 +1530,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1557,7 +1561,7 @@
 </entity_class>
 
 		<!-- *** ZOMBIE_BUSINESSMAN -->
-<entity_class name="zombieBusinessMan" extends="zombieTemplateMale">
+<entity_class name="zombieBusinessMan" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSuit.prefab"/>
@@ -1675,7 +1679,7 @@
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- slim, feral -->
 	<property name="JumpMaxDistance" value="4.6, 5"/>
-	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<property name="HandItem" value="meleeHandZombieShortFeral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
@@ -1705,7 +1709,7 @@
 </entity_class>
 
 		<!-- *** ZOMBIE_BURNT-->
-<entity_class name="zombieBurnt" extends="zombieTemplateMale">
+<entity_class name="zombieBurnt" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
@@ -4010,7 +4014,7 @@
 <!-- *** ZOMBIES_SPECIAL -->
 
 		<!-- *** ZOMBIE_SCREAMER -->
-<entity_class name="zombieScreamer" extends="zombieTemplateMale">
+<entity_class name="zombieScreamer" extends="zombieTemplateShort">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamer.prefab"/>
@@ -4029,8 +4033,6 @@
 	<property name="DanceType" value="2" />
 
 	<!-- Gameplay zombieScreamer -->
-	<property name="HandItem" value="meleeHandZombie01"/>
-
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="100"/>
 	</effect_group>
@@ -4300,6 +4302,8 @@
 				"/>
 
 	<!-- Gameplay zombieSteveCrawler -->
+	<property name="MoveSpeed" value="0.25"/>
+	<property name="MoveSpeedAggro" value=".7, 1"/>
 	<property name="CanClimbLadders" value="false"/>
 	<property name="HandItem" value="meleeHandZombie02"/>
 	<effect_group name="Base Effects">
@@ -4309,11 +4313,12 @@
 
 <entity_class name="zombieSteveCrawlerFeral" extends="zombieSteveCrawler">
 	<property name="UserSpawnType" value="Menu"/>
-	<property name="Tags" value="entity,zombie"/>
+	<property name="Tags" value="entity,zombie,crawler,feral"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZCrawlerFeral.prefab"/>
 
 	<!-- Gameplay zombieSteveCrawlerFeral -->
 	<property name="DismemberMultiplierHead" value=".7"/><property name="DismemberMultiplierArms" value=".7"/><property name="DismemberMultiplierLegs" value=".7"/><!-- Feral -->
+	<property name="MoveSpeedAggro" value="1.2, 1.4"/>
 	<property name="PainResistPerHit" value=".7"/><!-- Feral -->
 	<property name="HandItem" value="meleeHandZombie02Feral"/>
 	<property name="ExperienceGain" value="750"/><!-- XP grunt feral -->
@@ -4324,31 +4329,6 @@
 		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
-
-		<!-- *** ZOMBIE_BEHEMOTH -->
-<!--
-<entity_class name="zombieBehemoth" extends="zombieTemplateMale">
-	<property name="UserSpawnType" value="Menu"/>
-	<property name="Prefab" value="NPC4m"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
-	<property name="Mesh" value="Monsters/Behemoth/BehemothRagdoll"/>
-	<property name="ModelType" value="Standard"/>
-	<property name="WalkType" value="9"/>
-	<property name="ExperienceGain" value="6735"/>
-	<property name="MaxHealth" value="5000"/>
-	<property name="DeadBodyHitPoints" value="700"/>
-	<property name="PhysicsBody" value="zombieStandardFemale"/>
-	<property name="RootMotion" value="true"/>
-	<property name="HasDeathAnim" value="true"/>
-	<property name="ReplaceMaterial1" value="@:Entities/Zombies/Zombies/Materials/Z_eye1.mat"/>
-	<property name="HandItem" value="meleeHandZombieBehemoth"/>
-</entity_class>
--->
 
 		<!-- *** ZOMBIE_UMA_TEMPLATE -->
 <!--

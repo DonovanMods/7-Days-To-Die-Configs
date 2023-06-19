@@ -445,12 +445,11 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="330"/>
 		
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods" ischosen="true" value="1"/>
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
 	</quest>
 	
 	<quest id="tier2_fetch" template="tier1_fetch">
@@ -464,7 +463,7 @@
 		<reward type="Exp" value="3750"/>
 		<reward type="Item" id="casinoCoin" value="560"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
@@ -485,7 +484,7 @@
 		<reward type="Exp" value="5000"/>
 		<reward type="Item" id="casinoCoin" value="800"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -506,7 +505,7 @@
 		<reward type="Exp" value="6250"/>
 		<reward type="Item" id="casinoCoin" value="1020"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -527,7 +526,7 @@
 		<reward type="Exp" value="12500"/>
 		<reward type="Item" id="casinoCoin" value="2040"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="5"/>
@@ -548,7 +547,7 @@
 		<reward type="Exp" value="20000"/>
 		<reward type="Item" id="casinoCoin" value="6000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="6"/>
@@ -619,14 +618,13 @@
 		<reward type="Exp" value="3000"/>
 		<reward type="Item" id="casinoCoin" value="800"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods" ischosen="true" value="1"/>
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
 	</quest>
-	
+
 	<quest id="tier2_clear" template="tier1_clear">
 		<variable name="name" value="quest_tier2_clear" />
 		<variable name="offer" value="quest_tier2_clear_offer" />
@@ -638,7 +636,7 @@
 		<reward type="Exp" value="4500"/>
 		<reward type="Item" id="casinoCoin" value="1350"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
@@ -659,7 +657,7 @@
 		<reward type="Exp" value="6000"/>
 		<reward type="Item" id="casinoCoin" value="1800"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -680,7 +678,7 @@
 		<reward type="Exp" value="7500"/>
 		<reward type="Item" id="casinoCoin" value="2040"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -701,7 +699,7 @@
 		<reward type="Exp" value="15000"/>
 		<reward type="Item" id="casinoCoin" value="4080"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="5"/>
@@ -722,7 +720,7 @@
 		<reward type="Exp" value="24000"/>
 		<reward type="Item" id="casinoCoin" value="7200"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="6"/>
@@ -791,16 +789,15 @@
 			<property name="nav_object" value="return_to_trader" />
 		</objective>
 
-		<reward type="Exp" value="3000"/>
-		<reward type="Item" id="casinoCoin" value="800"/>
+		<reward type="Exp" value="5625"/>
+		<reward type="Item" id="casinoCoin" value="1690"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 		<reward type="LootItem" id="groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestSchematics,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 	</quest>
 	
 	<quest id="tier3_clear_infested" template="tier2_clear_infested">
@@ -813,10 +810,10 @@
 		<variable name="gamestage_mod" value=".6"/>
 		<variable name="gamestage_bonus" value="30"/>
 		
-		<reward type="Exp" value="4500"/>
-		<reward type="Item" id="casinoCoin" value="1350"/>
+		<reward type="Exp" value="7500"/>
+		<reward type="Item" id="casinoCoin" value="2250"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="3"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -836,10 +833,10 @@
 		<variable name="gamestage_mod" value=".6"/>
 		<variable name="gamestage_bonus" value="30"/>
 		
-		<reward type="Exp" value="4500"/>
-		<reward type="Item" id="casinoCoin" value="1350"/>
+		<reward type="Exp" value="9375"/>
+		<reward type="Item" id="casinoCoin" value="2550"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="4"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -859,10 +856,10 @@
 		<variable name="gamestage_mod" value=".6"/>
 		<variable name="gamestage_bonus" value="30"/>
 		
-		<reward type="Exp" value="4500"/>
-		<reward type="Item" id="casinoCoin" value="1350"/>
+		<reward type="Exp" value="18750"/>
+		<reward type="Item" id="casinoCoin" value="5100"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="5"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="5"/>
@@ -882,10 +879,10 @@
 		<variable name="gamestage_mod" value=".6"/>
 		<variable name="gamestage_bonus" value="30"/>
 		
-		<reward type="Exp" value="4500"/>
-		<reward type="Item" id="casinoCoin" value="1350"/>
+		<reward type="Exp" value="30000"/>
+		<reward type="Item" id="casinoCoin" value="9000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="6"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="6"/>
@@ -966,7 +963,7 @@
 		<reward type="Exp" value="5060"/>
 		<reward type="Item" id="casinoCoin" value="1400"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
@@ -985,7 +982,7 @@
 		<reward type="Exp" value="6750"/>
 		<reward type="Item" id="casinoCoin" value="2000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -1004,7 +1001,7 @@
 		<reward type="Exp" value="8400"/>
 		<reward type="Item" id="casinoCoin" value="2300"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -1080,7 +1077,7 @@
 		<reward type="Exp" value="5060"/>
 		<reward type="Item" id="casinoCoin" value="1400"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
@@ -1099,7 +1096,7 @@
 		<reward type="Exp" value="6750"/>
 		<reward type="Item" id="casinoCoin" value="2000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -1118,7 +1115,7 @@
 		<reward type="Exp" value="8400"/>
 		<reward type="Item" id="casinoCoin" value="2300"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -1137,7 +1134,7 @@
 		<reward type="Exp" value="16900"/>
 		<reward type="Item" id="casinoCoin" value="4600"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="5"/>
@@ -1156,7 +1153,7 @@
 		<reward type="Exp" value="27000"/>
 		<reward type="Item" id="casinoCoin" value="8000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="6"/>
@@ -1353,21 +1350,12 @@
 
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
-
-		<!-- <reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/> -->
 		
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods" ischosen="true" value="1"/>
-		
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
 	</quest>
 	
 	<quest id="test_sleepers_infested">
@@ -1493,21 +1481,11 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
 		
-		<!-- <reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/> -->
-		<!-- <reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/> -->
-		
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods" ischosen="true" value="1"/>
-		
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
 	</quest>
 
 	<quest id="test_fetchsleep">
@@ -1572,12 +1550,11 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 	</quest>
@@ -1651,7 +1628,7 @@
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 	</quest>
 
@@ -1713,12 +1690,11 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 	</quest>
@@ -1785,16 +1761,14 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 	</quest>
-	
 
 	<quest id="test_turnin">
 		<property name="name_key" value="Turn In Quest"/>
@@ -1820,12 +1794,11 @@
 		<!-- <reward type="Skill" id="Influence" value="1000000"/> -->
 		<reward type="Exp" value="2500"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" value="2"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 	</quest>
@@ -1849,11 +1822,10 @@
 
 		<reward type="Item" id="casinoCoin" value="200"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" isfixed="true" value="1"/>
 		<reward type="LootItem" id="groupQuestArmor" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="3"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="2"/>
+		<reward type="LootItem" id="groupQuestSchematics,groupQuestT1SkillMagazineBundle" ischosen="true" value="2"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
 		<reward type="SkillPoints" value="5" ischosen="true"/>
 	</quest>
@@ -2120,12 +2092,19 @@
 		<property name="reward_choices_count" value="5" />
 
 		<reward type="Item" id="casinoCoin" value="2000"/>
-		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" isfixed="true" value="7"/>
-		<reward type="LootItem" id="groupQuestMods" ischosen="true" isfixed="true" value="7"/>
-		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
-		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="7"/>
-		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" value="7"/>
-		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestGyrocopterParts" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestcasinoCoinT5" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSolarBank" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestT2LightArmorBonus" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestT2HeavyArmorBonus" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestShotgunTurret" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAutoTurret" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestForgedSteel" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestT3LegendaryFirearms" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSteelShapes" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestT3MeleeMods" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestT3RangedMods" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmoCraftingBundle" ischosen="true" value="7"/>
 	</quest>
 
 	<quest id="tier1_test_turnin">
@@ -2158,12 +2137,11 @@
 		<reward type="Exp" value="2500"/>
 		<reward type="Item" id="casinoCoin" value="350"/>
 		
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="1"/>
+		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="1"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestResources" ischosen="true" value="1"/>
-		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods" ischosen="true" value="1"/>
+		<reward type="LootItem" id="groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
 	</quest>
 
 	<quest id="tier2_test_turnin" template="tier1_test_turnin">
@@ -2175,7 +2153,7 @@
 		<reward type="Exp" value="3750"/>
 		<reward type="Item" id="casinoCoin" value="560"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="2"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2"/>
@@ -2194,7 +2172,7 @@
 		<reward type="Exp" value="5000"/>
 		<reward type="Item" id="casinoCoin" value="800"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
@@ -2213,7 +2191,7 @@
 		<reward type="Exp" value="6250"/>
 		<reward type="Item" id="casinoCoin" value="1020"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="4"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="4"/>
@@ -2232,11 +2210,11 @@
 		<reward type="Exp" value="12500"/>
 		<reward type="Item" id="casinoCoin" value="2040"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
-		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="5"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
+		<reward type="LootItem" id="groupQuestToolsT3" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="5"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="5"/>
-		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" value="5"/>
+		<reward type="LootItem" id="groupQuestWeaponsMeleeT2,groupQuestWeaponsRangedT3" ischosen="true" value="5"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="5"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="5"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>
@@ -2251,11 +2229,11 @@
 		<reward type="Exp" value="20000"/>
 		<reward type="Item" id="casinoCoin" value="6000"/>
 
-		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" isfixed="true" value="2"/>
-		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="6"/>
+		<reward type="LootItem" id="groupQuestT1SkillMagazineBundle" ischosen="true" value="4"/>
+		<reward type="LootItem" id="groupQuestToolsT3" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="6"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="6"/>
-		<reward type="LootItem" id="groupQuestWeapons" ischosen="true" value="6"/>
+		<reward type="LootItem" id="groupQuestWeaponsMeleeT2,groupQuestWeaponsRangedT3" ischosen="true" value="6"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="6"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="6"/>
 		<reward type="LootItem" id="groupQuestSteel" ischosen="true"/>

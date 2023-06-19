@@ -26515,12 +26515,10 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MaxDamage" value="7000"/>
 	<property name="StartDamage" value="0"/>
 	<property name="PassThroughDamage" value="true"/>
-	<property name="Stage2Health" value="1"/>
 	<property name="MeshDamage" value="
 		Door/DMG0, 7000,
 		Door/DMG1, 5000,
 		Door/DMG2, 2500,
-		-, 1
 		"/>
 	<property class="RepairItems">
 		<property name="resourceForgedSteel" value="9"/>
@@ -26617,12 +26615,10 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MaxDamage" value="7000"/>
 	<property name="StartDamage" value="0"/>
 	<property name="PassThroughDamage" value="true"/>
-	<property name="Stage2Health" value="1"/>
 	<property name="MeshDamage" value="
 		Door/DMG0, 7000,
 		Door/DMG1, 5000,
 		Door/DMG2, 2500,
-		-, 1
 		"/>
 	<property class="RepairItems">
 		<property name="resourceForgedSteel" value="9"/>

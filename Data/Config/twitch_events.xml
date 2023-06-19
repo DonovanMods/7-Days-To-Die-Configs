@@ -36,9 +36,9 @@
 	-->
 
 	<!-- <bit_event event_title="Demo Bits" event_name="spawn_demo" start_amount="200" end_amount="999"  -->
-		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" /> -->
-	<!-- <bit_event event_title="Grace Bits" event_name="spawn_grace" start_amount="1000"  -->
-		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="20" /> -->
+		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" presets="casual,standard,hardcore" /> -->
+	<!-- <bit_event event_title="Grace Bits" event_name="spawn_grace" start_amount="1000" -->
+		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="20" presets="casual,standard,hardcore" /> -->
 
 	<!-- Sub Events
 		

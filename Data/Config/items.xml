@@ -5997,7 +5997,7 @@
 	<property class="Action0">
 		<property name="DamageEntity" value="10"/>
 		<property name="DamageBlock" value="8"/>
-		<!--<property name="Buff" value="buffInjuryBleedingTwo,buffInfectionCatch,buffInjuryStunned01"/>-->
+		<property name="Range" value="1.6"/>
 	</property>
 	<effect_group name="meleeHandZombie01" tiered="false">
 		<!-- these base_add or perc_add have no effect whatsoever on zombies
@@ -6055,6 +6055,7 @@
 	<property name="HoldType" value="24"/>
 	<property class="Action0">
 		<property name="Delay" value="2.0"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Range" value="1.3"/>
 	</property>
 	<effect_group name="meleeHandZombie02" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -6093,12 +6094,13 @@
 	</effect_group>
 </item>
 
-<item name="meleeHandZombie02Feral">
+<item name="meleeHandZombie02Feral"> <!-- spider, crawler -->
 	<property name="Extends" value="meleeHandZombie02"/>
 	<property name="CreativeMode" value="None"/>
 	<property class="Action0">
 		<property name="DamageEntity" value="20"/>
 		<property name="DamageBlock" value="24"/>
+		<property name="Range" value="1.3"/>
 	</property>
 	<effect_group name="meleeHandZombie02Feral" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -6112,6 +6114,24 @@
 	</effect_group>
 </item>
 
+<item name="meleeHandZombieShort">
+	<property name="Extends" value="meleeHandZombie01"/>
+	<property class="Action0">
+		<property name="DamageEntity" value="8"/>
+		<property name="DamageBlock" value="7"/>
+		<property name="Range" value="1.4"/>
+	</property>
+</item>
+
+<item name="meleeHandZombieShortFeral">
+	<property name="Extends" value="meleeHandZombieFeral"/>
+	<property class="Action0">
+		<property name="DamageEntity" value="16"/>
+		<property name="DamageBlock" value="22"/>
+		<property name="Range" value="1.4"/>
+	</property>
+</item>
+
 <item name="meleeHandZombieBurning">
 	<property name="Extends" value="meleeHandMaster"/>
 	<property name="CreativeMode" value="None"/>
@@ -6120,6 +6140,7 @@
 		<property name="Sphere" value=".4"/>
 		<property name="DamageEntity" value="12"/>
 		<property name="DamageBlock" value="8"/>
+		<property name="Range" value="1.4"/>
 		<!--
 		<property name="Buff" value="buffBurningZombie,buffInfectionCatch,buffInjuryStunned01"/>
 		-->
@@ -6145,6 +6166,7 @@
 	<property class="Action0">
 		<property name="DamageEntity" value="24"/>
 		<property name="DamageBlock" value="24"/>
+		<property name="Range" value="1.4"/>
 	</property>
 	<effect_group name="meleeHandZombieBurningFeral" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -6166,6 +6188,7 @@
 		<property name="DamageEntity" value="24"/>
 		<property name="DamageBlock" value="24"/>
 		<property name="Delay" value="2.0"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Range" value="1.3"/>
 		<!--<property name="Buff" value="buffInfectionCatch,buffBurningZombie"/>-->
 	</property>
 	<effect_group name="meleeHandZombieBurningCrawler" tiered="false">
@@ -6748,24 +6771,6 @@
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
 	</effect_group>
 </item>
-
-<!--<item name="meleeHandZombieBehemoth">
-	<property name="Extends" value="meleeHandZombiePartyGirl"/>
-	<property name="CreativeMode" value="None"/>
-	<property class="Action0">
-		<property name="DamageEntity" value="500"/>
-		<property name="DamageBlock" value="2000"/>
-		<property name="Range" value="4"/>
-		<property name="Sphere" value="2"/>
-		<property name="Block_range" value="5"/>
-	</property>
-	<effect_group name="meleeHandZombieBehemoth" tiered="false">
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
-		<passive_effect name="BuffProcChance" operation="base_set" value=".50" tags="buffInjuryBleedingTwo"/>
-		<passive_effect name="BuffProcChance" operation="base_set" value=".40" tags="buffInfectionCatch"/>
-		<passive_effect name="BuffProcChance" operation="base_set" value=".50" tags="buffInjuryStunned01"/>
-	</effect_group>
-</item>-->
 
 <item name="meleeHandAnimalCoyote">
 	<property name="Extends" value="meleeHandMaster"/>
@@ -12120,20 +12125,34 @@ perkNightStalkerSilentNight
 		<!-- used on self -->
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="healAbrasionMult" operation="set" value="3"/>
 		<display_value name="dhealAbrasionMult" value="3"/>
+    
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryAbrasionTreated">
-			<requirement name="HasBuff" buff="buffInjuryAbrasion"/></triggered_effect>
+			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+    </triggered_effect>
 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="add" value="30"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
 		<display_value name="foodHealthAmount" value="30"/>
+    
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryBleeding"/>
 		<display_value name="dStopsBleeding" value="1"/>
 
 		<!-- used on other -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="3"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="30"/>
+    
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
+      <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+    </triggered_effect>
 
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="30"/>
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
+
+
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
+
+    
 		<!-- used on other, regular health per tick based on perkPhysician -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="0"/></triggered_effect>
@@ -12145,11 +12164,6 @@ perkNightStalkerSilentNight
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
-
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
-			<requirement name="HasBuff" buff="buffInjuryAbrasion"/></triggered_effect>
 	</effect_group>
 
 	<effect_group tiered="false">
@@ -12212,19 +12226,34 @@ perkNightStalkerSilentNight
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="healAbrasionMult" operation="set" value="4"/>
 		<display_value name="dhealAbrasionMult" value="4"/>
+    
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInjuryAbrasionTreated">
-			<requirement name="HasBuff" buff="buffInjuryAbrasion"/></triggered_effect>
+			<requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+    </triggered_effect>
 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="add" value="180"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
 		<display_value name="foodHealthAmount" value="180"/>
+    
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryBleeding"/><display_value name="dStopsBleeding" value="1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffLaceration"/><display_value name="dStopsLaceration" value="1"/>
 
 		<!-- used on other -->
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="4"/>
+
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="healAbrasionMult" operation="set" value="4"/>
+    
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
+      <requirement name="HasBuff" buff="buffInjuryAbrasion"/>
+    </triggered_effect>
+    
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medicalRegHealthAmount" operation="add" value="180"/>
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="@medicRegHealthIncreaseSpeed"/>
+    
+    
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
+    <triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffLaceration"/>
 
 		<!-- used on other, regular health per tick based on perkPhysician -->
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2">
@@ -12238,14 +12267,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
 
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffInjuryBleeding"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="other" buff="buffLaceration"/>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="GiveExp" exp="300"/>
-		
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
-			<requirement name="HasBuff" buff="buffInjuryAbrasion"/></triggered_effect>
-	</effect_group>
+		</effect_group>
+  
 	<effect_group tiered="false">
 		<!-- medical XP gains -->
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="300"/>
@@ -16363,7 +16386,7 @@ perkNightStalkerSilentNight
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Mmetal"/>
 	<property name="Stacknumber" value="50"/> <!-- STK resource -->
-	<property name="EconomicValue" value="500"/>
+	<property name="EconomicValue" value="750"/>
 	<property name="Group" value="Resources"/>
 </item>
 
@@ -16657,8 +16680,9 @@ perkNightStalkerSilentNight
 	<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Miron"/>
-	<property name="Stacknumber" value="250"/> <!-- STK loot -->
-	<property name="EconomicValue" value="26"/>
+	<property name="Stacknumber" value="3"/> <!-- STK loot -->
+	<property name="EconomicValue" value="200"/>
+	<property name="EconomicSellScale" value=".1"/>
 	<property name="Group" value="Tools/Traps,Food/Cooking"/>
 	<property name="ItemTypeIcon" value="campfire"/>
 </item>
@@ -16669,8 +16693,9 @@ perkNightStalkerSilentNight
 	<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Miron"/>
-	<property name="Stacknumber" value="250"/> <!-- STK loot -->
-	<property name="EconomicValue" value="26"/>
+	<property name="Stacknumber" value="3"/> <!-- STK loot -->
+	<property name="EconomicValue" value="200"/>
+	<property name="EconomicSellScale" value=".1"/>
 	<property name="Group" value="Tools/Traps,Food/Cooking"/>
 	<property name="ItemTypeIcon" value="campfire"/>
 	<effect_group tiered="false">
