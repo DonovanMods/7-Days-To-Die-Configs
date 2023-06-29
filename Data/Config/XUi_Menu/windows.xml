@@ -415,7 +415,11 @@
 	</window>
 <!-- RWG TOOLS -->
 	
-	<window name="messageBox" anchor="CenterCenter" pos="-280,140" width="560" height="279" cursor_area="true">
+	<window name="messageBox" anchor="CenterCenter" pos="-280,140" width="560" height="279" cursor_area="true" depth="10000">
+		<panel name="noclick" depth="2" createuipanel="true" on_press="true" pos="-4000,4000" width="8000" height="8000" disableautobackground="true" visible="{# !is_modal}">
+			<sprite depth="0" name="backgroundMain" sprite="menu_empty" color="0,0,0,200" type="sliced" fillcenter="true" />
+		</panel>
+
 		<panel name="header" pos="0,0" height="43" depth="1" backgroundspritename="ui_game_panel_header" bordercolor="[black]" borderthickness="3" >
 			<label style="header.name" pos="6,-6" width="550" text="{msgTitle}" />
 		</panel>
