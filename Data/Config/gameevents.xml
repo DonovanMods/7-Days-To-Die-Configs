@@ -5363,6 +5363,14 @@
 		<variable name="spawncount" value="2" />
 	</action_sequence>
 	
+	<action_sequence name="mystery_channelpoint" template="event_crate">
+		<variable name="cratename_1" value="TwitchAction_SupplyAmmo1,TwitchAction_SupplyFoodWater1,TwitchAction_SupplyMedicine1,TwitchAction_SupplyBooks1" />
+		<variable name="cratename_2" value="TwitchAction_SupplyAmmo2,TwitchAction_SupplyFoodWater2,TwitchAction_SupplyMedicine2,TwitchAction_SupplyBooks2" />
+		<variable name="cratename_3" value="TwitchAction_SupplyAmmo3,TwitchAction_SupplyFoodWater3,TwitchAction_SupplyMedicine3,TwitchAction_SupplyBooks3" />
+		<variable name="cratename_4" value="TwitchAction_SupplyAmmo4,TwitchAction_SupplyFoodWater4,TwitchAction_SupplyMedicine3,TwitchAction_SupplyBooks3" />
+		<variable name="spawncount" value="1" />
+	</action_sequence>
+	
 	<action_sequence name="mystery_sub1" template="event_crate">
 		<variable name="cratename_1" value="TwitchAction_SupplyAmmo1,TwitchAction_SupplyFoodWater1,TwitchAction_SupplyExplosives1,TwitchAction_SupplyMedicine1,TwitchAction_SupplyBooks1" />
 		<variable name="cratename_2" value="TwitchAction_SupplyAmmo2,TwitchAction_SupplyFoodWater2,TwitchAction_SupplyExplosives2,TwitchAction_SupplyMedicine2,TwitchAction_SupplyBooks2" />
@@ -8302,6 +8310,11 @@
 			</decision>
 			
 		</loop>
+		
+		<action class="RemoveEntities">
+			<property name="phase" value="4" />
+			<property name="target_group" value="zombies" />
+		</action>
 
 	</action_sequence>
 
@@ -8367,6 +8380,11 @@
 			</decision>
 			
 		</loop>
+		
+		<action class="RemoveEntities">
+			<property name="phase" value="4" />
+			<property name="target_group" value="zombies" />
+		</action>
 		
 	</action_sequence>
 	

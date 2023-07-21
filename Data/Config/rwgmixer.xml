@@ -555,6 +555,11 @@
 	then score is divided by world count; score /= prefab.worldcount,
 	finally score is multiplied by weight and returned; return score * weight -->
 	<!-- weight default 1; bias default 0 -->
+	
+	<prefab_spawn_adjust partial_name="remnant_downtown_filler" bias="1"/>
+	<prefab_spawn_adjust partial_name="downtown_filler_park" bias="1"/>
+	<prefab_spawn_adjust partial_name="downtown_filler_plaza" bias="1"/>
+	<prefab_spawn_adjust partial_name="rubble_downtown_filler" bias="1"/>
 	<prefab_spawn_adjust partial_name="lot_rural_filler" bias="5"/>
 	<prefab_spawn_adjust tags="trader" bias="20" min_count="10"/>
 	<prefab_spawn_adjust partial_name="gas_station" min_count="5"/>

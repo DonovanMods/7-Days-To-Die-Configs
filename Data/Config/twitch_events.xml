@@ -164,7 +164,7 @@
 		
 	-->
 
-	<channel_point_event channel_point_title="7DTD: Mystery Supplies" channel_point_title_key="TwitchEventChannelPointMysteryTitle" event_title="Mystery Supplies" event_title_key="TwitchEventChannelPointMystery" event_name="mystery_sub1"
+	<channel_point_event channel_point_title="7DTD: Mystery Supplies" channel_point_title_key="TwitchEventChannelPointMysteryTitle" event_title="Mystery Supplies" event_title_key="TwitchEventChannelPointMystery" event_name="mystery_channelpoint"
 		safe_allowed="true" vote_allowed="true" cost="500" global_cooldown="300" presets="casual,standard" />
 
 	<channel_point_event channel_point_title="7DTD: 500 PP" channel_point_title_key="TwitchEventChannelPointPPTitle" event_title="Channel Point PP" event_title_key="TwitchEventChannelPointPP" starting_cooldown_allowed="true" pp_add_amount="500" presets="casual,standard,hardcore"

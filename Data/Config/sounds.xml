@@ -4965,6 +4965,36 @@
 	<AudioClip ClipName="Sounds/UseActions/close_garbage"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
+<SoundDataNode name="nest_open"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_open1"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_open2"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_open3"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_open4"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="nest_shut"> <AudioSource name="Sounds/AudioSource_UseAction"/>
+	<Noise ID="2" noise="11" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_shut1"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_shut2"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_shut3"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_shut4"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="nest_destroy"> <AudioSource name="Sounds/AudioSource_Impact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_destroy1"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_destroy2"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_destroy3"/>
+	<AudioClip ClipName="Sounds/UseActions/nest_destroy4"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
 <SoundDataNode name="open_locker"> <AudioSource name="Sounds/AudioSource_UseAction"/>
 	<Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/UseActions/open_locker"/>
@@ -5253,6 +5283,11 @@
 <SoundDataNode name="takeall1"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<Noise ID="2" noise="11" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/UseActions/takeall1"/>
+	<AudioClip ClipName="Sounds/UseActions/takeall2"/>
+	<AudioClip ClipName="Sounds/UseActions/takeall3"/>
+	<AudioClip ClipName="Sounds/UseActions/takeall4"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.1"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="open_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>

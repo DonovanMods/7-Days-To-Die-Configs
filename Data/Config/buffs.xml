@@ -19,7 +19,7 @@
 		<stack_type value="ignore"/>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="keystone_destroyed"/>
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="forge_item_complete"/>
 		</effect_group>
 	</buff>
 
@@ -2284,12 +2284,12 @@
 		<duration value="0"/>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="Hips"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="LOD0"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="set" value="0"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="add" value="1"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="Hips">
+			<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_impact_metal_on_organic" local_offset="0,.25,0" parent_transform="LOD0">
 				<requirement name="CVarCompare" cvar=".buffInjuryBleedingParticleTimer" operation="GTE" value="4"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffInjuryBleedingParticleTimer" operation="set" value="0">
@@ -3924,6 +3924,7 @@
 			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".shotgunSuppressCooldown" operation="set" value="0"/>
 			<!-- Setup, start, reset display -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="2"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunDisplay" operation="add" value="-1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="0"/>
 			<!-- Handlers for camera shake -->
@@ -4000,6 +4001,7 @@
 			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".shotgunSuppressCooldown" operation="set" value="0"/>
 			<!-- Setup, start, reset display -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="4"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="4"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunDisplay" operation="add" value="-1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="0"/>
 			<!-- Handlers for camera shake -->
@@ -4060,6 +4062,7 @@
 			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".shotgunSuppressCooldown" operation="set" value="0"/>
 			<!-- Setup, start, reset display -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="6"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="6"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunDisplay" operation="add" value="-1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="0"/>
 			<!-- Handlers for audio mixer state -->
@@ -4116,6 +4119,7 @@
 			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".shotgunSuppressCooldown" operation="set" value="0"/>
 			<!-- Setup, start, reset display -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="8"/>
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="8"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunDisplay" operation="add" value="-1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".stunDisplay" operation="set" value="0"/>
 		</effect_group>
@@ -4262,7 +4266,7 @@
 	<!-- *** buffBatterupStealingBases -->
 	<!-- TRIGGERED_BY: Progression = perkBatterupStealingBases -->
 	<!-- Sprinting with a club uses less stamina -->
-	<buff name="buffBatterupStealingBases" name_key="buffBatterupStealingBases" description_key="buffBatterupStealingBasesDesc" showonhud="false" icon="ui_game_symbol_run_and_gun" icon_color="0,255,0">
+	<buff name="buffBatterupStealingBases" name_key="buffBatterupStealingBasesName" description_key="buffBatterupStealingBasesDesc" showonhud="false" icon="ui_game_symbol_run_and_gun" icon_color="0,255,0">
 		<duration value="20"/>
 		<stack_type value="replace"/>
 
@@ -6362,7 +6366,7 @@
 		<display_value value="xxx"/>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusArmorHighName"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusArmorHigh"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusArmorBroken"/>
 		</effect_group>
 

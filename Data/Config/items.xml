@@ -60,7 +60,7 @@
 	<effect_group name="meleeToolRepairT0StoneAxe">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="105" tags="perkMiner69r,axe"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="112,300" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkMiner69r"/>
@@ -81,9 +81,9 @@
 	</effect_group>
 	
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -100,7 +100,7 @@
 		<!-- This item gets a free pass on random stats because it's not craftable. -->
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="105" tags="perkMiner69r,axe"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="9" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="120,375" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,675" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkMiner69r"/>
@@ -113,7 +113,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="22" tags="perkMiner69r"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<display_value name="dBlockRepairAmount" value="100"/>
@@ -124,9 +124,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -173,7 +173,7 @@
 	<effect_group name="meleeToolRepairT1ClawHammer">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="17.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="280,955" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,1000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.2" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkMiner69r"/>
@@ -186,7 +186,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="22" tags="perkMiner69r"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<display_value name="dBlockRepairAmount" value="400"/>
@@ -245,10 +245,10 @@
 	</property>
 	<effect_group name="meleeToolRepairT3Nailgun"> <!-- meleeToolRepairT3Nailgun -->
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="3" tags="perkMiner69r"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="10" tags="perkMiner69r"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="500,1100" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3"/>
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3"/>
@@ -268,9 +268,7 @@
 		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".7" tags="perkMiner69r"/>
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.6" tags="perkMiner69r"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".6" tags="perkMiner69r"/>
-		
-		<!-- <passive_effect name="DegradationMax" operation="base_set" value="1000" tags="nailgun"/> -->
-		<!-- <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="nailgun"/> -->
+
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 	</effect_group>
 </item>
@@ -335,7 +333,7 @@
 	<effect_group name="meleeToolAxeT1IronFireaxe">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="60" tags="perkMiner69r,axe"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="19.9" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="188,641" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -348,7 +346,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="47.0" tags="perkMiner69r"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random rng -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<passive_effect name="HarvestCount" operation="base_set" value=".7" tags="butcherHarvest"/>
@@ -365,9 +363,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -390,7 +388,7 @@
 	<effect_group name="meleeToolAxeT2SteelAxe">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="47" tags="perkMiner69r,axe"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="30.9" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -403,7 +401,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="89" tags="perkMiner69r"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
@@ -420,9 +418,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -472,7 +470,7 @@
 	<effect_group name="meleeToolPickT1IronPickaxe">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="65" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="18.4" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="260,886" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -485,7 +483,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="42" tags="perkMiner69r,miningTool"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
@@ -532,7 +530,7 @@
 	<effect_group name="meleeToolPickT2SteelPickaxe">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="26.4" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="350,1287" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -546,7 +544,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
@@ -600,7 +598,7 @@
 	<effect_group name="meleeToolShovelT0StoneShovel">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="16.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -654,7 +652,7 @@
 	<effect_group name="meleeToolShovelT1IronShovel">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="220,750" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -667,7 +665,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="62" tags="perkMiner69r"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
@@ -715,7 +713,7 @@
 	<effect_group name="meleeToolShovelT2SteelShovel">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkMiner69r"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="24.7" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1100" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -729,7 +727,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1" tags="Harvesting"/>
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/>  --><!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
@@ -793,7 +791,7 @@
 
 	<effect_group name="meleeToolAxeT3Chainsaw">
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="300" tags="perkMiner69r"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="2000,5000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.35" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -802,7 +800,7 @@
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 		<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="100" tags="perkMiner69r"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> <!-- random effective rng -->
 		<passive_effect name="EntityDamage" operation="base_set" value="6" tags="perkMiner69r"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
@@ -810,7 +808,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/>  --><!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random WeaponHandling -->
@@ -834,9 +832,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -887,7 +885,7 @@
 
 	<effect_group name="meleeToolPickT3Auger">
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="300" tags="perkMiner69r"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="1400,4200" tier="1,6" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="2000,5000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.35" tags="perkMiner69r"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
@@ -896,7 +894,7 @@
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 		<passive_effect name="SphereCastRadius" operation="base_set" value=".1"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="100" tags="perkMiner69r"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> <!-- random effective rng -->
 		<passive_effect name="EntityDamage" operation="base_set" value="4.2" tags="perkMiner69r"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
@@ -904,7 +902,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 		<passive_effect name="PlayerExpGain" operation="perc_add" value="-.3" tags="Harvesting"/>
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMiner69r"/> <!-- random WeaponHandling -->
@@ -976,7 +974,7 @@
 	<effect_group name="meleeToolSalvageT1Wrench">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="18.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="180,640" tier="1,6" tags="perkSalvageOperations"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,700" tier="1,6" tags="perkSalvageOperations"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkSalvageOperations"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSalvageOperations"/>
@@ -1044,7 +1042,7 @@
 	<effect_group name="meleeToolSalvageT2Ratchet">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSalvageOperations"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="21.8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,900" tier="1,6" tags="perkSalvageOperations"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="700,1450" tier="1,6" tags="perkSalvageOperations"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkSalvageOperations"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSalvageOperations"/>
@@ -1114,7 +1112,7 @@
 	<effect_group name="meleeToolSalvageT3ImpactDriver">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSalvageOperations"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="24.7" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="500,1100" tier="1,6" tags="perkSalvageOperations"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1450,2450" tier="1,6" tags="perkSalvageOperations"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSalvageOperations"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkSalvageOperations"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSalvageOperations"/>
@@ -1203,7 +1201,7 @@
 	<effect_group name="meleeWpnBladeT0BoneKnife">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="7.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="120,220" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="perkDeepCuts"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkDeepCuts"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5" tags="perkDeepCuts"/>
@@ -1238,9 +1236,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -1306,7 +1304,7 @@
 	<effect_group name="meleeWpnBladeT1HuntingKnife">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="8.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="462,1154" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkDeepCuts"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkDeepCuts"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5" tags="perkDeepCuts"/>
@@ -1343,9 +1341,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -1409,7 +1407,7 @@
 	<effect_group name="meleeWpnBladeT1CandyKnife">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="8.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="462,1200" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkDeepCuts"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkDeepCuts"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5" tags="perkDeepCuts"/>
@@ -1445,9 +1443,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -1515,7 +1513,7 @@
 	<effect_group name="meleeWpnBladeT3Machete">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkDeepCuts,perkFlurryOfAgility"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="19.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="288,673" tier="1,6" tags="perkDeepCuts"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkDeepCuts"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.3" tags="perkDeepCuts"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
@@ -1548,9 +1546,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -1614,7 +1612,7 @@
 	<effect_group name="meleeWpnClubT0WoodenClub">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkPummelPete,perkFlurryOfStrength"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="17.4" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkPummelPete"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
@@ -1855,14 +1853,14 @@
 	<effect_group name="meleeWpnClubT3SteelClub">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="52" tags="perkPummelPete,perkFlurryOfStrength"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="23.7" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkPummelPete"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkPummelPete"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="26.2" tags="perkPummelPete"/> <!-- meleeWpnClubT3SteelClub -->
+		<passive_effect name="EntityDamage" operation="base_set" value="32.5" tags="perkPummelPete"/> <!-- meleeWpnClubT3SteelClub -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkPummelPete"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="base_set" value="30" tags="perkPummelPete"/>
@@ -1942,7 +1940,7 @@
 	<effect_group name="meleeWpnBatonT0PipeBaton">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="60" tags="perkElectrocutioner,perkFlurryOfIntellect"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="14.8" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkElectrocutioner"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,300" tier="1,6" tags="perkElectrocutioner"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkElectrocutioner"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkElectrocutioner"/>
@@ -2027,7 +2025,7 @@
 	<effect_group name="meleeWpnBatonT2StunBaton">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkElectrocutioner,perkFlurryOfIntellect"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="15.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkElectrocutioner"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkElectrocutioner"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkElectrocutioner"/>
@@ -2122,6 +2120,7 @@
 		<triggered_effect trigger="onSelfSecondaryActionRayHit" mode="before" action="PlaySound" sound="stunbaton_hit5">
 			<requirement name="IsAlive" target="other"/>
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="4" key="charge"/></triggered_effect>
+
 		<!-- increase charges -->
 		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="SetItemMetaFloat" change="1" relative="true" key="charge">
 			<requirement name="IsAlive" target="other"/>
@@ -2134,7 +2133,7 @@
 			<requirement name="IsAlive" target="other"/>
 			<requirement name="CompareItemMetaFloat" operation="LTE" value="2" key="charge"/>
 		</triggered_effect>
-		
+
 		<!-- add electric effect to baton -->
 		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="ParticleEffects/p_electric_shock_small" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="4" key="charge"/></triggered_effect>
@@ -2154,12 +2153,12 @@
 			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
 			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
 		</triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
 		</triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350">
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
 			<requirement name="CompareItemMetaFloat" operation="Equals" value="5" key="charge"/>
 			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
 			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
@@ -2251,7 +2250,7 @@
 		<!-- <passive_effect name="BlockDamage" operation="base_set" value="6" tags="perkElectrocutioner"/> -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkElectrocutioner,perkFlurryOfIntellect"/> -->
 		<!-- <passive_effect name="StaminaLoss" operation="base_set" value="11.3" tags="primary"/> -->
-		<!-- <passive_effect name="DegradationMax" operation="base_set" value="269,673" tier="1,6" tags="perkElectrocutioner"/> -->
+		<!-- <passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkElectrocutioner"/> -->
 		<!-- <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkElectrocutioner"/> -->
 		<!-- <passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkElectrocutioner"/> -->
 		<!-- <passive_effect name="BlockRange" operation="base_set" value="3" tags="perkElectrocutioner"/> -->
@@ -2454,7 +2453,7 @@
 		<passive_effect name="TargetArmor" operation="perc_add" value="-.3" tags="perkJavelinMaster"/><display_value name="dTargetArmor" value="-.3"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkJavelinMaster,perkFlurryOfPerception"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="18.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="60,88" tier="1,6" tags="perkJavelinMaster"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
@@ -2523,7 +2522,7 @@
 		<passive_effect name="TargetArmor" operation="perc_add" value="-.4" tags="perkJavelinMaster"/><display_value name="dTargetArmor" value="-.4"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkJavelinMaster,perkFlurryOfPerception"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="212,423" tier="1,6" tags="perkJavelinMaster"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
@@ -2590,7 +2589,7 @@
 		<passive_effect name="TargetArmor" operation="perc_add" value="-.5" tags="perkJavelinMaster"/><display_value name="dTargetArmor" value="-.5"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkJavelinMaster,perkFlurryOfPerception"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="22.4" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="317,592" tier="1,6" tags="perkJavelinMaster"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
@@ -2683,7 +2682,7 @@
 	<effect_group name="meleeWpnSledgeT0StoneSledgehammer">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSkullCrusher,perkFlurryOfStrength"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="22.3" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="55,112" tier="1,6" tags="perkSkullCrusher"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkSkullCrusher"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
@@ -2765,7 +2764,7 @@
 	<effect_group name="meleeWpnSledgeT1IronSledgehammer">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34" tags="perkSkullCrusher,perkFlurryOfStrength"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="36.7" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="133,363" tier="1,6" tags="perkSkullCrusher"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkSkullCrusher"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
@@ -2849,7 +2848,7 @@
 	<effect_group name="meleeWpnSledgeT3SteelSledgehammer">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="34" tags="perkSkullCrusher,perkFlurryOfStrength"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="40.5" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="207,581" tier="1,6" tags="perkSkullCrusher"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6" tags="perkSkullCrusher"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkSkullCrusher"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkSkullCrusher"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher"/>
@@ -2933,7 +2932,7 @@
 	<effect_group name="meleeWpnKnucklesT0LeatherKnuckles">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="100" tags="perkBrawler,perkFlurryOfFortitude"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="9.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="109,200" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,300" tier="1,6" tags="perkBrawler"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkBrawler"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkBrawler"/>
@@ -3027,7 +3026,7 @@
 	<effect_group name="meleeWpnKnucklesT1IronKnuckles">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="100" tags="perkBrawler,perkFlurryOfFortitude"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="9.6" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="385,961" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,700" tier="1,6" tags="perkBrawler"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkBrawler"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkBrawler"/>
@@ -3093,7 +3092,7 @@
 	<effect_group name="meleeWpnKnucklesT3SteelKnuckles">
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="100" tags="perkBrawler,perkFlurryOfFortitude"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="10.2" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="577,1346" tier="1,6" tags="perkBrawler"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="700,1400" tier="1,6" tags="perkBrawler"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBrawler"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="perkBrawler"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkBrawler"/>
@@ -3129,9 +3128,9 @@
 	</effect_group>
 
 	<effect_group name="corpseRemoval">
-		<requirement name="!IsAlive" target="other"/>
+		<requirement name="IsCorpse" target="other"/>
 		<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
-			<passive_effect name="EntityDamage" operation="base_add" value="500"/>
+			<passive_effect name="EntityDamage" operation="base_add" value="300"/>
 	</effect_group>
 </item>
 
@@ -3448,7 +3447,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.0" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".95" tags="perkGunslinger"/> <!-- crosshair reset speed -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="75,135" tier="1,6" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger,9mmGun"/>
 	</effect_group>
 </item>
@@ -3509,8 +3508,8 @@
 	</property>
 	<effect_group name="gunHandgunT1Pistol">
 		<passive_effect name="MaxRange" operation="base_set" value="50" tags="perkGunslinger,9mmGun"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="18" tags="perkGunslinger,9mmGun"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger,9mmGun"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="17" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger,9mmGun"/> <!-- random effective rng -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="180" tags="perkGunslinger"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="15" tags="perkGunslinger"/>
@@ -3523,7 +3522,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
@@ -3543,7 +3542,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.0" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".95" tags="perkGunslinger"/> <!-- crosshair reset speed -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="250,450" tier="1,6" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger,9mmGun"/>
 	</effect_group>
 </item>
@@ -3610,7 +3609,7 @@
 	<effect_group name="gunHandgunT3SMG5">
 		<passive_effect name="MaxRange" operation="base_set" value="65" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="30" tags="perkGunslinger,9mmGun"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger,9mmGun"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger,9mmGun"/> <!-- random effective rng -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="480" tags="perkGunslinger"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1000" tags="perkGunslinger"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="30" tags="perkGunslinger"/>
@@ -3623,7 +3622,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
@@ -3643,7 +3642,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.6" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".8" tags="perkGunslinger"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="350,700" tier="1,6" tags="perkGunslinger,9mmGun"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,700" tier="1,6" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger,9mmGun"/>
 	</effect_group>
 </item>
@@ -3709,8 +3708,8 @@
 
 	<effect_group name="gunHandgunT2Magnum44">
 		<passive_effect name="MaxRange" operation="base_set" value="70" tags="perkGunslinger"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkGunslinger"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="27" tags="perkGunslinger"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> <!-- random effective rng -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="100" tags="perkGunslinger"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="6" tags="perkGunslinger"/>
@@ -3723,7 +3722,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/> --> <!-- random APM -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
 
@@ -3742,7 +3741,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkGunslinger"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6" tags="perkGunslinger"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6" tags="perkGunslinger"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
 		<!-- <triggered_effect trigger="onSelfEquipStart" action="CVarLogValue" cvar="onSelfEquipStartMagnum"/> -->
 	</effect_group>
@@ -3803,8 +3802,8 @@
 	</property>
 	<effect_group name="gunHandgunT3DesertVulture">
 		<passive_effect name="MaxRange" operation="base_set" value="50" tags="perkGunslinger"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkGunslinger"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="30" tags="perkGunslinger"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> <!-- random effective rng -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="130" tags="perkGunslinger"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="8.8" tags="perkGunslinger"/>
@@ -3817,7 +3816,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkGunslinger"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkGunslinger"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.09,.09" tags="perkGunslinger"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
@@ -3837,7 +3836,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="3.2" tags="perkGunslinger"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkGunslinger"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="250,400" tier="1,6" tags="perkGunslinger"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,700" tier="1,6" tags="perkGunslinger"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger"/>
 	</effect_group>
 </item>
@@ -4006,7 +4005,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkBoomstick"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkBoomstick"/> --> <!-- random APM -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/> <!-- random WeaponHandling -->
 
@@ -4018,7 +4017,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1.7" tags="perkBoomstick"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="150,300" tier="1,6" tags="perkBoomstick"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkBoomstick"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
 		<display_value name="dStatStunEffect" value="4"/>
 	</effect_group>
@@ -4098,7 +4097,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkBoomstick"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkBoomstick"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.24"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/> <!-- random WeaponHandling -->
@@ -4111,7 +4110,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1.7" tags="perkBoomstick"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="160,350" tier="1,6" tags="perkBoomstick"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,700" tier="1,6" tags="perkBoomstick"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
 		<display_value name="dStatStunEffect" value="4"/>
 	</effect_group>
@@ -4190,7 +4189,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkBoomstick"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkBoomstick"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkBoomstick"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkBoomstick"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkBoomstick"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.24"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.085,.085" tags="perkBoomstick"/> <!-- random WeaponHandling -->
@@ -4203,7 +4202,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkBoomstick"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1.7" tags="perkBoomstick"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="160,500" tier="1,6" tags="perkBoomstick"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="700,1100" tier="1,6" tags="perkBoomstick"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkBoomstick"/>
 		<display_value name="dStatStunEffect" value="4"/>
 	</effect_group>
@@ -4364,8 +4363,8 @@
 	</property>
 	<effect_group name="gunRifleT1HuntingRifle">
 		<passive_effect name="MaxRange" operation="base_set" value="150" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="59" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkDeadEye"/> <!-- random effective rng -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-1" tags="perkDeadEye"/> <!-- damage offset -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="120" tags="perkDeadEye"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
@@ -4380,7 +4379,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
 
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDeadEye"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkDeadEye"/> --> <!-- random APM -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
 
@@ -4399,7 +4398,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="50" tags="perkDeadEye"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".65" tags="perkDeadEye"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="170,320" tier="1,6" tags="perkDeadEye"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkDeadEye"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
 		
 		<passive_effect name="DamageModifier" operation="base_add" value="50" tags="head"/>
@@ -4465,8 +4464,8 @@
 	</property>
 	<effect_group name="gunRifleT2LeverActionRifle">
 		<passive_effect name="MaxRange" operation="base_set" value="150" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="60" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="69" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkDeadEye"/> <!-- random effective rng -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-1" tags="perkDeadEye"/> <!-- damage offset -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="82" tags="perkDeadEye"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
@@ -4480,7 +4479,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDeadEye"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkDeadEye"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="base_add" value="-.5,1.6"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
@@ -4500,7 +4499,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="11" tags="perkDeadEye"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkDeadEye"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkDeadEye"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,700" tier="1,6" tags="perkDeadEye"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
 
 		<passive_effect name="DamageModifier" operation="base_add" value="100" tags="head"/>
@@ -4564,8 +4563,8 @@
 	</property>
 	<effect_group name="gunRifleT3SniperRifle">
 		<passive_effect name="MaxRange" operation="base_set" value="150" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDeadEye"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="80" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkDeadEye"/> <!-- random effective rng -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="140" tags="perkDeadEye"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="12" tags="perkDeadEye"/>
@@ -4578,7 +4577,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDeadEye"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkDeadEye"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="base_add" value="-.5,1.6"/>  --><!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
@@ -4598,7 +4597,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="11" tags="perkDeadEye"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".75" tags="perkDeadEye"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="perkDeadEye"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="700,1100" tier="1,6" tags="perkDeadEye"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeadEye"/>
 
 		<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"/>
@@ -4657,7 +4656,7 @@
 	</property>
 	<effect_group name="gunMGT0PipeMachineGun">
 		<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="40" tags="perkMachineGunner"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="34" tags="perkMachineGunner"/>
 		<passive_effect name="EntityDamage" operation="base_add" value="-17" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-3" tags="perkMachineGunner"/> <!-- damage offset -->
@@ -4682,7 +4681,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.9" tags="perkMachineGunner"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkMachineGunner"/> <!-- ak47 -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="100,350" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
@@ -4743,15 +4742,15 @@
 	</property>
 	<effect_group name="gunMGT1AK47">
 		<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="41" tags="perkMachineGunner"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkMachineGunner"/> <!-- random effective rng -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-3" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="base_add" value="-7" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkMachineGunner"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMachineGunner"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMachineGunner"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
@@ -4775,7 +4774,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.9" tags="perkMachineGunner"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkMachineGunner"/> <!-- ak47 -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="250,550" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
@@ -4835,15 +4834,15 @@
 
 	<effect_group name="gunMGT2TacticalAR">
 		<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="49" tags="perkMachineGunner"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkMachineGunner"/> <!-- random effective rng -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="base_add" value="6" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkMachineGunner"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMachineGunner"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMachineGunner"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
@@ -4867,7 +4866,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.9" tags="perkMachineGunner"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkMachineGunner"/> <!-- ak47 -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="225,500" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,700" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
@@ -4930,15 +4929,15 @@
 	</property>
 	<effect_group name="gunMGT3M60">
 		<passive_effect name="MaxRange" operation="base_set" value="90" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkMachineGunner"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="58" tags="perkMachineGunner"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.05" tier="1,6" tags="perkMachineGunner"/> <!-- random effective rng -->
 		<passive_effect name="BlockDamage" operation="base_add" value="-2" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="base_add" value="23" tags="perkMachineGunner"/> <!-- damage offset -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkMachineGunner"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMachineGunner"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMachineGunner"/> --> <!-- random APM -->
 		<!-- <passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> --> <!-- random MagazineSize -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
@@ -4962,7 +4961,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkMachineGunner"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".83" tags="perkMachineGunner"/> <!-- M60 -->
 
-		<passive_effect name="DegradationMax" operation="base_set" value="300,650" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="700,1100" tier="1,6" tags="perkMachineGunner,perkBookAutoWeapons"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMachineGunner,perkBookAutoWeapons"/>
 
 		<passive_effect name="ModSlots" operation="base_set" value="4,4,4,4,4,4" tier="1,2,3,4,5,6"/>
@@ -5027,13 +5026,13 @@
 		<!--<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkDemolitionsExpert"/>-->
 		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDemolitionsExpert"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDemolitionsExpert"/> <!-- random effective rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkDemolitionsExpert"/> <!-- tier bonus -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random Veloc -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkDemolitionsExpert"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/> <!-- random WeaponHandling -->
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkDemolitionsExpert"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
@@ -5058,7 +5057,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.2" tags="perkDemolitionsExpert"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value=".4" tags="perkDemolitionsExpert"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="80,150" tier="1,6" tags="perkDemolitionsExpert"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkDemolitionsExpert"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
 	</effect_group>
 </item>
@@ -5158,7 +5157,7 @@
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkArchery"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkArchery"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="60,150" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkArchery"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -5232,8 +5231,8 @@
 	</property>
 
 	<effect_group name="gunBowT1WoodenBow">
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="20" tags="perkArchery"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkArchery"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.08" tier="1,6" tags="perkArchery"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="EntityDamage" operation="base_add" value="9" tags="perkArchery"/> <!-- damage offset -->
@@ -5242,7 +5241,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.8" tags="perkArchery"/>
@@ -5272,7 +5271,7 @@
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkArchery"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkArchery"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="180,350" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,350" tier="1,6" tags="perkArchery"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -5344,8 +5343,8 @@
 	</property>
 	<effect_group name="gunBowT3CompoundBow">
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value=".2" tags="perkArchery"/>
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="30" tags="perkArchery"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="34" tags="perkArchery"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.08" tier="1,6" tags="perkArchery"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="EntityDamage" operation="base_add" value="29" tags="perkArchery"/> <!-- damage offset -->
@@ -5354,7 +5353,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.67" tags="perkArchery"/>
@@ -5376,7 +5375,7 @@
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkArchery"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkArchery"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="350,600" tier="1,6" tags="perkArchery"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
@@ -5437,8 +5436,8 @@
 	        <property name="triggerEffectTriggerPullDualsense" value="PistolZoom"/>
 	</property>
 	<effect_group name="gunBowT1IronCrossbow">
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkArchery"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="28" tags="perkArchery"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.08" tier="1,6" tags="perkArchery"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5" tags="perkArchery"/> <!-- 3.4s -->
@@ -5448,7 +5447,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35" tags="perkArchery"/>
@@ -5469,9 +5468,9 @@
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1" tags="perkArchery"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1" tags="perkArchery"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,350" tier="1,6" tags="perkArchery"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
-		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 	</effect_group>
@@ -5537,8 +5536,8 @@
                 <property name="zoomTriggerEffectTriggerPullXbox" value="PistolZoom"/>
 	</property>
 	<effect_group name="gunBowT3CompoundCrossbow">
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="25" tags="perkArchery"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="40" tags="perkArchery"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.1,.08" tier="1,6" tags="perkArchery"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
 		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5" tags="perkArchery"/> <!-- 3.4s -->
@@ -5548,7 +5547,7 @@
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkArchery"/> <!-- tier bonus -->
 		<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random Veloc -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkArchery"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkArchery"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkArchery"/> <!-- random WeaponHandling -->
 
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35" tags="perkArchery"/>
@@ -5569,9 +5568,9 @@
 		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1" tags="perkArchery"/>
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1" tags="perkArchery"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="120,250" tier="1,6" tags="perkArchery"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="350,600" tier="1,6" tags="perkArchery"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
-		<passive_effect name="ModSlots" operation="base_set" value="2,2,3,3,4,4" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 	</effect_group>
@@ -5645,7 +5644,7 @@
                 <property name="zoomTriggerEffectTriggerPullXbox" value="PistolZoom"/>
 	</property>
 	<effect_group name="gunBotT1JunkSledge">
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> <!-- random effective rng -->
 		<passive_effect name="MaxRange" operation="base_set" value="2" tags="perkTurrets"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.0" tags="perkTurrets"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="11.5" tags="perkTurrets"/>
@@ -5654,7 +5653,7 @@
 		<passive_effect name="BlockDamage" operation="base_set" value="17" tags="turretMelee"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="turretMelee"/> <!-- random BlockDmg -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="turretMelee"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/> <!-- random WeaponHandling -->
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" tags="perkTurrets"/>
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" tags="perkTurrets"/>
@@ -5676,7 +5675,7 @@
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="5" tags="perkTurrets"/>
 
 		<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkTurrets"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,6" tags="perkTurrets"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6" tags="perkTurrets"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
@@ -5771,10 +5770,10 @@
 		<!--<requirement name="ProgressionLevel" progression_name="perkTurrets" operation="GTE" value="3"/>-->
 	</property>
 	<effect_group name="gunBotT2JunkTurret">
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> <!-- random effective rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkTurrets"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkTurrets"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/> <!-- random WeaponHandling -->
 		<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.1,.1" tags="turretRanged"/> <!-- random APM -->
 		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122" tags="turretRanged"/> <!-- random MagazineSize -->
@@ -5797,7 +5796,7 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" tags="perkTurrets"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkTurrets"/>
 
-		<passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,6" tags="perkTurrets"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6" tags="perkTurrets"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
@@ -5862,10 +5861,10 @@
 		<property name="PreviewSize" value="0.25,0.25,0.25"/>
 	</property>
 	<effect_group name="gunBotT3JunkDrone">
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random effective rng -->
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> <!-- random effective rng -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="-.08,.08" tags="perkTurrets"/> <!-- random EntityDmg -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkTurrets"/> <!-- tier bonus -->
-		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkTurrets"/> <!-- random DegMax -->
+		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkTurrets"/> --> <!-- random DegMax -->
 		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkTurrets"/> <!-- random WeaponHandling -->
 		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" tags="perkTurrets"/>
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" tags="perkTurrets"/>
@@ -5891,7 +5890,7 @@
 		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="2" tags="perkTurrets"/>
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" tags="perkTurrets"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkTurrets"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,600" tier="1,6" tags="perkTurrets"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,600" tier="1,6" tags="perkTurrets"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0.35" tags="perkTurrets"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage"/>
@@ -7462,7 +7461,7 @@
 	<property name="Material" value="MFuelBarrelMetal"/>
 	<property name="Stacknumber" value="10000"/> <!-- STK resource -->
 	<property name="FuelValue" value="2"/>
-	<property name="EconomicValue" value="10"/> <!-- oil barrel 500 -->
+	<property name="EconomicValue" value="30"/>
 	<property name="EconomicBundleSize" value="100"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals,Ammo"/>
 	<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey,ammoGasCanSchematic, -->
@@ -9347,10 +9346,10 @@ add knockdown resist to armor
 	<effect_group name="cloth armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
 	</effect_group>
@@ -9372,16 +9371,12 @@ add knockdown resist to armor
 	<effect_group name="cloth with leather AR and insulation">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tags="heat,electrical"/>
+		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
-
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-
 		<passive_effect name="HypothermalResist" operation="base_add" value="21.5,25.5"/>
 	</effect_group>
 
@@ -9402,10 +9397,10 @@ add knockdown resist to armor
 	<effect_group name="cloth armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
 	</effect_group>
@@ -9424,10 +9419,10 @@ add knockdown resist to armor
 	<effect_group name="cloth armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
 	</effect_group>
@@ -9446,10 +9441,10 @@ add knockdown resist to armor
 	<effect_group name="cloth armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
 	</effect_group>
@@ -9468,10 +9463,10 @@ add knockdown resist to armor
 	<effect_group name="cloth armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.1,7.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="4.5,6.5" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.041" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="75,150" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<display_value name="dStaminaChangeOT" value="0"/>
 	</effect_group>
@@ -9510,12 +9505,12 @@ add knockdown resist to armor
 	<effect_group name="leather armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9540,12 +9535,12 @@ add knockdown resist to armor
 	<effect_group name="leather armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2" />
 		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9568,12 +9563,12 @@ add knockdown resist to armor
 	<effect_group name="leather armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9596,12 +9591,12 @@ add knockdown resist to armor
 	<effect_group name="leather armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9624,12 +9619,12 @@ add knockdown resist to armor
 	<effect_group name="leather armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="5.27,7.47"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="5.27,7.47" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,2.73" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.043,0.053" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9673,12 +9668,12 @@ add knockdown resist to armor
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9702,12 +9697,12 @@ add knockdown resist to armor
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9730,12 +9725,12 @@ add knockdown resist to armor
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9758,12 +9753,12 @@ add knockdown resist to armor
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9786,12 +9781,12 @@ add knockdown resist to armor
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -9816,12 +9811,12 @@ add knockdown resist to armor
 	<effect_group name="military without penalties">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 	</effect_group>
@@ -9853,10 +9848,10 @@ add knockdown resist to armor
 	<effect_group name="scrap armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="175,350" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -9888,10 +9883,10 @@ add knockdown resist to armor
 	<effect_group name="scrap armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="175,350" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -9914,10 +9909,10 @@ add knockdown resist to armor
 	<effect_group name="scrap armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="175,350" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -9940,10 +9935,10 @@ add knockdown resist to armor
 	<effect_group name="scrap armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="175,350" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -9966,10 +9961,10 @@ add knockdown resist to armor
 	<effect_group name="scrap armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="175,350" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10013,12 +10008,12 @@ add knockdown resist to armor
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 		<!-- <passive_effect name="ElementalDamageResist" operation="base_add" value="5" tags="toxic"/> gas mask effect -->
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10049,12 +10044,12 @@ add knockdown resist to armor
 	<effect_group name="iron armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10077,12 +10072,12 @@ add knockdown resist to armor
 	<effect_group name="iron armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10105,12 +10100,12 @@ add knockdown resist to armor
 	<effect_group name="iron armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10133,12 +10128,12 @@ add knockdown resist to armor
 	<effect_group name="iron armor">
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="9.5,11.5" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10182,12 +10177,12 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10224,12 +10219,12 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10259,12 +10254,12 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10294,12 +10289,12 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="NoiseMultiplier" operation="perc_add" value=".2"/><display_value name="dNoiseMultiplier" value=".2"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
@@ -10323,12 +10318,12 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="400,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.06"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.045" tags="walking"/>
@@ -10376,12 +10371,10 @@ add knockdown resist to armor
 	<effect_group name="leather w scrap AR">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-
-		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,300" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0281" tags="walking"/>
@@ -10429,10 +10422,10 @@ add knockdown resist to armor
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 		<!--<passive_effect name="ElementalDamageResist" operation="base_add" value="5" tags="toxic"/>  gas mask effect -->
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.25,10.25"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.25,10.25" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.75" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="10,12" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/> 
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="10,12" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.055,0.068" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
@@ -10477,10 +10470,10 @@ add knockdown resist to armor
 	<effect_group name="steel armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="8.21,11.71"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="8.21,11.71" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,4.29" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="13.8,15.8" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="heavyArmorDeg"/>
@@ -10521,11 +10514,9 @@ add knockdown resist to armor
 	<effect_group name="leather w scrap AR">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="7.49,10.7" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.054" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
-
 		<passive_effect name="DegradationMax" operation="base_set" value="110,225" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="Mobility" operation="perc_add" value="-.04"/>
@@ -10547,14 +10538,13 @@ add knockdown resist to armor
 
 <item name="armorFootballHelmetZU">
 	<property name="Extends" value="armorFootballHelmet"/>
-	<property name="CustomIcon" value="armorFootballHelmet"/> <property name="CustomIconTint" value="107,12,12"/>
+	<property name="CustomIcon" value="armorFootballHelmet"/>
+	<property name="CustomIconTint" value="107,12,12"/>
 	<effect_group name="military armor">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="6.23,8.93"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="6.23,8.93" tags="heat,electrical"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="0,3.27" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="7,9" tier="1,6"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="7,9" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.05,0.061" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
@@ -10955,7 +10945,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1"/>
 	<property name="Waterproof" value=".05"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="15"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -10988,7 +10978,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1"/>
 	<property name="Waterproof" value=".1"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="15"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -11252,7 +11242,7 @@ perkNightStalkerSilentNight
 	<property name="DisplayType" value="clothing"/>
 	<property name="Stacknumber" value="1"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="15"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="10"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -11285,7 +11275,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="30"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11413,7 +11403,7 @@ perkNightStalkerSilentNight
 	<property name="DisplayType" value="clothing"/>
 	<property name="UnlockedBy" value="perkNeedleAndThreadFootwear"/> <!-- BOOK_PERK -->
 	<property name="Stacknumber" value="1"/>
-	<property name="Material" value="Mcloth"/>
+	<property name="Material" value="Mleather"/>
 	<property name="DegradationBreaksAfter" value="false"/>
 	<property name="Weight" value="15"/>
 	<property name="EconomicValue" value="60"/>
@@ -11529,7 +11519,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1"/>
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="20"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11578,7 +11568,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="25"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="60"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11628,7 +11618,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="20"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11679,7 +11669,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="20"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11712,7 +11702,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="25"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="60"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -11808,7 +11798,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1"/>
 	<property name="Waterproof" value=".45"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="30"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="450"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -11840,7 +11830,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1"/>
 	<property name="Waterproof" value=".4"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="30"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="350"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -11904,7 +11894,7 @@ perkNightStalkerSilentNight
 	<!-- <property name="Encumbrance" value=".001"/> -->
 	<property name="Material" value="Mcloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="Weight" value="30"/>
+	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="TraderStageTemplate" value="armorTier1"/>
 	<property name="HoldType" value="45"/>
@@ -12942,7 +12932,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="foodCanBeef">
-	<property name="Tags" value="food,dumpsterFood,foodSkill"/>
+	<property name="Tags" value="food,foodSkill"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13743,7 +13733,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="foodRawMeat">
-	<property name="Tags" value="food,dumpsterFood,foodSkill"/>
+	<property name="Tags" value="food,foodSkill"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13807,7 +13797,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="foodEgg">
-	<property name="Tags" value="food,dumpsterFood,foodSkill"/>
+	<property name="Tags" value="food,foodSkill"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14071,7 +14061,7 @@ perkNightStalkerSilentNight
 
 <!-- Murky Water -->
 <item name="drinkJarRiverWater">
-	<property name="Tags" value="drinks,dumpsterFood"/>
+	<property name="Tags" value="drinks"/>
 	<property name="HoldType" value="3"/>
 	<property name="DisplayType" value="waterDysentery"/>
 	<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
@@ -19399,7 +19389,7 @@ perkNightStalkerSilentNight
 	<!-- *** Harvesting_Tools_Skill_Magazine -->
 <item name="harvestingToolsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="harvestingToolsCSM"/>
+	<property name="Tags" value="harvestingToolsCSM,csm"/>
 	<property name="CustomIcon" value="bookToolsDigest"/>
 	<property name="DescriptionKey" value="harvestingToolsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingHarvestingTools"/>
@@ -19413,7 +19403,7 @@ perkNightStalkerSilentNight
 	<!-- *** Repair_Tools_Skill_Magazine -->
 <item name="repairToolsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="repairToolsCSM"/>
+	<property name="Tags" value="repairToolsCSM,csm"/>
 	<property name="CustomIcon" value="bookHandyLand"/>
 	<property name="DescriptionKey" value="repairToolsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingRepairTools"/>
@@ -19426,7 +19416,7 @@ perkNightStalkerSilentNight
 
 	<!-- *** Salvage_Tools_Skill_Magazine -->
 <item name="salvageToolsSkillMagazine">
-	<property name="Tags" value="salvageToolsCSM"/>
+	<property name="Tags" value="salvageToolsCSM,csm"/>
 	<property name="Extends" value="masterSkillMagazine"/>
 	<property name="CustomIcon" value="bookScrapping4Fun"/>
 	<property name="DescriptionKey" value="salvageToolsSkillMagazineDesc"/>
@@ -19441,7 +19431,7 @@ perkNightStalkerSilentNight
 	<!-- *** Knuckles_Skill_Magazine -->
 <item name="knucklesSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="knucklesCSM"/>
+	<property name="Tags" value="knucklesCSM,csm"/>
 	<property name="CustomIcon" value="bookFuriousFists"/>
 	<property name="DescriptionKey" value="knucklesSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingKnuckles"/>
@@ -19455,7 +19445,7 @@ perkNightStalkerSilentNight
 	<!-- *** Blades_Skill_Magazine -->
 <item name="bladesSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="bladesCSM"/>
+	<property name="Tags" value="bladesCSM,csm"/>
 	<property name="CustomIcon" value="bookKnifeGuy"/>
 	<property name="DescriptionKey" value="bladesSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingBlades"/>
@@ -19469,7 +19459,7 @@ perkNightStalkerSilentNight
 	<!-- *** Clubs_Skill_Magazine -->
 <item name="clubsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="clubsCSM"/>
+	<property name="Tags" value="clubsCSM,csm"/>
 	<property name="CustomIcon" value="bookBigHitters"/>
 	<property name="DescriptionKey" value="clubsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingClubs"/>
@@ -19483,7 +19473,7 @@ perkNightStalkerSilentNight
 	<!-- *** Sledgehammers_Skill_Magazine -->
 <item name="sledgehammersSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="sledgehammersCSM"/>
+	<property name="Tags" value="sledgehammersCSM,csm"/>
 	<property name="CustomIcon" value="bookGetHammered"/>
 	<property name="DescriptionKey" value="sledgehammersSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingSledgehammers"/>
@@ -19497,7 +19487,7 @@ perkNightStalkerSilentNight
 	<!-- *** Spears_Skill_Magazine -->
 <item name="spearsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="spearsCSM"/>
+	<property name="Tags" value="spearsCSM,csm"/>
 	<property name="CustomIcon" value="bookSharpSticks"/>
 	<property name="DescriptionKey" value="spearsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingSpears"/>
@@ -19511,7 +19501,7 @@ perkNightStalkerSilentNight
 	<!-- *** Bows_Skill_Magazine -->
 <item name="bowsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="bowsCSM"/>
+	<property name="Tags" value="bowsCSM,csm"/>
 	<property name="CustomIcon" value="bookBowHunters"/>
 	<property name="DescriptionKey" value="bowsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingBows"/>
@@ -19525,7 +19515,7 @@ perkNightStalkerSilentNight
 	<!-- *** Handguns_Skill_Magazine -->
 <item name="handgunsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="handgunsCSM"/>
+	<property name="Tags" value="handgunsCSM,csm"/>
 	<property name="CustomIcon" value="bookHandgunMagazine"/>
 	<property name="DescriptionKey" value="handgunsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingHandguns"/>
@@ -19539,7 +19529,7 @@ perkNightStalkerSilentNight
 	<!-- *** Shotguns_Skill_Magazine -->
 <item name="shotgunsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="shotgunsCSM"/>
+	<property name="Tags" value="shotgunsCSM,csm"/>
 	<property name="CustomIcon" value="bookShotgunWeekly"/>
 	<property name="DescriptionKey" value="shotgunsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingShotguns"/>
@@ -19553,7 +19543,7 @@ perkNightStalkerSilentNight
 	<!-- *** Rifles_Skill_Magazine -->
 <item name="riflesSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="riflesCSM"/>
+	<property name="Tags" value="riflesCSM,csm"/>
 	<property name="CustomIcon" value="bookRifleWorld"/>
 	<property name="DescriptionKey" value="riflesSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingRifles"/>
@@ -19567,7 +19557,7 @@ perkNightStalkerSilentNight
 	<!-- *** Machine_Guns_Skill_Magazine -->
 <item name="machineGunsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="machineGunsCSM"/>
+	<property name="Tags" value="machineGunsCSM,csm"/>
 	<property name="CustomIcon" value="bookTacticalWarfare"/>
 	<property name="DescriptionKey" value="machineGunsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingMachineGuns"/>
@@ -19581,7 +19571,7 @@ perkNightStalkerSilentNight
 	<!-- *** Explosives_Skill_Magazine -->
 <item name="explosivesSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="explosivesCSM"/>
+	<property name="Tags" value="explosivesCSM,csm"/>
 	<property name="CustomIcon" value="bookExplosiveMagazine"/>
 	<property name="DescriptionKey" value="explosivesSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingExplosives"/>
@@ -19595,7 +19585,7 @@ perkNightStalkerSilentNight
 	<!-- *** Robotics_Skill_Magazine -->
 <item name="roboticsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="roboticsCSM"/>
+	<property name="Tags" value="roboticsCSM,csm"/>
 	<property name="CustomIcon" value="bookTechPlanet"/>
 	<property name="DescriptionKey" value="roboticsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingRobotics"/>
@@ -19609,7 +19599,7 @@ perkNightStalkerSilentNight
 	<!-- *** Armor_Skill_Magazine -->
 <item name="armorSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="armorCSM"/>
+	<property name="Tags" value="armorCSM,csm"/>
 	<property name="CustomIcon" value="bookArmoredUp"/>
 	<property name="DescriptionKey" value="armorSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingArmor"/>
@@ -19623,7 +19613,7 @@ perkNightStalkerSilentNight
 	<!-- *** Medical_Skill_Magazine -->
 <item name="medicalSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="medicalCSM"/>
+	<property name="Tags" value="medicalCSM,csm"/>
 	<property name="CustomIcon" value="bookMedicalJournal"/>
 	<property name="DescriptionKey" value="medicalSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingMedical"/>
@@ -19637,7 +19627,7 @@ perkNightStalkerSilentNight
 	<!-- *** Food_Skill_Magazine -->
 <item name="foodSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="foodCSM"/>
+	<property name="Tags" value="foodCSM,csm"/>
 	<property name="CustomIcon" value="bookHomeCookingWeekly"/>
 	<property name="DescriptionKey" value="foodSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingFood"/>
@@ -19651,7 +19641,7 @@ perkNightStalkerSilentNight
 	<!-- *** Seed_Skill_Magazine -->
 <item name="seedSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="seedCSM"/>
+	<property name="Tags" value="seedCSM,csm"/>
 	<property name="CustomIcon" value="bookSouthernFarming"/>
 	<property name="DescriptionKey" value="seedSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingSeeds"/>
@@ -19665,7 +19655,7 @@ perkNightStalkerSilentNight
 	<!-- *** Electrician_Skill_Magazine -->
 <item name="electricianSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="electricianCSM"/>
+	<property name="Tags" value="electricianCSM,csm"/>
 	<property name="CustomIcon" value="bookWiring101"/>
 	<property name="DescriptionKey" value="electricianSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingElectrician"/>
@@ -19679,7 +19669,7 @@ perkNightStalkerSilentNight
 	<!-- *** Traps_Skill_Magazine -->
 <item name="trapsSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="trapsCSM"/>
+	<property name="Tags" value="trapsCSM,csm"/>
 	<property name="CustomIcon" value="bookElectricalTraps"/>
 	<property name="DescriptionKey" value="trapsSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingTraps"/>
@@ -19693,7 +19683,7 @@ perkNightStalkerSilentNight
 	<!-- *** Workstation_Skill_Magazine -->
 <item name="workstationSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="workstationCSM"/>
+	<property name="Tags" value="workstationCSM,csm"/>
 	<property name="CustomIcon" value="bookForgeAhead"/>
 	<property name="DescriptionKey" value="workstationSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingWorkstations"/>
@@ -19707,7 +19697,7 @@ perkNightStalkerSilentNight
 	<!-- *** Vehicle_Skill_Magazine -->
 <item name="vehiclesSkillMagazine">
 	<property name="Extends" value="masterSkillMagazine"/>
-	<property name="Tags" value="vehiclesCSM"/>
+	<property name="Tags" value="vehiclesCSM,csm"/>
 	<property name="CustomIcon" value="bookVehicleAdventures"/>
 	<property name="DescriptionKey" value="vehiclesSkillMagazineDesc"/>
 	<property name="Unlocks" value="craftingVehicles"/>

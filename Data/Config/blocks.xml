@@ -19209,8 +19209,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Place" value="Door"/>
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
-	<!-- Interaction -->
+	<property name="Collide" value="movement,melee,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
 	<property name="PassThroughDamage" value="true"/>
@@ -19259,6 +19260,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Place" value="Door"/>
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
+	<property name="Collide" value="movement,melee,rocket"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
@@ -21980,6 +21982,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceFeather" count="3" prob="0.35" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceFeather" count="2" prob="0.6" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceYuccaFibers" count="2,8"/>
+	<property name="DestroyFX" value="blockdestroy_plant,nest_destroy"/>
 	<property name="SortOrder1" value="B267"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
@@ -26000,7 +26003,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property class="RepairItems">
 		<property name="resourceScrapPolymers" value="20"/>
 	</property>
-	<drop event="Destroy" name="cntDewCollector" count="1"/>
+	<drop event="Harvest" name="resourceScrapPolymers" count="40,60" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceMetalPipe" count="1,3" tag="allHarvest"/>
+	<drop event="Destroy" name="resourceWaterFilter" count="0,1"/>
 	<property name="SortOrder1" value="B281"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
@@ -33389,7 +33394,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 	<property name="SelectAlternates" value="true"/>
-	<property name="PlaceAltBlockValue" value="woodenGarageDoor5x3_PoweredWhite,woodenGarageDoor5x3_PoweredBrown,woodenGarageDoor5x3_PoweredRed,woodenGarageDoor5x3_PoweredOrange,woodenGarageDoor5x3_PoweredYellow,woodenGarageDoor5x3_PoweredGreen,woodenGarageDoor5x3_PoweredBlue,woodenGarageDoor5x3_PoweredGrey,woodenGarageDoor5x3_Powered_PoweredOak"/>
+	<property name="PlaceAltBlockValue" value="woodenGarageDoor5x3_PoweredWhite,woodenGarageDoor5x3_PoweredBrown,woodenGarageDoor5x3_PoweredRed,woodenGarageDoor5x3_PoweredOrange,woodenGarageDoor5x3_PoweredYellow,woodenGarageDoor5x3_PoweredGreen,woodenGarageDoor5x3_PoweredBlue,woodenGarageDoor5x3_PoweredGrey,woodenGarageDoor5x3_PoweredOak"/>
 	<property name="SortOrder1" value="U200"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_playerHelpers"/>
@@ -66280,6 +66285,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,4,1"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_01"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
@@ -66294,6 +66300,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_02"/>
 	<property name="Collide" value="melee,rocket"/> <!-- no movement effect on Shape="ModelTree" -->
+	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<property name="SortOrder1" value="B901"/>
@@ -66309,6 +66316,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-.1,0"/>
 	<property name="MultiBlockDim" value="1,9,1"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
@@ -66324,6 +66332,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,21,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1"/>
@@ -66338,6 +66347,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,7,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch_small"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="2"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
@@ -66350,6 +66360,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,4,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch_small"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 </block>
@@ -66361,6 +66372,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,13,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 </block>
@@ -66375,6 +66387,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,7,1"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_01"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1"/>
@@ -66391,6 +66404,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,15,1"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_01"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
@@ -66407,6 +66421,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,26,1"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_01"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
@@ -66423,6 +66438,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,40,1"/>
 	<property name="ParticleOnDeath" value="treeGib_dead_01"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
@@ -66467,6 +66483,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/OakSml01Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,7,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1"/>
@@ -66484,6 +66501,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/OakMed03Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,15,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
@@ -66503,6 +66521,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,26,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
@@ -66521,6 +66540,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,40,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="2"/>
 	<property name="SortOrder1" value="B902"/>
@@ -66536,6 +66556,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,4,1"/>
 	<property name="ParticleOnDeath" value="treeGib_small_dust"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1"/>
@@ -66549,6 +66570,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,12,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1"/>
@@ -66563,6 +66585,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,19,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1"/>
@@ -66577,6 +66600,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,27,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66591,6 +66615,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.2,0"/>
 	<property name="MultiBlockDim" value="1,31,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66605,6 +66630,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,41,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="6"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66619,6 +66645,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.2,0"/>
 	<property name="MultiBlockDim" value="1,47,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66633,6 +66660,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.2,0"/>
 	<property name="MultiBlockDim" value="1,24,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66676,6 +66704,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/MountainPineSml01Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.4,0"/>
 	<property name="MultiBlockDim" value="1,12,1"/>
+	<property name="Path" value="solid"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1"/>
 	<property name="SortOrder1" value="B903"/>
@@ -66691,6 +66720,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/MountainPineMed01Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.4,0"/>
 	<property name="MultiBlockDim" value="1,19,1"/>
+	<property name="Path" value="solid"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
 	<property name="SortOrder1" value="B903"/>
@@ -66708,6 +66738,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,27,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
 	<property name="SortOrder1" value="B903"/>
@@ -66723,6 +66754,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/MountainPineLrg01Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,41,1"/>
+	<property name="Path" value="solid"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
@@ -66738,6 +66770,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,0,0"/>
 	<property name="MultiBlockDim" value="1,6,1"/>
 	<property name="ParticleOnDeath" value="treeGib_winter_small"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1"/>
@@ -66753,6 +66786,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,12,1"/>
 	<property name="ParticleOnDeath" value="treeGib_winter01"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66767,6 +66801,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.4,0"/>
 	<property name="MultiBlockDim" value="1,19,1"/>
 	<property name="ParticleOnDeath" value="treeGib_winter02"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66781,6 +66816,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,27,1"/>
 	<property name="ParticleOnDeath" value="treeGib_winter03"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66807,6 +66843,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/AlaskaCedar60Prefab.prefab"/>
 	<property name="ModelOffset" value="0,0,0"/>
 	<property name="MultiBlockDim" value="1,6,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1"/>
@@ -66824,6 +66861,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.4,0"/>
 	<property name="MultiBlockDim" value="1,12,1"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66841,6 +66879,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/Blue_Spruce55Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.4,0"/>
 	<property name="MultiBlockDim" value="1,19,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66856,6 +66895,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/Blue_Spruce66Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,28,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="2"/>
@@ -66871,6 +66911,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,21,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="6"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceCoal" count="15,30" tag="oreWoodHarvest"/>
@@ -66887,6 +66928,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.5,0"/>
 	<property name="MultiBlockDim" value="1,21,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceCoal" count="11,22" tag="oreWoodHarvest"/>
@@ -66903,6 +66945,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
     <property name="ModelOffset" value="0,-0.5,0"/>
     <property name="MultiBlockDim" value="1,21,1"/>
     <property name="ParticleOnDeath" value="treeGib_burnt_55m"/>
+	<property name="Path" value="solid"/>
     <property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceCoal" count="11,22" tag="oreWoodHarvest"/>
@@ -66920,6 +66963,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,5,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch_6m"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="2"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 </block>
@@ -66932,6 +66976,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,7,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch_small"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="3"/>
 	<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
 </block>
@@ -66943,6 +66988,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,7,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch_15m"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 </block>
@@ -66954,6 +67000,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,10,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 </block>
@@ -66965,6 +67012,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-0.3,0"/>
 	<property name="MultiBlockDim" value="1,6,1"/>
 	<property name="ParticleOnDeath" value="treeGib_birch"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="6"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
 </block>
@@ -66977,6 +67025,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ModelOffset" value="0,-.5,0"/>
 	<property name="MultiBlockDim" value="1,3,1"/>
 	<property name="ParticleOnDeath" value="treeGib_burnt_small"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="4"/>
 	<drop event="Harvest" name="resourceWood" count="30" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceCoal" count="3,8" tag="oreWoodHarvest"/>
@@ -66992,6 +67041,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/Haunted_Tree_Wasteland39Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-.4,0"/>
 	<property name="MultiBlockDim" value="1,5,1"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<drop event="Harvest" name="resourceWood" count="110" tag="oreWoodHarvest"/>
 	<drop event="Harvest" name="resourceCoal" count="11,22" tag="oreWoodHarvest"/>
@@ -67007,6 +67057,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/Trees/Haunted_Tree_Wasteland42Prefab.prefab"/>
 	<property name="ModelOffset" value="0,-.6,0"/>
 	<property name="MultiBlockDim" value="2,9,2"/>
+	<property name="Path" value="solid"/>
 	<property name="BigDecorationRadius" value="5"/>
 	<property name="ActivationDistance" value="14"/>
 	<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>

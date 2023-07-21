@@ -2794,7 +2794,6 @@ If there is no hit the default quality is used.
 	<item name="meleeWpnSledgeT1IronSledgehammer"/>
 	<item name="meleeWpnKnucklesT1IronKnuckles"/>
 	<item name="meleeWpnBladeT1HuntingKnife"/>
-	<item name="meleeWpnBatonT2StunBaton"/>
 </lootgroup>
 
 <!-- *** T2&T3_Melee_Weapons -->
@@ -3740,8 +3739,18 @@ If there is no hit the default quality is used.
 </lootgroup>
 
 <!-- *** T1_Tool_Loot -->
-<!-- Only used in working stiffs crate so they get a quality level boost -->
-<lootgroup name="groupToolsT1" loot_quality_template="QLTemplateT0"> 
+<lootgroup name="groupToolsT1" loot_quality_template="QLTemplateT1"> 
+	<item name="meleeToolPickT1IronPickaxe"/>
+	<item name="meleeToolShovelT1IronShovel"/>
+	<item name="meleeToolAxeT1IronFireaxe"/>
+	<item name="meleeWpnSledgeT1IronSledgehammer"/>
+	<item name="meleeToolRepairT1ClawHammer"/>
+	<item name="meleeToolSalvageT1Wrench"/>
+</lootgroup>
+
+<!-- *** T1_Tool_Loot_Bonus -->
+<!-- Only used in Working Stiffs crates -->
+<lootgroup name="groupToolsT1Bonus" loot_quality_template="QLTemplateT0"> 
 	<item name="meleeToolPickT1IronPickaxe"/>
 	<item name="meleeToolShovelT1IronShovel"/>
 	<item name="meleeToolAxeT1IronFireaxe"/>
@@ -3792,12 +3801,21 @@ If there is no hit the default quality is used.
 	<item group="groupToolsT3" loot_prob_template="ProbT3"/>
 </lootgroup>
 
+<!-- *** Tool_Loot_Scaled_Bonus -->
+<!-- Only used in Working Stiffs crates -->
+<lootgroup name="groupToolsTieredBonus" count="1">
+	<item group="groupToolsT0" loot_prob_template="ProbT0"/>
+	<item group="groupToolsT1Bonus" loot_prob_template="ProbT1"/>
+	<item group="toolParts" loot_prob_template="ProbT1Cap"/>
+	<item group="groupToolsT2" loot_prob_template="ProbT2Cap"/>
+	<item group="groupToolsT3" loot_prob_template="ProbT3"/>
+</lootgroup>
+
 <!-- *** Automotive_Resources_Rare -->
 <lootgroup name="groupRareAutomotive">
 	<item name="smallEngine"/>
 	<item name="vehicleWheels"/>
 	<item name="carBattery"/>
-	<item name="ammoGasCan" count="10,100"/>
 </lootgroup>
 
 <!-- *** Automotive_Weapons_Tools -->
@@ -3805,14 +3823,16 @@ If there is no hit the default quality is used.
 	<item name="meleeToolPaintTool" loot_prob_template="veryLow"/>
 	<item name="meleeToolFlashlight02" loot_prob_template="veryLow"/>
 	<item name="resourceRepairKit" count="1,2"/>
+	<item name="meleeToolSalvageT1Wrench" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <!-- *** Automotive_Resources -->
 <lootgroup name="groupAutomotive">
 	<item group="groupCraftingUncommon"/>
-	<item group="groupScrapRare" loot_prob_template="veryLow"/>
+	<item name="ammoGasCan" count="10,100" loot_prob_template="medHigh"/>
 	<item group="groupCarWeaponsTools" loot_prob_template="medLow"/>
 	<item group="groupRareAutomotive" loot_prob_template="low"/>
+	<item group="groupScrapRare" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <!-- *** Utility_Group -->
@@ -3866,13 +3886,13 @@ If there is no hit the default quality is used.
 	<item name="workstationSkillMagazine" loot_prob_template="high"/>
 	<item name="frameShapes:VariantHelper" count="10,20" loot_prob_template="med"/>
 	<item group="toolParts" loot_prob_template="med"/>
-	<item group="groupToolsTiered" loot_prob_template="medLow"/>
+	<item group="groupToolsTieredBonus" loot_prob_template="medLow"/>
 </lootgroup>
 
 <lootgroup name="groupWorkingStiffs02">
 	<item group="groupCraftingUncommon" loot_prob_template="med"/>
 	<item group="groupBuildingUncommon" loot_prob_template="med"/>
-	<item group="groupToolsTiered" loot_prob_template="low"/>
+	<item group="groupToolsTieredBonus" loot_prob_template="low"/>
 </lootgroup>
 
 <lootgroup name="groupWorkingStiffs03">
@@ -5814,6 +5834,17 @@ If there is no hit the default quality is used.
 	<item group="groupJunk"/>
 </lootgroup>
 
+<!-- *** Dumpster -->
+<lootgroup name="groupDumpster01">
+	<item group="groupJunk"/>
+	<item group="groupDumpsterFood" tags="masterChef2"/> <!-- Hard coded tag -->
+</lootgroup>
+
+<lootgroup name="groupDumpster" count="all">
+	<item group="groupJunk" count="1"/>
+	<item group="groupDumpster01" count="1"  prob=".5" force_prob="true"/>
+</lootgroup>
+
 <!-- *** Dishwasher_Junk -->
 <lootgroup name="groupDishwasherJunk">
 	<item name="foodRottingFlesh" count="1,3"/>
@@ -5928,18 +5959,24 @@ If there is no hit the default quality is used.
 <!-- *** Car_Loot -->
 <lootgroup name="groupCars01">
 	<item group="groupJunkNoBMats" loot_prob_template="high"/>
-	<item group="groupAutomotive" loot_prob_template="low"/>
+	<item group="groupAutomotive" loot_prob_template="med"/>
 </lootgroup>
 
 <lootgroup name="groupCars02">
-	<item group="groupToolsT0" loot_prob_template="ProbT0"/>
-	<item group="groupToolsTiered" loot_prob_template="medLow"/>
-	<item group="groupWeaponsMeleeScaled" loot_prob_template="veryLow"/>
+	<item group="skillMagazines" loot_prob_template="low"/>
+	<item name="vehiclesSkillMagazine" loot_prob_template="low"/>
+	<item group="groupToolsT0" loot_prob_template="veryLow"/>
+	<item group="groupToolsT1" loot_prob_template="ProbT1"/>
+	<item group="groupWeaponsT0_Melee" loot_prob_template="veryLow"/>
+	<item group="groupWeaponsT1_Melee" loot_prob_template="ProbT1"/>
 </lootgroup>
 
 <lootgroup name="groupCars03">
-	<item group="groupAmmoSmall" loot_prob_template="veryLow"/>
-	<item group="groupWeaponsRangedScaled" loot_prob_template="veryLow"/>
+	<item group="skillMagazines" loot_prob_template="med"/>
+	<item group="groupAmmoSmall" loot_prob_template="low"/>
+	<item group="groupAmmoMedium" loot_prob_template="veryLow"/>
+	<item group="groupWeaponsT0_Ranged" loot_prob_template="veryLow"/>
+	<item group="groupWeaponsT1_Ranged" loot_prob_template="ProbT1"/>
 </lootgroup>
 
 <lootgroup name="groupCars" count="all">
@@ -8116,19 +8153,19 @@ If there is no hit the default quality is used.
 <!-- *** Twitch_Explosives -->
 
 <lootgroup name="twitch_explosivesT0" count="2">
-	<item name="thrownAmmoPipeBomb" count="4,6"/>
-	<item name="thrownDynamite" count="4,6"/>
+	<item name="thrownAmmoPipeBomb" count="2,3"/>
+	<item name="thrownDynamite" count="2,3"/>
 </lootgroup>
 
 <lootgroup name="twitch_explosivesT1" count="2">
-	<item name="thrownGrenade" count="4,6"/>
-	<item name="thrownDynamite" count="4,6"/>
+	<item name="thrownGrenade" count="2,3"/>
+	<item name="thrownDynamite" count="2,3"/>
 </lootgroup>
 
 <lootgroup name="twitch_explosivesT2" count="2">
-	<item name="thrownGrenadeContact" count="4,6"/>
-	<item name="thrownAmmoMolotovCocktail" count="1,4"/>
-	<item name="thrownDynamite" count="4,6"/>
+	<item name="thrownGrenadeContact" count="2,3"/>
+	<item name="thrownAmmoMolotovCocktail" count="1,3"/>
+	<item name="thrownDynamite" count="2,3"/>
 </lootgroup>
 
 <lootgroup name="twitch_rocketlauncher" count="all">
@@ -8138,8 +8175,8 @@ If there is no hit the default quality is used.
 
 <lootgroup name="twitch_explosivesT3" count="2">
 	<item group="twitch_rocketlauncher"/>
-	<item name="thrownAmmoMolotovCocktail" count="4,6"/>
-	<item name="thrownDynamite" count="4,6"/>
+	<item name="thrownAmmoMolotovCocktail" count="2,3"/>
+	<item name="thrownDynamite" count="2,3"/>
 </lootgroup>
 
 <!-- *** Twitch_Robotics -->
@@ -9220,7 +9257,7 @@ If there is no hit the default quality is used.
 </lootcontainer>
 
 <!-- birds nest-->
-<lootcontainer name="birdNest" count="1" size="6,2" sound_open="UseActions/open_garbage" sound_close="UseActions/close_garbage" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
+<lootcontainer name="birdNest" count="1" size="6,2" sound_open="UseActions/nest_open" sound_close="UseActions/nest_shut" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
 	<item group="groupBirdNest"/>
 </lootcontainer>
 
@@ -9470,9 +9507,8 @@ If there is no hit the default quality is used.
 </lootcontainer>
 
 <!-- dumpster -->
-<lootcontainer name="dumpster" count="1,2" size="8,4" sound_open="UseActions/open_dumpster" sound_close="UseActions/close_dumpster" loot_quality_template="qualBaseTemplate">
-	<item group="groupJunk"/>
-	<item group="groupDumpsterFood" prob="0.05"/>
+<lootcontainer name="dumpster" count="1" size="8,4" sound_open="UseActions/open_dumpster" sound_close="UseActions/close_dumpster" loot_quality_template="qualBaseTemplate">
+	<item group="groupDumpster"/>
 </lootcontainer>
 
 <!-- cntMorticianDrawerFull -->
@@ -9982,6 +10018,10 @@ If there is no hit the default quality is used.
 	<item group="groupQuestRewardSkillMagazinesAll"/>
 </lootcontainer>
 
+<lootcontainer name="test" count="1" size="7,2" sound_open="open_clothes_rack" sound_close="close_clothes_rack" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
+	<item group="groupMilitaryArmor" prob=".5"/>
+</lootcontainer>
+	
 
 <!-- *** TWITCH_LOOTLISTS -->
 <lootcontainer name="twitch_tier0weapon" count="1" size="6,2" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate"  open_time="0.25" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true" unmodified_lootstage="false">

@@ -2758,11 +2758,11 @@
 			<rect visible="{showstats}">
 				<grid depth="0" pos="0,0" width="327" cols="2" cell_width="326" cell_height="30" repeat_content="false" arrangement="horizontal" visible="{showaction}">
 					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{actiongamestagetitle}" valuecontent="{actiongamestage}" />
-					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{actiondefaultcosttitle}" valuecontent="{actionpointcost}" />
+					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{actionispositivetitle}" valuecontent="{actionispositive}" />
 					<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{actioncooldowntitle}" valuecontent="{actioncooldown}" />
 					<player_stats_entry backgroundcolor="[darkGrey]"    textcontent="{actionrandomgrouptitle}" valuecontent="{actionrandomgroup}" />
-					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{actionispositivetitle}" valuecontent="{actionispositive}" />
-					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="" valuecontent="" />
+					<twitch_cost_entry  backgroundcolor="[darkestGrey]" textcontent="{actiondefaultcosttitle}" valuecontent="{actionpointcost}" costcolor="{actioncostcolor}" />
+					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{actiondiscountcosttitle}" valuecontent="{actiondiscountcost}" />
 				</grid>
 				<grid depth="0" pos="0,0" width="327" cols="2" cell_width="326" cell_height="30" repeat_content="false" arrangement="horizontal" visible="{showvote}">
 					<player_stats_entry backgroundcolor="[darkestGrey]" textcontent="{votestartgamestagetitle}" valuecontent="{votestartgamestage}" />
@@ -2801,6 +2801,10 @@
 				<label pos="6,-110" depth="3" name="descriptionText" width="643" height="300" text="{emptytext}" justify="center" pivot="left" font_size="28" /> <!-- text_key="xuiDescriptionNotAvailable" -->
 			</rect>
 		</rect>
+
+		
+		<simplebutton name="btnDecrease" depth="3" pos="0,-283" width="326" height="36" font_size="24" caption_key="{decreasepricetext}" visible="{showaction}" parse_actions="true" />
+		<simplebutton name="btnIncrease" depth="3" pos="327,-283" width="326" height="36" font_size="24" caption_key="{increasepricetext}" visible="{showaction}" parse_actions="true" />
 		
 		<rect name="btnEnable" depth="3" pos="0,-323" height="36" visible="{showenable}">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" width="653" color="[black]" type="sliced" fillcenter="false" />
@@ -2809,7 +2813,7 @@
 				<button name="clickable" sprite="menu_empty" defaultcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0" />
 
 				<!-- <sprite depth="2" name="sprOnOff" width="24" height="24" pos="25,-2" color="[iconColor]" sprite="ui_game_symbol_electric_switch"/> -->
-				<label depth="2" name="lblOnOff" pos="0,-4" justify="center" text="{enablebuttontext}"  font_size="24" />
+				<label depth="2" name="lblOnOff" pos="0,-4" justify="center" text="{enablebuttontext}"  font_size="24" parse_actions="true" />
 			</rect>
 		</rect>
 		

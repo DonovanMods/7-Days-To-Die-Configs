@@ -56,6 +56,7 @@
 			<display_entry name="EntityDamage" display_type="Decimal1" title_key="statEntityDamageRanged" tags="perkArchery,admin"/>
 			<display_entry name="dEntityDamageSneak" title_key="statEntityDamageSneak" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="ProjectileVelocity" title_key="statProjectileVelocity" tags="perkArchery,admin"/>
+			<display_entry name="DamageFalloffRange" title_key="statDamageFalloffRange" tags="perkArchery,admin"/>
 			<display_entry name="DegradationMax" title_key="statDegradationMax" tags="perkArchery,admin"/>
 		</item_display_info>
 

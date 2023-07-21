@@ -22,7 +22,7 @@
 	<traderstage_templates>
 
 		<traderstage_template name="baseTier0" min="1" max="20" /> <!-- Tools/Weapons -->
-		<traderstage_template name="baseTier1" min="15" max="40" /> <!-- Tools/Weapons -->
+		<traderstage_template name="baseTier1" min="15" max="70" /> <!-- Tools/Weapons -->
 		<traderstage_template name="baseTier2" min="50" max="999999" /> <!-- Tools/Weapons -->
 		<traderstage_template name="baseTier3" min="100" max="999999" /> <!-- Tools/Weapons -->
 		
@@ -1268,6 +1268,7 @@
 			<item name="resourcePotassiumNitratePowder" count="2,5"/>
 			<item name="resourceGunPowder" count="25,25"/>
 			<item group="ammoSupplies" count="2"/>
+			<item name="ammoGasCan" count="5000,10000"/>
 			<item group="thrownAmmo" count="2"/>
 			<item name="drinkJarBoiledWater" count="2,4"/>
 			<item group="groupFoodAll" count="1,3"/>

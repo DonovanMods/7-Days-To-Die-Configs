@@ -192,7 +192,7 @@
 	</shape>
 
 	<shape name="cubeCornerBeveled">
-		<!-- <property name="Path" value="solid" /> -->
+		<property name="Path" value="solid" />
 		<property name="Model" value="cube_corner_beveled" />
 		<property name="CustomIcon" value="shapecubeCornerBeveled" />
 		<property name="ShapeCategories" value="Square" />

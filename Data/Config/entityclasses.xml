@@ -3524,6 +3524,7 @@
 
 	<property name="AITask" value="
 	BreakBlock|
+	ApproachDistraction|
 	RangedAttackTarget itemType=1;cooldown=4;duration=5|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 	ApproachSpot|
@@ -4101,6 +4102,7 @@
 
 	<property name="AITask" value="
 	BreakBlock|
+	ApproachDistraction|
 	RangedAttackTarget itemType=1;cooldown=4;duration=3;minRange=1;maxRange=6;unreachableRange=18|
 	DestroyArea|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
@@ -4176,6 +4178,7 @@
 	<property name="AITask" value="
 	BreakBlock|
 	DestroyArea|
+	ApproachDistraction|
 	ApproachAndAttackTarget class=EntityPlayer,0,EntityBandit,0,EntityEnemyAnimal|
 	ApproachSpot|
 	Look|

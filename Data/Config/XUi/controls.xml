@@ -92,18 +92,18 @@
 
 	<unlocked_by_header>
 		<rect name="header" width="447" height="50">
-			<rect depth="2" width="65" height="48">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="71" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="60" height="48">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="66" height="53" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[darkGrey]" type="sliced" />
 				<label depth="3" text="TYPE" text_key="xuiType" pos="32,-23" height="26" font_size="26" justify="center" pivot="center"/>
 			</rect>
-			<rect depth="2" width="309" height="48" pos="68,0">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="315" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="304" height="48" pos="63,0">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="310" height="53" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[darkGrey]" type="sliced" />
 				<label depth="3" text="UNLOCKED BY" text_key="xuiUnlockedBy" pos="0,-13" height="26" font_size="26" justify="center" />
 			</rect>
-			<rect depth="2" width="72" height="48" pos="379,0">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-2,3" width="73" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="82" height="48" pos="369,0">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-2,3" width="83" height="53" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[darkGrey]" type="sliced" />
 				<label depth="3" text="LEVEL" text_key="xuiLevel" pos="-3,-13" height="26" font_size="26" justify="center" />
 			</rect>
@@ -112,19 +112,19 @@
 
 	<unlocked_by_row>
 		<rect name="row" width="447" height="50" controller="UnlockByEntry">
-			<rect depth="2" width="65" height="48">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="71" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="60" height="48">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="66" height="53" color="[black]" type="sliced" fillcenter="false" />
 
 				<sprite color="[lightGrey]" type="sliced" />
 				<sprite depth="2" name="icon" width="40" height="40" atlas="{itemiconatlas}" sprite="{itemicon}" pos="30,-22" pivot="center" foregroundlayer="true"/>
 			</rect>
-			<rect depth="2" width="309" height="48" pos="68,0">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="315" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="304" height="48" pos="63,0">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="310" height="53" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[lightGrey]" type="sliced" />
 				<label depth="3" name="name" pos="0,-13" height="26" font_size="26" color="[labelColor]" justify="center" text="{name}"/>
 			</rect>
-			<rect depth="2" width="72" height="48" pos="379,0">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-2,2" width="73" height="53" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="2" width="82" height="48" pos="369,0">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-2,2" width="83" height="53" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[lightGrey]" type="sliced" />
 				<label depth="3" name="name" pos="0,-13" height="26" font_size="26" color="[labelColor]" justify="center" text="{level}"/>
 			</rect>
@@ -891,6 +891,15 @@
 			<label depth="3" pos="315,-5" width="128" font_size="26" text="${valuecontent}" justify="right" color="[selectedColor]" pivot="topright" />
 		</rect>
 	</player_stats_entry>
+
+	<twitch_cost_entry>
+		<rect height="33">
+			<sprite depth="8" sprite="menu_empty3px" height="33" color="[black]" type="sliced" fillcenter="false" />
+			<sprite depth="1" color="${backgroundcolor}" type="sliced" />
+			<label depth="3" pos="15,-5" width="168" font_size="26" text="${textcontent}" justify="left" color="[white]" />
+			<label depth="3" pos="315,-5" width="128" font_size="26" text="${valuecontent}" justify="right" color="${costcolor}" pivot="topright" />
+		</rect>
+	</twitch_cost_entry>
 
 	<player_stats_generic_entry>
 		<player_stats_entry backgroundcolor="${backgroundcolor}" textcontent="{playerstattitle${index}|once}" valuecontent="{playerstat${index}}" />

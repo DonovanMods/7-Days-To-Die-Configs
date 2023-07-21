@@ -161,7 +161,7 @@
 		<property name="description_key" value="TwitchAction_SpawnCrawlerDesc" />
 		<property name="event_name" value="spawn_crawler" />
 		<property name="enabled" value="true" />
-		<property name="default_cost" value="20" />
+		<property name="default_cost" value="25" />
 	</action>
 	
 	<action name="twitch_spiderZombie" extends="twitch_toughZombie">
@@ -348,7 +348,7 @@
 		<property name="title_key" value="TwitchAction_SpawnMutated" />
 		<property name="description_key" value="TwitchAction_SpawnMutatedDesc" />
 		<property name="event_name" value="spawn_mutated" />
-		<property name="default_cost" value="80" />
+		<property name="default_cost" value="75" />
 		<property name="cooldown" value="30" />
 		<property name="enabled" value="true" />
 	</action>
@@ -369,7 +369,7 @@
 		<property name="command_key" value="TwitchAction_SpawnMutatedCommand" />
 		<property name="title_key" value="TwitchAction_SpawnMutatedRad" />
 		<property name="description_key" value="TwitchAction_SpawnMutatedRadDesc" />
-		<property name="start_gamestage" value="145" />
+		<property name="start_gamestage" value="125" />
 		<property name="event_name" value="spawn_mutated_rad" />
 		<property name="cooldown" value="90" />
 		<property name="enabled" value="true" />
@@ -394,7 +394,7 @@
 		<property name="description_key" value="TwitchAction_SpawnSnakeDesc" />
 		<property name="start_gamestage" value="3" />
 		<property name="event_name" value="spawn_snake" />
-		<property name="default_cost" value="30" />
+		<property name="default_cost" value="25" />
 		<property name="cooldown" value="60" />
 		<property name="random_group" value="spawns" />
 	</action>
@@ -418,7 +418,7 @@
 		<property name="description_key" value="TwitchAction_SpawnVultureDesc" />
 		<property name="start_gamestage" value="8" />
 		<property name="event_name" value="spawn_vulture" />
-		<property name="default_cost" value="35" />
+		<property name="default_cost" value="25" />
 		<property name="cooldown" value="60" />
 		<property name="random_group" value="spawns" />
 	</action>
@@ -568,7 +568,7 @@
 		<property name="default_cost" value="100" />
 		<property name="is_positive" value="true" />
 		<property name="is_crate" value="true" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard" />
 	</action>
 	
@@ -580,7 +580,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_weapon1" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnWeapon3" extends="twitch_spawnWeapon1">
@@ -591,7 +591,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_weapon2" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnWeapon4" extends="twitch_spawnWeapon1">
@@ -602,7 +602,7 @@
 		<property name="start_gamestage" value="90" />
 		<property name="event_name" value="spawn_weapon3" />
 		<property name="default_cost" value="300" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnArmor0" extends="twitch_spawnWeapon1">
@@ -612,7 +612,7 @@
 		<property name="description_key" value="TwitchAction_SupplyArmor1Desc" />
 		<property name="event_name" value="spawn_armor0" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnArmor1" extends="twitch_spawnWeapon1">
@@ -623,7 +623,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_armor1" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnArmor2" extends="twitch_spawnWeapon1">
@@ -634,7 +634,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_armor2" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnMods1" extends="twitch_spawnWeapon1">
@@ -645,7 +645,7 @@
 		<property name="start_gamestage" value="6" />
 		<property name="event_name" value="spawn_mods1" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnMods2" extends="twitch_spawnWeapon1">
@@ -656,7 +656,7 @@
 		<property name="start_gamestage" value="16" />
 		<property name="event_name" value="spawn_mods2" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnMods3" extends="twitch_spawnWeapon1">
@@ -667,7 +667,7 @@
 		<property name="start_gamestage" value="56" />
 		<property name="event_name" value="spawn_mods3" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnUtility1" extends="twitch_spawnWeapon1">
@@ -678,7 +678,7 @@
 		<property name="start_gamestage" value="5" />
 		<property name="event_name" value="spawn_utility1" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -690,7 +690,7 @@
 		<property name="start_gamestage" value="53" />
 		<property name="event_name" value="spawn_utility2" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -702,7 +702,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_tool1" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnTool2" extends="twitch_spawnWeapon1">
@@ -713,7 +713,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_tool2" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnTool3" extends="twitch_spawnWeapon1">
@@ -724,7 +724,7 @@
 		<property name="start_gamestage" value="90" />
 		<property name="event_name" value="spawn_tool3" />
 		<property name="default_cost" value="250" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_spawnMedicine1" extends="twitch_spawnWeapon1">
@@ -735,7 +735,7 @@
 		<property name="start_gamestage" value="5" />
 		<property name="event_name" value="spawn_medicine1" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -747,7 +747,7 @@
 		<property name="start_gamestage" value="15" />
 		<property name="event_name" value="spawn_medicine2" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -759,7 +759,7 @@
 		<property name="start_gamestage" value="55" />
 		<property name="event_name" value="spawn_medicine3" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -771,7 +771,7 @@
 		<property name="start_gamestage" value="6" />
 		<property name="event_name" value="spawn_foodwater1" />
 		<property name="default_cost" value="75" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -783,7 +783,7 @@
 		<property name="start_gamestage" value="16" />
 		<property name="event_name" value="spawn_foodwater2" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard" />
 	</action>
 	
@@ -795,7 +795,7 @@
 		<property name="start_gamestage" value="56" />
 		<property name="event_name" value="spawn_foodwater3" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard" />
 	</action>
 	
@@ -807,7 +807,7 @@
 		<property name="start_gamestage" value="96" />
 		<property name="event_name" value="spawn_foodwater4" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard" />
 	</action>
 	
@@ -819,7 +819,7 @@
 		<property name="start_gamestage" value="15" />
 		<property name="event_name" value="spawn_books1" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnBooks2" extends="twitch_spawnWeapon1">
@@ -830,7 +830,7 @@
 		<property name="start_gamestage" value="55" />
 		<property name="event_name" value="spawn_books2" />
 		<property name="default_cost" value="250" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnBooks3" extends="twitch_spawnWeapon1">
@@ -841,7 +841,7 @@
 		<property name="start_gamestage" value="95" />
 		<property name="event_name" value="spawn_books3" />
 		<property name="default_cost" value="300" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnBicycle" extends="twitch_spawnWeapon1">
@@ -852,7 +852,7 @@
 		<property name="start_gamestage" value="5" />
 		<property name="event_name" value="spawn_bicycle" />
 		<property name="default_cost" value="300" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnMinibike" extends="twitch_spawnWeapon1">
@@ -863,7 +863,7 @@
 		<property name="start_gamestage" value="30" />
 		<property name="event_name" value="spawn_minibike" />
 		<property name="default_cost" value="400" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnMotorcycle" extends="twitch_spawnWeapon1">
@@ -874,7 +874,7 @@
 		<property name="start_gamestage" value="75" />
 		<property name="event_name" value="spawn_motorcycle" />
 		<property name="default_cost" value="500" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawn4x4" extends="twitch_spawnWeapon1">
@@ -885,7 +885,7 @@
 		<property name="start_gamestage" value="120" />
 		<property name="event_name" value="spawn_4x4" />
 		<property name="default_cost" value="600" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnBuilder1" extends="twitch_spawnWeapon1">
@@ -895,7 +895,7 @@
 		<property name="description_key" value="TwitchAction_SupplyBuilder1Desc" />
 		<property name="event_name" value="spawn_builder1" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -907,7 +907,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_builder2" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -919,7 +919,7 @@
 		<property name="start_gamestage" value="90" />
 		<property name="event_name" value="spawn_builder3" />
 		<property name="default_cost" value="175" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -931,7 +931,7 @@
 		<property name="start_gamestage" value="5" />
 		<property name="event_name" value="spawn_farmer1" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -943,7 +943,7 @@
 		<property name="start_gamestage" value="15" />
 		<property name="event_name" value="spawn_farmer2" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 		<property name="presets" value="hardcore" />
 	</action>
 	
@@ -954,7 +954,7 @@
 		<property name="description_key" value="TwitchAction_SupplyResource1Desc" />
 		<property name="event_name" value="spawn_resource0" />
 		<property name="default_cost" value="75" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -966,7 +966,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_resource1" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -978,7 +978,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_resource2" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -990,7 +990,7 @@
 		<property name="start_gamestage" value="90" />
 		<property name="event_name" value="spawn_resource3" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -1002,7 +1002,7 @@
 		<property name="start_gamestage" value="30" />
 		<property name="event_name" value="spawn_electrical1" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -1014,7 +1014,7 @@
 		<property name="start_gamestage" value="70" />
 		<property name="event_name" value="spawn_electrical2" />
 		<property name="default_cost" value="300" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual" />
 	</action>
 	
@@ -1025,7 +1025,7 @@
 		<property name="description_key" value="TwitchAction_SupplyAmmo1Desc" />
 		<property name="event_name" value="spawn_ammo1" />
 		<property name="default_cost" value="75" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -1037,7 +1037,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_ammo2" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -1049,7 +1049,7 @@
 		<property name="start_gamestage" value="50" />
 		<property name="event_name" value="spawn_ammo3" />
 		<property name="default_cost" value="125" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -1061,7 +1061,7 @@
 		<property name="start_gamestage" value="90" />
 		<property name="event_name" value="spawn_ammo4" />
 		<property name="default_cost" value="175" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
@@ -1073,7 +1073,7 @@
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_special_ammo1" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_SpecialAmmoCrate2" extends="twitch_spawnWeapon1">
@@ -1084,7 +1084,7 @@
 		<property name="start_gamestage" value="25" />
 		<property name="event_name" value="spawn_special_ammo2" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="300" />
+		<property name="cooldown" value="600" />
 	</action>
 	
 	<action name="twitch_Explosives1" extends="twitch_spawnWeapon1">
@@ -1095,7 +1095,7 @@
 		<property name="start_gamestage" value="8" />
 		<property name="event_name" value="spawn_explosives1" />
 		<property name="default_cost" value="100" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Explosives2" extends="twitch_spawnWeapon1">
@@ -1106,7 +1106,7 @@
 		<property name="start_gamestage" value="20" />
 		<property name="event_name" value="spawn_explosives2" />
 		<property name="default_cost" value="150" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Explosives3" extends="twitch_spawnWeapon1">
@@ -1117,7 +1117,7 @@
 		<property name="start_gamestage" value="60" />
 		<property name="event_name" value="spawn_explosives3" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Explosives4" extends="twitch_spawnWeapon1">
@@ -1128,7 +1128,7 @@
 		<property name="start_gamestage" value="100" />
 		<property name="event_name" value="spawn_explosives4" />
 		<property name="default_cost" value="250" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Robo1" extends="twitch_spawnWeapon1">
@@ -1139,7 +1139,7 @@
 		<property name="start_gamestage" value="12" />
 		<property name="event_name" value="spawn_robo1" />
 		<property name="default_cost" value="200" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Robo2" extends="twitch_spawnWeapon1">
@@ -1150,7 +1150,7 @@
 		<property name="start_gamestage" value="52" />
 		<property name="event_name" value="spawn_robo2" />
 		<property name="default_cost" value="250" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_Robo3" extends="twitch_spawnWeapon1">
@@ -1161,7 +1161,7 @@
 		<property name="start_gamestage" value="92" />
 		<property name="event_name" value="spawn_robo3" />
 		<property name="default_cost" value="300" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="900" />
 	</action>
 	
 	<action name="twitch_spawnCandy" extends="twitch_spawnWeapon1">
@@ -1200,7 +1200,7 @@
 		<property name="category" value="Buffs,Debuffs" />
 		<property name="event_name" value="buff_blur" />
 		<property name="default_cost" value="50" />
-		<property name="cooldown" value="360" />
+		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="random_group" value="buff_vision" />
 		<property name="presets" value="casual,standard,hardcore" />
@@ -1221,7 +1221,7 @@
 		<property name="category" value="Buffs,Debuffs" />
 		<property name="event_name" value="buff_distort" />
 		<property name="default_cost" value="50" />
-		<property name="cooldown" value="360" />
+		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="random_group" value="buff_vision" />
 		<property name="presets" value="casual,standard,hardcore" />
@@ -1242,7 +1242,7 @@
 		<property name="category" value="Buffs,Debuffs" />
 		<property name="event_name" value="buff_trippy" />
 		<property name="default_cost" value="50" />
-		<property name="cooldown" value="360" />
+		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="random_group" value="buff_vision" />
 		<property name="presets" value="casual,standard,hardcore" />
@@ -1263,7 +1263,7 @@
 		<property name="category" value="Buffs,Debuffs" />
 		<property name="event_name" value="buff_greyscale" />
 		<property name="default_cost" value="50" />
-		<property name="cooldown" value="360" />
+		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="random_group" value="buff_vision" />
 		<property name="presets" value="casual,standard,hardcore" />
@@ -1284,7 +1284,7 @@
 		<property name="category" value="Buffs,Debuffs" />
 		<property name="event_name" value="buff_painting" />
 		<property name="default_cost" value="50" />
-		<property name="cooldown" value="360" />
+		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="random_group" value="buff_vision" />
 		<property name="presets" value="casual,standard,hardcore" />
@@ -2047,7 +2047,7 @@
 		<property name="category" value="Special" />
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="action_changedirection" />
-		<property name="default_cost" value="35" />
+		<property name="default_cost" value="50" />
 		<property name="is_positive" value="false" />
 		<property name="cooldown" value="120" />
 		<property name="cooldown_blocked" value="true" />
@@ -2061,7 +2061,7 @@
 		<property name="description_key" value="TwitchAction_ActionScare1Desc" />
 		<property name="category" value="Special" />
 		<property name="event_name" value="action_scare" />
-		<property name="default_cost" value="15" />
+		<property name="default_cost" value="25" />
 		<property name="is_positive" value="false" />
 		<property name="cooldown" value="180" />
 		<property name="cooldown_blocked" value="true" />
