@@ -36,7 +36,7 @@
 <Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	- ID: I just made that one up so it would be easier to use search&massReplace
 	- (deprecated)volume: volume of the sound which can trigger AI wake
-	- noise: the cumulative volume/range value that goes into the player's stealth meter.
+	- noise: the cumulative volume value that goes into the player's stealth meter.
 	- time: game time seconds until noise is removed
 	- muffled_when_crouched: scales noise range when entity is crouched
 	- heat_map_strength: how much to add to heat map (once 100 is hit, horde scout is spawned)
@@ -5199,6 +5199,37 @@
 	<AudioClip ClipName="Sounds/UseActions/chest_tier5_close"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
+<!-- Workstations -->
+
+<SoundDataNode name="open_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/UseActions/open_workbench"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="close_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/UseActions/close_workbench"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="collector_open"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Collector/collector_open1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="collector_close"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Collector/collector_close1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="collector_complete_item"> <AudioSource name="Sounds/AudioSource_UI"/>
+	<AudioClip ClipName="Sounds/Collector/collector_complete_item"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="collector_destroy"> <AudioSource name="Sounds/AudioSource_Interact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Collector/collector_destroy1"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
 <!-- Misc folder sounds -->
 
 <SoundDataNode name="nightvision_toggle"> <AudioSource name="Sounds/AudioSource_UseAction"/>
@@ -5288,16 +5319,6 @@
 	<AudioClip ClipName="Sounds/UseActions/takeall4"/>
 	<LowestPitch name="0.9"/>
 	<HighestPitch name="1.1"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="open_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>
-	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/UseActions/open_workbench"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
-<SoundDataNode name="close_workbench"> <AudioSource name="Sounds/AudioSource_Interact"/>
-	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/UseActions/close_workbench"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 <SoundDataNode name="open_hatch_scrap"> <AudioSource name="Sounds/AudioSource_Interact"/>
@@ -5846,10 +5867,6 @@
 	<AudioClip ClipName="Sounds/Crafting/close_map"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="craft_breakdown_item"> <AudioSource name="Sounds/AudioSource_UI"/>
-	<AudioClip ClipName="Sounds/Crafting/craft_breakdown_item"/>
-	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
 <SoundDataNode name="craft_click_craft"> <AudioSource name="Sounds/AudioSource_UI"/>
 	<AudioClip ClipName="Sounds/Crafting/craft_click_craft"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -5910,6 +5927,16 @@
 <SoundDataNode name="place_block_metal"> <AudioSource name="Sounds/AudioSource_Interact"/>
 	<AudioClip ClipName="Sounds/Crafting/place_block_metal"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+	<!-- Inventory / Pickup Item Sounds -->
+	
+<SoundDataNode name="item_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/item_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="item_take"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/item_take"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 
 
@@ -8803,7 +8830,7 @@
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
 <SoundDataNode name="traderdislikesaledeclined"> <AudioSource name="Sounds/AudioSource_VO"/>
-	<Noise ID="1" range="1" volume="7" time="5" muffled_when_crouched="0.5"/>
+	<Noise ID="1" volume="7" time="5" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Dislike/trader_male_dislike_sale_declined_01"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Dislike/trader_male_dislike_sale_declined_02"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Dislike/trader_male_dislike_sale_declined_03"/>

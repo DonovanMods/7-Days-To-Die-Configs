@@ -20,7 +20,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <blocks defaultDescriptionKey="creativeMenuBlockGroupDesc">
 
 <!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- **** TERRIAN_VOXELS -->
+<!-- **** TERRAIN_VOXELS -->
 <!-- *** xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 	<!-- *** AIR -->
@@ -954,7 +954,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="FilterTags" value="MC_Shapes"/>
 </block>
 
-<block name="bulletproofShapes" shapes="Bulletproof">
+<block name="bulletproofShapes" shapes="Bulletproof" hide_helper_in_creative="true">
 	<property name="DescriptionKey" value="bulletproofGlassGroupDesc"/>
 	<property name="Material" value="MglassBulletproof"/>
 	<property name="Shape" value="New"/>
@@ -19629,7 +19629,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ImposterExclude" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="LightOpacity" value="0"/>
-	<property name="AllowRotations" value="All"/>
+	<property name="AllowedRotations" value="All"/>
 	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
 	<property name="VehicleHitScale" value="8"/>
 	<drop event="Fall" count="0" prob="0"/>
@@ -25987,9 +25987,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
-	<property name="OpenSound" value="open_workbench"/>
-	<property name="CloseSound" value="close_workbench"/>
-	<property name="ConvertSound" value="bucketfill_water"/>
+	<property name="OpenSound" value="collector_open"/>
+	<property name="CloseSound" value="collector_close"/>
+	<property name="ConvertSound" value="collector_complete_item"/>
 	<property name="MinConvertTime" value="21600" /> <!-- 21600 Game Seconds = 6 Game Hours -->
 	<property name="MaxConvertTime" value="36000" /> <!-- 36000 Game Seconds = 10 Game Hours -->
 	<property name="ConvertToItem" value="drinkJarBoiledWater" />
@@ -26006,6 +26006,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapPolymers" count="40,60" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,3" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceWaterFilter" count="0,1"/>
+	<property name="DestroyFX" value="blockdestroy_cloth,collector_destroy"/>
 	<property name="SortOrder1" value="B281"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
@@ -26035,6 +26036,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapPolymers" count="5,10" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="3,5" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceMetalPipe" count="1,3"/>
+	<property name="DestroyFX" value="blockdestroy_cloth,collector_destroy"/>
 	<property name="SortOrder1" value="B281"/>
 	<property name="SortOrder2" value="0101"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
@@ -54526,6 +54528,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Material" value="Mmetal_thin"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/ductControlPanelSoftPrefab"/>
+	<property name="LODCullScale" value="1.4"/>
 	<property name="ImposterExclude" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Place" value="TowardsPlacerInverted"/>
@@ -54540,6 +54543,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="ductStraightCentered"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/ductControlPanelSoftCorner01Prefab"/>
+	<property name="LODCullScale" value="1"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0101"/>
 </block>
@@ -54548,6 +54552,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="ductStraightCentered"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/ductControlPanelSoftCorner02Prefab"/>
+	<property name="LODCullScale" value="1"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0102"/>
 </block>
@@ -54556,6 +54561,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="ductStraightCentered"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/ductControlPanelPrefab"/>
+	<property name="LODCullScale" value="1.4"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0103"/>
 </block>
@@ -54564,6 +54570,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="ductStraightCentered"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/ductControlPanelCornerPrefab"/>
+	<property name="LODCullScale" value="0.6"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0104"/>
 </block>
@@ -54850,6 +54857,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="pipeSmallCorner">
 	<property name="Extends" value="pipeSmall1x1"/>
 	<property name="Model" value="Entities/Industrial/pipeSmallCornerPrefab"/>
+	<property name="LODCullScale" value="0.4"/>
 	<property name="HandleFace" value="Bottom"/>
 	<property name="SortOrder2" value="0007"/>
 </block>
@@ -54918,6 +54926,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="pipeSmall1x1"/>
 	<property name="ItemTypeIcon" value="brick"/>
 	<property name="Model" value="Entities/Industrial/pipeSmallWallCornerPrefab"/>
+	<property name="LODCullScale" value="0.4"/>
 	<property name="HandleFace" value="Bottom"/>
 	<property name="SortOrder2" value="0015"/>
 </block>
@@ -54927,7 +54936,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ItemTypeIcon" value="brick"/>
 	<property name="Model" value="Entities/Industrial/pipeSmallWallOutsideCornerPrefab"/>
 	<property name="ModelOffset" value="0,0,0"/>
-	<property name="LODCullScale" value="0.5"/>
+	<property name="LODCullScale" value="0.2"/>
 	<property name="HandleFace" value="Bottom"/>
 	<property name="SortOrder2" value="0015"/>
 </block>

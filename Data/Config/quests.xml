@@ -1267,9 +1267,9 @@
 		<reward type="Item" id="casinoCoin" value="940"/>
 
 		<reward type="LootItem" id="groupQuestMedical" ischosen="true" value="3"/>
-		<reward type="LootItem" id="groupQuestWeapons,groupQuestArmor" ischosen="true" isfixed="true" value="3"/>
+		<reward type="LootItem" id="groupQuestWeaponsT1,groupQuestArmorT1" ischosen="true" isfixed="true" value="3"/>
 		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="3"/>
-		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="3"/>
+		<reward type="LootItem" id="groupQuestToolsT1" ischosen="true" value="3"/>
 		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="3"/>
 		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="3"/>
 	</quest>

@@ -139,7 +139,7 @@
 		
 
 	</action_sequence>
-
+	
 	<!-- POI Events -->
 
 	<action_sequence name="quest_poi_lights_off">
@@ -2304,7 +2304,7 @@
 			<property name="is_percent" value="true" />
 			<property name="target_group" value="party" />
 		</action>
-
+		
 	</action_sequence>
 
 	<action_sequence name="action_repair">
@@ -3056,7 +3056,7 @@
 		</action>
 
 	</action_sequence>
-
+	
 	<action_sequence name="action_removeturrets">
 		<property name="category" value="twitch_actions" />
 		<requirement class="NearbyEntities">
@@ -9356,6 +9356,14 @@
 			entity_tags - The entity tags of the spawned entities.
 			target_only - If the spawned entities must be spawns of the Target.
 
+		InBiome - Checks if the Target is in one of the specified biomes.
+			biomes - The comma delimited list of biomes to check for.
+		
+		InPOI - Checks if the Target is in the specified POI.
+			name - The name of the POI.
+			tier - The tier of the POI.
+			tags - The tags of the POI.
+		
 		InQuestZone - Checks if the target is in a quest zone.
 
 		InSafeZone - Checks if the target is in a safe zone.
@@ -9371,6 +9379,14 @@
 			entity_tags - The entity tags of the nearby entities. (If no tag is supplied, defaults to any enemies or animals)
 			max_distance - The maximum distance to check for nearby entities.
 			target_is_owner - If the vehicle/turret is owned by the target.
+
+		OnQuest - Check if the Target is on a quest.
+			quest - The name of the quest. If not specified then it checks that you have an active quest.
+
+		Progression - Checks the target's progression
+			operation - Allows for checking common (None, Equals, NotEquals, Less, LessThan, LT, Greater, GreaterThan, GT, LessOrEqual, LessThanOrEqualTo, LTE,	GreaterOrEqual, GreaterThanOrEqualTo, GTE)
+			name - The progression name to check (Skill,Perk,Book,Crafting)
+			value - The value to check.
 
 		RandomRoll - Checks the value against a random roll.
 			min_max - The numbers to check between.
@@ -9433,10 +9449,12 @@
 			text_key - the localized key of the text to show.
 
 		AddItemDurability - Adds durability to items on your player.
-			items_location - The location that is affected by this. (Toolbelt, Backpack, Equipment, Held).
+			items_location - The location that is affected by this. Can be comma delimited. (Toolbelt, Backpack, Equipment, Held).
 			items_tags - The tag of the items you want affected by this.
 			amount - the amount of durability to add.
 			is_percent - If the amount is a percent.
+			count_type - The type of count to use (Items,Slots)
+			count - The count of items to add durability to, if you don't specify a count it will add durability to all.
 
 		AddItems - Adds items to your player.
 			added_items - Comma delimited list for items to be added. Must have matching entry in the added_item_counts.
@@ -9483,6 +9501,14 @@
 			new_name - The name to show on the signs around the crater. You can use {viewer} for the viewer who triggered it.
 
 		DropHeldItem - Drops the held item for the target.
+		
+		DropItems - Drops the items for the target.
+			items_location - The location that is affected by this. Can be comma delimited. (Toolbelt, Backpack, Equipment, Held).
+			items_tags - The tag of the items you want drop.
+			drop_sound - The sound to play when the drop happens.
+			replaced_by_item - The item to replace the dropped item with.
+			count_type - The type of count to use (Items,Slots)
+			count - The count of items to drop, if you don't specify a count it will drop all.
 
 		EjectFromVehicle - Causes the targets to be ejected from the vehicle.
 
@@ -9504,6 +9530,10 @@
 			entity_damage - Amount of damage done to the entities.
 			entity_radius - The radius of the entity damage.
 			particle_index - The particle index of the explosion.
+			
+		FailQuest - Causes an active quest to fail.
+			quest - Name of the active quest to fail.
+			remove_quest - Removes the quest from the list on fail.
 
 		FillSafeZone - Fills the safe zone with a specified block.
 			fill_type - The shape which it fills the land claim area. This can be a comma delimited list that it chooses randomly from.
@@ -9586,8 +9616,10 @@
 		RemoveEntities - Removes the target_group entities. This will probably throw a huge error if you try it on the Target.
 
 		RemoveItems - Removes the items from the player.
-			items_location - The location that is affected by this. (Toolbelt, Backpack, Both, Equipment, All).
+			items_location - The location that is affected by this. Can be comma delimited. (Toolbelt, Backpack, Equipment, Held).
 			items_tags - The tag of the items you want removed.
+			count_type - The type of count to use (Items,Slots)
+			count - The count of items to replace, if you don't specify a count it will remove all.
 
 		RemoveSpawnedBlocks - Removes all spawned blocks.
 			target_only - Remove only for the target.
@@ -9605,9 +9637,11 @@
 			single_choice - If more than one entity is being replaced, only choose the zombie type once and use it for all.
 
 		ReplaceItems - Replaces the specified items with another item.
-			items_location - The location that is affected by this. (Toolbelt, Backpack, Both, Equipment, All).
+			items_location - The location that is affected by this. Can be comma delimited. (Toolbelt, Backpack, Equipment, Held).
 			replaced_by_item - The item that you replace the tagged items with.
 			items_tags - The item tag for the items that should be replaced.
+			count_type - The type of count to use (Items,Slots)
+			count - The count of items to replace, if you don't specify a count it will replace all.
 
 		ReplaceItemsContainers - Replaces the contents of nearby containers or containers in the land claim.
 			targeting_type - SafeZone or Distance

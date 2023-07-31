@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iteminfo>
 
+ <animation>
    <!-- For items with weapon hold type=="X" we have a ray cast delay of Y -->
-    <animation>
 	<hold_type id="0" newmodel="false" ray_cast="0.16"  unholster="0.2" two_handed="true" />                  <!-- 0 hand player -->
 	<hold_type id="1" newmodel="false" ray_cast="0.16" holster="0" unholster="0.2" two_handed="true" />       <!-- 1 pistol -->
 	<hold_type id="2" newmodel="false" ray_cast="0.40" holster="0" unholster="0.2" two_handed="true" />       <!-- 2 clubs -->
@@ -86,24 +86,10 @@
 	<hold_type id="83" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 83 pipe revolver -->
 	<hold_type id="84" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 84 pipe shotgun -->
 	<hold_type id="85" newmodel="false" ray_cast="0" holster="0" unholster="0.2" two_handed="true" />         <!-- 85 lever action rifle -->
-    </animation>
-    <!--
-         Add noisy sounds here
-         A range of about 40 is max!
-         Time is the time in seconds the noise is valid.
-         With prio you specify that this sound has prio over other sounds (prio 1 is most important)
-		 Please name the sound EXACTLY like you reference it in items.xml, because there is a string comparison done in the game.
-         The only exceptions to this rule are sounds that are in the folders 'Misc', 'ImpactSurface', 'ThrowImpact' and 'DestroyBlock'.
-		 Please add these sounds WITHOUT any folder name.
+ </animation>
 
-		 NOTE: optional parameter muffled_when_crouched=<0-1> (default is 1) sound travel distance will be multiplied by muffled scale
-		 NOTE: optional parameter hordemeter_player_only="true/false" (default is true) true means the sound will contribute to the meter even if emitted by the a non-player entity (grenades and bombs are not the player entity).
-		 NOTE: optional parameter player_only="true/false" (default is true) false means the sound will be heard by AI even if emitted by a non-player entity.
-
-     -->
-
-        <!-- range is max travel distance of smell in meters
-		     strength is a relative indicator of how strong a smell is compared to other smells
+<!-- OLD - range is max travel distance of smell in meters
+		   strength is a relative indicator of how strong a smell is compared to other smells
 			 speed is how fast the smell travels in meters per second
 
 			 belt_range/belt_strength indicate values when the item is on players belt
@@ -118,7 +104,7 @@
         <smell name="exLargeSmell" range="15" strength="42" speed="15" duration="15" belt_range="50" belt_strength="70" heat_map_strength="0.4" heat_map_time="120" />
         <smell name="fart" range="15" strength="30" speed="15" duration="10" belt_range="10" belt_strength="30" />
     </smell>
-	    -->
+-->
 
 	    <!--
 	    	Trigger Effects

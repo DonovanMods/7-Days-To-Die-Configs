@@ -22,27 +22,27 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 <recipe name="resourcePaint" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
 <recipe name="resourceBone" count="1" tooltip="ttScrapMetalBrass" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
 <!-- * * * * * * * * * * * * forge-emptying recipes: use_ingredient_modifier defaults to true and can disable the CraftingIngredientCount passive * * * * * * * * * * * * -->
-<recipe name="resourceClayLump" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceClayLump" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_clay" count="5"/>
 </recipe>
 
-<recipe name="resourceCrushedSand" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceCrushedSand" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_glass" count="4"/>
 </recipe>
 
-<recipe name="resourceRockSmall" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceRockSmall" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_stone" count="5"/>
 </recipe>
 
-<recipe name="resourceScrapBrass" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceScrapBrass" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_brass" count="1"/>
 </recipe>
 
-<recipe name="resourceScrapIron" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceScrapIron" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_iron" count="1"/>
 </recipe>
 
-<recipe name="resourceScrapLead" count="1" material_based="true" craft_area="forge" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
+<recipe name="resourceScrapLead" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_time="1" craft_exp_gain="0" always_unlocked="true" use_ingredient_modifier="false">
 	<ingredient name="unit_lead" count="1"/>
 </recipe>
 
@@ -407,7 +407,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceFeather" count="80"/>
 </recipe>
 
-<recipe name="ammoDartIron" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="ammoDartIron" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="3"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -1034,7 +1034,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="4"/>
 </recipe>
 
-<!-- <recipe name="drinkJarEmpty" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> -->
+<!-- <recipe name="drinkJarEmpty" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> -->
 	<!-- <ingredient name="unit_glass" count="10"/> -->
 	<!-- <ingredient name="unit_clay" count="1"/> -->
 	<!-- <effect_group> -->
@@ -1042,7 +1042,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<!-- </effect_group> -->
 <!-- </recipe> -->
 
-<!-- <recipe name="drinkCanEmpty" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> -->
+<!-- <recipe name="drinkCanEmpty" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> -->
 	<!-- <ingredient name="unit_iron" count="5"/> -->
 	<!-- <ingredient name="unit_clay" count="1"/> -->
 	<!-- <effect_group> -->
@@ -1248,7 +1248,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="foodRawMeat" count="5"/>
 	<ingredient name="foodEgg" count="2"/>
 	<effect_group>
-		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1" tags="foodRawMeat"/>
+		<passive_effect name="CraftingIngredientCount" level="1,3" operation="base_add" value="-1,-2" tags="foodRawMeat"/>
 	</effect_group>
 </recipe>
 
@@ -1578,7 +1578,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="glassBulletproofBlockVariantHelper" count="1" material_based="true" craft_area="forge" craft_tool="toolForgeCrucible" tags="perkAdvancedEngineering">
+<recipe name="glassBulletproofBlockVariantHelper" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_tool="toolForgeCrucible" tags="perkAdvancedEngineering">
 	<ingredient name="unit_glass" count="110"/>
 	<ingredient name="unit_stone" count="10"/>
 	<ingredient name="unit_lead" count="40"/>
@@ -1589,7 +1589,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="glassBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="glassBlockVariantHelper" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_glass" count="14"/>
 	<ingredient name="unit_lead" count="5"/>
 	<ingredient name="unit_clay" count="2"/>
@@ -1885,7 +1885,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceYuccaFibers" count="10"/>
 </recipe>
 
-<recipe name="ironBars" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="ironBars" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="100"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
@@ -1893,7 +1893,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="ironBarsCentered" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="ironBarsCentered" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="100"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
@@ -1901,7 +1901,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="ironBarsCNR" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="ironBarsCNR" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="100"/>
 	<ingredient name="unit_clay" count="20"/>
 	<effect_group>
@@ -2302,7 +2302,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<!-- <recipe name="metalSignLetterNumberBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> -->
+<!-- <recipe name="metalSignLetterNumberBlockVariantHelper" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> -->
 	<!-- <ingredient name="unit_iron" count="15"/> -->
 	<!-- <ingredient name="unit_clay" count="3"/> -->
 	<!-- <effect_group> -->
@@ -2310,7 +2310,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<!-- </effect_group> -->
 <!-- </recipe> -->
 
-<recipe name="metalTrussingIBeamBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="metalTrussingIBeamBlockVariantHelper" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="40"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
@@ -3139,7 +3139,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceArrowHeadIron" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceArrowHeadIron" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="2"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -3147,7 +3147,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceArrowHeadSteelAP" count="1" material_based="true" craft_area="forge" craft_tool="toolForgeCrucible" tags="perkAdvancedEngineering">
+<recipe name="resourceArrowHeadSteelAP" count="1" material_based="true" craft_area="forge" is_trackable="false" craft_tool="toolForgeCrucible" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="5"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -3155,7 +3155,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceBuckshot" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceBuckshot" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_lead" count="3"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -3163,7 +3163,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceBulletCasing" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceBulletCasing" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_brass" count="5"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -3171,7 +3171,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceBulletTip" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceBulletTip" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_lead" count="2"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>
@@ -3179,7 +3179,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceCement" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceCement" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_stone" count="10"/>
 	<effect_group>
 		<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_stone"/>
@@ -3214,7 +3214,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceCloth" count="10"/>
 </recipe>
 
-<recipe name="resourceForgedIron" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceForgedIron" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="10"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
@@ -3222,7 +3222,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceForgedSteel" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering" craft_tool="toolForgeCrucible">
+<recipe name="resourceForgedSteel" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering" craft_tool="toolForgeCrucible">
 	<ingredient name="unit_iron" count="20"/>
 	<ingredient name="unit_clay" count="10"/>
 	<effect_group>
@@ -3268,7 +3268,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourcePotassiumNitratePowder" count="2"/>
 </recipe>
 
-<recipe name="resourceMetalPipe" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceMetalPipe" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="10"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
@@ -3287,7 +3287,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceAcid" count="1"/>
 </recipe>
 
-<recipe name="resourceNail" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="resourceNail" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="1"/>
 	<ingredient name="unit_clay" count="1"/>
 </recipe>
@@ -3317,7 +3317,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
-<recipe name="resourceRocketCasing" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering,learnable">
+<recipe name="resourceRocketCasing" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering,learnable">
 	<ingredient name="unit_iron" count="50"/>
 	<ingredient name="unit_clay" count="30"/>
 	<effect_group>
@@ -3325,7 +3325,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="resourceRocketTip" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering,learnable">
+<recipe name="resourceRocketTip" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering,learnable">
 	<ingredient name="unit_lead" count="50"/>
 	<ingredient name="unit_clay" count="30"/>
 	<effect_group>
@@ -3504,7 +3504,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourcePaper" count="10"/>
 </recipe>
 
-<recipe name="toolAnvil" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering,learnable">
+<recipe name="toolAnvil" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering,learnable">
 	<ingredient name="unit_iron" count="1000"/>
 	<ingredient name="unit_clay" count="100"/>
 	<effect_group>
@@ -3528,7 +3528,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceNail" count="5"/>
 </recipe>
 
-<recipe name="toolCookingGrill" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="toolCookingGrill" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="25"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
@@ -3536,7 +3536,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="toolCookingPot" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="toolCookingPot" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="25"/>
 	<ingredient name="unit_clay" count="5"/>
 	<effect_group>
@@ -3544,7 +3544,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="trapGlassBusinessCTRSheet1x1" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> <!-- trap -->
+<recipe name="trapGlassBusinessCTRSheet1x1" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> <!-- trap -->
 	<ingredient name="unit_glass" count="20"/>
 	<ingredient name="unit_stone" count="5"/>
 	<ingredient name="unit_lead" count="5"/>
@@ -3554,7 +3554,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	</effect_group>
 </recipe>
 
-<recipe name="trapGlassBusinessSheet1x1" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering"> <!-- trap -->
+<recipe name="trapGlassBusinessSheet1x1" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering"> <!-- trap -->
 	<ingredient name="unit_glass" count="20"/>
 	<ingredient name="unit_stone" count="5"/>
 	<ingredient name="unit_lead" count="5"/>
@@ -3816,7 +3816,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceWood" count="100"/>
 </recipe>
 
-<recipe name="metalFenceRailingTrellisSheetBlockVariantHelper" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+<recipe name="metalFenceRailingTrellisSheetBlockVariantHelper" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
 	<ingredient name="unit_iron" count="15"/>
 	<ingredient name="unit_clay" count="1"/>
 	<effect_group>

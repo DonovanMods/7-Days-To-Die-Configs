@@ -864,6 +864,13 @@
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$treatedCritHealing" operation="set" value="1.5">
 				<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/></triggered_effect>
 		</effect_group>
+		
+		<effect_group name="corpseRemoval">
+			<requirement name="IsCorpse" target="other"/>
+			<requirement name="HoldingItemHasTags" tags="corpseRemoval"/>
+			<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="300"/>
+		</effect_group>
 	</buff>
 
 	<!-- *** buffDeathFoodDrinkAdjust -->
@@ -2148,14 +2155,14 @@
 			<requirement name="HasBuff" buff="buffInjuryStunned01"/>
 			<requirement name="!HasBuff" buff="buffDrugPainkillers"/>
 			<requirement name="!HasBuff" buff="buffInjuryStunned01Cooldown"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryConcussion"/>
 		</effect_group>
 
 		<effect_group>
 			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/> -->
 			<requirement name="CVarCompare" cvar="noTeethNoInfection" operation="LT" value="1"/>
-				<passive_effect name="BuffResistance" operation="base_add" value="-.26" tags="buffInfectionCatch"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="-.1" tags="buffInfectionCatch"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
 		</effect_group>
 
@@ -2163,7 +2170,7 @@
 			<requirement name="HasBuff" buff="buffLegSprained"/>
 			<requirement name="!HasBuff" buff="buffArmSprained"/>
 			<requirement name="CVarCompare" cvar=".limbSprainedCooldownCounter" operation="LTE" value="0"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="22"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLegBroken"/>
 		</effect_group>
 
@@ -2171,7 +2178,7 @@
 			<requirement name="HasBuff" buff="buffArmSprained"/>
 			<requirement name="!HasBuff" buff="buffLegSprained"/>
 			<requirement name="CVarCompare" cvar=".limbSprainedCooldownCounter" operation="LTE" value="0"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="22"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffArmBroken"/>
 		</effect_group>
 
@@ -2179,7 +2186,7 @@
 			<requirement name="HasBuff" buff="buffLegSprained"/>
 			<requirement name="HasBuff" buff="buffArmSprained"/>
 			<requirement name="CVarCompare" cvar=".limbSprainedCooldownCounter" operation="LTE" value="0"/>
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="22"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="true" buff="buffLegBroken,buffArmBroken" weights="45,55"/>
 		</effect_group>
 	</buff>
@@ -2210,6 +2217,10 @@
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingParticle"/>
+		</effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingCooldown"/>
 		</effect_group>
 	</buff>
 
@@ -2242,6 +2253,23 @@
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingParticle"/>
+		</effect_group>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingCooldown"/>
+		</effect_group>	
+	</buff>
+
+	<!-- *** buffInjuryBleedingCooldown -->
+	<!-- TRIGGERED_BY: Buffs = Various bleed buffs -->
+	<!-- Used to avoid repeating bleeding buffs too often -->
+	<buff name="buffInjuryBleedingCooldown" hidden="false">
+		<duration value="3"/>
+		<stack_type value="ignore"/>
+
+		<effect_group>
+			<!-- Increase buff resistance of the tagged buffs -->
+			<passive_effect name="BuffResistance" operation="base_add" value="5" tags="buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
 		</effect_group>
 	</buff>
 
@@ -2336,11 +2364,11 @@
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryAbrasion"/>
 		</effect_group>
 
-		<effect_group>
+		<!-- <effect_group> -->
 		<!-- A random roll to add buffInjuryBleedingTwo with the abrasion -->
-			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingTwo"/>
-		</effect_group>
+			<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/> -->
+				<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingTwo"/> -->
+		<!-- </effect_group> -->
 
 		<!-- abrasionZombieHit comes from the various zombie hands in items.xml -->
 		<!-- abrasionZombieHit is added to abrasionCounter each time buffAbrasionCatch is rolled -->
@@ -2427,7 +2455,7 @@
 	<!-- *** buffInjuryAbrasionTreated -->
 	<!-- TRIGGERED_BY: Items = Various healing items -->
 	<!-- Treated abrasion cycle -->
-	<buff name="buffInjuryAbrasionTreated" name_key="buffInjuryAbrasionTreatedName" description_key="buffInjuryAbrasionTreatedDesc" icon="ui_game_symbol_leg_treated" icon_color="255,128,0">
+	<buff name="buffInjuryAbrasionTreated" name_key="buffInjuryAbrasionTreatedName" description_key="buffInjuryAbrasionTreatedDesc" icon="ui_game_symbol_leg_treated">
 		<damage_type value="Bashing"/>
 		<stack_type value="replace"/>
 		<duration value="0"/>
@@ -5504,6 +5532,8 @@
 					<requirement name="HasBuff" buff="buffDysentery01GetBetter"/>
 					<requirement name="!HasBuff" buff="buffDysentery01GetBetterDiarrhea"/>
 				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
 		</effect_group>
 
 		<effect_group name="poop attacks 2">
@@ -5523,6 +5553,8 @@
 					</triggered_effect>
 					<!-- Set the next poop attack -->
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dysenteryNextPoopAttack" operation="set" value="@.dummy"/>
+					
+					<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
 		</effect_group>
 
 		<effect_group name="shut down">
@@ -5653,7 +5685,7 @@
 	<!-- *** buffDysentery01GetBetter -->
 	<!-- TRIGGERED_BY: Buffs = buffDysenteryMain -->
 	<!-- Setup the display and remove the untreated buff -->
-	<buff name="buffDysentery01GetBetter" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" icon="ui_game_symbol_dysentery_better" icon_color="255,128,0">
+	<buff name="buffDysentery01GetBetter" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" icon="ui_game_symbol_dysentery_better">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -6005,8 +6037,8 @@
 	<!-- *** buffInfection01Untreated -->
 	<!-- TRIGGERED_BY: Buffs = buffInfectionMain -->
 	<!-- A mild infection -->
-	<!-- Displays a white biohazard icon -->
-	<buff name="buffInfection01Untreated" name_key="buffInfection01UntreatedName" description_key="buffInfection01UntreatedDesc" tooltip_key="buffInfection01UntreatedTooltip" icon="ui_game_symbol_infection">
+	<!-- Displays an ORANGE biohazard icon -->
+	<buff name="buffInfection01Untreated" name_key="buffInfection01UntreatedName" description_key="buffInfection01UntreatedDesc" tooltip_key="buffInfection01UntreatedTooltip" icon="ui_game_symbol_infection" icon_color="255,128,0">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -6046,8 +6078,8 @@
 	<!-- *** buffInfection02Untreated -->
 	<!-- TRIGGERED_BY: Buffs = buffInfectionMain -->
 	<!-- A serious infection -->
-	<!-- Displays an ORANGE biohazard icon -->
-	<buff name="buffInfection02Untreated" name_key="buffInfection02UntreatedName" description_key="buffInfection02UntreatedDesc" icon="ui_game_symbol_infection" icon_color="255,128,0">
+	<!-- Displays a RED biohazard icon -->
+	<buff name="buffInfection02Untreated" name_key="buffInfection02UntreatedName" description_key="buffInfection02UntreatedDesc" icon="ui_game_symbol_infection" icon_color="255,0,0">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -6072,7 +6104,7 @@
 	<!-- *** buffInfection02GetBetter -->
 	<!-- TRIGGERED_BY: Buffs = buffInfectionMain -->
 	<!-- Curing a serious infection -->
-	<buff name="buffInfection02GetBetter" name_key="buffInfection02GetBetterName" description_key="buffInfection02GetBetterDesc" icon="ui_game_symbol_infection_better" icon_color="255,128,0">
+	<buff name="buffInfection02GetBetter" name_key="buffInfection02GetBetterName" description_key="buffInfection02GetBetterDesc" icon="ui_game_symbol_infection_better">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -6096,7 +6128,7 @@
 	<!-- TRIGGERED_BY: Buffs = buffInfectionMain -->
 	<!-- A life threatening serious infection -->
 	<!-- Displays an RED biohazard icon -->
-	<buff name="buffInfection03Untreated" name_key="buffInfection03UntreatedName" description_key="buffInfection03UntreatedDesc" icon="ui_game_symbol_infection" icon_color="255,0,0">
+	<buff name="buffInfection03Untreated" name_key="buffInfection03UntreatedName" description_key="buffInfection03UntreatedDesc" icon="ui_game_symbol_infection" icon_color="255,0,0" icon_blink="true">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -6124,7 +6156,7 @@
 	<!-- *** buffInfection03GetBetter -->
 	<!-- TRIGGERED_BY: Buffs = buffInfectionMain -->
 	<!-- Curing a life threatening severe infection -->
-	<buff name="buffInfection03GetBetter" name_key="buffInfection03GetBetterName" description_key="buffInfection03GetBetterDesc" icon="ui_game_symbol_infection_better" icon_color="255,0,0">
+	<buff name="buffInfection03GetBetter" name_key="buffInfection03GetBetterName" description_key="buffInfection03GetBetterDesc" icon="ui_game_symbol_infection_better">
 		<damage_type value="Disease"/>
 		<stack_type value="ignore"/>
 		<duration value="0"/>
@@ -11841,7 +11873,8 @@ AddBuff:				target, buff   - this default mode adds 1 buff. It can fail (be resi
 					33, 26, 20, 13, and 6 percent chance on those.
 
 					fireOneBuff="true" obviously means that it does NOT fire them all and uses weights instead.
-					If false it will try to fire each of them based on rolling 0-1 and the adjusted weight value so you can fire multiple potential buffs with one action.
+					If fireOneBuff="false" it will try to fire each of them based on rolling 0-1 and the weight value so you can fire multiple potential buffs with one action.
+					If this is the case, the weights should be between 0-1, representing the probability for that buff to be added.
 
 					With no weights and no fireOneBuff it will simply proc all buffs in the list.
 
