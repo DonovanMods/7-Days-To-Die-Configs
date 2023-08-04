@@ -1094,7 +1094,8 @@
 		
 			<rect name="windowbuttons" pos="0, -820" visible="{isprefilteredsearch}">
 				<simplebutton name="btnBack" depth="3" pos="0, 0" width="200" height="36" font_size="32" caption_key="xuiBack" upper_case="true" />
-				<simplebutton name="btnStartSearch" depth="3" pos="730, 0" pivot="right" width="300" height="36" font_size="32" caption_key="xuiServerStartSearch" upper_case="true" />
+				<simplebutton name="btnDirectConnect" depth="3" pos="280, 0" pivot="left" width="200" height="36" font_size="32" caption_key="xuiServerBrowserDirectConnect" upper_case="true" />
+				<simplebutton name="btnStartSearch" depth="3" pos="730, 0" pivot="right" width="230" height="36" font_size="32" caption_key="xuiServerStartSearch" upper_case="true" />
 			</rect>
 		</panel>
 
