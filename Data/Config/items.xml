@@ -2411,14 +2411,14 @@
 		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
 		<property name="UsePowerAttackAnimation" value="true"/>
 	</property>
-	
+
 	<effect_group name="meleeWpnSpearT0StoneSpear">
 		<passive_effect name="TargetArmor" operation="perc_add" value="-.3" tags="perkJavelinMaster"/><display_value name="dTargetArmor" value="-.3"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkJavelinMaster,perkFlurryOfPerception"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="18.5" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="100,200" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -2487,7 +2487,7 @@
 		<passive_effect name="StaminaLoss" operation="base_set" value="20.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="200,400" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="2,2,2,3,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -2554,7 +2554,7 @@
 		<passive_effect name="StaminaLoss" operation="base_set" value="22.4" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="400,800" tier="1,6" tags="perkJavelinMaster"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkJavelinMaster"/>
-		<passive_effect name="BlockRange" operation="base_set" value="2" tags="perkJavelinMaster"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkJavelinMaster"/>
 		<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,4,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
@@ -11436,7 +11436,8 @@ perkNightStalkerSilentNight
 	<effect_group tiered="false">
 		<passive_effect name="HypothermalResist" operation="base_add" value="1.8,4.2"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
-		<passive_effect name="StaminaChangeOT" operation="perc_add" value=".2" tags="running"/><display_value name="dStaminaRegen" value=".2"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value=".2" tags="running"/>
+		<display_value name="dStaminaRegen" value=".2"/>
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 	</effect_group>
 </item>
