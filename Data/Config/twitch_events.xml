@@ -30,6 +30,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown (excludes starting cooldown), if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		cooldown_add - Adds the amount to the cooldown.
 		presets - Comma delimited list of presets this is used in. 
 
@@ -54,6 +55,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown (excludes starting cooldown), if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		presets - Comma delimited list of presets this is used in. 
 		sub_tier - The Sub Tier they are subscribed at. (Any, Prime, Tier1, Tier2, Tier3)
 		
@@ -91,6 +93,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown (excludes starting cooldown), if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		presets - Comma delimited list of presets this is used in. 
 		
 	-->
@@ -153,6 +156,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown (excludes starting cooldown), if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		presets - Comma delimited list of presets this is used in. 
 		auto_create - If the redemption should be created/removed automatically. (Defaults to True)
 		
@@ -186,6 +190,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown, if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		presets - Comma delimited list of presets this is used in. 
 
 	-->
@@ -228,14 +233,15 @@
 		cooldown_allowed - If it's allowed to be used during cooldown, if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		presets - Comma delimited list of presets this is used in. 
 
 	-->
 
 	<!-- <charity_event event_title="Charity Cop" event_name="spawn_cop" start_amount="1" end_amount="101" -->
-		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="1000" sp_add_amount="1000" /> -->
+		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="1000" sp_add_amount="1000" presets="casual,standard,hardcore" /> -->
 	<!-- <charity_event event_title="Charity Demo" event_name="spawn_demo" start_amount="102" end_amount="999" -->
-		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" /> -->
+		<!-- safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" presets="casual,standard,hardcore" /> -->
 	
 	<!-- Hype Train Events
 		
@@ -250,6 +256,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown, if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		reward_amount - The amount of a reward to give if the streamer is killed by this event.
 		reward_type - The type of reward to give. (PP or SP)
 		presets - Comma delimited list of presets this is used in. 
@@ -279,6 +286,7 @@
 		cooldown_allowed - If it's allowed to be used during cooldown, if not it queues.
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
+		bit_pot_add - Adds the amount to the bit pot.
 		reward_amount - The amount of a reward to give if the streamer is killed by this event.
 		reward_type - The type of reward to give. (PP or SP)
 		presets - Comma delimited list of presets this is used in. 

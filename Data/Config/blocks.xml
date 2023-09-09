@@ -1588,6 +1588,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/landClaimBlockPrefab"/>
 	<property name="PlacementDistance" value="25"/>
+	<property name="AllowedRotations" value="No45"/>
 	<property name="Weight" value="0"/>
 	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
@@ -21968,7 +21969,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="birdNest"/>
 	<property name="IndexName" value="quest_feather"/>
-	<property name="Material" value="Mwood_weak"/>
+	<property name="Material" value="MclothStable"/>
+	<property name="MaxDamage" value="50"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="@:Entities/LootContainers/birdnestPrefab.prefab"/>
 	<property name="ModelOffset" value="0,0,0"/>
@@ -22637,6 +22639,24 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="Entities/Debris/pileEmberBurntLogs4NoEmissivePrefab"/>
 	<property name="SortOrder1" value="B277"/>
 	<property name="SortOrder2" value="0007"/>
+</block>
+
+<block name="emberPileTwitch01">
+	<property name="Extends" value="emberPileDeco1"/>
+	<property name="CustomIconTint" value="6441A5"/>
+	<property name="BuffsWhenWalkedOn" value="buffBurningHazardPlayer"/>
+	<dropextendsoff/>
+	<drop event="Destroy" count="0"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<block name="emberPileTwitch02">
+	<property name="Extends" value="emberPileDeco2"/>
+	<property name="CustomIconTint" value="6441A5"/>
+	<property name="BuffsWhenWalkedOn" value="buffBurningHazardPlayer"/>
+	<dropextendsoff/>
+	<drop event="Destroy" count="0"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
 <block name="emberPileLightPOI1">
@@ -40759,9 +40779,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceScrapIron" value="20"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceCloth" count="2,4"/>
-	<drop event="Destroy" name="resourceScrapIron" count="1,10"/>
-	<drop event="Destroy" name="resourceMilitaryFiber" count="1" prob="0.1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceCloth" count="2,4" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="1,10" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceMilitaryFiber" count="1" prob="0.1" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceMilitaryFiber" count="1,2" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Fall" count="0"/>
 	<property name="SortOrder1" value="B414"/>
@@ -64177,7 +64197,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="DowngradeEvent" value="block_car_alarm_start" />
 </block>
 
-<!-- SUCCESSFULLY_LOCK_PICKED_POLICE_CAR_WITH_BONUS_LOOT_LIST -->
+<!-- SUCCESSFULLY_LOCK_PICKED_POLICE_CAR -->
 <block name="cntPoliceCar01PickedLockBonus">
 	<property name="CreativeMode" value="None"/>
 	<property name="Class" value="CarExplodeLoot"/>
@@ -67353,6 +67373,33 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B909"/>
 	<property name="SortOrder2" value="0005"/>
 	<property name="Tags" value="twitchReplace"/>
+</block>
+
+<block name="treeCactusTwitch01">
+	<property name="Extends" value="treeCactus01"/>
+	<property name="Damage" value="15"/>
+	<property name="CustomIconTint" value="6441A5"/>
+	<dropextendsoff/>
+	<drop event="Destroy" count="0"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<block name="treeCactusTwitch02">
+	<property name="Extends" value="treeCactus03"/>
+	<property name="Damage" value="15"/>
+	<property name="CustomIconTint" value="6441A5"/>
+	<dropextendsoff/>
+	<drop event="Destroy" count="0"/>
+	<property name="CreativeMode" value="None"/>
+</block>
+
+<block name="treeCactusTwitch03">
+	<property name="Extends" value="treeCactus05"/>
+	<property name="Damage" value="15"/>
+	<property name="CustomIconTint" value="6441A5"/>
+	<dropextendsoff/>
+	<drop event="Destroy" count="0"/>
+	<property name="CreativeMode" value="None"/>
 </block>
 
 	<!-- *** GRASS -->

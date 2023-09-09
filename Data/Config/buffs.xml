@@ -521,7 +521,7 @@
 			</triggered_effect>
 			-->
 
-			<!-- Initialise perk abilities; buff only works onStack so fire it 2x -->
+			<!-- Initialize perk abilities; buff only works onStack so fire it 2x -->
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
 			<!-- Update cvar driven perks on buying perk levels -->
@@ -884,15 +884,23 @@
 		<!-- Taking care of food/water not being set as required -->
 		<!-- <requirement name="PlayerLevel" operation="Equals" value="1"/>-->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="set" value="25000"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Food" operation="set" value="25000"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Water" operation="set" value="25000"/>
+			
+			<!-- Food and Water now handled by game event on respawn -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Food" operation="set" value="25000"/> -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Water" operation="set" value="25000"/> -->
+			
 			<passive_effect name="PhysicalDamageResist" operation="base_add" value="100" tags="coredamageresist"/>
+		</effect_group>
 
-			<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
-			<triggered_effect trigger="onSelfSecondaryActionStart" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
-			<triggered_effect trigger="onSelfWalk" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
-			<triggered_effect trigger="onSelfRun" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
-			<triggered_effect trigger="onSelfCrouch" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+		<!-- If the respawn is done, remove buffDeathFoodDrinkAdjust -->
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".respawnDone" operation="GTE" value="4"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfWalk" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfRun" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfCrouch" action="RemoveBuff" buff="buffDeathFoodDrinkAdjust"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".respawnDone" operation="set" value="0"/>
 		</effect_group>
 	</buff>
 
@@ -2402,6 +2410,7 @@
 		<duration value="0"/>
 		<display_value value=".abrasionDurationDisplay"/>
 		<display_value_format value="time"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -2461,6 +2470,7 @@
 		<duration value="0"/>
 		<display_value value=".abrasionDurationDisplay"/>
 		<display_value_format value="time"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Remove the untreated abrasion -->
@@ -3630,6 +3640,16 @@
 				<requirement name="HasBuff" buff="buffLegBroken"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="brokenLimbStatus" operation="set" value="2">
 				<requirement name="HasBuff" buff="buffArmBroken"/></triggered_effect>
+			<!-- Heal leg sprains if physician perk level 1 -->
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="brokenLimbStatus" operation="set" value="2">
+				<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="1"/>
+				<requirement name="HasBuff" buff="buffLegSprained"/>
+			</triggered_effect>
+			<!-- Heal arm sprains if physician perk level 1 -->
+			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="brokenLimbStatus" operation="set" value="2">
+				<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="GTE" value="1"/>
+				<requirement name="HasBuff" buff="buffArmSprained"/>
+			</triggered_effect>
 			<!-- On update, reset status -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="brokenLimbStatus" operation="set" value="0">
 				<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="LTE" value="0"/>
@@ -3726,6 +3746,7 @@
 		<duration value="0"/>
 		<display_value value=".fatiguedDurationDisplay"/>
 		<display_value_format value="time"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -3805,6 +3826,7 @@
 		<duration value="0"/>
 		<display_value value=".lacerationDurationDisplay"/>
 		<display_value_format value="time"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -4175,6 +4197,7 @@
 		<duration value="0"/>
 		<display_value value=".concussionDurationDisplay"/>
 		<display_value_format value="time"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -5391,14 +5414,16 @@
 				<!-- <requirement name="StatComparePercModMaxToMax" stat="Food" operation="LTE" value="@$NearDeathRegen"/> -->
 			<!-- </passive_effect>-->
 
-			<passive_effect name="WaterChangeOT" operation="base_add" value="1">
-				<requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="@$NearDeathRegen"/>
-			</passive_effect>
+			<!-- Food and Water now handled by game event on respawn -->
+			<!-- <passive_effect name="WaterChangeOT" operation="base_add" value="1"> -->
+				<!-- <requirement name="StatComparePercCurrentToMax" stat="Water" operation="LTE" value="@$NearDeathRegen"/> -->
+			<!-- </passive_effect> -->
 		</effect_group>
 
 		<effect_group>
+			<!-- Food and Water now handled by game event on respawn -->
 			<!--<requirement name="StatComparePercCurrentToMax" stat="Food" operation="GTE" value="@$NearDeathRegen"/>-->
-			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GTE" value="@$NearDeathRegen"/>
+			<!-- <requirement name="StatComparePercCurrentToMax" stat="Water" operation="GTE" value="@$NearDeathRegen"/> -->
 			<requirement name="StatComparePercCurrentToModMax" stat="Health" operation="GTE" value="@$NearDeathRegen"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNearDeathRegen"/>
 		</effect_group>
@@ -5476,6 +5501,7 @@
 		<stack_type value="ignore"/>
 		<duration value="0"/>
 		<update_rate value="1"/>
+		<tags value="deathpenalty_injured" />
 
 		<!-- Dysentery is fully %-based. $dysenteryCounter is a float % value. Dysentery kills the player when it reaches 100%, cures when it reaches 0%. -->
 		<effect_group>
@@ -5532,8 +5558,22 @@
 					<requirement name="HasBuff" buff="buffDysentery01GetBetter"/>
 					<requirement name="!HasBuff" buff="buffDysentery01GetBetterDiarrhea"/>
 				</triggered_effect>
-				
-				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
+		</effect_group>
+		
+		<effect_group name="poop attack untreated sounds">
+			<requirements>
+				<requirement name="CVarCompare" cvar="$dysenteryCounter" operation="LT" value="@$dysenteryNextPoopAttack"/>
+				<requirement name="HasBuff" buff="buffDysentery01UntreatedDiarrhea"/>
+			</requirements>
+					<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
+		</effect_group>
+
+		<effect_group name="poop attack get better sounds">
+			<requirements>
+				<requirement name="CVarCompare" cvar="$dysenteryCounter" operation="LT" value="@$dysenteryNextPoopAttack"/>
+				<requirement name="HasBuff" buff="buffDysentery01GetBetterDiarrhea"/>
+			</requirements>
+					<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
 		</effect_group>
 
 		<effect_group name="poop attacks 2">
@@ -5553,8 +5593,6 @@
 					</triggered_effect>
 					<!-- Set the next poop attack -->
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$dysenteryNextPoopAttack" operation="set" value="@.dummy"/>
-					
-					<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#sick"/>
 		</effect_group>
 
 		<effect_group name="shut down">
@@ -5619,6 +5657,7 @@
 	<buff name="buffDysenteryAddCure" name_key="buff Dysentery Add Cure" hidden="true" icon="ui_game_symbol_pills">
 		<stack_type value="ignore"/>
 		<duration value=".1"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Setup the cure values. buffDysenteryAddCurePerc set by item used -->
@@ -5674,6 +5713,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".dysenteryDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- No cure or cure wore off. Blink the display and remove the cure -->
@@ -5691,6 +5731,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".dysenteryDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDysentery01Untreated"/>
@@ -5841,6 +5882,7 @@
 		<stack_type value="ignore"/>
 		<duration value="0"/>
 		<update_rate value="1"/>
+		<tags value="deathpenalty_injured" />
 
 		<!-- Infection is fully %-based. infectionCounter is a float % value. Infection kills the player when it reaches 100%, cures when it reaches 0%. -->
 		<effect_group>
@@ -5889,6 +5931,8 @@
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$infectionCureCounter" operation="set" value="0">
 				<requirement name="CVarCompare" cvar="$infectionCureCounter" operation="LT" value="0"/>
 			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="infectionCounterRespawn" operation="set" value="@infectionCounter" />
 		</effect_group>
 
 		<effect_group name="shut down">
@@ -6044,6 +6088,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -6065,6 +6110,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01Untreated"/>
@@ -6085,6 +6131,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -6110,6 +6157,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01Untreated"/>
@@ -6134,6 +6182,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<!-- Blinks the display -->
@@ -6162,6 +6211,7 @@
 		<duration value="0"/>
 		<display_value_key value="{0:0.0}%"/>
 		<display_value value=".infectionDisplayPerc"/>
+		<tags value="deathpenalty_injured" />
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection01Untreated"/>
@@ -6189,6 +6239,9 @@
 
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="99999999"/>
+			<!-- Clear out counters -->
+			<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="infectionCounter" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="infectionCounterRespawn" operation="set" value="0" />
 		</effect_group>
 	</buff>
 
@@ -6787,8 +6840,8 @@
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.218"/>
+			<!-- <passive_effect name="GeneralDamageResist" operation="base_add" value="0.1"/> -->
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.2"/> <!-- 40/180 -->
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01CHTrigger,buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
 		</effect_group>
 	</buff>
@@ -7343,7 +7396,7 @@
 			<passive_effect name="EntityDamage" operation="perc_add" value="4">
 				<requirement name="HoldingItemHasTags" tags="melee"/>
 			</passive_effect>
-			<passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
+			<!-- <passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/> -->
 			<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.6"/>
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
 			<passive_effect name="HealthChangeOT" operation="base_add" value="20"/>
@@ -7501,7 +7554,7 @@
 
 			<passive_effect name="SpreadMultiplierHip" operation="perc_subtract" value="0.25"/>
 			<passive_effect name="SpreadMultiplierAiming" operation="perc_subtract" value="0.25"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/> <!-- buffDrugDiazepam -->
 		</effect_group>
 	</buff>
 
@@ -7532,7 +7585,7 @@
 		<effect_group>
 			<passive_effect name="CarryCapacity" operation="base_set" value="50"/>
 			<passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".05"/>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".04"/> <!-- 30/720 -->
 		</effect_group>
 	</buff>
 
@@ -7562,7 +7615,7 @@
 
 		<effect_group>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".5" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkArchery,admin"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".1"/>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".08"/> <!-- 30/360 -->
 		</effect_group>
 	</buff>
 
@@ -7590,8 +7643,8 @@
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="GeneralDamageResist" operation="base_add" value="0.5"/>
-			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".25"/>
+			<passive_effect name="GeneralDamageResist" operation="base_add" value="0.4"/>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".05"/> <!-- 20/360 -->
 		</effect_group>
 	</buff>
 
@@ -8530,6 +8583,27 @@
 
 		<effect_group>
 			<passive_effect name="HealthLoss" operation="perc_add" value=".25"/>
+		</effect_group>
+	</buff>
+	
+	<!-- *** twitch_buffBlind -->
+	<!-- Temporarily gives the blind vision screen effect -->
+	<buff name="twitch_buffBlind" name_key="TwitchBuff_Blind" description_key="TwitchBuff_BlindDesc" icon="ui_game_symbol_twitch_vision_effects" icon_color="255,175,175">
+		<stack_type value="replace"/>
+		<duration value="10"/>
+		<display_value value="duration"/>
+
+		<effect_group>
+			<!-- Blinks the display -->
+			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="twitch_buffBlind"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="twitch_buffBlind"/>
+
+			<triggered_effect trigger="onSelfBuffFinish" action="PlaySound" sound="twitch_bad_buff_ended" play_in_head="true" />
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="1" effect_name="FadeToBlack"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="FadeToBlack"/>
 		</effect_group>
 	</buff>
 
@@ -9859,7 +9933,7 @@
 		</effect_group>
 
 		<effect_group>
-			<passive_effect name="WaterChangeOT" operation="base_set" value="2"/>
+			<passive_effect name="WaterChangeOT" operation="base_set" value="2"/> <!-- twitch_voteNourish -->
 			<passive_effect name="FoodChangeOT" operation="base_set" value="2"/>
 		</effect_group>
 	</buff>
