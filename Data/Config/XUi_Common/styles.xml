@@ -391,6 +391,55 @@
 		<style_entry name="name" value="lblWindowName"/>
 	</style>
 	
+	<!-- TWITCH PAGING WINDOW -->
+	<style name="twitch.paging.window" type="window">
+		<style_entry name="pos" value="-225,-9"/>
+		<style_entry name="size" value="450,43"/>
+		<style_entry name="anchor" value="CenterTop"/>
+		<style_entry name="normal_color" value="[iconColor]" />
+		<style_entry name="select_color" value="[selectedColor]" />
+		<style_entry name="hover_color" value="[lightGrey]" />
+	</style>
+	
+	<style name="twitch.paging.window.background" type="sprite">
+		<style_entry name="depth" value="1"/>
+		<style_entry name="sprite" value="ui_game_header_fill"/>
+		<style_entry name="type" value="sliced"/>
+		<style_entry name="size" value="444,37"/>
+		<style_entry name="pos" value="3,-3"/>
+		<style_entry name="color" value="[lightGrey]"/>
+	</style>
+	
+	<style name="twitch.paging.window.name.background" type="sprite">
+		<style_entry name="depth" value="2"/>
+		<style_entry name="sprite" value="ui_game_header_insert"/>
+		<style_entry name="type" value="sliced"/>
+		<style_entry name="pivot" value="center"/>
+		<style_entry name="size" value="250,38"/>
+		<style_entry name="pos" value="225,-21"/>
+		<style_entry name="color" value="[black]"/>
+	</style>
+	
+	<style name="twitch.paging.window.name.foreground" type="sprite">
+		<style_entry name="depth" value="3"/>
+		<style_entry name="sprite" value="ui_game_header_fill_gradient"/>
+		<style_entry name="type" value="sliced"/>
+		<style_entry name="pivot" value="center"/>
+		<style_entry name="size" value="250,38"/>
+		<style_entry name="pos" value="225,-21"/>
+		<style_entry name="color" value="[white_half_alpha]"/>
+	</style>
+	
+	<style name="twitch.paging.window.name" type="label">
+		<style_entry name="depth" value="4"/>
+		<style_entry name="font_size" value="36"/>
+		<style_entry name="pivot" value="center"/>
+		<style_entry name="justify" value="center"/>
+		<style_entry name="pos" value="225,-23"/>
+		<style_entry name="name" value="lblWindowName"/>
+		<style_entry name="upper_case" value="true" />
+	</style>
+	
 	<style name="workstation.reserve.name" type="label">
 		<style_entry name="depth" value="2"/>
 		<style_entry name="height" value="24"/>

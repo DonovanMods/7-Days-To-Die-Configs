@@ -211,12 +211,15 @@
 			<window name="windowJournalEntryDescription" />
 		</window_group>
 		
-		<window_group name="twitchInfo" controller="XUiC_TwitchInfoWindowGroup" close_compass_on_open="true">
-			<window name="windowTwitchInfoList" />
-			<window name="windowTwitchInfoDescription" />
-			<window name="windowTwitchInfoHowTo" />
-			<window name="windowNonPagingHeader" />
-		</window_group>
+		<window_group name="twitchWindowpaging" actionSet="false" close_compass_on_open="true">
+            <window name="windowTwitchPagingHeader" anchor="CenterTop"/>
+        </window_group>
+
+        <window_group name="twitchInfo" controller="XUiC_TwitchInfoWindowGroup" close_compass_on_open="true">
+            <window name="windowTwitchInfoList" />
+            <window name="windowTwitchInfoDescription" />
+            <window name="windowTwitchInfoHowTo" />
+        </window_group>
 		
 		<!--#$-IGS BEGIN: Adding window to hold gampad callouts -$#-->
 		<window_group name="CalloutGroup"  actionSet="false">

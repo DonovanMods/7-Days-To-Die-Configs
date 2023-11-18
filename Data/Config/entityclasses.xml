@@ -4969,13 +4969,11 @@
 	<property name="HasDeathAnim" value="false"/>
 	<property name="CanBigHead" value="false" />
 	<property name="AIFeralSense" value="1.6"/>
+	<property name="AIGroupCircle" value="0"/>
 	<property name="AITask-1" value="BreakBlock"/>
-	<property name="AITask-2" value="Territorial"/>
-	<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,20"/>
-	<property name="AITask-4" value="ApproachSpot"/>
-	<property name="AITask-5" value="Look"/>
-	<property name="AITask-6" value="Wander"/>
-	<property name="AITask-7" value=""/>
+	<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityPlayer,100"/>
+	<property name="AITask-3" value="ApproachSpot"/>
+	<property name="AITask-4" value=""/>
 	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityPlayer"/>
 	<property name="AITarget-2" value="BlockingTargetTask"/>
 	<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="flags=player"/>
@@ -4984,6 +4982,10 @@
 
 	<property name="MoveSpeed" value=".4"/>
 	<property name="MoveSpeedAggro" value="1.65, 1.82"/>
+	
+	<property name="MaxViewAngle" value="360"/>
+	<property name="SightRange" value="100"/>
+	<property name="SightLightThreshold" value="-2,-2"/>
 	
 	<!-- Gameplay  -->
 	<property name="HandItem" value="meleeHandAnimalCoyote"/>

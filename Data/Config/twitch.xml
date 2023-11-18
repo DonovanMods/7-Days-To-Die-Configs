@@ -2263,8 +2263,9 @@
 		<cooldown_addition name="twitch_DropHeld" time="60" />
 		<cooldown_addition name="twitch_DropToolbelt" time="60" />
 		<cooldown_addition name="twitch_DestroyToolbelt" time="60" />
-		<cooldown_addition name="twitch_JumbledBackpack" time="420" />
-		<cooldown_addition name="Buff_JumbledBackpack" time="420" is_action="false" />
+		<cooldown_addition name="twitch_DestroyBackpack" time="60" />
+		<cooldown_addition name="twitch_JumbledBackpack" time="60" />
+		<cooldown_addition name="Buff_JumbledBackpack" time="60" is_action="false" />
 	</action>
 	
 	<action name="twitch_UnloadAmmo">
@@ -2434,6 +2435,7 @@
 		<property name="cooldown_blocked" value="true" />
 		<property name="presets" value="standard,hardcore" />
 		
+		<cooldown_addition name="twitch_DestroyBackpack" time="420" />
 		<cooldown_addition name="twitch_Mixup" time="420" />
 		<cooldown_addition name="Buff_JumbledBackpack" time="420" is_action="false" />
 	</action>
@@ -2444,7 +2446,8 @@
 		<property name="title_key" value="TwitchAction_BuffDoubleSpawns" />
 		<property name="description_key" value="TwitchAction_BuffDoubleSpawnsDesc" />
 		<property name="category" value="Special,Debuffs" />
-		<property name="start_gamestage" value="30" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="buff_doublespawns" />
 		<property name="point_type" value="Bits" />
 		<property name="default_cost" value="400" />
@@ -2452,7 +2455,6 @@
 		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="vote_cooldown_add" value="30" />
-		<property name="presets" value="hardcore" />
 		<property name="streamer_only" value="true" />
 	</action>
 	
@@ -2926,6 +2928,209 @@
 		<property name="min_respawn_count" value="3" />
 		<property name="max_respawn_count" value="3" />
 		<property name="presets" value="standard,hardcore" />
+	</action>
+	
+	<action name="twitch_hordeChickens">
+		<property name="command" value="#horde_chickens" />
+		<property name="command_key" value="TwitchAction_SpawnHordeChickensCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeChickens" />
+		<property name="description_key" value="TwitchAction_SpawnHordeChickensDesc" />
+		<property name="event_name" value="horde_chickens" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="10" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="1200" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="100" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeBoars">
+		<property name="command" value="#horde_boars" />
+		<property name="command_key" value="TwitchAction_SpawnHordeBoarsCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeBoars" />
+		<property name="description_key" value="TwitchAction_SpawnHordeBoarsDesc" />
+		<property name="event_name" value="horde_boars" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="35" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="1500" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="150" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeWolves">
+		<property name="command" value="#horde_wolves" />
+		<property name="command_key" value="TwitchAction_SpawnHordeWolvesCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeWolves" />
+		<property name="description_key" value="TwitchAction_SpawnHordeWolvesDesc" />
+		<property name="event_name" value="horde_wolves" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="30" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="2250" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="200" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeBears">
+		<property name="command" value="#horde_bears" />
+		<property name="command_key" value="TwitchAction_SpawnHordeBearsCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeBears" />
+		<property name="description_key" value="TwitchAction_SpawnHordeBearsDesc" />
+		<property name="event_name" value="horde_bears" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="80" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="2500" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="250" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeZombies">
+		<property name="command" value="#horde_zombies" />
+		<property name="command_key" value="TwitchAction_SpawnHordeZombiesCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeZombies" />
+		<property name="description_key" value="TwitchAction_SpawnHordeZombiesDesc" />
+		<property name="event_name" value="horde_zombies" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="10" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="1000" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="100" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeZombiesFeral">
+		<property name="command" value="#horde_zombies" />
+		<property name="command_key" value="TwitchAction_SpawnHordeZombiesFeralCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeZombiesFeral" />
+		<property name="description_key" value="TwitchAction_SpawnHordeZombiesFeralDesc" />
+		<property name="event_name" value="horde_ferals" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="50" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="1500" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="150" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesRad" time="30" />
+	</action>
+	
+	<action name="twitch_hordeZombiesRad">
+		<property name="command" value="#horde_rads" />
+		<property name="command_key" value="TwitchAction_SpawnHordeZombiesRadCommand" />
+		<property name="title_key" value="TwitchAction_SpawnHordeZombiesRad" />
+		<property name="description_key" value="TwitchAction_SpawnHordeZombiesRadDesc" />
+		<property name="event_name" value="horde_rads" />
+		<property name="category" value="Spawns" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="90" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="2000" />
+		<property name="is_positive" value="false" />
+		<property name="add_cooldown" value="true" />
+		<property name="cooldown_add_amount" value="200" />
+		<property name="cooldown" value="30" />
+		<property name="cooldown_blocked" value="true" />
+		<property name="waiting_blocked" value="true" />
+		<property name="vote_cooldown_add" value="30" />
+		<property name="min_respawn_count" value="3" />
+		<property name="max_respawn_count" value="3" />
+		
+		<cooldown_addition name="twitch_hordeChickens" time="30" />
+		<cooldown_addition name="twitch_hordeBoars" time="30" />
+		<cooldown_addition name="twitch_hordeWolves" time="30" />
+		<cooldown_addition name="twitch_hordeBears" time="30" />
+		<cooldown_addition name="twitch_hordeZombies" time="30" />
+		<cooldown_addition name="twitch_hordeZombiesFeral" time="30" />
 	</action>
 	
 	<action name="twitch_WeatherRain">
@@ -3402,6 +3607,40 @@
 		<cooldown_addition name="twitch_DropToolbelt" time="60" />
 	</action>
 	
+	<action name="twitch_DestroyBackpack">
+		<property name="command" value="#destroy_backpack" />
+		<property name="command_key" value="TwitchAction_ActionDestroyBackpackCommand" />
+		<property name="title_key" value="TwitchAction_ActionDestroyBackpack" />
+		<property name="description_key" value="TwitchAction_ActionDestroyBackpackDesc" />
+		<property name="category" value="Special" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="10" />
+		<property name="event_name" value="action_destroybackpack" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="3000" />
+		<property name="is_positive" value="false" />
+		<property name="cooldown" value="300" />
+		<property name="cooldown_blocked" value="true" />
+		
+		<cooldown_addition name="twitch_Mixup" time="60" />
+	</action>
+	
+	<action name="twitch_DestroyArmor">
+		<property name="command" value="#destroy_armor" />
+		<property name="command_key" value="TwitchAction_ActionDestroyArmorCommand" />
+		<property name="title_key" value="TwitchAction_ActionDestroyArmor" />
+		<property name="description_key" value="TwitchAction_ActionDestroyArmorDesc" />
+		<property name="category" value="Special" />
+		<property name="display_category" value="Extras" />
+		<property name="start_gamestage" value="10" />
+		<property name="event_name" value="action_destroyequipment" />
+		<property name="point_type" value="Bits" />
+		<property name="default_cost" value="1000" />
+		<property name="is_positive" value="false" />
+		<property name="cooldown" value="300" />
+		<property name="cooldown_blocked" value="true" />
+	</action>
+	
 	<action name="twitch_ShieldEnemies">
 		<property name="command" value="#shield_enemies" />
 		<property name="command_key" value="TwitchAction_ShieldEnemiesCommand" />
@@ -3519,6 +3758,11 @@
 		<cooldown_addition name="twitch_buffPainting" time="60" />
 		<cooldown_addition name="twitch_buffHeadshotOnly" time="60" />
 		<cooldown_addition name="twitch_DontMiss" time="60" />
+		
+		<cooldown_addition name="twitch_Minefield" time="30" />
+		<cooldown_addition name="twitch_SpikeTraps" time="30" />
+		<cooldown_addition name="twitch_Cacti" time="30" />
+		<cooldown_addition name="twitch_EmberPiles" time="30" />
 	</action>
 	
 	<action name="twitch_TeleportShort">
@@ -3535,7 +3779,11 @@
 		<property name="is_positive" value="false" />
 		<property name="special_requirement" value="NoSpawnedEntities,NotOnQuest,NotInLandClaim" />
 		<property name="cooldown_blocked" value="true" />
-		<property name="cooldown" value="600" />
+		<property name="cooldown" value="60" />
+		
+		<cooldown_addition name="twitch_TeleportMedium" time="10" />
+		<cooldown_addition name="twitch_TeleportLong" time="10" />
+		<cooldown_addition name="twitch_TeleportUp" time="10" />
 	</action>
 	
 	<action name="twitch_TeleportMedium" extends="twitch_TeleportShort">
@@ -3545,6 +3793,11 @@
 		<property name="description_key" value="TwitchAction_ActionTeleportMediumDesc" />
 		<property name="event_name" value="action_teleport_medium" />
 		<property name="default_cost" value="500" />
+		<property name="cooldown" value="120" />
+		
+		<cooldown_addition name="twitch_TeleportShort" time="10" />
+		<cooldown_addition name="twitch_TeleportLong" time="10" />
+		<cooldown_addition name="twitch_TeleportUp" time="10" />
 	</action>
 	
 	<action name="twitch_TeleportLong" extends="twitch_TeleportShort">
@@ -3554,6 +3807,26 @@
 		<property name="description_key" value="TwitchAction_ActionTeleportLongDesc" />
 		<property name="event_name" value="action_teleport_long" />
 		<property name="default_cost" value="1000" />
+		<property name="cooldown" value="180" />
+		
+		<cooldown_addition name="twitch_TeleportShort" time="10" />
+		<cooldown_addition name="twitch_TeleportMedium" time="10" />
+		<cooldown_addition name="twitch_TeleportUp" time="10" />
+	</action>
+	
+	<action name="twitch_TeleportUp" extends="twitch_TeleportShort">
+		<property name="command" value="#teleport_up" />
+		<property name="command_key" value="TwitchAction_ActionTeleportUpCommand" />
+		<property name="title_key" value="TwitchAction_ActionTeleportUp" />
+		<property name="description_key" value="TwitchAction_ActionTeleportUpDesc" />
+		<property name="event_name" value="action_teleport_up" />
+		<property name="default_cost" value="250" />
+		<property name="special_requirement" value="NoSpawnedEntities,NotOnQuest,NotInLandClaim,NotOnVehicle" />
+		<property name="cooldown" value="30" />
+		
+		<cooldown_addition name="twitch_TeleportShort" time="10" />
+		<cooldown_addition name="twitch_TeleportMedium" time="10" />
+		<cooldown_addition name="twitch_TeleportLong" time="10" />
 	</action>
 	
 	<action name="twitch_Lost">
@@ -4093,6 +4366,7 @@
 		</requirement>
 		
 		<cooldown_addition name="twitch_Mixup" time="420" />
+		<cooldown_addition name="twitch_DestroyBackpack" time="420" />
 		<cooldown_addition name="twitch_JumbledBackpack" time="420" />
 	</vote_entry>
 	

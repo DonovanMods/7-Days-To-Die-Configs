@@ -4700,10 +4700,10 @@
 		<property name="Particles_muzzle_fire" value="gunfire_AK47"/>
 		<property name="Particles_muzzle_fire_fpv" value="gunfire_AK47_fpv"/>
 		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
-                <property name="triggerEffectTriggerPullDualsense" value="RifleTrigger"/>
-                <property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
-                <property name="triggerEffectTriggerShootDualsense" value="MGShoot"/>
-                <property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
+		<property name="triggerEffectTriggerPullDualsense" value="RifleTrigger"/>
+		<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+		<property name="triggerEffectTriggerShootDualsense" value="MGShoot"/>
+		<property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
 	</property>
 	<property class="Action1">
 		<property name="Class" value="Zoom"/>
@@ -7215,7 +7215,6 @@
 	<effect_group name="ammoShotgunSlug" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="102" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkBoomstick"/>
-		<passive_effect name="BlockDamage" operation="base_add" value="200" tags="wood"/>
 		<passive_effect name="RoundRayCount" operation="base_set" value="1" tags="perkBoomstick"/>
 		<passive_effect name="MaxRange" operation="base_set" value="18" tags="perkBoomstick"/>
 		<passive_effect name="DamageFalloffRange" operation="base_set" value="9" tags="perkBoomstick"/>
@@ -8230,6 +8229,7 @@
 	<property name="UnlockedBy" value="perkArtOfMiningPallets"/> <!-- BOOK_PERK -->
 	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="5"/>
+	<property name="EconomicValue" value="6000"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property class="Action0">
@@ -8244,6 +8244,7 @@
 <item name="resourceWoodBundle">
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="resourceWood"/>
+	<property name="EconomicValue" value="3000"/>
 	<property class="Action0">
 		<property name="Create_item" value="resourceWood"/>
 		<property name="Create_item_count" value="6000"/>
@@ -8299,6 +8300,7 @@
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="ammoGasCan"/>
 	<property name="UnlockedBy" value="craftingVehicles"/> <!-- perkGreaseMonkey -->
+	<property name="EconomicValue" value="1500"/>
 	<property class="Action0">
 		<property name="Create_item" value="ammoGasCan"/>
 		<property name="Create_item_count" value="5000"/>
@@ -8310,6 +8312,7 @@
 	<property name="Extends" value="resourceRockSmallBundle"/>
 	<property name="CustomIcon" value="resourceGunPowder"/>
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert -->
+	<property name="EconomicValue" value="1000"/>
 	<property class="Action0">
 		<property name="Create_item" value="resourceGunPowder"/>
 		<property name="Create_item_count" value="1000"/>

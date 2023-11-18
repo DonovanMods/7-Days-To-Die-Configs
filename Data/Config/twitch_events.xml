@@ -32,6 +32,7 @@
 		pimp_pot_add - Adds the amount to the pimp pot.
 		bit_pot_add - Adds the amount to the bit pot.
 		cooldown_add - Adds the amount to the cooldown.
+		
 		presets - Comma delimited list of presets this is used in. 
 
 	-->
@@ -56,6 +57,7 @@
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
 		bit_pot_add - Adds the amount to the bit pot.
+		rewards_bit_pot - Rewards the bit pot when the streamer is killed by this event.
 		presets - Comma delimited list of presets this is used in. 
 		sub_tier - The Sub Tier they are subscribed at. (Any, Prime, Tier1, Tier2, Tier3)
 		
@@ -94,6 +96,7 @@
 		vote_allowed - If it's allowed to be used during vote event, if not it queues.
 		pimp_pot_add - Adds the amount to the pimp pot.
 		bit_pot_add - Adds the amount to the bit pot.
+		rewards_bit_pot - Rewards the bit pot when the streamer is killed by this event.
 		presets - Comma delimited list of presets this is used in. 
 		
 	-->
@@ -169,7 +172,7 @@
 	-->
 
 	<channel_point_event channel_point_title="7DTD: Mystery Supplies" channel_point_title_key="TwitchEventChannelPointMysteryTitle" event_title="Mystery Supplies" event_title_key="TwitchEventChannelPointMystery" event_name="mystery_channelpoint"
-		safe_allowed="true" vote_allowed="true" cost="500" global_cooldown="300" presets="casual,standard" />
+		safe_allowed="true" vote_allowed="true" cost="500" global_cooldown="900" presets="casual,standard" />
 
 	<channel_point_event channel_point_title="7DTD: 500 PP" channel_point_title_key="TwitchEventChannelPointPPTitle" event_title="Channel Point PP" event_title_key="TwitchEventChannelPointPP" starting_cooldown_allowed="true" pp_add_amount="500" presets="casual,standard,hardcore"
 		cost="1000" max_per_user_per_stream="1" />

@@ -52102,7 +52102,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceForgedSteel" value="4"/>
 	</property>
 	<property name="UpgradeSound" value="place_block_metal"/>
-	<property name="DowngradeBlock" value="ladderMetal"/>
 	<drop event="Harvest" name="resourceScrapIron" count="15" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder1" value="B500"/>

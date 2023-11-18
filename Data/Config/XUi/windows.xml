@@ -214,6 +214,27 @@
 		<sprite style="nonpaging.window.name.foreground"/>
 		<label style="nonpaging.window.name"/>
 	</window>
+	
+	<window name="windowTwitchPagingHeader" controller="TwitchWindowSelector" style="twitch.paging.window" cursor_area="true">
+	<!--#$-IGS END.-$#-->
+		<sprite style="paging.window.background.border"/>
+		<sprite style="twitch.paging.window.background"/>
+		<sprite style="twitch.paging.window.name.background"/>
+		<sprite style="twitch.paging.window.name.foreground"/>
+		<label style="twitch.paging.window.name"/>
+
+		<!--#$-IGS BEGIN: Increasing collider scale to improve snap responsiveness -$#-->
+		<button pos="31,-21"  name="Actions" sprite="ui_game_symbol_twitch_actions" tooltip_key="TwitchInfo_Actions" style="press, hover, paging.window.icon" />
+		<button pos="76,-21"  name="Votes" sprite="ui_game_symbol_twitch_vote" tooltip_key="TwitchInfo_Votes" style="press, hover, paging.window.icon" />
+		<button pos="376,-21" name="ActionHistory" sprite="ui_game_symbol_twitch_history" tooltip_key="TwitchInfo_ActionHistory" style="press, hover, paging.window.icon" />
+		<button pos="426,-21" name="Leaderboard" sprite="ui_game_symbol_twitch_leaderboard_1" tooltip_key="TwitchInfo_Leaderboard" style="press, hover, paging.window.icon" />
+		<!--*#$-IGS END.-$#-->
+
+		<!--#$-IGS BEGIN: Adding bumper callouts for the paging header -$#-->
+		<gamepad_icon depth="1" name="LB_Icon" size="35,35" pos="-8,-20" pivot="Right" sprite="Button_LB" />
+		<gamepad_icon depth="1" name="RB_Icon" size="35,35" pos="608,-20" pivot="Left" sprite="Button_RB" />
+		<!--*#$-IGS END.-$#-->
+	</window>
 
 	<window name="windowCompass" anchor="CenterTop" pos="-240,-9" width="480" height="43" controller="CompassWindow">
 		<sprite depth="0" sprite="ui_game_header_fill" pos="47,0" width="386" height="43" type="sliced" color="150,150,150,150" />
@@ -692,11 +713,11 @@
 			<rect depth="1" pos="3,0" name="preview" width="147" height="130">
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,0" width="153" height="133" color="[black]" type="sliced" fillcenter="false" />
 				<sprite depth="1" color="[darkGrey]" pos="0,0" type="sliced" globalopacity="true" />
-				<sprite depth="2" name="itemPreview" width="110" height="110" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="74,-58" pivot="center" foregroundlayer="true"/>
-				<sprite depth="8" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
-				<sprite depth="3" name="durabilityBackground" height="20" width="145" color="48,48,48,255" type="sliced" pos="1, -107" visible="{hasdurability}"/>
-				<filledsprite depth="4" name="durabilityBar" height="20" width="145" color="{durabilitycolor}" type="filled" pos="1, -107" fill="{durabilityfill}" visible="{hasdurability}" />
-				<label depth="7" name="durabilityValue" pos="0,-98" width="145" height="32" text="{durabilitytext}" font_size="30" justify="{durabilityjustify}" effect="outline" visible="false"/>
+				<sprite depth="7" name="itemPreview" width="110" height="110" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="74,-58" pivot="center" foregroundlayer="true"/>
+				<sprite depth="12" name="itemtypeicon" width="32" height="32" sprite="ui_game_symbol_{itemtypeicon}" pos="4,-8" foregroundlayer="true" visible="{hasitemtypeicon}" color="{itemtypeicontint}" />
+				<sprite depth="4" name="durabilityBackground" height="20" width="145" color="48,48,48,255" type="sliced" pos="1, -107" visible="{hasdurability}"/>
+				<filledsprite depth="5" name="durabilityBar" height="20" width="145" color="{durabilitycolor}" type="filled" pos="1, -107" fill="{durabilityfill}" visible="{hasdurability}" />
+				<label depth="12" name="durabilityValue" pos="0,-98" width="145" height="32" text="{durabilitytext}" font_size="30" justify="{durabilityjustify}" effect="outline" visible="false"/>
 			</rect>
 
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,-130" width="153" height="216" color="[black]" type="sliced" fillcenter="false" />
@@ -820,20 +841,18 @@
 	<!--#$-IGS END.-$#-->
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="3" name="windowIcon" style="icon32px" pivot="center" pos="21,-21" sprite="ui_game_symbol_backpack" />
-			<label depth="3" name="windowName" pos="42,-6" width="250" height="32" text="INVENTORY" text_key="xuiInventory" font_size="32" />
+			<label depth="3" name="windowName" pos="42,-6" width="180" height="32" text="INVENTORY" text_key="xuiInventory" font_size="32" />
 
 
-			<rect pos="303,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true">
-				<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="200, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
+			<rect pos="280,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true" is_backpack="true">
+				<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-45, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
 
 				<button depth="3" name="btnSort"           sprite="ui_game_symbol_sort"  tooltip_key="lblSortContainer"  pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
 				
 				<rect pos="0, 0" visible="{lootingorvehiclestorage}">
 					<button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="80, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
 					<button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="40, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
-<!--
-					<combobox depth="3" name="cbxLockedSlots" pos="120,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" />
--->
+
 <!--
 					<rect pos="0,30">
 						<button   depth="3" name="btnMoveFillStacks"   sprite="ui_game_symbol_drop"          tooltip_key="lblStashFillStacks"   pos="6, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
@@ -841,9 +860,11 @@
 					</rect>
 -->
 				</rect>
+
+				<combobox depth="3" name="cbxLockedSlots" pos="105,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" />
 			</rect>
 
-			<label depth="2" pos="472,-8" width="100" height="28" text="{currencyamount}" justify="right" />
+			<label depth="2" pos="492,-8" width="80" height="28" text="{currencyamount}" justify="right" />
 			<sprite depth="4" name="costIcon" sprite="ui_game_symbol_coin" size="24,24" pos="577,-10" color="[white]" foregroundlayer="true" />
 		</panel>
 
@@ -2629,28 +2650,7 @@
 
 		<rect name="content" depth="0" pos="0,-43" height="524">
 
-			<rect depth="3" name="searchControls" width="530" height="43" pos="6,-6">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
-
-				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />
-				
-				<button pos="20,-20" depth="2" name="actionsButton" style="icon32px" sprite="ui_game_symbol_twitch_actions" tooltip_key="TwitchInfo_Actions" defaultcolor="[white]" pivot="center" collider_scale="1.5" sound="[paging_click]"/>
-				<button pos="60,-20" depth="2" name="votesButton" style="icon32px" sprite="ui_game_symbol_twitch_vote" tooltip_key="TwitchInfo_Votes" defaultcolor="[white]" pivot="center" collider_scale="1.5" sound="[paging_click]"/>
-				<button pos="110,-20" depth="2" name="actionhistoryButton" style="icon32px" sprite="ui_game_symbol_twitch_history" tooltip_key="TwitchInfo_ActionHistory" defaultcolor="[white]" pivot="center" collider_scale="1.5" sound="[paging_click]"/>
-				<button pos="160,-20" depth="2" name="leaderboardButton" style="icon32px" sprite="ui_game_symbol_twitch_leaderboard_1" tooltip_key="TwitchInfo_Leaderboard" defaultcolor="[white]" pivot="center" collider_scale="1.5" sound="[paging_click]"/>
-				
-				<sprite depth="4" name="searchIcon" style="icon30px" pos="240,-20" sprite="ui_game_symbol_search" pivot="center" />
-
-				<panel pos="270,-6" depth="1" width="150" disableautobackground="true">
-					<textfield depth="1" pos="0,0" width="120" height="30" name="searchInput" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" />
-				</panel>
-
-				<panel pos="410,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
-				</panel>
-			</rect>
-			
-			<rect depth="3" name="categories" width="530" height="43" pos="6,-49" visible="{showactions}" >
+			<rect depth="3" name="categories" width="530" height="43" pos="6,-6" visible="{showactions}" >
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
 
 				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />
@@ -2662,7 +2662,7 @@
 				<button depth="4" name="allactions" style="icon30px, press, hover" pos="492,-22" sprite="ui_game_symbol_twitch_show_all" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="Show All Actions" sound="[paging_click]" console_enabled="false" />
 			</rect>
 			
-			<rect depth="3" name="categories" width="530" height="43" pos="6,-49" visible="{showvotes}" >
+			<rect depth="3" name="categories" width="530" height="43" pos="6,-6" visible="{showvotes}" >
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
 
 				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />
@@ -2672,7 +2672,7 @@
 				</grid>
 			</rect>
 			
-			<rect depth="3" name="categories" width="530" height="43" pos="6,-49" visible="{showactionhistory}" >
+			<rect depth="3" name="categories" width="530" height="43" pos="6,-6" visible="{showactionhistory}" >
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
 
 				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />
@@ -2680,6 +2680,22 @@
 				<grid name="actionHistoryCategories" pos="20,-20" rows="1" cols="3" width="200" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
 					<category_icon />
 				</grid>
+			</rect>
+			
+			<rect depth="3" name="searchControls" width="530" height="43" pos="6,-49">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
+
+				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />
+				
+				<sprite depth="4" name="searchIcon" style="icon30px" pos="25,-20" sprite="ui_game_symbol_search" pivot="center" />
+
+				<panel pos="50,-6" depth="1" width="370" disableautobackground="true">
+					<textfield depth="1" pos="0,0" width="340" height="30" name="searchInput" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" />
+				</panel>
+
+				<panel pos="410,0" width="104" height="43" disableautobackground="true">
+					<pager name="pager" pos="4,-6" />
+				</panel>
 			</rect>
 			
 			<rect depth="3" name="actionHistoryHeader" width="530" height="43" pos="6,-92" visible="{showactionhistory}" >
@@ -2691,7 +2707,7 @@
 				<label depth="3" pos="515,-8" width="88" font_size="26" text="VIEWER" text_key="TwitchInfo_ViewerHeader" justify="right" pivot="topright" />
 			</rect>
 			
-			<rect depth="3" name="categories" width="530" height="43" pos="6,-49" visible="{showleaderboard}" >
+			<rect depth="3" name="categories" width="530" height="43" pos="6,-6" visible="{showleaderboard}" >
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="530" height="46" color="[black]" type="sliced" fillcenter="false" />
 
 				<sprite color="[mediumGrey]" type="sliced" width="526" pos="-1,0" />

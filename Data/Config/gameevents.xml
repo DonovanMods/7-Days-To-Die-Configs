@@ -86,6 +86,7 @@
 			<property name="remove_bedroll" value="true" />
 			<property name="remove_quests" value="true" />
 			<property name="remove_backpack" value="true" />
+			<property name="reset_stats" value="true" />
 		</action>
 
 	</action_sequence>
@@ -101,6 +102,7 @@
 			<property name="remove_bedroll" value="true" />
 			<property name="remove_quests" value="true" />
 			<property name="remove_backpack" value="true" />
+			<property name="reset_stats" value="true" />
 		</action>
 		
 		<action class="BeltTooltip">
@@ -452,11 +454,13 @@
 			<property name="entity_names" value="zombieArlene" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 		</action>
 		
 		<action class="SpawnEntity">
 			<property name="entity_names" value="animalCoyote" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount_extra1" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
@@ -467,11 +471,36 @@
 		<action class="SpawnEntity">
 			<property name="entity_names" value="animalCoyote" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount_extra2" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
 				<property name="game_stage" value="1500" param1="gamestage_extra2" />
 			</requirement>
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_spawn" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="zombiemalealert" param1="alertsound" />
+			<property name="phase" value="1" />
+		</action>
+
+	</action_sequence>
+	
+	<action_sequence name="spawn_horde">
+		<property name="allow_user_trigger" value="false" />
+		<property name="category" value="twitch_actions" />
+
+		<action class="SpawnEntity">
+			<property name="entity_names" value="zombieArlene" param1="zombiename" />
+			<property name="spawn_count" value="1" param1="spawncount" />
+			<property name="party_addition" value="2" param1="partyaddition" />
+			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="true" param1="ignoremultiplier" />
 		</action>
 
 		<action class="PlaySound">
@@ -553,12 +582,14 @@
 			<property name="entity_names" value="zombieArlene" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 		</action>
 		
 		<action class="SpawnEntity">
 			<property name="entity_names" value="zombieArlene" param1="zombie2name" />
 			<property name="spawn_count" value="1" param1="spawn2count" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 		</action>
 
 		<!-- Extra 1 -->
@@ -566,6 +597,7 @@
 			<property name="entity_names" value="zombieArlene" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount1_extra1" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 			
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
@@ -577,6 +609,7 @@
 			<property name="entity_names" value="zombieArlene" param1="zombie2name" />
 			<property name="spawn_count" value="1" param1="spawncount2_extra1" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 			
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
@@ -589,6 +622,7 @@
 			<property name="entity_names" value="zombieArlene" param1="zombiename" />
 			<property name="spawn_count" value="1" param1="spawncount1_extra2" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 			
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
@@ -600,6 +634,7 @@
 			<property name="entity_names" value="zombieArlene" param1="zombie2name" />
 			<property name="spawn_count" value="1" param1="spawncount2_extra2" />
 			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="ignore_multiplier" value="false" param1="ignoremultiplier" />
 			
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
@@ -1553,6 +1588,53 @@
 		<variable name="zombiename" value="zombieWightFeral" />
 		<variable name="spawncount" value="5" />
 		<variable name="alertsound" value="zombieferalalert" />
+	</action_sequence>
+	
+	<action_sequence name="horde_boars" template="spawn_horde">
+		<variable name="zombiename" value="animalBoar" />
+		<variable name="spawncount" value="15" />
+		<variable name="airspawn" value="false" />
+		<variable name="alertsound" value="boaralert" />
+	</action_sequence>
+	
+	<action_sequence name="horde_chickens" template="spawn_horde">
+		<variable name="zombiename" value="animalChickenHostile" />
+		<variable name="spawncount" value="15" />
+		<variable name="airspawn" value="false" />
+		<variable name="alertsound" value="Animals/Chicken/chickenpain" />
+	</action_sequence>
+	
+	<action_sequence name="horde_wolves" template="spawn_horde">
+		<variable name="zombiename" value="animalWolf" />
+		<variable name="spawncount" value="15" />
+		<variable name="airspawn" value="false" />
+		<variable name="alertsound" value="wolfalert" />
+	</action_sequence>
+	
+	<action_sequence name="horde_bears" template="spawn_horde">
+		<variable name="zombiename" value="animalBear" />
+		<variable name="spawncount" value="12" />
+		<variable name="partyaddition" value="1" />
+		<variable name="airspawn" value="false" />
+		<variable name="alertsound" value="bearalert" />
+	</action_sequence>
+	
+	<action_sequence name="horde_zombies" template="spawn_horde">
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="spawncount" value="15" />
+	</action_sequence>
+	
+	<action_sequence name="horde_ferals" template="spawn_horde">
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="alertsound" value="zombieferalalert" />
+		<variable name="spawncount" value="15" />
+	</action_sequence>
+	
+	<action_sequence name="horde_rads" template="spawn_horde">
+		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated" />
+		<variable name="alertsound" value="zombieferalalert" />
+		<variable name="spawncount" value="15" />
 	</action_sequence>
 	
 	<!-- Group Event Spawns -->
@@ -3050,17 +3132,25 @@
 			<property name="entity_tags" value="entity" />
 		</requirement>
 		
-		<action class="SetScreenEffect">
-			<property name="phase" value="0" />
-			<property name="screen_effect" value="FadeToBlack" />
-			<property name="intensity" value="1" />
-			<property name="fade_time" value="0.05" />
-		</action>
-
 		<action class="AddSpawnedEntitiesToGroup">
 			<property name="phase" value="0" />
 			<property name="group_name" value="targetEntities" />
 			<property name="entity_tags" value="entity" />
+		</action>
+		
+		<action class="TeleportToTarget">
+			<property name="phase" value="0" />
+			<property name="min_distance" value="4" />
+			<property name="max_distance" value="8" />
+			<property name="teleport_to_group" value="targetEntities" />
+			<property name="pull_sound" value="twitch_pull" />
+		</action>
+		
+		<action class="SetScreenEffect">
+			<property name="phase" value="1" />
+			<property name="screen_effect" value="FadeToBlack" />
+			<property name="intensity" value="1" />
+			<property name="fade_time" value="0.05" />
 		</action>
 
 		<action class="PlaySound">
@@ -3072,17 +3162,9 @@
 			<property name="time" value=".5" />
 			<property name="phase" value="2" />
 		</action>
-
-		<action class="TeleportToTarget">
-			<property name="phase" value="2" />
-			<property name="min_distance" value="4" />
-			<property name="max_distance" value="8" />
-			<property name="teleport_to_group" value="targetEntities" />
-			<property name="pull_sound" value="twitch_pull" />
-		</action>
 		
 		<action class="RandomizeRotation">
-			<property name="phase" value="2" />
+			<property name="phase" value="3" />
 		</action>
 		
 		<action class="SetScreenEffect">
@@ -3103,9 +3185,17 @@
 			<property name="group_name" value="party" />
 			<property name="exclude_target" value="true" />
 		</action>
+		
+		<action class="TeleportToTarget">
+			<property name="phase" value="0" />
+			<property name="min_distance" value="4" />
+			<property name="max_distance" value="8" />
+			<property name="target_group" value="party" />
+			<property name="pull_sound" value="twitch_pull" />
+		</action>
 			
 		<action class="SetScreenEffect">
-			<property name="phase" value="0" />
+			<property name="phase" value="1" />
 			<property name="screen_effect" value="FadeToBlack" />
 			<property name="intensity" value="1" />
 			<property name="fade_time" value="0.05" />
@@ -3123,14 +3213,6 @@
 			<property name="phase" value="2" />
 		</action>
 
-		<action class="TeleportToTarget">
-			<property name="phase" value="2" />
-			<property name="min_distance" value="4" />
-			<property name="max_distance" value="8" />
-			<property name="target_group" value="party" />
-			<property name="pull_sound" value="twitch_pull" />
-		</action>
-		
 		<action class="RandomizeRotation">
 			<property name="phase" value="2" />
 			<property name="target_group" value="party" />
@@ -8153,6 +8235,10 @@
 	<action_sequence name="action_teleport_up">		
 		<property name="category" value="twitch_actions" />
 
+		<requirement class="InVehicle">
+			<property name="invert" value="true" />
+		</requirement>
+		
 		<requirement class="InSafeZone">
 			<property name="invert" value="true" />
 		</requirement>
@@ -8161,14 +8247,14 @@
 			<property name="invert" value="true" />
 		</requirement>
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_pull" />
-		</action>
-		
 		<action class="Teleport">
 			<property name="target_position" value="0, 100, 0" />
 			<property name="offset_type" value="Relative" />
 			<property name="teleport_delay" value="0.1" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_pull" />
 		</action>
 		
 		<action class="AddBuff">
@@ -8286,7 +8372,7 @@
 		<action class="CloseWindow" />
 		
 		<action class="RemoveItems">
-			<property name="items_location" value="Toolbelt" />
+			<property name="items_location" value="Toolbelt" param1="itemlocation" />
 		</action>
 		
 		<action class="PlaySound">
@@ -8294,6 +8380,14 @@
 			<property name="sound" value="itembreak" />
 		</action>
 
+	</action_sequence>
+	
+	<action_sequence name="action_destroybackpack" template="action_destroytoolbelt">
+		<variable name="itemlocation" value="Backpack" />
+	</action_sequence>
+	
+	<action_sequence name="action_destroyequipment" template="action_destroytoolbelt">
+		<variable name="itemlocation" value="Equipment" />
 	</action_sequence>
 	
 	<action_sequence name="action_unload_ammo">
@@ -8845,13 +8939,8 @@
 			<property name="invert" value="true" />
 		</requirement>
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_event_blocks_add" />
-			<property name="phase" value="2" />
-		</action>
-
 		<action class="BlockReplaceAttack">
-			<property name="phase" value="2" />
+			<property name="phase" value="1" />
 			<property name="inner_offset" value="1" />
 			<property name="min_offset" value="-5,-3,-5" />
 			<property name="max_offset" value="5,5,5" />
@@ -8862,6 +8951,11 @@
 			<property name="block_tags" value="air,twitchReplace" />
 			<property name="time_alive" value="120" />
 		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_event_blocks_add" />
+			<property name="phase" value="2" />
+		</action>
 
 	</action_sequence>
 	
@@ -8871,13 +8965,8 @@
 			<property name="invert" value="true" />
 		</requirement>
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_event_blocks_add" />
-			<property name="phase" value="2" />
-		</action>
-
 		<action class="BlockReplaceAttack">
-			<property name="phase" value="2" />
+			<property name="phase" value="1" />
 			<property name="inner_offset" value="1" />
 			<property name="min_offset" value="-5,-3,-5" />
 			<property name="max_offset" value="5,5,5" />
@@ -8889,6 +8978,11 @@
 			<property name="time_alive" value="120" />
 			<property name="remove_sound" value="twitch_event_blocks_remove" />
 		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_event_blocks_add" />
+			<property name="phase" value="2" />
+		</action>
 
 	</action_sequence>
 	
@@ -8898,13 +8992,8 @@
 			<property name="invert" value="true" />
 		</requirement>
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_event_blocks_add" />
-			<property name="phase" value="2" />
-		</action>
-
 		<action class="BlockReplaceAttack">
-			<property name="phase" value="2" />
+			<property name="phase" value="1" />
 			<property name="inner_offset" value="1" />
 			<property name="min_offset" value="-5,-3,-5" />
 			<property name="max_offset" value="5,5,5" />
@@ -8916,6 +9005,11 @@
 			<property name="time_alive" value="120" />
 			<property name="remove_sound" value="twitch_event_blocks_remove" />
 		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_event_blocks_add" />
+			<property name="phase" value="2" />
+		</action>
 
 	</action_sequence>
 	
@@ -8925,13 +9019,8 @@
 			<property name="invert" value="true" />
 		</requirement>
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_event_blocks_add" />
-			<property name="phase" value="2" />
-		</action>
-
 		<action class="BlockReplaceAttack">
-			<property name="phase" value="2" />
+			<property name="phase" value="1" />
 			<property name="inner_offset" value="1" />
 			<property name="min_offset" value="-5,-3,-5" />
 			<property name="max_offset" value="5,5,5" />
@@ -8942,6 +9031,11 @@
 			<property name="block_tags" value="air,twitchReplace" />
 			<property name="time_alive" value="120" />
 			<property name="remove_sound" value="twitch_event_blocks_remove" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_event_blocks_add" />
+			<property name="phase" value="2" />
 		</action>
 
 	</action_sequence>
@@ -10115,6 +10209,7 @@
 			remove_bedroll - Removes the bedroll for the player.
 			remove_quests - Removes all quests for the player.
 			remove_backpack - Removes all location data for their dropped backpacks.
+			reset_stats - Resets all your player stats such as kills, deaths, etc.
 
 		RespawnEntities - Respawns all dead entities from the supplied target_group.
 			target_group - The group of entities to respawn.

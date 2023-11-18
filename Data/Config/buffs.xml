@@ -7297,6 +7297,10 @@
 				<requirement name="ProgressionLevel" progression_name="perkBarBrawling7BoozedUp" operation="Equals" value="0"/>
 			</triggered_effect>
 
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="0.3" effect_name="Drunk">
+				<requirement name="ProgressionLevel" progression_name="perkBarBrawling7BoozedUp" operation="Equals" value="0"/>
+			</triggered_effect>
+
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
 
 			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned00,buffInjuryStunned01,buffInjuryStunned01Shotgun,buffInjuryStunned02,buffInjuryStunned02Shotgun,buffInjuryStunned03,buffInjuryStunned03Shotgun"/>
@@ -7402,6 +7406,7 @@
 			<passive_effect name="HealthChangeOT" operation="base_add" value="20"/>
 			<passive_effect name="FoodLossPerHealthPointGained" operation="base_set" value="0" />
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="4" effect_name="Drunk"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="1" fade="4" effect_name="Drunk"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="4" effect_name="Drunk"/>
 
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGrandpasMoonshineDuration" operation="set" value="0"/>
@@ -10420,7 +10425,8 @@
 		</effect_group>
 
 		<effect_group>
-			<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" target="other" event="buff_rez" sequence_link="resurrect">
+			<triggered_effect trigger="onSelfKilledOther" action="CallGameEvent" target="other" event="buff_rez" sequence_link="resurrect" 
+				allow_client_call="true" >
 				<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffRemove" action="UnregisterSequenceLink" sequence_link="resurrect" />
