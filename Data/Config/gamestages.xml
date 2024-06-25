@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Table_of_Contents -->
+<!-- Search_Find_All_for *** -->
+
 <!--
 
 Game Stage Spawning: All game stage spawning starts with a "Spawner" which is a named object referenced in the code
@@ -104,6 +107,7 @@ Console command: gamestage
 -->
 
 <gamestages>
+	<!-- *** CONFIG_SETTINGS -->
 	<config
 		daysAliveChangeWhenKilled="2"
 
@@ -118,8 +122,8 @@ Console command: gamestage
 		lootWanderingBonusEvery = "3"
 		lootWanderingBonusScale = "15"
 	/>
-	<!-- difficultyBonus - a flat multiplier. 2.0 = 2x the gamestage. Simple. -->
-	
+
+	<!-- difficultyBonus - a flat multiplier. 2.0 = 2x the game stage. Simple. -->
 	<!-- Blood Moon Zombie Loot Drop Bonus Config: -->
 	<!-- The following settings change blood moon zombie loot drop rates every X zombies, up to max chances, by scale -->
 	<!-- lootBonusEvery -  Zombie kill count minimum for spawning loot drops with lootBonusScale added to the probability -->
@@ -132,15 +136,9 @@ Console command: gamestage
 	<!-- lootWanderingBonusScale - Same as lootBonusScale, but for wandering hordes -->
 
 
-	<!-- <group name="S_Default_XS" emptyChance="0" decoyChance="0" decoy1hpChance="0"> -->
+<!-- *** Groups -->
 
-	<!-- emptyChance - the chance of the entire sleeper VOLUME having no zombies -->
-	<!-- count - after emptyChance has been checked, the total number of SLEEPERS spawned is determined by the count -->
-	<!-- decoyChance - determines how many OF the spawned sleepers will be DECOYS -->
-	<!-- decoy1hpChance - determines how many OF the spawned decoys will be ONE HIT POINT DECOYS -->
-
-	<!-- Full hit point decoys - Will never wake up due to sight/sound events. Will wake up if attacked. -->
-	<!-- 1 HP decoys - Will never wake up due to sight/sound events. Will die instantly if attacked. -->
+	<!-- <group name="S_-Group_Generic_Zombie" spawner="SleeperGSList"/> -->
 
 	<!-- The game stage for a specific sleeper volume can be adjusted up/down in the volume settings, not here. -->
 
@@ -148,405 +146,149 @@ Console command: gamestage
 	<!-- The minus is used as a sorting aid as it sorts before letters. -->
 	<!-- A leading space sorts after letters. -->
 
-	<group name="S_-Group_Generic_Zombie" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="SleeperGSList" count="5,6"/>
-	</group>
+	<!-- *** SPECIAL_ZOMBIE_GROUPS -->
+	<group name="1GroupGenericZombie" spawner="SleeperGSList"/>
+	<group name="2GroupAbandonedHouse" spawner="AbandonedHouseHorde"/>
+	<group name="2GroupBikerBar" spawner="ZombieBikerBarHorde"/>
+	<group name="2GroupGhostTown" spawner="ZombieGhostTownHorde"/>
+	<group name="2GroupHospital" spawner="HospitalHorde"/>
+	<group name="2GroupLabWorker" spawner="LabWorkerHorde"/>
+	<group name="2GroupNightClub" spawner="ZombieNightClubHorde"/>
+	<group name="2GroupPrison" spawner="PrisonHorde"/>
+	<group name="2GroupSpecialInfected" spawner="ZombieSpecialInfectedHorde"/>
+	<group name="2GroupZomSoldier" spawner="ZombieSoldierHorde"/>
+	<group name="2GroupZomBadass" spawner="ZombieBadassGSHorde"/>
+	<group name="2GroupZomBadassOnly" spawner="ZombieBadassOnlyHorde"/>
+	<group name="2GroupZomPoliceCarHorde" spawner="ZombiePoliceCarHorde"/>
+	<group name="3ZomLumberJack" spawner="ZombieLumberjackHorde"/>
+	<group name="3ZomHazMatOnly" spawner="ZombieHazMatOnlyHorde"/>
+	<group name="3ZomSpiderOnly" spawner="ZombieSpiderOnlyHorde"/>
+	<group name="3ZomUtilityWorker" spawner="ZombieUtilityWorkerHorde"/>
+	<group name="3ZomJanitorOnly" spawner="ZombieJanitorOnlyHorde"/>
+	<group name="3ZomBusinessman" spawner="ZombieBusinessManHorde"/>
+	<group name="3ZomFatCops" spawner="ZombieFatCopHorde"/>
+	<group name="3ZomBurnt" spawner="ZombieBurntHorde"/>
+	<group name="2GroupTestChamberDecoy" spawner="SleeperTestChamberGSList"/>
 
-	<group name="S_-_Group_Abandoned_House" emptyChance=".35" decoyChance="0" decoy1hpChance="0">
-		<spawner name="AbandonedHouseHorde" count="1,1"/>
-	</group>
+	<!-- *** INDIVIDUAL_ZOMBIE_GROUPS -->
+	<group name="zombieArlene" spawner="zombieArlene"/>
+	<group name="zombieArleneFeral" spawner="zombieArleneFeral"/>
+	<group name="zombieArleneRadiated" spawner="zombieArleneRadiated"/>
+	<group name="zombieMarlene" spawner="zombieMarlene"/>
+	<group name="zombieMarleneFeral" spawner="zombieMarleneFeral"/>
+	<group name="zombieMarleneRadiated" spawner="zombieMarleneRadiated"/>
+	<group name="zombiePartyGirl" spawner="zombiePartyGirl"/>
+	<group name="zombiePartyGirlFeral" spawner="zombiePartyGirlFeral"/>
+	<group name="zombiePartyGirlRadiated" spawner="zombiePartyGirlRadiated"/>
+	<group name="zombieNurse" spawner="zombieNurse"/>
+	<group name="zombieNurseFeral" spawner="zombieNurseFeral"/>
+	<group name="zombieNurseRadiated" spawner="zombieNurseRadiated"/>
+	<group name="zombieJoe" spawner="zombieJoe"/>
+	<group name="zombieJoeFeral" spawner="zombieJoeFeral"/>
+	<group name="zombieJoeRadiated" spawner="zombieJoeRadiated"/>
+	<group name="zombieSteve" spawner="zombieSteve"/>
+	<group name="zombieSteveFeral" spawner="zombieSteveFeral"/>
+	<group name="zombieSteveRadiated" spawner="zombieSteveRadiated"/>
+	<group name="zombieSpider" spawner="zombieSpider"/>
+	<group name="zombieSpiderFeral" spawner="zombieSpiderFeral"/>
+	<group name="zombieSpiderRadiated" spawner="zombieSpiderRadiated"/>
+	<group name="zombieTomClark" spawner="zombieTomClark"/>
+	<group name="zombieTomClarkFeral" spawner="zombieTomClarkFeral"/>
+	<group name="zombieTomClarkRadiated" spawner="zombieTomClarkRadiated"/>
+	<group name="zombieBusinessMan" spawner="zombieBusinessMan"/>
+	<group name="zombieBusinessManFeral" spawner="zombieBusinessManFeral"/>
+	<group name="zombieBusinessManRadiated" spawner="zombieBusinessManRadiated"/>
+	<group name="zombieBurnt" spawner="zombieBurnt"/>
+	<group name="zombieBurntFeral" spawner="zombieBurntFeral"/>
+	<group name="zombieBurntRadiated" spawner="zombieBurntRadiated"/>
+	<group name="zombieBoe" spawner="zombieBoe"/>
+	<group name="zombieBoeFeral" spawner="zombieBoeFeral"/>
+	<group name="zombieBoeRadiated" spawner="zombieBoeRadiated"/>
+	<group name="zombieInmate" spawner="zombieInmate"/>
+	<group name="zombieInmateFeral" spawner="zombieInmateFeral"/>
+	<group name="zombieInmateRadiated" spawner="zombieInmateRadiated"/>
+	<group name="zombieJanitor" spawner="zombieJanitor"/>
+	<group name="zombieJanitorFeral" spawner="zombieJanitorFeral"/>
+	<group name="zombieJanitorRadiated" spawner="zombieJanitorRadiated"/>
+	<group name="zombieMoe" spawner="zombieMoe"/>
+	<group name="zombieMoeFeral" spawner="zombieMoeFeral"/>
+	<group name="zombieMoeRadiated" spawner="zombieMoeRadiated"/>
+	<group name="zombieLab" spawner="zombieLab"/>
+	<group name="zombieLabFeral" spawner="zombieLabFeral"/>
+	<group name="zombieLabRadiated" spawner="zombieLabRadiated"/>
+	<group name="zombieDarlene" spawner="zombieDarlene"/>
+	<group name="zombieDarleneFeral" spawner="zombieDarleneFeral"/>
+	<group name="zombieDarleneRadiated" spawner="zombieDarleneRadiated"/>
+	<group name="zombieYo" spawner="zombieYo"/>
+	<group name="zombieYoFeral" spawner="zombieYoFeral"/>
+	<group name="zombieYoRadiated" spawner="zombieYoRadiated"/>
+	<group name="zombieUtilityWorker" spawner="zombieUtilityWorker"/>
+	<group name="zombieUtilityWorkerFeral" spawner="zombieUtilityWorkerFeral"/>
+	<group name="zombieUtilityWorkerRadiated" spawner="zombieUtilityWorkerRadiated"/>
+	<group name="zombieBiker" spawner="zombieBiker"/>
+	<group name="zombieBikerFeral" spawner="zombieBikerFeral"/>
+	<group name="zombieBikerRadiated" spawner="zombieBikerRadiated"/>
+	<group name="zombieLumberjack" spawner="zombieLumberjack"/>
+	<group name="zombieLumberjackFeral" spawner="zombieLumberjackFeral"/>
+	<group name="zombieLumberjackRadiated" spawner="zombieLumberjackRadiated"/>
+	<group name="zombieFemaleFat" spawner="zombieFemaleFat"/>
+	<group name="zombieFemaleFatFeral" spawner="zombieFemaleFatFeral"/>
+	<group name="zombieFemaleFatRadiated" spawner="zombieFemaleFatRadiated"/>
+	<group name="zombieFatHawaiian" spawner="zombieFatHawaiian"/>
+	<group name="zombieFatHawaiianFeral" spawner="zombieFatHawaiianFeral"/>
+	<group name="zombieFatHawaiianRadiated" spawner="zombieFatHawaiianRadiated"/>
+	<group name="zombieBowler" spawner="zombieBowler"/>
+	<group name="zombieBowlerFeral" spawner="zombieBowlerFeral"/>
+	<group name="zombieBowlerRadiated" spawner="zombieBowlerRadiated"/>
+	<group name="zombieMaleHazmat" spawner="zombieMaleHazmat"/>
+	<group name="zombieMaleHazmatFeral" spawner="zombieMaleHazmatFeral"/>
+	<group name="zombieMaleHazmatRadiated" spawner="zombieMaleHazmatRadiated"/>
+	<group name="zombieFatCop" spawner="zombieFatCop"/>
+	<group name="zombieFatCopFeral" spawner="zombieFatCopFeral"/>
+	<group name="zombieFatCopRadiated" spawner="zombieFatCopRadiated"/>
+	<group name="zombieSkateboarder" spawner="zombieSkateboarder"/>
+	<group name="zombieSkateboarderFeral" spawner="zombieSkateboarderFeral"/>
+	<group name="zombieSkateboarderRadiated" spawner="zombieSkateboarderRadiated"/>
+	<group name="zombieSoldier" spawner="zombieSoldier"/>
+	<group name="zombieSoldierFeral" spawner="zombieSoldierFeral"/>
+	<group name="zombieSoldierRadiated" spawner="zombieSoldierRadiated"/>
+	<group name="zombieWightFeral" spawner="zombieWightFeral"/>
+	<group name="zombieWightRadiated" spawner="zombieWightRadiated"/>
+	<group name="zombieScreamer" spawner="zombieScreamer"/>
+	<group name="zombieScreamerFeral" spawner="zombieScreamerFeral"/>
+	<group name="zombieScreamerRadiated" spawner="zombieScreamerRadiated"/>
+	<group name="zombieMutated" spawner="zombieMutated"/>
+	<group name="zombieMutatedFeral" spawner="zombieMutatedFeral"/>
+	<group name="zombieMutatedRadiated" spawner="zombieMutatedRadiated"/>
+	<group name="zombieDemolition" spawner="zombieDemolition"/>
+	<group name="zombieSteveCrawler" spawner="zombieSteveCrawler"/>
+	<group name="zombieSteveCrawlerFeral" spawner="zombieSteveCrawlerFeral"/>
 
-	<group name="S_-_Group_Biker_Bar" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieBikerBarHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Ghost_Town" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieGhostTownHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Hospital" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="HospitalHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Lab_Worker" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="LabWorkerHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Night_Club" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieNightClubHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Special_Infected" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieSpecialInfectedHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Zom_Soldier" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieSoldierHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Zom_Badass" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieBadassGSHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Zom_Badass_Only" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieBadassOnlyHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Zom_Police_Car_Horde" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombiePoliceCarHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Lumber_Jack" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieLumberjackHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_HazMat_Only" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieHazMatOnlyHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Spider_Only" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieSpiderOnlyHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Utility_Worker" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieUtilityWorkerHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Janitor_Only" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieJanitorOnlyHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Businessman" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieBusinessManHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_FatCops" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieFatCopHorde" count="5,6"/>
-	</group>
-
-	<group name="S_Zom_Burnt" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="ZombieBurntHorde" count="5,6"/>
-	</group>
-
-	<group name="S_-_Group_Test_Chamber_Decoy" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="SleeperTestChamberGSList" count="5,6"/>
-	</group>
-
-	<!-- Groups -->
-	<group name="zombieArlene" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieArlene" count="1"/>
-	</group>
-	<group name="zombieArleneFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieArleneFeral" count="1"/>
-	</group>
-	<group name="zombieArleneRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieArleneRadiated" count="1"/>
-	</group>
-	<group name="zombieMarlene" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMarlene" count="1"/>
-	</group>
-	<group name="zombieMarleneFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMarleneFeral" count="1"/>
-	</group>
-	<group name="zombieMarleneRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMarleneRadiated" count="1"/>
-	</group>
-	<group name="zombiePartyGirl" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombiePartyGirl" count="1"/>
-	</group>
-	<group name="zombiePartyGirlFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombiePartyGirlFeral" count="1"/>
-	</group>
-	<group name="zombiePartyGirlRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombiePartyGirlRadiated" count="1"/>
-	</group>
-	<group name="zombieNurse" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieNurse" count="1"/>
-	</group>
-	<group name="zombieNurseFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieNurseFeral" count="1"/>
-	</group>
-	<group name="zombieNurseRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieNurseRadiated" count="1"/>
-	</group>
-	<group name="zombieJoe" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJoe" count="1"/>
-	</group>
-	<group name="zombieJoeFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJoeFeral" count="1"/>
-	</group>
-	<group name="zombieJoeRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJoeRadiated" count="1"/>
-	</group>
-	<group name="zombieSteve" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSteve" count="1"/>
-	</group>
-	<group name="zombieSteveFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSteveFeral" count="1"/>
-	</group>
-	<group name="zombieSteveRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSteveRadiated" count="1"/>
-	</group>
-	<group name="zombieSpider" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSpider" count="1"/>
-	</group>
-	<group name="zombieSpiderFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSpiderFeral" count="1"/>
-	</group>
-	<group name="zombieSpiderRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSpiderRadiated" count="1"/>
-	</group>
-	<group name="zombieTomClark" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieTomClark" count="1"/>
-	</group>
-	<group name="zombieTomClarkFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieTomClarkFeral" count="1"/>
-	</group>
-	<group name="zombieTomClarkRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieTomClarkRadiated" count="1"/>
-	</group>
-	<group name="zombieBusinessMan" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBusinessMan" count="1"/>
-	</group>
-	<group name="zombieBusinessManFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBusinessManFeral" count="1"/>
-	</group>
-	<group name="zombieBusinessManRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBusinessManRadiated" count="1"/>
-	</group>
-	<group name="zombieBurnt" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBurnt" count="1"/>
-	</group>
-	<group name="zombieBurntFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBurntFeral" count="1"/>
-	</group>
-	<group name="zombieBurntRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBurntRadiated" count="1"/>
-	</group>
-	<group name="zombieBoe" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBoe" count="1"/>
-	</group>
-	<group name="zombieBoeFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBoeFeral" count="1"/>
-	</group>
-	<group name="zombieBoeRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBoeRadiated" count="1"/>
-	</group>
-	<group name="zombieJanitor" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJanitor" count="1"/>
-	</group>
-	<group name="zombieJanitorFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJanitorFeral" count="1"/>
-	</group>
-	<group name="zombieJanitorRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieJanitorRadiated" count="1"/>
-	</group>
-	<group name="zombieMoe" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMoe" count="1"/>
-	</group>
-	<group name="zombieMoeFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMoeFeral" count="1"/>
-	</group>
-	<group name="zombieMoeRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMoeRadiated" count="1"/>
-	</group>
-	<group name="zombieLab" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLab" count="1"/>
-	</group>
-	<group name="zombieLabFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLabFeral" count="1"/>
-	</group>
-	<group name="zombieLabRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLabRadiated" count="1"/>
-	</group>
-	<group name="zombieDarlene" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieDarlene" count="1"/>
-	</group>
-	<group name="zombieDarleneFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieDarleneFeral" count="1"/>
-	</group>
-	<group name="zombieDarleneRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieDarleneRadiated" count="1"/>
-	</group>
-	<group name="zombieYo" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieYo" count="1"/>
-	</group>
-	<group name="zombieYoFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieYoFeral" count="1"/>
-	</group>
-	<group name="zombieYoRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieYoRadiated" count="1"/>
-	</group>
-	<group name="zombieUtilityWorker" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieUtilityWorker" count="1"/>
-	</group>
-	<group name="zombieUtilityWorkerFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieUtilityWorkerFeral" count="1"/>
-	</group>
-	<group name="zombieUtilityWorkerRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieUtilityWorkerRadiated" count="1"/>
-	</group>
-	<group name="zombieBiker" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBiker" count="1"/>
-	</group>
-	<group name="zombieBikerFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBikerFeral" count="1"/>
-	</group>
-	<group name="zombieBikerRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieBikerRadiated" count="1"/>
-	</group>
-	<group name="zombieLumberjack" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLumberjack" count="1"/>
-	</group>
-	<group name="zombieLumberjackFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLumberjackFeral" count="1"/>
-	</group>
-	<group name="zombieLumberjackRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieLumberjackRadiated" count="1"/>
-	</group>
-	<group name="zombieFemaleFat" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFemaleFat" count="1"/>
-	</group>
-	<group name="zombieFemaleFatFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFemaleFatFeral" count="1"/>
-	</group>
-	<group name="zombieFemaleFatRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFemaleFatRadiated" count="1"/>
-	</group>
-	<group name="zombieFatHawaiian" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatHawaiian" count="1"/>
-	</group>
-	<group name="zombieFatHawaiianFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatHawaiianFeral" count="1"/>
-	</group>
-	<group name="zombieFatHawaiianRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatHawaiianRadiated" count="1"/>
-	</group>
-	<group name="zombieMaleHazmat" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMaleHazmat" count="1"/>
-	</group>
-	<group name="zombieMaleHazmatFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMaleHazmatFeral" count="1"/>
-	</group>
-	<group name="zombieMaleHazmatRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMaleHazmatRadiated" count="1"/>
-	</group>
-	<group name="zombieFatCop" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatCop" count="1"/>
-	</group>
-	<group name="zombieFatCopFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatCopFeral" count="1"/>
-	</group>
-	<group name="zombieFatCopRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieFatCopRadiated" count="1"/>
-	</group>
-	<group name="zombieSkateboarder" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSkateboarder" count="1"/>
-	</group>
-	<group name="zombieSkateboarderFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSkateboarderFeral" count="1"/>
-	</group>
-	<group name="zombieSkateboarderRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSkateboarderRadiated" count="1"/>
-	</group>
-	<group name="zombieSoldier" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSoldier" count="1"/>
-	</group>
-	<group name="zombieSoldierFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSoldierFeral" count="1"/>
-	</group>
-	<group name="zombieSoldierRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSoldierRadiated" count="1"/>
-	</group>
-	<group name="zombieWightFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieWightFeral" count="1"/>
-	</group>
-	<group name="zombieWightRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieWightRadiated" count="1"/>
-	</group>
-	<group name="zombieScreamer" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieScreamer" count="1"/>
-	</group>
-	<group name="zombieScreamerFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieScreamerFeral" count="1"/>
-	</group>
-	<group name="zombieScreamerRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieScreamerRadiated" count="1"/>
-	</group>
-	<group name="zombieMutated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMutated" count="1"/>
-	</group>
-	<group name="zombieMutatedFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMutatedFeral" count="1"/>
-	</group>
-	<group name="zombieMutatedRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieMutatedRadiated" count="1"/>
-	</group>
-	<group name="zombieDemolition" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieDemolition" count="1"/>
-	</group>
-	<group name="zombieSteveCrawler" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSteveCrawler" count="1"/>
-	</group>
-	<group name="zombieSteveCrawlerFeral" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="zombieSteveCrawlerFeral" count="1"/>
-	</group>
-	<group name="animalBear" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalBear" count="1"/>
-	</group>
-	<group name="animalBoar" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalBoar" count="1"/>
-	</group>
-	<group name="animalBossGrace" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalBossGrace" count="1"/>
-	</group>
+	<!-- *** INDIVIDUAL_ANIMAL_GROUPS -->
+	<group name="animalBear" spawner="animalBear"/>
+	<group name="animalBearSmall" spawner="animalBearSmall"/>
+	<group name="animalBoar" spawner="animalBoar"/>
+	<group name="animalBossGrace" spawner="animalBossGrace"/>
 
 	<!-- No Sleeper blocks for these Animals -->
+	<group name="animalChicken" spawner="animalChicken"/>
+	<group name="animalCoyote" spawner="animalCoyote"/>
+	<group name="animalDoe" spawner="animalDoe"/>
+	<group name="animalMountainLion" spawner="animalMountainLion"/>
+	<group name="animalRabbit" spawner="animalRabbit"/>
+	<group name="animalSnake" spawner="animalSnake"/>
+	<group name="animalStag" spawner="animalStag"/>
+	<group name="animalWolf" spawner="animalWolf"/>
+	<group name="animalDireWolf" spawner="animalDireWolf"/>
+	<group name="animalZombieBear" spawner="animalZombieBear"/>
+	<group name="animalZombieDog" spawner="animalZombieDog"/>
+	<group name="animalZombieVulture" spawner="animalZombieVulture"/>
+	<group name="animalZombieVultureRadiated" spawner="animalZombieVultureRadiated"/>
 
-	<group name="animalChicken" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalChicken" count="1"/>
-	</group>
-	<group name="animalCoyote" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalCoyote" count="1"/>
-	</group>
-	<group name="animalDireWolf" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalDireWolf" count="1"/>
-	</group>
-	<group name="animalDoe" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalDoe" count="1"/>
-	</group>
-	<group name="animalMountainLion" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalMountainLion" count="1"/>
-	</group>
-	<group name="animalRabbit" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalRabbit" count="1"/>
-	</group>
-	<group name="animalSnake" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalSnake" count="1"/>
-	</group>
-	<group name="animalStag" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalStag" count="1"/>
-	</group>
-	<group name="animalWolf" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalWolf" count="1"/>
-	</group>
-	<!-- <group name="animalDireWolf" emptyChance="0" decoyChance="0" decoy1hpChance="0"> -->
-		<!-- <spawner name="animalDireWolf" count="1"/> -->
-	<!-- </group> -->
-	<group name="animalZombieBear" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalZombieBear" count="1"/>
-	</group>
-	<group name="animalZombieDog" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalZombieDog" count="1"/>
-	</group>
-	<group name="animalZombieVulture" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalZombieVulture" count="1"/>
-	</group>
-	<group name="animalZombieVultureRadiated" emptyChance="0" decoyChance="0" decoy1hpChance="0">
-		<spawner name="animalZombieVultureRadiated" count="1"/>
-	</group>
 
-	<!-- Individual Zombie Spawners -->
+<!-- *** SPAWNERS -->
+
+	<!-- *** INDIVIDUAL_ZOMBIE_SPAWNERS -->
 	<spawner name="zombieArlene">
 		<gamestage stage="1">
 			<spawn group="zombieArlene" num="1" maxAlive="1" duration="10"/>
@@ -744,6 +486,24 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+	<spawner name="zombieInmate">
+		<gamestage stage="1">
+			<spawn group="zombieInmate" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
+	<spawner name="zombieInmateFeral">
+		<gamestage stage="1">
+			<spawn group="zombieInmateFeral" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
+	<spawner name="zombieInmateRadiated">
+		<gamestage stage="1">
+			<spawn group="zombieInmateRadiated" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
 	<spawner name="zombieJanitor">
 		<gamestage stage="1">
 			<spawn group="zombieJanitor" num="1" maxAlive="1" duration="10"/>
@@ -845,6 +605,7 @@ Console command: gamestage
 			<spawn group="zombieUtilityWorkerFeral" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieUtilityWorkerRadiated">
 		<gamestage stage="1">
 			<spawn group="zombieUtilityWorkerRadiated" num="1" maxAlive="1" duration="10"/>
@@ -892,6 +653,7 @@ Console command: gamestage
 			<spawn group="zombieFemaleFat" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieFemaleFatFeral">
 		<gamestage stage="1">
 			<spawn group="zombieFemaleFatFeral" num="1" maxAlive="1" duration="10"/>
@@ -909,6 +671,7 @@ Console command: gamestage
 			<spawn group="zombieFatHawaiian" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieFatHawaiianFeral">
 		<gamestage stage="1">
 			<spawn group="zombieFatHawaiianFeral" num="1" maxAlive="1" duration="10"/>
@@ -918,6 +681,24 @@ Console command: gamestage
 	<spawner name="zombieFatHawaiianRadiated">
 		<gamestage stage="1">
 			<spawn group="zombieFatHawaiianRadiated" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
+	<spawner name="zombieBowler">
+		<gamestage stage="1">
+			<spawn group="zombieBowler" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
+	<spawner name="zombieBowlerFeral">
+		<gamestage stage="1">
+			<spawn group="zombieBowlerFeral" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
+	<spawner name="zombieBowlerRadiated">
+		<gamestage stage="1">
+			<spawn group="zombieBowlerRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
 
@@ -956,6 +737,7 @@ Console command: gamestage
 			<spawn group="zombieFatCopRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieSkateboarder">
 		<gamestage stage="1">
 			<spawn group="zombieSkateboarder" num="1" maxAlive="1" duration="10"/>
@@ -973,11 +755,13 @@ Console command: gamestage
 			<spawn group="zombieSkateboarderRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieSoldier">
 		<gamestage stage="1">
 			<spawn group="zombieSoldier" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieSoldierFeral">
 		<gamestage stage="1">
 			<spawn group="zombieSoldierFeral" num="1" maxAlive="1" duration="10"/>
@@ -995,6 +779,7 @@ Console command: gamestage
 			<spawn group="zombieWightFeral" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieWightRadiated">
 		<gamestage stage="1">
 			<spawn group="zombieWightRadiated" num="1" maxAlive="1" duration="10"/>
@@ -1018,6 +803,7 @@ Console command: gamestage
 			<spawn group="zombieScreamerRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieMutated">
 		<gamestage stage="1">
 			<spawn group="zombieMutated" num="1" maxAlive="1" duration="10"/>
@@ -1029,16 +815,19 @@ Console command: gamestage
 			<spawn group="zombieMutatedFeral" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieMutatedRadiated">
 		<gamestage stage="1">
 			<spawn group="zombieMutatedRadiated" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieDemolition">
 		<gamestage stage="1">
 			<spawn group="zombieDemolition" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
 	</spawner>
+
 	<spawner name="zombieSteveCrawler">
 		<gamestage stage="1">
 			<spawn group="zombieSteveCrawler" num="1" maxAlive="1" duration="10"/>
@@ -1051,12 +840,19 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+	<!-- *** INDIVIDUAL_ANIMAL_SPAWNERS -->
 	<spawner name="animalBear">
 		<gamestage stage="1">
 			<spawn group="animalBear" num="1" maxAlive="1" duration="10"/>
 		</gamestage>
-
 	</spawner>
+
+	<spawner name="animalBearSmall">
+		<gamestage stage="1">
+			<spawn group="animalBearSmall" num="1" maxAlive="1" duration="10"/>
+		</gamestage>
+	</spawner>
+
 	<spawner name="animalBoar">
 		<gamestage stage="1">
 			<spawn group="animalBoar" num="1" maxAlive="1" duration="10"/>
@@ -1147,6 +943,9 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+	<!-- *** GAME_STAGED_SPAWNERS -->
+
+		<!-- *** SLEEPER_TEST_CHAMBER_GS_LIST -->
 	<spawner name="SleeperTestChamberGSList">
 		<gamestage stage="1">
 			<spawn group="sleeperHordeStageGS1" num="1" maxAlive="1" duration="1"/>
@@ -1161,6 +960,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** WANDERING_HORDE -->
 	<spawner name="WanderingHorde"> <!-- Name is used in code -->
 		<!-- These will wrap around at 50. -->
 		<!-- Will probably have to undo that later. Rev 19924 /19944 -->
@@ -1316,14 +1116,14 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
-	<!-- spawners -->
-
+		<!-- *** ABANDONED_HOUSE_HORDE -->
 	<spawner name="AbandonedHouseHorde">
 		<gamestage stage="1">
 			<spawn group="scoutHordeStageGS1" num="1" maxAlive="1" duration="1"/>
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_BIKER_BAR_HORDE -->
 	<spawner name="ZombieBikerBarHorde">
 		<gamestage stage="1">
 			<spawn group="ZombieBikerBarGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1345,6 +1145,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_NIGHT_CLUB_HORDE -->
 	<spawner name="ZombieNightClubHorde">
 		<gamestage stage="1">
 			<spawn group="ZombieNightClubGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1366,6 +1167,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_SPECIAL_INFECTED_HORDE -->
 	<spawner name="ZombieSpecialInfectedHorde">
 		<gamestage stage="1">
 			<spawn group="ZombieSpecialInfectedGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1387,6 +1189,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_GHOST_TOWN_HORDE -->
 	<spawner name="ZombieGhostTownHorde">
 		<gamestage stage="1">
 			<spawn group="ZombieGhostTownGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1408,6 +1211,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** HOSPITAL_HORDE -->
 	<spawner name="HospitalHorde">
 		<gamestage stage="1">
 			<spawn group="zombieHospitalGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1429,6 +1233,29 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** PRISON_HORDE -->
+	<spawner name="PrisonHorde">
+		<gamestage stage="1">
+			<spawn group="zombiePrisonGroupGS1" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="50">
+			<spawn group="zombiePrisonGroupGS50" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="100">
+			<spawn group="zombiePrisonGroupGS100" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="200">
+			<spawn group="zombiePrisonGroupGS200" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="400">
+			<spawn group="zombiePrisonGroupGS400" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+		<gamestage stage="800">
+			<spawn group="zombiePrisonGroupGS800" num="1" maxAlive="1" duration="1"/>
+		</gamestage>
+	</spawner>
+
+		<!-- *** LAB_WORKER_HORDE -->
 	<spawner name="LabWorkerHorde">
 		<gamestage stage="1">
 			<spawn group="zombieLabWorkerGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1450,6 +1277,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_SPIDER_ONLY_HORDE -->
 	<spawner name="ZombieSpiderOnlyHorde">
 		<gamestage stage="1">
 			<spawn group="zombieSpiderGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1471,6 +1299,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_SOLDIER_HORDE -->
 	<spawner name="ZombieSoldierHorde">
 		<gamestage stage="1">
 			<spawn group="zombieSoldierGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1492,6 +1321,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_HAZMAT_ONLY_HORDE -->
 	<spawner name="ZombieHazMatOnlyHorde">
 		<gamestage stage="1">
 			<spawn group="ZombieMaleHazmatGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1513,6 +1343,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_UTILITY_WORKER_HORDE -->
 	<spawner name="ZombieUtilityWorkerHorde">
 		<gamestage stage="1">
 			<spawn group="zombieUtilityWorkerGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1534,6 +1365,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_JANITOR_ONLY_HORDE -->
 	<spawner name="ZombieJanitorOnlyHorde">
 		<gamestage stage="1">
 			<spawn group="zombieJanitorGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1555,6 +1387,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_LUMBERJACK_HORDE -->
 	<spawner name="ZombieLumberjackHorde">
 		<gamestage stage="1">
 			<spawn group="zombieLumberjackGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1576,6 +1409,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_BUSINESS_MAN_HORDE -->
 	<spawner name="ZombieBusinessManHorde">
 		<gamestage stage="1">
 			<spawn group="zombieBusinessManGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1597,6 +1431,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_FAT_COP_HORDE -->
 	<spawner name="ZombieFatCopHorde">
 		<gamestage stage="1">
 			<spawn group="zombieFatCopGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1618,6 +1453,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_BURNT_HORDE -->
 	<spawner name="ZombieBurntHorde">
 		<gamestage stage="1">
 			<spawn group="zombieBurntGroupGS1" num="1" maxAlive="1" duration="1"/>
@@ -1639,6 +1475,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_BADASS_GS_HORDE -->
 	<spawner name="ZombieBadassGSHorde">
 		<gamestage stage="1">
 			<spawn group="badassHordeStageGS1" num="1" maxAlive="2" duration="1"/>
@@ -1756,6 +1593,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
+		<!-- *** ZOMBIE_BADASS_ONLY_HORDE -->
 	<spawner name="ZombieBadassOnlyHorde">
 		<gamestage stage="1">
 			<spawn group="badassOnlyHordeStageGS1" num="1" maxAlive="2" duration="1"/>
@@ -1873,7 +1711,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  start: auto generated sleeper horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+	<!-- *** SLEEPER_GS_LIST -->
 	<spawner name="SleeperGSList">
 		<gamestage stage="1">
 			<spawn group="sleeperHordeStageGS1" num="1" maxAlive="1" duration="1"/>
@@ -2842,10 +2680,8 @@ Console command: gamestage
 			<spawn group="sleeperHordeStageGS5778" num="85" maxAlive="256" duration="1"/>
 		</gamestage>
 	</spawner>
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  end: auto generated sleeper horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
-
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  start: auto generated screamer / scout horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+		<!-- *** SCREAMER_GS_LIST -->
 	<spawner name="ScoutGSList">
 		<gamestage stage="1">
 			<spawn group="scoutHordeStageGS1" num="1" maxAlive="2" duration="1"/>
@@ -3814,122 +3650,168 @@ Console command: gamestage
 			<spawn group="scoutHordeStageGS5778" num="300" maxAlive="256" duration="1"/>
 		</gamestage>
 	</spawner>
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  end: auto generated screamer / scout horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  start: auto generated feral horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+	<!-- *** BLOOD_MOON_HORDE -->
 	<spawner name="BloodMoonHorde">
 		<gamestage stage="1">
-			<spawn group="feralHordeStageGS1" num="2" maxAlive="3" duration="1"/>
+			<spawn group="feralHordeStageGS1" num="2" maxAlive="3" duration="1"/><!-- GS1 DOESN'T SPAWN -->
 		</gamestage>
 		<gamestage stage="2">
-			<spawn group="feralHordeStageGS2" num="3" maxAlive="3" duration="1"/>
+			<spawn group="feralHordeStageGS1" num="1" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS2" num="1" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS2" num="2" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS2" num="2" maxAlive="2" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS2" num="20" maxAlive="2" duration="1" interval="30"/>
+			<spawn group="feralHordeStageGS2" num="5" maxAlive="5" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS2" num="100" maxAlive="2"/>
 		</gamestage>
 		<gamestage stage="4">
-			<spawn group="feralHordeStageGS4" num="6" maxAlive="4" duration="1"/>
+			<spawn group="feralHordeStageGS2" num="1" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS4" num="1" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS4" num="2" maxAlive="1" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS4" num="2" maxAlive="2" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS4" num="20" maxAlive="2" duration="1" interval="30"/>
+			<spawn group="feralHordeStageGS4" num="5" maxAlive="5" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS4" num="100" maxAlive="2"/>
 		</gamestage>
 		<gamestage stage="7">
-			<spawn group="feralHordeStageGS7" num="10" maxAlive="5" duration="1"/>
+			<spawn group="feralHordeStageGS4" num="5" maxAlive="5" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS7" num="5" maxAlive="2" duration="1" interval="10"/>
+			<spawn group="feralHordeStageGS7" num="5" maxAlive="5" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS7" num="5" maxAlive="2" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS7" num="30" maxAlive="3" duration="1" interval="10"/>
+			<spawn group="feralHordeStageGS7" num="5" maxAlive="5" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS7" num="100" maxAlive="2"/>
 		</gamestage>
 		<gamestage stage="10">
-			<spawn group="feralHordeStageGS7" num="15" maxAlive="6" duration="1" interval="24"/>
-			<spawn group="feralHordeStageGS10" num="15" maxAlive="6" duration="1"/>
+			<spawn group="feralHordeStageGS7" num="15" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="15" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="10" maxAlive="2" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="15" maxAlive="5" duration="1" interval="10"/>
+			<spawn group="feralHordeStageGS10" num="10" maxAlive="2" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="15" maxAlive="3" duration="1" interval="20"/>
+			<spawn group="feralHordeStageGS10" num="100" maxAlive="2"/>
 		</gamestage>
 		<gamestage stage="13">
-			<spawn group="feralHordeStageGS10" num="19" maxAlive="6" duration="1" interval="18"/>
-			<spawn group="feralHordeStageGS13" num="19" maxAlive="6" duration="1"/>
+			<spawn group="feralHordeStageGS10" num="15" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="15" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS10" num="19" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS13" num="19" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS13" num="19" maxAlive="8" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS13" num="19" maxAlive="6" duration="1" interval="5"/>
+			<spawn group="feralHordeStageGS13" num="100" maxAlive="3"/>
 		</gamestage>
 		<gamestage stage="16">
 			<spawn group="feralHordeStageGS13" num="23" maxAlive="7" duration="1" interval="27"/>
 			<spawn group="feralHordeStageGS16" num="23" maxAlive="7" duration="1"/>
+			<spawn group="feralHordeStageGS16" num="200" maxAlive="4"/>
 		</gamestage>
 		<gamestage stage="19">
 			<spawn group="feralHordeStageGS16" num="27" maxAlive="8" duration="1" interval="10"/>
 			<spawn group="feralHordeStageGS19" num="27" maxAlive="8" duration="1"/>
+			<spawn group="feralHordeStageGS19" num="200" maxAlive="5"/>
 		</gamestage>
 		<gamestage stage="23">
 			<spawn group="feralHordeStageGS16" num="33" maxAlive="9" duration="1" interval="20"/>
 			<spawn group="feralHordeStageGS19" num="33" maxAlive="9" duration="1" interval="19"/>
 			<spawn group="feralHordeStageGS23" num="33" maxAlive="9" duration="1"/>
+			<spawn group="feralHordeStageGS23" num="200" maxAlive="6"/>
 		</gamestage>
 		<gamestage stage="27">
 			<spawn group="feralHordeStageGS19" num="38" maxAlive="11" duration="1" interval="24"/>
 			<spawn group="feralHordeStageGS23" num="38" maxAlive="11" duration="1" interval="18"/>
 			<spawn group="feralHordeStageGS27" num="38" maxAlive="11" duration="1"/>
+			<spawn group="feralHordeStageGS27" num="200" maxAlive="7"/>
 		</gamestage>
 		<gamestage stage="31">
 			<spawn group="feralHordeStageGS23" num="44" maxAlive="12" duration="1" interval="13"/>
 			<spawn group="feralHordeStageGS27" num="44" maxAlive="12" duration="1" interval="27"/>
 			<spawn group="feralHordeStageGS31" num="44" maxAlive="12" duration="1"/>
+			<spawn group="feralHordeStageGS31" num="200" maxAlive="8"/>
 		</gamestage>
 		<gamestage stage="35">
 			<spawn group="feralHordeStageGS27" num="50" maxAlive="13" duration="1" interval="23"/>
 			<spawn group="feralHordeStageGS31" num="50" maxAlive="13" duration="1" interval="22"/>
 			<spawn group="feralHordeStageGS35" num="50" maxAlive="13" duration="1"/>
+			<spawn group="feralHordeStageGS35" num="200" maxAlive="9"/>
 		</gamestage>
 		<gamestage stage="40">
 			<spawn group="feralHordeStageGS31" num="57" maxAlive="15" duration="1" interval="28"/>
 			<spawn group="feralHordeStageGS35" num="57" maxAlive="15" duration="1" interval="10"/>
 			<spawn group="feralHordeStageGS40" num="57" maxAlive="15" duration="1"/>
+			<spawn group="feralHordeStageGS40" num="200" maxAlive="10"/>
 		</gamestage>
 		<gamestage stage="44">
 			<spawn group="feralHordeStageGS35" num="62" maxAlive="16" duration="1" interval="23"/>
 			<spawn group="feralHordeStageGS40" num="62" maxAlive="16" duration="1" interval="28"/>
 			<spawn group="feralHordeStageGS44" num="62" maxAlive="16" duration="1"/>
+			<spawn group="feralHordeStageGS44" num="200" maxAlive="11"/>
 		</gamestage>
 		<gamestage stage="49">
 			<spawn group="feralHordeStageGS40" num="69" maxAlive="17" duration="1" interval="30"/>
 			<spawn group="feralHordeStageGS44" num="69" maxAlive="17" duration="1" interval="25"/>
 			<spawn group="feralHordeStageGS49" num="69" maxAlive="17" duration="1"/>
+			<spawn group="feralHordeStageGS49" num="200" maxAlive="12"/>
 		</gamestage>
 		<gamestage stage="54">
 			<spawn group="feralHordeStageGS44" num="76" maxAlive="19" duration="2" interval="12"/>
 			<spawn group="feralHordeStageGS49" num="76" maxAlive="19" duration="2" interval="16"/>
 			<spawn group="feralHordeStageGS54" num="76" maxAlive="19" duration="7"/>
+			<spawn group="feralHordeStageGS54" num="200" maxAlive="13"/>
 		</gamestage>
 		<gamestage stage="59">
 			<spawn group="feralHordeStageGS49" num="84" maxAlive="20" duration="2" interval="29"/>
 			<spawn group="feralHordeStageGS54" num="84" maxAlive="20" duration="2" interval="18"/>
 			<spawn group="feralHordeStageGS59" num="84" maxAlive="20" duration="7"/>
+			<spawn group="feralHordeStageGS59" num="200" maxAlive="14"/>
 		</gamestage>
 		<gamestage stage="64">
 			<spawn group="feralHordeStageGS54" num="91" maxAlive="22" duration="2" interval="15"/>
 			<spawn group="feralHordeStageGS59" num="91" maxAlive="22" duration="2" interval="13"/>
 			<spawn group="feralHordeStageGS64" num="91" maxAlive="22" duration="7"/>
+			<spawn group="feralHordeStageGS64" num="200" maxAlive="15"/>
 		</gamestage>
 		<gamestage stage="69">
 			<spawn group="feralHordeStageGS59" num="98" maxAlive="23" duration="2" interval="10"/>
 			<spawn group="feralHordeStageGS64" num="98" maxAlive="23" duration="2" interval="19"/>
 			<spawn group="feralHordeStageGS69" num="98" maxAlive="23" duration="7"/>
+			<spawn group="feralHordeStageGS69" num="200" maxAlive="16"/>
 		</gamestage>
 		<gamestage stage="74">
 			<spawn group="feralHordeStageGS64" num="105" maxAlive="25" duration="2" interval="19"/>
 			<spawn group="feralHordeStageGS69" num="105" maxAlive="25" duration="2" interval="20"/>
 			<spawn group="feralHordeStageGS74" num="105" maxAlive="25" duration="7"/>
+			<spawn group="feralHordeStageGS74" num="200" maxAlive="17"/>
 		</gamestage>
 		<gamestage stage="80">
 			<spawn group="feralHordeStageGS69" num="113" maxAlive="27" duration="2" interval="18"/>
 			<spawn group="feralHordeStageGS74" num="113" maxAlive="27" duration="2" interval="26"/>
 			<spawn group="feralHordeStageGS80" num="113" maxAlive="27" duration="7"/>
+			<spawn group="feralHordeStageGS80" num="200" maxAlive="18"/>
 		</gamestage>
 		<gamestage stage="85">
 			<spawn group="feralHordeStageGS74" num="120" maxAlive="28" duration="2" interval="12"/>
 			<spawn group="feralHordeStageGS80" num="120" maxAlive="28" duration="2" interval="19"/>
 			<spawn group="feralHordeStageGS85" num="120" maxAlive="28" duration="7"/>
+			<spawn group="feralHordeStageGS85" num="200" maxAlive="19"/>
 		</gamestage>
 		<gamestage stage="91">
 			<spawn group="feralHordeStageGS80" num="129" maxAlive="30" duration="2" interval="30"/>
 			<spawn group="feralHordeStageGS85" num="129" maxAlive="30" duration="2" interval="16"/>
 			<spawn group="feralHordeStageGS91" num="129" maxAlive="30" duration="7"/>
+			<spawn group="feralHordeStageGS91" num="200" maxAlive="20"/>
 		</gamestage>
 		<gamestage stage="97">
 			<spawn group="feralHordeStageGS85" num="137" maxAlive="32" duration="2" interval="21"/>
 			<spawn group="feralHordeStageGS91" num="137" maxAlive="32" duration="2" interval="23"/>
 			<spawn group="feralHordeStageGS97" num="137" maxAlive="32" duration="7"/>
+			<spawn group="feralHordeStageGS97" num="200" maxAlive="21"/>
 		</gamestage>
 		<gamestage stage="103">
 			<spawn group="feralHordeStageGS91" num="145" maxAlive="33" duration="2" interval="28"/>
 			<spawn group="feralHordeStageGS97" num="145" maxAlive="33" duration="2" interval="17"/>
 			<spawn group="feralHordeStageGS103" num="145" maxAlive="33" duration="7"/>
+			<spawn group="feralHordeStageGS103" num="200" maxAlive="22"/>
 		</gamestage>
 		<gamestage stage="109">
 			<spawn group="feralHordeStageGS97" num="154" maxAlive="35" duration="2" interval="25"/>
@@ -5417,8 +5299,8 @@ Console command: gamestage
 			<spawn group="feralHordeStageGS4086" num="500" maxAlive="256" duration="7"/>
 		</gamestage>
 	</spawner>
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXX  end: auto generated feral horde gamestages  XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
 
+	<!-- *** ZOMBIE_POLICE_CAR_HORDE -->
 	<spawner name="ZombiePoliceCarHorde">
 		<gamestage stage="1">
 			<spawn group="policeCarHordeStageGS1" num="1" maxAlive="2" duration="1"/>
@@ -5536,7 +5418,7 @@ Console command: gamestage
 		</gamestage>
 	</spawner>
 
-	<!-- Survival_Defense_Spawn_Group -->
+	<!-- *** SURVIVAL_DEFENSE_SPAWN_GROUP -->
 	<spawner name="defenseGSList">
 		<gamestage stage="1">
 			<spawn group="defenseHordeStageGS1" num="1" maxAlive="1" duration="1"/>

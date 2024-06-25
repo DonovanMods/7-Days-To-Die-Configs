@@ -42,7 +42,9 @@
 		<spawn maxcount="4" respawndelay="0.1" time="Night" entitygroup="ZombiesDowntown" tags="downtown" />
 
 		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
-		<spawn maxcount="1" respawndelay="1.1" time="Night" entitygroup="EnemyAnimalsBurntForest" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1.1" time="Any" entitygroup="EnemyAnimalsBurntForestAny" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1" time="Night" entitygroup="WildGameForestNight" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1.1" time="Night" entitygroup="EnemyAnimalsBurntForestNight" spawnDeadChance="0" />
 	</biome>
 
 	<!-- *** DESERT_SPAWNS -->
@@ -58,6 +60,7 @@
 		
 		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
 		<spawn maxcount="1" respawndelay="3.5" time="Any" entitygroup="EnemyAnimalsDesert" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="3.5" time="Night" entitygroup="EnemyAnimalsDesertNight" spawnDeadChance="0" />
 	</biome>
 
 	<!-- *** SNOW_SPAWNS -->
@@ -72,12 +75,14 @@
 		<spawn maxcount="4" respawndelay="0.04" time="Night" entitygroup="ZombiesDowntown" tags="downtown" />
 
 		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="WildGameForest" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1" time="Night" entitygroup="WildGameStagNight" spawnDeadChance="0" />
 		<spawn maxcount="1" respawndelay="3.1" time="Any" entitygroup="EnemyAnimalsSnow" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="3.1" time="Night" entitygroup="EnemyAnimalsSnowNight" spawnDeadChance="0" />
 	</biome>
 
 	<!-- *** WASTELAND_SPAWNS -->
 	<biome name="wasteland">
-		<spawn maxcount="1" respawndelay="0.3" time="Day"	entitygroup="ZombiesWasteland" notags="commercial,industrial,downtown" />
+		<spawn maxcount="1" respawndelay="0.3" time="Day" entitygroup="ZombiesWasteland" notags="commercial,industrial,downtown" />
 		<spawn maxcount="2" respawndelay="0.001" time="Night" entitygroup="ZombiesWastelandNight" notags="commercial,industrial,downtown" />
 
 		<spawn maxcount="4" respawndelay="0.033" time="Day" entitygroup="ZombiesWasteland" tags="commercial,industrial" notags="downtown" />
@@ -87,6 +92,8 @@
 		<spawn maxcount="4" respawndelay="0.002" time="Night" entitygroup="ZombiesWastelandDowntown" tags="downtown" />
 
 		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="EnemyAnimalsWasteland" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1" time="Night" entitygroup="WildGameStagNight" spawnDeadChance="0" />
+		<spawn maxcount="1" respawndelay="1" time="Night" entitygroup="EnemyAnimalsWastelandNight" spawnDeadChance="0" />
 	</biome>
 
 <!-- *** ENTITY_SPAWNER_CLASSES -->

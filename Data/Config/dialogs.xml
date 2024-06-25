@@ -12,6 +12,7 @@
 			<response_entry id="jobshave4" />
 			<response_entry id="jobshave5" />
 			<response_entry id="jobshave6" />
+			<response_entry id="jobshavenotallowed" />
 			<response_entry id="specialjobshave" />
 			<!-- <response_entry id="background" /> -->
 			<response_entry id="admin" />
@@ -144,6 +145,8 @@
 		
 		<statement id="nojobs" text="dialog_trader_statement_nojobs" nextstatementid="start" />
 		
+		<statement id="jobsnotallowed" text="dialog_trader_statement_notallowed" nextstatementid="start" />
+		
 		<statement id="admin" text="dialog_trader_statement_admin">
 			<response_entry id="restock" />
 			<response_entry id="resetquests" />
@@ -162,37 +165,41 @@
 		<response id="jobshave1" text="dialog_trader_response_jobshave" nextstatementid="currentjobs1" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="1" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobshave2" text="dialog_trader_response_jobshave" nextstatementid="currentjobs2" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="2" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobshave3" text="dialog_trader_response_jobshave" nextstatementid="currentjobs3" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="3" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobshave4" text="dialog_trader_response_jobshave" nextstatementid="currentjobs4" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="4" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobshave5" text="dialog_trader_response_jobshave" nextstatementid="currentjobs5" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="5" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobshave6" text="dialog_trader_response_jobshave" nextstatementid="currentjobs6" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
 			<requirement type="QuestTierHighest" value="6" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
+			<requirement type="CheckCVar" id="IntroComplete" value="1" requirementtype="Hide" />
+		</response>
+		
+		<response id="jobshavenotallowed" text="dialog_trader_response_jobshave" nextstatementid="jobsnotallowed" >
+			<requirement type="CheckCVar" id="DisableQuesting" value="1" requirementtype="Hide" />
 		</response>
 		
 		<response id="jobsprev1" text="dialog_trader_response_prevtier" nextstatementid="currentjobs1" >
@@ -238,7 +245,6 @@
 		<response id="specialjobshave" text="dialog_trader_response_specialjobshave" nextstatementid="currentjobsspecial" >
 			<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" tag="special" />
 			<requirement type="QuestsAvailable" value="special" requirementtype="Hide" />
-			<action type="AddJournalEntry" id="questTip" />
 		</response>
 		
 		<response id="background" text="dialog_trader_response_background" nextstatementid="background">

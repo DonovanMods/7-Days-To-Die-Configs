@@ -993,6 +993,31 @@
 			</onscreen_settings>
 		</nav_object_class>
 		
+		<nav_object_class name="quest_switch">
+
+			<compass_settings>
+				<property name="sprite_name" value="ui_game_symbol_quest_switch"/>
+				<property name="up_sprite_name" value="ui_game_symbol_quest_switch_up"/>
+				<property name="down_sprite_name" value="ui_game_symbol_quest_switch_down"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_scale_distance" value="10"/>
+				<property name="max_distance" value="10"/>
+				<property name="color" value="255,180,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="icon_clamped" value="true" />
+			</compass_settings>
+
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_game_symbol_quest_switch"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="5"/>
+				<property name="color" value="255,180,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="text_type" value="Distance"/>
+				<property name="show_offscreen" value="true" />
+			</onscreen_settings>
+		</nav_object_class>
+		
 		<nav_object_class name="restore_power">
 
 			<compass_settings>

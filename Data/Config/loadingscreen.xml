@@ -16,7 +16,7 @@
 		<tip key="loadingTipEncumbrance" />
 		<tip key="loadingTipArmor" />
 		<tip key="loadingTipBandages" />
-		<tip key="loadingTipJournalEntries" />
+		<!-- <tip key="loadingTipJournalEntries" /> -->
 		<tip key="loadingTipQuestSharing" />
 		<tip key="loadingTipWhatIsItGoodFor" />
 		<tip key="loadingTipWorkstations" />

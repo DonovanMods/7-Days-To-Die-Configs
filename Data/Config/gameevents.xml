@@ -14,33 +14,25 @@
 		<property name="action_type" value="Game" />
 		
 		<action class="Delay">
-			<property name="time" value="4.5" />
+			<property name="time" value="5" />
 		</action>
-
-		<action class="AddJournalTip">
-			<property name="tip_name" value="tutorialTipQuest01" />
-			<property name="show_window" value="true" />
-			<property name="phase" value="1" />
-		</action>
-
-		<action class="Delay">
-			<property name="time" value="2" />
-			<property name="phase" value="2" />
-		</action>
-
-		<action class="AddQuest">
-			<property name="quest" value="quest_BasicSurvival1" />
-			<property name="phase" value="3" />
-		</action>
-
-
+		
+		<!-- <action class="BeltTooltip">  -->
+			<!-- <property name="text" value="[00FF00]This is a test of the holiday code.[-]" /> -->
+			<!-- <property name="phase" value="2" /> -->
+			
+			<!-- <requirement class="EventActive"> -->
+				<!-- <property name="event_name" value="testtoday"/> -->
+			<!-- </requirement> -->
+		<!-- </action> -->
+		
 	</action_sequence>
 
 	<action_sequence name="game_on_death_none">
 		<property name="allow_user_trigger" value="false" />
 		<property name="action_type" value="Game" />
 		
-		<action class="RemoveDeathBuffs" />	
+		<action class="RemoveDeathBuffs" />
 		
 	</action_sequence>
 	
@@ -50,7 +42,7 @@
 		
 		<action class="AddXPDeficit" />
 		
-		<action class="RemoveDeathBuffs" />	
+		<action class="RemoveDeathBuffs" />
 		
 	</action_sequence>
 	
@@ -85,6 +77,7 @@
 			<property name="remove_landclaims" value="true" />
 			<property name="remove_bedroll" value="true" />
 			<property name="remove_quests" value="true" />
+			<property name="remove_challenges" value="true" />
 			<property name="remove_backpack" value="true" />
 			<property name="reset_stats" value="true" />
 		</action>
@@ -101,6 +94,7 @@
 			<property name="remove_landclaims" value="true" />
 			<property name="remove_bedroll" value="true" />
 			<property name="remove_quests" value="true" />
+			<property name="remove_challenges" value="true" />
 			<property name="remove_backpack" value="true" />
 			<property name="reset_stats" value="true" />
 		</action>
@@ -110,10 +104,31 @@
 		</action>
 	
 	</action_sequence>
+	
+	<action_sequence name="game_player_reset_challenges">
+	
+		<action class="ResetPlayerData">
+			<property name="remove_challenges" value="true" />
+		</action>
+		
+		<action class="BeltTooltip">
+			<property name="text" value="Your Player challenges have been reset!" />
+		</action>
+	
+	</action_sequence>
 
 	<action_sequence name="game_on_spawn">
 		<property name="allow_user_trigger" value="false" />
 		<property name="action_type" value="Game" />
+
+		<!-- *** EXAMPLE_FOR_HOLIDAY_CODE. "testtoday" needs_to_be_uncommented_in_events.xml -->
+		<!-- <action class="BeltTooltip">  -->
+			<!-- <property name="text" value="[00FF00]This is a test of the holiday code.[-]" /> -->
+			
+			<!-- <requirement class="EventActive"> -->
+				<!-- <property name="event_name" value="testtoday"/> -->
+			<!-- </requirement> -->
+		<!-- </action> -->
 
 	</action_sequence>
 	
@@ -219,10 +234,6 @@
 		
 		<action class="AddStartingItems" />
 		
-		<action class="AddQuest">
-			<property name="quest" value="quest_BasicSurvival1" />
-		</action>
-		
 	</action_sequence>
 	
 	<action_sequence name="game_remove_entity">
@@ -260,6 +271,555 @@
 		
 
 	</action_sequence>
+
+	<action_sequence name="demo_reset_player">
+		<property name="action_type" value="Game" />
+
+		<action class="SetScreenEffect">
+			<property name="phase" value="0" />
+			<property name="screen_effect" value="FadeToBlack" />
+			<property name="intensity" value="1" />
+			<property name="fade_time" value="0.05" />
+		</action>
+
+		<action class="ModifyCVar">
+			<property name="phase" value="0" />
+			<property name="cvar" value="_wetness" />
+			<property name="operation" value="set" />
+			<property name="value" value="0" />
+		</action>
+		
+		<action class="SetDayTime" >
+			<property name="day" value="7" />
+			<property name="hours" value="14" />
+			<property name="minutes" value="5" />
+		</action>
+
+		<action class="ResetMap">
+			<property name="remove_discovery" value="true" />
+			<property name="remove_waypoints" value="true" />
+		</action>
+
+		<action class="RemoveDeathBuffs" />
+
+		<action class="RemoveBuff">
+			<property name="buff_name" value="buffDemoTimerStart,buffDemoTimerHalfTime,buffDemoTimerEndWarning,buffDemoTimerEnd" />
+		</action>
+
+		<action class="ResetPlayerData">
+			<property name="reset_skills" value="true" />
+			<property name="reset_books" value="true" />
+			<property name="reset_crafting" value="true" />
+			<property name="reset_levels" value="true" />
+			<property name="remove_landclaims" value="true" />
+			<property name="remove_bedroll" value="true" />
+			<property name="remove_challenges" value="true" />
+			<property name="remove_quests" value="true" />
+			<property name="remove_backpack" value="true" />
+			<property name="reset_stats" value="true" />
+		</action>
+
+		<action class="ModifyEntityStat">
+			<property name="stat" value="Food" />
+			<property name="operation" value="SetMax" />
+		</action>
+
+		<action class="ModifyEntityStat">
+			<property name="stat" value="Water" />
+			<property name="operation" value="SetMax" />
+		</action>
+
+		<action class="RemoveItems">
+			<property name="items_location" value="Toolbelt,Backpack,Equipment" />
+		</action>
+
+		<action class="SetItemSlots">
+			<property name="items_location" value="Backpack" />
+			<property name="items" value="ammoArrowIron,ammo9mmBulletBall,ammoShotgunShell,ammoShotgunShell,ammo762mmBulletBall,ammo762mmBulletBall,drinkJarRedTea,foodMeatStew,resourceRepairKit,resourceLockPick" />
+			<property name="item_counts" value="150,300,150,150,150,150,4,4,5,10" />
+			<property name="slot_numbers" value="0,1,2,3,4,5,6,7,8,9" />
+		</action>
+
+		<action class="SetItemSlots">
+			<property name="items_location" value="Toolbelt" />
+			<property name="items" value="meleeToolRepairT0StoneAxe,meleeWpnClubT1BaseballBat,gunBowT3CompoundBow,gunHandgunT1Pistol,gunShotgunT2PumpShotgun,gunMGT1AK47,meleeWpnBladeT1HuntingKnife,meleeToolTorch,medicalFirstAidKit" />
+			<property name="item_counts" value="6,1-3,1-3,1-3,1-3,1-3,1-3,1,4" />
+			<property name="slot_numbers" value="0,1,2,3,4,5,7,8,9" />
+		</action>
+
+		<action class="SetItemSlots">
+			<property name="items_location" value="Equipment" />
+			<property name="items" value="armorLumberjackHelmetDemo,armorLumberjackOutfit,armorLumberjackGloves,armorLumberjackBoots" />
+			<property name="item_counts" value="1-3,1-3,1-3,1-3" />
+		</action>
+
+		<!-- <action class="AddSkillPoints"> -->
+			<!-- <property name="skill_points" value="4" /> -->
+		<!-- </action> -->
+
+		<!-- Assign Some of the Skill Points into ones we think would be good for new player -->
+		<action class="ModifyProgression">
+			<property name="modify_type" value="Set" />
+			<property name="progression_names" value="attPerception,attStrength,attFortitude,attAgility,attIntellect,perkPackMule,perkArchery,perkGunslinger,perkDeepCuts,perkBoomstick,perkPummelPete,perkMiner69r,perkMotherLode,perkMachineGunner,perkPainTolerance,perkHealingFactor,perkRuleOneCardio,perkRunAndGun,perkMediumArmor,perkParkour,perkHiddenStrike,perkFromTheShadows" />
+			<property name="values" value="5,5,5,5,5,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2" />
+		</action>
+
+		<!-- Teleport the player out of bounds to unload all chunks, perform a region reset and teleport back to starting position-->
+		<action class="Teleport">
+			<property name="target_position" value="9000,59, 9000" />
+		</action>
+
+		<action class="BeltTooltip">
+			<property name="phase" value="1" />
+			<property name="text" value="***" />
+		</action>
+
+		<action class="Delay">
+			<property name="phase" value="1" />
+			<property name="time" value="5" />
+		</action>
+
+		<action class="ResetRegions" >
+			<property name="phase" value="1" />
+			<property name="reset_type" value="Full" />
+		</action>
+		
+		<action class="Delay">
+			<property name="phase" value="1" />
+			<property name="time" value="5" />
+		</action>
+
+		<action class="BeltTooltip">
+			<property name="phase" value="2" />
+			<property name="text" value="**" />
+		</action>
+
+		<!-- <action class="BeltTooltip"> -->
+			<!-- <property name="phase" value="2" /> -->
+			<!-- <property name="text" value="A horde is headed your way." /> -->
+		<!-- </action> -->
+
+		<action class="Teleport">
+			<property name="phase" value="2" />
+			<property name="target_position" value="-22,35,-20" />
+		</action>
+		
+		<!-- <action class="BeltTooltip"> -->
+			<!-- <property name="phase" value="3" /> -->
+			<!-- <property name="text" value="Prepare yourself by 22:00." /> -->
+		<!-- </action> -->
+		
+		<!-- <action class="BeltTooltip"> -->
+			<!-- <property name="phase" value="3" /> -->
+			<!-- <property name="text" value="Survive the night using your wits and your weapons." /> -->
+		<!-- </action> -->
+		
+		<!-- <action class="BeltTooltip"> -->
+			<!-- <property name="phase" value="3" /> -->
+			<!-- <property name="text" value="Good luck, Survivor..." /> -->
+		<!-- </action> -->
+
+		<action class="Delay">
+			<property name="phase" value="3" />
+			<property name="time" value="8" />
+		</action>
+
+		<action class="BeltTooltip">
+			<property name="phase" value="3" />
+			<property name="text" value="[CC0000]Welcome to the 7 Days to Die: Console Edition Demo![-]" />
+		</action>
+
+		<action class="Delay">
+			<property name="phase" value="4" />
+			<property name="time" value="2" />
+		</action>
+
+		<action class="SetScreenEffect">
+			<property name="phase" value="5" />
+			<property name="screen_effect" value="FadeToBlack" />
+			<property name="intensity" value="0" />
+			<property name="fade_time" value="1" />
+		</action>
+
+		<action class="AddBuff">
+			<property name="phase" value="6" />
+			<property name="buff_name" value="buffDemoTimerStart" param1="addbuff" />
+			<property name="removes_buff" value="" param1="removebuff" />
+			<property name="check_already_exists" value="false" />
+		</action>
+
+		<action class="AddPlayerLevel">
+			<property name="phase" value="6" />
+			<property name="levels" value="6" />
+		</action>
+
+		<action class="Delay">
+			<property name="phase" value="7" />
+			<property name="time" value="1" />
+		</action>
+
+		<action class="ModifyEntityStat">
+			<property name="phase" value="8" />
+			<property name="stat" value="Health" />
+			<property name="operation" value="SetMax" />
+		</action>
+
+		<action class="ModifyEntityStat">
+			<property name="phase" value="8" />
+			<property name="stat" value="Stamina" />
+			<property name="operation" value="SetMax" />
+		</action>
+
+		<action class="ShowWindow">
+			<property name="phase" value="9" />
+			<property name="window" value="demo" />
+		</action>
+
+	</action_sequence>
+	
+	<!-- CHALLENGE_REWARDS_PAGE_01 -->
+	
+	<action_sequence name="challenge_reward_default">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="100" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_500">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="500" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_1000">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="1000" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_2000">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="2000" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_2500">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="2500" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_5000">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="5000" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_reward_10000">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddXP">
+			<property name="xp_amount" value="10000" />
+		</action>
+	</action_sequence>
+
+	<action_sequence name="challenge_group_reward_basics">
+		<property name="allow_user_trigger" value="false" />
+		<property name="action_type" value="Game" />
+		
+		<action class="AddSkillPoints">
+			<property name="skill_points" value="4" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value="2" />
+		</action>
+		
+		<action class="AddQuest">
+			<property name="phase" value="1" />
+			<property name="quest" value="quest_whiteRiverCitizen1" />
+		</action>
+
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_homesteading">
+		<!-- <property name="allow_user_trigger" value="false" /> -->
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="challengegroup_reward_homesteading" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+		
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_advanced_survival" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_advanced_survival" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_crafting" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_crafting" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_trader_quests" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_trader_quests" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_harvesting" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_harvesting" />
+	</action_sequence>
+	
+	<!-- CHALLENGE_REWARDS_PAGE_02 -->
+	
+	<action_sequence name="challenge_group_reward_gatherer" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_gatherer" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_farmer" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_farmer" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_healer" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_healer" />
+	</action_sequence>
+	
+	<action_sequence name="challenge_group_reward_survivor" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_survivor" />
+	</action_sequence>
+
+
+<!-- *** ANIMAL_HUNTER -->
+	<action_sequence name="challenge_group_reward_hunter" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_hunter" />
+	</action_sequence>
+
+	<!-- KILL_RABBITS_REWARD -->
+	<action_sequence name="reward_rabbit_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_rabbit_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+	<!-- KILL_CHICKENS_REWARD -->
+	<action_sequence name="reward_chicken_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_chicken_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+	<!-- KILL_COYOTES_REWARD -->
+	<action_sequence name="reward_coyote_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_coyote_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+	<!-- KILL_DEER_REWARD -->
+	<action_sequence name="reward_deer_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_deer_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+		<!-- KILL_SNAKES_REWARD -->
+	<action_sequence name="reward_snake_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_snake_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+		<!-- KILL_BOAR_REWARD -->
+	<action_sequence name="reward_boar_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_boar_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+		<!-- KILL_WOLVES_REWARD -->
+	<action_sequence name="reward_wolf_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_wolf_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+		<!-- KILL_LIONS_REWARD -->
+	<action_sequence name="reward_lion_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_lion_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+		<!-- KILL_BEAR_REWARD -->
+	<action_sequence name="reward_bear_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_bear_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+
+	</action_sequence>
+		<!-- KILL_ANY_ANIMALS_REWARD -->
+	<action_sequence name="reward_any_animal_hunter">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_any_animal_hunter" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+
+<!-- *** ZOMBIE_SLAYER -->
+	<action_sequence name="challenge_group_reward_zombie_slayer" template="challenge_group_reward_homesteading">
+		<variable name="quest" value="challengegroup_reward_zombie_slayer" />
+	</action_sequence>
+	
+	<!-- KILL_ANY_ZOMBIES_REWARD -->
+	<action_sequence name="reward_any_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_any_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_VULTURES_REWARD -->
+	<action_sequence name="reward_vulture_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_vulture_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_SPIDERS_REWARD -->
+	<action_sequence name="reward_spider_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_spider_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_LUMBERJACK_REWARD -->
+	<action_sequence name="reward_lumberjack_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_lumberjack_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_BIG_MAMA_REWARD -->
+	<action_sequence name="reward_bigmama_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_bigmama_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_TOURIST_REWARD -->
+	<action_sequence name="reward_tourist_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_tourist_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_COP_REWARD -->
+	<action_sequence name="reward_cop_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_cop_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_WIGHT_REWARD -->
+	<action_sequence name="reward_wight_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_wight_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_MUTATED_REWARD -->
+	<action_sequence name="reward_mutated_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_mutated_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- KILL_DEMOLITION_REWARD -->
+	<action_sequence name="reward_demolition_zombie_slayer">
+		<property name="action_type" value="Game" />
+		
+		<action class="AddQuest">
+			<property name="quest" value="quest_reward_demolition_zombie_slayer" param1="quest" />
+			<property name="notify" value="false" />
+		</action>
+	</action_sequence>
+	
+	<!-- CHALLENGE_REWARDS_PAGE_03 -->
+	
+		<!-- TWITCH_CHALLENGES_HERE -->
 	
 	<!-- POI Events -->
 
@@ -301,6 +861,7 @@
 		<property name="action_type" value="Game" />
 		<property name="category" value="poi" />
 		<action class="POIReset">
+			<property name="reset_type"  value="Current"/>
 		</action>
 
 		<action class="PlaySound">
@@ -358,53 +919,107 @@
 		
 	</action_sequence>
 	
-	<!-- BLOCK EVENTS -->
-	<action_sequence name="block_car_alarm_start">
+	<action_sequence name="quest_treasure_replace_road">
 		<property name="action_type" value="Game" />
-		<property name="target_type" value="Block" />
 		<property name="allow_while_dead" value="false" />
 		
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="entityhitsground" />
+			<property name="max_distance" value="15" />
+		</action>
+
+		<action class="BlockReplace">
+			<property name="min_offset" value="-5,-1,-5" />
+			<property name="max_offset" value="5,3,5" />
+			<property name="block_to" value="terrDirt" />
+			<property name="block_tags" value="terrAsphalt" />
+			<property name="allow_terrain" value="true" />
+			<property name="phase" value="2" />
+		</action>
+		
+	</action_sequence>
+	
+	<!-- *** BLOCK EVENTS -->
+
+		<!-- *** POLICE_CAR -->
+	<action_sequence name="block_car_alarm_start">
+		<property name="action_type" value="Game"/>
+		<property name="target_type" value="Block"/>
+		<property name="allow_while_dead" value="false"/>
 		<requirement class="RandomRoll">
-			<property name="min_max" value="0,100" />
-			<property name="operation" value="LTE" />
-			<property name="value" value="80" />
+			<property name="min_max" value="0,100"/>
+			<property name="operation" value="LTE"/>
+			<property name="value" value="80"/>
 		</requirement>
-
 		<action class="SpawnEntity">
-			<property name="entity_names" value="zombieFatCopFeral" />
-			<property name="single_choice" value="true" />
-			<property name="spawn_count" value="1" />
-			<property name="phase" value="0" />
-			<property name="add_to_group" value="zombies" />
-			<property name="safe_spawn" value="true" />
-			<property name="min_distance" value="10" />
-			<property name="max_distance" value="20" />
-			<property name="spawn_type" value="WanderingHorde" />
+			<property name="entity_names" value="zombieFatCopFeral"/>
+			<property name="single_choice" value="true"/>
+			<property name="spawn_count" value="1"/>
+			<property name="phase" value="0"/>
+			<property name="add_to_group" value="zombies"/>
+			<property name="safe_spawn" value="true"/>
+			<property name="min_distance" value="10"/>
+			<property name="max_distance" value="20"/>
+			<property name="spawn_type" value="WanderingHorde"/>
+			<property name="is_aggressive" value="false" />
 		</action>
-
 		<action class="SpawnEntity">
-			<property name="entity_group" value="ZombiePoliceCarHorde" />
-			<property name="spawn_count" value="4"  />
-			<property name="air_spawn" value="false" />
-			<property name="add_to_group" value="zombies" />
-			<property name="safe_spawn" value="true" />
-			<property name="min_distance" value="10" />
-			<property name="max_distance" value="20" />
-			<property name="spawn_type" value="WanderingHorde" />
+			<property name="entity_group" value="ZombiePoliceCarHorde"/>
+			<property name="spawn_count" value="4"/>
+			<property name="air_spawn" value="false"/>
+			<property name="add_to_group" value="zombies"/>
+			<property name="safe_spawn" value="true"/>
+			<property name="min_distance" value="10"/>
+			<property name="max_distance" value="20"/>
+			<property name="spawn_type" value="WanderingHorde"/>
+			<property name="is_aggressive" value="false" />
 		</action>
-
 	</action_sequence>
 	
 	<action_sequence name="block_car_alarm_end">
-		<property name="action_type" value="Game" />
-		<property name="target_type" value="Block" />
-		<property name="allow_while_dead" value="false" />
-		
+		<property name="action_type" value="Game"/>
+		<property name="target_type" value="Block"/>
+		<property name="allow_while_dead" value="false"/>
 		<!-- <action class="PlaySound"> -->
-			<!-- <property name="sound" value="caralarm1_dying" /> -->
-			<!-- <property name="phase" value="1" /> -->
+			<!-- <property name="sound" value="caralarm1_dying"/> -->
+			<!-- <property name="phase" value="1"/> -->
 		<!-- </action> -->
+	</action_sequence>
 
+	<!-- *** ZOMBIE_SPAWN_BLOCK -->
+	<action_sequence name="test_zombie_spawn_block">
+		<property name="action_type" value="Game"/>
+		<property name="target_type" value="Block"/>
+		<property name="allow_while_dead" value="false"/>
+		<property name="refund_inactivity" value="false"/>
+		<loop class="While">
+		<property name="phase" value="0"/>
+			<decision class="If">
+				<requirement class="GroupLiveCount">
+					<property name="target_group" value="zombies"/>
+					<property name="operation" value="LessThan"/>
+					<property name="count" value="5"/>
+				</requirement>
+				<action class="Delay">
+					<property name="time" value=".2"/>
+				</action>
+				<action class="SpawnEntity">
+					<property name="entity_group" value="AbandonedHouseHorde"/>
+					<property name="spawn_count" value="1"/>
+					<property name="air_spawn" value="false"/>
+					<property name="add_to_group" value="zombies"/>
+					<property name="safe_spawn" value="true"/>
+					<property name="min_distance" value="1"/>
+					<property name="max_distance" value="2"/>
+					<property name="spawn_type" value="Position"/>
+				</action>
+				<!-- <action class="PlaySound"> -->
+					<!-- <property name="sound" value="zombiemalealert" param1="alertsound"/> -->
+					<!-- <property name="phase" value="1"/> -->
+				<!-- </action> -->
+			</decision>
+		</loop>
 	</action_sequence>
 
 	<!-- <action_sequence name="test_POITrigger"> -->
@@ -853,9 +1468,8 @@
 			<property name="phase" value="1" />
 		</action>
 
-		<action class="RandomDelay">
-			<property name="min_time" value="3" />
-			<property name="max_time" value="6" />
+		<action class="Delay">
+			<property name="time" value="3-6" />
 			<property name="phase" value="2" />
 
 			<requirement class="Gamestage">
@@ -868,9 +1482,8 @@
 		<action class="PrimeEntity">
 			<property name="phase" value="3" />
 			<property name="target_group" value="zombie" />
-			<!-- <property name="min_override_time" value="1" /> -->
-			<!-- <property name="min_override_time" value="3" /> -->
-
+			<!-- <property name="override_time" value="1-3" /> -->
+			
 			<requirement class="Gamestage">
 				<property name="operation" value="GTE" />
 				<property name="game_stage" value="120" param1="gamestage" />
@@ -1199,7 +1812,7 @@
 	<!-- Actions -->
 
 	<action_sequence name="spawn_standard" template="spawn_single">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 	</action_sequence>
 
@@ -1403,12 +2016,12 @@
 	</action_sequence>
 
 	<action_sequence name="spawn_feral" template="spawn_single">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
 
 	<action_sequence name="spawn_rad" template="spawn_single">
-		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated" />
+		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated,zombieInmateRadiated" />
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
 
@@ -1620,19 +2233,19 @@
 	</action_sequence>
 	
 	<action_sequence name="horde_zombies" template="spawn_horde">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="spawncount" value="15" />
 	</action_sequence>
 	
 	<action_sequence name="horde_ferals" template="spawn_horde">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="alertsound" value="zombieferalalert" />
 		<variable name="spawncount" value="15" />
 	</action_sequence>
 	
 	<action_sequence name="horde_rads" template="spawn_horde">
-		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated" />
+		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated,zombieInmateRadiated" />
 		<variable name="alertsound" value="zombieferalalert" />
 		<variable name="spawncount" value="15" />
 	</action_sequence>
@@ -1890,6 +2503,10 @@
 	<action_sequence name="spawn_4x4" template="spawn_crate_template">
 		<variable name="cratename" value="TwitchAction_Supply4x4" />
 	</action_sequence>
+	
+	<action_sequence name="spawn_gyro" template="spawn_crate_template">
+		<variable name="cratename" value="TwitchAction_SupplyGyro" />
+	</action_sequence>
 
 	<action_sequence name="spawn_resource0" template="spawn_crate_template">
 		<variable name="cratename" value="TwitchAction_SupplyResource1" />
@@ -1965,6 +2582,10 @@
 
 	<action_sequence name="spawn_robo3" template="spawn_crate_template">
 		<variable name="cratename" value="TwitchAction_SupplyRobo3" />
+	</action_sequence>
+	
+	<action_sequence name="spawn_robo4" template="spawn_crate_template">
+		<variable name="cratename" value="TwitchAction_SupplyRobo4" />
 	</action_sequence>
 	
 	<action_sequence name="spawn_builder1" template="spawn_crate_template">
@@ -2506,7 +3127,8 @@
 		<action class="AddItemDurability">
 			<property name="phase" value="1" />
 			<property name="items_location" value="Toolbelt" />
-			<property name="amount" value="-0.20" />
+			<property name="amount" value="0.20" />
+			<property name="is_negative" value="true" />
 			<property name="is_percent" value="true" />
 			<property name="target_group" value="party" />
 		</action>
@@ -2877,7 +3499,7 @@
 			<property name="target_group" value="targets" />
 		</action>
 		
-		<action class="Explode">
+		<action class="ExplodeTarget">
 			<property name="phase" value="4" />
 			<property name="blast_power" value="75" />
 			<property name="block_damage" value="300" />
@@ -3080,7 +3702,7 @@
 			<property name="sound" value="twitch_kaboom" />
 		</action>
 
-		<action class="Explode">
+		<action class="ExplodeTarget">
 			<property name="phase" value="2" />
 			<property name="blast_power" value="75" />
 			<property name="block_damage" value="1" />
@@ -3111,6 +3733,7 @@
 			<property name="phase" value="0" />
 			<property name="group_name" value="pulledEntities" />
 			<property name="entity_tags" value="entity" />
+			<property name="exclude_buff" value="twitch_hordestone_zombie" />
 		</action>
 
 		<action class="PlaySound">
@@ -3320,7 +3943,7 @@
 		</action>
 
 	</action_sequence>
-	
+
 	<action_sequence name="action_removeturrets">
 		<property name="category" value="twitch_actions" />
 		<requirement class="NearbyEntities">
@@ -3696,6 +4319,7 @@
 			<property name="phase" value="2" />
 			<property name="buff_name" value="buffDontMove" />
 			<property name="target_group" value="entities" />
+			<property name="duration" value="2.5" />
 		</action>
 		
 		<action class="SetScreenEffect">
@@ -3739,13 +4363,154 @@
 
 	</action_sequence>
 	
+	<action_sequence name="action_mini_fill">
+		<property name="category" value="twitch_actions" />
+		
+		<requirement class="InVehicle">
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<requirement class="InSafeZone">
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_action" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="twitch_fill_base" />
+			<property name="max_distance" value="15" />
+		</action>
+		
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="2" />
+			<property name="entity_tags" value="player" />
+			<property name="group_name" value="entities" />
+			<property name="exclude_target" value="false" />
+			<property name="max_distance" value="10" />
+		</action>
+		
+		<action class="AddBuff">
+			<property name="phase" value="2" />
+			<property name="buff_name" value="buffDontMove" />
+			<property name="target_group" value="entities" />
+			<property name="duration" value="2.5" />
+		</action>
+		
+		<action class="SetScreenEffect">
+			<property name="phase" value="2" />
+			<property name="screen_effect" value="FadeToBlack" />
+			<property name="intensity" value="1" />
+			<property name="fade_time" value="0.05" />
+			<property name="target_group" value="entities" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value="2" />
+			<property name="phase" value="3" />
+		</action>
+		
+		<action class="FillArea">
+			<property name="phase" value="4" />
+			<property name="fill_type" value="Cube" />
+			<property name="new_name" value="Filled by {viewer}" />
+			<property name="block_tags" value="air,twitchReplace" />
+			<property name="exclude_block_tags" value="twitchHordeStone" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value="1" />
+			<property name="phase" value="5" />
+		</action>
+		
+		<action class="RemoveBuff">
+			<property name="buff_name" value="buffDontMove" />
+			<property name="phase" value="6" />
+			<property name="target_group" value="entities" />
+		</action>
+		
+		<action class="SetScreenEffect">
+			<property name="phase" value="6" />
+			<property name="screen_effect" value="FadeToBlack" />
+			<property name="intensity" value="0" />
+			<property name="fade_time" value="0.1" />
+			<property name="target_group" value="entities" />
+		</action>
+
+	</action_sequence>
+	
+	<action_sequence name="action_glass_cube">
+		<property name="category" value="twitch_actions" />
+		
+		<requirement class="InVehicle">
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<requirement class="InSafeZone">
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_action" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="twitch_glass_cube" />
+			<property name="max_distance" value="15" />
+		</action>
+		
+		<action class="AddEntitiesToGroup">
+			<property name="phase" value="2" />
+			<property name="entity_tags" value="player" />
+			<property name="group_name" value="entities" />
+			<property name="exclude_target" value="false" />
+			<property name="max_distance" value="10" />
+		</action>
+		
+		<action class="AddBuff">
+			<property name="phase" value="2" />
+			<property name="buff_name" value="buffDontMove" />
+			<property name="target_group" value="entities" />
+			<property name="duration" value="1" />
+		</action>
+		
+		<action class="FillArea">
+			<property name="phase" value="4" />
+			<property name="fill_type" value="Cube" />
+			<!-- <property name="new_name" value="Filled by {viewer}" /> -->
+			<property name="block_tags" value="air,twitchReplace" />
+			<property name="exclude_block_tags" value="twitchHordeStone" />
+			<property name="block" value="twitchGlassBusinessBlock" />
+			<property name="replace_all" value="true" />
+			<property name="allow_terrain" value="true" />
+			<property name="max_density" value="true" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value=".1" />
+			<property name="phase" value="5" />
+		</action>
+		
+		<action class="RemoveBuff">
+			<property name="buff_name" value="buffDontMove" />
+			<property name="phase" value="6" />
+			<property name="target_group" value="entities" />
+		</action>
+
+	</action_sequence>
+	
+	
 	<action_sequence name="action_time_shift">
 		<property name="category" value="twitch_actions" />
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="HordeNight" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="0" />
+			<property name="time" value="0" />
 		</action>
 	
 	</action_sequence>
@@ -3813,7 +4578,7 @@
 			<property name="amount" value="250" />
 			<property name="point_type" value="SP" />
 			<property name="recipient_type" value="Requester" />
-			<property name="award_text" value="[7DTD]: {0} awarded 250 SP for starting PP Bonanza!" />
+			<property name="award_text" value="[7DTD]: {viewer} awarded {amount} SP for starting PP Bonanza!" />
 		</action>
 
 		<action class="AddBuff">
@@ -3839,7 +4604,7 @@
 			<property name="amount" value="250" />
 			<property name="point_type" value="SP" />
 			<property name="recipient_type" value="Random" />
-			<property name="award_text" value="[7DTD]: Random PP Bonanza reward (250 SP) given to {0}!" />
+			<property name="award_text" value="[7DTD]: Random PP Bonanza reward ({amount} SP) given to {viewer}!" />
 		</action>
 
 	</action_sequence>
@@ -3868,6 +4633,12 @@
 		<variable name="addbuff" value="twitch_buffUnlockActions" />
 	</action_sequence>
 	
+	<action_sequence name="buff_crappyloot" template="buff_template">
+		<variable name="twitchnegative" value="true" />
+		<variable name="buffsound" value="twitch_crappy_loot" />
+		<variable name="addbuff" value="twitch_buffCrappyLoot" />
+	</action_sequence>
+	
 	<action_sequence name="action_time_night">
 		<property name="category" value="twitch_actions" />
 		
@@ -3878,8 +4649,7 @@
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="Night" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="0" />
+			<property name="time" value="0" />
 		</action>
 		
 		<action class="PlaySound">
@@ -3900,8 +4670,7 @@
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="NextMorning" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="0" />
+			<property name="time" value="0" />
 		</action>
 		
 		<action class="PlaySound">
@@ -3967,6 +4736,15 @@
 		
 	</action_sequence>
 	
+	<action_sequence name="action_failquest">
+		<property name="category" value="twitch_actions" />
+		
+		<requirement class="OnQuest" />
+		
+		<action class="FailQuest" />
+		
+	</action_sequence>
+	
 	<action_sequence name="action_notime">
 		<property name="category" value="twitch_actions" />
 		
@@ -4003,8 +4781,7 @@
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="Current" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="180" />
+			<property name="time" value="0-180" />
 			<property name="phase" value="3" />
 		</action>
 	
@@ -4027,8 +4804,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="BigHead" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="120" />
-			<property name="max_duration" value="120" />
+			<property name="duration" value="120" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -4051,8 +4827,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="Dancing" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="20" />
-			<property name="max_duration" value="40" />
+			<property name="duration" value="20-40" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -4084,8 +4859,39 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="BucketHead" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="120" />
-			<property name="max_duration" value="120" />
+			<property name="duration" value="120" />
+			<property name="phase" value="2" />
+		</action>
+
+	</action_sequence>
+	
+	<action_sequence name="action_tiny_zombies">
+		<property name="category" value="twitch_actions" />
+		
+		<action class="AddPartyToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_buff" param1="twitchsound" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_tiny_zombies" param1="buffsound" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+			<property name="delay" value="1.7" param1="buffsounddelay" />
+		</action>
+
+		<action class="SetEventFlag">
+			<property name="event_flag" value="TinyZombies" />
+			<property name="enable" value="true" />
+			<property name="duration" value="120" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -4109,8 +4915,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="Dancing" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="45" />
-			<property name="max_duration" value="75" />
+			<property name="duration" value="45-75" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -4408,6 +5213,13 @@
 			<property name="target_group" value="party" />
 			<property name="spawn_type" value="Position" />
 		</action>
+		
+		<action class="TwitchChallengeAction">
+			<property name="target_group" value="party" />
+			<property name="objective_type" value="DefeatBossHorde" />
+			<property name="objective_param" value="standard" />
+			<property name="phase" value="7" />
+		</action>
 
 		<action class="PlaySound">
 			<property name="sound" value="twitch_vote_horde_failed" />
@@ -4545,6 +5357,13 @@
 			<property name="target_group" value="party" />
 			<property name="spawn_type" value="Position" />
 		</action>
+		
+		<action class="TwitchChallengeAction">
+			<property name="target_group" value="party" />
+			<property name="objective_type" value="DefeatBossHorde" />
+			<property name="objective_param" value="buffed" />
+			<property name="phase" value="7" />
+		</action>
 
 		<action class="PlaySound">
 			<property name="sound" value="twitch_vote_horde_failed" />
@@ -4681,6 +5500,13 @@
 			<property name="phase_on_complete" value="9" />
 			<property name="target_group" value="party" />
 			<property name="spawn_type" value="Position" />
+		</action>
+		
+		<action class="TwitchChallengeAction">
+			<property name="target_group" value="party" />
+			<property name="objective_type" value="DefeatBossHorde" />
+			<property name="objective_param" value="weapon" />
+			<property name="phase" value="7" />
 		</action>
 
 		<action class="PlaySound">
@@ -4831,6 +5657,13 @@
 			<property name="phase_on_complete" value="11" />
 			<property name="target_group" value="party" />
 			<property name="spawn_type" value="Position" />
+		</action>
+		
+		<action class="TwitchChallengeAction">
+			<property name="target_group" value="party" />
+			<property name="objective_type" value="DefeatBossHorde" />
+			<property name="objective_param" value="immortal" />
+			<property name="phase" value="9" />
 		</action>
 
 		<action class="PlaySound">
@@ -4992,6 +5825,13 @@
 			<property name="phase_on_complete" value="11" />
 			<property name="target_group" value="party" />
 			<property name="spawn_type" value="Position" />
+		</action>
+		
+		<action class="TwitchChallengeAction">
+			<property name="target_group" value="party" />
+			<property name="objective_type" value="DefeatBossHorde" />
+			<property name="objective_param" value="immortal" />
+			<property name="phase" value="9" />
 		</action>
 
 		<action class="PlaySound">
@@ -5204,6 +6044,12 @@
 		<variable name="alertsound" value="zombiemalealert" />
 	</action_sequence>
 	
+	<action_sequence name="vote_minor_inmate" template="vote_minor">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="spawncount" value="5" />
+		<variable name="alertsound" value="zombiemalealert" />
+	</action_sequence>
+	
 	<action_sequence name="vote_minor_random1" template="vote_minor">
 		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
 		<variable name="spawncount" value="5" />
@@ -5321,8 +6167,14 @@
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
 	
+	<action_sequence name="vote_minor_finmate" template="vote_minor">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="spawncount" value="5" />
+		<variable name="alertsound" value="zombieferalalert" />
+	</action_sequence>
+	
 	<action_sequence name="vote_minor_random3" template="vote_minor">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="spawncount" value="5" />
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
@@ -5436,8 +6288,14 @@
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
 	
+	<action_sequence name="vote_minor_rinmate" template="vote_minor">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="spawncount" value="5" />
+		<variable name="alertsound" value="zombieferalalert" />
+	</action_sequence>
+	
 	<action_sequence name="vote_minor_random5" template="vote_minor">
-		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieBusinessManRadiated,zombieNurseRadiated,zombieSkateboarderRadiated,zombiePartyGirlRadiated,zombieJanitorRadiated" />
+		<variable name="zombiename" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieBusinessManRadiated,zombieNurseRadiated,zombieSkateboarderRadiated,zombiePartyGirlRadiated,zombieJanitorRadiated,zombieInmateRadiated" />
 		<variable name="spawncount" value="5" />
 		<variable name="alertsound" value="zombieferalalert" />
 	</action_sequence>
@@ -5701,7 +6559,7 @@
 	</action_sequence>
 
 	<action_sequence name="vote_horde_s_random" template="vote_horde_standard">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 	</action_sequence>
 
@@ -5712,6 +6570,11 @@
 
 	<action_sequence name="vote_horde_s_janitor" template="vote_horde_standard">
 		<variable name="zombiename" value="zombieJanitor" />
+		<variable name="alertsound" value="zombiemalealert" />
+	</action_sequence>
+	
+	<action_sequence name="vote_horde_s_inmate" template="vote_horde_standard">
+		<variable name="zombiename" value="zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 	</action_sequence>
 
@@ -5875,7 +6738,7 @@
 
 	<!-- Random Variations -->
 	<action_sequence name="vote_h_random_shock" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="enemybuff" value="twitch_enemyshock" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_electricity" />
@@ -5885,7 +6748,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_random_burn" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="enemybuff" value="twitch_enemyburn" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_fire" />
@@ -5895,7 +6758,7 @@
 	</action_sequence>
 
 	<action_sequence name="vote_h_random_rad" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="enemybuff" value="twitch_enemyrad" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_radiation" />
@@ -5905,7 +6768,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_random_weapon" template="vote_horde_weapon">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="minionbuff" value="twitch_tough1" />
 		<variable name="bossbuff" value="twitch_tough2" />
@@ -5913,7 +6776,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_random_immortal_b" template="vote_horde_immortal_boss">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
 		<variable name="minionbuff" value="twitch_tough1,twitch_minion" />
@@ -5922,7 +6785,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_random_immortal_m" template="vote_horde_immortal_minion">
-		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor" />
+		<variable name="zombiename" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
 		<variable name="minionbuff" value="twitch_tough1,twitch_minion,twitch_immortal" />
@@ -6037,6 +6900,63 @@
 	
 	<action_sequence name="vote_h_janitor_immortal_m" template="vote_horde_immortal_minion">
 		<variable name="zombiename" value="zombieJanitor" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough1,twitch_minion,twitch_immortal" />
+		<variable name="bossbuff" value="twitch_tough2,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<!-- Inmate Variations -->
+	<action_sequence name="vote_h_inmate_shock" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="enemybuff" value="twitch_enemyshock" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_electricity" />
+		<variable name="minionbuff" value="twitch_tough1,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough2,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_inmate_burn" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="enemybuff" value="twitch_enemyburn" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_fire" />
+		<variable name="minionbuff" value="twitch_tough1,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough2,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_inmate_rad" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="enemybuff" value="twitch_enemyrad" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_radiation" />
+		<variable name="minionbuff" value="twitch_tough1,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough2,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_inmate_weapon" template="vote_horde_weapon">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="minionbuff" value="twitch_tough1" />
+		<variable name="bossbuff" value="twitch_tough2" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_inmate_immortal_b" template="vote_horde_immortal_boss">
+		<variable name="zombiename" value="zombieInmate" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough1,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough2,twitch_boss,twitch_immortal" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT2" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_inmate_immortal_m" template="vote_horde_immortal_minion">
+		<variable name="zombiename" value="zombieInmate" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
 		<variable name="minionbuff" value="twitch_tough1,twitch_minion,twitch_immortal" />
@@ -6504,7 +7424,7 @@
 
 	<!-- Random Variations -->
 	<action_sequence name="vote_h_frandom_shock" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="enemybuff" value="twitch_enemyshock" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_electricity" />
@@ -6514,7 +7434,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_frandom_burn" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="enemybuff" value="twitch_enemyburn" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_fire" />
@@ -6524,7 +7444,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_frandom_rad" template="vote_horde_buffed">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="enemybuff" value="twitch_enemyrad" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_radiation" />
@@ -6534,7 +7454,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_frandom_weapon" template="vote_horde_weapon">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="minionbuff" value="twitch_tough2" />
 		<variable name="bossbuff" value="twitch_tough3" />
@@ -6542,7 +7462,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_frandom_immortal_b" template="vote_horde_immortal_boss">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
 		<variable name="minionbuff" value="twitch_tough2,twitch_minion" />
@@ -6551,7 +7471,7 @@
 	</action_sequence>
 	
 	<action_sequence name="vote_h_frandom_immortal_m" template="vote_horde_immortal_minion">
-		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral" />
+		<variable name="zombiename" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
 		<variable name="alertsound" value="zombiemalealert" />
 		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
 		<variable name="minionbuff" value="twitch_tough2,twitch_minion,twitch_immortal" />
@@ -6673,6 +7593,62 @@
 		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
 	</action_sequence>
 	
+	<!-- Inmate Variations -->
+	<action_sequence name="vote_h_finmate_shock" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="enemybuff" value="twitch_enemyshock" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_electricity" />
+		<variable name="minionbuff" value="twitch_tough2,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough3,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_finmate_burn" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="enemybuff" value="twitch_enemyburn" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_fire" />
+		<variable name="minionbuff" value="twitch_tough2,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough3,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_finmate_rad" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="enemybuff" value="twitch_enemyrad" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_radiation" />
+		<variable name="minionbuff" value="twitch_tough2,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough3,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_finmate_weapon" template="vote_horde_weapon">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="minionbuff" value="twitch_tough2" />
+		<variable name="bossbuff" value="twitch_tough3" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_finmate_immortal_b" template="vote_horde_immortal_boss">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough2,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough3,twitch_boss,twitch_immortal" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_finmate_immortal_m" template="vote_horde_immortal_minion">
+		<variable name="zombiename" value="zombieInmateFeral" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough2,twitch_minion,twitch_immortal" />
+		<variable name="bossbuff" value="twitch_tough3,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT3" />
+	</action_sequence>
 	
 	<!-- Spider Variations -->
 	<action_sequence name="vote_h_fspider_shock" template="vote_horde_buffed">
@@ -7246,6 +8222,63 @@
 		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
 	</action_sequence>
 	
+	<!-- Radiated Inmate Variations -->
+	<action_sequence name="vote_h_rinmate_shock" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="enemybuff" value="twitch_enemyshock" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_electricity" />
+		<variable name="minionbuff" value="twitch_tough3,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough4,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_rinmate_burn" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="enemybuff" value="twitch_enemyburn" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_fire" />
+		<variable name="minionbuff" value="twitch_tough3,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough4,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_rinmate_rad" template="vote_horde_buffed">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="enemybuff" value="twitch_enemyrad" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_radiation" />
+		<variable name="minionbuff" value="twitch_tough3,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough4,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_rinmate_weapon" template="vote_horde_weapon">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="minionbuff" value="twitch_tough2" />
+		<variable name="bossbuff" value="twitch_tough3" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_rinmate_immortal_b" template="vote_horde_immortal_boss">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough3,twitch_minion" />
+		<variable name="bossbuff" value="twitch_tough4,twitch_boss,twitch_immortal" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
+	<action_sequence name="vote_h_rinmate_immortal_m" template="vote_horde_immortal_minion">
+		<variable name="zombiename" value="zombieInmateRadiated" />
+		<variable name="alertsound" value="zombiemalealert" />
+		<variable name="bossicon1" value="ui_game_symbol_twitch_boss_bar_shield" />
+		<variable name="minionbuff" value="twitch_tough3,twitch_minion,twitch_immortal" />
+		<variable name="bossbuff" value="twitch_tough4,twitch_boss" />
+		<variable name="cratename" value="TwitchAction_VoteRewardT4" />
+	</action_sequence>
+	
 	<!-- Radiated Nurse Variations -->
 	<action_sequence name="vote_h_rnurse_shock" template="vote_horde_buffed">
 		<variable name="zombiename" value="zombieNurseRadiated" />
@@ -7720,8 +8753,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="BigHead" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="300" />
-			<property name="max_duration" value="300" />
+			<property name="duration" value="300" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -7753,8 +8785,39 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="BucketHead" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="300" />
-			<property name="max_duration" value="300" />
+			<property name="duration" value="300" />
+			<property name="phase" value="2" />
+		</action>
+
+	</action_sequence>
+	
+	<action_sequence name="vote_tiny_zombies">
+		<property name="category" value="twitch_votes" />
+		
+		<action class="AddPartyToGroup">
+			<property name="phase" value="0" />
+			<property name="group_name" value="party" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_buff" param1="twitchsound" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+		</action>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_tiny_zombies" param1="buffsound" />
+			<property name="phase" value="1" />
+			<property name="inside_head" value="true" />
+			<property name="target_group" value="party" />
+			<property name="delay" value="1.7" param1="buffsounddelay" />
+		</action>
+
+		<action class="SetEventFlag">
+			<property name="event_flag" value="TinyZombies" />
+			<property name="enable" value="true" />
+			<property name="duration" value="300" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -7961,8 +9024,7 @@
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="Current" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="180" />
+			<property name="time" value="0-180" />
 			<property name="phase" value="3" />
 		</action>
 	
@@ -8682,8 +9744,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="BigHead" />
 			<property name="enable" value="false" />
-			<property name="min_duration" value="0" />
-			<property name="max_duration" value="0" />
+			<property name="duration" value="0" />
 		</action>
 
 	</action_sequence>
@@ -8867,12 +9928,57 @@
 		
 	</action_sequence>
 	
-	<action_sequence name="action_block_hole">
+	<action_sequence name="action_sink_hole">
+
+		<requirement class="InVehicle">
+			<property name="invert" value="true" />
+		</requirement>
+		
+		<requirement class="InSafeZone">
+			<property name="invert" value="true" />
+		</requirement>
+
+		<action class="PlaySound">
+			<property name="sound" value="twitch_bad_action" />
+			<property name="phase" value="1" />
+		</action>
+
+		<action class="PlaySound">
+			<property name="phase" value="1" />
+			<property name="sound" value="twitch_sinkhole" />
+			<property name="max_distance" value="15" />
+		</action>
+				
+		<action class="AddBuff">
+			<property name="phase" value="1" />
+			<property name="buff_name" value="buffDontMove" />
+			<property name="duration" value="1.5" />
+		</action>
 
 		<action class="BlockReplace">
-			<property name="min_offset" value="-5,0,-5" />
-			<property name="max_offset" value="5,3,5" />
+			<property name="min_offset" value="-2,-1,-2" />
+			<property name="max_offset" value="2,3,2" />
 			<property name="block_to" value="air" />
+			<property name="allow_terrain" value="true" />
+			<property name="phase" value="2" />
+		</action>
+		
+		<action class="BlockReplace">
+			<property name="min_offset" value="-3,-5,-3" />
+			<property name="max_offset" value="3,-2,3" />
+			<property name="block_to" value="air" />
+			<property name="allow_terrain" value="true" />
+			<property name="phase" value="2" />
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value="1" />
+			<property name="phase" value="3" />
+		</action>
+		
+		<action class="RemoveBuff">
+			<property name="buff_name" value="buffDontMove" />
+			<property name="phase" value="4" />
 		</action>
 
 	</action_sequence>
@@ -8947,7 +10053,7 @@
 			<property name="spacing" value="0" />
 			<property name="safe_allowed" value="false" />
 			<property name="random_chance" value=".4" />
-			<property name="block_to" value="trapSpikesIronDmg0,trapSpikesWoodDmg0" />
+			<property name="block_to" value="twitchSpikesIron,twitchSpikesWood" />
 			<property name="block_tags" value="air,twitchReplace" />
 			<property name="time_alive" value="120" />
 		</action>
@@ -9173,8 +10279,7 @@
 		
 		<action class="TimeChange">
 			<property name="time_preset" value="Night" />
-			<property name="min_time" value="0" />
-			<property name="max_time" value="0" />
+			<property name="time" value="0" />
 		</action>
 		
 		<action class="PlaySound">
@@ -9219,8 +10324,7 @@
 		<action class="SetEventFlag">
 			<property name="event_flag" value="Dancing" />
 			<property name="enable" value="true" />
-			<property name="min_duration" value="40" />
-			<property name="max_duration" value="60" />
+			<property name="duration" value="40-60" />
 			<property name="phase" value="2" />
 		</action>
 
@@ -9472,6 +10576,7 @@
 			<property name="min_offset" value="-1,-1,-1" />
 			<property name="max_offset" value="1,3,1" />
 			<property name="block_to" value="air" />
+			<property name="allow_terrain" value="true" />
 			
 		</action>
 	</action_sequence>
@@ -9501,6 +10606,7 @@
 		<property name="action_type" value="Game" />
 		<property name="target_type" value="Block" />
 		<property name="allow_while_dead" value="false" />
+		<property name="refund_inactivity" value="false" />
 
 		<loop class="While" >
 		  <property name="phase" value="0" />
@@ -9537,6 +10643,172 @@
 
 		</loop>
 
+	</action_sequence>
+	
+	<action_sequence name="base_hordestone">
+		<property name="category" value="twitch_actions" />
+		<property name="refund_inactivity" value="false" />
+		
+		<action class="GetNearbyPoint">
+			<property name="phase" value="0" />
+			<property name="safe_spawn" value="false" />
+		</action>
+		
+		<loop class="While" >
+		  <property name="phase" value="1" />
+
+			<requirement class="IsBlock">
+			  <property name="block_name" value="twitchHordeStone01" />
+			  <property name="invert" value="true" />
+			</requirement>
+
+			<action class="GetNearbyPoint">
+				<property name="phase" value="0" />
+				<property name="safe_spawn" value="false" />
+			</action>
+			
+			<action class="BlockReplaceAttack">
+				<property name="phase" value="1" />
+				<property name="target_position" value="0, 2, 0" />
+				<property name="offset_type" value="Relative" />
+				<property name="block_to" value="twitchHordeStone01" />
+				<property name="safe_allowed" value="false" />
+				<property name="time_alive" value="300" />
+				<property name="allow_terrain" value="true" />
+				<property name="remove_sound" value="twitch_event_blocks_remove" />
+				<property name="refund_on_remove" value="true" />
+			</action>
+		</loop>
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_hordestone_start" />
+			<property name="phase" value="2" />
+		</action>
+		
+		<action class="Delay">
+			<property name="phase" value="2" />
+			<property name="time" value=".1" />
+		</action>
+		
+		<loop class="While" >
+			<property name="phase" value="3" />
+
+			<requirement class="IsBlock">
+			  <property name="block_name" value="twitchHordeStone01" />
+			</requirement>
+
+			<decision class="If">
+				<property name="condition_type" value="Any" />
+
+				<requirement class="GroupLiveCount">
+				  <property name="target_group" value="zombies"/>
+				  <property name="operation" value="LessThan"/>
+				  <property name="count" value="5"/>
+				</requirement>
+				
+				<requirement class="VarInt">
+				  <property name="var_name" value="Damaged"/>
+				  <property name="operation" value="GT" />
+				  <property name="value" value="0"/>
+				</requirement>
+
+				<action class="Delay">
+				  <property name="time" value=".1" />
+				</action>
+
+				<action class="SpawnEntity">
+					<property name="entity_names" value="zombieArlene" param1="zname" />
+					<property name="spawn_count" value="1" param1="spawncount" />
+					<property name="air_spawn" value="false" param1="airspawn" />
+					<property name="add_to_group" value="zombies" />
+					<property name="safe_spawn" value="true" />
+					<property name="add_buffs" value="twitch_hordestone_zombie" />
+					<property name="min_distance" value="2" />
+					<property name="max_distance" value="4" />
+					<property name="spawn_type" value="NearPosition" />
+					<property name="raycast_offset" value="1" />
+				</action>
+
+				<action class="PlaySound">
+				  <property name="sound" value="zombiemalealert" param1="alertsound" />
+				  <property name="phase" value="1" />
+				</action>
+				
+				<action class="ModifyVarInt">
+				  <property name="var_name" value="Damaged" />
+				  <property name="operation_type" value="subtract" />
+				  <property name="value" value="1" />
+				  <property name="min_value" value="0" />
+				  <property name="phase" value="2" />
+				</action>
+			
+			</decision>
+
+		</loop>
+
+	</action_sequence>
+
+	
+	<action_sequence name="hordestone_normal" template="base_hordestone">
+		<variable name="zname" value="zombieArlene,zombieBoe,zombieJoe,zombieLab,zombieDarlene,zombieMarlene,zombieYo,zombieSteve,zombieBusinessMan,zombieNurse,zombieSkateboarder,zombiePartyGirl,zombieBurnt,zombieJanitor,zombieInmate" />
+		<variable name="alertsound" value="zombiemalealert" />
+	</action_sequence>
+	
+	<action_sequence name="hordestone_ferals" template="base_hordestone">
+		<variable name="zname" value="zombieArleneFeral,zombieBoeFeral,zombieJoeFeral,zombieLabFeral,zombieDarleneFeral,zombieMarleneFeral,zombieYoFeral,zombieSteveFeral,zombieBusinessManFeral,zombieNurseFeral,zombieSkateboarderFeral,zombiePartyGirlFeral,zombieJanitorFeral,zombieInmateFeral" />
+		<variable name="alertsound" value="zombieferalalert" />
+	</action_sequence>
+	
+	<action_sequence name="hordestone_rads" template="base_hordestone">
+		<variable name="zname" value="zombieArleneRadiated,zombieBoeRadiated,zombieJoeRadiated,zombieLabRadiated,zombieDarleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSteveRadiated,zombieSkateboarderRadiated,zombieJanitorRadiated,zombieInmateRadiated" />
+		<variable name="alertsound" value="zombieferalalert" />
+	</action_sequence>
+	
+	<action_sequence name="test_hordestone">
+		<property name="category" value="twitch_actions" />
+		<property name="refund_inactivity" value="false" />
+		
+		<action class="PlaySound">
+			<property name="sound" value="twitch_hordestone_start" />
+			<property name="phase" value="0" />
+		</action>
+		
+		<action class="Delay">
+		  <property name="time" value="5" />
+		</action>
+		
+		<action class="GetNearbyPoint">
+			<property name="phase" value="0" />
+			<property name="safe_spawn" value="false" />
+		</action>
+		
+		<loop class="While" >
+		  <property name="phase" value="1" />
+
+			<requirement class="IsBlock">
+			  <property name="block_name" value="twitchHordeStone01" />
+			  <property name="invert" value="true" />
+			</requirement>
+
+			<action class="GetNearbyPoint">
+				<property name="phase" value="0" />
+				<property name="safe_spawn" value="false" />
+			</action>
+			
+			<action class="BlockReplaceAttack">
+				<property name="phase" value="1" />
+				<property name="target_position" value="0, 2, 0" />
+				<property name="offset_type" value="Relative" />
+				<property name="block_to" value="twitchHordeStone01" />
+				<property name="safe_allowed" value="false" />
+				<property name="time_alive" value="180" />
+				<property name="allow_terrain" value="true" />
+				<property name="remove_sound" value="twitch_event_blocks_remove" />
+			</action>
+		</loop>
+		
+		
+		
 	</action_sequence>
 
 	<action_sequence name="action_block_DowngradedTo">
@@ -9840,6 +11112,8 @@
 	</action_sequence>
 
 -->
+
+
 </gameevents>
 
 <!--
@@ -9885,7 +11159,7 @@
 		HasSpawnedEntities - Check if there are spawned entities.
 			entity_tags - The entity tags of the spawned entities.
 			target_only - If the spawned entities must be spawns of the Target.
-
+		
 		InBiome - Checks if the Target is in one of the specified biomes.
 			biomes - The comma delimited list of biomes to check for.
 		
@@ -9973,6 +11247,7 @@
 			removes_buff - If this buff is active, remove it instead of adding the defined buff.
 			alt_vision_buff_name - If this is defined then if someone has "Allow Vision Effects" set to false, it will apply this buff instead.
 			check_already_exists - Checks to see if it already exists before allowing the buff to be added.
+			duration - Overrides the duration of the buff.
 
 		AddChatMessage - Adds a message the the player's chat.
 			text - The text to show.
@@ -9983,6 +11258,7 @@
 			items_tags - The tag of the items you want affected by this.
 			amount - the amount of durability to add.
 			is_percent - If the amount is a percent.
+			is_negative - If the amount is a negative amount.
 			count_type - The type of count to use (Items,Slots)
 			count - The count of items to add durability to, if you don't specify a count it will add durability to all.
 
@@ -9990,12 +11266,12 @@
 			added_items - Comma delimited list for items to be added. Must have matching entry in the added_item_counts.
 			added_item_counts - Comma delimited list for item counts to be added. Must have matching entry in the added_items.
 
-		AddJournalTip - Adds a journal tip to the player.
-			tip_name - Name of the journal tip.
-			show_window - Should it show the pop up tip window.
+		AddPlayerLevel - Adds the specified number of levels to the player.
+			levels - Levels to add to the player.
 
 		AddQuest - Adds a quest to the player.
 			quest - Quest added for player.
+			notify - Quest will notify the player in the toolbelt + sound.
 			
 		AddRandomBuff - Adds a random buff to the target or target_group
 			buff_names - The list of buffs to randomly pick from to add to the target.
@@ -10054,7 +11330,16 @@
 
 		EnemyToCrawler - Forces the targets to be crawlers. (Does not work on player)
 		
-		Explode - Causes an explosion on the target.
+		ExplodePosition - Causes an explosion on the position.
+			blast_power - Power of the blast.
+			block_damage - Amount of damage done to the blocks.
+			block_radius - The radius of the block damage.
+			block_tags - The blocks that are affected by the block damage.
+			entity_damage - Amount of damage done to the entities.
+			entity_radius - The radius of the entity damage.
+			particle_index - The particle index of the explosion.
+		
+		ExplodeTarget - Causes an explosion on the target.
 			blast_power - Power of the blast.
 			block_damage - Amount of damage done to the blocks.
 			block_radius - The radius of the block damage.
@@ -10066,6 +11351,17 @@
 		FailQuest - Causes an active quest to fail.
 			quest - Name of the active quest to fail.
 			remove_quest - Removes the quest from the list on fail.
+
+		FillAreas - Fills the area with a specified block.
+			fill_type - The shape which it fills the land claim area. This can be a comma delimited list that it chooses randomly from.
+							(Cube, Sphere, Cylinder, and Pyramid)
+			destroy_claim - If the land claim should be destroyed (Defaults to false).
+			block - The block to fill the land claim with. Defaults to terrDirtTwitch
+			new_name - The name to show on the signs around the filled base. You can use {viewer} for the viewer who triggered it.
+			block_tags - The tags of blocks to replace.
+			exclude_block_tags - Excludes the blocks with these tags.
+			replace_all - Replaces all blocks.
+			max_density - Sets the block to use max density.
 
 		FillSafeZone - Fills the safe zone with a specified block.
 			fill_type - The shape which it fills the land claim area. This can be a comma delimited list that it chooses randomly from.
@@ -10091,7 +11387,7 @@
 		ModifyCVar - Modifies the value of a CVar.
 			cvar - The cvar to set.
 			value - The value to set the CVar to.
-			operation - what operation should happen (Set, Add, Subtract, Multiply)
+			operation - what operation should happen (Set, Add, Subtract, Multiply, PercentAdd, PercentSubtract)
 		
 		ModifyEntityStat - Modifies the an entity stat of the target or target_group.
 			stat - The stat to modify (Health, Stamina, Food, Water)
@@ -10111,8 +11407,6 @@
 
 		PrimeEntity - Primes the cop/demo zombie's explosive to explode in the specified seconds.
 			override_time - The number of seconds from when it starts the beep to when it explodes.
-			min_override_time - The minimum amount of time for the random explosion time.
-			max_override_time - The maximum amount of time for the random explosion time.
 
 		PullEntities - Forces all entities to respawn around the target.
 			target_group - The group to pull to the Target. (This is different then most uses so the property name may change.)
@@ -10126,16 +11420,6 @@
 
 		Ragdoll - Ragdolls the target  or target_group
 			stun_duration - The stun duration applied to the target/target_group.
-
-		RandomCVar - Modifies the value of a CVar with a random value.
-			cvar - The cvar to set.
-			min_value - The min value to set the CVar to.
-			max_value - The max value to set the CVar to.
-			operation - what operation should happen (Set, Add, Subtract, Multiply)
-			
-		RandomDelay - Delay with a random value.
-			min_time - minimum amount of time the delay can be.
-			max_time - maximum amount of time the delay can be.
 
 		RandomizeRotation - Randomizes the rotation of the player on the y.
 
@@ -10229,8 +11513,28 @@
 			intensity - The intensity of the screen effect.
 			fade_time - The amount of time it takes to fade to that intensity in seconds.
 
+		SetDayTime - Sets the day / Hour / Minutes for the game.
+			day - The day to set it to (-1 means don't change the day)
+			hours - The hours to set it to (-1 means don't change the hour)
+			minutes - The minutes to set it to (-1 means don't change the minutes)
+
+		SetEventFlag - Sets the event flag for a duration.
+			event_flag - The Event flag to enable. (BigHead, Dancing, BucketHead)
+			duration - The amount of time the world event is active.
+			enable - If its enabled/disabled.
+
+		SetItemSlots - Sets the slots of the defined inventory
+			items_location - the locations to set slots of (Backpack, Toolbelt, Equipment)
+			items - Comma delimited list for items to be added. Must have matching entry in the item_counts.
+			item_counts - Comma delimited list for item counts to be added. Must have matching entry in the items.
+			slot_numbers - Comma delimited list for slot numbers. Must have matching entry in the items.
+
 		SetWeather - Sets the global weather to the defined weather group.
 			weather_group - The weather group to set the world to.
+
+		ShowMessageWindow - Shows the message window to the targets.
+			message - The message that shows.
+			title - The title of the message.
 
 		ShuffleContainers - Shuffles the contents of all nearby block containers. NOTE: This could make players very angry. Try to use with caution.
 			targeting_type - SafeZone or Distance
@@ -10257,6 +11561,7 @@
 			yOffset - This allows the spawn to be offset on the y.
 			spawn_type - The spawn type (NearTarget, Position, NearPosition, WanderingHorde) 
 			clear_position_on_complete - Clears the target position on completion.
+			is_aggressive - The entity will constantly find the nearest player and attack.
 
 		Teleport - teleports target to defined location or offset.
 			target_position - The position/offset to teleport the target to.
@@ -10281,8 +11586,7 @@
 
 		TimeChange - moves time forward or back based on the time_preset and the offset.
 			time_preset - sets the time to a predefined time (Current, Morning, Noon, Night, NextMorning, NextNoon, NextNight, HordeNight) 
-			min_time - minimum amount of time to move time based off the time_preset.
-			max_time - maximum amount of time to move time based off the time_preset.
+			time - amount of time to move time based off the time_preset.
 		
 		WaitForDead - Similar to the Delay, this doesn't move to the next phase until the specified target_group is all dead.
 			phase_on_despawn - the phase to go to if one of the targets is despawned.
@@ -10338,6 +11642,7 @@
 			recipient_type - The recipient of these points (Requester, All, Random) 
 				NOTE: Bit Credit cannot be given to All.
 			award_text - The text that shows in twitch chat when awarded.
+				variables: viewer,amount
 			requester_only - If it should only be in the chat that it was initiated from. If you are multistreaming 
 				with streamers who are using integration then if this is set to false it will give points on their chat too.
 	
@@ -10351,6 +11656,7 @@
 		TwitchSendChannelMessage - Sends a channel message. You can use the variables {target} and {viewer}.
 			text - The text to send. 
 			text_key - The localized text to send.
+				variables: target,viewer
 	
 		TwitchStartCooldown - Starts a timed cooldown.
 			time - The amount of time for the cooldown.

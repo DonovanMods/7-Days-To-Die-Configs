@@ -123,12 +123,12 @@
 			Anytime there's a strengths array, it's length 10.
 		</!-->
     	<trigger_effect name="PistolShoot" type_ds="MultipointFeedback"
-						strengths="8,7,6,5,4,3,2,1,9,9,"
+						strengths="8,7,6,5,4,3,2,1,8,8,"
 		/>
 		<trigger_effect name="MGShoot" type_ds="Vibration"
 						position="2"
 						amplitude="5"
-						frequency="128"
+						frequency="30"
 		/>
 		<trigger_effect name="PistolShoot2" type_ds="Feedback"
 						position="2"
@@ -148,7 +148,7 @@
 			for type_ds; the vibration effect needs a position, amplitude, and frequency
 		</!-->
 		<trigger_effect name="ShotgunShoot" type_ds="MultipointFeedback"
-						strengths="3,2,6,5,4,8,2,1,9,9,"
+						strengths="3,2,6,5,4,8,2,1,8,8,"
 		/>
     	<trigger_effect name="ShotgunShoot2" type_ds="Vibration"
 						position="5"

@@ -30,6 +30,8 @@
 				<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
 				<filledsprite depth="8" name="background" color="0,0,0,255" width="171" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
 				<filledsprite depth="3" name="background" color="0,0,0,255" width="170" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+
+				<sprite depth="8" visible="{sprintactive}" name="sprint" atlas="{uiatlas}" sprite="server_z_always_run" size="48,48" pos="170,-23" pivot="left"/>
 			</rect>
 
 			<rect width="171" height="46" pos="0,-100" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
@@ -194,11 +196,11 @@
 		<button pos="76,-21"  name="Character" sprite="ui_game_symbol_character" tooltip_key="xuiCharacter" style="press, hover, paging.window.icon" />
 		<button pos="126,-21" name="Map"       sprite="ui_game_symbol_map"       tooltip_key="xuiMap"       style="press, hover, paging.window.icon" />
 
-		<button pos="171,-21" name="Skills"    sprite="ui_game_symbol_skills"    tooltip_key="xuiSkills"    style="press, hover, paging.window.icon" />
-		<button pos="426,-21" name="Quests"    sprite="ui_game_symbol_quest"     tooltip_key="xuiQuests"    style="press, hover, paging.window.icon" />
-		<button pos="476,-21" name="Journal"   sprite="ui_game_symbol_pen"       tooltip_key="xuiJournal"   style="press, hover, paging.window.icon" />
-		<button pos="526,-21" name="Players"   sprite="ui_game_symbol_players"   tooltip_key="xuiPlayers"   style="press, hover, paging.window.icon" />
-		<button pos="576,-21" name="Creative"  sprite="ui_game_symbol_lightbulb" tooltip_key="xuiCreative"  style="press, hover, paging.window.icon" visible="{is_creative}" />
+		<button pos="171,-21" name="Skills"     sprite="ui_game_symbol_skills"    tooltip_key="xuiSkills"     style="press, hover, paging.window.icon" />
+		<button pos="426,-21" name="Quests"     sprite="ui_game_symbol_quest"     tooltip_key="xuiQuests"     style="press, hover, paging.window.icon" />
+		<button pos="476,-21" name="Challenges" sprite="ui_game_symbol_challenge" tooltip_key="xuiChallenges" style="press, hover, paging.window.icon" />
+		<button pos="526,-21" name="Players"    sprite="ui_game_symbol_players"   tooltip_key="xuiPlayers"    style="press, hover, paging.window.icon" />
+		<button pos="576,-21" name="Creative"   sprite="ui_game_symbol_lightbulb" tooltip_key="xuiCreative"   style="press, hover, paging.window.icon" visible="{is_creative}" />
 		<!--*#$-IGS END.-$#-->
 
 		<!--#$-IGS BEGIN: Adding bumper callouts for the paging header -$#-->
@@ -242,7 +244,7 @@
 
 		<!--<texture depth="8" texture="Textures/UI/ui_game_compass" pos="50, -15" width="380" height="23" color="[iconColor]" name="compassTexture" rect_size="0.25,1" rect_offset=".8,0" />-->
 		
-		<texture depth="8" texture="Textures/UI/Compass/overlay-{gamelanguage}" pos="50, -12" width="380" height="27" color="[iconColor]" name="compassTexture3" rect_size="0.25,1" rect_offset="{#compass_rotation / 360 + 0.0625 - 0.125},0" />
+		<texture depth="8" texture="Textures/UI/Compass/overlay-{compass_language}" pos="50, -12" width="380" height="27" color="[iconColor]" name="compassTexture3" rect_size="0.25,1" rect_offset="{#compass_rotation / 360 + 0.0625 - 0.125},0" />
 
 		<sprite pos="240,-60" sprite="" color="255,255,255,255" globalopacitymod="1.8" visible="{showtime}">
 			<label depth="2" width="300" height="30" text="{daytitle}: [{daycolor}]{day}[-] {timetitle}: {time}" font_size="28" pivot="center" effect="outline" upper_case="true" justify="center"/>
@@ -286,7 +288,7 @@
 				</panel>
 
 				<panel pos="286,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6" contents_parent="content"/>
 				</panel>
 			</rect>
 
@@ -330,7 +332,7 @@
 			</rect>
 		</panel>
 		<rect name="content" pos="3,-49" >
-			<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true" />
+			<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" />
 			<grid depth="12" name="queue" rows="10" cols="9" cell_width="75" cell_height="75" repeat_content="true" controller="LootContainer">
 				<item_stack name="0"/>
 			</grid>
@@ -338,7 +340,7 @@
 	</window>
 
 	<window name="windowCreative2" width="629" height="805" panel="Left" anchor_side="bottomright" normal_color="[iconColor]" cursor_area="true" controller="Creative2Window" >
-		<rect pos="0,-0">
+		<rect pos="0,-0" name="content">
 			<panel name="header" height="43" depth="0" disableautobackground="true">
 				<sprite depth="1" name="headerbackground" sprite="ui_game_panel_header"/>
 				<sprite depth="2" name="windowicon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_lightbulb"/>
@@ -351,12 +353,12 @@
 				<sprite depth="1" name="background" color="[darkGrey]" type="sliced" pos="-1,0" width="524" height="49" />
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="528" height="52" color="[black]" type="sliced" fillcenter="false"  />
 
-				<button depth="4" name="simplepickup" style="icon30px, press, hover" pos="30,-22" sprite="ui_game_symbol_hand" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="lblSimpleClick" sound="[paging_click]" />
-				<button depth="4" name="devblocks" style="icon30px, press, hover" pos="80,-22" sprite="ui_game_symbol_computer" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="lblDevBlocks" sound="[paging_click]" console_enabled="false" />
-
-				<button depth="4" name="favorites" style="icon30px, press" pos="130,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip_key="lblFavorites" collider_scale="1.5" />
-
-				<button depth="4" name="hideshapes" style="icon30px, press" pos="180,-22" sprite="ui_game_symbol_sight" pivot="center" sound="[paging_click]" tooltip_key="lblHideShapes" collider_scale="1.5" />
+				<grid name="categoryButtons" depth="10" pos="25,-22" rows="1" cols="4" cell_width="50" arrangement="horizontal" repeat_content="false">
+					<button depth="4" name="simplepickup" style="icon30px, press, hover" sprite="ui_game_symbol_hand" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="lblSimpleClick" sound="[paging_click]" />
+					<button depth="4" name="devblocks" style="icon30px, press, hover" sprite="ui_game_symbol_computer" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="lblDevBlocks" sound="[paging_click]" visible="{allow_dev}" />
+					<button depth="4" name="favorites" style="icon30px, press" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip_key="lblFavorites" collider_scale="1.5" />
+					<button depth="4" name="hideshapes" style="icon30px, press" sprite="ui_game_symbol_sight" pivot="center" sound="[paging_click]" tooltip_key="lblHideShapes" collider_scale="1.5" />
+				</grid>
 
 				<panel pos="220,0" width="200" disableautobackground="true">
 					<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
@@ -364,7 +366,7 @@
 				</panel>
 
 				<panel pos="405,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6"  contents_parent="content"/>
 				</panel>
 			</rect>
 
@@ -383,7 +385,7 @@
 					<category_icon_creative_filter filtertype="autoshapes" filtertext="bulletproofShapes" spritename="ui_game_symbol_windows" />
 					<category_icon_creative_filter filtertype="autoshapes" filtertext="$other" spritename="ui_game_symbol_all_blocks" displayname_key="xuiShapesOther" />
 					<!-- Non Shapes --><sprite sprite="ui_game_symbol_subtract" style="icon32px" pivot="center" width="50" height="8" color="0,0,0,255"/>
-					<category_icon_creative_filter filtertype="blockfiltertags" filtertext="A21_NEW" categoryname="New" spritename="ui_game_symbol_coin" displayname_key="xuiPropsNew" />
+					<!-- <category_icon_creative_filter filtertype="blockfiltertags" filtertext="A21_NEW" categoryname="New" spritename="ui_game_symbol_coin" displayname_key="xuiPropsNew" /> -->
 					<category_icon_creative_filter filtertype="blockfiltertags" filtertext="MC_building" categoryname="Building" spritename="ui_game_symbol_chair" displayname_key="xuiPropsBuilding" />
 					<category_icon_creative_filter filtertype="blockfiltertags" filtertext="MC_outdoor" categoryname="Outdoor" spritename="ui_game_symbol_tree" displayname_key="xuiPropsOutdoor" />
 					<category_icon_creative_filter filtertype="blockfiltertags" filtertext="MC_helpers" categoryname="LevelDesign" spritename="ui_game_symbol_tool_smithing" displayname_key="xuiHelpers" />
@@ -496,7 +498,7 @@
 				<item_stack name="0" controller="Creative2Stack" on_scroll="true" allow_dropping="false" prefix_id="true" show_favorites="true" />
 			</grid>
 
-			<sprite depth="8" name="backgroundMain" pos="98,-97" width="528" height="675" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="8" name="backgroundMain" pos="98,-97" width="528" height="675" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" gamepad_selectable="false" />
 		</rect>
 	</window>
 
@@ -518,7 +520,7 @@
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="903" height="52" color="[black]" type="sliced" fillcenter="false"  />
 
 				<button depth="4" name="favorites" style="icon30px, press" pos="22,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip_key="lblFavorites" collider_scale="1.5" />
-				<label depth="4" name="toggleFavorite" pos="60,-23" pivot="left" width="200" height="32" text_key="xuiShapeFavorite" font_size="32" parse_actions="true" />
+				<label depth="4" name="toggleFavorite" pos="60,-23" pivot="left" width="200" height="32" text_key="xuiShapeFavorite" font_size="32" parse_actions="true" visible="{keyboardonly}" />
 
 				<panel pos="605,0" width="200" disableautobackground="true">
 					<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
@@ -526,7 +528,7 @@
 				</panel>
 
 				<panel pos="780,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6"  contents_parent="windowShapeBlocks"/>
 				</panel>
 			</rect>
 
@@ -544,7 +546,7 @@
 			<grid depth="10" name="shapes" rows="8" cols="12" pos="52,-97" cell_width="75" cell_height="75" repeat_content="true" controller="ShapeStackGrid" >
 				<shape_stack name="0"/>
 			</grid>
-			<sprite depth="8" name="backgroundMain" pos="49,-97" width="903" height="600" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="8" name="backgroundMain" pos="49,-97" width="903" height="600" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
 		</rect>
 	</window>
 
@@ -684,7 +686,7 @@
 	</window>
 
 	<!--#$-IGS BEGIN: Adding cursor area. 427-$#-->
-	<window name="emptyInfoPanel" width="603" height="392" panel="Center" controller="InfoWindow" cursor_area="true" >
+	<window name="emptyInfoPanel" width="603" height="392" panel="Center" controller="EmptyInfoWindow" cursor_area="true" >
 	<!--#$-IGS END.-$#-->
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_search"/>
@@ -694,7 +696,7 @@
 		<rect name="contentCraftingInfo" height="346" depth="1" pos="0,-46" >
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="603" height="346" color="[black]" type="sliced" fillcenter="false" />
 			<sprite color="[mediumGrey]" type="sliced" />
-			<label pos="0,-173" depth="3" name="descriptionText" width="100%" height="340" text_key="xuiEmptyInfoPanelText"  justify="center" font_size="28" pivot="left" />
+			<label pos="30,-173" depth="3" name="descriptionText" width="100%" height="340" text_key="xuiEmptyInfoPanelText"  justify="left" font_size="28" pivot="left" spacing_y="10" />
 		</rect>
 	</window>
 
@@ -826,12 +828,12 @@
 		</rect>
 	</window>
 
-	<window name="popupMenu" depth="200" pos="200,-200" width="200" height="436" controller="PopupMenu" cursor_area="true">
-		<rect name="content" depth="0" pos="0,0" borderthickness="3" visible="false">
+	<window name="popupMenu" depth="200" pos="200,-200" width="200" height="436" controller="PopupMenu" cursor_area="true" gamepad_selectable="false">
+		<rect name="content" depth="0" pos="0,0" borderthickness="3" visible="false" gamepad_selectable="false">
 			<sprite depth="1" name="sprBackgroundBorder" sprite="ui_game_header_fill" type="sliced" color="[black]" />
 			<sprite depth="2" name="sprBackground" sprite="ui_game_header_fill" type="sliced" pos="3,-3" color="[darkGrey]"/>
 			<grid name="list" rows="10" cols="1" pos="3,-3" width="200" cell_width="390" cell_height="43" repeat_content="true" arrangement="vertical" depth="5" >
-				<popup_menu_item name="0"/>
+				<popup_menu_item name="0" use_selection_box="false"/>
 			</grid>
 		</rect>
 	</window>
@@ -870,7 +872,7 @@
 
 		<panel name="content" width="100%" height="303" depth="0" pos="0,-46" disableautobackground="true">
 				<!-- <sprite name="background" color="[black]" type="sliced" globalopacity="true"/> -->
-				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="606" height="336" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="606" height="336" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
 				<grid depth="10" name="inventory" rows="5" cols="9" pos="3,-3" cell_width="67" cell_height="67" controller="Backpack" repeat_content="true" >
 					<backpack_item_stack name="0"/>
 				</grid>
@@ -958,7 +960,7 @@
 			<label style="header.name" text="INPUT" text_key="xuiSmelting" />
 		</panel>
 
-		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+		<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="153" color="[black]" type="sliced" fillcenter="false" />
 		<rect name="content" depth="1" pos="0,-46" height="153">
 
 			<grid depth="7" rows="2" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationMaterialInputGrid" repeat_content="true">
@@ -968,7 +970,7 @@
 		</rect>
 
 		<rect name="content2" depth="0" pos="78, -49" width="147" height="148">
-			<sprite depth="1" color="[mediumGrey]" type="sliced" on_press="true"/>
+			<sprite depth="1" color="[mediumGrey]" type="sliced"/>
 			<grid rows="6" cols="1" pos="3,-3" cell_width="147" cell_height="24"  repeat_content="true">
 				<forge_material name="0"/>
 			</grid>
@@ -988,8 +990,8 @@
 		</panel>
 
 
-		<rect name="content" depth="0" pos="0,-46" height="150" disablefallthrough="true" on_press="true">
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+		<rect name="content" depth="0" pos="0,-46" height="150" disablefallthrough="true">
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="150" color="[black]" type="sliced" fillcenter="false" />
 				<grid depth="10" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationOutputGrid" repeat_content="true">
 					<item_stack name="0"/>
 				</grid>
@@ -1019,7 +1021,7 @@
 		<!-- </rect> -->
 	<!-- </window> -->
 
-	<window name="dragAndDropItemStack" width="86" height="86" depth="300" controller="DragAndDropWindow">
+	<window name="dragAndDropItemStack" width="86" height="86" depth="300" controller="DragAndDropWindow"  gamepad_selectable="false">
 		<grid>
 			<rect>
 				<drag_item_stack />
@@ -1050,7 +1052,7 @@
 	<!--#$-IGS END.-$#-->
 
 		<rect>
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
 			
 			<rect pos="3,-3" controller="Toolbelt">
 				<grid depth="10" name="inventory" rows="1" cols="10" pos="0,0" cell_width="75" cell_height="75" repeat_content="true">
@@ -1110,25 +1112,23 @@
 				<!-- <button depth="4" name="pageUp" style="icon30px, press" pos="84,-22" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/> -->
 			<!-- </panel> -->
 		</rect>
-
-		<rect visible="{showcharacter}">
+		
+		<rect visible="{showcharactersdcs}">
 			<!--#$-IGS BEGIN: Disabling snap for the character preview frame area. Moving the previewFrame down to make space for a new level header. -$#-->
-			<panel name="previewFrame" depth="0" pos="0,-86" width="257" on_press="true" on_hover="true" disableautobackground="true" snap="false">
+			<panel name="previewFrameSDCS" depth="0" pos="0,-86" width="327" on_press="true" on_hover="true" disableautobackground="true" snap="false" gamepad_selectable="false">
 			<!--*#$-IGS END.-$#-->
 				<rect>
-					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="327" height="704" color="[black]" type="sliced" fillcenter="false" />
-					<sprite depth="1" color="[darkGrey]" type="sliced" width="256" />
+					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="327" height="624" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="1" color="[darkGrey]" type="sliced" width="327" height="624"/>
 					<!-- <sprite depth="1" color="[lightGrey]" type="sliced" pos="3,-3" width="381" height="739" />
 					<sprite depth="1" color="[darkGrey]" type="sliced" width="304" height="697" pos="6,-5"/> -->
-					<texture depth="2" name="playerPreview" material="Materials/Transparent Colored" size="255,702" globalopacity="false"/>
-
-
+					<texture depth="2" name="playerPreviewSDCS" material="Materials/Transparent Colored" size="327,622" globalopacity="false"/>
 				</rect>
 			</panel>
 
-			<panel name="equipment" depth="10" pos="256, -89" width="70" height="699" disableautobackground="true" >
-				<grid name="inventory" rows="10" cols="1" cell_width="70" cell_height="70" controller="EquipmentStackGrid" repeat_content="true">
-					<equipment_stack name="0"/>
+			<panel name="equipment" depth="10" pos="3, -710" width="292" height="70" disableautobackground="true" >
+				<grid name="inventory" rows="1" cols="4" cell_width="81" cell_height="70" controller="EquipmentStackGrid" repeat_content="true">
+					<equipment_stack_sdcs name="0"/>
 				</grid>
 			</panel>
 		</rect>
@@ -1200,7 +1200,7 @@
 				<sprite depth="8" name="backgroundMain" pos="0,0" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[mediumGrey]" type="sliced" />
 				<panel pos="215,0" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6"  contents_parent="content"/>
 				</panel>
 			</rect>
 			<grid depth="10" name="buffs" rows="15" cols="1" pos="3,-43" cell_width="314" cell_height="45" repeat_content="true" controller="ActiveBuffList">
@@ -1276,10 +1276,11 @@
 				<label depth="1" name="waypointDistance" pos="586,-12" width="122" height="28" text="0.2 KILOMETERS" font_size="26"/>
 			</rect>
 			<!--#$-IGS BEGIN: Disabling snap for the map area. -$#-->
-			<panel name="mapView" depth="1" width="712" height="712" pos="6,-49" disableautobackground="true" on_drag="true" style="press, scroll, hover" sound="[craft_click]" snap="false"> <!-- backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="0" -->
+			<panel name="mapView" depth="1" width="712" height="712" pos="6,-49" disableautobackground="true" on_drag="true" style="press, scroll, hover" snap="false"> <!-- backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="0" -->
 			<!--*#$-IGS END.-$#-->
 				<sprite depth="1" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="true" globalopacity="false" />
 				<texture depth="2" name="mapViewTexture" width="712" height="712" pos="0,0" material="Materials/MaskableMainmap"/>
+				<sprite depth="3" width="64" height="64" pos="356,-356" pivot="center" name="crosshair" sprite="ui_game_symbol_map_cursor" color="255,255,255,160" globalopacity="false" foregroundlayer="true" />
 				<panel name="clippingPanel" depth="4" width="712" height="712" pos="0,0" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="712,712" clippingcenter="356,-356" />
 
 				<rect name="content" depth="5" pos="0,-565" height="239" controller="MapStats">
@@ -1307,12 +1308,12 @@
 		<panel name="content" depth="0" pos="0,0" height="98" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 			<grid name="list" rows="2" cols="1" pos="6,-6" width="188" height="92" cell_width="390" cell_height="43" repeat_content="false" arrangement="vertical" controller="MapPopupList">
-				<rect depth="3" width="100%" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+				<rect name="opt1" depth="3" width="100%" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
 					<sprite name="background" color="[darkGrey]" />
 					<sprite depth="4" name="Icon" sprite="ui_game_symbol_map_waypoint_set" style="icon32px" pos="8,-3"/>
 					<label depth="4" name="Name" pos="112,-20" width="150" height="28" text="QUICK WAYPOINT" text_key="xuiQuickWaypoint" font_size="28" justify="center" pivot="center" />
 				</rect>
-				<rect depth="3" width="100%" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+				<rect name="opt2" depth="3" width="100%" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
 					<sprite name="background" color="[darkGrey]" />
 					<sprite depth="4" name="Icon" sprite="ui_game_symbol_pen" style="icon32px" pos="8,-3"/>
 					<label depth="4" name="Name" pos="112,-20" width="150" height="28" text="SAVE WAYPOINT" text_key="xuiSaveWaypoint" font_size="28" justify="center" pivot="center"/>
@@ -1336,7 +1337,7 @@
 		<panel name="content" depth="0" pos="0,0" height="46" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" controller="MapEnterWaypoint">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 			<panel pos="13,-8" depth="1" width="160" disableautobackground="true">
-				<textfield depth="1" name="searchInput" pos="0,0" width="140" height="30" virtual_keyboard_prompt="vkPromptWaypointName" />
+				<textfield depth="1" name="waypointInput" pos="0,0" width="140" height="30" character_limit="30" virtual_keyboard_prompt="vkPromptWaypointName" />
 			</panel>
 		</panel>
 	</window>
@@ -1349,7 +1350,7 @@
 			<label style="header.name" text="WAYPOINTS" text_key="xuiWaypoints" />
 		</panel>
 
-		<rect name="content" depth="0" pos="0,-43" height="464">
+		<rect name="mapTrackingContent" depth="0" pos="0,-43" height="464">
 			<rect depth="1" name="toolbar" width="348" height="43" pos="6,-6">
 				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="354" height="49" color="[black]" type="sliced" fillcenter="false" />
 				<sprite color="[mediumGrey]" type="sliced" width="350" height="44" pos="-1,0" />
@@ -1373,7 +1374,7 @@
 				</panel>
 
 				<panel pos="248,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6"  contents_parent="mapTrackingContent"/>
 				</panel>
 			</rect>
 
@@ -1415,9 +1416,10 @@
 		<rect depth="1" name="toolbar" width="348" height="43" pos="6,-49">
 			<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="354" height="49" color="[black]" type="sliced" fillcenter="false" />
 			<sprite color="[mediumGrey]" type="sliced" width="350" height="44" pos="-1,0" />
-			<button depth="1" name="waypointSetBtn" style="icon32px, press, hover" pivot="center" pos="46,-21" sprite="ui_game_symbol_map_waypoint_set" tooltip="Save Waypoint" tooltip_key="lblSaveWaypoint" sound="[paging_click]" />
-			<button depth="1" name="showOnMapBtn" style="icon32px, press, hover" pivot="center" pos="171,-21" sprite="ui_game_symbol_map" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" />
-			<button depth="1" name="waypointRemoveBtn" style="icon32px, hover" on_press="true" pivot="center" pos="296,-21" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Waypoint" tooltip_key="lblRemoveWaypoint" />
+			<button depth="1" name="waypointSetBtn" style="icon32px, press, hover" pivot="center" pos="30,-21" sprite="ui_game_symbol_map_waypoint_set" tooltip="Save Waypoint" tooltip_key="lblSaveWaypoint" sound="[paging_click]" />
+			<button depth="1" name="showOnMapBtn" style="icon32px, press, hover" pivot="center" pos="118,-21" sprite="ui_game_symbol_map" tooltip="Show on Map" tooltip_key="lblShowOnMap" sound="[paging_click]" />
+			<button depth="1" name="waypointRemoveBtn" style="icon32px, hover" on_press="true" pivot="center" pos="223,-21" sprite="ui_game_symbol_map_waypoint_remove" tooltip="Remove Waypoint" tooltip_key="lblRemoveWaypoint" />
+			<button depth="1" name="waypointReportBtn" style="icon32px, hover" on_press="true" pivot="center" pos="316,-21" sprite="ui_game_symbol_report" tooltip="Report Waypoint" tooltip_key="lblReportWaypoint" />
 		</rect>
 
 		<rect name="content" depth="0" pos="0,-43" height="239">
@@ -1449,7 +1451,7 @@
 			<sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="1292" height="49" color="[black]" type="sliced" fillcenter="false" />
 			<sprite name="pagingControls" color="[mediumGrey]" type="sliced" />
 			<panel pos="1183,0" width="104" height="43" disableautobackground="true">
-				<pager name="pager" pos="-16,-6" />
+				<pager name="pager" pos="-16,-6" contents_parent="players"/>
 			</panel>
 		</rect>
 	</window>
@@ -1465,7 +1467,7 @@
 
 		<panel name="content" depth="0" pos="0,-43" disableautobackground="true">
 			<!-- <sprite color="[darkGrey]" pos="3,-3" height="613" /> -->
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="3,-3" width="380" height="224" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="3,-3" width="380" height="224" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
 			<rect depth="1" pos="3,-3" width="380" height="739">
 
 			<rect width="380" height="218">
@@ -1826,20 +1828,10 @@
   </window>
   
   <window name="windowRadial" anchor="CenterCenter">
-		<rect name="radialPanel" repeat_content="true" count="20" pivot="center">
+		<rect name="radialPanel" repeat_content="true" repeat_count="12" pivot="center">
 			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<radial_entry />
-			<label depth="10" name="selection" width="150" height="50" pivot="center" justify="center" text=" " font_size="26"/>
 		</rect>
+		<label depth="10" name="selection" width="150" height="50" pivot="center" justify="center" text=" " font_size="26"/>
 	</window>
 
 	<window name="windowTimer" anchor="CenterCenter">
@@ -1887,7 +1879,7 @@
 				</panel>
 
 				<panel depth="2" pos="540,0" width="104" height="43" disableautobackground="true" visible="{paging_visible}">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6" contents_parent="windowSkillList"/>
 				</panel>
 			</rect>
 
@@ -1995,7 +1987,7 @@
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
 
 				<panel pos="524,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="-16,-6" primary_pager="false" />
+					<pager name="pager" pos="-16,-6" primary_pager="false"/>
 				</panel>
 			</rect>
 		</rect>
@@ -2207,90 +2199,90 @@
 
 			<rect name="detailsBox" depth="1" pos="0,-100" width="646" height="180" >
 				<sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/>
-				<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="647" height="182" color="[black]" type="sliced" fillcenter="false" />
+				<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="647" height="182" color="[black]" type="sliced" fillcenter="false"  on_press="false"/>
 				
 				<grid rows="2" cols="7" pos="0,0" width="450" height="368" cell_width="92" cell_height="88" repeat_content="false" arrangement="horizontal" >
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="93" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas1}" sprite="{unlock_icon1}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas1}" sprite="{unlock_icon1}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked1}" />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon1" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip1}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas2}" sprite="{unlock_icon2}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas2}" sprite="{unlock_icon2}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked2}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon2" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip2}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas3}" sprite="{unlock_icon3}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas3}" sprite="{unlock_icon3}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked3}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon3" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip3}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas4}" sprite="{unlock_icon4}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas4}" sprite="{unlock_icon4}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked4}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon4" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip4}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas5}" sprite="{unlock_icon5}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas5}" sprite="{unlock_icon5}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked5}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon5" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip5}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas6}" sprite="{unlock_icon6}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas6}" sprite="{unlock_icon6}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked6}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon6" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip6}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas7}" sprite="{unlock_icon7}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas7}" sprite="{unlock_icon7}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked7}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon7" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip7}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas8}" sprite="{unlock_icon8}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas8}" sprite="{unlock_icon8}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked8}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon8" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip8}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas9}" sprite="{unlock_icon9}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas9}" sprite="{unlock_icon9}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked9}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon9" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip9}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas10}" sprite="{unlock_icon10}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas10}" sprite="{unlock_icon10}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked10}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon10" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip10}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas11}" sprite="{unlock_icon11}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas11}" sprite="{unlock_icon11}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked11}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon11" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip11}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas12}" sprite="{unlock_icon12}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas12}" sprite="{unlock_icon12}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked12}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon12" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip12}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas13}" sprite="{unlock_icon13}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas13}" sprite="{unlock_icon13}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked13}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon13" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip13}" />
 					</rect>
 					<rect width="92" height="88">
 						<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="94" height="93" color="[black]" type="sliced" fillcenter="false" />
-						<sprite depth="6" pos="48,-48" width="64" height="64" on_press="true" atlas="{unlock_icon_atlas14}" sprite="{unlock_icon14}" pivot="center" foregroundlayer="true" />
+						<sprite depth="6" pos="48,-48" width="64" height="64" atlas="{unlock_icon_atlas14}" sprite="{unlock_icon14}" pivot="center" foregroundlayer="true" />
 						<sprite depth="8" pos="64,-66" style="icon30px" sprite="ui_game_symbol_unlock" pivot="center" visible="{unlock_icon_locked14}"  />
 						<sprite color="0,0,0,1" depth="12" width="92" height="88" name="itemIcon14" collider_scale="1.0" on_hover="true" on_press="true" tooltip="{unlock_icon_tooltip14}" />
 					</rect>
@@ -2344,6 +2336,7 @@
 		<panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
 			<label style="header.name" text="QUESTS" text_key="xuiQuests" />
+			<label depth="2" pos="245,-8" width="200" height="28" text="{queststier}" justify="right" upper_case="true" />
 		</panel>
 
 		<rect name="content" depth="0" pos="0,-43" height="{# questsautoaccept ? 694 : 464}">
@@ -2368,7 +2361,7 @@
 				<!--*#$-IGS END.-$#-->
 
 				<panel pos="338,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6" contents_parent="content"/>
 				</panel>
 			</rect>
 
@@ -2423,7 +2416,7 @@
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
 			<label style="header.name" text="{questtitle}" width="500" />
-			<label depth="2" pos="545,-8" width="100" height="28" text="{sharedbyname}" color="[lightGrey]" justify="right" upper_case="true" />
+			<label depth="2" pos="545,-8" width="100" height="28" text="{sharedbyname}" justify="right" upper_case="true" />
 		</panel>
 		<rect name="content" pos="0,-46" height="266" depth="1">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="653" height="266" color="[black]" type="sliced" fillcenter="false" />
@@ -2441,8 +2434,8 @@
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
 			<label style="header.name" text="OBJECTIVES" text_key="xuiObjectives" />
-			<label depth="2" pos="545,-8" width="100" height="28" text="{questdifficulty}" color="[lightGrey]" justify="right" upper_case="true" />
-
+			<!-- <label depth="2" pos="545,-8" width="100" height="28" text="{questdifficulty}" color="[lightGrey]" justify="right" upper_case="true" /> -->
+			<label depth="2" pos="445,-8" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" />
 		</panel>
 		<rect name="content" pos="0,-46" height="194" depth="1">
 			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -2468,7 +2461,7 @@
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_treasure"/>
 			<label style="header.name" text="REWARDS" text_key="xuiRewards" />
-			<label depth="2" pos="345,-8" width="300" height="28" text="{finishtime}" color="[lightGrey]" justify="right" upper_case="true" />
+			<label depth="2" pos="345,-8" width="300" height="28" text="{finishtime}" justify="right" upper_case="true" />
 		</panel>
 		<rect name="content" pos="0,-46" height="153" depth="1">
 			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -2539,7 +2532,7 @@
 			<quest_objective_tracker_entry />
 		</grid>
 		
-		<rect pos="-160,{#trackerheight * -1 - 50}" height="86" width="400" visible="{questhintavailable}">
+		<rect pos="-30,{#trackerheight * -1 - 50}" height="100" width="270" visible="{questhintavailable}">
 			<!-- <sprite pos="6,6" name="Background" sprite="ui_game_popup" /> -->
 			<label depth="3" text="{questhint}" font_size="20" justify="right" parse_actions="true" actions_default_format="( [e61a16]###[-] )" spacing_y="5" effect="Outline8" effect_color="0,0,0,255" effect_distance="1,1" />
 		</rect>
@@ -2645,7 +2638,7 @@
 	<window name="windowTwitchInfoList" width="530" height="513" panel="Left" cursor_area="true" controller="TwitchEntryListWindow" >
 		<panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="{headericon}"/>
-			<label style="header.name" text="{headertitle}" width="524" /> <!--text_key="xuiJournal"-->
+			<label style="header.name" text="{headertitle}" width="524" />
 		</panel>
 
 		<rect name="content" depth="0" pos="0,-43" height="524">
@@ -2694,7 +2687,7 @@
 				</panel>
 
 				<panel pos="410,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6" contents_parent="content"/>
 				</panel>
 			</rect>
 			
@@ -2854,12 +2847,12 @@
 		</rect>
 	</window>
 	
-	<!--#$-IGS BEGIN: Adding cursor area. Expanding the quest offer window to accommodate other lanugagues longer descriptions-$#-->
+	<!--#$-IGS BEGIN: Adding cursor area. Expanding the quest offer window to accommodate other languages longer descriptions-$#-->
 	<window name="windowQuestOffer" width="603" height="413" pos="-300, 150" controller="QuestOfferWindow" anchor="CenterCenter" pivot="center" depth="15" cursor_area="true" >
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header" >
 			<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="{questicon}"/>
 			<label style="header.name" text="{questname}" width="450" />
-			<label depth="2" pos="495,-10" width="100" height="28" text="{questdifficulty}" justify="right" upper_case="true" />
+			<label depth="2" pos="395,-10" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" />
 
 			<!-- <button pos="550,-5" depth="2" name="closeButton" style="icon32px" sprite="ui_game_symbol_x" defaultcolor="[red]" /> -->
 		</panel>
@@ -2975,56 +2968,146 @@
 	<window name="GamepadCallouts" width="500" height="65" pos="0,0" anchor="LeftTop" controller="XUiC_GamepadCalloutWindow" />
 
 
-	<window name="windowJournalList" width="450" height="513" panel="Left" controller="JournalEntryListWindow" cursor_area="true" >
+	<window name="windowChallengeList" width="650" height="513" panel="Left" controller="ChallengeEntryListWindow" cursor_area="true" >
 		<panel name="header" pos="3,0" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="1" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_pen"/>
-			<label style="header.name" text="JOURNAL" text_key="xuiJournal" />
+			<label style="header.name" text="Challenges" text_key="xuiChallenges" />
 		</panel>
 
 		<rect name="content" depth="0" pos="0,-43" height="464">
 
-			<rect depth="3" name="searchControls" width="450" height="43" pos="6,-6">
-				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="450" height="46" color="[black]" type="sliced" fillcenter="false" />
+			<rect depth="3" name="searchControls" width="650" height="43" pos="6,-6">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="650" height="46" color="[black]" type="sliced" fillcenter="false" />
 
-				<sprite color="[darkGrey]" type="sliced" width="446" pos="-1,0" />
-				<sprite depth="4" name="searchIcon" style="icon30px" pos="210,-20" sprite="ui_game_symbol_search" pivot="center" />
-
-				<panel pos="233,-6" depth="1" width="120" disableautobackground="true">
-					<textfield depth="1" pos="0,0" width="100" height="30" name="searchInput" virtual_keyboard_prompt="vkPromptSearchTerm" search_field="true" close_group_on_tab="true" clear_button="true" />
-				</panel>
-
-				<panel pos="338,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
-				</panel>
+				<sprite color="[darkGrey]" type="sliced" width="646" pos="-1,0" />
+				
+				<grid name="categories" pos="23,-21" rows="1" cols="15" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+					<category_icon />
+				</grid>
 			</rect>
 
-			<grid name="journalList" rows="15" cols="1" pos="6,-49" width="450" height="368" cell_width="390" cell_height="46"  repeat_content="true" arrangement="vertical" normal_color="[iconColor]" disabled_color="[iconColor]" controller="JournalEntryList" >
-				<journal_entry name="0" />
+			<grid name="newList" rows="6" cols="1" pos="6,-49" width="650" height="368" cell_width="650" cell_height="111" repeat_content="true" arrangement="vertical" controller="ChallengeGroupList">
+				<challenge_list_entry name="0" />
 			</grid>
 		</rect>
 	</window>
-
-	<window name="windowJournalEntryDescription" width="653" height="600" panel="Center" controller="JournalEntryDescriptionWindow" cursor_area="true" >
+	
+	<window name="windowChallengeEntryDescription" width="553" height="600" panel="Center" controller="ChallengeEntryDescriptionWindow" cursor_area="true" >
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_pen"/>
-			<label depth="2" pos="345,-8" width="300" height="28" text="{timestamp}" color="[lightGrey]" justify="right" upper_case="true" />
-			<label style="header.name" text="{entrytitle}" width="500" />
+			<label depth="2" pos="345,-8" width="100" height="28" text="{timestamp}" color="[lightGrey]" justify="right" upper_case="true" />
+			<label style="header.name" text_key="challenge" width="400" />
 		</panel>
-		<rect name="content" pos="0,-46" height="554" depth="1">
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="653" height="554" color="[black]" type="sliced" fillcenter="false" />
+		<rect name="content" pos="0,-46" height="711" depth="1">
+		
+			<!-- <sprite depth="6" name="backgroundMain" sprite="menu_empty3px" width="100" height="103" color="[black]" type="sliced" fillcenter="false" />  -->
+			<sprite depth="1" pos="2,-2" name="preview" width="97" height="100" color="[darkGrey]" type="sliced" />
+			<sprite depth="3" pos="50,-50" width="80" height="80" sprite="{entryicon}" pivot="center" foregroundlayer="true"/>
+
+			<button pos="520,-50" depth="12" name="gotoButton" style="icon32px" sprite="ui_game_symbol_go_to_button" defaultcolor="[white]" pivot="center" collider_scale="1.5" sound="[paging_click]" visible="{showgoto}"/>
+
+			<rect name="descriptionBox" depth="1" pos="97,0" width="456" height="100" >
+				<!-- <sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/> -->
+				<!-- <sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="456" height="103" color="[black]" type="sliced" fillcenter="false" /> -->
+				<label depth="2" pos="12,-18" width="538" height="93" text="{entrytitle}"/>
+				<label depth="2" pos="12,-46" width="538" height="93" text="{entrygroup}" font_size="22" color="[disabledLabelColor]" />
+			</rect>
+			
+			<rect name="detailsBox" depth="1" pos="0,-100" width="553" height="179" >
+				<!-- <sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/> -->
+				<!-- <sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="453" height="182" color="[black]" type="sliced" fillcenter="false" /> -->
+				<label depth="2" name="descriptionText" pos="10,-6" width="538" height="172" font_size="22" text="{entryshortdescription}" parse_actions="true" actions_default_format="( [e61a16]###[-] )"/>
+			</rect>
+
+			<grid name="objectives" pos="0,-173" rows="8" width="520" height="520" cell_width="520" cell_height="40" arrangement="vertical">
+			
+				<rect depth="2" width="520" height="30" visible="{hasobjective1}">
+					<rect pos="15,0">
+						<sprite depth="1" name="border" color="0,0,0,150" height="30" type="sliced" />
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+
+						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
+
+						<filledsprite depth="4" name="BarContent" color="0,128,128,255" type="filled" fill="{objectivefill1}" />
+						<label depth="6" name="TextContent" pos="0,-4" font_size="20" color="[white]" justify="center" text="{objective1}"/>
+
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+						
+					</rect>
+				</rect>
+				
+				<rect depth="2" width="520" height="30" visible="{hasobjective2}" >
+					<rect pos="15,0">
+						<sprite depth="1" name="border" color="0,0,0,150" height="30" type="sliced" />
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+
+						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
+
+						<filledsprite depth="4" name="BarContent" color="0,128,128,255" type="filled" fill="{objectivefill2}" />
+						<label depth="6" name="TextContent" pos="0,-4" font_size="20" color="[white]" justify="center" text="{objective2}"/>
+
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+					</rect>
+				</rect>
+				<rect depth="2" width="520" height="30" visible="{hasobjective3}" >
+					<rect pos="15,0">
+						<sprite depth="1" name="border" color="0,0,0,150" height="30" type="sliced" />
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+
+						<filledsprite depth="3" name="background" color="110,110,110,128" type="filled" fill="1" />
+
+						<filledsprite depth="4" name="BarContent" color="0,128,128,255" type="filled" fill="{objectivefill3}" />
+						<label depth="6" name="TextContent" pos="0,-4" font_size="20" color="[white]" justify="center" text="{objective3}"/>
+
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+					</rect>
+				</rect>
+			
+			
+				<rect name="rewardBox" depth="1" pos="0,-300" width="553" height="50" >
+					<!-- <sprite depth="1" name="background" color="[mediumGrey]" type="sliced"/> -->
+					<!-- <sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="453" height="182" color="[black]" type="sliced" fillcenter="false" /> -->
+					<label depth="2" name="descriptionText" pos="10,-3" width="538" height="172" justify="center" font_size="22" text="{rewardtitle}: [DECEA3]{rewardtext}[-]" visible="{hasreward}"/>
+				</rect>
+
+				<rect name="ChallengeBox3" depth="1" pos="0,-383" width="553" height="296" visible="{has3objective}" >
+					<sprite depth="1" name="background" color="0,0,0,145" type="sliced"/>
+					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="553" height="296" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="3" pos="9, -6" text="{entrydescription}"  width="530" height="293" font_size="26" parse_actions="true" actions_default_format="( [e61a16]###[-] )" />
+				</rect>
+				
+				<rect name="ChallengeBox2" depth="1" pos="0,-383" width="553" height="336" visible="{has2objective}" >
+					<sprite depth="1" name="background" color="0,0,0,145" type="sliced"/>
+					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="553" height="336" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="3" pos="9, -6" text="{entrydescription}"  width="530" height="333" font_size="26" parse_actions="true" actions_default_format="( [e61a16]###[-] )" />
+				</rect>
+				
+				<rect name="ChallengeBox1" depth="1" pos="0,-383" width="553" height="376" visible="{has1objective}" >
+					<sprite depth="1" name="background" color="0,0,0,145" type="sliced"/>
+					<sprite depth="6" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="553" height="376" color="[black]" type="sliced" fillcenter="false" />
+					<label depth="3" pos="9, -6" text="{entrydescription}"  width="530" height="373" font_size="26" parse_actions="true" actions_default_format="( [e61a16]###[-] )" />
+				</rect>
+			
+			</grid>
+		
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="553" height="711" color="[black]" type="sliced" fillcenter="false" />
 			<sprite color="[darkGrey]" type="sliced" />
-			<label depth="3" name="descriptionText" pos="8,-8" text="{entrydescription}" width="630" height="540" font_size="28" />
+			
+			<simplebutton name="btnTrack" depth="3" pos="12,-667" width="250" height="36" font_size="24" caption="Track ([action:gui:GUI D-Pad Left])" visible="{haschallenge}" parse_actions="true" enabled="{enabletrack}"  gamepad_selectable="false"/>
+			<simplebutton name="btnComplete" depth="3" pos="290,-667" width="250" height="36" font_size="24" caption="Complete ([action:gui:GUI D-Pad Up])" visible="{haschallenge}" parse_actions="true" enabled="{enableredeem}"  gamepad_selectable="false"/>
+			
 			<rect visible="{showempty}">
-				<label pos="0,-270" depth="3" name="descriptionText" width="100%" height="540" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiDescriptionNotAvailable" justify="center" pivot="left" font_size="28" />
+				<label pos="15,-270" depth="3" name="descriptionText" width="530" height="540" text="DESCRIPTION NOT AVAILABLE AT THIS TIME." text_key="xuiSelectChallengeInfo" justify="Left" pivot="left" font_size="28" />
 			</rect>
 		</rect>
+
 	</window>
 
 	<window name="windowTrader"  width="645" height="688" panel="Left" controller="TraderWindow" cursor_area="true" >
 
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="ui_game_symbol_map_trader"/>
-			<label style="header.name" size="350,32"/>
+			<label controller="PlayerName" on_press="true" style="header.name" size="350,32"/>
 			<label depth="2" pos="340,-8" width="300" height="28" text="{restocklabel}: {timeleft}" justify="right" visible="{showrestock}" />
 
 			<label pos="600, -6" depth="2" name="availableMoney" width="64" height="32" text="{availablemoney}" font_size="32" justify="right" pivot="topright" visible="{isowner}"/>
@@ -3048,6 +3131,8 @@
 				<button depth="4" name="collect" style="icon30px, press" pos="22,-22" sprite="ui_game_symbol_coin" pivot="center" tooltip="COLLECT" tooltip_key="btnCollect" sound="[paging_click]" visible="{isownerorrentable}" />
 				<button depth="4" name="takeAll" style="icon30px, press" pos="65,-22" sprite="ui_game_symbol_hand" pivot="center" tooltip="TAKE ALL" tooltip_key="btnTakeAll" sound="[paging_click]" visible="{isownerorrentable}" />
 				<button depth="4" name="rent" style="icon30px, press" pos="108,-22" sprite="ui_game_symbol_vending" pivot="center" tooltip="RENT" tooltip_key="lblContextActionRent" sound="[paging_click]" visible="{isrentable|once}" />
+				
+				<button depth="4" name="showAll" style="icon30px, press, hover" pos="293,-22" sprite="ui_game_symbol_computer" defaultcolor="[disabledLabelColor]" pivot="center" tooltip_key="Show All" sound="[paging_click]" visible="{is_debug}" />
 
 				<label depth="5" pos="135,-8" width="180" height="28" text="{renttimeleft}" visible="{isrenter}" />
 
@@ -3057,7 +3142,7 @@
 				</panel>
 
 				<panel pos="516,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" />
+					<pager name="pager" pos="4,-6" contents_parent="content"/>
 				</panel>
 			</rect>
 
@@ -3067,21 +3152,21 @@
 				<rect depth="1" width="416" height="40">
 					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-2,3" width="421" height="46" color="[black]" type="sliced" fillcenter="false" />
 
-					<sprite depth="1" pos="3,-3" style="icon32px, press, hover" sprite="ui_game_symbol_shopping_cart"/>
+					<sprite depth="1" pos="3,-3" style="icon32px" sprite="ui_game_symbol_shopping_cart"/>
 					<label depth="1" pos="40,-5" text_key="xuiProductName" width="240"/>
 				</rect>
 
 				<rect depth="1" pos="419,0" width="120" height="40" >
 					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="126" height="46" color="[black]" type="sliced" fillcenter="false" />
 
-					<sprite depth="1" pos="3,-3" style="icon32px, press, hover" sprite="ui_game_symbol_diamond"/>
+					<sprite depth="1" pos="3,-3" style="icon32px" sprite="ui_game_symbol_diamond"/>
 					<label depth="1" pos="40,-5" text_key="xuiQuality" width="70"/>
 				</rect>
 
 				<rect depth="1" pos="542,0" width="97" height="40">
 					<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="104" height="46" color="[black]" type="sliced" fillcenter="false" />
 
-					<sprite depth="1" pos="3,-3" style="icon32px, press, hover" sprite="ui_game_symbol_coin"/>
+					<sprite depth="1" pos="3,-3" style="icon32px" sprite="ui_game_symbol_coin"/>
 					<label depth="1" pos="40,-5" text_key="xuiCost" width="55"/>
 				</rect>
 
@@ -3128,7 +3213,7 @@
 		<rect name="content" pos="0,-46" height="117" depth="1">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="306" height="117" color="[black]" type="sliced" fillcenter="false" />
 			<sprite color="[darkGrey]" type="sliced" />
-			<textfield name="input" pos="6,-6" width="294" height="105" font_size="30" on_return="NewLine" virtual_keyboard_prompt="vkPromptSignText" open_vk_on_open="true" close_group_on_tab="true" clear_button="true" />
+			<textfield name="input" pos="6,-6" width="294" height="105" font_size="30" on_return="NewLine" character_limit="50" virtual_keyboard_prompt="vkPromptSignText" open_vk_on_open="false" focus_on_open="true" close_group_on_tab="true" clear_button="true" />
 		</rect>
 		<rect name="btnClose" depth="3" pos="0, -161" height="42" >
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -3149,7 +3234,7 @@
 		<rect name="content" pos="0,-46" height="50" depth="1">
 			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" color="[black]" type="sliced" fillcenter="false" />
 			<sprite color="[darkGrey]" type="sliced" />
-			<textfield name="txtPassword" depth="2" pos="10,-8" width="280" height="32" clear_on_open="true" open_vk_on_open="true" />
+			<textfield name="txtPassword" depth="2" pos="10,-8" width="280" height="32" clear_on_open="true" open_vk_on_open="false" focus_on_open="true" character_limit="20" />
 		</rect>
 		<simplebutton name="btnCancel" depth="3" pos="0, -94" width="150" height="36" font_size="32" caption_key="xuiCancel" />
 		<simplebutton name="btnOk" depth="3" pos="300, -94" pivot="right" width="150" height="36" font_size="32" caption_key="xuiSubmit" />
@@ -3294,7 +3379,7 @@
 
 			<grid name="stats" rows="5" cols="1" pos="3,0" cell_width="223" cell_height="60" repeat_content="false" >
 				<rect name="pnlTargeting">
-					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,0" width="228" height="52" color="[black]" type="sliced" fillcenter="false"  />
+					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,0" width="228" height="52" color="[black]" type="sliced" fillcenter="false" gamepad_selectable="false"  />
 					<sprite depth="1" color="[mediumGrey]" type="sliced" width="225" height="49" pos="0,-3" />
 
 					<!-- <label justify="center" text="TARGETING" pos="3, -10" /> -->
@@ -3337,9 +3422,9 @@
 		</panel>
 
 
-		<rect name="content" depth="0" pos="0,-46" height="153" disablefallthrough="true" on_press="true">
+		<rect name="content" depth="0" pos="0,-46" height="153" disablefallthrough="true" on_press="true" gamepad_selectable="false">
 			<sprite depth="2" name="background" sprite="menu_empty" color="[darkGrey]" type="sliced" />
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" gamepad_selectable="false"/>
 				<grid depth="3" name="inventory" rows="2" cols="3" pos="3,-3" cell_width="75" cell_height="75" repeat_content="true" controller="PowerSourceSlots">
 					<item_stack controller="RequiredItemStack" name="0"/>
 				</grid>
@@ -3353,9 +3438,9 @@
 		</panel>
 
 
-		<rect name="content" depth="0" pos="0,-46" height="78" disablefallthrough="true" on_press="true">
+		<rect name="content" depth="0" pos="0,-46" height="78" disablefallthrough="true" on_press="true" gamepad_selectable="false">
 			<sprite depth="2" name="background" sprite="menu_empty" color="[darkGrey]" type="sliced" />
-			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="78" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" height="78" color="[black]" type="sliced" fillcenter="false" on_press="true" gamepad_selectable="false"/>
 			<grid depth="3" name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" repeat_content="true" controller="PowerRangedAmmoSlots">
 				<item_stack controller="RequiredItemStack" name="0"/>
 			</grid>
@@ -3429,12 +3514,12 @@
 			</panel>
 
 			<panel pos="405,0" width="104" height="43" disableautobackground="true">
-				<pager name="pager" pos="4,-6" />
+				<pager name="pager" pos="4,-6" contents_parent="windowMaterials"/>
 			</panel>
 		</rect>
 
 
-		<sprite depth="8" name="backgroundMain" pos="0,-97" width="528" height="675" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+		<sprite depth="8" name="backgroundMain" pos="0,-97" width="528" height="675" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true"  gamepad_selectable="false"/>
 		<grid depth="10" name="queue" rows="9" cols="7" pos="3,-97" cell_width="75" cell_height="75" repeat_content="true" controller="MaterialStackGrid" >
 			<material_stack name="0"/>
 		</grid>
@@ -3508,7 +3593,7 @@
 					<textfield name="searchInput" depth="5" pos="43,-22" width="260" height="30" pivot="Left" search_field="true" close_group_on_tab="true" />
 
 					<panel pos="900,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" />
+						<pager name="pager" pos="1,-6" contents_parent="content"/>
 					</panel>
 				</rect>
 
@@ -3537,12 +3622,14 @@
 					<grid name="categories" pos="24,-22" rows="1" cols="10" width="43" height="600" cell_width="43" cell_height="43" arrangement="vertical" repeat_content="true" controller="CategoryList">
 						<category_icon />
 					</grid>
+
+					<combobox pos="255,-7" width="300" height="30" name="cbxTarget" type="ComboBoxList`1[System.String]" value_wrap="false" />
 					
-					<sprite depth="4" name="searchIcon" style="icon30px" pos="508,-22" sprite="ui_game_symbol_search" pivot="Left"/>
-					<textfield name="searchInput" depth="5" pos="543,-22" width="260" height="30" pivot="Left" search_field="true" close_group_on_tab="true" />
+					<sprite depth="4" name="searchIcon" style="icon30px" pos="588,-22" sprite="ui_game_symbol_search" pivot="Left"/>
+					<textfield name="searchInput" depth="5" pos="623,-22" width="260" height="30" pivot="Left" search_field="true" close_group_on_tab="true" />
 
 					<panel pos="900,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" />
+						<pager name="pager" pos="1,-6" contents_parent="content"/>
 					</panel>
 				</rect>
 
@@ -3559,10 +3646,10 @@
 			<label style="header.name" pos="6,-6" text_key="xuiTeleportToPois" />
 		</panel>
 		<panel name="content" pos="0,-46" height="750" depth="1" pivot="center" disableautobackground="true" >
-			<sprite depth="6" name="border" sprite="menu_empty3px" pos="0,0" height="750" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="0.9" />
-			<sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="746" width="1197" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.65" />
+			<sprite depth="6" name="border" sprite="menu_empty3px" pos="0,0" height="756" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="0.9" />
+			<sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="752" width="1197" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.65" />
 
-			<rect name="poilist" pos="0,-0" controller="PoiList" selectable="false" clear_searchtext_on_open="false">
+			<rect name="poilist" pos="0,-0" controller="PoiList" clear_searchtext_on_open="false" clear_selection_on_open="false">
 				<rect depth="4" name="searchControls" height="44" pos="0,-0">
 					<sprite depth="8" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="false" />
 
@@ -3571,13 +3658,16 @@
 
 					<togglebutton name="filterSmall" caption_key="xuiFilterSmallPois" width="210" height="32" pos="360, -7" depth="4" />
 
+					<label pos="700,-22" width="100" height="30" pivot="right" justify="right" text_key="xuiFilterPoiTier" />
+					<combobox depth="3" name="cbxFilterTier" pos="700,-7" width="120" height="30" type="ComboBoxInt" format_string="0;'All';0" value_min="-1" value_max="5" value_wrap="true" value_increment="1" />
+
 					<panel pos="1100,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" />
+						<pager name="pager" pos="1,-6" contents_parent="content"/>
 					</panel>
 				</rect>
 
-				<grid name="list" depth="10" rows="20" cols="3" pos="0,-44" height="340" cell_width="399" cell_height="34" repeat_content="true" arrangement="horizontal" >
-					<poi_teleport_list_entry width="403" height="34" />
+				<grid name="list" depth="10" rows="12" cols="3" pos="0,-44" height="340" cell_width="399" cell_height="59" repeat_content="true" arrangement="horizontal" >
+					<poi_teleport_list_entry width="403" height="59" />
 				</grid>
 			</rect>
 		</panel>
@@ -3598,6 +3688,9 @@
 				<simplebutton name="btnExportPrefab" depth="3" width="250" height="46" caption_key="xuiMenuExportPrefab" font_size="40" />
 				<simplebutton name="btnTpPoi" depth="3" width="250" height="46" caption_key="xuiMenuTeleportPoiButton" font_size="40" />
 			</grid>
+			
+			<label depth="4" pos="0,-1000" width="500" height="40" text_key="lblAchievementsDisabled" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabled" platform="!PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
+			<label depth="4" pos="0,-1000" width="500" height="40" text_key="lblAchievementsDisabledPS5" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabledPS5" platform="PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2"/>
 		<!-- </panel> -->
 	</window>
 
@@ -3654,9 +3747,7 @@
 							<textfield name="spawnMin" pos="10,0" width="70" height="30" pivot="topleft" character_limit="3" validation="integer"/>
 							<textfield name="spawnMax" pos="90,0" width="70" height="30" pivot="topleft" character_limit="3" validation="integer"/>
 						</rect>
-					</grid>
 
-					<grid name="flags" depth="3" pos="380,0" cols="2" cell_width="160" cell_height="36" arrangement="horizontal" repeat_content="false" hide_inactive="false" >
 						<label text_key="xuiSleeperVolumeTrigger" pos="0,0" width="140" height="30" justify="right" pivot="topleft"/>
 						<combobox name="cbxTrigger" type="ComboBoxEnum`1[SleeperVolume+ETriggerType]" width="170" height="30" />
 					</grid>
@@ -3676,11 +3767,16 @@
 							<label name="labelSleeperCount" text="Test" pivot="left" height="32" />
 						</grid>
 					</rect>
+
+					<rect name="scriptRect" pos="400,0" width="300" height="210">
+						<textfield name="script" pos="0,0" width="280" height="210" font_size="20" pivot="topleft" justify="left" on_return="newline" />
+					</rect>
+
 				</rect>
 
 				<rect>
-					<label pos="140,20" depth="2" text="Groups" width="150" height="285" justify="center" />
-					<rect name="spawners" pos="150,-10" width="544" height="456" controller="SpawnersList">
+					<label pos="140,30" depth="2" text="Groups" width="150" height="285" justify="center" />
+					<rect name="spawners" pos="150,0" width="544" height="456" controller="SpawnersList">
 						<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 
 						<rect depth="4" name="searchControls" height="44" pos="0,-0">
@@ -3690,7 +3786,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 							<panel pos="432,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" />
+								<pager name="pager" pos="1,-6" contents_parent="content"/>
 							</panel>
 						</rect>
 
@@ -3882,7 +3978,7 @@
   </panel>
   </window>-->
   
-  <window name="triggerProperties" anchor="RightTop" pos="-700,-80" width="620" height="900" cursor_area="true" controller="TriggerProperties">
+  <window name="triggerProperties" anchor="RightTop" pos="-700,-80" width="620" height="992" cursor_area="true" controller="TriggerProperties">
     <panel name="header" pos="0,0" height="43" depth="1" disableautobackground="true" >
       <sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="0,0" height="43" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.7" />
       <label style="header.name" pos="6,-6" text_key="xuiTriggerProperties" />
@@ -3890,34 +3986,66 @@
     <panel name="content" pos="0,-46" height="{window_height}" width="610" depth="1" pivot="center" padding="10,10" disableautobackground="true">
       <sprite depth="6" name="border" sprite="menu_empty3px" pos="0,0" width="620" height="{window_height}" color="[black]" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="0.9" />
       <sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" height="{window_height}" width="618" color="[darkGrey]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.65" />
+	
+	<rect name="exclude" width="610" height="46" style="press, hover, scroll" visible="{triggers_enabled}">
+		<sprite depth="2" name="backgroundExclude" sprite="menu_empty3px" pos="0,0" height="43" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.7" sound="[recipe_click]" />
+		<sprite depth="4" name="tickboxExclude" width="37" height="37" pos="7,-4" color="[darkGrey]" sprite="Highlight - Shadowed" type="sliced" />
+		<sprite depth="5" name="tickmarkExclude" width="31" height="31" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{excludeTickmarkSelected}" />
+		<label depth="4" name="tickMarkNameExclude" pos="64,-21" width="300" height="42" text_key="xuiTriggerPropertiesExcludeIcon" font_size="32" justify="left" pivot="left" />
+	</rect>
+      <rect name="unlock" width="610" height="46" style="press, hover, scroll" visible="{triggers_enabled}" pos="0,-46" >
+        <sprite depth="2" name="backgroundUnlock" sprite="menu_empty3px" pos="0,0" height="43" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.7" sound="[recipe_click]" />
+        <sprite depth="4" name="tickboxUnlock" width="37" height="37" pos="7,-4" color="[darkGrey]" sprite="Highlight - Shadowed" type="sliced" />
+        <sprite depth="5" name="tickmarkUnlock" width="31" height="31" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{unlockTickmarkSelected}" />
+        <label depth="4" name="tickMarkNameUnlock" pos="64,-21" width="300" height="42" text_key="xuiTriggerPropertiesUnlockIcon" font_size="32" justify="left" pivot="left" />
+      </rect>
 
-	<grid rows="2" cell_width="150"  cell_height="300" repeat_content="false" arrangement="vertical">
-		  <table columns="2" padding="10,10" visible="{triggers_enabled}" >
-			<label depth="2" text_key="xuiTriggers" width="150" height="285" justify="right"  />
-			<rect name="triggers" width="430" height="290"  selectable="false" clear_searchtext_on_open="true" controller="XUiC_PrefabTriggerEditorList" visible="{triggers_enabled}">
-				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+      <!--
+      <rect name="reset" width="610" height="46" style="press, hover, scroll" visible="{triggers_enabled}" pos="0,-46">
+        <sprite depth="2" name="backgroundReset" sprite="menu_empty3px" pos="0,0" height="43" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.7" sound="[recipe_click]" />
+        <sprite depth="4" name="tickboxReset" width="37" height="37" pos="7,-4" color="[darkGrey]" sprite="Highlight - Shadowed" type="sliced" />
+        <sprite depth="5" name="tickmarkReset" width="31" height="31" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{resetTickmarkSelected}" />
+        <label depth="4" name="tickMarkNameReset" pos="64,-21" width="300" height="42" text_key="xuiTriggerPropertiesResetIcon" font_size="32" justify="left" pivot="left" />
+        <textfield name="resetInput" depth="5" pos="400,-22" width="160" height="30" character_limit="10" pivot="Left" validation="integer" text="{resetTime}" />
+      </rect>
+			-->
 
-				<rect depth="4" name="searchControls" height="44" pos="0,-0">
-					<sprite depth="8" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="false" />
+      <grid rows="1" cell_width="150"  cell_height="300" repeat_content="false" arrangement="vertical" pos="0,-92" >
+        <table columns="2" padding="10,10" visible="{triggers_enabled}" >
+          <label depth="2" text_key="xuiTriggers" width="150" height="285" justify="right"  />
+          <rect name="triggers" width="430" height="290"  selectable="false" clear_searchtext_on_open="true" controller="XUiC_PrefabTriggerEditorList" visible="{triggers_enabled}">
+            <sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
 
-					<sprite depth="4" name="searchIcon" style="icon30px" pos="5,-22" sprite="ui_game_symbol_search" pivot="Left"/>
-					<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
+            <rect depth="4" name="searchControls" height="44" pos="0,-0">
+              <sprite depth="8" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="false" />
 
-					<panel pos="302,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" primary_pager="false" />
-					</panel>
-				</rect>
+              <sprite depth="4" name="searchIcon" style="icon30px" pos="5,-22" sprite="ui_game_symbol_search" pivot="Left"/>
+              <textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
-				<grid name="list" depth="2" rows="6" cols="5" pos="0,-44" height="200" cell_width="85" cell_height="34" repeat_content="true" arrangement="vertical" >
-					<prefab_trigger_entry width="90" height="34" />
-				</grid>
+              <panel pos="302,0" width="98" height="43" disableautobackground="true">
+                <pager name="pager" pos="1,-6" primary_pager="false" />
+              </panel>
+            </rect>
 
-				<label text_key="xuiPrefabGroupsAddLabel" depth="4" pos="0,-270" width="100" height="30" justify="right" pivot="left" />
-				<button depth="4" name="addTriggersButton" style="icon30px, press" pos="105,-270" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
-			</rect>
-			
-			</table>
-			<table columns="2" padding="10,10" visible="{triggeredby_enabled}" >
+            <grid name="list" depth="2" rows="6" cols="5" pos="0,-44" height="200" cell_width="85" cell_height="34" repeat_content="true" arrangement="vertical" >
+              <prefab_trigger_entry width="90" height="34" />
+            </grid>
+
+            <label text_key="xuiPrefabGroupsAddLabel" depth="4" pos="0,-270" width="100" height="30" justify="right" pivot="left" />
+            <button depth="4" name="addTriggersButton" style="icon30px, press" pos="105,-270" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
+          </rect>
+
+        </table>
+      </grid>
+        <rect name="operation" width="610" height="46" pos="0,-392" style="press, hover, scroll" >
+          <sprite depth="2" name="backgroundOperation" sprite="menu_empty3px" pos="0,0" height="43" color="[black]" type="sliced" fillcenter="true" globalopacity="true" globalopacitymod="0.7" sound="[recipe_click]" />
+          <sprite depth="4" name="tickboxOperation" width="37" height="37" pos="7,-4" color="[darkGrey]" sprite="Highlight - Shadowed" type="sliced" />
+          <sprite depth="5" name="tickmarkOperation" width="31" height="31" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{operationTickmarkSelected}" />
+          <label depth="4" name="tickMarkNameOperation" pos="64,-21" width="300" height="42" text_key="xuiTriggerPropertiesUseOrInsteadOfAnd" font_size="32" justify="left" pivot="left" />
+        </rect>
+      
+      <grid rows="1" cell_width="150"  cell_height="300" repeat_content="false" arrangement="vertical" pos="0,-428" >
+        <table columns="2" padding="10,10" visible="{triggeredby_enabled}" >
 			<label depth="2" text_key="xuiTriggeredBy" width="150" height="285" justify="right" />
 			<rect name="triggeredBy" width="430" height="290" selectable="false" clear_searchtext_on_open="true" controller="XUiC_PrefabTriggerEditorList" visible="{triggeredby_enabled}">
 				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -4001,33 +4129,6 @@
 					</rect>
 				</rect>
 
-				<rect tab_key="xuiPrefabZones">
-					<rect pos="8,-20" name="zones" width="1084" height="490" controller="PrefabZonesEditorList" selectable="false" clear_searchtext_on_open="true">
-						<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
-
-						<rect depth="4" name="searchControls" height="44" pos="0,-0">
-							<sprite depth="8" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="false" />
-
-							<sprite depth="4" name="searchIcon" style="icon30px" pos="5,-22" sprite="ui_game_symbol_search" pivot="Left"/>
-							<textfield name="searchInput" depth="5" pos="40,-22" width="280" height="30" pivot="Left" />
-
-							<panel pos="972,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" primary_pager="false" />
-							</panel>
-						</rect>
-
-						<grid name="list" depth="2" rows="12" cols="4" pos="0,-44" height="200" cell_width="270" cell_height="34" repeat_content="true" arrangement="vertical" >
-							<prefab_zone_edit_entry width="274" height="34" />
-						</grid>
-
-						<rect pos="0,-470">
-							<label text_key="xuiPrefabZonesAddLabel" depth="4" pos="0,0" width="100" height="30" justify="right" pivot="left" />
-							<textfield name="addInput" depth="4" pos="105,0" width="250" height="30" pivot="left" />
-							<button depth="4" name="addButton" style="icon30px, press" pos="370,0" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
-						</rect>
-					</rect>
-				</rect>
-
 				<rect tab_key="xuiPrefabTags">
 					<rect pos="8,-20" name="tags" width="1084" height="490" controller="PrefabTagList" selectable="false" clear_searchtext_on_open="true">
 						<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -4039,7 +4140,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="280" height="30" pivot="Left" />
 
 							<panel pos="972,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" />
+								<pager name="pager" pos="1,-6" contents_parent="tags" />
 							</panel>
 						</rect>
 
@@ -4066,7 +4167,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="280" height="30" pivot="Left" />
 
 							<panel pos="972,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" />
+								<pager name="pager" pos="1,-6" contents_parent="questTags"/>
 							</panel>
 						</rect>
 
@@ -4083,7 +4184,34 @@
 					
 					<rect pos="8,-520">
 						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiQuestDifficultyTier" tooltip_key="xuiQuestDifficultyTierTooltip" font_size="30" color="[white]" pivot="left" />
-						<combobox pos="155,0" width="200" height="32" name="cbxDifficultyTier" type="ComboBoxInt" value_min="1" value_max="5" value="1" value_increment="1" value_wrap="false" />
+						<combobox pos="155,0" width="200" height="32" name="cbxDifficultyTier" type="ComboBoxInt" value_min="0" value_max="5" value="1" value_increment="1" value_wrap="false" />
+					</rect>
+				</rect>
+
+				<rect tab_key="xuiPrefabThemeTags">
+					<rect pos="8,-20" name="themetags" width="1084" height="490" controller="PrefabThemeTagList" selectable="false" clear_searchtext_on_open="true">
+						<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+
+						<rect depth="4" name="searchControls" height="44" pos="0,-0">
+							<sprite depth="8" name="backgroundMain" sprite="menu_empty" color="[black]" type="sliced" fillcenter="false" />
+
+							<sprite depth="4" name="searchIcon" style="icon30px" pos="5,-22" sprite="ui_game_symbol_search" pivot="Left"/>
+							<textfield name="searchInput" depth="5" pos="40,-22" width="280" height="30" pivot="Left" />
+
+							<panel pos="972,0" width="98" height="43" disableautobackground="true">
+								<pager name="pager" pos="1,-6" contents_parent="tags" />
+							</panel>
+						</rect>
+
+						<grid name="list" depth="2" rows="12" cols="4" pos="0,-44" height="200" cell_width="270" cell_height="34" repeat_content="true" arrangement="vertical" >
+							<prefab_tag_entry width="274" height="34" />
+						</grid>
+
+						<rect pos="0,-470">
+							<label text_key="xuiPrefabGroupsAddLabel" depth="4" pos="0,0" width="100" height="30" justify="right" pivot="left" />
+							<textfield name="addInput" depth="4" pos="105,0" width="250" height="30" pivot="left" />
+							<button depth="4" name="addButton" style="icon30px, press" pos="370,0" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
+						</rect>
 					</rect>
 				</rect>
 
@@ -4159,7 +4287,7 @@
 					<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 					<panel pos="262,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" />
+						<pager name="pager" pos="1,-6" contents_parent="markers"/>
 					</panel>
 				</rect>
 				<grid name="list" depth="2" rows="11" cols="1" pos="0,-44" height="200" cell_width="360" cell_height="34" repeat_content="true" arrangement="vertical">
@@ -4332,7 +4460,7 @@
 
 			<rect pos="-280, 50" visible="{is_playtesting}">
 				<label text_key="xuiPlaytestBiome" pos="0, 0" width="277" height="32" depth="3" />
-				<combobox pos="0, -34" width="270" height="32" name="cbxPlaytestBiome" type="ComboBoxList`1[BiomeDefinition+BiomeType]" value_wrap="false" />
+				<combobox pos="0, -34" width="270" height="32" name="cbxPlaytestBiome" type="ComboBoxList`1[BiomeDefinition+BiomeType]" value_wrap="false" localization_prefix="biome_" localization_key_caseinsensitive="true" />
 			</rect>
 		</panel>
 	</window>
@@ -4575,11 +4703,11 @@
 	</window>
 
 	<window name="prefabeditorhelp" anchor="CenterCenter" pos="-550,450" width="1100" height="850" controller="PrefabEditorHelp" cursor_area="true">
-		<panel name="outclick" pos="-2000,2000" width="8000" height="8000" depth="-8" createuipanel="true" on_press="true" disableautobackground="true">
+		<panel name="outclick" pos="-2000,2000" width="8000" height="8000" depth="-8" createuipanel="true" on_press="true" disableautobackground="true" gamepad_selectable="false">
 			<!--<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" color="30,30,30,160" type="sliced" fillcenter="true" />-->
 		</panel>
 
-		<panel name="noclick" depth="-5" createuipanel="true" on_press="true" disableautobackground="true">
+		<panel name="noclick" depth="-5" createuipanel="true" on_press="true" disableautobackground="true" gamepad_selectable="false">
 			<!--<sprite depth="0" name="backgroundMain" sprite="menu_empty" color="0,0,0,50" type="sliced" fillcenter="true" />-->
 		</panel>
 
@@ -4606,62 +4734,62 @@
 
 				<rect tab_key="xuiPrefabEditorHelpMain">
 					<table columns="2" depth="3" padding="10,10" pos="10,-20" hide_inactive="false">
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" pivot="topleft" text_key="xuiPrefabEditorHelpFocusBlockKey" />
-						<label width="750" overflow="resizeheight" pivot="topleft" text_key="xuiPrefabEditorHelpFocusBlockText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpDeleteBlockKey" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" pivot="topleft" text_key="xuiPrefabEditorHelpFocusBlockKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" pivot="topleft" text_key="xuiPrefabEditorHelpFocusBlockText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpDeleteBlockKey" force_input_style="keyboard" />
 						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpDeleteBlockText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyBlocksKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyBlocksText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyRotationBlocksKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyRotationBlocksText" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyBlocksKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyBlocksText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyRotationBlocksKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyRotationBlocksText" force_input_style="keyboard" />
 					</table>
 				</rect>
 
 				<rect tab_key="xuiPrefabEditorHelpSelectionsGeneric">
 					<table columns="2" depth="3" padding="10,10" pos="10,-20" hide_inactive="false">
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCreateSelectionKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCreateSelectionText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpUnselectBoxKey" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCreateSelectionKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCreateSelectionText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpUnselectBoxKey" force_input_style="keyboard" />
 						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpUnselectBoxText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionPropertiesKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionPropertiesText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionAboveTerrainKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionAboveTerrainText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveModeKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveModeText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveDirectKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveDirectText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionResizeKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionResizeText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionFaceKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionFaceText" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionPropertiesKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionPropertiesText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionAboveTerrainKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionAboveTerrainText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveModeKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveModeText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMoveDirectKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMoveDirectText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionResizeKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionResizeText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionFaceKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionFaceText" force_input_style="keyboard" />
 					</table>
 				</rect>
 
 				<rect tab_key="xuiPrefabEditorHelpSelectionsEdit">
 					<table columns="2" depth="3" padding="10,10" pos="10,-20" hide_inactive="false">
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionFillKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionFillText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionClearKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionClearText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionRotateKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionRotateText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMirrorKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMirrorText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionDensityKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionDensityText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionRemoveKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionRemoveText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpPasteKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpPasteText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpPasteAdvancedKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpPasteAdvancedText" />
-						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpUndoKey" />
-						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpUndoText" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionFillKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionFillText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionClearKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionClearText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionRotateKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionRotateText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionMirrorKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionMirrorText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionDensityKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionDensityText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpSelectionRemoveKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpSelectionRemoveText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpCopyKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpCopyText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpPasteKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpPasteText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpPasteAdvancedKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpPasteAdvancedText" force_input_style="keyboard" />
+						<label parse_actions="true" width="300" overflow="resizeheight" justify="right" text_key="xuiPrefabEditorHelpUndoKey" force_input_style="keyboard" />
+						<label width="750" overflow="resizeheight" text_key="xuiPrefabEditorHelpUndoText" force_input_style="keyboard" />
 					</table>
 				</rect>
 			</rect>
@@ -4682,11 +4810,28 @@
 			
 		</panel>
 		<rect name="content" pos="3,-49" >
-			<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" on_press="true" />
+			<sprite depth="0" name="bg" color="255,255,255,1" type="sliced" sprite="menu_empty" anchor_left="queue,0,-3" anchor_bottom="queue,0,0" anchor_right="queue,1,0" anchor_top="queue,1,49" />
 			<grid depth="12" name="queue" rows="1" cols="3" cell_width="75" cell_height="75" repeat_content="true" controller="DewCollectorContainer" required_item="drinkJarEmpty">
 				<dewcollector_stack controller="DewCollectorStack" override_stack_count="1" name="0"/>
 			</grid>
 		</rect>
+	</window>
+	
+	<window name="windowDewCollectorMods" width="228" height="121" panel="Right" cursor_area="true" >
+	<!--#$-IGS END.-$#-->
+		<panel style="header.panel">
+			<sprite style="header.icon" sprite="ui_game_symbol_assemble"/>
+			<label style="header.name" text="MODS" text_key="xuiTools" />
+		</panel>
+
+		<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+
+			<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="DewCollectorModGrid" repeat_content="true"
+			required_mods="toolDewGatherer,toolDewTarp,toolDewFilter" required_mods_only="true">
+				<item_stack controller="RequiredItemStack" name="0"/>
+			</grid>
+		</rect>
+
 	</window>
 
 	<window name="reportPlayer" anchor="CenterCenter" pos="-500,240" width="1000" height="480" controller="ReportPlayer" cursor_area="true">
@@ -4712,6 +4857,9 @@
 			</table>
 		</panel>
 
+		<grid depth="2" rows="1" cols="1" pos="480, -430" height="32" cell_width="210" cell_height="32" repeat_content="false" arrangement="horizontal">
+			<simplebutton name="btnKick" depth="3" width="200" height="32" caption_key="xuiKickPlayerNoReport" />
+		</grid>
 		<grid depth="2" rows="1" cols="2" pos="690, -430" height="32" cell_width="160" cell_height="32" repeat_content="false" arrangement="horizontal">
 			<simplebutton name="btnCancel" depth="3" width="150" height="32" caption_key="xuiCancel" />
 			<simplebutton name="btnSend" depth="3" width="150" height="32" caption_key="xuiReportPlayerSend" />
@@ -4736,7 +4884,7 @@
 		</grid>
 	</window>
 
-	<window name="chatoutput" pos="20, -250" depth="100" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
+	<window name="chatoutput" pos="20, -250" depth="10" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
 		<textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" crispness="Never" />
 	</window>
 
@@ -4748,7 +4896,7 @@
 			<sprite depth="8" name="border" sprite="menu_empty2px" color="[black]" type="sliced" fillcenter="false" />
 
 			<combobox name="cbxTarget" type="ComboBoxList`1[EChatType]" value_max="party" pos="2, -6" width="100" height="22" font_size="22" localization_prefix="xuiChatTarget" />
-			<textfield name="txtInput" backgroundcolor="[transparent]" depth="2" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" crispness="Never" open_vk_on_open="true" />
+			<textfield name="txtInput" backgroundcolor="[transparent]" depth="2" pos="110,-16" width="386" height="28" pivot="left" justify="left" overflow="ClampContent" character_limit="300" max_line_count="1" crispness="Never" focus_on_open="true" open_vk_on_open="false" />
 		</rect>
 	</window>
 
@@ -4773,8 +4921,8 @@
 	</window>
 -->
 
-	<window name="messageBox" anchor="CenterCenter" pos="-280,140" width="560" height="279" cursor_area="true" depth="10000">
-		<panel name="noclick" depth="2" createuipanel="true" on_press="true" pos="-4000,4000" width="8000" height="8000" disableautobackground="true" visible="{# !is_modal}">
+	<window name="messageBox" anchor="CenterCenter" pos="-280,140" width="560" height="279" cursor_area="true" depth="1000">
+		<panel name="noclick" depth="2" createuipanel="true" on_press="true" pos="-4000,4000" width="8000" height="8000" disableautobackground="true" visible="{# !is_modal}" gamepad_selectable="false">
 			<sprite depth="0" name="backgroundMain" sprite="menu_empty" color="0,0,0,200" type="sliced" fillcenter="true" />
 		</panel>
 
@@ -4782,28 +4930,50 @@
 			<label style="header.name" pos="6,-6" width="550" text="{msgTitle}" />
 		</panel>
 		<panel name="content" pos="0,-46" height="194" depth="1" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" pivot="center">
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" height="194" color="[black]" type="sliced" fillcenter="false" />
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,0" height="194" color="[black]" type="sliced" fillcenter="false" />	
 			<label depth="3" name="descriptionText" pos="8,-6" width="544" text="{msgText}" font_size="28" overflow="resizeheight" upper_case="false" />
+
+			<rect name="btnLeft" depth="3" pos="0, -243" width="200" height="36" disableautobackground="true" visible="{showleftbutton}">
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />	
+				<rect depth="3" pos="0,-3" height="31">
+					<button name="clickable2" sprite="menu_empty" defaultcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0"/>
+					<!-- <sprite depth="2" name="windowIcon" width="24" height="24" pos="45,-2" color="[iconColor]" sprite="ui_game_symbol_check"/> -->
+					<label depth="2" name="btnLabel" pos="0,-2" justify="center" text_key="{leftbuttontext}" effect="outline" upper_case="true" />
+				</rect>
+			</rect>
+
+			<rect name="btnRight" depth="3" pos="360, -243" width="200" height="36" disableautobackground="true">
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />	
+				<rect depth="3" pos="0,-3" height="31">
+					<button name="clickable" sprite="menu_empty" defaultcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0"/>
+					<!-- <sprite depth="2" name="windowIcon" width="24" height="24" pos="45,-2" color="[iconColor]" sprite="ui_game_symbol_check"/> -->
+					<label depth="2" name="btnLabel" pos="0,-2" justify="center" text_key="{rightbuttontext}" effect="outline" upper_case="true" />
+				</rect>
+			</rect>
 		</panel>
-
-		<rect name="btnLeft" depth="3" pos="0, -243" width="200" height="36" disableautobackground="true" visible="{showleftbutton}">
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
-			<rect depth="3" pos="0,-3" height="31">
-				<button name="clickable2" sprite="menu_empty" defaultcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0"/>
-				<!-- <sprite depth="2" name="windowIcon" width="24" height="24" pos="45,-2" color="[iconColor]" sprite="ui_game_symbol_check"/> -->
-				<label depth="2" name="btnLabel" pos="0,-2" justify="center" text_key="{leftbuttontext}" effect="outline" upper_case="true" />
-			</rect>
-		</rect>
-
-		<rect name="btnRight" depth="3" pos="360, -243" width="200" height="36" disableautobackground="true">
-			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
-			<rect depth="3" pos="0,-3" height="31">
-				<button name="clickable" sprite="menu_empty" defaultcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" hoverscale="1.0"/>
-				<!-- <sprite depth="2" name="windowIcon" width="24" height="24" pos="45,-2" color="[iconColor]" sprite="ui_game_symbol_check"/> -->
-				<label depth="2" name="btnLabel" pos="0,-2" justify="center" text_key="{rightbuttontext}" effect="outline" upper_case="true" />
-			</rect>
-		</rect>
 	</window>
 	
+	<window name="windowMultiplayerPrivilegesInGame" anchor="CenterCenter" pos="0,0" depth="13000" createuipanel="true" disableautobackground="true" controller="MultiplayerPrivilegeNotification">
+		<button name="outclick" width="8000" height="8000" depth="100000" createuipanel="true" on_press="true" disableautobackground="true" gamepad_selectable="false">
+			<sprite name="backgroundMain" pivot="center" sprite="menu_empty3px" color="30,30,30,160" type="sliced" fillcenter="true" />
+		</button>
+		<panel name="header" pos="-300,146" width="600" height="43" depth="3" bordercolor="[black]" borderthickness="3" createuipanel="true">
+			<label style="header.name" pos="6,-6"  width="600" height="43" text_key="lblPrivilegesHeader" font_size="32" />
+		</panel>
+		<panel name="content" pos="-300,100" width="600" height="268" depth="3" bordercolor="[black]" borderthickness="3" pivot="center" createuipanel="true">
+			<sprite name="backgroundMain" sprite="menu_empty3px" color="[mediumGrey]" type="sliced" fillcenter="true" globalopacitymod="2" />
+			<label depth="4" name="lblResolvingPrivileges" pos="10,-6" width="580" text_key="lblResolvingPrivileges" font_size="32" />
+			<label depth="4" name="lblInvalidPrivileges" pos="10,-6" width="580" text_key="lblInvalidPrivileges" font_size="32" />
+		</panel>
+		<panel name="buttons" pos="-300,-168" height="32" depth="4" borderthickness="3" createuipanel="true" disableautobackground="true" >
+			<simplebutton name="btnCancel" depth="4" pos="0, 0" width="180" height="36" font_size="32" caption_key="xuiCancel" upper_case="true" />
+			<simplebutton name="btnClose" depth="4" pos="0, 0" width="180" height="36" font_size="32" caption_key="xuiOk" upper_case="true" />
+		</panel>
+	</window>
+	
+	<window name="windowDemo" pos="-922,521" depth="20000" width="1845" height="1040" controller="DemoWindow">
+		<texture depth="8" texture="Textures/UI/xbox_demo_screen" width="100%" height="100%" visible="{is_xbox}" />
+		<texture depth="8" texture="Textures/UI/ps5_demo_screen" width="100%" height="100%" visible="{is_ps5}" />
+	</window>
 
 </windows>

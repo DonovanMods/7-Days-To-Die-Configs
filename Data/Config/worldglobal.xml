@@ -18,7 +18,7 @@
 		<property name="ambientInsideThreshold" value=".2"/>
 		<property name="ambientInsideEquatorScale" value=".55, 1.5"/>	<!-- day, night -->
 		<property name="ambientInsideGroundScale" value=".2, .2"/>
-		<property name="ambientInsideSkyScale" value=".2, .4"/>
+		<property name="ambientInsideSkyScale" value=".8, .4"/>
 
 		<property name="fogPower" value="1, 1"/>		<!-- day, night -->
 		<property name="fogWater" value=".47, .2"/>	<!-- density, speed -->

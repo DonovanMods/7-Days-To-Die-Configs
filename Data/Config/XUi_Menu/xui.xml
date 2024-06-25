@@ -5,38 +5,54 @@
 			<window name="toolTip" />
 			<window name="popupMenu" />
 		</window_group>
-		
-		<window_group name="archetypes" controller="XUiC_ArchetypesWindowGroup" stack_panel_y_offset="332">
-			<window name="windowArchetypePreview2"/>
-			<window name="windowSliders"/>
-			<window name="windowColorPicker"/>
-			<window name="windowArchetypeButtons" />
+
+		<window_group name="saveIndicator" actionSet="false">
+			<window name="saveIndicator" />
 		</window_group>
 		
-		<!--#$-IGS BEGIN: Adding window to hold gampad callouts -$#-->
+		<window_group name="mainMenuPlayerName" actionSet="false">
+			<window name="mainMenuPlayerName" />
+		</window_group>
+		
+		<window_group name="customCharacterSystem" controller="XUiC_CustomCharacterWindowGroup" defaultSelected="cbxGender">
+			<window name="windowCharacterPreview"/>
+			<window name="windowCharacterButtons"/>
+		</window_group>
+		
 		<window_group name="CalloutGroup" actionSet="false">
 			<window name="GamepadCallouts" />
 		</window_group>
-		<!--*#$-IGS END.-$#-->
 
-		<window_group name="rwgeditor">
+		<window_group name="rwgeditor" defaultSelected="seedInput">
 			<window name="worldGeneration" />
 		</window_group>
 		
-		<window_group name="messageBox" controller="MessageBoxWindowGroup">
+		<window_group name="messageBox" controller="MessageBoxWindowGroup" defaultSelected="btnRight">
 			<window name="messageBox" />
 		</window_group>
 
-		<window_group name="editingTools">
+		<window_group name="editingTools" defaultSelected="btnRwgPreviewer">
 			<window name="editingTools" />
 		</window_group>
 		
-		<window_group name="createWorld">
+		<window_group name="createWorld" defaultSelected="btnBack">
 			<window name="createWorld" />
 		</window_group>
 		
-		<window_group name="steamLogin">
-			<window name="steamLogin" />
+		<window_group name="dataManagement" defaultSelected="btnBack">
+			<window name="dataManagement" />
+		</window_group>
+		
+		<window_group name="confirmLocalSave" defaultSelected="btnStart">
+			<window name="confirmLocalSave" />
+		</window_group>
+		
+		<window_group name="loginWindow" defaultSelected="btnRetry">
+			<window name="loginWindow" />
+		</window_group>
+		
+		<window_group name="newsScreen" defaultSelected="btnContinue">
+			<window name="newsScreen" />
 		</window_group>
 		
 		<window_group name="menuBackground" actionSet="false">
@@ -49,10 +65,10 @@
 
 		<window_group name="mainMenu">
 			<window name="mainMenu" />
-			<window name="newsWindow" />
+			<!--<window name="newsWindow" />-->
 		</window_group>
 		
-		<window_group name="newContinueGame">
+		<window_group name="newContinueGame" >
 			<window name="newContinueGame" />
 		</window_group>
 		
@@ -60,23 +76,27 @@
 			<window name="serverBrowser" />
 		</window_group>
 		
-		<window_group name="serverPassword">
+		<window_group name="serverPassword" defaultSelected="txtPassword">
 			<window name="serverPassword" />
 		</window_group>
 		
-		<window_group name="optionsMenu">
+		<window_group name="optionsMenu" defaultSelected="btnGeneral">
 			<window name="optionsMenu" />
 		</window_group>
 		
-		<window_group name="optionsGeneral">
+		<window_group name="optionsGeneral" defaultSelected="content">
 			<window name="optionsGeneral" />
 		</window_group>
 		
-		<window_group name="optionsVideo">
+		<window_group name="optionsVideo" defaultSelected="Resolution">
 			<window name="optionsVideo" />
 		</window_group>
 		
-		<window_group name="optionsAudio">
+		<window_group name="optionsVideoSimplified" defaultSelected="Brightness">
+			<window name="optionsVideoSimplified" />
+		</window_group>
+		
+		<window_group name="optionsAudio" defaultSelected="OverallAudioVolumeLevel">
 			<window name="optionsAudio" />
 		</window_group>
 		
@@ -88,7 +108,11 @@
 			<window name="optionsControlsNewBinding" />
 		</window_group>
 
-		<window_group name="optionsProfiles">
+		<window_group name="optionsController">
+			<window name="optionsController" />
+		</window_group>
+
+		<window_group name="optionsProfiles" defaultSelected="btnProfileCreate">
 			<window name="optionsProfiles" />
 		</window_group>
 		
@@ -116,8 +140,28 @@
 			<window name="spawnselection" />
 		</window_group>
 		
-		<window_group name="optionsTwitch">
+		<window_group name="optionsTwitch" defaultSelected="btnBack">
 			<window name="optionsTwitch" />
+		</window_group>
+
+		<window_group name="subtitlesDisplay" actionSet="false">
+			<window name="subtitlesDisplay" />
+		</window_group>
+
+		<window_group name="videoPlayer">
+			<window name="videoPlayer" />
+		</window_group>
+		
+		<window_group name="windowMultiplayerPrivilegesMenu" controller="MultiplayerPrivilegeNotification">
+			<window name="windowMultiplayerPrivilegesMenu" />
+		</window_group>
+		
+		<window_group name="windowEula" defaultSelected="btnDecline">
+			<window name="windowEula" />
+		</window_group>
+		
+		<window_group name="uiLimitsTest">
+			<window name="uiLimitsTest" />
 		</window_group>
 		
 	</ruleset>

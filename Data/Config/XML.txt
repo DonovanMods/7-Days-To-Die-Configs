@@ -404,12 +404,6 @@ Support and multiblocks
 
 (A15) On destruction, blocks with "MultiBlockDim" are properly cleaned up, leaving no invisible support blocks in mid-air. (Sorry! =)
 
-	<property name="UpwardsCount" value="8" />
-is obsolete.
-It's function is/was to create an invisible "supporting" block in mid-air over objects like trees so you could build on top of them.
-This is now solved better with MultiBlockDim.
-It may or may not continue to work. Try it first...
-
 
 Multiblocks and  <property name="StabilitySupport" value="false" />
 
@@ -1031,7 +1025,7 @@ your container specifies a much smaller count value.
 The loot containers count value specified how many if the items in the containers loot list should be selected randomly.
 NOTE: that the same item could be chosen more than one time.
 
-If the chosen item is an item then the item is spawned into the conatiner according to its count.
+If the chosen item is an item then the item is spawned into the container according to its count.
 
 However if the chosen item is a lootgroup then a lootgroup is spawned into the container.
 
@@ -1396,10 +1390,6 @@ Instead of unlocking a list of recipes you can now learn / unlock a list of skil
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-Note that item IDs CAN be moved around without icons, descriptions, or any references to them breaking.
-All but one.  "handPlayer" must remain on ID 70. Because.
-
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

@@ -181,6 +181,61 @@
 		<property name="WaterClipPlane" value="0, 0, 1, -0.5" />
 	</shape>
 
+	<shape name="cubeHalfPoleSquare">
+		<property name="Path" value="scan" />
+		<property name="Model" value="cube_half_pole_square" />
+		<property name="CustomIcon" value="shapeCubeHalfPoleSquare" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value=",LGGGGGG" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.25" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeHalfPoleSquareCorner">
+		<property name="Path" value="scan" />
+		<property name="Model" value="cube_half_pole_square_corner" />
+		<property name="CustomIcon" value="shapeCubeHalfPoleSquareCorner" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value=",LGGGGGG" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.25" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeHalfPoleSquareCornerLeft">
+		<property name="Path" value="scan" />
+		<property name="Model" value="cube_half_pole_square_corner_left" />
+		<property name="CustomIcon" value="shapeCubeHalfPoleSquareCornerLeft" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value=",LGGGGGG" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.25" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeHalfPoleSquareCornerRight">
+		<property name="Path" value="scan" />
+		<property name="Model" value="cube_half_pole_square_corner_right" />
+		<property name="CustomIcon" value="shapeCubeHalfPoleSquareCornerRight" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value=",LGGGGGG" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.25" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeHalfPoleSquareCorner3Way">
+		<property name="Path" value="scan" />
+		<property name="Model" value="cube_half_pole_square_corner_3way" />
+		<property name="CustomIcon" value="shapeCubeHalfPoleSquareCorner3Way" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value=",LGGGGGG" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.25" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
 	<shape name="cube0.25m">
 		<property name="Path" value="scan" />
 		<property name="Model" value="cube_0.25m" />
@@ -198,6 +253,15 @@
 		<property name="ShapeCategories" value="Square" />
 		<property name="WaterClipPlane" value="0, 0.7605036, 0.6493337, -0.9730455" />
 		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="cubeCornerBeveledOutsideCorner">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_corner_beveled_outside_corner" />
+		<property name="CustomIcon" value="shapecubeCornerBeveledOutsideCorner" />
+		<property name="ShapeCategories" value="Square" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.4999999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
 	</shape>
 
 	<shape name="cubeCornerBeveledCorner">
@@ -668,6 +732,32 @@
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="pole_square_side_centered_tee_four_way" />
 		<property name="CustomIcon" value="shapePoleSquareSideCenteredTeeFourWay" />
+		<property name="UseGlobalUV" value="Local" />
+		<property name="ShapeCategories" value="Square,Poles" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="poleSquareFourWay">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="pole_square_four_way" />
+		<property name="CustomIcon" value="shapePoleSquareFourWay" />
+		<property name="UseGlobalUV" value="Local" />
+		<property name="ShapeCategories" value="Square,Poles" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="poleSquareCenteredFourWay">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="pole_square_centered_four_way" />
+		<property name="CustomIcon" value="shapePoleSquareCenteredFourWay" />
 		<property name="UseGlobalUV" value="Local" />
 		<property name="ShapeCategories" value="Square,Poles" />
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
@@ -2360,7 +2450,7 @@
 		<property name="CustomIcon" value="shapePole0.5mCornerPlate" />
 		<property name="ShapeCategories" value="Round" />
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
-		<property name="UseGlobalUV" value="Local" />
+		<property name="UseGlobalUV" value=",GGLGGGG" />
 		<property name="ImposterDontBlock" value="true" />
 		<property name="ImposterExchange" value="imposterDontBlockCTRQuarter" />
 		<property name="WaterFlow" value="permitted" />
@@ -2836,6 +2926,23 @@
 		<property name="ShapeCategories" value="Round" />
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
 		<property name="ModelOffset" value="0.5,0,0.5" />
+		<property name="UseGlobalUV" value="Local" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="poleCrossCenter3x1">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="pole_diagonal_centered_cross" />
+		<property name="Place" value="TowardsPlacer" />
+		<property name="CustomIcon" value="shapePoleDiagonalCenteredCross3x1" />
+		<property name="ShapeCategories" value="Round" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ModelOffset" value="0.5,0,0.5" />
+		<property name="MultiBlockDim" value="3,1,1" />
+		<property name="DisplayType" value="blockMulti" />
 		<property name="UseGlobalUV" value="Local" />
 		<property name="ImposterExclude" value="true" />
 		<property name="ImposterDontBlock" value="true" />
@@ -4537,6 +4644,16 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="rampTipOffsetInsideCorner">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_tip_offset_inside_corner" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampTipOffsetInsideCorner" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="rampTipOffsetHalfLeft">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="ramp_tip_offset_half_left" />
@@ -5003,6 +5120,22 @@
 		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.7152615" />
 	</shape>
 
+	<shape name="wedge60SplitInclineLeft03">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_split_incline_left_03" />
+		<property name="CustomIcon" value="shapeWedge60SplitInclineLeft03" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.7269217" />
+	</shape>
+
+	<shape name="wedge60SplitInclineRight03">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_split_incline_right_03" />
+		<property name="CustomIcon" value="shapeWedge60SplitInclineRight03" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.7152615" />
+	</shape>
+
 	<shape name="wedge60SplitInclineRampLeft">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="wedge60_split_incline_ramp_left" />
@@ -5025,6 +5158,22 @@
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="wedge60_incline_corner" />
 		<property name="CustomIcon" value="shapeWedge60InclineCorner" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0.258819, 0.9330127, 0.25, -0.6126627" />
+	</shape>
+
+	<shape name="cubeHalfWedge60InclineCornerLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_half_wedge60_incline_corner_left" />
+		<property name="CustomIcon" value="shapeCubeHalfWedge60InclineCornerLeft" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0.258819, 0.9330127, 0.25, -0.6126627" />
+	</shape>
+
+	<shape name="cubeHalfWedge60InclineCornerRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_half_wedge60_incline_corner_right" />
+		<property name="CustomIcon" value="shapeCubeHalfWedge60InclineCornerRight" />
 		<property name="ShapeCategories" value="Wedge" />
 		<property name="WaterClipPlane" value="0.258819, 0.9330127, 0.25, -0.6126627" />
 	</shape>
@@ -5360,6 +5509,26 @@
 		<property name="WaterFlow" value="T,N,W,S,E," />
 	</shape>
 
+	<shape name="wedge60TipHalfRampInclineHalfFillerLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_tip_half_ramp_incline_half_filler_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60TipHalfRampInclineHalfFillerLeft" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="wedge60TipHalfRampInclineHalfFillerRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_tip_half_ramp_incline_half_filler_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60TipHalfRampInclineHalfFillerRight" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="wedge60TipHalfRampTipOffsetHalfLeft">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="wedge60_tip_half_ramp_tip_offset_half_left" />
@@ -5456,6 +5625,24 @@
 		<property name="ShapeCategories" value="Wedge" />
 		<property name="WaterClipPlane" value="0, 0.8910928, 0.4538211, -0.4018078" />
 		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="rampSplitWedge60TipLeft02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="ramp_split_wedge60_tip_left_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampSplitWedge60TipLeft02" />
+		<property name="ShapeCategories" value="Wedge" />
+		
+	</shape>
+
+	<shape name="rampSplitWedge60TipRight02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="ramp_split_wedge60_tip_right_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampSplitWedge60TipRight02" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterFlow" value="B,N,E," />
 	</shape>
 
 	<shape name="wedge60SplitLeft01">
@@ -5826,6 +6013,16 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="ImposterDontBlock" value="true" />
 		<property name="WaterFlow" value="B,N,W,S," />
+	</shape>
+
+	<shape name="wedge60TipCornerInclineFiller">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_tip_corner_incline_filler" />
+		<property name="CustomIcon" value="shapeWedge60TipCornerInclineFiller" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="WaterFlow" value="B,N,W,S,E," />
 	</shape>
 
 	<shape name="wedge60TipCornerBase">
@@ -7255,6 +7452,24 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="rampSplitRampTipOffsetLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_split_ramp_tip_offset_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampSplitRampTipOffsetLeft" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.7213188, 0.6926032, -0.5994743" />
+	</shape>
+
+	<shape name="rampSplitRampTipOffsetRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_split_ramp_tip_offset_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampSplitRampTipOffsetRight" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.6965809, 0.7174782, -0.5938839" />
+	</shape>
+
 	<shape name="rampInclineSplitRampTipOffsetLeft">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="ramp_incline_split_ramp_tip_offset_left" />
@@ -7534,6 +7749,72 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="plateWedge60TipHalfOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_tip_half_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60TipHalfOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="plateWedge60TipHalfLeftOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_tip_half_left_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60TipHalfLeftOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="plateWedge60TipHalfRightOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_tip_half_right_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60TipHalfRightOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="plateWedge60HalfOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_half_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60HalfOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="plateWedge60HalfLeftOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_half_left_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60HalfLeftOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="plateWedge60HalfRightOffset">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_half_right_offset" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60HalfRightOffset" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="plateWedge60LeftHollow">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="plate_wedge60_left_hollow" />
@@ -7741,6 +8022,50 @@
 		<property name="UseGlobalUV" value="D,D,L,L,L,L" />
 		<property name="LightOpacity" value="0" />
 		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="wedge60PlateWedge60Left">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_plate_wedge60_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60PlateWedge60Left" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="D,D,L,L,L,L" />
+		<property name="WaterClipPlane" value="0, 0.8909183, 0.4541637, -0.8607669" />
+	</shape>
+
+	<shape name="wedge60PlateWedge60Right">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_plate_wedge60_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60PlateWedge60Right" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="D,D,L,L,L,L" />
+		<property name="WaterClipPlane" value="0, 0.8992582, 0.4374183, -0.8312218" />
+	</shape>
+
+	<shape name="plateWedge60TipWedge60FillerHalfLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_tip_wedge60_filler_half_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60TipWedge60FillerHalfLeft" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="D,D,L,L,L,L" />
+		<property name="WaterClipPlane" value="0, 0.8980728, 0.439847, -0.3991755" />
+	</shape>
+
+	<shape name="plateWedge60TipWedge60FillerHalfRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="plate_wedge60_tip_wedge60_filler_half_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapePlateWedge60TipWedge60FillerHalfRight" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="D,D,L,L,L,L" />
+		<property name="WaterClipPlane" value="0, -0.8899469, -0.456064, 0.4073063" />
 	</shape>
 
 	<shape name="plateWedge60InclineWallLeft">
@@ -8592,6 +8917,146 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="ramp6m01">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_01" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m01" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.99777, 0.06674635, -0.05294689" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp6m02">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m02" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9877999, 0.1557288, -0.253769" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp6m03">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_03" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m03" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.985172, 0.1715695, -0.4021857" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp6m04">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_04" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m04" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.988901, 0.1485761, -0.5414391" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp6m05">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_05" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m05" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9851232, 0.1718496, -0.7425784" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp6m06">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_6m_06" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp6m06" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9820195, 0.1887792, -0.9199249" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m01">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_01" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m01" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9989076, 0.04672939, -0.04537034" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m02">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m02" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9906347, 0.1365387, -0.2087768" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m03">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_03" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m03" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9912879, 0.1317124, -0.3053803" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m04">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_04" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m04" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.991716, 0.1284496, -0.4267924" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m05">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_05" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m05" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9907786, 0.135491, -0.5361044" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m06">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_06" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m06" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.992401, 0.123046, -0.680043" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m07">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_07" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m07" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.9878975, 0.1551081, -0.8092592" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="ramp8m08">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="ramp_8m_08" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRamp8m08" />
+		<property name="ShapeCategories" value="Wedge" />
+		<property name="WaterClipPlane" value="0, 0.7071068, 0.7071068, -0.6731657" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
 	<!-- *** POLES -->
 	<shape name="cubeQuarterPillar0.025">
 		<!-- <property name="Path" value="solid" /> -->
@@ -8656,6 +9121,26 @@
 		<property name="Model" value="wedge60_incline_pillar0.025" />
 		<property name="Place" value="TowardsPlacerInverted" />
 		<property name="CustomIcon" value="shapewedge60InclinePillar0.025" />
+ 		<property name="ShapeCategories" value="Poles" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.693307" />
+	</shape>
+
+	<shape name="wedge60InclinePillar0.025CenteredCornerLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_incline_pillar0.025_centered_corner_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60InclinePillar0.025CenteredCornerLeft" />
+ 		<property name="ShapeCategories" value="Poles" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.693307" />
+	</shape>
+
+	<shape name="wedge60InclinePillar0.025CenteredCornerRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="wedge60_incline_pillar0.025_centered_corner_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60InclinePillar0.025CenteredCornerRight" />
  		<property name="ShapeCategories" value="Poles" />
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
 		<property name="WaterClipPlane" value="0, 0.8660254, 0.5000001, -0.693307" />
@@ -9228,6 +9713,17 @@
 		<property name="WaterFlow" value="T,N,W,S,E," />
 	</shape>
 
+	<shape name="wedgeTipStairs02">
+		<property name="Model" value="wedge_tip_stairs_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeTipStairs02" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,D,D" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2129999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
 	<shape name="wedgeTipStairsInsideCorner">
 		<property name="Model" value="wedge_tip_stairs_inside_corner" />
 		<property name="Place" value="TowardsPlacerInverted" />
@@ -9255,12 +9751,79 @@
 		<property name="WaterFlow" value="T,N,W,S,E," />
 	</shape>
 
+	<shape name="wedgeTipStairsRailingLeft">
+		<property name="Model" value="wedge_tip_stairs_railing_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeTipStairsRailingLeft" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeTipStairsRailingRight" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2129999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="wedgeTipStairsRailingRight">
+		<property name="Model" value="wedge_tip_stairs_railing_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeTipStairsRailingRight" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeTipStairsRailingLeft" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2129999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="wedgeTipStairsRailingMetalLeft">
+		<property name="Model" value="wedge_tip_stairs_railing_metal_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeTipStairsRailingMetalLeft" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeTipStairsRailingMetalRight" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2129999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="wedgeTipStairsRailingMetalRight">
+		<property name="Model" value="wedge_tip_stairs_railing_metal_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeTipStairsRailingMetalRight" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeTipStairsRailingMetalLeft" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2129999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
 	<shape name="wedgeStairs">
 		<property name="Path" value="solid" />
 		<property name="Model" value="wedge_stairs" />
 		<property name="Place" value="TowardsPlacerInverted" />
 		<property name="CustomIcon" value="shapeWedgeStairs" />
 		<property name="ShapeCategories" value="Stairs" />
+		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="wedgeStairs02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge_stairs_02" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeStairs02" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="UseGlobalUV" value="L,D,L,D,D,D" />
 		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
 		<property name="WaterFlow" value="T,N,W,E," />
 	</shape>
@@ -9283,6 +9846,66 @@
 		<property name="ShapeCategories" value="Stairs" />
 		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.6449999" />
 		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="wedgeStairsRailingLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge_stairs_railing_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeStairsRailingLeft" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeStairsRailingRight" />
+		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="wedgeStairsRailingRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge_stairs_railing_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeStairsRailingRight" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeStairsRailingLeft" />
+		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="wedgeStairsRailingMetalLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge_stairs_railing_metal_left" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeStairsRailingMetalLeft" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeStairsRailingMetalRight" />
+		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
+		<property name="WaterFlow" value="T,N,W,E," />
+	</shape>
+
+	<shape name="wedgeStairsRailingMetalRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge_stairs_railing_metal_right" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedgeStairsRailingMetalRight" />
+		<property name="ShapeCategories" value="Stairs" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,D,L,D,L,D" />
+		<property name="MultiBlockDim" value="1,2,1" />
+		<property name="ImposterExchange" value="imposterRamp" />
+		<property name="MirrorSibling" value="wedgeStairsRailingMetalLeft" />
+		<property name="WaterClipPlane" value="0, 0.9638331, 0.2665067, -0.9055461" />
+		<property name="WaterFlow" value="T,N,W,E," />
 	</shape>
 
 	<shape name="wedgeTipStairsQuarterPole">
@@ -11037,6 +11660,34 @@
 		<property name="UseGlobalUV" value="L,L,D,D,D,D" />
 		<property name="ImposterExchange" value="imposterBlock" />
 		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="wedge60Baseboard">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge60_baseboard" />
+		<property name="ShapeAltTexture" value="T,56,N,W,S,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60Baseboard" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="D,L,D,D,D,D" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0, 0.5, 0.8660254, -0.8375601" />
+		<property name="WaterFlow" value="T,N," />
+	</shape>
+
+	<shape name="wedge60BaseboardChairRail">
+		<property name="Path" value="solid" />
+		<property name="Model" value="wedge60_baseboard_chair_rail" />
+		<property name="ShapeAltTexture" value="56,56,N,W,S,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeWedge60BaseboardChairRail" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="UseGlobalUV" value="L,L,D,D,D,D" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0, 0.5, 0.8660254, -0.8294979" />
+		<property name="WaterFlow" value="T,N," />
 	</shape>
 
 	<shape name="counterBottomFiller">
@@ -13182,6 +13833,39 @@
 		<property name="WaterFlow" value="B,N,W,S,E," />
 	</shape>
 
+	<shape name="cubeTrimQuarterCornerOutsideTwoSided02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_trim_quarter_corner_outside_twosided_02" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="CustomIcon" value="shapeCubeTrimQuarterCornerOutsideTwosided02" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="ImposterExchange" value="imposterBlock" />
+	</shape>
+
+	<shape name="cubeHalfTrimQuarterCornerOutsideTwoSided02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_half_trim_quarter_corner_outside_twosided_02" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="CustomIcon" value="shapeCubeHalfTrimQuarterCornerOutsideTwosided02" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.2499999" />
+		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeHalfTrimQuarterCornerOutsideTwoSidedOffset02">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_half_trim_quarter_corner_outside_twosided_offset_02" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="CustomIcon" value="shapeCubeHalfTrimQuarterCornerOutsideTwosidedOffset02" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0, 1, -1.192093E-07, -0.7499999" />
+		<property name="WaterFlow" value="B,N,W,S,E," />
+	</shape>
+
 	<shape name="cubeTrimQuarterCornerOutsideThreeSided">
 		<property name="Path" value="solid" />
 		<property name="Model" value="cube_trim_quarter_corner_outside_three_sided" />
@@ -13485,6 +14169,18 @@
 		<property name="WaterFlow" value="B,N,W,S,E," />
 	</shape>
 
+	<shape name="rampInclineFillerTrimQuarterEdge2Sided">
+		<property name="Path" value="solid" />
+		<property name="Model" value="ramp_incline_filler_trim_quarter_edge_2sided" />
+		<property name="ShapeAltTexture" value="T,B,N,W,S,443" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeRampInclineFillerTrimQuarterEdge2Sided" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="ImposterExclude" value="true" />
+		<property name="WaterClipPlane" value="0.7775562, 0, 0.6288134, -0.2977309" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="rampTrimQuarterEdge2Sided">
 		<property name="Path" value="solid" />
 		<property name="Model" value="ramp_trim_quarter_edge_2sided" />
@@ -13750,6 +14446,42 @@
  		<property name="ShapeCategories" value="Trim" />
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
 		<property name="WaterFlow" value="T,N,W,S,E," />
+	</shape>
+
+	<shape name="cubeTrimNarrowTipSplitHighLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_trim_narrow_tip_split_high_left" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeCubeTrimNarrowTipSplitHighLeft" />
+ 		<property name="ShapeCategories" value="Trim" />
+	</shape>
+
+	<shape name="cubeTrimNarrowLowSplitMedLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_trim_narrow_low_split_med_left" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeCubeTrimNarrowLowSplitMedLeft" />
+ 		<property name="ShapeCategories" value="Trim" />
+	</shape>
+
+	<shape name="cubeTrimNarrowTipSplitHighRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_trim_narrow_tip_split_high_right" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeCubeTrimNarrowTipSplitHighRight" />
+ 		<property name="ShapeCategories" value="Trim" />
+	</shape>
+
+	<shape name="cubeTrimNarrowLowSplitMedRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="cube_trim_narrow_low_split_med_right" />
+		<property name="ShapeAltTexture" value="T,B,N,W,443,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeCubeTrimNarrowLowSplitMedRight" />
+ 		<property name="ShapeCategories" value="Trim" />
 	</shape>
 
 	<shape name="wedgeNarrowBottomTrimRight">
@@ -14817,10 +15549,32 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreOneSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreOneSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
 		<property name="WaterFlow" value="T,B,N,S,E," />
+	</shape>
+
+	<shape name="windowStoreOneSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_one_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreOneSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreOneSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreTwoSidedBulletproofFull" tag="Bulletproof">
@@ -14837,10 +15591,32 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreTwoSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreTwoSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
 		<property name="WaterFlow" value="T,B,W,S,E," />
+	</shape>
+
+	<shape name="windowStoreTwoSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreTwoSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreTwoSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreThreeSidedBulletproofFull" tag="Bulletproof">
@@ -14857,10 +15633,32 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreThreeSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreThreeSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0, 1, -0.975" />
 		<property name="WaterFlow" value="T,B,N,S,E," />
+	</shape>
+
+	<shape name="windowStoreThreeSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_three_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreThreeSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreThreeSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreFourSidedBulletproofFull" tag="Bulletproof">
@@ -14877,10 +15675,32 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreFourSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreFourSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
 		<property name="WaterFlow" value="T,B,N,S,E," />
+	</shape>
+
+	<shape name="windowStoreFourSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreFourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreFourSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreCornerBulletproofFull" tag="Bulletproof">
@@ -14897,10 +15717,32 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
 		<property name="WaterFlow" value="T,B,N,S,E," />
+	</shape>
+
+	<shape name="windowStoreCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStorePaneBulletproofFull" tag="Bulletproof">
@@ -14934,9 +15776,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreOneSidedCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreOneSidedCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreOneSidedCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_one_sided_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreOneSidedCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreOneSidedCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreTwoSidedCornerLeftBulletproofFull" tag="Bulletproof">
@@ -14953,9 +15817,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreTwoSidedCornerLeftBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreTwoSidedCornerLeftBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreTwoSidedCornerLeftBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_two_sided_corner_left_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreTwoSidedCornerLeftBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreTwoSidedCornerLeftBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreTwoSidedCornerRightBulletproofFull" tag="Bulletproof">
@@ -14972,9 +15858,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreTwoSidedCornerRightBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreTwoSidedCornerRightBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreTwoSidedCornerRightBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_two_sided_corner_right_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreTwoSidedCornerRightBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreTwoSidedCornerRightBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreTwoSidedCornerBulletproofFull" tag="Bulletproof">
@@ -14991,9 +15899,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreTwoSidedCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreTwoSidedCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreTwoSidedCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_two_sided_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreTwoSidedCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreTwoSidedCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreThreeSidedCornerLeftBulletproofFull" tag="Bulletproof">
@@ -15010,9 +15940,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreThreeSidedCornerLeftBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreThreeSidedCornerLeftBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreThreeSidedCornerLeftBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_three_sided_corner_left_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreThreeSidedCornerLeftBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreThreeSidedCornerLeftBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreThreeSidedCornerRightBulletproofFull" tag="Bulletproof">
@@ -15029,9 +15981,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreThreeSidedCornerRightBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreThreeSidedCornerRightBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreThreeSidedCornerRightBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_three_sided_corner_right_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreThreeSidedCornerRightBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreThreeSidedCornerRightBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreThreeSidedCornerBulletproofFull" tag="Bulletproof">
@@ -15048,9 +16022,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreThreeSidedCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreThreeSidedCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreThreeSidedCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_three_sided_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreThreeSidedCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreThreeSidedCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreFourSidedCornerBulletproofFull" tag="Bulletproof">
@@ -15067,9 +16063,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreFourSidedCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreFourSidedCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreFourSidedCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_four_sided_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreFourSidedCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreFourSidedCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowStoreCornerCornerBulletproofFull" tag="Bulletproof">
@@ -15086,9 +16104,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreCornerCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreCornerCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterFlow" value="T,B,W,S," />
+	</shape>
+
+	<shape name="windowStoreCornerCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_corner_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreCornerCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreCornerCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
 	</shape>
 
 	<shape name="windowRampTwoSidedBulletproofFull" tag="Bulletproof">
@@ -15105,9 +16145,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowRampTwoSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowRampTwoSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0.7071068, 0.7071068, -0.6821066" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampTwoSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_ramp_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampTwoSidedBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampTwoSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
@@ -15125,9 +16187,31 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowRampFourSidedBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowRampFourSidedBulletproofBroken" />
 		<drop event="Destroy" count="0" />
 		<property name="WaterClipPlane" value="0, 0.7071068, 0.7071068, -0.6821066" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampFourSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_ramp_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampFourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampFourSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
@@ -15145,8 +16229,30 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowRampOutsideCornerBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowRampOutsideCornerBulletproofBroken" />
 		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampOutsideCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_ramp_outside_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampOutsideCornerBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampOutsideCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
@@ -15163,8 +16269,477 @@
 		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
 		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
 		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
-		<property name="DowngradeBlock" value="corrugatedMetalShapes:windowStoreThreeSidedTriangleBroken" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreThreeSidedTriangleBulletproofBroken" />
 		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreThreeSidedTriangleBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_three_sided_triangle_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreThreeSidedTriangleBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreThreeSidedTriangleBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampDiagonalCornerBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_ramp_diagonal_corner_full" />
+		<property name="CustomIcon" value="shapeWindowRampDiagonalCornerBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowRampDiagonalCornerBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampDiagonalCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_ramp_diagonal_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampDiagonalCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampDiagonalCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipFourSidedBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_four_sided_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60TipFourSidedBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60TipFourSidedBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="WaterClipPlane" value="0, 0.8918091, 0.4524119, -0.4531779" />
+	</shape>
+
+	<shape name="windowWedge60TipFourSidedBulletproofBroken" tag="Bulletproof">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipFourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipFourSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60FourSidedBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_four_sided_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60FourSidedBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60FourSidedBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="WaterClipPlane" value="-0.0006452402, 0.8957831, 0.4444908, -0.9009196" />
+	</shape>
+
+	<shape name="windowWedge60FourSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_wedge60_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60FourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60FourSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipTwoSidedBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_two_sided_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60TipTwoSidedBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60TipTwoSidedBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0.8981075, 0.4397761, -0.4605252" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipTwoSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_wedge60_tip_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipTwoSidedBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipTwoSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TwoSidedBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_two_sided_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60TwoSidedBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60TwoSidedBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0.8969001, 0.4422333, -0.9031905" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TwoSidedBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_wedge60_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TwoSidedBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TwoSidedBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipOutsideCornerBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_outside_corner_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60TipOutsideCornerBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60TipOutsideCornerBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipOutsideCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_wedge60_tip_outside_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipOutsideCornerBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipOutsideCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60OutsideCornerBulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_outside_corner_full" />
+		<property name="CustomIcon" value="shapeWindowWedge60OutsideCornerBulletproofFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowWedge60OutsideCornerBulletproofBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60OutsideCornerBulletproofBroken" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_wedge60_outside_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60OutsideCornerBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60OutsideCornerBulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBulletproofLeft" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_tip_full_left" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBulletproofLeft" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreWedge60TipBrokenBulletproofLeft" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBrokenBulletproofLeft" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_wedge60_tip_broken_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBrokenLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipBulletproofLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBulletproofRight" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_tip_full_right" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBulletproofRight" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreWedge60TipBrokenBulletproofRight" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBrokenBulletproofRight" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_wedge60_tip_broken_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBrokenRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipBulletproofRight" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60BulletproofLeft" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_full_left" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BulletproofLeft" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreWedge60BrokenBulletproofLeft" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60BrokenBulletproofLeft" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_wedge60_broken_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BrokenLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60BulletproofLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60BulletproofRight" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_full_right" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BulletproofRight" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowStoreWedge60BrokenBulletproofRight" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749998" />
+	</shape>
+
+	<shape name="windowStoreWedge60BrokenBulletproofRight" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_store_wedge60_broken_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BrokenRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60BulletproofRight" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
@@ -16348,6 +17923,746 @@
 		<property name="ImposterDontBlock" value="true" />
 		<property class="UpgradeBlock">
 			<property name="ToBlock" value=":windowStoreThreeSidedTriangleFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampDiagonalCornerFull">
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_ramp_diagonal_corner_full" />
+		<property name="CustomIcon" value="shapeWindowRampDiagonalCornerFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowRampDiagonalCornerBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampDiagonalCornerBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_ramp_diagonal_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampDiagonalCornerBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampDiagonalCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowRampDiagonalCornerEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_ramp_diagonal_corner_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowRampDiagonalCornerEmpty" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowRampDiagonalCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipFourSidedFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_four_sided_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipFourSidedFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60TipFourSidedBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="WaterClipPlane" value="0, 0.7071068, 0.7071068, -0.6821066" />
+	</shape>
+
+	<shape name="windowWedge60TipFourSidedBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipFourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipFourSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipFourSidedEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_four_sided_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipFourSidedEmpty" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipFourSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60FourSidedFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_four_sided_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60FourSidedFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60FourSidedBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="WaterClipPlane" value="0, 0.8951657, 0.4457335, -0.9036348" />
+	</shape>
+
+	<shape name="windowWedge60FourSidedBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_four_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60FourSidedBroken" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60FourSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60FourSidedEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_four_sided_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60FourSidedEmpty" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60FourSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipTwoSidedFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_two_sided_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipTwoSidedFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60TipTwoSidedBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0.8989428, 0.4380659, -0.4621172" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipTwoSidedBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipTwoSidedBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipTwoSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipTwoSidedEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_two_sided_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipTwoSidedEmpty" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipTwoSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TwoSidedFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_two_sided_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TwoSidedFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60TwoSidedBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0.8994756, 0.4369709, -0.9092061" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TwoSidedBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_two_sided_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TwoSidedBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TwoSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TwoSidedEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_two_sided_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TwoSidedEmpty" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TwoSidedFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipOutsideCornerFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_outside_corner_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipOutsideCornerFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60TipOutsideCornerBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipOutsideCornerBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_outside_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipOutsideCornerBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipOutsideCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60TipOutsideCornerEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_tip_outside_corner_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60TipOutsideCornerEmpty" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60TipOutsideCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60OutsideCornerFull">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_outside_corner_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60OutsideCornerFull" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowWedge60OutsideCornerBroken" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60OutsideCornerBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_outside_corner_broken" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60OutsideCornerBroken" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60OutsideCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60OutsideCornerEmpty">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_outside_corner_empty" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60OutsideCornerEmpty" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowWedge60OutsideCornerFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60Filler01">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_filler_01" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60Filler01" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60Filler02">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_filler_02" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60Filler02" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowWedge60FillerCorner">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_wedge60_filler_corner" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowWedge60FillerCorner" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipFullLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_tip_full_left" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipFullLeft" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowStoreWedge60TipBrokenLeft" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipFullRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_tip_full_right" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipFullRight" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowStoreWedge60TipBrokenRight" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBrokenLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_tip_broken_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBrokenLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipFullLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipBrokenRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_tip_broken_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipBrokenRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipFullRight" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipEmptyLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_tip_empty_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipEmptyLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipFullLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60TipEmptyRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_tip_empty_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60TipEmptyRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60TipFullRight" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60FullLeft">
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_full_left" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60FullLeft" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowStoreWedge60BrokenLeft" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749999" />
+	</shape>
+
+	<shape name="windowStoreWedge60FullRight">
+		<property name="Path" value="solid" />
+		<property name="Model" value="window_store_wedge60_full_right" />
+		<property name="CustomIcon" value="shapeWindowStoreWedge60FullRight" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.001" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,285" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property class="UpgradeBlock">
+			<property name="ItemCount" value="10000" /> <!-- Needed for material upgrade due to MaterialHitpointMultiplier -->
+		</property>
+		<property name="DowngradeBlock" value=":windowStoreWedge60BrokenRight" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterFlow" value="T,B,W,S,E," />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.9749998" />
+	</shape>
+
+	<shape name="windowStoreWedge60BrokenLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_broken_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BrokenLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60FullLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60BrokenRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_broken_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60BrokenRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,702" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="MaterialHitpointMultiplier" value=".1" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60FullRight" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60EmptyLeft">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_empty_left" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60EmptyLeft" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60FullLeft" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowStoreWedge60EmptyRight">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_store_wedge60_empty_right" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowStoreWedge60EmptyRight" />
+		<property name="UseGlobalUV" value=",DDLDDDL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,M" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowStoreWedge60FullRight" />
 			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
 			<property name="ItemCount" value="1" />
 			<property name="UpgradeHitCount" value="1" />
@@ -17944,6 +20259,46 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="windowIndustrial01BulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_industrial_01_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowIndustrial01Full" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",GGLGGGL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowIndustrial01BulletproofBroken01" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.4999999" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowIndustrial01BulletproofBroken01" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_industrial_01_broken01" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowIndustrial01Broken01" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExchange" value="imposterPlate" />
+		<property name="UseGlobalUV" value=",GGLGGGL" />
+		<property name="ShapeAltTexture" value="T,B,N,W,S,E,333" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowIndustrial01BulletproofFull" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="windowIndustrial01Full">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="window_industrial_01_full" />
@@ -18016,6 +20371,46 @@
 		<property name="ShapeAltTexture" value="T,B,N,W,S,E,285" />
 		<property class="UpgradeBlock">
 			<property name="ToBlock" value=":windowIndustrial01Full" />
+			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
+			<property name="ItemCount" value="1" />
+			<property name="UpgradeHitCount" value="1" />
+		</property>
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowIndustrial02BulletproofFull" tag="Bulletproof">
+		<property name="ShapeMenu" value="false" />
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="window_industrial_02_full" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowIndustrial02Full" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExclude" value="true" />
+		<property name="ImposterDontBlock" value="true" />
+		<property name="UseGlobalUV" value=",GGLGGGL" />
+		<property name="ShapeAltTexture" value="T,B,55,W,S,E,333" />
+		<property name="DowngradeFX" value="impact_stone_on_glass,glassdestroy" />
+		<property name="CopyPaintOnDowngrade" value="T,B,N,W,S,E" />
+		<property name="DowngradeBlock" value="bulletproofShapes:windowIndustrial02BulletproofBroken01" />
+		<drop event="Destroy" count="0" />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.4999999" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="windowIndustrial02BulletproofBroken01" tag="Bulletproof">
+		<property name="CreativeMode" value="None" />
+		<property name="ShapeMenu" value="false" />
+		<property name="Model" value="window_industrial_02_broken01" />
+		<!-- <property name="Place" value="TowardsPlacerInverted" /> -->
+		<property name="CustomIcon" value="shapeWindowIndustrial02Broken01" />
+		<property name="ShapeCategories" value="Windows" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExchange" value="imposterPlate" />
+		<property name="UseGlobalUV" value=",GGLGGGL" />
+		<property name="ShapeAltTexture" value="T,B,N,W,S,E,333" />
+		<property class="UpgradeBlock">
+			<property name="ToBlock" value=":windowIndustrial02BulletproofFull" />
 			<property name="Item" value="r" /> <!-- 'r' gets item from block's RepairItems[0] -->
 			<property name="ItemCount" value="1" />
 			<property name="UpgradeHitCount" value="1" />
@@ -19610,6 +22005,18 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="cubeQuarterSideCenteredBroken">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_quarter_side_centered_broken" />
+		<!-- <property name="ShapeAltTexture" value="T,B,N,W,S,606" /> -->
+		<property name="CustomIcon" value="shapeCubeQuarterSideCenteredBroken" />
+		<property name="ShapeCategories" value="Destruction" />
+		<property name="MaterialHitpointMultiplier" value="0.1" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="poleQuarterCenteredBroken">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="pole_quarter_centered_broken" />
@@ -20281,6 +22688,19 @@
 		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
 		<property name="LightOpacity" value="0" />
 		<property name="WaterFlow" value="permitted" />
+	</shape>
+
+	<shape name="cubeHalfFloorJoist">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_half_floor_joist" />
+		<property name="CustomIcon" value="shapeCubeHalfFloorJoist" />
+		<property name="ShapeCategories" value="Construction" />
+		<property name="UseGlobalUV" value="D,L,D,D,D,D" />
+		<property name="ImposterExclude" value="true" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterClipPlane" value="0, 0, 1, -0.427" />
+		<property name="WaterFlow" value="T,B,N,W,E," />
 	</shape>
 
 	<shape name="cubeHalfSplitFloorJoist">
@@ -21918,6 +24338,20 @@
 		<property name="WaterFlow" value="permitted" />
 	</shape>
 
+	<shape name="fencePicketCorner">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="fence_picket_corner" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeFencePicketCorner" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="ImposterExchange" value="imposterSheet" />
+		<property name="UseGlobalUV" value="Local" />
+		<property name="VehicleHitScale" value="8" />
+		<property name="LightOpacity" value="0" />
+		<property name="WaterFlow" value="permitted" />
+	</shape>
+
 	<shape name="industrialFenceBottom">
 		<property name="Path" value="solid" />
 		<property name="Model" value="industrial_fence_bottom" />
@@ -22122,6 +24556,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashCNTR">
@@ -22133,6 +24568,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintQuarterCentered">
@@ -22144,6 +24580,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDiagonal">
@@ -22155,6 +24592,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashDiagonalFiller">
@@ -22166,6 +24604,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashDiagonalDouble">
@@ -22177,6 +24616,151 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft01">
+		<property name="Model" value="road_paint_4m_diagonal_left_01" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft01" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft02">
+		<property name="Model" value="road_paint_4m_diagonal_left_02" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft02" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft03">
+		<property name="Model" value="road_paint_4m_diagonal_left_03" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft03" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft04">
+		<property name="Model" value="road_paint_4m_diagonal_left_04" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft04" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft05">
+		<property name="Model" value="road_paint_4m_diagonal_left_05" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft05" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalLeft06">
+		<property name="Model" value="road_paint_4m_diagonal_left_06" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalLeft06" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight01">
+		<property name="Model" value="road_paint_4m_diagonal_right_01" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight01" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight02">
+		<property name="Model" value="road_paint_4m_diagonal_right_02" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight02" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight03">
+		<property name="Model" value="road_paint_4m_diagonal_right_03" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight03" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight04">
+		<property name="Model" value="road_paint_4m_diagonal_right_04" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight04" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight05">
+		<property name="Model" value="road_paint_4m_diagonal_right_05" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight05" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
+	</shape>
+
+	<shape name="roadPaint4mDiagonalRight06">
+		<property name="Model" value="road_paint_4m_diagonal_right_06" />
+		<property name="CustomIcon" value="shapeRoadPaint4mDiagonalRight06" />
+		<property name="ShapeCategories" value="Deco" />
+		<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+		<property name="MaterialHitpointMultiplier" value="0.05" />
+		<property name="ImposterExclude" value="true" />
+		<property name="StabilitySupport" value="false" />
+		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintHandicap">
@@ -22189,6 +24773,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintHandicapOffset">
@@ -22204,6 +24789,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintArrowStraight">
@@ -22218,6 +24804,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintArrowLeft">
@@ -22232,6 +24819,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintArrowRight">
@@ -22246,6 +24834,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintArrowLeftStraight">
@@ -22260,6 +24849,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintArrowRightStraight">
@@ -22274,6 +24864,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowTip">
@@ -22285,6 +24876,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowLow">
@@ -22296,6 +24888,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowMid">
@@ -22307,6 +24900,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowHigh">
@@ -22318,6 +24912,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowTip2">
@@ -22329,6 +24924,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowLow2">
@@ -22340,6 +24936,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowMid2">
@@ -22351,6 +24948,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDashWedgeNarrowHigh2">
@@ -22362,6 +24960,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedge">
@@ -22373,6 +24972,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedgeTip">
@@ -22384,6 +24984,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedgeTip2">
@@ -22395,6 +24996,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedge2">
@@ -22406,6 +25008,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedge2Tip">
@@ -22417,6 +25020,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintWedge2Tip2">
@@ -22428,6 +25032,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp01Left">
@@ -22439,6 +25044,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp02Left">
@@ -22450,6 +25056,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp03Left">
@@ -22461,6 +25068,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp04Left">
@@ -22472,6 +25080,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp05Left">
@@ -22483,6 +25092,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp06Left">
@@ -22494,6 +25104,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp07Left">
@@ -22505,6 +25116,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp08Left">
@@ -22516,6 +25128,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp01Right">
@@ -22527,6 +25140,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp02Right">
@@ -22538,6 +25152,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp03Right">
@@ -22549,6 +25164,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp04Right">
@@ -22560,6 +25176,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp05Right">
@@ -22571,6 +25188,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp06Right">
@@ -22582,6 +25200,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp07Right">
@@ -22593,6 +25212,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="roadPaintDash8mRamp08Right">
@@ -22604,6 +25224,7 @@
 		<property name="ImposterExclude" value="true" />
 		<property name="StabilitySupport" value="false" />
 		<property name="WaterFlow" value="permitted" />
+		<property name="CanBlocksReplace" value="true" />
 	</shape>
 
 	<shape name="arch3mWindowCornerSideHalfClock1">
@@ -22692,27 +25313,27 @@
 		<property name="WaterFlow" value="T,B,N,S,E," />
 	</shape>
 
-	<shape name="cubeDrainStriaght">
+	<shape name="cubeDrainStraight">
 		<property name="Model" value="cube_drain_01" />
-		<property name="CustomIcon" value="shapeCubeDrainStriaght" />
+		<property name="CustomIcon" value="shapeCubeDrainStraight" />
 		<property name="UseGlobalUV" value="G,G,G,G,L,G" />
 		<property name="ShapeAltTexture" value="T,B,443,W,355,E" />
 		<property name="ShapeCategories" value="Deco" />
 		<property name="ImposterExchange" value="imposterBlock" />
 	</shape>
 
-	<shape name="cubeDrainStriaghtEnd">
+	<shape name="cubeDrainStraightEnd">
 		<property name="Model" value="cube_drain_02" />
-		<property name="CustomIcon" value="shapeCubeDrainStriaghtEnd" />
+		<property name="CustomIcon" value="shapeCubeDrainStraightEnd" />
 		<property name="UseGlobalUV" value="G,G,G,G,L,G" />
 		<property name="ShapeAltTexture" value="T,B,443,W,355,E" />
 		<property name="ShapeCategories" value="Deco" />
 		<property name="ImposterExchange" value="imposterBlock" />
 	</shape>
 
-	<shape name="cubeDrainStriaghtHalf">
+	<shape name="cubeDrainStraightHalf">
 		<property name="Model" value="cube_drain_03" />
-		<property name="CustomIcon" value="shapeCubeDrainStriaghtHalf" />
+		<property name="CustomIcon" value="shapeCubeDrainStraightHalf" />
 		<property name="ShapeAltTexture" value="T,B,443,W,355,E" />
 		<property name="ShapeCategories" value="Deco" />
 		<property name="ImposterExchange" value="imposterBlock" />
@@ -23748,6 +26369,7 @@
 		<property name="ImposterExchange" value="imposterBlock" param1="144" />
 		<property name="ImposterDontBlock" value="true" />
 		<property name="Collide" value="movement,melee,rocket" />
+		<property name="UseGlobalUV" value=",LLLLLLG" />
 		<property name="LightOpacity" value="0" />
 		<property name="WaterFlow" value="permitted" />
 	</shape>

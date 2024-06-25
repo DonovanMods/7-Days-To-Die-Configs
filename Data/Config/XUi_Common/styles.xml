@@ -16,16 +16,19 @@
 		<style_entry name="darkGrey" 		value="64,64,64"/>
 		<style_entry name="mediumGrey" 	value="96,96,96"/>
 		<style_entry name="lightGrey" 		value="128,128,128"/>
+		<style_entry name="lightestGrey"	value="160,160,160"/>
 		<style_entry name="white" 				value="255,255,255"/>
 		<style_entry name="black" 				value="0,0,0"/>
 		<style_entry name="red" 					value="255,0,0"/>
 		<style_entry name="green" 					value="0,255,0"/>
+		<style_entry name="gold"					value="255,216,0"/>
 		<style_entry name="transparent" 	value="0,0,0,0"/>
 		
 		<style_entry name="white_half_alpha" 				value="255,255,255,128"/>
 		<style_entry name="mediumGrey_half_alpha" 	value="96,96,96,128"/>
 		<style_entry name="darkGrey_half_alpha" 		value="64,64,64,128"/>
 		<style_entry name="black_half_alpha" 				value="0,0,0,128"/>
+		<style_entry name="black_threequarters_alpha" 				value="0,0,0,191"/>
 		
 		<style_entry name="white_quarter_alpha" 			value="255,255,255,192"/>
 		
@@ -294,7 +297,7 @@
 		<style_entry name="font_size" value="36"/>
 		<style_entry name="pivot" value="center"/>
 		<style_entry name="justify" value="center"/>
-		<style_entry name="pos" value="300,-20"/>
+		<style_entry name="pos" value="300,-23"/>
 		<style_entry name="name" value="lblWindowName"/>
 		<style_entry name="upper_case" value="true" />
 	</style>

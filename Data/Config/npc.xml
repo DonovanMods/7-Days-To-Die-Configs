@@ -7,9 +7,10 @@
 		faction="whiteriver"
 		portrait="npc_joel"
 		greeting_type="nearby"
-		stance="Like" voice_set="trader"
+		stance="Like" voice_set="trader_joel"
 		trader_id="1" dialog_id="trader" quest_faction="1" 
 		localization_id="npcTraderJoel"
+		quest_list="trader_joel_quests"
 		/>
 		
 	<npc_info
@@ -20,8 +21,9 @@
 		portrait="npc_jen"
 		greeting_type="nearby"
 		stance="Like" voice_set="trader_jen"
-		trader_id="2" dialog_id="trader" quest_faction="2" 
+		trader_id="2" dialog_id="trader" quest_faction="1" 
 		localization_id="npcTraderJen"
+		quest_list="trader_jen_quests"
 		/>
 
 	<npc_info
@@ -31,9 +33,12 @@
 		faction="whiteriver"
 		portrait="npc_bob"
 		greeting_type="nearby"
-		stance="Like" voice_set="trader"
-		trader_id="6" dialog_id="trader" quest_faction="3"
-		localization_id="npcTraderBob" />
+		stance="Like" voice_set="trader_bob"
+		trader_id="6" dialog_id="trader" quest_faction="1"
+		localization_id="npcTraderBob"
+		quest_list="trader_bob_quests"
+		/>
+
 
 	<npc_info
 		id="traderhugh"
@@ -42,9 +47,11 @@
 		faction="whiteriver"
 		portrait="npc_hugh"
 		greeting_type="nearby"
-		stance="Neutral" voice_set="trader"
-		trader_id="7" dialog_id="trader" quest_faction="4" 
-		localization_id="npcTraderHugh"/>
+		stance="Neutral" voice_set="trader_hugh"
+		trader_id="7" dialog_id="trader" quest_faction="1" 
+		localization_id="npcTraderHugh"
+		quest_list="trader_hugh_quests"
+		/>
 
 
 	<npc_info
@@ -54,9 +61,11 @@
 		faction="whiteriver"
 		portrait="npc_rekt"
 		greeting_type="nearby"
-		stance="Dislike" voice_set="trader"
-		trader_id="8" dialog_id="trader" quest_faction="5"
-		localization_id="npcTraderRekt" />
+		stance="Dislike" voice_set="trader_rekt"
+		trader_id="8" dialog_id="trader" quest_faction="1"
+		localization_id="npcTraderRekt" 
+		quest_list="trader_rekt_quests"
+		/>
 
 
 	<npc_info
@@ -67,7 +76,7 @@
 		portrait="npc_joel"
 		greeting_type="nearby"
 		trader_id="9"
-		stance="Like" voice_set="trader"
+		stance="Like" voice_set="trader_hugh"
 		dialog_id="traderTest"
 		quest_list="test_quests"
 		localization_id="npcTraderTest" />
