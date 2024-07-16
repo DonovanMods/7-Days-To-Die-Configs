@@ -11169,6 +11169,19 @@
 		<property name="WaterFlow" value="T,B,N,E," />
 	</shape>
 
+	<shape name="halfCornerBaseboard2Sided">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_half_corner_baseboard_2sided" />
+		<property name="ShapeAltTexture" value="T,56,N,W,S,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeHalfCornerBaseboard2Sided" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="UseGlobalUV" value="D,L,D,D,D,D" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0.7142677, 0, 0.6998726, -0.6915146" />
+		<property name="WaterFlow" value="T,B,N,E," />
+	</shape>
+
 	<shape name="halfCornerBaseboard4Sided">
 		<!-- <property name="Path" value="solid" /> -->
 		<property name="Model" value="cube_half_corner_baseboard_4sided" />
@@ -11390,6 +11403,19 @@
 		<property name="UseGlobalUV" value="L,L,D,D,D,D" />
 		<property name="ImposterExchange" value="imposterBlock" />
 		<property name="WaterClipPlane" value="0.7115901, 0, 0.7025949, -0.6943648" />
+		<property name="WaterFlow" value="T,B,N,E," />
+	</shape>
+
+	<shape name="halfCornerChairRail2Sided">
+		<!-- <property name="Path" value="solid" /> -->
+		<property name="Model" value="cube_half_corner_chair_rail_2sided" />
+		<property name="ShapeAltTexture" value="56,56,N,W,S,E" />
+		<property name="Place" value="TowardsPlacerInverted" />
+		<property name="CustomIcon" value="shapeHalfCornerChairRail2Sided" />
+		<property name="ShapeCategories" value="Trim" />
+		<property name="UseGlobalUV" value="L,L,D,D,D,D" />
+		<property name="ImposterExchange" value="imposterBlock" />
+		<property name="WaterClipPlane" value="0.7078435, 0, 0.7063693, -0.6816506" />
 		<property name="WaterFlow" value="T,B,N,E," />
 	</shape>
 

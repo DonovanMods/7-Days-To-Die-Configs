@@ -2205,8 +2205,8 @@
 
 <!-- *** Resources_Scrap -->
 <lootgroup name="groupScrapCommon" count="1">
-	<item name="resourceScrapLead" count="3,20"/>
-	<item name="resourceScrapIron" count="3,20"/>
+	<item name="resourceScrapLead" count="8,20"/>
+	<item name="resourceScrapIron" count="8,20"/>
 </lootgroup>
 
 <lootgroup name="groupScrapUncommon" count="1">
@@ -2239,8 +2239,8 @@
 </lootgroup>
 
 <lootgroup name="groupCraftingRare" count="1">
-	<item name="resourceForgedIron" count="1,5"/>
-	<item name="resourceForgedSteel" count="1,5"/>
+	<item name="resourceForgedIron" count="5,10"/>
+	<item name="resourceForgedSteel" count="5,10"/>
 </lootgroup>
 
 <!-- *** Resources_Building -->
@@ -2280,6 +2280,13 @@
 	<item name="resourceSewingKit" count="1" loot_prob_template="low"/>
 	<item name="armorParts" count="1" loot_prob_template="low"/>
 	<item name="resourceLegendaryParts" count="1" loot_prob_template="veryLowDelayed"/>
+</lootgroup>
+
+<lootgroup name="groupArmorPartsChests">
+	<item name="resourceSewingKit" count="1,3" loot_prob_template="low"/>
+	<item name="armorParts" count="1,3" loot_prob_template="low"/>
+	<item name="resourceArmorCraftingKit" count="1,2" loot_prob_template="veryLowDelayed"/>
+	<item name="resourceLegendaryParts" count="1,2" loot_prob_template="veryLowDelayed"/>
 </lootgroup>
 
 <lootgroup name="groupAllArmor" loot_quality_template="armorQualityTemplate">
@@ -2365,7 +2372,7 @@
 </lootgroup>
 
 <lootgroup name="groupArmorChests" count="all">
-	<item group="groupArmorParts" count="1"/>
+	<item group="groupArmorPartsChests" count="1"/>
 	<item group="groupAllArmor" loot_prob_template="ArmorProb" force_prob="true"/>
 </lootgroup>
 
@@ -5868,9 +5875,9 @@
 </lootgroup>
 
 <lootgroup name="groupPurse02">
-	<item name="oldCash"  count="5,10" loot_prob_template="high"/>
-	<item name="casinoCoin"  count="5,10" loot_prob_template="low"/>
-	<item name="resourceLockPick"  count="1,3" loot_prob_template="low"/>
+	<item name="oldCash" count="5,10" loot_prob_template="high"/>
+	<item name="casinoCoin" count="5,10" loot_prob_template="low"/>
+	<item name="resourceLockPick" count="1,3" loot_prob_template="low"/>
 </lootgroup>
 
 <lootgroup name="groupPurse03">
@@ -6650,112 +6657,141 @@
 
 <!-- *** Zpack_Reg -->
 <lootgroup name="groupZpackReg01">
-	<item group="groupFoodUncommon" loot_prob_template="medHigh"/>
-	<item group="groupDrinksUncommon" loot_prob_template="low"/>
-	<item group="groupScrapUncommon" loot_prob_template="medHigh"/>
-	<item group="groupMedicalUncommon" loot_prob_template="med"/>
+	<item group="groupScrapUncommon" loot_prob_template="high"/>
+	<item name="resourceCobblestones" count="10,50" loot_prob_template="high"/>
+	<item name="resourceGlue" count="1,2" loot_prob_template="high"/>
+	<item group="groupMedicalUncommon" loot_prob_template="high"/>
+	<item group="groupDrinksUncommon" loot_prob_template="high"/>
+	<item group="groupFoodUncommon" loot_prob_template="high"/>
+	<item name="resourceDuctTape" count="1,2" loot_prob_template="med"/>
+	<item name="resourceMechanicalParts" count="1,2" loot_prob_template="veryLow"/>
+	<item name="resourceAcid" count="1" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackReg02">
-	<item group="groupArmorParts" loot_prob_template="low"/>
 	<item group="booksAllScaled" loot_prob_template="medHigh"/>
-	<item group="skillMagazines" loot_prob_template="high"/>
-	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
-	<item group="groupArmorScaled" loot_prob_template="medHigh"/>
-	<item group="groupCraftingRare" loot_prob_template="med"/>
-	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
+	<item group="groupChallengeRewardSkillMagazinesAll" loot_prob_template="high"/>
 </lootgroup>
 
 <lootgroup name="groupZpackReg03">
+	<item group="groupArmorParts" loot_prob_template="med"/>
+	<item group="groupCraftingRare" loot_prob_template="med"/>
+	<item group="groupArmorPartsChests" loot_prob_template="low"/>
+	<item group="groupArmorScaled" loot_prob_template="medHigh"/>
+	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
+</lootgroup>
+
+<lootgroup name="groupZpackReg04">
 	<item group="groupRareToolsTiered" loot_prob_template="high"/>
 	<item group="groupWeaponsAllScaled" loot_prob_template="high"/>
+	<item group="groupModAllScaled" loot_prob_template="med"/>
 	<item name="casinoCoin" count="200,400" loot_prob_template="med"/>
-	<item name="oldCash" count="150,500" loot_prob_template="med"/>
+	<item name="oldCash" count="200,400" loot_prob_template="med"/>
 	<item group="groupMedicalRare" loot_prob_template="medHigh"/>
 	<item group="groupTreasureMaps" loot_prob_template="low"/>
 	<item name="modArmorNightVision" loot_prob_template="veryLow"/>
+	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackReg" count="all">
-	<item group="groupAmmoMedium" count="1"/>
-	<item group="groupZpackReg01" count="2"/>
-	<item group="groupZpackReg02" loot_prob_template="med" force_prob="true"/>
-	<item group="groupZpackReg03" loot_prob_template="low" force_prob="true"/>
+	<item group="groupAmmoLarge" count="1"/>
+	<item group="groupZpackReg01" count="1"/>
+	<item group="groupZpackReg02" count="1"/>
+	<item group="groupZpackReg03" loot_prob_template="med" force_prob="true"/>
+	<item group="groupZpackReg04" loot_prob_template="low" force_prob="true"/>
 </lootgroup>
 
 <!-- *** Zpack_Strong -->
 <lootgroup name="groupZpackStrong01">
-	<item group="groupFoodUncommon" loot_prob_template="medHigh"/>
-	<item group="groupDrinksUncommon" loot_prob_template="low"/>
-	<item group="groupScrapUncommon" loot_prob_template="medHigh"/>
+	<item group="groupScrapUncommon" loot_prob_template="high"/>
+	<item name="resourceGlue" count="1,2" loot_prob_template="low"/>
+	<item group="groupFoodUncommon" loot_prob_template="high"/>
+	<item group="groupDrinksUncommon" loot_prob_template="high"/>
+	<item name="resourceDuctTape" count="1,2" loot_prob_template="med"/>
+	<item name="resourceMechanicalParts" count="1,2" loot_prob_template="veryLow"/>
 	<item group="groupMedicalUncommon" loot_prob_template="med"/>
+	<item name="resourceAcid" count="1" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackStrong02">
-	<item group="groupArmorParts" loot_prob_template="low"/>
 	<item group="booksAllScaled" loot_prob_template="medHigh"/>
-	<item group="skillMagazines" loot_prob_template="high"/>
-	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
-	<item group="groupArmorScaled" loot_prob_template="medHigh"/>
-	<item group="groupCraftingRare" loot_prob_template="med"/>
-	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
+	<item group="groupChallengeRewardSkillMagazinesAll" loot_prob_template="high"/>
 </lootgroup>
 
 <lootgroup name="groupZpackStrong03">
+	<item group="groupArmorParts" loot_prob_template="med"/>
+	<item group="groupArmorPartsChests" loot_prob_template="low"/>
+	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
+	<item group="groupArmorScaled" loot_prob_template="medHigh"/>
+	<item group="groupCraftingRare" loot_prob_template="med"/>
+</lootgroup>
+
+<lootgroup name="groupZpackStrong04">
 	<item group="groupRareToolsTiered" loot_prob_template="high"/>
 	<item group="groupWeaponsAllScaled" loot_prob_template="high"/>
-	<item name="casinoCoin" count="200,400" loot_prob_template="med"/>
-	<item name="oldCash" count="150,800" loot_prob_template="med"/>
+	<item name="casinoCoin" count="400,600" loot_prob_template="med"/>
+	<item name="oldCash" count="400,600" loot_prob_template="med"/>
 	<item group="groupMedicalRare" loot_prob_template="medHigh"/>
 	<item group="groupTreasureMaps" loot_prob_template="low"/>
-	<item name="modArmorNightVision" loot_prob_template="veryLow"/>
 	<item group="groupModAllScaled" loot_prob_template="med"/>
 	<item group="vehiclePartsTiered" loot_prob_template="med"/>
+	<item name="modArmorNightVision" loot_prob_template="veryLow"/>
+	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackStrong" count="all">
 	<item group="groupAmmoLarge" count="1"/>
 	<item group="groupZpackStrong01" count="2"/>
-	<item group="groupZpackStrong02" count="1"/>
-	<item group="groupZpackStrong03" loot_prob_template="low" force_prob="true"/>
+	<item group="groupZpackStrong02" count="2"/>
+	<item group="groupZpackStrong03" count="1"/>
+	<item group="groupZpackStrong04" loot_prob_template="low" force_prob="true"/>
 </lootgroup>
 
 <!-- *** Zpack_Boss -->
 <lootgroup name="groupZpackBoss01">
-	<item group="groupFoodUncommon" loot_prob_template="medHigh"/>
-	<item group="groupDrinksUncommon" loot_prob_template="low"/>
-	<item group="groupScrapUncommon" loot_prob_template="medHigh"/>
+	<item group="groupScrapUncommon" loot_prob_template="high"/>
+	<item name="resourceGlue" count="1,2" loot_prob_template="high"/>
+	<item name="resourceDuctTape" count="1,2" loot_prob_template="high"/>
+	<item group="groupFoodUncommon" loot_prob_template="high"/>
+	<item group="groupDrinksUncommon" loot_prob_template="high"/>
 	<item group="groupMedicalUncommon" loot_prob_template="med"/>
+	<item name="resourceMechanicalParts" count="1,2" loot_prob_template="veryLow"/>
+	<item name="resourceAcid" count="1" loot_prob_template="veryLow"/>
+	<item name="plantedGraceCorn1" count="2,3" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackBoss02">
-	<item group="groupArmorParts" loot_prob_template="low"/>
 	<item group="booksAllScaled" loot_prob_template="medHigh"/>
-	<item group="skillMagazines" loot_prob_template="high"/>
-	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
-	<item group="groupArmorChests" loot_prob_template="medHigh"/>
-	<item group="groupCraftingRare" loot_prob_template="med"/>
-	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
+	<item group="groupChallengeRewardSkillMagazinesAll" loot_prob_template="high"/>
 </lootgroup>
 
 <lootgroup name="groupZpackBoss03">
+	<item group="groupArmorPartsChests" loot_prob_template="low"/>
+	<item group="groupToolsTiered" loot_prob_template="medHigh"/>
+	<item group="groupArmorChests" loot_prob_template="medHigh"/>
+	<item group="groupCraftingRare" loot_prob_template="med"/>
+</lootgroup>
+
+<lootgroup name="groupZpackBoss04">
 	<item group="groupRareToolsTiered" loot_prob_template="high"/>
 	<item group="booksRareOnlyScaled" loot_prob_template="med"/>
 	<item group="groupWeaponsAllScaledNoStone" loot_prob_template="high"/>
-	<item name="casinoCoin" count="200,400" loot_prob_template="med"/>
-	<item name="oldCash" count="150,800" loot_prob_template="med"/>
+	<item name="casinoCoin" count="600,800" loot_prob_template="med"/>
+	<item name="oldCash" count="600,800" loot_prob_template="med"/>
 	<item group="groupMedicalRare" loot_prob_template="medHigh"/>
 	<item group="groupTreasureMaps" loot_prob_template="low"/>
 	<item name="modArmorNightVision" loot_prob_template="veryLow"/>
 	<item group="groupModAllScaled" loot_prob_template="med"/>
 	<item group="vehiclePartsTiered" loot_prob_template="med"/>
+	<item name="modArmorHelmetLight" loot_prob_template="veryLow"/>
 </lootgroup>
 
 <lootgroup name="groupZpackBoss" count="all">
 	<item group="groupAmmoLarge" count="2"/>
 	<item group="groupZpackBoss01" count="2"/>
-	<item group="groupZpackBoss02" count="1"/>
-	<item group="groupZpackBoss03" loot_prob_template="med" force_prob="true"/>
+	<item group="groupZpackBoss02" count="2"/>
+	<item group="groupZpackBoss03" count="1"/>
+	<item group="groupZpackBoss04" loot_prob_template="med" force_prob="true"/>
 </lootgroup>
 
 <!-- *** Buried_Treasure_Map -->
@@ -9405,13 +9441,13 @@
 	<item group="groupZpackStrong"/>
 </lootcontainer>
 
-<!-- cntFetchQuestSatchel  -->
-<lootcontainer name="questSatchel" count="0" size="6,2" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1.5" loot_quality_template="qualBaseTemplate">
-</lootcontainer>
-
 <!-- EntityLootContainerBoss, rare random drop off bosses -->
 <lootcontainer name="zPackBoss" count="1" size="6,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
 	<item group="groupZpackBoss"/>
+</lootcontainer>
+
+<!-- cntFetchQuestSatchel -->
+<lootcontainer name="questSatchel" count="0" size="6,2" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1.5" loot_quality_template="qualBaseTemplate">
 </lootcontainer>
 
 <!-- cntGasGrillClosed -->

@@ -2429,13 +2429,14 @@
 	</window>
 
 	<!--#$-IGS BEGIN: Adding cursor area. -$#-->
-	 <window name="windowQuestObjectives" width="653" height="240" panel="Center" controller="QuestObjectivesWindow" cursor_area="true" >
+	 <window name="windowQuestObjectives" width="653" height="240" panel="Center" controller="QuestObjectivesWindow" cursor_area="true" quest_limited_color="[red]" quest_limited_complete_color="[white]">
  	<!--#$-IGS END.-$#-->
 		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
 			<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="ui_game_symbol_quest"/>
 			<label style="header.name" text="OBJECTIVES" text_key="xuiObjectives" />
 			<!-- <label depth="2" pos="545,-8" width="100" height="28" text="{questdifficulty}" color="[lightGrey]" justify="right" upper_case="true" /> -->
 			<label depth="2" pos="445,-8" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" />
+			<sprite depth="2" name="windowIcon" style="icon32px" pos="610,-5" sprite="ui_game_symbol_quest_limited" color="{tieraddlimitedcolor}" visible="{tieraddlimited}" />
 		</panel>
 		<rect name="content" pos="0,-46" height="194" depth="1">
 			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
@@ -2853,7 +2854,7 @@
 			<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="{questicon}"/>
 			<label style="header.name" text="{questname}" width="450" />
 			<label depth="2" pos="395,-10" width="200" height="28" text="{tieradd}" justify="right" upper_case="true" />
-
+			<sprite depth="2" name="windowIcon" style="icon32px" pos="565,-5" sprite="ui_game_symbol_quest_limited" color="[red]" visible="{tieraddlimited}" />
 			<!-- <button pos="550,-5" depth="2" name="closeButton" style="icon32px" sprite="ui_game_symbol_x" defaultcolor="[red]" /> -->
 		</panel>
 		<panel name="content" pos="0,-46" height="329" depth="1" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" pivot="center">
@@ -4212,6 +4213,16 @@
 							<textfield name="addInput" depth="4" pos="105,0" width="250" height="30" pivot="left" />
 							<button depth="4" name="addButton" style="icon30px, press" pos="370,0" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
 						</rect>
+					</rect>
+
+					<rect pos="8,-520">
+						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiThemeRepeatDistance" tooltip_key="xuiThemeRepeatDistanceTooltip" font_size="30" color="[white]" pivot="left" />
+						<textfield pos="155,0" width="200" height="32" name="txtThemeRepeatDistance" validation="integer" />
+					</rect>
+
+					<rect pos="8,-552">
+						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiDuplicateRepeatDistance" tooltip_key="xuiDuplicateRepeatDistanceTooltip" font_size="30" color="[white]" pivot="left" />
+						<textfield pos="155,0" width="200" height="32" name="txtDuplicateRepeatDistance" validation="integer" />
 					</rect>
 				</rect>
 

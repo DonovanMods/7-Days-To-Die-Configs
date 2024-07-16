@@ -369,11 +369,15 @@ Forces:
 		<property class="wheel0">
 			<property name="tireTransform" value="M/Forks/Wheel0"/>
 			<property name="torqueScale_motor_brake" value=".15, .5"/>
+			<property name="bounceSound" value="bicycle_suspension"/>
+			<property name="slideSound" value="bicycle_brake"/>
 		</property>
 
 		<property class="wheel1">
 			<property name="tireTransform" value="Wheel1"/>
 			<property name="torqueScale_motor_brake" value="1, 1"/>
+			<property name="bounceSound" value="bicycle_suspension"/>
+			<property name="slideSound" value="bicycle_brake"/>
 		</property>
 
 		<property class="headlight">

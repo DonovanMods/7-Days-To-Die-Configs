@@ -1516,6 +1516,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="decoEntityClothMaster">
@@ -2060,8 +2062,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Entities/LootContainers/safeMetalWallOpenPrefab.prefab"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceForgedIron" count="3,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="5,15" tag="allHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest" tool_category="Disassemble"/>
 </block>
 
 <block name="cntWallSafeRandomLootHelper">
@@ -2131,8 +2134,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="15,30" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B101"/>
 	<property name="SortOrder2" value="0000"/>
@@ -2513,9 +2516,11 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="10,30" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceForgedIron" count="8,12" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceForgedSteel" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder2" value="0309"/>
+	<property name="Tags" value="challenge_steel"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <!-- White -->
@@ -2948,8 +2953,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="10,30" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceForgedIron" count="8,12" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceForgedSteel" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B101"/>
 	<property name="SortOrder2" value="0609"/>
@@ -3132,12 +3137,14 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="EconomicValue" value="250"/> <!-- disassemble value -->
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceForgedIron" count="2,4" tag="salvageHarvest"/>
-	<drop event="Harvest" name="resourceForgedSteel" count="2,4" prob="0.5" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceForgedSteel" count="2,4" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="30" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder1" value="B102"/>
 	<property name="SortOrder2" value="0010"/>
 	<property name="FilterTags" value="MC_building,SC_loot,MC_helpers,SC_treasureRoom"/>
+	<property name="Tags" value="challenge_steel"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <block name="cntMunitionsBoxRed">
@@ -3742,8 +3749,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="15,45" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceForgedIron" count="16,24" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceForgedSteel" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,8" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,10" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,8" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,10" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B104"/>
 	<property name="SortOrder2" value="0006"/>
@@ -5490,6 +5497,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B109"/>
 	<property name="SortOrder2" value="0303"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** TOILETS -->
@@ -5871,6 +5879,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B112"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Brown -->
@@ -6172,6 +6182,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B112"/>
 	<property name="SortOrder2" value="0300"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="laundryCartFull">
@@ -6198,7 +6209,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
-	<drop event="Destroy" name="resourceScrapPolymers" count="0"/>
+	<drop event="Destroy" name="resourceCloth" count="0"/>
 	<drop event="Harvest" name="resourceCloth" count="1,3" tag="allHarvest"/>
 	<property name="SortOrder1" value="B112"/>
 	<property name="SortOrder2" value="0303"/>
@@ -6320,8 +6331,10 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="garbage_decor1"/>
 	<property name="Model" value="Entities/Debris/trashGround02Prefab"/>
 	<dropextendsoff/>
-	<drop event="Destroy" name="resourceScrapPolymers" count="1"/>
+	<drop event="Destroy" name="resourceScrapPolymers" count="1,2"/>
 	<property name="SortOrder2" value="0101"/>
+	<property name="Tags" value="trashPile,challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="garbage_decor3">
@@ -6446,6 +6459,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="Entities/Debris/groundDecalRubbish02Prefab"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="1"/>
 	<property name="SortOrder2" value="0231"/>
+	<property name="Tags" value="trashPile,challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="rubbishDecor03">
@@ -6474,6 +6489,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="Entities/Debris/groundDecalRubbish06Prefab"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="1"/>
 	<property name="SortOrder2" value="0235"/>
+	<property name="Tags" value="trashPile,challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="rubbishDecor08">
@@ -6602,6 +6619,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Brown -->
@@ -6762,6 +6781,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="0060"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Brown -->
@@ -6898,6 +6919,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="0700"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Brown -->
@@ -7293,6 +7316,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="0907"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntBruteStyleTrashCanFull">
@@ -7474,6 +7499,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="1100"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial,SC_industrial"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntTiltTruckFull">
@@ -7542,6 +7569,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="1200"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial,SC_industrial"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Brown -->
@@ -7838,6 +7867,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="1501"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial,SC_industrial"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntJanitorCartRandomLootHelper">
@@ -7882,6 +7913,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="1600"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_helpers,SC_helperResidential"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Blue_POI -->
@@ -7953,6 +7986,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="LootList" value="playerCooler"/>
 	<property name="CustomIcon" value="cntCoolerClosed"/>
 	<property name="Model" value="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab"/>
+	<property name="MaxDamage" value="300"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="cntCoolerVariantHelper" count="1"/>
 	<property name="SortOrder2" value="1607"/>
@@ -8193,6 +8227,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="2001"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntLuggageMediumOpen">
@@ -8211,6 +8247,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="2002"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntLuggageMediumClosed">
@@ -8401,6 +8439,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="electricalBox02">
@@ -8458,6 +8497,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_steel,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <block name="utilityTransformerHanging">
@@ -8496,11 +8537,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceMechanicalParts" count="1,4" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,5" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,20"/>
-	<drop event="Destroy" name="resourceRadiator" count="1" prob="0.7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceRadiator" count="1" prob="0.7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="airConditionVentFan">
@@ -8522,6 +8564,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_decor,MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="airConditionVentFanDouble">
@@ -8562,6 +8605,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="satelliteUnitSmallWall">
@@ -8595,6 +8639,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B151"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="controlPanelBase02">
@@ -9344,6 +9389,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B152"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <!-- Breaker Box Open -->
@@ -9440,6 +9486,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B153"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <!-- Conduit Triple Straight End -->
@@ -9551,7 +9598,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CreativeMode" value="Dev"/>
 	<property name="Class" value="Activate"/>
 	<property name="ActivateSound" value="button4"/>
-	<property name="Material" value="Mmetal"/>
+	<property name="Material" value="Msteel"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/powerSwitchButton_01Prefab"/>
 	<property name="WaterFlow" value="permitted"/>
@@ -9959,6 +10006,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0001"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_loot"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="solarbank">
@@ -10029,6 +10077,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0003"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_loot"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="batterybank">
@@ -10108,6 +10157,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0005"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_loot"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="electricwirerelay">
@@ -10329,6 +10379,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B155"/>
 	<property name="SortOrder2" value="0012"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_traps"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="motionsensorLeftPOI">
@@ -10434,6 +10485,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0017"/>
 	<property name="Group" value="Science"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="electricfencepost">
@@ -10722,6 +10774,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="5,20"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder2" value="0002"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntRetroFridgeRandomLootHelper">
@@ -10812,7 +10865,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B157"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -10939,6 +10992,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceElectricParts" count="1,4" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5,15"/>
 	<property name="SortOrder2" value="0002"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 	<!-- *** MODERN_STOVE -->
@@ -11003,6 +11057,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0200"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <!-- Grey -->
@@ -11048,6 +11103,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0300"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <!-- Grey -->
@@ -11228,6 +11284,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0701"/>
 	<property name="FilterTags" value="MC_helpers,SC_helperResidential"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="cntGasGrillOpen">
@@ -11279,6 +11336,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0704"/>
 	<property name="FilterTags" value="MC_helpers,SC_helperResidential"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <!-- Red 981C1C -->
@@ -11338,6 +11396,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B159"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Yellow -->
@@ -11534,6 +11593,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B160"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntWasherClosed">
@@ -11703,6 +11763,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B161"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntMicrowaveOvenVer1Closed">
@@ -11813,6 +11874,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B161"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntMiniBeverageCoolerEmpty">
@@ -11876,6 +11938,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="1,12"/>
 	<property name="SortOrder1" value="B162"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 	<!-- *** COFFEE_MAKERS -->
@@ -11899,6 +11962,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B162"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="cntCoffeeMakerCommercial">
@@ -11969,6 +12033,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B162"/>
 	<property name="SortOrder2" value="0007"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="wallClockBroken">
@@ -12056,6 +12121,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B162"/>
 	<property name="SortOrder2" value="0014"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 	<!-- *** COMPUTER_GEAR -->
@@ -12076,6 +12142,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B163"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="decoComputerMonitorKeyboardMousePC">
@@ -12135,6 +12202,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="1,12"/>
 	<property name="SortOrder1" value="B163"/>
 	<property name="SortOrder2" value="0100"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 	<!-- *** SERVER_RACKS -->
@@ -12244,12 +12312,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceElectricParts" count="2,6" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceElectricParts" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="2"/>
 	<property name="SortOrder1" value="B165"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="FilterTags" value="MC_building,SC_electrical"/>	
+	<property name="FilterTags" value="MC_building,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="tvSmallStand1x1Fallen">
@@ -12389,7 +12458,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B200"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -12471,7 +12540,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B201"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -12838,7 +12907,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -12880,7 +12949,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Science,TCScience"/>
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0402"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -12950,7 +13019,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0600"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13017,7 +13086,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0610"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13081,7 +13150,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0610"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13149,7 +13218,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0800"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13185,7 +13254,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="0900"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13243,7 +13312,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="1000"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13304,7 +13373,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="1100"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13348,7 +13417,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="1200"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -13982,7 +14051,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="1400"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -14012,7 +14081,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="1500"/>
 	<property name="Group" value="Science,Decor/Miscellaneous"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_steel"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -14202,7 +14271,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="2100"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -14338,7 +14407,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="2200"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -14653,7 +14722,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="2600"/>
 	<property name="Group" value="Science"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_steel"/>
 	<property name="FilterTags" value="MC_building,SC_lighting,MC_outdoor,SC_decor"/>
 </block>
 
@@ -14731,12 +14800,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="24,30" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceElectricParts" count="1,3" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceHeadlight" count="0,1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceHeadlight" count="0,1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="2701"/>
 	<property name="Group" value="Science"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -15097,7 +15166,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="3400"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -15132,7 +15201,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
 	<property name="SortOrder1" value="B202"/>
 	<property name="SortOrder2" value="3500"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
 </block>
 
@@ -20916,7 +20985,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="cntBarrelPolymerMaster">
 	<property name="CreativeMode" value="None"/>
 	<property name="Class" value="CarExplodeLoot"/>
-	<property name="IndexName" value="challenge_barrels"/>
 	<property name="LootList" value="gasBarrel"/>
 	<property class="Explosion">
 		<property name="ParticleIndex" value="13"/>
@@ -20941,8 +21009,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapPolymers" count="2,5" tag="allToolsHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="resourceScrapPolymers" count="3" prob="0.3" stick_chance="0"/>
-	<property name="Tags" value="challenge_barrels"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Acid -->
@@ -21132,7 +21201,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <!-- Plastic -->
 <block name="cntBarrelPlasticSingle00">
-	<property name="IndexName" value="challenge_barrels"/>
 	<property name="Material" value="MFuelBarrelPolymer"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Industrial/barrelPlasticPrefab"/>
@@ -21148,8 +21216,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="resourceScrapPolymers" count="3" prob="0.3" stick_chance="0"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0600"/>
-	<property name="Tags" value="challenge_barrels"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntBarrelPlasticSingle45">
@@ -21353,13 +21422,15 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" prob="0.5" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,2" prob="0.5" tag="salvageHarvest"/>
 	<drop event="Harvest" name="smallEngine" count="1" prob="0.25" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<property name="SortOrder1" value="B262"/>
 	<property name="SortOrder2" value="0016"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoCarMotorFlipped">
@@ -21568,11 +21639,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" prob="0.5" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,2" prob="0.5" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<property name="SortOrder1" value="B264"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- Red -->
@@ -26024,6 +26097,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0302"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** CEMENT_MIXER -->
@@ -26122,6 +26196,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0401"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_construction"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** CHEMISTRY_STATION -->
@@ -27433,7 +27508,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B304"/>
 	<property name="SortOrder2" value="0002"/>
 	<property name="Group" value="Building,advBuilding"/>
-	<property name="Tags" value="door"/>
+	<property name="Tags" value="door,challenge_mech_parts"/>
 	<property name="BlockTag" value="Door"/>
 	<property name="FilterTags" value="MC_building,SC_doors"/>
 </block>
@@ -31658,6 +31733,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B317"/>
 	<property name="SortOrder2" value="0003"/>
 	<property name="FilterTags" value="MC_building,SC_doors,SC_electrical"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="elevatorOutsideButtonPanel">
@@ -32377,8 +32453,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10,20" tag="allHarvest,lumberjackHarvest"/>
 	<drop event="Destroy" name="resourceWood" count="10" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
 	<property name="SortOrder1" value="B321"/>
@@ -32505,8 +32581,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10,20" tag="allHarvest,lumberjackHarvest"/>
 	<drop event="Destroy" name="resourceWood" count="10" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
 	<property name="SortOrder1" value="B321"/>
@@ -32634,8 +32710,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10,20" tag="allHarvest,lumberjackHarvest"/>
 	<drop event="Destroy" name="resourceWood" count="10" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,4" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
 	<property name="SortOrder1" value="B321"/>
@@ -32735,12 +32811,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest,lumberjackHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder2" value="0300"/>
-	<property name="Tags" value="door,electricianSkill"/>
+	<property name="Tags" value="door,electricianSkill,challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -32831,12 +32907,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest,lumberjackHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder2" value="0400"/>
-	<property name="Tags" value="door,electricianSkill"/>
+	<property name="Tags" value="door,electricianSkill,challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -32927,12 +33003,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest,lumberjackHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceElectricParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder2" value="0500"/>
-	<property name="Tags" value="door,electricianSkill"/>
+	<property name="Tags" value="door,electricianSkill,challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -33088,8 +33164,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="750" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33226,8 +33302,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="750" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33364,8 +33440,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="750" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33815,8 +33891,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1000" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33868,8 +33944,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1000" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33933,8 +34009,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1000" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="8,12" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -33988,8 +34064,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="100" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -34132,8 +34208,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="100" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -34276,8 +34352,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="100" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="2,6" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="2,7" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
@@ -34644,8 +34720,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="20,30" tag="allHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B336"/>
@@ -34685,9 +34761,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="400" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceWood" count="400" tag="allHarvest,lumberjackHarvest"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceSpring" count="4,12" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="4,20" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Destroy" count="0"/>
-	<drop event="Destroy" name="resourceSpring" count="4,12" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="4,20" tag="salvageHarvest"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B337"/>
 	<property name="SortOrder2" value="0000"/>
@@ -39542,7 +39618,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="Entities/Furniture/armoireSidePrefab"/>
 	<property name="MultiBlockDim" value="1,3,1"/>
 	<property name="WaterFlow" value="permitted"/>
-	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 	<property name="Path" value="solid"/>
 	<property name="MaxDamage" value="1"/>
 	<property class="RepairItems">
@@ -39641,6 +39717,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CreativeMode" value="Dev"/>
 	<property name="ModelOffset" value="0,-1.5,0"/>
 	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Path" value="solid"/>
 	<property name="SortOrder2" value="0200"/>
 </block>
 
@@ -39732,6 +39809,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="Entities/Furniture/armoireSideShortPrefab"/>
 	<property name="ModelOffset" value="0,-.5,0"/>
 	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="Path" value="solid"/>
 	<property name="SortOrder2" value="0300"/>
 </block>
 
@@ -41403,7 +41481,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<!-- *** OFFICE_CHAIR_01 -->
 <!-- Grey -->
 <block name="officeChair01">
-	<property name="IndexName" value="challenge_officechairs"/>
 	<property name="CustomIcon" value="officeChair01"/>
 	<property name="CustomIconTint" value="4F4A45"/>
 	<property name="TintColor" value="4F4A45"/>
@@ -41431,8 +41508,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B410"/>
 	<property name="SortOrder2" value="0008"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="Tags" value="challenge_officechairs"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_industrial,SC_commercial,SC_residential"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -42443,6 +42521,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial,SC_residential"/>
+	<property name="Tags" value="challenge_leather"/>
+	<property name="IndexName" value="challenge_leather"/>
 </block>
 
 <block name="sectionalLeatherCouchSofaCorner">
@@ -43006,7 +43086,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0000"/>
@@ -43036,7 +43116,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0001"/>
@@ -43066,7 +43146,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0002"/>
@@ -43096,7 +43176,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0003"/>
@@ -43126,7 +43206,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0004"/>
@@ -43156,7 +43236,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceCloth" value="4"/>
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="2" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceCloth" count="2" tag="allHarvest"/>
 	<property name="SortOrder1" value="B420"/>
 	<property name="SortOrder2" value="0005"/>
@@ -43610,6 +43690,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B422"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="churchBellHanging">
@@ -43637,6 +43718,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B422"/>
 	<property name="SortOrder2" value="0002"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="churchBellHanging1x2x1">
@@ -43657,6 +43739,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B422"/>
 	<property name="SortOrder2" value="0003"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** BLEACHERS -->
@@ -44046,6 +44129,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoSwingSet">
@@ -44063,6 +44147,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0001"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoBasketBallHoop">
@@ -44125,6 +44210,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoTreadmill">
@@ -44150,6 +44237,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoWeightBar">
@@ -44552,6 +44641,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapPolymers" count="3,6" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5,20"/>
 	<property name="SortOrder2" value="0009"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- White -->
@@ -44652,6 +44743,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,2,3"/>
 	<property name="LightOpacity" value="4"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="Path" value="solid"/>
 	<property name="MaxDamage" value="100"/>
 	<property name="EconomicValue" value="20"/>
 	<drop event="Harvest" name="resourceCloth" count="2,5" tag="allHarvest"/>
@@ -44667,6 +44759,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIcon" value="screenCurtainDividerWhite"/>
 	<property name="CustomIconTint" value="987C7D"/>
 	<property name="TintColor" value="987C7D"/>
+	<property name="Path" value="solid"/>
 	<property name="SortOrder2" value="0002"/>
 </block>
 
@@ -44676,6 +44769,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIcon" value="screenCurtainDividerWhite"/>
 	<property name="CustomIconTint" value="667264"/>
 	<property name="TintColor" value="667264"/>
+	<property name="Path" value="solid"/>
 	<property name="SortOrder2" value="0005"/>
 </block>
 
@@ -45500,6 +45594,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="1,12"/>
 	<property name="SortOrder1" value="B442"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- Red -->
@@ -45741,6 +45837,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B442"/>
 	<property name="SortOrder2" value="0300"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- Red -->
@@ -46703,13 +46801,14 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="10,30" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceForgedIron" count="8,12" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceForgedSteel" count="2,4" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceSpring" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,5" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B453"/>
 	<property name="SortOrder2" value="0001"/>
-	<property name="Tags" value="safes"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="safes,challenge_steel"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 	<!-- *** MAIL_DROP_BOX -->
@@ -46731,7 +46830,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	</property>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder1" value="B454"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_commercial,MC_outdoor,SC_decor"/>
@@ -46813,7 +46912,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 	<!-- *** BROKEN_DRINK_VENDING_MACHINES -->
 <block name="cntVendingMachine2Broken"> <!-- SODA -->
-	<property name="IndexName" value="challenge_vending"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="DescriptionKey" value="cntVendingMachineGroupDesc"/>
 	<property name="DisplayType" value="blockHardenedMulti"/>
@@ -46846,8 +46944,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B456"/>
 	<property name="SortOrder2" value="0002"/>
 	<property name="Group" value="Science"/>
-	<property name="Tags" value="challenge_vending"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_steel"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <block name="cntVendingMachineEnergyBroken">
@@ -46998,6 +47097,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B457"/>
 	<property name="SortOrder2" value="000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- *** STORE_EQUIPMENT -->
@@ -47071,6 +47171,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceLeather" count="1,2"/>
 	<property name="SortOrder1" value="B458"/>
 	<property name="SortOrder2" value="0006"/>
+	<property name="Tags" value="challenge_leather"/>
+	<property name="IndexName" value="challenge_leather"/>
 </block>
 
 	<!-- *** STORE_FREEZERS -->
@@ -47101,6 +47203,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="cntFreezerGroceriesMiddleEmptyClosed">
@@ -48703,6 +48806,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B464"/>
 	<property name="SortOrder2" value="0018"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="cntStoreElectronicsPalletTvFallen">
@@ -48723,6 +48827,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B464"/>
 	<property name="SortOrder2" value="0019"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="cntStoreElectronicsPalletTvStanding">
@@ -49053,7 +49158,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
-	<drop event="Destroy" name="resourceScrapPolymers" count="0"/>
+	<drop event="Destroy" name="resourceCloth" count="0"/>
 	<drop event="Harvest" name="resourceCloth" count="1,3" tag="allHarvest"/>
 	<property name="SortOrder1" value="B465"/>
 	<property name="SortOrder2" value="0030"/>
@@ -49325,6 +49430,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B466"/>
 	<property name="SortOrder2" value="0012"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_residential"/>
+	<property name="Tags" value="challenge_leather"/>
+	<property name="IndexName" value="challenge_leather"/>
 </block>
 
 <block name="cntShoesPileWomensHeels">
@@ -49851,9 +49958,10 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceElectricParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,12"/>
-	<drop event="Destroy" name="oldCash" count="1,3" prob="0.05" tag="salvageHarvest"/>
+	<drop event="Destroy" name="oldCash" count="1,3" prob="0.05" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder1" value="B471"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="cntCashRegister">
@@ -49908,6 +50016,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B471"/>
 	<property name="SortOrder2" value="0004"/>
 	<property name="FilterTags" value="MC_building,SC_commercial"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cashRegisterConveyorCorner">
@@ -49966,6 +50075,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B472"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_industrial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="escalatorFiller">
@@ -50002,7 +50112,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- White -->
 <block name="cntShoppingCartEmptyWhite">
 	<property name="CreativeMode" value="None"/>
-	<property name="IndexName" value="challenge_barrels"/>
 	<property name="Material" value="Mmetal"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -50023,8 +50132,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B473"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_barrels"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Red -->
@@ -50103,6 +50213,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B473"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Red -->
@@ -50181,6 +50293,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B473"/>
 	<property name="SortOrder2" value="0200"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Red -->
@@ -50304,6 +50418,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B474"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <block name="cntShoppingBasketEmptyRed">
@@ -50442,7 +50558,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Grey -->
 <block name="restaurantBooth">
 	<property name="CreativeMode" value="Dev"/>
-	<property name="IndexName" value="challenge_booths"/>
 	<property name="CustomIcon" value="restaurantBooth"/>
 	<property name="CustomIconTint" value="464646"/>
 	<property name="TintColor" value="464646"/>
@@ -50464,12 +50579,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceLeather" count="1" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Destroy" name="oldCash" count="1,3" prob="0.05" tag="salvageHarvest"/>
+	<drop event="Destroy" name="oldCash" count="1,3" prob="0.05"/>
 	<property name="SortOrder1" value="B474"/>
 	<property name="SortOrder2" value="0508"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="Tags" value="challenge_booths"/>
 	<property name="FilterTags" value="MC_building,SC_commercial"/>
+	<property name="Tags" value="challenge_leather"/>
+	<property name="IndexName" value="challenge_leather"/>
 </block>
 
 <block name="restaurantBoothCorner">
@@ -51294,6 +51410,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B477"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_steel"/>
+	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <block name="cntGasPumpEmpty">
@@ -51816,11 +51934,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIconTint" value="CDBF9C"/>
 	<property name="Material" value="Mmetal"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="resourceMechanicalParts" count="0,2" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder2" value="0204"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -53508,6 +53627,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B500"/>
 	<property name="SortOrder2" value="0200"/>
 	<property name="FilterTags" value="MC_building,SC_industrial"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="factoryConveyorCap">
@@ -53644,6 +53764,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_construction"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 	<!-- *** LIFTING_AND_RIGGING_EQUIPMENT -->
@@ -53687,6 +53809,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1,3" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="0004"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="decoHoistMagnet">
@@ -53695,6 +53818,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceElectricParts" count="1,4" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="0005"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="decoHoistTopMount">
@@ -53718,6 +53842,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="1,12"/>
 	<property name="SortOrder1" value="B551"/>
 	<property name="SortOrder2" value="0007"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** BARRIERS -->
@@ -53743,6 +53869,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_polymers"/>
+	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
 <!-- Red -->
@@ -55629,7 +55757,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
@@ -55646,10 +55775,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="EconomicValue" value="30"/> <!-- disassemble value -->
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0401"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="metalPipeCorner">
@@ -55694,7 +55826,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B651"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
@@ -55733,6 +55866,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="0005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02">
@@ -55741,6 +55875,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="0006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCorner">
@@ -55849,7 +55984,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B652"/>
 	<property name="SortOrder2" value="2000"/>
@@ -55894,6 +56030,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="2005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02Red">
@@ -55903,6 +56040,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="2006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCornerRed">
@@ -56021,7 +56159,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B654"/>
 	<property name="SortOrder2" value="4000"/>
@@ -56066,6 +56205,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="4005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02Yellow">
@@ -56075,6 +56215,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="4006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCornerYellow">
@@ -56193,7 +56334,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B655"/>
 	<property name="SortOrder2" value="5000"/>
@@ -56238,6 +56380,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="5005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02Green">
@@ -56247,6 +56390,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="5006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCornerGreen">
@@ -56365,7 +56509,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B656"/>
 	<property name="SortOrder2" value="6000"/>
@@ -56410,6 +56555,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="6005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02Blue">
@@ -56419,6 +56565,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="6006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCornerBlue">
@@ -56537,7 +56684,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="HandleFace" value="Bottom"/>
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="1,2"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B658"/>
 	<property name="SortOrder2" value="8000"/>
@@ -56582,6 +56730,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="8005"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallValve02Grey">
@@ -56591,6 +56740,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapBrass" count="12,25" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1" prob="0.5" tag="salvageHarvest"/>
 	<property name="SortOrder2" value="8006"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="pipeSmallCornerGrey">
@@ -56712,7 +56862,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<!-- Interaction -->
 	<dropextendsoff/>
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="DowngradeFX" value="impact_organic_on_metal,explosion2"/>
 	<property name="DowngradeBlock" value="pipeFireHazardRed3m"/>
@@ -57542,9 +57692,11 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceMetalPipe" count="1,2" tag="salvageHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1,5" prob="0.75" stick_chance="1"/>
-	<property name="FilterTags" value="MC_building,SC_plumbing"/>
 	<property name="SortOrder1" value="B670"/>
 	<property name="SortOrder2" value="0000"/>
+	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <!-- Brown -->
@@ -57730,11 +57882,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="6,12" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1,3" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1,3" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B672"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="utilityGasMeter02">
@@ -57756,11 +57910,13 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="5" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMetalPipe" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B673"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_residential,SC_commercial,SC_industrial,MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
 <block name="fireHydrantYellow">
@@ -57802,6 +57958,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science,Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_commercial,SC_lighting,MC_outdoor"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signOpenWallMountChain">
@@ -57828,6 +57985,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B700"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_commercial,SC_lighting,MC_outdoor"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signOpenWallMountFrame">
@@ -57872,6 +58030,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0005"/>
 	<property name="Group" value="Science,Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_commercial,SC_lighting,MC_outdoor"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 	<!-- *** ROAD_SIGNS -->
@@ -58472,12 +58631,14 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceElectricParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="0,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="2,6" tag="salvageHarvest"/>
-	<drop event="Destroy" name="casinoCoin" count="1,8" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceScrapIron" count="3,6"/>
+	<drop event="Destroy" name="casinoCoin" count="1,8" tag="salvageHarvest" tool_category="Disassemble"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B701"/>
 	<property name="SortOrder2" value="0073"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="signTowAway">
@@ -58636,6 +58797,20 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="00012"/>
 </block>
 
+<block name="signTraderBobInteriorNoLights">
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="signTraderBobInterior"/>
+	<property name="DisplayType" value="blockMulti"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="Entities/Signs/signTraderBobWideNoLightsPrefab"/>
+	<property name="ModelOffset" value="0,.5,0"/>
+	<property name="MultiBlockDim" value="3,1,1"/>
+	<property name="WaterFlow" value="permitted"/>
+	<property name="SortOrder1" value="B702"/>
+	<property name="SortOrder2" value="00013"/>
+</block>
+
 <block name="signTraderRektExteriorSmall">
 	<property name="CreativeMode" value="Dev"/>
 	<property name="DisplayType" value="blockMulti"/>
@@ -58646,7 +58821,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="3,1,1"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="SortOrder1" value="B702"/>
-	<property name="SortOrder2" value="0013"/>
+	<property name="SortOrder2" value="0014"/>
 </block>
 
 <block name="signTraderRektExteriorLarge">
@@ -58659,7 +58834,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="5,1,1"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="SortOrder1" value="B702"/>
-	<property name="SortOrder2" value="0014"/>
+	<property name="SortOrder2" value="0015"/>
 </block>
 
 <block name="signShopGas">
@@ -58682,6 +58857,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0100"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopGasLit">
@@ -58749,6 +58925,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0200"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopGunStoreLit">
@@ -58822,6 +58999,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B702"/>
 	<property name="SortOrder2" value="0300"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopBookStoreLit">
@@ -58894,6 +59072,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B702"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopPharmacyLit">
@@ -58966,6 +59145,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B702"/>
 	<property name="SortOrder2" value="0500"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopToolStoreLit">
@@ -59038,6 +59218,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B702"/>
 	<property name="SortOrder2" value="0600"/>
 	<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 </block>
 
 <block name="signShopGroceryLit">
@@ -59286,7 +59467,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B703"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Science,TCScience"/>
-	<property name="Tags" value="challenge_lights"/>
+	<property name="Tags" value="challenge_elec_parts"/>
 	<property name="FilterTags" value="MC_building,SC_lighting"/>
 </block>
 
@@ -61123,7 +61304,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="DowngradeBlock" value="cntCar03SedanDamage1Master"/>
 	<property name="SortOrder1" value="B851"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -61172,7 +61353,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>
 	<property name="SortOrder1" value="B852"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -61220,7 +61401,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="1" stick_chance="1"/>
 	<property name="SortOrder1" value="B853"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -61819,7 +62000,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B855"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -61953,6 +62134,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B856"/>
 	<property name="SortOrder2" value="0000a"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** ABANDONED_SUV -->
@@ -62553,7 +62735,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B857"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -62688,6 +62870,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B858"/>
 	<property name="SortOrder2" value="0000a"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 	<!-- *** ABANDONED_3M_WIDE_SUV -->
@@ -63288,7 +63471,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B859"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -63473,7 +63656,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B860"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -63659,7 +63842,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B861"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -63844,7 +64027,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B862"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64020,7 +64203,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B863"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64195,7 +64378,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B864"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64371,7 +64554,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B865"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64543,7 +64726,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B866"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64867,6 +65050,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B867"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- SMASHED_POLICE_CAR_WITH_ALARM_THAT_SPAWNS_ZOMBIES -->
@@ -64964,6 +65148,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B867"/>
 	<property name="SortOrder2" value="0003"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 	<!-- *** FIRE_TRUCK -->
@@ -65045,7 +65230,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B868"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -65381,7 +65566,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B871"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -65719,6 +65904,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceAcid" prob=".08" count="1" tag="WasteTreasuresAcidHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<property name="SortOrder1" value="B873"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntArmyTruckClosed">
@@ -65767,6 +65953,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder2" value="0002"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="cntFarmTruckRandomLootHelper">
@@ -66099,6 +66286,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B878"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Red -->
@@ -66191,6 +66379,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B878"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <!-- Red -->
@@ -66268,6 +66457,35 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ItemTypeIcon" value="other"/>
 	<property name="SortOrder1" value="B879"/>
 	<property name="SortOrder2" value="0002"/>
+	<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
+</block>
+
+	<!-- *** FRONT_CRUMPLED_SEDAN -->
+<block name="cntFrontCrumpledSedan01AirRandomHelper">
+	<property name="CreativeMode" value="Dev"/>
+	<property name="Class" value="Loot"/>
+	<property name="LootList" value="cars"/>
+	<property name="CustomIcon" value="cntFrontCrumpledSedan01White"/>
+	<property name="CustomIconTint" value="8080FF"/>
+	<property name="ItemTypeIcon" value="other"/>
+	<property name="DisplayInfo" value="Name"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="@:Entities/Vehicles/FrontCrumpledSedan/frontCrumpledSedanPrefab.prefab"/>
+	<property name="ModelOffset" value="-0.5,0,0"/>
+	<property name="OversizedBounds" value="(-0.5,0.5,0),(2,2,5)"/>
+	<property name="ImposterDontBlock" value="true"/>
+	<property name="WaterFlow" value="permitted"/>
+	<property name="Place" value="TowardsPlacer"/>
+	<property name="PlacementDistance" value="8"/>
+	<property name="BigDecorationRadius" value="5"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="IsReplaceRandom" value="false"/>
+	<property name="CanDecorateOnSlopes" value="false"/>
+	<drop event="Destroy" count="0"/>
+	<property name="ShowModelOnFall" value="false"/>
+	<property name="SortOrder1" value="B859"/>
+	<property name="SortOrder2" value="H000"/>
 	<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
 </block>
 
@@ -66454,6 +66672,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B880"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="semiFlatbedBackTraderOnly">
@@ -66486,6 +66705,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B880"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="semiFlatbedMiddleWheelsTraderOnly">
@@ -66570,6 +66790,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B880"/>
 	<property name="SortOrder2" value="0003"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_mech_parts"/>
 </block>
 
 <block name="semiFlatbedFrontTraderOnly">
@@ -69942,6 +70163,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0004"/>
 	<property name="Group" value="Science"/>
 	<property name="FilterTags" value="MC_helpers,SC_questblocks"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
 </block>
 
 <block name="questGeneratorLarge">

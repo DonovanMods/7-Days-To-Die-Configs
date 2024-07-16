@@ -274,20 +274,20 @@
 		<item_display_info display_type="ammoGrenade" display_group="groupAmmo">
 			<display_entry name="dExEntityDamage" title_key="statEntityDamageExplosion" tags="perkDemolitionsExpert,admin"/>		
 			<display_entry name="dExBlockDamage" title_key="statBlockDamageExplosion" tags="perkDemolitionsExpert,admin"/>
-			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dExRadius" title_key="statExRadius" display_type="Decimal1"/>
 			<display_entry name="dFuseTime" title_key="statFuseTime" display_type="Time" negative_preferred="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="ammoGrenadeContact" display_group="groupAmmo">
 			<display_entry name="dExEntityDamage" title_key="statEntityDamageExplosion" tags="perkDemolitionsExpert,admin"/>
 			<display_entry name="dExBlockDamage" title_key="statBlockDamageExplosion" tags="perkDemolitionsExpert,admin"/>
-			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dExRadius" title_key="statExRadius" display_type="Decimal1"/>
 		</item_display_info>
 
 		<item_display_info display_type="ammoGrenadeTimedCharge" display_group="groupAmmo">
 			<display_entry name="dExEntityDamage" title_key="statEntityDamageExplosion" tags="perkDemolitionsExpert,admin"/>
 			<display_entry name="dExBlockDamage" title_key="statBlockDamageExplosion" tags="perkDemolitionsExpert,admin"/>
-			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dExRadius" title_key="statExRadius" display_type="Decimal1"/>
 			<display_entry name="dFuseTime" title_key="statFuseTime" display_type="Time" negative_preferred="true"/>
 		</item_display_info>
 
@@ -524,7 +524,7 @@
 
 		<!-- *** SCAVENGER -->
 		<item_display_info display_type="armorScavengerHelmet" display_group="groupAttire" extends="armorMediumNew" >
-			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGainScavenger" display_type="Percent" display_leading_plus="true"/>
 		</item_display_info>
 
 		<item_display_info display_type="armorScavengerOutfit" display_group="groupAttire" extends="armorMediumNew" >
@@ -719,6 +719,7 @@
 			<display_entry name="HypothermalResist" display_type="Decimal1" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" display_type="Decimal1" title_key="statHyperthermalResist"/>
 			<display_entry name="dHealthMax" title_key="statHealthAmount" display_leading_plus="true"/>
+			<display_entry name="dLootTime" title_key="xuiSkillLootTime" display_leading_plus="false"/>
 		</item_display_info>
 
 		<item_display_info display_type="clothingGhillie" display_group="groupAttire" >

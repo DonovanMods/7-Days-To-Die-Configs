@@ -3908,7 +3908,7 @@
 		<property name="point_type" value="Bits" />
 		<property name="default_cost" value="500" />
 		<property name="is_positive" value="false" />
-		<property name="special_requirement" value="NotInTrader,NotOnVehicle" />
+		<property name="special_requirement" value="NotSafe,NotOnVehicle" />
 		<property name="cooldown" value="900" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="ignore_discount" value="true" />
@@ -3927,7 +3927,7 @@
 		<property name="point_type" value="Bits" />
 		<property name="default_cost" value="500" />
 		<property name="is_positive" value="false" />
-		<property name="special_requirement" value="NotInTrader,NotOnVehicle" />
+		<property name="special_requirement" value="NotSafe,NotOnVehicle" />
 		<property name="cooldown" value="900" />
 		<property name="cooldown_blocked" value="true" />
 		<property name="ignore_discount" value="true" />

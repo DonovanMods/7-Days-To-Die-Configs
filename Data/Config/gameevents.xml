@@ -1578,15 +1578,11 @@
 			<property name="min_distance" value="4" />
 			<property name="max_distance" value="8" />
 			<property name="safe_spawn" value="true" />
+			<property name="spawn_sound" value="open_supply_crate" />
 		</action>
 
 		<action class="PlaySound">
 			<property name="sound" value="twitch_good_spawn" />
-			<property name="phase" value="1" />
-		</action>
-
-		<action class="PlaySound">
-			<property name="sound" value="open_supply_crate" />
 			<property name="phase" value="1" />
 		</action>
 
@@ -4083,6 +4079,7 @@
 		</action>
 		
 		<action class="RemoveSpawnedBlocks">
+			<property name="despawn" value="true" />
 			<property name="phase" value="2" />
 			<property name="target_only" value="true" />
 		</action>
@@ -4415,7 +4412,7 @@
 		
 		<action class="FillArea">
 			<property name="phase" value="4" />
-			<property name="fill_type" value="Cube" />
+			<property name="fill_type" value="Cube,Sphere,Cylinder" />
 			<property name="new_name" value="Filled by {viewer}" />
 			<property name="block_tags" value="air,twitchReplace" />
 			<property name="exclude_block_tags" value="twitchHordeStone" />
@@ -9960,6 +9957,7 @@
 			<property name="max_offset" value="2,3,2" />
 			<property name="block_to" value="air" />
 			<property name="allow_terrain" value="true" />
+			<property name="exclude_tags" value="twitchHordeStone" />
 			<property name="phase" value="2" />
 		</action>
 		
@@ -9968,6 +9966,7 @@
 			<property name="max_offset" value="3,-2,3" />
 			<property name="block_to" value="air" />
 			<property name="allow_terrain" value="true" />
+			<property name="exclude_tags" value="twitchHordeStone" />
 			<property name="phase" value="2" />
 		</action>
 		
@@ -10653,98 +10652,49 @@
 			<property name="phase" value="0" />
 			<property name="safe_spawn" value="false" />
 		</action>
-		
-		<loop class="While" >
-		  <property name="phase" value="1" />
-
-			<requirement class="IsBlock">
-			  <property name="block_name" value="twitchHordeStone01" />
-			  <property name="invert" value="true" />
-			</requirement>
-
-			<action class="GetNearbyPoint">
-				<property name="phase" value="0" />
-				<property name="safe_spawn" value="false" />
-			</action>
-			
-			<action class="BlockReplaceAttack">
-				<property name="phase" value="1" />
-				<property name="target_position" value="0, 2, 0" />
-				<property name="offset_type" value="Relative" />
-				<property name="block_to" value="twitchHordeStone01" />
-				<property name="safe_allowed" value="false" />
-				<property name="time_alive" value="300" />
-				<property name="allow_terrain" value="true" />
-				<property name="remove_sound" value="twitch_event_blocks_remove" />
-				<property name="refund_on_remove" value="true" />
-			</action>
-		</loop>
+				
+		<action class="BlockReplaceAttack">
+			<property name="phase" value="1" />
+			<property name="target_position" value="0, 2, 0" />
+			<property name="offset_type" value="Relative" />
+			<property name="block_to" value="twitchHordeStone01" />
+			<property name="safe_allowed" value="false" />
+			<property name="time_alive" value="300" />
+			<property name="allow_terrain" value="true" />
+			<property name="remove_sound" value="twitch_event_blocks_remove" />
+			<property name="refund_on_remove" value="true" />
+		</action>
 		
 		<action class="PlaySound">
 			<property name="sound" value="twitch_hordestone_start" />
 			<property name="phase" value="2" />
 		</action>
-		
+				
 		<action class="Delay">
 			<property name="phase" value="2" />
 			<property name="time" value=".1" />
 		</action>
 		
-		<loop class="While" >
+		<action class="SpawnEntitySpawner">
+			<property name="entity_names" value="zombieArlene" param1="zname" />
+			<property name="spawn_count" value="1" param1="spawncount" />
+			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="add_to_group" value="zombies" />
+			<property name="safe_spawn" value="true" />
+			<property name="add_buffs" value="twitch_hordestone_zombie" />
+			<property name="min_distance" value="2" />
+			<property name="max_distance" value="4" />
+			<property name="spawn_type" value="NearPosition" />
+			<property name="raycast_offset" value="1" />
+			<property name="spawn_sound" value="zombiemalealert" />
+			<property name="party_addition" value="2" param1="partyaddition" />
 			<property name="phase" value="3" />
-
+			
+			
 			<requirement class="IsBlock">
 			  <property name="block_name" value="twitchHordeStone01" />
 			</requirement>
-
-			<decision class="If">
-				<property name="condition_type" value="Any" />
-
-				<requirement class="GroupLiveCount">
-				  <property name="target_group" value="zombies"/>
-				  <property name="operation" value="LessThan"/>
-				  <property name="count" value="5"/>
-				</requirement>
-				
-				<requirement class="VarInt">
-				  <property name="var_name" value="Damaged"/>
-				  <property name="operation" value="GT" />
-				  <property name="value" value="0"/>
-				</requirement>
-
-				<action class="Delay">
-				  <property name="time" value=".1" />
-				</action>
-
-				<action class="SpawnEntity">
-					<property name="entity_names" value="zombieArlene" param1="zname" />
-					<property name="spawn_count" value="1" param1="spawncount" />
-					<property name="air_spawn" value="false" param1="airspawn" />
-					<property name="add_to_group" value="zombies" />
-					<property name="safe_spawn" value="true" />
-					<property name="add_buffs" value="twitch_hordestone_zombie" />
-					<property name="min_distance" value="2" />
-					<property name="max_distance" value="4" />
-					<property name="spawn_type" value="NearPosition" />
-					<property name="raycast_offset" value="1" />
-				</action>
-
-				<action class="PlaySound">
-				  <property name="sound" value="zombiemalealert" param1="alertsound" />
-				  <property name="phase" value="1" />
-				</action>
-				
-				<action class="ModifyVarInt">
-				  <property name="var_name" value="Damaged" />
-				  <property name="operation_type" value="subtract" />
-				  <property name="value" value="1" />
-				  <property name="min_value" value="0" />
-				  <property name="phase" value="2" />
-				</action>
-			
-			</decision>
-
-		</loop>
+		</action>
 
 	</action_sequence>
 
@@ -10768,47 +10718,52 @@
 		<property name="category" value="twitch_actions" />
 		<property name="refund_inactivity" value="false" />
 		
-		<action class="PlaySound">
-			<property name="sound" value="twitch_hordestone_start" />
-			<property name="phase" value="0" />
-		</action>
-		
-		<action class="Delay">
-		  <property name="time" value="5" />
-		</action>
-		
 		<action class="GetNearbyPoint">
 			<property name="phase" value="0" />
 			<property name="safe_spawn" value="false" />
 		</action>
+				
+		<action class="BlockReplaceAttack">
+			<property name="phase" value="1" />
+			<property name="target_position" value="0, 2, 0" />
+			<property name="offset_type" value="Relative" />
+			<property name="block_to" value="twitchHordeStone01" />
+			<property name="safe_allowed" value="false" />
+			<property name="time_alive" value="300" />
+			<property name="allow_terrain" value="true" />
+			<property name="remove_sound" value="twitch_event_blocks_remove" />
+			<property name="refund_on_remove" value="true" />
+		</action>
 		
-		<loop class="While" >
-		  <property name="phase" value="1" />
-
+		<action class="PlaySound">
+			<property name="sound" value="twitch_hordestone_start" />
+			<property name="phase" value="2" />
+		</action>
+		
+		<action class="Delay">
+			<property name="phase" value="2" />
+			<property name="time" value=".1" />
+		</action>
+		
+		<action class="SpawnEntitySpawner">
+			<property name="entity_names" value="zombieArlene" param1="zname" />
+			<property name="spawn_count" value="1" param1="spawncount" />
+			<property name="air_spawn" value="false" param1="airspawn" />
+			<property name="add_to_group" value="zombies" />
+			<property name="safe_spawn" value="true" />
+			<property name="add_buffs" value="twitch_hordestone_zombie" />
+			<property name="min_distance" value="2" />
+			<property name="max_distance" value="4" />
+			<property name="spawn_type" value="NearPosition" />
+			<property name="raycast_offset" value="1" />
+			<property name="spawn_sound" value="zombiemalealert" />
+			<property name="phase" value="3" />
+			
 			<requirement class="IsBlock">
 			  <property name="block_name" value="twitchHordeStone01" />
-			  <property name="invert" value="true" />
 			</requirement>
+		</action>
 
-			<action class="GetNearbyPoint">
-				<property name="phase" value="0" />
-				<property name="safe_spawn" value="false" />
-			</action>
-			
-			<action class="BlockReplaceAttack">
-				<property name="phase" value="1" />
-				<property name="target_position" value="0, 2, 0" />
-				<property name="offset_type" value="Relative" />
-				<property name="block_to" value="twitchHordeStone01" />
-				<property name="safe_allowed" value="false" />
-				<property name="time_alive" value="180" />
-				<property name="allow_terrain" value="true" />
-				<property name="remove_sound" value="twitch_event_blocks_remove" />
-			</action>
-		</loop>
-		
-		
-		
 	</action_sequence>
 
 	<action_sequence name="action_block_DowngradedTo">
@@ -11445,6 +11400,7 @@
 			count - The count of items to replace, if you don't specify a count it will remove all.
 
 		RemoveSpawnedBlocks - Removes all spawned blocks.
+			despawn - If it's a despawn or not.
 			target_only - Remove only for the target.
 
 		RemoveVehicles - Removes a vehicles/turrets from the world.
@@ -11601,6 +11557,7 @@
 			safe_allowed - Whether this is allowed in safe zones.
 			block_tags - The blocks that are affected by the block actions.
 			allow_terrain - If the blocks that are affected can be terrain blocks.
+			exclude_tags - Excludes the block if it contains the tag.
 			
 		BlockAnimateBlock - Sets all the blocks within the defined range to trigger an animation.
 			animation_bool - The Animation bool value to set.

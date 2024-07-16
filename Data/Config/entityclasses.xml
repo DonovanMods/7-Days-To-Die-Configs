@@ -401,14 +401,14 @@
 	</property>
 
 	<property name="WalkType" value="7"/>
-	<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male/zombiemaleroam"/>
-	<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male/zombiemalealert"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male/zombiemalesense"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male/zombiemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male/zombiemaledeath"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male/zombiemaleattack"/>
+	<property name="SoundRandomTime" value="30"/> <!-- Plays SoundRandom every 30/15 seconds -->
+	<property name="SoundRandom" value="zombiemaleroam"/>
+	<property name="SoundAlertTime" value="25"/> <!-- Delay sounds after SoundAlert for x/2 to x seconds -->
+	<property name="SoundAlert" value="zombiemalealert"/>
+	<property name="SoundSense" value="zombiemalesense"/>
+	<property name="SoundHurt" value="zombiemalepain"/>
+	<property name="SoundDeath" value="zombiemaledeath"/>
+	<property name="SoundAttack" value="zombiemaleattack"/>
 	<property name="SoundSleeperSense" value="sleepersense"/>
 	<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
 
@@ -1439,6 +1439,12 @@
 <entity_class name="zombieMaleHazmat" extends="zombieBoe">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
+	<property name="SoundRandom" value="Enemies/Zombie_Hazmat/zombie_hazmat_roam"/>
+	<property name="SoundAlert" value="Enemies/Zombie_Hazmat/zombie_hazmat_alert"/>
+	<property name="SoundAttack" value="Enemies/Zombie_Hazmat/zombie_hazmat_attack"/>
+	<property name="SoundHurt" value="Enemies/Zombie_Hazmat/zombie_hazmat_pain"/>
+	<property name="SoundDeath" value="Enemies/Zombie_Hazmat/zombie_hazmat_death"/>
+	<property name="SoundSense" value="Enemies/Zombie_Hazmat/zombie_hazmat_sense"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_HazmatZ2.mat,@:Entities/Zombies/Zombies/Materials/HD_HazmatZ3.mat"/>
 	
@@ -1486,7 +1492,7 @@
 	<!-- Feral -->
 	<property name="ExperienceGain" value="750"/>
 	<!-- XP grunt feral -->
-	<property name="LootDropProb" value=".03"/>
+	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<!-- Feral -->
   	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="550"/>
@@ -1591,13 +1597,13 @@
 	<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
 	<property name="ExperienceGain" value="1200"/><!-- XP grunt radiated -->
 
-  <!-- Feral -->
-  <property name="MoveSpeedAggro" value="0.6, 1.45"/>
-  <!-- slim, feral -->
-  <property name="JumpMaxDistance" value="4.6, 5"/>
-  <property name="HandItem" value="meleeHandZombieFeral"/>
-  <!-- XP grunt feral -->
-  <property name="LootDropProb" value=".03"/>
+	<!-- Feral -->
+	<property name="MoveSpeedAggro" value="0.6, 1.45"/>
+	<!-- slim, feral -->
+	<property name="JumpMaxDistance" value="4.6, 5"/>
+	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<!-- XP grunt feral -->
+	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="1100"/>
@@ -1670,13 +1676,13 @@
 	<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
 	<property name="ExperienceGain" value="1200"/><!-- XP grunt radiated -->
 
-  <!-- Feral -->
-  <property name="MoveSpeedAggro" value="0.6, 1.45"/>
-  <!-- slim, feral -->
-  <property name="JumpMaxDistance" value="4.6, 5"/>
-  <property name="HandItem" value="meleeHandZombieFeral"/>
-  <!-- XP grunt feral -->
-  <property name="LootDropProb" value=".03"/>
+	<!-- Feral -->
+	<property name="MoveSpeedAggro" value="0.6, 1.45"/>
+	<!-- slim, feral -->
+	<property name="JumpMaxDistance" value="4.6, 5"/>
+	<property name="HandItem" value="meleeHandZombieFeral"/>
+	<!-- XP grunt feral -->
+	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="1100"/>
@@ -2981,6 +2987,14 @@
 	Wander|
 	"/>
 
+	<property name="SoundRandom" value="Enemies/Zombie_Mutated/zombie_mutated_roam"/>
+	<property name="SoundAlert" value="Enemies/Zombie_Mutated/zombie_mutated_alert"/>
+	<property name="SoundAttack" value="Enemies/Zombie_Mutated/zombie_mutated_attack"/>
+	<property name="SoundHurt" value="Enemies/Zombie_Mutated/zombie_mutated_pain"/>
+	<property name="SoundDeath" value="Enemies/Zombie_Mutated/zombie_mutated_death"/>
+	<property name="SoundSense" value="Enemies/Zombie_Mutated/zombie_mutated_sense"/>
+	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
+
   <!-- Gameplay zombieMutated -->
 	<property name="HandItem" value="meleeHandzombieMutated"/>
 	<property name="ExplodeHealthThreshold" value="0"/>
@@ -3092,7 +3106,7 @@
 
 	<property name="ExperienceGain" value="750"/>
 	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-	<property name="LootDropProb" value=".3"/>
+	<property name="LootDropProb" value=".3"/> <!-- Demo -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="1200"/>
@@ -3112,9 +3126,9 @@
 	<property name="WalkType" value="21"/>
 	<property name="RotateToGround" value="true"/>
 	<property name="RootMotion" value="true"/>
-	<property name="SoundRandomTime" value="16.0"/> <!-- It will play the roam every 30/15 seconds -->
+	<property name="SoundRandomTime" value="20"/>
 	<property name="SoundRandom" value="crawler_roam"/>
-	<property name="SoundAlertTime" value="12.0"/> <!-- It will play the alert every 20/10 seconds-->
+	<property name="SoundAlertTime" value="15"/>
 	<property name="SoundAlert" value="crawler_alert"/>
 	<property name="SoundSense" value="crawler_sense"/>
 	<property name="SoundHurt" value="crawler_pain"/>
@@ -3159,31 +3173,6 @@
 		<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
-
-		<!-- *** ZOMBIE_UMA_TEMPLATE -->
-<!--
-<entity_class name="zombieUMATemplateFemale" extends="zombieUMATemplateMale">
-	<property name="UserSpawnType" value="None"/>
-	<property name="Archetype" value="ZombieFemaleUMA"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
-</entity_class>
--->
-
-		<!-- *** ZOMBIE_MINER -->
-<!-- 
-<entity_class name="zombieMiner" extends="zombieUMATemplateMale">
-	<property name="UserSpawnType" value="None"/>
-	<property name="Archetype" value="ZombieMiner"/>
-	<property name="HandItem" value="meleeHandZombieWorkerFeral"/>
-	<property name="ExperienceGain" value="1167"/>
-	<property name="LootListOnDeath" value="82"/>
-</entity_class>
--->
 
 <!-- *** TIMID_ANIMALS -->
 
@@ -3549,7 +3538,7 @@
 <entity_class name="animalBear" extends="animalTemplateHostile">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,animal,hostile,bear,perkAT03"/>
-	<property name="Prefab" value="/Entities/Animals/Bear/animalBearStandardRagdoll"/>
+	<property name="Prefab" value="/Entities/Animals/Bear/animalBearGrizzlyPrefab"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_bear"/>
 	<property name="TrackerIcon" value="ui_game_symbol_tracking_bear"/>
 	<property name="AvatarController" value="AvatarAnimalController"/>
@@ -3585,8 +3574,11 @@
 
 	<!-- Gameplay  -->
 	<property name="PainResistPerHit" value="1"/>
-	<property name="ExperienceGain" value="750"/><!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="600"/>
+
+	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
+	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
+	<property name="LootDropProb" value=".5"/> <!-- Bear -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="50"/> <!-- animalBear -->
@@ -3597,7 +3589,7 @@
 	<drop event="Harvest" name="resourceTestosteroneExtract" tag="butcherHarvest" count="2"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="1600"/>
+		<passive_effect name="HealthMax" operation="base_set" value="2500"/>
 	</effect_group>
 
 	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_bear,clear_sleeper" />
@@ -3608,6 +3600,11 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,animal,hostile,bear,perkAT03"/>
 	<property name="SizeScale" value=".6"/>
+
+	<property name="HandItem" value="meleeHandAnimalLittleBear"/>
+
+	<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
+	<property name="LootDropProb" value=".3"/> <!-- Little Bear -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="25"/>
@@ -3628,7 +3625,7 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="EntityFlags" value="animal,zombie"/>
 	<property name="Tags" value="entity,animal,zombie,hostile,bear"/>
-	<property name="Prefab" value="/Entities/Animals/Bear/animalZBear"/>
+	<property name="Prefab" value="/Entities/Animals/Bear/animalBearZombiePrefab"/>
 
 	<property name="AIFeralSense" value="1.2"/>
 	<property name="AITask-1" value="BreakBlock"/>
@@ -3647,9 +3644,12 @@
 
 	<!-- Gameplay  -->
 	<property name="HandItem" value="meleeHandAnimalZombieBear"/>
-
-	<property name="ExperienceGain" value="750"/><!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="600"/>
+
+	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
+	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+	<property name="LootDropProb" value=".5"/> <!-- Zombie Bear -->
+
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="50"/> <!-- animalZombieBear -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="15"/>
@@ -3659,7 +3659,7 @@
 	<drop event="Harvest" name="resourceTestosteroneExtract" tag="butcherHarvest" count="2"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+		<passive_effect name="HealthMax" operation="base_set" value="4000"/>
 		<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffRadiationPool"/>
 	</effect_group>
 </entity_class>
@@ -3724,22 +3724,30 @@
 		<!-- *** DIRE_WOLF -->
 <entity_class name="animalDireWolf" extends="animalWolf">
 	<property name="UserSpawnType" value="Menu"/>
-	<property name="PhysicsBody" value="wolf"/>
+	<property name="EntityFlags" value="animal,zombie"/>
+	<property name="Tags" value="entity,animal,zombie,hostile,wolf,perkAT02,perkAT03"/>
+	<property name="PhysicsBody" value="AWolf"/>
 	<property name="Mass" value="180"/>
-	<property name="Prefab" value="/Entities/Animals/Wolf/animalDireWolf"/>
+	<property name="Prefab" value="/Entities/Animals/DireWolf/animalDireWolfPrefab"/>
 	<property name="SizeScale" value="1.4"/>
 
-	<property name="AITask-1" value="BreakBlock"/>
-	<property name="AITask-2" value="Territorial"/>
-	<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityPlayer,30,EntityBandit,20,EntityAnimalStag,30"/>
-	<property name="AITask-4" value="ApproachSpot"/>
-	<property name="AITask-5" value="Look"/>
-	<property name="AITask-6" value="Wander"/>
-	<property name="AITask-7" value=""/>
-	<property name="AITarget-1" value="SetAsTargetIfHurt"/>
-	<property name="AITarget-2" value="BlockingTargetTask"/>
-	<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,29,24,EntityBandit,0,-8,EntityAnimalStag,0,0"/>
-	<property name="AITarget-4" value=""/>
+	<property name="AIPathCostScale" value=".15, .2"/>
+	<property name="AITask" value="
+	BreakBlock|
+	DestroyArea|
+	Territorial|
+	ApproachDistraction|
+	ApproachAndAttackTarget class=EntityPlayer,25,EntityBandit,20,EntityAnimalStag,30|
+	ApproachSpot|
+	Look|
+	Wander|
+	"/>
+	<property name="AITarget" value="
+	SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|
+	BlockingTargetTask|
+	SetNearestCorpseAsTarget flags=edible|
+	SetNearestEntityAsTarget class=EntityPlayer,16,10,EntityBandit,0,-8,EntityAnimalStag,0,0|
+	"/>
 
 	<property name="SoundAlert" value="wolfdirealert"/>
 	<property name="SoundAttack" value="wolfdireattack"/>
@@ -3751,20 +3759,25 @@
 
 	<!-- Gameplay  -->
 	<property name="MoveSpeedAggro" value="1, 1.1"/>
+	<property name="JumpMaxDistance" value="5, 6"/>
 	<property name="HandItem" value="meleeHandAnimalDireWolf"/>
-	<property name="PainResistPerHit" value=".9"/>
-
-	<property name="ExperienceGain" value="750"/><!-- XP strong -->
+	<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+	<property name="PainResistPerHit" value=".95"/>
 	<property name="DeadBodyHitPoints" value="450"/>
+
+	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
+	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
+	<property name="LootDropProb" value=".3"/> <!-- Dire Wolf -->
+
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="35"/> <!-- animalDireWolf -->
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="35"/> <!-- animalDireWolf -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="12"/>
 	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="15"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="750"/>
+		<passive_effect name="HealthMax" operation="base_set" value="2200"/>
 	</effect_group>
 
 	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_direwolf,clear_sleeper" />
@@ -4025,15 +4038,15 @@
 	<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardDogZombieRagdoll"/>
 	<property name="PhysicsBody" value="zombieDog"/>
 
-	<property name="SoundRandomTime" value="45.0"/>
-	<property name="SoundAlertTime" value="25.0"/>
-	<property name="SoundRandom" value="Enemies/Zombie_Dogs/zombiedogroam"/>
-	<property name="SoundAlert" value="Enemies/Zombie_Dogs/zombiedogalert"/>
-	<property name="SoundHurt" value="Enemies/Zombie_Dogs/zombiedogpain"/>
-	<property name="SoundDeath" value="Enemies/Zombie_Dogs/zombiedogdeath"/>
-	<property name="SoundAttack" value="Enemies/Zombie_Dogs/zombiedogattack"/>
-	<property name="SoundSense" value="Enemies/Zombie_Dogs/zombiedogsense"/>
-	<property name="SoundGiveUp" value="Enemies/Zombie_Dogs/zombiedoggiveup"/>
+	<property name="SoundRandomTime" value="20"/>
+	<property name="SoundRandom" value="zombiedogroam"/>
+	<property name="SoundAlertTime" value="10"/>
+	<property name="SoundAlert" value="zombiedogalert"/>
+	<property name="SoundHurt" value="zombiedogpain"/>
+	<property name="SoundDeath" value="zombiedogdeath"/>
+	<property name="SoundAttack" value="zombiedogattack"/>
+	<property name="SoundSense" value="zombiedogsense"/>
+	<property name="SoundGiveUp" value="zombiedoggiveup"/>
 
 	<property name="AIFeralSense" value="1.6"/>
 	<property name="AITask-1" value="BreakBlock"/>
@@ -4064,6 +4077,9 @@
 
 	<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
 	<property name="PainResistPerHit" value=".9"/>
+
+	<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
+	<property name="LootDropProb" value=".03"/> <!-- Zombie Dog -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/> <!-- animalZombieDog -->
@@ -4237,8 +4253,11 @@
 	<property name="HandItem" value="meleeHandBossGrace"/>
 
 	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
-	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="100"/> <!-- animalBoar -->
+	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+	<property name="LootDropProb" value=".5"/> <!-- Grace -->
+
+	<drop event="Harvest" name="foodRottingFlesh" count="0" tool_category="Butcher"/>
+	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="100"/> <!-- animalBoar -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="70"/>
 	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="20"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="50"/>
@@ -4604,7 +4623,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="SurfaceCategory" value="organic"/>
 	<property name="WalkType" value="7"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SoundRandomTime" value="200.0"/>
+	<property name="SoundRandomTime" value="200"/>
 	<property name="SoundRandom" value="Player_Male/player1stamina"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
@@ -4667,7 +4686,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="WalkType" value="7"/>
 	<property name="HasDeathAnim" value="true"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SoundRandomTime" value="200.0"/>
+	<property name="SoundRandomTime" value="200"/>
 	<property name="Archetype" value="TraderJoel"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
@@ -4870,7 +4889,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="SurfaceCategory" value="organic"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
 	<property name="HasDeathAnim" value="true"/>
-	<property name="SoundRandomTime" value="200.0"/>
+	<property name="SoundRandomTime" value="200"/>
 	<property name="Archetype" value="TraderJoel"/>
 	<property name="SoundHurt" value="Player_Male/player1painlg"/>
 	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>

@@ -991,6 +991,30 @@
 		<block name="cntFrontCrumpledSedan01Pink" prob="0.5"/>
 	</placeholder>
 
+		<!-- *** FRONT_CRUMPLED_SEDAN -->
+	<placeholder name="cntFrontCrumpledSedan01AirRandomHelper">
+		<block name="cntFrontCrumpledSedan01White" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Brown" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Red" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Orange" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Yellow" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Green" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Blue" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Purple" prob="0.5"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Grey" prob="1"/>
+		<block name="air" prob="1"/>
+		<block name="cntFrontCrumpledSedan01Pink" prob="0.5"/>
+		<block name="air" prob="1"/>
+	</placeholder>
+
 		<!-- *** CRUSHED_CARS_01 -->
 	<placeholder name="crushedCars01RandomHelper">
 		<block name="crushedCars01White" prob="1"/>

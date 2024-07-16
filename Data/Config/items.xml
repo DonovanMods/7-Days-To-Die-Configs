@@ -1919,7 +1919,7 @@
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".32"/>
 		<property name="SwingDegrees" value="65"/>
-		<property name="SwingAngle" value="180"/>
+		<property name="SwingAngle" value="90"/>
 		<property class="HitSounds">
 			<property name="Override0" value="organic" param1="metalhitorganic"/>
 		</property>
@@ -2992,8 +2992,8 @@
 	<property name="ShowQuality" value="true"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
-	<property name="SoundPickup" value="gloves_leather_grab"/>
-	<property name="SoundPlace" value="gloves_leather_place"/>
+	<property name="SoundPickup" value="knuckles_wraps_grab"/>
+	<property name="SoundPlace" value="knuckles_wraps_place"/>
 	
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
@@ -3078,8 +3078,8 @@
 	<property name="ShowQuality" value="true"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
-	<property name="SoundPickup" value="wrench_grab"/>
-	<property name="SoundPlace" value="wrench_place"/>
+	<property name="SoundPickup" value="knuckles_iron_grab"/>
+	<property name="SoundPlace" value="knuckles_iron_place"/>
 	
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
@@ -3394,7 +3394,9 @@
 	<property name="Stacknumber" value="1"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
-	
+	<property name="SoundPickup" value="wiretool_grab"/>
+	<property name="SoundPlace" value="wiretool_place"/>
+
 	<property class="Action0">
 		<property name="Class" value="DisconnectPower"/>
 	</property>
@@ -4181,6 +4183,7 @@
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
 		<property name="Sound_empty" value="dryfire"/>
+		<property name="Sound_reload" value="shotgun_reload"/>
 		<property name="AutoReload" value="false"/>
 		<property name="Particles_muzzle_fire" value="gunfire_shotgun"/>
 		<property name="Particles_muzzle_fire_fpv" value="gunfire_shotgun_fpv"/>
@@ -5119,7 +5122,7 @@
 <!-- *** Rocket_Launcher (perkDemolitionsExpert) -->
 
 <item name="gunExplosivesT3RocketLauncher">
-	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,launcher,attPerception,perkDemolitionsExpert,canHaveCosmetic,barrelAttachments,noSilencer,sideAttachments,smallTopAttachments,explosivesSkill"/>
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,launcher,attPerception,perkDemolitionsExpert,canHaveCosmetic,barrelAttachments,noSilencer,sideAttachments,explosivesSkill"/>
 	<property name="DisplayType" value="rangedLauncher"/>
 	<property name="HoldType" value="10"/>
 	<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab"/>
@@ -6591,8 +6594,8 @@
 		<property name="WarningMax" value="1"/>
 		<property name="Infinite_ammo" value="true"/>
 		<property name="Magazine_items" value="ammoProjectileZombieMutated"/>
-		<property name="Sound_warning" value="hulkvomitwarning"/>
-		<property name="Sound_start" value="hulkvomitattack"/>
+		<property name="Sound_warning" value="zombie_mutated_attack_ranged"/>
+		<property name="Sound_start" value=""/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
 		<property name="Sound_empty" value=""/>
@@ -6635,8 +6638,8 @@
 		<property name="WarningMax" value="1"/>
 		<property name="Infinite_ammo" value="true"/>
 		<property name="Magazine_items" value="ammoProjectileZombieMutated"/>
-		<property name="Sound_warning" value="hulkvomitwarning"/>
-		<property name="Sound_start" value="hulkvomitattack"/>
+		<property name="Sound_warning" value="zombie_mutated_attack_ranged"/>
+		<property name="Sound_start" value=""/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
 		<property name="Sound_empty" value=""/>
@@ -6679,8 +6682,8 @@
 		<property name="WarningMax" value="1"/>
 		<property name="Infinite_ammo" value="true"/>
 		<property name="Magazine_items" value="ammoProjectileZombieMutated"/>
-		<property name="Sound_warning" value="hulkvomitwarning"/>
-		<property name="Sound_start" value="hulkvomitattack"/>
+		<property name="Sound_warning" value="zombie_mutated_attack_ranged"/>
+		<property name="Sound_start" value=""/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
 		<property name="Sound_empty" value=""/>
@@ -6819,6 +6822,26 @@
 		<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
 		<property name="Range" value="3.6"/>
 		<property name="Sphere" value=".3"/>
+		<property name="DamageEntity" value="30"/>
+		<property name="DamageBlock" value="40"/>
+	</property>
+	<effect_group name="meleeHandAnimalBear" tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/> A16 1.5 -->
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+			buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+			weights=".11,.07,.07,.05,.29,.36,.11"/>
+	</effect_group>
+</item>
+
+<item name="meleeHandAnimalLittleBear">
+	<property name="Extends" value="meleeHandMaster"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="HoldType" value="46"/>
+	<property class="Action0">
+		<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Range" value="1.7"/>
+		<property name="Sphere" value=".1"/>
 		<property name="DamageEntity" value="30"/>
 		<property name="DamageBlock" value="40"/>
 	</property>
@@ -7113,14 +7136,17 @@
 	<property class="Action0">
 		<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
 		<property name="Range" value="2.2"/>
-		<property name="DamageEntity" value="22"/>
-		<property name="DamageBlock" value="28"/>
+		<property name="DamageEntity" value="40"/>
+		<property name="DamageBlock" value="40"/>
 	</property>
 	<effect_group name="meleeHandAnimalWolf" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
 			weights=".11,.07,.07,.05,.29,.36,.11"/>
+		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="150"><!--InfectionRegular-->
+			<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 	</effect_group>
 </item>
 
@@ -8658,6 +8684,8 @@
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert,thrownAmmoPipeBombSchematic, -->
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
 	<property name="ActivationTransformToHide" value="Sparks"/>
+	<property name="SoundPickup" value="pipebomb_grab"/>
+	<property name="SoundPlace" value="pipebomb_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<!-- <property name="Hitmask_override" value="Arrow"/> unfortunately this cannot work without a serious rewrite of the hitmask system -->
@@ -8678,7 +8706,7 @@
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
-		<display_value name="dExRadius" value="4"/>
+		<display_value name="dExRadius" value="1.5"/>
 		<display_value name="dExBlockDamage" value="5"/>
 		<display_value name="dExEntityDamage" value="253"/>
 		<display_value name="dFuseTime" value="4"/>
@@ -8716,6 +8744,8 @@
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert,thrownGrenadeContactSchematic, -->
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
 	<property name="SoundUnholster" value="grenade_unholster"/>
+	<property name="SoundPickup" value="grenade_grab"/>
+	<property name="SoundPlace" value="grenade_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<!-- <property name="Hitmask_override" value="Arrow"/> unfortunately this cannot work without a serious rewrite of the hitmask system -->
@@ -8738,7 +8768,7 @@
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
-		<display_value name="dExRadius" value="5"/>
+		<display_value name="dExRadius" value="2.5"/>
 		<display_value name="dExBlockDamage" value="10"/>
 		<display_value name="dExEntityDamage" value="341"/>
 	</effect_group>
@@ -8756,7 +8786,7 @@
 	<property name="FuseTime" value="3"/>
 	<property name="StickPercent" value=".3"/>
 	<effect_group tiered="false">
-		<display_value name="dExRadius" value="5"/>
+		<display_value name="dExRadius" value="1.5"/>
 		<display_value name="dExBlockDamage" value="10"/>
 		<display_value name="dExEntityDamage" value="341"/>
 		<display_value name="dFuseTime" value="3"/>
@@ -8804,6 +8834,8 @@
 	<property name="SoundUnholster" value="charge_unholster"/>
 	<property name="SoundStick" value="charge_stick"/>
 	<property name="SoundTick" value="charge_beep,.8"/>
+	<property name="SoundPickup" value="timedcharge_grab"/>
+	<property name="SoundPlace" value="timedcharge_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<property name="Delay" value="1.2"/>
@@ -8855,6 +8887,8 @@
 	<property name="StickPercent" value=".2"/>
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert,thrownDynamiteSchematic, -->
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
+	<property name="SoundPickup" value="dynamite_grab"/>
+	<property name="SoundPlace" value="dynamite_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
@@ -8874,7 +8908,7 @@
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
-		<display_value name="dExRadius" value="6"/>
+		<display_value name="dExRadius" value="1.5"/>
 		<display_value name="dExBlockDamage" value="3000"/>
 		<display_value name="dExEntityDamage" value="550"/>
 		<display_value name="dFuseTime" value="4"/>
@@ -8920,6 +8954,8 @@
 	<property name="TraderStageTemplate" value="baseTier1"/><!-- thrownAmmoMolotovCocktail -->
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
 	<property name="UsableUnderwater" value="false"/>
+	<property name="SoundPickup" value="molotov_grab"/>
+	<property name="SoundPlace" value="molotov_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<!-- <property name="Hitmask_override" value="Arrow"/> unfortunately this cannot work without a serious rewrite of the hitmask system -->
@@ -9739,12 +9775,12 @@
 		<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
 		
-		<display_value name="dDamageResist" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
+		<display_value name="dDamageResist" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<effect_group>
 		<requirement name="EntityTagCompare" target="other" tags="zombie"/>
-			<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".02,.04,.06,.08,.1,.15" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<property class="SDCS">
@@ -11196,7 +11232,7 @@
 	<property name="DescriptionKey" value="armorCommandoOutfitDesc"/>
 	<property name="DisplayType" value="armorCommandoOutfit"/>
 	<property name="ArmorGroup" value="groupCommando"/>
-	<property name="Tags" value="upperbody,chest,armor,armorChest,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorCommandoBonus,armorCommandoOufitHealing"/>
+	<property name="Tags" value="upperbody,chest,armor,armorChest,mediumArmor,mediumArmorPenalty,canHaveCosmetic,mediumArmorDeg,armorMediumSkill,armorCommandoBonus"/>
 	<property name="EquipSlot" value="Chest"/>
 	<property name="SoundPickup" value="outfit_cloth_grab"/>
 	<property name="SoundPlace" value="outfit_cloth_place"/>
@@ -11554,9 +11590,9 @@
 	<effect_group name="MinerHelmet">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11600,9 +11636,9 @@
 	<effect_group name="MinerOutfit">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11645,9 +11681,9 @@
 	<effect_group name="MinerGloves">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11690,9 +11726,9 @@
 	<effect_group name="MinerBoots">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11766,9 +11802,9 @@
 	<effect_group name="NomadHelmet">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11813,9 +11849,9 @@
 	<effect_group name="NomadOutfit">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11854,9 +11890,9 @@
 	<effect_group name="NomadGloves">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11899,9 +11935,9 @@
 	<effect_group name="NomadBoots">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11943,9 +11979,9 @@
 	<effect_group name="NerdHelmet">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -11985,9 +12021,9 @@
 	<effect_group name="NerdOutfit">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12060,9 +12096,9 @@
 	<effect_group name="NerdGloves">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12105,9 +12141,9 @@
 	<effect_group name="NerdBoots">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12181,9 +12217,9 @@
 	<effect_group name="RaiderHelmet">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12224,9 +12260,9 @@
 	<effect_group name="RaiderOutfit">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12269,9 +12305,9 @@
 	<effect_group name="RaiderGloves">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12314,9 +12350,9 @@
 	<effect_group name="RaiderBoots">
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,22.3" tier="1,6"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="18,21" tier="1,6"/>
 		<passive_effect name="PhysicalDamageResist" operation="base_add" value="-.2,.2"/>
-		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,22.3" tier="1,6" tags="heat,electrical"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="18,21" tier="1,6" tags="heat,electrical"/>
 		<passive_effect name="ElementalDamageResist" operation="base_add" value="-.2,.2"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="0.061,0.076" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6"/>
@@ -12388,6 +12424,8 @@
 	<property name="EconomicValue" value="10"/>
 	<property name="Stacknumber" value="15"/> <!-- STK medical -->
 	<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
+	<property name="SoundPickup" value="aloe_grab"/>
+	<property name="SoundPlace" value="aloe_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -12425,12 +12463,14 @@
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="0"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.8">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.1">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/></triggered_effect>
 
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffProcessConsumables"/>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="other" buff="buffInjuryAbrasionTreated">
@@ -12446,10 +12486,13 @@
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Mcloth"/>
 	<property name="Stacknumber" value="10"/> <!-- STK medical -->
-	<property name="Weight" value="5"/>
+	<property name="Weight" value="10"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="Group" value="Science,Medical,Basics,TCMedical"/>
 	<property name="DescriptionKey" value="medicalBandageDesc"/>
+	<property name="SoundPickup" value="bandage_grab"/>
+	<property name="SoundPlace" value="bandage_place"/>
+
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -12524,7 +12567,7 @@
 		<!-- <requirement name="CVarCompare" cvar="medicalRegHealthAmount" operation="LTE" value="70"/> -->
 		<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="1"/>
 	</property>
-	<property class="Action1">    
+	<property class="Action1">
 		<!-- <requirement name="CVarCompare" cvar="medicalRegHealthAmount" target="other" operation="LTE" value="70"/> -->
 		<!-- disabled due to target=other requirements not working as expected in actions, targets are set after the requirement is evaluated so this always fails -->
 		<!-- <requirement name="StatComparePercCurrentToMax" stat="Health" target="other" operation="LT" value="1"/> -->
@@ -12565,12 +12608,14 @@
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="0"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.8">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.1">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/></triggered_effect>
 	</effect_group>
 
 	<effect_group tiered="false">
@@ -12621,6 +12666,8 @@
 	<property name="EconomicValue" value="200"/>
 	<property name="Stacknumber" value="5"/>
 	<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician,medicalFirstAidKitSchematic, -->
+	<property name="SoundPickup" value="firstaidkit_grab"/>
+	<property name="SoundPlace" value="firstaidkit_place"/>
 
 	<property class="Action0">
 		<!-- <requirement name="CVarCompare" cvar="medicalRegHealthAmount" operation="LTE" value="400"/> -->
@@ -12671,12 +12718,14 @@
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="0"/></triggered_effect>
 		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.5">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="2.8">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.1">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/></triggered_effect>
-		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="3.5">
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
 			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" target="other" cvar="medRegHealthIncSpeed" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/></triggered_effect>
 	</effect_group>
 
 	<effect_group tiered="false">
@@ -12725,10 +12774,13 @@
 	<property name="HoldType" value="64"/>
 	<property name="Meshfile" value="@:Other/Items/Health/bandage.FBX"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
-	<property name="Material" value="Mwood"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="Weight" value="10"/>
 	<property name="Stacknumber" value="5"/> <!-- STK loot -->
 	<property name="EconomicValue" value="10"/>
 	<property name="Group" value="Science,Medical,TCMedical"/>
+	<property name="SoundPickup" value="splint_grab"/>
+	<property name="SoundPlace" value="splint_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -12828,6 +12880,8 @@
 	<property name="Extends" value="medicalSplint"/>
 	<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician,medicalPlasterCastSchematic, -->
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
+	<property name="SoundPickup" value="cast_grab"/>
+	<property name="SoundPlace" value="cast_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -12972,6 +13026,8 @@
 	<property name="EconomicValue" value="50"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Science,Medical,TCMedical"/>
+	<property name="SoundPickup" value="bloodbag_grab"/>
+	<property name="SoundPlace" value="bloodbag_place"/>
 </item>
 
 <item name="drugVitamins">
@@ -13566,6 +13622,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="30"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodCornOnTheCobSchematic, -->
+	<property name="SoundPickup" value="corn_grilled_grab"/>
+	<property name="SoundPlace" value="corn_grilled_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13594,6 +13652,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="16"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodCornBreadSchematic, -->
+	<property name="SoundPickup" value="cornbread_grab"/>
+	<property name="SoundPlace" value="cornbread_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13622,6 +13682,8 @@
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="CraftingIngredientTime" value="30"/>
+	<property name="SoundPickup" value="shamsandwich_grab"/>
+	<property name="SoundPlace" value="shamsandwich_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13653,6 +13715,8 @@
 	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="20"/>
+	<property name="SoundPickup" value="meat_charred_grab"/>
+	<property name="SoundPlace" value="meat_charred_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="2.1"/>
@@ -13680,6 +13744,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="24"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodGrilledMeatSchematic, -->
+	<property name="SoundPickup" value="meat_grilled_grab"/>
+	<property name="SoundPlace" value="meat_grilled_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="2.1"/>
@@ -13705,6 +13771,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="52"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodBoiledMeatSchematic, -->
+	<property name="SoundPickup" value="meat_boiled_grab"/>
+	<property name="SoundPlace" value="meat_boiled_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="2.1"/>
@@ -13732,6 +13800,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="134"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodMeatStewSchematic, -->
+	<property name="SoundPickup" value="food_bowl1_grab"/>
+	<property name="SoundPlace" value="food_bowl1_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13762,6 +13832,8 @@
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodSteakAndPotatoSchematic, -->
+	<property name="SoundPickup" value="food_plate1_grab"/>
+	<property name="SoundPlace" value="food_plate1_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13783,6 +13855,8 @@
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 	<property name="EconomicValue" value="126"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodShamChowderSchematic, -->
+	<property name="SoundPickup" value="food_bowl2_grab"/>
+	<property name="SoundPlace" value="food_bowl2_place"/>
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="53"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="80"/>
@@ -13808,6 +13882,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="134"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodHoboStewSchematic, -->
+	<property name="SoundPickup" value="food_bowl1_grab"/>
+	<property name="SoundPlace" value="food_bowl1_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13838,6 +13914,8 @@
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodFishTacosSchematic, -->
+	<property name="SoundPickup" value="tacos_grab"/>
+	<property name="SoundPlace" value="tacos_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13857,6 +13935,8 @@
 	<property name="DisplayType" value="food"/>
 	<property name="EconomicValue" value="106"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodChiliDogSchematic, -->
+	<property name="SoundPickup" value="chilidog_grab"/>
+	<property name="SoundPlace" value="chilidog_place"/>
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="53"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="30"/>
@@ -13877,6 +13957,8 @@
 	<property name="EconomicValue" value="16"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodBakedPotatoSchematic, -->
+	<property name="SoundPickup" value="potato_baked_grab"/>
+	<property name="SoundPlace" value="potato_baked_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13904,6 +13986,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="124"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodBlueberryPieSchematic, -->
+	<property name="SoundPickup" value="cornbread_grab"/>
+	<property name="SoundPlace" value="cornbread_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13929,6 +14013,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="124"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodPumpkinPieSchematic, -->
+	<property name="SoundPickup" value="pie_grab"/>
+	<property name="SoundPlace" value="pie_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13954,6 +14040,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="124"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodPumpkinCheesecakeSchematic, -->
+	<property name="SoundPickup" value="pie_grab"/>
+	<property name="SoundPlace" value="pie_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13987,6 +14075,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="124"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodPumpkinBreadSchematic, -->
+	<property name="SoundPickup" value="bread_pumpkin_grab"/>
+	<property name="SoundPlace" value="bread_pumpkin_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14016,6 +14106,8 @@
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodGumboStewSchematic, -->
+	<property name="SoundPickup" value="food_bowl2_grab"/>
+	<property name="SoundPlace" value="food_bowl2_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14045,6 +14137,8 @@
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodShepardsPieSchematic, -->
+	<property name="SoundPickup" value="food_plate1_grab"/>
+	<property name="SoundPlace" value="food_plate1_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14072,6 +14166,8 @@
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="CraftingIngredientTime" value="10"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodSpaghettiSchematic, -->
+	<property name="SoundPickup" value="food_plate2_grab"/>
+	<property name="SoundPlace" value="food_plate2_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14100,6 +14196,8 @@
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodTunaFishGravyToastSchematic, -->
+	<property name="SoundPickup" value="tunafishgravytoast_grab"/>
+	<property name="SoundPlace" value="tunafishgravytoast_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14124,6 +14222,8 @@
 	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="25"/>
+	<property name="SoundPickup" value="egg_boiled_grab"/>
+	<property name="SoundPlace" value="egg_boiled_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="2.0"/>
@@ -14150,6 +14250,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="72"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodBaconAndEggsSchematic, -->
+	<property name="SoundPickup" value="baconeggs_grab"/>
+	<property name="SoundPlace" value="baconeggs_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="2.1"/>
@@ -14176,6 +14278,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK food -->
 	<property name="EconomicValue" value="102"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,foodVegetableStewSchematic, -->
+	<property name="SoundPickup" value="food_bowl1_grab"/>
+	<property name="SoundPlace" value="food_bowl1_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14204,6 +14308,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="EconomicValue" value="20"/>
 	<property name="CraftingIngredientTime" value="3"/>
+	<property name="SoundPickup" value="meat_raw_grab"/>
+	<property name="SoundPlace" value="meat_raw_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14238,6 +14344,8 @@
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="SellableToTrader" value="false"/>
+	<property name="SoundPickup" value="rottingflesh_grab"/>
+	<property name="SoundPlace" value="rottingflesh_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14270,6 +14378,8 @@
 	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="125"/> <!-- STK resource -->
 	<property name="EconomicValue" value="15"/>
+	<property name="SoundPickup" value="egg_grab"/>
+	<property name="SoundPlace" value="egg_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14295,6 +14405,8 @@
 	<property name="EconomicValue" value="10"/>
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="10"/>
+	<property name="SoundPickup" value="cornmeal_grab"/>
+	<property name="SoundPlace" value="cornmeal_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14322,6 +14434,8 @@
 	<property name="EconomicValue" value="10"/>
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="8"/>
+	<property name="SoundPickup" value="blueberries_grab"/>
+	<property name="SoundPlace" value="blueberries_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14346,6 +14460,8 @@
 	<property name="EconomicValue" value="10"/>
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
+	<property name="SoundPickup" value="corn_ear_grab"/>
+	<property name="SoundPlace" value="corn_ear_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14372,6 +14488,8 @@
 	<property name="EconomicValue" value="200"/>
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
+	<property name="SoundPickup" value="corn_ear_grab"/>
+	<property name="SoundPlace" value="corn_ear_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14398,6 +14516,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="10"/>
 	<!-- 14 is large round hold -->
+	<property name="SoundPickup" value="potato_grab"/>
+	<property name="SoundPlace" value="potato_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14422,6 +14542,8 @@
 	<property name="EconomicValue" value="10"/>
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
+	<property name="SoundPickup" value="mushrooms_grab"/>
+	<property name="SoundPlace" value="mushrooms_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14446,6 +14568,8 @@
 	<property name="Stacknumber" value="125"/> <!-- STK food -->
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="1"/>
+	<property name="SoundPickup" value="yuccafruit_grab"/>
+	<property name="SoundPlace" value="yuccafruit_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14471,6 +14595,8 @@
 	<property name="Stacknumber" value="125"/> <!-- STK food -->
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="1"/>
+	<property name="SoundPickup" value="pumpkin_grab"/>
+	<property name="SoundPlace" value="pumpkin_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -14621,6 +14747,8 @@
 	<property name="EconomicValue" value="100"/>
 	<property name="CraftingIngredientTime" value="15"/>
 	<property name="UnlockedBy" value="perkWasteTreasuresWater"/> <!-- SCHEMATIC_ONLY -->
+	<property name="SoundPickup" value="puremineralwater_grab"/>
+	<property name="SoundPlace" value="puremineralwater_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -14805,6 +14933,8 @@
 	<property name="Extends" value="drinkJarRedTea"/>
 	<property name="DisplayType" value="waterMegaCrush"/>
 	<property name="EconomicValue" value="240"/>
+	<property name="SoundPickup" value="megacrush_grab"/>
+	<property name="SoundPlace" value="megacrush_place"/>
 	<property class="Action0">
 	</property>
 
@@ -14868,6 +14998,8 @@
 	<property name="Extends" value="drinkJarCoffee"/>
 	<property name="EconomicValue" value="200"/>
 	<property name="UnlockedBy" value="perkArtOfMiningBlackStrap"/> <!-- BOOK_PERK -->
+	<property name="SoundPickup" value="blackstrapcoffee_grab"/>
+	<property name="SoundPlace" value="blackstrapcoffee_place"/>
 
 	<effect_group tiered="false" name="Drink Tier Found">
 		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
@@ -14936,7 +15068,9 @@
 	<property name="EconomicValue" value="500"/>
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,drinkJarGrandpasMoonshineSchematic, -->
 	<property name="DisplayType" value="waterGrandpasMoonshine"/>
-	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>]
+	<property name="SoundPickup" value="grandpas_moonshine_grab"/>
+	<property name="SoundPlace" value="grandpas_moonshine_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -14975,6 +15109,8 @@
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,drinkJarGrandpasAwesomeSauceSchematic, -->
 	<property name="DisplayType" value="waterGrandpasAwesomeSauce"/>
 	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property name="SoundPickup" value="grandpas_awesome_grab"/>
+	<property name="SoundPlace" value="grandpas_awesome_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -15009,6 +15145,8 @@
 	<property name="UnlockedBy" value="craftingFood"/><!-- perkMasterChef,drinkJarGrandpasLearningElixirSchematic, -->
 	<property name="DisplayType" value="waterGrandpasLearningElixir"/>
 	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property name="SoundPickup" value="grandpas_learnin_grab"/>
+	<property name="SoundPlace" value="grandpas_learnin_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -15041,6 +15179,8 @@
 	<property name="EconomicValue" value="2000"/>
 	<property name="SellableToTrader" value="true"/>
 	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property name="SoundPickup" value="grandpas_fergitn_grab"/>
+	<property name="SoundPlace" value="grandpas_fergitn_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -16575,6 +16715,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="coffeebeans_grab"/>
+	<property name="SoundPlace" value="coffeebeans_place"/>
 </item>
 
 <item name="resourceScrapBrass"> <!-- scrap material -->
@@ -16663,7 +16805,7 @@
 	<property name="Stacknumber" value="250"/> <!-- STK resource -->
 	<property name="RepairAmount" value="50"/>
 	<property name="FuelValue" value="1"/>
-	<property name="Weight" value="5"/>
+	<property name="Weight" value="1"/>
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
@@ -16762,10 +16904,12 @@
 	<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Mcloth"/>
-	<property name="Weight" value="5"/>
+	<property name="Weight" value="7"/>
 	<property name="EconomicValue" value="25"/>
 	<property name="Stacknumber" value="500"/> <!-- STK resource -->
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="ducttape_grab"/>
+	<property name="SoundPlace" value="ducttape_place"/>
 </item>
 
 <item name="resourceFeather">
@@ -17501,7 +17645,7 @@
 
 <item name="resourceLockPick">
 	<property name="HoldType" value="45"/>
-	<property name="Tags" value="junk,explosivesSkill,resourceLockPick"/>
+	<property name="Tags" value="junk,explosivesSkill,resourceLockPick,lockPickSkill"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Mmetal"/>
@@ -22086,14 +22230,17 @@
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="100"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="100"/>
+		
 		<passive_effect name="HealthMax" operation="base_add" value="19900"/>
 		<display_value name="dHealthMax" value="20000"/>
 		<passive_effect name="HealthMax" operation="base_subtract" value="@$PlayerLevelBonus"/>
+		
+		<passive_effect name="ScavengingTime" operation="base_add" value="-100"/>
+		<display_value name="dLootTime" value="-100"/>
 	</effect_group>
 
 	<effect_group>
 		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffEntitySpawnHeal"/>
-		
 		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBandolierChest"/>
 		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolierChest"/>
 	</effect_group>

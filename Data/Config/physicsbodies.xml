@@ -1004,9 +1004,9 @@
       <property name="path" value="Hips/Spine/Spine1/Spine2" />
       <property name="collisionLayer" value="0" />
       <property name="ragdollLayer" value="21" />
-      <property name="collisionScale" value="0.99 1.5 1" />
+      <property name="collisionScale" value="1 1 1" />
       <property name="ragdollScale" value="1 1 1" />
-      <property name="collisionOffset" value="0 0.06 0.04" />
+      <property name="collisionOffset" value="0 0 0" />
       <property name="ragdollOffset" value="0 0 0" />
       <property name="type" value="Detail" />
       <property name="flags" value="collision;ragdoll" />

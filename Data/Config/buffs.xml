@@ -606,10 +606,10 @@
 
 		<effect_group name="Pain Sound">
 			<triggered_effect trigger="onOtherDamagedSelf" action="PlaySound" sound="player#painlg">
-				<requirement name="StatComparePercCurrentToMax" operation="LTE" value="0.5"/>
+				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="0.5"/>
 			</triggered_effect>
 			<triggered_effect trigger="onOtherDamagedSelf" action="PlaySound" sound="player#painsm">
-				<requirement name="StatComparePercCurrentToMax" operation="GT" value="0.5"/>
+				<requirement name="StatComparePercCurrentToMax" stat="health" operation="GT" value="0.5"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -699,7 +699,7 @@
 				<!-- the full penalty that 1 piece of medium armor adds -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumStaminaRun" operation="multiply" value="0.0562"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumStaminaWalk" operation="multiply" value="0.0281"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumMobility" operation="multiply" value="0.04"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumMobility" operation="multiply" value="0.05"/>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumStaminaRun" operation="multiply" value="@.ArmorMediumWorn"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorMediumStaminaWalk" operation="multiply" value="@.ArmorMediumWorn"/>
@@ -779,7 +779,7 @@
 				<!-- the full penalty that 1 piece of heavy armor adds -->
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyStaminaRun" operation="multiply" value="0.09"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyStaminaWalk" operation="multiply" value="0.045"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyMobility" operation="multiply" value="0.06"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyMobility" operation="multiply" value="0.075"/>
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyStaminaRun" operation="multiply" value="@.ArmorHeavyWorn"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmorHeavyStaminaWalk" operation="multiply" value="@.ArmorHeavyWorn"/>
@@ -1328,7 +1328,7 @@
 		<display_value value="xxx"/>
 
 		<effect_group>
-			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="oreWoodHarvest">
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="lumberjackHarvest">
 				<requirement name="HoldingItemHasTags" tags="axe"/>
 			</passive_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".armorLumberjackFSBDisplay02" operation="set" value="100"/>
@@ -12833,6 +12833,20 @@
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDemoTimerEndWarning">
 				<requirement name="CVarCompare" cvar="$buffDemoTimerDuration" operation="LTE" value="0"/>
 			</triggered_effect>
+		</effect_group>
+	</buff>
+	
+	
+	<!-- *** buffShowQuestLimitReached -->
+	<!-- TRIGGERED_BY: Reaching your daily quest limit -->
+	<!-- Daily quest limit reached -->
+	<buff name="buffShowQuestLimitReached" name_key="buffShowQuestLimitReachedName" description_key="buffShowQuestLimitReachedDesc" icon="ui_game_symbol_quest_limited" icon_color="255,0,0" remove_on_death="false">
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+		
+		<effect_group>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffShowQuestLimitReached"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffShowQuestLimitReached"/>
 		</effect_group>
 	</buff>
 

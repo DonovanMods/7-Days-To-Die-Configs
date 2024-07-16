@@ -630,6 +630,21 @@
 	</streettile>
 	-->
 	
+	<streettile name="rwg_tile_gateway_straight3">
+		<property name="mintiles" value="1"/>
+		<property name="maxtiles" value="6"/>
+	</streettile>
+	
+	<streettile name="rwg_tile_gateway_straight3a">
+		<property name="mintiles" value="1"/>
+		<property name="maxtiles" value="4"/>
+	</streettile>
+	
+	<streettile name="rwg_tile_gateway_straight3b">
+		<property name="mintiles" value="1"/>
+		<property name="maxtiles" value="3"/>
+	</streettile>
+	
 	<!--
 	<streettile name="rwg_tile_gateway_straight3">
 		<property name="mintiles" value="1"/>

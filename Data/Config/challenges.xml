@@ -131,7 +131,6 @@
 
 	<!-- *** Homesteading -->
 	<challenge name="craftLandclaim" title_key="challengeCraftLandclaim" icon="ui_game_symbol_challenge_homesteading_place_land_claim" group="Homesteading" 
-	hint="challengeCraftLandclaimHint1"
 	short_description_key="challengeCraftLandclaimShort" description_key="challengeCraftLandclaimDesc">
 		<objective type="BlockPlace" block="keystoneBlock" count="1"/>
 	</challenge>
@@ -161,7 +160,6 @@
 	</challenge>
 
 	<challenge name="placeDoor" title_key="challengePlaceDoor" icon="ui_game_symbol_challenge_homesteading_place_door" group="Homesteading" 
-	hint="challengeCraftLandclaimHint1"
 	short_description_key="challengePlaceDoorShort" description_key="challengePlaceDoorDesc">
 		<objective type="BlockPlace" block="oldWoodDoor" count="1"/>
 	</challenge>
@@ -182,7 +180,6 @@
 	</challenge>
 
 	<challenge name="upgradeToCobblestone" title_key="challengeUpgradeToCobblestone" icon="ui_game_symbol_challenge_homesteading_upgrade_cobble" group="Homesteading" 
-	prerequisite_hint="challengeUpgradeBlocksHint1" hint="challengeUpgradeBlocksHint2"
 	short_description_key="challengeUpgradeToCobblestoneShort" description_key="challengeUpgradeToCobblestoneDesc">
 		<objective type="BlockUpgrade" block="woodShapes:VariantHelper" count="1" held="meleeToolRepairT0StoneAxe" 
 			needed_resource="resourceCobblestones" needed_resource_count="10"/>
@@ -382,63 +379,63 @@
 	<challenge name="harvestHoney" title_key="challengeHarvestHoney" icon="ui_game_symbol_challenge_harvesting_honey" group="Harvesting"
 		short_description_key="challengeHarvestHoneyShort" description_key="challengeHarvestHoneyDesc"
 		reward_text_key="challenge_reward_2000xp" reward_event="challenge_reward_2000">
-		<objective type="Harvest" held="meleeToolRepairT0StoneAxe" required_held="true" item="foodHoney" count="5" block_tag="challenge_stump" override_tracker_index="challenge_stump" track_distance="50"/>
+		<objective type="Harvest" item="foodHoney" count="5" block_tag="challenge_stump" override_tracker_index="challenge_stump" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestCobblestone" title_key="challengeHarvestCobblestone" icon="ui_game_symbol_challenge_harvesting_cobblestone" group="Harvesting" 
 		short_description_key="challengeHarvestCobblestoneShort" description_key="challengeHarvestCobblestoneDesc"
 		reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
-		<objective type="Harvest" held="meleeToolShovelT0StoneShovel" required_held="true" item="resourceCobblestones" count="10" block_tag="challenge_pallet" override_tracker_index="challenge_pallet" track_distance="50"/>
+		<objective type="Harvest" item="resourceCobblestones" count="10" block_tag="challenge_pallet" override_tracker_index="challenge_pallet" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestPipes" title_key="challengeHarvestPipes" icon="ui_game_symbol_challenge_harvesting_pipes" group="Harvesting" 
 		short_description_key="challengeHarvestPipesShort" description_key="challengeHarvestPipesDesc"
 		reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
-		<objective type="Harvest" held="meleeToolRepairT0StoneAxe" required_held="true" item="resourceMetalPipe" count="10" block_tag="challenge_sinks" override_tracker_index="challenge_sinks" track_distance="50"/>
+		<objective type="Harvest" item="resourceMetalPipe" count="10" block_tag="challenge_sinks" override_tracker_index="challenge_sinks" track_distance="15"/>
 	</challenge>
 
 	<challenge name="harvestPolymers" title_key="challengeHarvestPolymers" icon="ui_game_symbol_challenge_harvesting_polymers" group="Harvesting"
 		short_description_key="challengeHarvestPolymersShort" description_key="challengeHarvestPolymersDesc"
 		reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
-		<objective type="Harvest" held="meleeToolRepairT0StoneAxe" required_held="true" item="resourceScrapPolymers" count="50" block_tag="challenge_barrels" override_tracker_index="challenge_barrels" track_distance="50"/>
+		<objective type="Harvest" item="resourceScrapPolymers" count="50" block_tag="challenge_polymers" override_tracker_index="challenge_polymers" track_distance="15"/>
 	</challenge>
 
 	<challenge name="harvestLeather" title_key="challengeHarvestLeather" icon="ui_game_symbol_challenge_harvesting_leather" group="Harvesting" 
 		short_description_key="challengeHarvestLeatherShort" description_key="challengeHarvestLeatherDesc"
 		reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
-		<objective type="Harvest" held="meleeToolRepairT0StoneAxe" required_held="true" item="resourceLeather" count="10" block_tag="challenge_booths" override_tracker_index="challenge_booths" track_distance="50"/>
+		<objective type="Harvest" item="resourceLeather" count="10" block_tag="challenge_leather" override_tracker_index="challenge_leather" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestRottingFlesh" title_key="challengeHarvestRottingFlesh" icon="ui_game_symbol_challenge_harvesting_rotting_meat" group="Harvesting"
 		short_description_key="challengeHarvestRottingFleshShort" description_key="challengeHarvestRottingFleshDesc"
 		reward_text_key="challenge_reward_500xp" reward_event="challenge_reward_500">
-		<objective type="Harvest" held="meleeWpnBladeT0BoneKnife" required_held="true" item="foodRottingFlesh" count="10" block_tag="challenge_gore" override_tracker_index="challenge_gore" track_distance="50"/>
+		<objective type="Harvest" item="foodRottingFlesh" count="10" block_tag="challenge_gore" override_tracker_index="challenge_gore" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestCarParts" title_key="challengeHarvestCarParts" icon="ui_game_symbol_challenge_harvesting_wrench_cars" group="Harvesting"
 		short_description_key="challengeHarvestCarPartsShort" description_key="challengeHarvestCarPartsDesc"
 		reward_text_key="challenge_reward_2500xp" reward_event="challenge_reward_2500">
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="smallEngine" count="3" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="carBattery" count="3" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="resourceRadiator" count="4" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
+		<objective type="Harvest" item="smallEngine" count="3" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
+		<objective type="Harvest" item="carBattery" count="3" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
+		<objective type="Harvest" item="resourceRadiator" count="4" block_tag="challenge_cars" override_tracker_index="challenge_cars" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestMechanicalParts" title_key="challengeHarvestMechanicalParts" icon="ui_game_symbol_challenge_harvesting_mechanical_parts" group="Harvesting" 
 		short_description_key="challengeHarvestMechanicalPartsShort" description_key="challengeHarvestMechanicalPartsDesc"
 		reward_text_key="challenge_reward_2500xp" reward_event="challenge_reward_2500">
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="resourceMechanicalParts" count="10" block_tag="challenge_officechairs" override_tracker_index="challenge_officechairs" track_distance="50"/>
+		<objective type="Harvest" item="resourceMechanicalParts" count="10" block_tag="challenge_mech_parts" override_tracker_index="challenge_mech_parts" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestForgedSteel" title_key="challengeHarvestForgedSteel" icon="ui_game_symbol_challenge_harvesting_wrench_vending_machine" group="Harvesting"  
 		short_description_key="challengeHarvestForgedSteelShort" description_key="challengeHarvestForgedSteelDesc"
 		reward_text_key="challenge_reward_2500xp" reward_event="challenge_reward_2500">
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="resourceForgedSteel" count="10" block_tag="challenge_vending" override_tracker_index="challenge_vending" track_distance="50"/>
+		<objective type="Harvest" item="resourceForgedSteel" count="10" block_tag="challenge_steel" override_tracker_index="challenge_steel" track_distance="50"/>
 	</challenge>
 
 	<challenge name="harvestElectricParts" title_key="challengeHarvestElectricParts" icon="ui_game_symbol_challenge_harvesting_electrical_parts" group="Harvesting" 
 		short_description_key="challengeHarvestElectricPartsShort" description_key="challengeHarvestElectricPartsDesc"
 		reward_text_key="challenge_reward_2500xp" reward_event="challenge_reward_2500">
-		<objective type="Harvest" held="meleeToolSalvageT1Wrench" required_held="true" item="resourceElectricParts" count="10" block_tag="challenge_lights" override_tracker_index="POILight" track_distance="50"/>
+		<objective type="Harvest" item="resourceElectricParts" count="10" block_tag="challenge_elec_parts" override_tracker_index="POILight" track_distance="15"/>
 	</challenge>
 
 	<!-- *** Gatherer -->

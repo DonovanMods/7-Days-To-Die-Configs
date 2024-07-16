@@ -904,6 +904,7 @@
 						<gameoption name="BuildCreate" title="goBuildCreate" value_wrap="false" value_type="bool" values="" display_names="" value_localization_prefix="" platform="!PS5,!XBOX"/>
 						<gameoption name="BuildCreate" title="goBuildCreate" value_wrap="false" value_type="bool" values="" display_names="" value_localization_prefix="" tooltip_key="goBuildCreateDescPS5" platform="PS5" />
 						<gameoption name="BuildCreate" title="goBuildCreate" value_wrap="false" value_type="bool" values="" display_names="" value_localization_prefix="" tooltip_key="goBuildCreateDescXBOX" platform="XBOX" />
+						<gameoption name="QuestProgressionDailyLimit" title="goQuestProgressionDailyLimit" value_wrap="false" value_type="int" values="-1,1,2,3,4,5,6,7,8" display_names="goUnlimited"/>
 					</grid>
 				</rect>
 				
@@ -1083,7 +1084,7 @@
 								<!-- GameMode basically unused (only creative + prefab editor): <browsergameoptioninfo name="GameMode" title="goGameMode" value_localization_prefix="gm" /> -->
 
 								<browsergameoptioninfo name="StockSettings" title="goStockSettings" />
-								<browsergameoptioninfo name="StockFiles" title="goStockFiles" />
+								<browsergameoptioninfo name="ModdedConfig" title="goModdedConfig" />
 								<!-- Currently not used: <browsergameoptioninfo name="RequiresMod" title="goRequiresMod" /> -->
 
 								<browsergameoptioninfo name="IP" title="goIp" visible="{showip}" />
@@ -1120,13 +1121,14 @@
 								<browsergameoptioninfo name="LootAbundance" title="goLootAbundance" value_localization_prefix="goLootAbundanceValue" />
 								<browsergameoptioninfo name="LootRespawnDays" title="goLootRespawnDays" display_names="-1=goDisabled" value_localization_prefix="goLootRespawnDaysValue" />
 								<browsergameoptioninfo name="MaxChunkAge" title="goMaxChunkAge" display_names="-1=goDisabled" value_localization_prefix="goDay" />
-								<browsergameoptioninfo name="DeathPenalty" title="goDeathPenalty" display_names="goNone,goInjured,goPermaDeath" value_localization_prefix="" />
+								<browsergameoptioninfo name="DeathPenalty" title="goDeathPenalty" display_names="goNone,goXPOnly,goInjured,goPermaDeath" value_localization_prefix="" />
 								<browsergameoptioninfo name="DropOnDeath" title="goDropOnDeath" display_names="goNone,goAll,goToolbelt,goBackpack,goDeleteAll" value_localization_prefix="" />
 								<browsergameoptioninfo name="DropOnQuit" title="goDropOnQuit" display_names="goNone,goAll,goToolbelt,goBackpack" value_localization_prefix="" />
 								<browsergameoptioninfo name="EnemySpawnMode" title="goEnemySpawn" value_localization_prefix="" />
 								<browsergameoptioninfo name="AirDropFrequency" title="goAirDropFrequency" display_names="goDisabled" />
 								<browsergameoptioninfo name="BuildCreate" title="goBuildCreate" />
 								<browsergameoptioninfo name="AirDropMarker" title="goMarkAirDrops" />
+								<browsergameoptioninfo name="QuestProgressionDailyLimit" title="goQuestProgressionDailyLimit" value_type="int" values="-1,1, 2, 3, 4, 5, 6, 7, 8" display_names="goUnlimited"/>
 							</grid>
 						</rect>
 						
@@ -1143,7 +1145,7 @@
 								<browsergameoptioninfo name="BedrollDeadZoneSize" title="goBedrollDeadZoneSize" display_names="goLandClaimNoDeadzone" value_localization_prefix="goLandClaimDeadZoneValue" />
 								<browsergameoptioninfo name="BedrollExpiryTime" title="goBedrollExpiryTime" display_names="" value_localization_prefix="goLandClaimExpiryTimeValue" />
 								<browsergameoptioninfo name="PartySharedKillRange" title="goPartySharedKillRange" display_names="goDisabled" value_localization_prefix="goPartySharedKillRangeValue" />
-								<browsergameoptioninfo name="ShowFriendPlayerOnMap" title="goShowFriendPlayerOnMap" />
+								<browsergameoptioninfo name="ShowFriendPlayerOnMap" title="goShowFriendPlayerOnMap" />								
 							</grid>
 						</rect>
 
@@ -1234,7 +1236,7 @@
 							<browsergameoptioncombined name="CurrentServerTime" title="goServerTimeDays" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="true" force_custom="true" />
 							<rect/>
 							<browsergameoptioncombined name="StockSettings" title="goStockSettings" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
-							<browsergameoptioncombined name="StockFiles" title="goStockFiles" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
+							<browsergameoptioncombined name="ModdedConfig" title="goModdedConfig" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="RequiresMod" title="goRequiresMod" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
 						</grid>
 					</rect>
@@ -1265,7 +1267,7 @@
 							<browsergameoptioncombined name="LootAbundance" title="goLootAbundance" value_wrap="false" values="25, 33, 50, 67, 75, 100, 150, 200" display_names="" value_localization_prefix="goLootAbundanceValue" />
 							<browsergameoptioncombined name="LootRespawnDays" title="goLootRespawnDays" value_wrap="false" values="-1, 5, 7, 10, 15, 20, 30, 40, 50" display_names="goDisabled" value_localization_prefix="goLootRespawnDaysValue" />
 							<browsergameoptioncombined name="MaxChunkAge" title="goMaxChunkAge" value_wrap="false" values="-1, 10, 20, 30, 40, 50, 75, 100" display_names="goDisabled" value_localization_prefix="goDay" />
-							<browsergameoptioncombined name="DeathPenalty" title="goDeathPenalty" value_wrap="false" values="" display_names="goNone,goInjured,goPermaDeath" value_localization_prefix="" allow_custom="false" />
+							<browsergameoptioncombined name="DeathPenalty" title="goDeathPenalty" value_wrap="false" values="" display_names="goNone,goXPOnly,goInjured,goPermaDeath" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="DropOnDeath" title="goDropOnDeath" value_wrap="false" values="" display_names="goNone,goAll,goToolbelt,goBackpack,goDeleteAll" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="DropOnQuit" title="goDropOnQuit" value_wrap="false" values="" display_names="goNone,goAll,goToolbelt,goBackpack" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="EnemySpawnMode" title="goEnemySpawn" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
@@ -1277,6 +1279,7 @@
 							<browsergameoptioncombined name="BuildCreate" title="goBuildCreate" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" tooltip_key="goBuildCreateServerBrowserDescXBOX" platform="XBOX"/>
 							
 							<browsergameoptioncombined name="AirDropMarker" title="goMarkAirDrops" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
+							<browsergameoptioncombined name="QuestProgressionDailyLimit" title="goQuestProgressionDailyLimit" value_wrap="false" values="1, 2, 3, 4, 5, 6, 7, 8, -1" display_names="-1=goUnlimited"/>
 						</grid>
 					</rect>
 					
@@ -1284,13 +1287,11 @@
 						<grid pos="8,-40" rows="13" cell_width="725" cell_height="45" repeat_content="false" arrangement="vertical" >
 							<browsergameoptioncombined name="PlayerKillingMode" title="goPlayerKillingMode" value_wrap="false" values="" display_names="goPlayerKillingModeNoKilling,goPlayerKillingModeKillAlliesOnly,goPlayerKillingModeKillStrangersOnly,goPlayerKillingModeKillEveryone" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="LandClaimSize" title="goLandClaimSize" value_wrap="false" values="21, 31, 41, 51, 71" display_names="" value_localization_prefix="goLandClaimSizeValue" />
-							<browsergameoptioncombined name="LandClaimDeadZone" title="goLandClaimDeadZone" value_wrap="false" values="0, 5, 10, 15, 20, 30, 40, 50" display_names="goLandClaimNoDeadzone" value_localization_prefix="goLandClaimDeadZoneValue" />
 							<browsergameoptioncombined name="LandClaimExpiryTime" title="goLandClaimExpiryTime" value_wrap="false" values="1, 2, 3, 4, 5, 7, 10, 30" display_names="" value_localization_prefix="goLandClaimExpiryTimeValue" />
 							<browsergameoptioncombined name="LandClaimDecayMode" title="goLandClaimDecayMode" value_wrap="false" values="" display_names="goLandClaimDecayModeSlow,goLandClaimDecayModeFast,goLandClaimDecayModeNone" value_localization_prefix="" allow_custom="false" />
 							<browsergameoptioncombined name="LandClaimOnlineDurabilityModifier" title="goLandClaimOnlineDurabilityModifier" value_wrap="false" values="0, 1, 2, 4, 8, 16, 32, 64, 128, 256" display_names="goInfinite" value_localization_prefix="goLandClaimOnlineDurabilityModifierValue" />
 							<browsergameoptioncombined name="LandClaimOfflineDurabilityModifier" title="goLandClaimOfflineDurabilityModifier" value_wrap="false" values="0, 1, 2, 4, 8, 16, 32, 64, 128, 256" display_names="goInfinite" value_localization_prefix="goLandClaimOfflineDurabilityModifierValue" />
 							<browsergameoptioncombined name="LandClaimOfflineDelay" title="goLandClaimOfflineDelay" value_wrap="false" values="0, 1, 5, 10, 20, 30, 60" display_names="" value_localization_prefix="goMinute" />
-							<browsergameoptioncombined name="BedrollDeadZoneSize" title="goBedrollDeadZoneSize" value_wrap="false" values="0, 5, 15, 30" display_names="goLandClaimNoDeadzone" value_localization_prefix="goLandClaimDeadZoneValue" />
 							<browsergameoptioncombined name="BedrollExpiryTime" title="goBedrollExpiryTime" value_wrap="false" values="3, 7, 15, 30, 45, 60" display_names="" value_localization_prefix="goLandClaimExpiryTimeValue" />
 							<browsergameoptioncombined name="PartySharedKillRange" title="goPartySharedKillRange" value_wrap="false" values="0, 100, 500, 1000, 5000, 10000" display_names="goDisabled" value_localization_prefix="goPartySharedKillRangeValue" />
 							<browsergameoptioncombined name="ShowFriendPlayerOnMap" title="goShowFriendPlayerOnMap" value_wrap="false" values="" display_names="" value_localization_prefix="" allow_custom="false" />
@@ -1420,7 +1421,8 @@
 				<generaloption name="TempCelsius" type="ComboBoxBool" localization_prefix="xuiBoolCelsius" width="900" />
 
 				<generaloption name="DisableXmlEvents" type="ComboBoxBool" localization_prefix="xuiComboYesNo" width="900" />
-				<generaloption name="JournalPopup" type="ComboBoxBool" localization_prefix="xuiComboYesNo" width="900" />
+				
+				
 				<generaloption name="QuestsAutoShare" type="ComboBoxBool" localization_prefix="xuiComboYesNo" width="900" />
 				<generaloption name="QuestsAutoAccept" type="ComboBoxBool" localization_prefix="xuiComboYesNo" width="900" />
 
@@ -1484,7 +1486,7 @@
 
 					</grid>
 				</rect>
-				
+
 				<rect tab_key="xuiOptionsVideoQuality">
 					<videooption pos="8,-40" name="QualityPreset" type="ComboBoxList`1[System.String]" values="Lowest,Low,Medium,High,Ultra,Custom" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
 
@@ -1496,17 +1498,15 @@
 							<videooption name="TextureQuality" type="ComboBoxList`1[System.String]" values="Full,Half,Quarter,Eighth" localization_prefix="xuiOptionsVideoTexQuality" value_wrap="false" reverse_list="true" />
 							<sprite depth="8" sprite="ui_game_symbol_info_notice" pos="655,0" width="32" height="32" color="[white]" visible="{texture_quality_limited}" tooltip_key="xuiTextureQualityLimited" />
 						</rect>
-						
+
 						<videooption name="TextureFilter" type="ComboBoxList`1[System.String]" values="Low,Medium,High,Ultra,Ultra+" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
 
 						<rect />
 
 						<videooption name="ReflectionQuality" type="ComboBoxList`1[System.String]" values="Off,Low,Medium,High,Ultra,Ultra+" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-
 						<videooption name="ReflectedShadows" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
 
 						<videooption name="ShadowsDistance" type="ComboBoxList`1[System.String]" values="Low,Medium,High,Ultra,Ultra+" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-
 						<videooption name="ShadowsQuality" type="ComboBoxList`1[System.String]" values="Off,Low,Medium,High,Ultra,Ultra+" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
 
 						<videooption name="Particles" type="ComboBoxFloat" value_increment="0.10" value_wrap="false" format_string="0%" />
@@ -1517,16 +1517,10 @@
 
 						<rect />
 
-						<!-- <videooption name="DynamicMeshEnabled" type="ComboBoxBool" value_wrap="false" value_type="bool" values="" value_localization_prefix="" /> -->
-						<!-- <videooption name="DynamicMeshDistance" type="ComboBoxList`1[System.Int32]" value_wrap="false" value_type="int" values="100,500,1000,1500,2000" value_localization_prefix="" /> -->
 						<videooption name="TerrainQuality" type="ComboBoxList`1[System.String]" values="Lowest,Low,Medium,High,Ultra" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-						
 						<videooption name="WaterQuality" type="ComboBoxList`1[System.String]" values="Low,High" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-						
 						<videooption name="GrassDistance" type="ComboBoxList`1[System.String]" values="Lowest,Low,Medium,High" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-
 						<videooption name="ObjectQuality" type="ComboBoxList`1[System.String]" values="Lowest,Low,Medium,High,Ultra" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-
 						<videooption name="Occlusion" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
 
 						<rect />
@@ -1534,15 +1528,10 @@
 						<!-- Image Effects -->
 
 						<videooption name="Bloom" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
-
-						<videooption name="DepthOfField" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
-
+						<!--<videooption name="DepthOfField" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />-->
 						<videooption name="MotionBlur" type="ComboBoxList`1[System.String]" values="Off,Simple,Normal" localization_prefix="xuiOptionsVideoComplexity" value_wrap="false" />
-
 						<videooption name="SSAO" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
-
 						<videooption name="SSReflections" type="ComboBoxList`1[System.String]" values="Off,Low,Medium,High,Ultra" localization_prefix="xuiOptionsVideoPresets" value_wrap="false" />
-
 						<videooption name="SunShafts" type="ComboBoxBool" localization_prefix="xuiComboOnOff" />
 
 					</grid>
@@ -1556,7 +1545,7 @@
 
 						<rect>
 							<videooption name="UiSize" type="ComboBoxFloat" value_increment="0.02" value_wrap="false" format_string="0%" />
-							<sprite depth="8" sprite="ui_game_symbol_info_notice" pos="655,0" width="32" height="32" color="[white]" visible="{ui_size_limited}" tooltip_key="xuiUiSizeLimitedForAspectRatio" />
+							<sprite depth="8" sprite="ui_game_symbol_info_notice" pos="655,0" width="32" height="32" color="[white]" visible="{ui_size_limited}" on_hover="true" tooltip="{# format(localization('xuiUiSizeLimitedForAspectRatio'), float(ui_size_limit)) }" />
 						</rect>
 						
 						<videooption name="ScreenBounds" type="ComboBoxFloat" value_increment="0.02" value_wrap="false" format_string="0%" />
@@ -1633,7 +1622,7 @@
 
 						<rect>
 							<videooption name="UiSize" type="ComboBoxFloat" value_increment="0.02" value_wrap="false" format_string="0%" />
-							<sprite depth="8" sprite="ui_game_symbol_info_notice" pos="655,0" width="32" height="32" color="[white]" visible="{ui_size_limited}" tooltip_key="xuiUiSizeLimitedForAspectRatio" />
+							<sprite depth="8" sprite="ui_game_symbol_info_notice" pos="655,0" width="32" height="32" color="[white]" visible="{ui_size_limited}" on_hover="true" tooltip="{# format(localization('xuiUiSizeLimitedForAspectRatio'), float(ui_size_limit)) }" />
 						</rect>
 						
 						<videooption name="ScreenBounds" type="ComboBoxFloat" value_increment="0.02" value_wrap="false" format_string="0%" />
@@ -1667,8 +1656,6 @@
 
 				<audiooption name="MenuMusicVolumeLevel" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" visible="{notingame}" />
 
-				<rect />
-
 				<audiooption name="DynamicMusicEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" />
 
 				<audiooption name="DynamicMusicDailyTimeAllotted" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" />
@@ -1677,12 +1664,13 @@
 
 				<!-- <audiooption name="SubtitlesEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" /> -->
 
-				<!-- <rect /> -->
+				<audiooption name="ProfanityFilter" type="ComboBoxBool" localization_prefix="xuiComboYesNo"/>
+				<rect />
 				
 				<audiooption name="MumblePositionalAudioSupportEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" platform="!CONSOLE" />
 				<audiooption name="VoiceChatEnabled" type="ComboBoxBool" localization_prefix="xuiComboYesNo" visible="{# commsallowed and voiceavailable}" />
-				<audiooption name="VoiceOutputDevice" type="ComboBoxList`1[Platform.IPartyVoice+VoiceAudioDevice]" value_wrap="false" visible="{# commsallowed and voiceavailable}" />
-				<audiooption name="VoiceInputDevice" type="ComboBoxList`1[Platform.IPartyVoice+VoiceAudioDevice]" value_wrap="false" visible="{# commsallowed and voiceavailable}" />
+				<audiooption name="VoiceOutputDevice" type="ComboBoxList`1[Platform.IPartyVoice+VoiceAudioDevice]" value_wrap="false" visible="{# commsallowed and voiceavailable}" platform="!PS5" />
+				<audiooption name="VoiceInputDevice" type="ComboBoxList`1[Platform.IPartyVoice+VoiceAudioDevice]" value_wrap="false" visible="{# commsallowed and voiceavailable}" platform="!PS5" />
 				<audiooption name="VoiceVolumeLevel" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" visible="{# commsallowed and voiceavailable}" />
 
 				<!-- <audiooption name="MicVolumeLevel" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0%" visible="{commsallowed}" /> -->

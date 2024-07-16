@@ -60,6 +60,7 @@
 		zombieNurse
 		zombieNurseFeral, .25
 		animalZombieDog, .05
+		animalDireWolf, .01
 		zombieSteveCrawler
 		zombieFatHawaiian
 		zombieFatHawaiianFeral, .25
@@ -105,6 +106,7 @@
 		zombieSoldier, .4
 		zombieSoldierFeral, .05
 		animalZombieDog, .1
+		animalDireWolf, .1
 		animalWolf, .1
 	</entitygroup>
 
@@ -146,6 +148,7 @@
 		zombieSoldier, .4
 		zombieSoldierFeral, .15
 		animalZombieDog, .3
+		animalDireWolf, .1
 		animalWolf, .3
 	</entitygroup>
 
@@ -189,6 +192,7 @@
 		zombieWightFeral, .2
 		zombieDemolition, .02
 		animalZombieDog, .4
+		animalDireWolf, .1
 		animalWolf, .4
 		animalDireWolf, .05
 	</entitygroup>
@@ -290,6 +294,7 @@
 		zombieWightFeral, .5
 		zombieDemolition, .05
 		animalZombieDog, .8
+		animalDireWolf, .1
 		animalWolf, .8
 		animalDireWolf, .1
 	</entitygroup>
@@ -308,6 +313,7 @@
 		zombieMarlene
 		zombieNurse
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSteveCrawler
 		zombieFatCop
 		zombieBurnt
@@ -332,6 +338,7 @@
 		zombieMarlene
 		zombieNurse
 		animalZombieDog, .15
+		animalDireWolf, .1
 		zombieSteveCrawler, .05
 		zombieFatCop, .15
 		zombieBurnt, .07
@@ -357,6 +364,7 @@
 		zombieMarlene
 		zombieNurse
 		animalZombieDog, .15
+		animalDireWolf, .1
 		zombieSteveCrawler, .05
 		zombieFatCop, .15
 		zombieBurnt, .07
@@ -380,6 +388,7 @@
 		zombieNurse
 		zombieFatCop, .05
 		animalZombieDog, .05
+		animalDireWolf, .01
 		animalZombieBear, .05
 		zombieSteveCrawler, .1
 	</entitygroup>
@@ -387,6 +396,12 @@
 <!-- *** BIOME_ZOMBIES_SCREAMER_GROUP -->
 	<entitygroup name="ZombieScouts">
 		zombieScreamer
+	</entitygroup>
+	<entitygroup name="ZombieScoutsFeral">
+		zombieScreamerFeral
+	</entitygroup>
+	<entitygroup name="ZombieScoutsRadiated">
+		zombieScreamerRadiated
 	</entitygroup>
 
 <!-- *** BIOME_ZOMBIES_CRAWLER_GROUP -->
@@ -1982,8 +1997,9 @@
 
 	<!-- *** POI_ANIMAL_GROUPS -->
 	<entitygroup name="ZombieAnimalsGroup">
-		animalZombieDog, .95
-		animalZombieBear,.05
+		animalZombieDog, .96
+		animalZombieBear,.02
+		animalDireWolf, .02
 	</entitygroup>
 
 	<entitygroup name="ZombieBearsGroup">
@@ -12639,6 +12655,7 @@
 		zombieYo
 		zombieUtilityWorker
 		animalZombieDog
+		animalDireWolf, .1
 		zombieLumberjack, .3
 		zombieSpider, .24
 		zombieMoe
@@ -12658,6 +12675,7 @@
 		zombieMarlene
 		zombieBusinessMan
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS49">
 		zombieBiker, .35
@@ -12670,6 +12688,7 @@
 		zombieJoe
 		zombieJanitor
 		animalZombieDog
+		animalDireWolf, .1
 		zombieBusinessMan
 		zombieSteve
 	</entitygroup>
@@ -12690,6 +12709,7 @@
 	<entitygroup name="feralHordeStageGS59">
 		zombiePartyGirl
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarder, .35
 		zombieSteve
 		zombieUtilityWorker
@@ -12736,6 +12756,7 @@
 		zombieLumberjack, .64
 		zombieBoeFeral, .41
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVulture, .2
 		zombieJoe
 		zombieNurse
@@ -12873,6 +12894,7 @@
 		zombieSkateboarder
 		zombieMoe
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS133">
 		zombieMoeFeral, .86
@@ -13140,6 +13162,7 @@
 		zombieSteve
 		zombieBoe
 		animalZombieDog
+		animalDireWolf, .1
 		zombieLumberjack
 		zombieJanitorFeral
 		zombieJoeFeral
@@ -13152,6 +13175,7 @@
 		zombieTomClarkRadiated
 		zombieYo
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSoldier
 		zombieLumberjackRadiated
 		zombieMaleHazmat
@@ -13228,6 +13252,7 @@
 		animalZombieVultureRadiated, .3
 		zombieMaleHazmatRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieLumberjack
 		zombieMaleHazmatFeral
 		zombieMaleHazmat
@@ -13276,6 +13301,7 @@
 		zombieDemolition, .4
 		zombieDarleneRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombiePartyGirl
 		zombieBikerFeral
 		zombieSkateboarderRadiated
@@ -13407,6 +13433,7 @@
 		zombieSpiderFeral, .6
 		zombieBoe
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS398">
 		zombieJanitor
@@ -13441,6 +13468,7 @@
 		zombieDarlene
 		zombieSteveRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieArlene
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS417">
@@ -13505,6 +13533,7 @@
 		zombieFatCop
 		zombieBusinessManFeral
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVultureRadiated, .3
 		zombieLumberjackFeral
 		zombieFatCopRadiated
@@ -13572,6 +13601,7 @@
 		zombiePartyGirlFeral
 		zombieSkateboarderRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieUtilityWorkerFeral
 		zombieLumberjack
 		zombieSoldierFeral
@@ -13596,6 +13626,7 @@
 		zombieBoeFeral
 		zombieMarleneFeral
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVultureRadiated, .3
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS501">
@@ -13700,6 +13731,7 @@
 		zombieFatCopFeral
 		zombieMarleneRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMarlene
 		zombieJoeFeral
 	</entitygroup>
@@ -13867,6 +13899,7 @@
 		zombieBoeRadiated
 		zombieSteveRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombiePartyGirl
 		zombieFatCopFeral
 		zombieUtilityWorkerFeral
@@ -13924,6 +13957,7 @@
 		zombieFatHawaiianFeral
 		zombieBowlerFeral, .1
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMaleHazmat
 		zombieBiker
 		animalZombieVulture, .3
@@ -13936,6 +13970,7 @@
 	<entitygroup name="feralHordeStageGS693">
 		zombieTomClarkRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSteveRadiated
 		zombieArleneRadiated
 		zombieSteveFeral
@@ -13961,6 +13996,7 @@
 		zombieMaleHazmat
 		zombieFatCop
 		animalZombieDog
+		animalDireWolf, .1
 		zombieArleneRadiated
 		zombieArlene
 		zombieMarleneRadiated
@@ -14006,6 +14042,7 @@
 		zombieMoeFeral
 		zombieLumberjackRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVultureRadiated, .3
 		zombieYo
 		zombieFemaleFat
@@ -14206,6 +14243,7 @@
 		zombieMoeFeral
 		zombieFemaleFatRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMoeRadiated
 		zombiePartyGirlFeral
 		zombieTomClarkFeral
@@ -14351,6 +14389,7 @@
 		zombieBiker
 		zombieJanitorRadiated
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS962">
 		zombieSteve
@@ -14376,6 +14415,7 @@
 		zombieNurseRadiated
 		zombieSteveFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMaleHazmatFeral
 		zombieSkateboarder
 		zombiePartyGirlFeral
@@ -14428,6 +14468,7 @@
 		zombieBowlerFeral, .1
 		zombieSteve
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatHawaiianRadiated
 		zombieBowlerRadiated, .1
 		animalZombieVulture, .3
@@ -14449,6 +14490,7 @@
 		zombieArleneFeral
 		zombieArleneRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMoe
 		zombieUtilityWorker
 		zombieBoe
@@ -14541,6 +14583,7 @@
 		zombieFatHawaiianRadiated
 		zombieBowlerRadiated, .1
 		animalZombieDog
+		animalDireWolf, .1
 		zombieDemolition, .4
 		animalZombieVulture, .3
 		zombieMaleHazmatRadiated
@@ -14577,6 +14620,7 @@
 		zombieFatCop
 		zombieBiker
 		animalZombieDog
+		animalDireWolf, .1
 		zombieDemolition, .5
 		zombieFatCopFeral
 		zombieDarleneFeral
@@ -14778,6 +14822,7 @@
 		zombieJoeRadiated
 		zombieTomClark
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS1256">
 		zombieYo
@@ -14916,6 +14961,7 @@
 		zombieWightFeral
 		zombieBusinessManFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatCop
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS1360">
@@ -14943,6 +14989,7 @@
 		zombieJoe
 		zombieJoeFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieArleneRadiated
 		zombieSpiderRadiated, .6
 		zombieJanitorRadiated
@@ -14967,6 +15014,7 @@
 		zombieJoeFeral
 		zombieYoRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieBikerFeral
 		zombieWightRadiated
 	</entitygroup>
@@ -15062,6 +15110,7 @@
 		zombieSteve
 		zombieTomClarkRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieTomClark
 		zombieJoeRadiated
 		zombieJoe
@@ -15157,6 +15206,7 @@
 		zombieMoeFeral
 		zombieLumberjackFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMarlene
 		animalZombieVulture, .3
 	</entitygroup>
@@ -15294,6 +15344,7 @@
 		zombieLumberjackFeral
 		zombieArleneFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatCop
 		zombieSoldier
 		zombieJanitorFeral
@@ -15306,6 +15357,7 @@
 		zombiePartyGirlFeral
 		zombieSoldierFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieNurse
 		zombieBiker
 		zombieNurseRadiated
@@ -15443,6 +15495,7 @@
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS1768">
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSoldierRadiated
 		zombieSkateboarderRadiated
 		zombieSteve
@@ -15828,6 +15881,7 @@
 		zombieTomClark
 		zombieSoldierFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarderFeral
 		zombieArleneFeral
 		zombieFatHawaiian
@@ -15861,6 +15915,7 @@
 		zombieTomClarkFeral
 		zombieSoldierRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatHawaiian
 		zombieBowler, .1
 		zombieMaleHazmat
@@ -15910,6 +15965,7 @@
 		zombieSoldierFeral
 		zombieNurse
 		animalZombieDog
+		animalDireWolf, .1
 		zombieNurseFeral
 		zombieSpider, .6
 		zombieJoeFeral
@@ -15982,6 +16038,7 @@
 		zombieMaleHazmatRadiated
 		zombieSpiderRadiated, .6
 		animalZombieDog
+		animalDireWolf, .1
 		zombieTomClarkRadiated
 		zombieNurseFeral
 		zombieDarleneRadiated
@@ -16106,6 +16163,7 @@
 		zombieLumberjackRadiated
 		zombieTomClarkRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieWightFeral
 		zombieSkateboarderRadiated
 		zombieWightRadiated
@@ -16118,6 +16176,7 @@
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS2330">
 		animalZombieDog
+		animalDireWolf, .1
 		zombieNurseFeral
 		zombieWightFeral
 		zombieBoeFeral
@@ -16419,6 +16478,7 @@
 		zombieBowlerFeral, .1
 		zombieBiker
 		animalZombieDog
+		animalDireWolf, .1
 		zombiePartyGirlFeral
 		zombieDemolition, .4
 		zombieTomClarkFeral
@@ -16498,6 +16558,7 @@
 		zombieTomClarkFeral
 		zombieJanitorRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieJanitorFeral
 		zombieBoeRadiated
 		zombieFatHawaiianFeral
@@ -16607,6 +16668,7 @@
 		zombieFatCopRadiated
 		zombieMarlene
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatHawaiianFeral
 		zombieBowlerFeral, .1
 		zombieWightRadiated
@@ -16614,6 +16676,7 @@
 	<entitygroup name="feralHordeStageGS2772">
 		zombieMoeFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieLumberjack
 		zombieWightFeral
 		zombieSteveRadiated
@@ -16707,6 +16770,7 @@
 		animalZombieVultureRadiated, .3
 		zombieLumberjackRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarderRadiated
 		zombieSoldierFeral
 		zombieFemaleFatRadiated
@@ -16726,6 +16790,7 @@
 		zombieWightFeral
 		zombieJoeFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieDarleneRadiated
 		animalZombieVultureRadiated, .3
 		zombiePartyGirlFeral
@@ -16773,6 +16838,7 @@
 		zombieFatCopFeral
 		zombieSpiderFeral, .6
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSoldierFeral
 		zombieJanitorFeral
 		zombieSpider, .6
@@ -16798,6 +16864,7 @@
 		zombieFatHawaiianFeral
 		zombieBowlerFeral, .1
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSpiderRadiated, .6
 		zombieSteveRadiated
 		zombieMaleHazmatRadiated
@@ -16844,6 +16911,7 @@
 		zombieSkateboarderRadiated
 		zombieTomClark
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMarleneRadiated
 		zombieBoeRadiated
 		zombieLumberjackFeral
@@ -16880,6 +16948,7 @@
 		zombieTomClarkRadiated
 		zombieSpiderFeral, .6
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVulture, .3
 		zombieNurse
 		zombieDemolition, .4
@@ -16992,6 +17061,7 @@
 		zombieBowlerFeral, .1
 		zombieDarleneRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarder
 		zombieSpider, .6
 		zombieJanitor
@@ -17057,6 +17127,7 @@
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS3187">
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSoldierRadiated
 		zombieBikerRadiated
 		zombieBusinessMan
@@ -17102,6 +17173,7 @@
 		zombieLumberjackRadiated
 		zombieSoldierRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieMarlene
 		zombieBiker
 		zombieFatCopFeral
@@ -17165,6 +17237,7 @@
 		zombiePartyGirl
 		zombieWightRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSoldierRadiated
 		zombieFatHawaiian
 		zombieBowler, .1
@@ -17319,6 +17392,7 @@
 		zombieSpiderFeral, .6
 		zombieDarleneFeral
 		animalZombieDog
+		animalDireWolf, .1
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS3444">
 		zombieBusinessMan
@@ -17342,6 +17416,7 @@
 		zombieSpider, .6
 		zombieFemaleFatRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieUtilityWorker
 		zombieDemolition, .4
 		zombieDarleneRadiated
@@ -17505,6 +17580,7 @@
 		zombieUtilityWorkerFeral
 		zombieLumberjackRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieFatHawaiian
 		zombieBowler, .1
 		zombieMoeRadiated
@@ -17520,6 +17596,7 @@
 		zombieNurse
 		zombieSoldierFeral
 		animalZombieDog
+		animalDireWolf, .1
 		animalZombieVultureRadiated, .3
 		zombieBusinessManFeral
 		zombieSkateboarderFeral
@@ -17564,6 +17641,7 @@
 		zombieDemolition, .5
 		zombieDarleneFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieJanitorFeral
 	</entitygroup>
 	<entitygroup name="feralHordeStageGS3690">
@@ -17627,6 +17705,7 @@
 		zombieTomClark
 		zombieDemolition, .5
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarder
 		zombieWightRadiated
 		zombieSkateboarderFeral
@@ -17838,6 +17917,7 @@
 		zombieMoe
 		zombieFatCop
 		animalZombieDog
+		animalDireWolf, .1
 		zombieDemolition, .4
 		zombieLumberjackRadiated
 		zombieBusinessMan
@@ -17872,6 +17952,7 @@
 		zombiePartyGirl
 		zombieYoFeral
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarderFeral
 		zombieFemaleFatRadiated
 		zombieUtilityWorker
@@ -17915,6 +17996,7 @@
 		zombieDarleneRadiated
 		zombieMaleHazmatRadiated
 		animalZombieDog
+		animalDireWolf, .1
 		zombieSkateboarderFeral
 		zombieNurse
 		zombieFatCop
