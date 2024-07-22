@@ -51,7 +51,7 @@
 
 			<!-- <triggered_effect trigger="onSelfBuffStart" action="GiveExp" exp="@_expdeficit"/> -->
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveAllNegativeBuffs"/>      
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveAllNegativeBuffs"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInjuryAbrasionTreated,buffLegSplinted,buffLegCast,buffArmSplinted,buffArmCast" /> <!-- clear healing buffs -->
 			<triggered_effect trigger="onSelfBuffStart" action="RefreshPerks"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="RefreshPerks"/>
@@ -605,6 +605,7 @@
 		</effect_group>
 
 		<effect_group name="Pain Sound">
+			<requirement name="IsAlive" target="self"/>
 			<triggered_effect trigger="onOtherDamagedSelf" action="PlaySound" sound="player#painlg">
 				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="0.5"/>
 			</triggered_effect>
@@ -4229,9 +4230,9 @@
 		<effect_group>
 			<!-- Setup the max health blockage based on the remaining counter -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="20"/> <!-- 15 @ 300s -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="20"/> <!-- 15 @ 300s -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
 			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.LegHurtHealthBlockage"/>
 			<!-- Slow movement and reduce jump strength -->
 			<passive_effect name="Mobility" operation="base_add" value="-.15"/>
@@ -4331,9 +4332,9 @@
 		<effect_group>
 			<!-- Setup the max health blockage based on the remaining counter -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="288"/> <!-- 25 @ 120m -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="set" value="@$legHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="288"/> <!-- 25 @ 120m -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".LegHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
 			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.LegHurtHealthBlockage"/>
 			<!-- Slow movement and reduce jump strength -->
 			<passive_effect name="Mobility" operation="base_add" value="-.5"/>
@@ -4462,7 +4463,8 @@
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legTreatedCritHealing" operation="multiply" value="-1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$legTreatedCritHealing" operation="multiply" value="-1"/>
 			<!-- Reset -->
-			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$legTreatedCritHealing,$legHurtCounter,.LegHurtHealthBlockage"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar="$legTreatedCritHealing,$legHurtCounter,.LegHurtHealthBlockage">
+				<requirement name="!HasBuff" buff="buffLegBroken"/></triggered_effect>
 		</effect_group>
 
 		<effect_group>
@@ -4672,9 +4674,9 @@
 		<effect_group>
 			<!-- Setup the max health blockage based on the remaining counter -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="20"/> <!-- 15 @ 300s -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="20"/> <!-- 15 @ 300s -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="40"/> <!-- 15 @ 10m -->
 			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.ArmHurtHealthBlockage"/>
 			<!-- Reduce weapon actions -->
 			<passive_effect name="WeaponHandling" operation="perc_add" value="-.15" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
@@ -4757,9 +4759,9 @@
 		<effect_group>
 			<!-- Setup the max health blockage based on the remaining counter -->
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="288"/> <!-- 25 @ 120m -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="set" value="@$armHurtCounter"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="288"/> <!-- 25 @ 120m -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".ArmHurtHealthBlockage" operation="divide" value="240"/> <!-- 30 @ 120m -->
 			<passive_effect name="HealthMaxBlockage" operation="base_add" value="@.ArmHurtHealthBlockage"/>
 			<!-- Reduce weapon actions -->
 			<passive_effect name="WeaponHandling" operation="perc_add" value="-.25" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>

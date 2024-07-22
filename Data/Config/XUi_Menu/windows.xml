@@ -85,7 +85,7 @@
 			
 		</panel>
 				
-		<panel pos="0,-50" size="1440,750" depth="2" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" style="hover, press, scroll, drag" controller="SDCSPreviewWindow" gamepad_selectable="false">
+		<panel pos="0,-50" size="1440,750" depth="2" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" style="hover, press, scroll, drag" controller="SDCSPreviewWindow" gamepad_selectable="false" snap="false">
 			<texture pos="400,3" depth="100" name="playerPreview" material="Materials/Transparent Colored" size="1040,750" globalopacity="false"/>
 			<button name="zoomButton" depth="101" pos="1400,-8" sprite="ui_game_symbol_player" style="icon32px,press,hover" tooltip="Toggle Head Zoom" tooltip_key="lblChangeView" gamepad_selectable="false" />
 			<!--<button name="reloadData" depth="101" pos="400,-6" sprite="server_refresh" style="icon32px,press,hover" tooltip="Reload Archetype XML Data" tooltip_key="lblReloadArchetypeXML" visible="{isArchetype}" />-->
@@ -609,7 +609,7 @@
 	<!-- Login window for PS5 Platform -->
 	<window name="loginWindow" anchor="CenterCenter" pos="-350,50" width="700" height="200" controller="LoginPS5" cursor_area="true" platform="PS5">
 		<panel name="header" pos="0,0" height="43" depth="1" backgroundspritename="ui_game_panel_header" bordercolor="[black]" borderthickness="3" >
-			<label style="header.name" pos="6,-6" width="550" text="{title}" />
+			<label pos="6,-6" width="550" text="{title}" />
 		</panel>
 		
 		<panel name="content" pos="0,-50" height="100" depth="1" backgroundcolor="[mediumGrey]" bordercolor="[black]" borderthickness="3" pivot="topleft">
@@ -2230,11 +2230,11 @@
 
 						<controloption name="ControllerTriggerEffects" type="ComboBoxBool" localization_prefix="xuiComboYesNo" platform="!XBOX"/>
 						
-						<!-- <controloption name="ControllerInterfaceSensitivity" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0.00" />
+						<controloption name="ControllerInterfaceSensitivity" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0.00" />
 
-						<controloption name="ControllerCursorHoverSensitivity" type="ComboBoxFloat" value_increment="0.05" value_wrap="false" format_string="0.00"/>
+						<controloption name="ControllerCursorHoverSensitivity" type="ComboBoxFloat" value_increment="0.1" value_wrap="false" format_string="0.00"/>
 
-						<controloption name="ControllerCursorSnap" type="ComboBoxBool"  localization_prefix="xuiComboYesNo"/> -->
+						<controloption name="ControllerCursorSnap" type="ComboBoxBool"  localization_prefix="xuiComboYesNo"/>
 						
 					</grid>
 				</rect>
@@ -2266,9 +2266,9 @@
 						<controller_button_caption_right name="RightTrigger"        pos="1115,-110" />
 						<controller_button_caption_right name="RightBumper"         pos="1115,-165" />
 						<controller_button_caption_right name="Action4"             pos="1115,-210" />
-						<controller_button_caption_right name="Action3"             pos="1115,-246" />
-						<controller_button_caption_right name="Action2"             pos="1115,-283" />
-						<controller_button_caption_right name="Action1"             pos="1115,-329" />
+						<controller_button_caption_right name="Action2"             pos="1115,-246" />
+						<controller_button_caption_right name="Action1"             pos="1115,-283" />
+						<controller_button_caption_right name="Action3"             pos="1115,-329" />
 						<controller_button_caption_right name="RightStick"          pos="1115,-411" />
 						<controller_button_caption_right name="RightStickButton"    pos="1115,-465" />
 																

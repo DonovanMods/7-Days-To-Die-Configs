@@ -275,9 +275,9 @@
 			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser"/>
 
-				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="gunlaser" transform_path="gunlaser"/>
-				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
-				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="gunlaser" transform_path="gunlaser"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
 				<!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
 				<!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
 				<!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
@@ -1858,6 +1858,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 	</item_modifier>
 
 	<item_modifier name="modDyeBrown" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye,modDyeBrown" type="attachment" cosmetic_install_chance=".16">
@@ -1868,6 +1870,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="132,105,84"/>
@@ -1883,6 +1887,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="212,84,84"/>
@@ -1898,6 +1904,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 
 		<item_property_overrides name="*">
 			<property name="TintColor" value="255,166,77"/>
@@ -1912,6 +1920,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="218,200,135"/>
@@ -1927,6 +1937,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="74,130,74"/>
@@ -1942,6 +1954,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="70,89,127"/>
@@ -1956,6 +1970,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="113,97,129"/>
@@ -1971,6 +1987,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="70,70,70"/>
@@ -1985,6 +2003,8 @@
 		<property name="Material" value="Mpaint"/>
 		<property name="Weight" value="20"/>
 		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
 		
 		<item_property_overrides name="*">
 			<property name="TintColor" value="188,148,188"/>

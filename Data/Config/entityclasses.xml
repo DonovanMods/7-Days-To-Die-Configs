@@ -64,16 +64,16 @@
 	<!-- <property name="Immunity" value="ArmorUp"/> Does not work to block a type of buff on blocks or from eating -->
 	<property name="ParticleOnDeath" value="blood_death"/>
 
-	<property name="SoundHurt" value="Player_Male/player1painlg"/>
-	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
-	<property name="SoundDeath" value="Player_Male/player1death"/>
-	<property name="SoundStamina" value="Player_Male/player1stamina"/>
-	<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
-	<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
-	<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
-	<property name="SoundJump" value="Player_Male/player1Jump"/>
-	<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
-	<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
+	<property name="SoundHurt" value="player1painlg"/>
+	<property name="SoundHurtSmall" value="player1painsm"/>
+	<property name="SoundDeath" value="player1death"/>
+	<property name="SoundStamina" value="player1stamina"/>
+	<property name="SoundDrownPain" value="player1drownpain"/>
+	<property name="SoundWaterSurface" value="player1drownsurface"/>
+	<property name="SoundDrownDeath" value="player1drowndeath"/>
+	<property name="SoundJump" value="player1Jump"/>
+	<property name="SoundLandSoft" value="player1LandSoft"/>
+	<property name="SoundLandHard" value="player1LandHard"/>
 	<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
 
 	<property name="MapIcon" value="ui_game_symbol_map_player_arrow"/>
@@ -271,16 +271,16 @@
 	<property name="Mass" value="130"/>
 	<property name="IsMale" value="false"/>
 	<property name="CrouchYOffsetFP" value="-0.55"/>
-	<property name="SoundHurt" value="Player_Female/player2painlg"/>
-	<property name="SoundHurtSmall" value="Player_Female/player2painsm"/>
-	<property name="SoundDeath" value="Player_Female/player2death"/>
-	<property name="SoundStamina" value="Player_Female/player2stamina"/>
-	<property name="SoundDrownPain" value="Player_Female/player2drownpain"/>
-	<property name="SoundWaterSurface" value="Player_Female/player2drownsurface"/>
-	<property name="SoundDrownDeath" value="Player_Female/player2drowndeath"/>
-	<property name="SoundJump" value="Player_Male/player2Jump"/>
-	<property name="SoundLandSoft" value="Player_Male/player2LandSoft"/>
-	<property name="SoundLandHard" value="Player_Male/player2LandHard"/>
+	<property name="SoundHurt" value="player2painlg"/>
+	<property name="SoundHurtSmall" value="player2painsm"/>
+	<property name="SoundDeath" value="player2death"/>
+	<property name="SoundStamina" value="player2stamina"/>
+	<property name="SoundDrownPain" value="player2drownpain"/>
+	<property name="SoundWaterSurface" value="player2drownsurface"/>
+	<property name="SoundDrownDeath" value="player2drowndeath"/>
+	<property name="SoundJump" value="player2Jump"/>
+	<property name="SoundLandSoft" value="player2LandSoft"/>
+	<property name="SoundLandHard" value="player2LandHard"/>
 	<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
 </entity_class>
 
@@ -532,12 +532,12 @@
 	<property name="SizeScale" value="0.9"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
+	<property name="SoundRandom" value="zombiefemaleroam"/>
+	<property name="SoundAlert" value="zombiefemalealert"/>
+	<property name="SoundAttack" value="zombiefemaleattack"/>
+	<property name="SoundHurt" value="zombiefemalepain"/>
+	<property name="SoundDeath" value="zombiefemaledeath"/>
+	<property name="SoundSense" value="zombiefemalesense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="3"/>
 	<property name="RootMotion" value="true"/>
@@ -561,12 +561,12 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZArlene.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Arlene2.mat,@:Entities/Zombies/Zombies/Materials/HD_Arlene3.mat"/>
 
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
+	<property name="SoundRandom" value="zombiefemaleroam"/>
+	<property name="SoundAlert" value="zombiefemalealert"/>
+	<property name="SoundAttack" value="zombiefemaleattack"/>
+	<property name="SoundHurt" value="zombiefemalepain"/>
+	<property name="SoundDeath" value="zombiefemaledeath"/>
+	<property name="SoundSense" value="zombiefemalesense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="3"/>
 	<property name="RootMotion" value="true"/>
@@ -649,12 +649,12 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZMarlene.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Marlene2.mat,@:Entities/Zombies/Zombies/Materials/HD_Marlene3.mat"/>
 
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female2/zombiefemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female2/zombiefemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female2/zombiefemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female2/zombiefemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female2/zombiefemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female2/zombiefemale2sense"/>
+	<property name="SoundRandom" value="zombiefemale2roam"/>
+	<property name="SoundAlert" value="zombiefemale2alert"/>
+	<property name="SoundAttack" value="zombiefemale2attack"/>
+	<property name="SoundHurt" value="zombiefemale2pain"/>
+	<property name="SoundDeath" value="zombiefemale2death"/>
+	<property name="SoundSense" value="zombiefemale2sense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="5"/>
 	<property name="RootMotion" value="true"/>
@@ -798,12 +798,12 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZNurse.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_NurseZ2.mat,@:Entities/Zombies/Zombies/Materials/HD_NurseZ3.mat"/>
 	
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
+	<property name="SoundRandom" value="zombiefemaleroam"/>
+	<property name="SoundAlert" value="zombiefemalealert"/>
+	<property name="SoundAttack" value="zombiefemaleattack"/>
+	<property name="SoundHurt" value="zombiefemalepain"/>
+	<property name="SoundDeath" value="zombiefemaledeath"/>
+	<property name="SoundSense" value="zombiefemalesense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="130"/>
@@ -1175,13 +1175,13 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBurnt.prefab"/>
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="160"/>
-	<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
-	<property name="SoundAlert" value="Enemies/Burnt_Zombie/zombieburntalert"/>
-	<property name="SoundAttack" value="Enemies/Burnt_Zombie/zombieburntattack"/>
-	<property name="SoundHurt" value="Enemies/Burnt_Zombie/zombieburntpain"/>
-	<property name="SoundDeath" value="Enemies/Burnt_Zombie/zombieburntdeath"/>
-	<property name="SoundSense" value="Enemies/Burnt_Zombie/zombieburntsense"/>
-	<property name="SoundFootstepModifier" value="Enemies/Burnt_Zombie/zombieburntfootstep"/>
+	<property name="SoundRandom" value="zombieburntroam"/>
+	<property name="SoundAlert" value="zombieburntalert"/>
+	<property name="SoundAttack" value="zombieburntattack"/>
+	<property name="SoundHurt" value="zombieburntpain"/>
+	<property name="SoundDeath" value="zombieburntdeath"/>
+	<property name="SoundSense" value="zombieburntsense"/>
+	<property name="SoundFootstepModifier" value="zombieburntfootstep"/>
 	<property name="PainResistPerHit" value="1"/>
 	
   <!-- Dismemberment -->
@@ -1260,12 +1260,12 @@
 	<property name="Mass" value="150"/>
 	<property name="LookAtAngle" value="0"/>
 
-	<property name="SoundRandom" value="Enemies/Spider_Zombie/spiderroam"/>
-	<property name="SoundAlert" value="Enemies/Spider_Zombie/spideralert"/>
-	<property name="SoundAttack" value="Enemies/Spider_Zombie/spiderattack"/>
-	<property name="SoundDeath" value="Enemies/Spider_Zombie/spiderdeath"/>
-	<property name="SoundHurt" value="Enemies/Spider_Zombie/spiderpain"/>
-	<property name="SoundSense" value="Enemies/Spider_Zombie/spidersense"/>
+	<property name="SoundRandom" value="spiderroam"/>
+	<property name="SoundAlert" value="spideralert"/>
+	<property name="SoundAttack" value="spiderattack"/>
+	<property name="SoundDeath" value="spiderdeath"/>
+	<property name="SoundHurt" value="spiderpain"/>
+	<property name="SoundSense" value="spidersense"/>
 
 	<property name="DismemberMultiplierHead" value="0"/>
 	<property name="DismemberMultiplierArms" value="0"/>
@@ -1361,12 +1361,12 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="SizeScale" value="1.08"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
+	<property name="SoundRandom" value="zombiemale2roam"/>
+	<property name="SoundAlert" value="zombiemale2alert"/>
+	<property name="SoundAttack" value="zombiemale2attack"/>
+	<property name="SoundHurt" value="zombiemale2pain"/>
+	<property name="SoundDeath" value="zombiemale2death"/>
+	<property name="SoundSense" value="zombiemale2sense"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBoe.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Boe2.mat,@:Entities/Zombies/Zombies/Materials/HD_Boe3.mat"/>
 	
@@ -1439,12 +1439,12 @@
 <entity_class name="zombieMaleHazmat" extends="zombieBoe">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="SoundRandom" value="Enemies/Zombie_Hazmat/zombie_hazmat_roam"/>
-	<property name="SoundAlert" value="Enemies/Zombie_Hazmat/zombie_hazmat_alert"/>
-	<property name="SoundAttack" value="Enemies/Zombie_Hazmat/zombie_hazmat_attack"/>
-	<property name="SoundHurt" value="Enemies/Zombie_Hazmat/zombie_hazmat_pain"/>
-	<property name="SoundDeath" value="Enemies/Zombie_Hazmat/zombie_hazmat_death"/>
-	<property name="SoundSense" value="Enemies/Zombie_Hazmat/zombie_hazmat_sense"/>
+	<property name="SoundRandom" value="zombie_hazmat_roam"/>
+	<property name="SoundAlert" value="zombie_hazmat_alert"/>
+	<property name="SoundAttack" value="zombie_hazmat_attack"/>
+	<property name="SoundHurt" value="zombie_hazmat_pain"/>
+	<property name="SoundDeath" value="zombie_hazmat_death"/>
+	<property name="SoundSense" value="zombie_hazmat_sense"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHazmat.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_HazmatZ2.mat,@:Entities/Zombies/Zombies/Materials/HD_HazmatZ3.mat"/>
 	
@@ -1626,13 +1626,13 @@
 	<property name="HasDeathAnim" value="true"/>
 
   <!-- Dismemberment -->
-  <property name ="DismemberTag_L_HeadGore" value="Inmate/Blade/Head;Inmate/Blunt/Head" data="type=blade+target=neck+atp=true+detach=true;type=blunt+target=neck+atp=true"/>
-  <property name ="DismemberTag_L_LeftLowerArmGore" value="Inmate/Blade/LeftLowerArm" data="type=blade+target=leftforearmroll+atp=true+detach=true+mask=true"/>
-  <property name ="DismemberTag_L_LeftLowerLegGore" value="Inmate/Blade/LeftLowerLeg" data="type=blade+target=leftleg+detach=true+mask=true"/>
-  <property name ="DismemberTag_L_LeftUpperArmGore" value="Inmate/Blade/LeftUpperArm" data="type=blade+target=leftarmroll+atp=true+detach=true+mask=true"/>
-  <property name ="DismemberTag_L_RightLowerArmGore" value="Inmate/Blade/RightLowerArm" data="type=blade+target=rightforearmroll+atp=true+detach=true+mask=true"/>
-  <property name ="DismemberTag_L_RightLowerLegGore" value="Inmate/Blade/RightLowerLeg" data="type=blade+target=rightleg+detach=true+mask=true"/>
-  <property name ="DismemberTag_L_RightUpperArmGore" value="Inmate/Blade/RightUpperArm" data="type=blade+target=rightarmroll+atp=true+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_HeadGore" value="Mechanic/Blade/Head;Mechanic/Blunt/Head" data="type=blade+target=neck+atp=true+detach=true;type=blunt+target=neck+atp=true"/>
+  <property name ="DismemberTag_L_LeftLowerArmGore" value="Mechanic/Blade/LeftLowerArm" data="type=blade+target=leftforearmroll+atp=true+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_LeftLowerLegGore" value="Mechanic/Blade/LeftLowerLeg" data="type=blade+target=leftleg+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_LeftUpperArmGore" value="Mechanic/Blade/LeftUpperArm" data="type=blade+target=leftarmroll+atp=true+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_RightLowerArmGore" value="Mechanic/Blade/RightLowerArm" data="type=blade+target=rightforearmroll+atp=true+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_RightLowerLegGore" value="Mechanic/Blade/RightLowerLeg" data="type=blade+target=rightleg+detach=true+mask=true"/>
+  <property name ="DismemberTag_L_RightUpperArmGore" value="Mechanic/Blade/RightUpperArm" data="type=blade+target=rightarmroll+atp=true+detach=true+mask=true"/>
   <property name ="DismemberTag_L_LeftUpperLegGore" value="linked" data="DismemberTag_L_LeftLowerLegGore"/>
   <property name ="DismemberTag_L_RightUpperLegGore" value="linked" data="DismemberTag_L_RightLowerLegGore"/>
   
@@ -1707,13 +1707,13 @@
 	<property name="PushFactor" value="20"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
-	
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
+
+	<property name="SoundRandom" value="zombiemale2roam"/>
+	<property name="SoundAlert" value="zombiemale2alert"/>
+	<property name="SoundSense" value="zombiemale2sense"/>
+	<property name="SoundHurt" value="zombiemale2pain"/>
+	<property name="SoundDeath" value="zombiemale2death"/>
+	<property name="SoundAttack" value="zombiemale2attack"/>
 
   <!-- Dismemberment -->
   <property name ="DismemberTag_L_HeadGore" value="Moe/Blade/Head;Moe/Blunt/Head" data="type=blade+target=neck+atp=true+detach=true;type=blunt+target=neck+atp=true"/>
@@ -1778,12 +1778,12 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZLab.prefab"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>
+	<property name="SoundRandom" value="zombiefemaleroam"/>
+	<property name="SoundAlert" value="zombiefemalealert"/>
+	<property name="SoundAttack" value="zombiefemaleattack"/>
+	<property name="SoundHurt" value="zombiefemalepain"/>
+	<property name="SoundDeath" value="zombiefemaledeath"/>
+	<property name="SoundSense" value="zombiefemalesense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="130"/>
@@ -1856,12 +1856,12 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZDarlene.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Darlene2.mat,@:Entities/Zombies/Zombies/Materials/HD_Darlene3.mat"/>
 	
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female2/zombiefemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female2/zombiefemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female2/zombiefemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female2/zombiefemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female2/zombiefemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female2/zombiefemale2sense"/>
+	<property name="SoundRandom" value="zombiefemale2roam"/>
+	<property name="SoundAlert" value="zombiefemale2alert"/>
+	<property name="SoundAttack" value="zombiefemale2attack"/>
+	<property name="SoundHurt" value="zombiefemale2pain"/>
+	<property name="SoundDeath" value="zombiefemale2death"/>
+	<property name="SoundSense" value="zombiefemale2sense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="3"/>
 	<property name="RootMotion" value="true"/>
@@ -2001,12 +2001,12 @@
 <entity_class name="zombieUtilityWorker" extends="zombieTemplateMale">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
+	<property name="SoundRandom" value="zombiemale2roam"/>
+	<property name="SoundAlert" value="zombiemale2alert"/>
+	<property name="SoundAttack" value="zombiemale2attack"/>
+	<property name="SoundHurt" value="zombiemale2pain"/>
+	<property name="SoundDeath" value="zombiemale2death"/>
+	<property name="SoundSense" value="zombiemale2sense"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWorker.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Worker2.mat,@:Entities/Zombies/Zombies/Materials/HD_Worker3.mat"/>
 	
@@ -2247,12 +2247,12 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBigMama.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_BigMomma2.mat,@:Entities/Zombies/Zombies/Materials/HD_BigMomma3.mat"/>
 	
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female2/zombiefemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Female2/zombiefemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female2/zombiefemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female2/zombiefemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female2/zombiefemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female2/zombiefemale2sense"/>
+	<property name="SoundRandom" value="zombiefemale2roam"/>
+	<property name="SoundAlert" value="zombiefemale2alert"/>
+	<property name="SoundAttack" value="zombiefemale2attack"/>
+	<property name="SoundHurt" value="zombiefemale2pain"/>
+	<property name="SoundDeath" value="zombiefemale2death"/>
+	<property name="SoundSense" value="zombiefemale2sense"/>
 	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="1"/>
@@ -2339,13 +2339,13 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZHawaiian.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Hawaiian_Zombie2.mat,@:Entities/Zombies/Zombies/Materials/HD_Hawaiian_Zombie4.mat"/>
 	
-	<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
-	<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
-	<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
-	<property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
-	<property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
-	<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
-	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
+	<property name="SoundRandom" value="hulkroam"/>
+	<property name="SoundAlert" value="hulkalert"/>
+	<property name="SoundAttack" value="hulkattack"/>
+	<property name="SoundHurt" value="hulkpain"/>
+	<property name="SoundDeath" value="hulkdeath"/>
+	<property name="SoundSense" value="hulksense"/>
+	<property name="SoundFootstepModifier" value="bear_footstep"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="1"/>
 	<property name="Mass" value="250"/>
@@ -2424,13 +2424,13 @@
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZBowler.prefab"/>
 	<property name="AltMats" value="@:Entities/Zombies/Zombies/Materials/HD_Hawaiian_Zombie5.mat"/>
 	
-	<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
-	<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
-	<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
-	<property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
-	<property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
-	<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
-	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
+	<property name="SoundRandom" value="hulkroam"/>
+	<property name="SoundAlert" value="hulkalert"/>
+	<property name="SoundAttack" value="hulkattack"/>
+	<property name="SoundHurt" value="hulkpain"/>
+	<property name="SoundDeath" value="hulkdeath"/>
+	<property name="SoundSense" value="hulksense"/>
+	<property name="SoundFootstepModifier" value="bear_footstep"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="1"/>
 	<property name="Mass" value="250"/>
@@ -2528,13 +2528,13 @@
 	Wander|
 	"/>
 
-	<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
-	<property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
-	<property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
-	<property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
-	<property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
-	<property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
-	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
+	<property name="SoundRandom" value="hulkroam"/>
+	<property name="SoundAlert" value="hulkalert"/>
+	<property name="SoundAttack" value="hulkattack"/>
+	<property name="SoundHurt" value="hulkpain"/>
+	<property name="SoundDeath" value="hulkdeath"/>
+	<property name="SoundSense" value="hulksense"/>
+	<property name="SoundFootstepModifier" value="bear_footstep"/>
 	<property name="SoundExplodeWarn" value="hulkexplodewarning"/>
 
 	<property name="DismemberMultiplierLegs" value="0"/>
@@ -2718,12 +2718,12 @@
 <entity_class name="zombieSoldier" extends="zombieTemplateMale">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker,zombieSoldier"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
-	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Male2/zombiemale2attack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Male2/zombiemale2pain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Male2/zombiemale2death"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Male2/zombiemale2sense"/>
+	<property name="SoundRandom" value="zombiemale2roam"/>
+	<property name="SoundAlert" value="zombiemale2alert"/>
+	<property name="SoundAttack" value="zombiemale2attack"/>
+	<property name="SoundHurt" value="zombiemale2pain"/>
+	<property name="SoundDeath" value="zombiemale2death"/>
+	<property name="SoundSense" value="zombiemale2sense"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZSoldier.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="2"/>
@@ -2804,12 +2804,12 @@
 	<property name="SizeScale" value="1.1"/>
 	<property name="Tags" value="entity,zombie,walker,feral"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZWightFeral.prefab"/>
-	<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
-	<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
-	<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
-	<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
-	<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
-	<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
+	<property name="SoundRandom" value="zombieferalroam"/>
+	<property name="SoundAlert" value="zombieferalalert"/>
+	<property name="SoundAttack" value="zombieferalattack"/>
+	<property name="SoundHurt" value="zombieferalpain"/>
+	<property name="SoundDeath" value="zombieferaldeath"/>
+	<property name="SoundSense" value="zombieferalsense"/>
 	<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
 	<property name="WalkType" value="2"/>
 	<property name="Mass" value="210"/>
@@ -2882,12 +2882,12 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,zombie,walker"/>
 	<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamer.prefab"/>
-	<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemalescoutroam"/>
-	<property name="SoundAlert" value="Enemies/Scout_Zombie/zombiefemalescoutalert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemalescoutattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalescoutsense"/>
+	<property name="SoundRandom" value="zombiefemalescoutroam"/>
+	<property name="SoundAlert" value="zombiefemalescoutalert"/>
+	<property name="SoundAttack" value="zombiefemalescoutattack"/>
+	<property name="SoundHurt" value="zombiefemalescoutpain"/>
+	<property name="SoundDeath" value="zombiefemalescoutdeath"/>
+	<property name="SoundSense" value="zombiefemalescoutsense"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="WalkType" value="3"/>
 	<property name="Mass" value="110"/>
@@ -2987,12 +2987,12 @@
 	Wander|
 	"/>
 
-	<property name="SoundRandom" value="Enemies/Zombie_Mutated/zombie_mutated_roam"/>
-	<property name="SoundAlert" value="Enemies/Zombie_Mutated/zombie_mutated_alert"/>
-	<property name="SoundAttack" value="Enemies/Zombie_Mutated/zombie_mutated_attack"/>
-	<property name="SoundHurt" value="Enemies/Zombie_Mutated/zombie_mutated_pain"/>
-	<property name="SoundDeath" value="Enemies/Zombie_Mutated/zombie_mutated_death"/>
-	<property name="SoundSense" value="Enemies/Zombie_Mutated/zombie_mutated_sense"/>
+	<property name="SoundRandom" value="zombie_mutated_roam"/>
+	<property name="SoundAlert" value="zombie_mutated_alert"/>
+	<property name="SoundAttack" value="zombie_mutated_attack"/>
+	<property name="SoundHurt" value="zombie_mutated_pain"/>
+	<property name="SoundDeath" value="zombie_mutated_death"/>
+	<property name="SoundSense" value="zombie_mutated_sense"/>
 	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
 
   <!-- Gameplay zombieMutated -->
@@ -3202,8 +3202,8 @@
 
 	<property name="SurfaceCategory" value="organic"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SoundHurt" value="Animals/stagpain"/>
-	<property name="SoundDeath" value="Animals/stagdeath"/>
+	<property name="SoundHurt" value="stagpain"/>
+	<property name="SoundDeath" value="stagdeath"/>
 
 	<property name="AIPathCostScale" value="100, 100"/>
 	<property name="AITask-1" value="RunawayWhenHurt"/>
@@ -3274,8 +3274,8 @@
 	<property name="Weight" value="70"/>
 	<property name="SurfaceCategory" value="organic"/>
 	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SoundHurt" value="Animals/stagpain"/>
-	<property name="SoundDeath" value="Animals/stagdeath"/>
+	<property name="SoundHurt" value="stagpain"/>
+	<property name="SoundDeath" value="stagdeath"/>
   <property name="SightRange" value="37"/>  <!-- distance in m -->
 
 	<!-- Gameplay  -->
@@ -3333,8 +3333,8 @@
 	<property name="PhysicsBody" value="rabbit"/>
 	<property name="Mass" value="12"/>
 	<property name="Weight" value="10"/>
-	<property name="SoundHurt" value="Animals/rabbitpain"/>
-	<property name="SoundDeath" value="Animals/rabbitdeath"/>
+	<property name="SoundHurt" value="rabbitpain"/>
+	<property name="SoundDeath" value="rabbitdeath"/>
 	<property name="SwimOffset" value="2"/>
 	<property name="HasRagdoll" value="false"/>
 	<property name="CanBigHead" value="false" />
@@ -3376,8 +3376,8 @@
 	<property name="PhysicsBody" value="chicken"/>
 	<property name="Mass" value="15"/>
 	<property name="Weight" value="10"/>
-	<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-	<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
+	<property name="SoundHurt" value="chickenpain"/>
+	<property name="SoundDeath" value="chickendeath"/>
 	<property name="SwimOffset" value="2"/>
 	<property name="HasRagdoll" value="false"/>
 	<property name="HasDeathAnim" value="false"/>
@@ -3408,8 +3408,8 @@
 	<property name="Mesh" value="Animals/Pig/PIG"/>
 	<property name="Prefab" value="NPC"/>
 	<property name="Parent" value="Animals"/>
-	<property name="SoundHurt" value="Animals/pigpain"/>
-	<property name="SoundDeath" value="Animals/pigdeath"/>
+	<property name="SoundHurt" value="pigpain"/>
+	<property name="SoundDeath" value="pigdeath"/>
 	<property name="MoveSpeedPanic" value="1.2"/>
 	<property name="PhysicsBody" value="pig"/>
 	<property name="ExperienceGain" value="130"/>
@@ -3563,22 +3563,20 @@
 	<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,8,EntityBandit,0,-6,EntityAnimalStag,0,0,EntityZombie,0,-6"/>
 	<property name="AITarget-4" value=""/>
 
-	<property name="SoundHurt" value="Animals/Bear/bearpain"/>
-	<property name="SoundDeath" value="Animals/Bear/beardeath"/>
-	<property name="SoundRandom" value="Animals/Bear/bearroam"/>
-	<property name="SoundSense" value="Animals/Bear/bearsense"/>
-	<property name="SoundAlert" value="Animals/Bear/bearalert"/>
-	<property name="SoundAttack" value="Animals/Bear/bearattack"/>
-	<property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
-	<property name="SoundGiveUp" value="Animals/Bear/beargiveup"/>
+	<property name="SoundHurt" value="bearpain"/>
+	<property name="SoundDeath" value="beardeath"/>
+	<property name="SoundRandom" value="bearroam"/>
+	<property name="SoundSense" value="bearsense"/>
+	<property name="SoundAlert" value="bearalert"/>
+	<property name="SoundAttack" value="bearattack"/>
+	<property name="SoundFootstepModifier" value="bear_footstep"/>
+	<property name="SoundGiveUp" value="beargiveup"/>
 
 	<!-- Gameplay  -->
 	<property name="PainResistPerHit" value="1"/>
 	<property name="DeadBodyHitPoints" value="600"/>
 
 	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
-	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
-	<property name="LootDropProb" value=".5"/> <!-- Bear -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="50"/> <!-- animalBear -->
@@ -3603,8 +3601,7 @@
 
 	<property name="HandItem" value="meleeHandAnimalLittleBear"/>
 
-	<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
-	<property name="LootDropProb" value=".3"/> <!-- Little Bear -->
+	<property name="ExperienceGain" value="1000"/><!-- XP Little Bear -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="25"/>
@@ -3626,6 +3623,7 @@
 	<property name="EntityFlags" value="animal,zombie"/>
 	<property name="Tags" value="entity,animal,zombie,hostile,bear"/>
 	<property name="Prefab" value="/Entities/Animals/Bear/animalBearZombiePrefab"/>
+	<property name="DismemberMultiplierHead" value="0"/>
 
 	<property name="AIFeralSense" value="1.2"/>
 	<property name="AITask-1" value="BreakBlock"/>
@@ -3646,9 +3644,9 @@
 	<property name="HandItem" value="meleeHandAnimalZombieBear"/>
 	<property name="DeadBodyHitPoints" value="600"/>
 
-	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
+	<property name="ExperienceGain" value="2500"/><!-- XP strong -->
 	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-	<property name="LootDropProb" value=".5"/> <!-- Zombie Bear -->
+	<property name="LootDropProb" value="1"/> <!-- Zombie Bear -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="50"/> <!-- animalZombieBear -->
@@ -3730,6 +3728,7 @@
 	<property name="Mass" value="180"/>
 	<property name="Prefab" value="/Entities/Animals/DireWolf/animalDireWolfPrefab"/>
 	<property name="SizeScale" value="1.4"/>
+	<property name="DismemberMultiplierHead" value="0"/>
 
 	<property name="AIPathCostScale" value=".15, .2"/>
 	<property name="AITask" value="
@@ -3766,8 +3765,8 @@
 	<property name="DeadBodyHitPoints" value="450"/>
 
 	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
-	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
-	<property name="LootDropProb" value=".3"/> <!-- Dire Wolf -->
+	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
+	<property name="LootDropProb" value="1"/> <!-- Dire Wolf -->
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="35"/> <!-- animalDireWolf -->
@@ -3777,7 +3776,7 @@
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="2200"/>
+		<passive_effect name="HealthMax" operation="base_set" value="3000"/>
 	</effect_group>
 
 	<property name="NavObject" value="twitch_spawn,twitch_spawn_other,animaltracking_direwolf,clear_sleeper" />
@@ -3796,8 +3795,8 @@
 	<property name="PhysicsBody" value="chicken"/>
 	<property name="Mass" value="30"/>
 	<property name="Weight" value="20"/>
-	<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
-	<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
+	<property name="SoundHurt" value="chickenpain"/>
+	<property name="SoundDeath" value="chickendeath"/>
 	<property name="SwimOffset" value="2"/>
 	<property name="HasRagdoll" value="false"/>
 	<property name="HasDeathAnim" value="false"/>
@@ -3960,13 +3959,13 @@
 	<property name="AITask-1" value=""/>
 	<property name="AITarget-1" value=""/>
 
-	<property name="SoundRandom" value="Animals/Vulture/vultureroam"/>
-	<property name="SoundAlert" value="Animals/Vulture/vulturealert"/>
-	<property name="SoundHurt" value="Animals/Vulture/vulturepain"/>
-	<property name="SoundDeath" value="Animals/Vulture/vulturedeath"/>
-	<property name="SoundAttack" value="Animals/Vulture/vultureattack"/>
-	<property name="SoundSense" value="Animals/Vulture/vulturesense"/>
-	<property name="SoundGiveUp" value="Animals/Vulture/vulturegiveup"/>
+	<property name="SoundRandom" value="vultureroam"/>
+	<property name="SoundAlert" value="vulturealert"/>
+	<property name="SoundHurt" value="vulturepain"/>
+	<property name="SoundDeath" value="vulturedeath"/>
+	<property name="SoundAttack" value="vultureattack"/>
+	<property name="SoundSense" value="vulturesense"/>
+	<property name="SoundGiveUp" value="vulturegiveup"/>
 
 	<!-- Stealth -->
 	<property name="SightRange" value="70"/>
@@ -4078,9 +4077,6 @@
 	<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
 	<property name="PainResistPerHit" value=".9"/>
 
-	<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
-	<property name="LootDropProb" value=".03"/> <!-- Zombie Dog -->
-
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="10"/> <!-- animalZombieDog -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
@@ -4127,12 +4123,12 @@
 	<property name="AITarget-4" value=""/>
 
 	<property name="WalkType" value="7"/>
-	<property name="SoundHurt" value="Animals/Snake/snakepain"/>
-	<property name="SoundDeath" value="Animals/Snake/snakedeath"/>
-	<property name="SoundRandom" value="Animals/Snake/snakeroam"/>
-	<property name="SoundSense" value="Animals/Snake/snakesense"/>
-	<property name="SoundAlert" value="Animals/Snake/snakealert"/>
-	<property name="SoundAttack" value="Animals/Snake/snakeattack"/>
+	<property name="SoundHurt" value="snakepain"/>
+	<property name="SoundDeath" value="snakedeath"/>
+	<property name="SoundRandom" value="snakeroam"/>
+	<property name="SoundSense" value="snakesense"/>
+	<property name="SoundAlert" value="snakealert"/>
+	<property name="SoundAttack" value="snakeattack"/>
 	<property name="RootMotion" value="true"/>
 	<property name="HasDeathAnim" value="true"/>
 
@@ -4181,13 +4177,13 @@
 	<property name="RootMotion" value="true"/>
 	<property name="RagdollOnDeathChance" value=".5"/>
 
-	<property name="SoundRandom" value="Animals/Boar/boarroam"/>
-	<property name="SoundAlert" value="Animals/Boar/boaralert"/>
-	<property name="SoundHurt" value="Animals/Boar/boarpain"/>
-	<property name="SoundDeath" value="Animals/Boar/boardeath"/>
-	<property name="SoundAttack" value="Animals/Boar/boarattack"/>
-	<property name="SoundSense" value="Animals/Boar/boarsense"/>
-	<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
+	<property name="SoundRandom" value="boarroam"/>
+	<property name="SoundAlert" value="boaralert"/>
+	<property name="SoundHurt" value="boarpain"/>
+	<property name="SoundDeath" value="boardeath"/>
+	<property name="SoundAttack" value="boarattack"/>
+	<property name="SoundSense" value="boarsense"/>
+	<property name="SoundGiveUp" value="boargiveup"/>
 
 	<!-- Gameplay  -->
 	<property name="PainResistPerHit" value=".75"/>
@@ -4221,13 +4217,13 @@
 	<property name="Prefab" value="/Entities/Animals/Boar/AnimalBossGrace"/>
 	<!--<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>-->
 	<property name="Mass" value="1200"/>
-	<property name="SoundRandom" value="Animals/Boar/boarroam"/>
-	<property name="SoundAlert" value="Animals/Boar/boaralert"/>
-	<property name="SoundHurt" value="Animals/Boar/boarpain"/>
-	<property name="SoundDeath" value="Animals/Boar/boardeath"/>
-	<property name="SoundAttack" value="Animals/Boar/boarattack"/>
-	<property name="SoundSense" value="Animals/Boar/boarsense"/>
-	<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
+	<property name="SoundRandom" value="boarroam"/>
+	<property name="SoundAlert" value="boaralert"/>
+	<property name="SoundHurt" value="boarpain"/>
+	<property name="SoundDeath" value="boardeath"/>
+	<property name="SoundAttack" value="boarattack"/>
+	<property name="SoundSense" value="boarsense"/>
+	<property name="SoundGiveUp" value="boargiveup"/>
 	<property name="DismemberMultiplierHead" value="0"/>
 
 	<property name="AITask-1" value="BreakBlock"/>
@@ -4254,7 +4250,7 @@
 
 	<property name="ExperienceGain" value="2000"/><!-- XP strong -->
 	<property name="LootDropEntityClass" value="EntityLootContainerBoss"/>
-	<property name="LootDropProb" value=".5"/> <!-- Grace -->
+	<property name="LootDropProb" value="1"/> <!-- Grace -->
 
 	<drop event="Harvest" name="foodRottingFlesh" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="100"/> <!-- animalBoar -->
@@ -4891,16 +4887,16 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="HasDeathAnim" value="true"/>
 	<property name="SoundRandomTime" value="200"/>
 	<property name="Archetype" value="TraderJoel"/>
-	<property name="SoundHurt" value="Player_Male/player1painlg"/>
-	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
-	<property name="SoundDeath" value="Player_Male/player1death"/>
-	<property name="SoundStamina" value="Player_Male/player1stamina"/>
-	<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
-	<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
-	<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
-	<property name="SoundJump" value="Player_Male/player1Jump"/>
-	<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
-	<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
+	<property name="SoundHurt" value="player1painlg"/>
+	<property name="SoundHurtSmall" value="player1painsm"/>
+	<property name="SoundDeath" value="player1death"/>
+	<property name="SoundStamina" value="player1stamina"/>
+	<property name="SoundDrownPain" value="player1drownpain"/>
+	<property name="SoundWaterSurface" value="player1drownsurface"/>
+	<property name="SoundDrownDeath" value="player1drowndeath"/>
+	<property name="SoundJump" value="player1Jump"/>
+	<property name="SoundLandSoft" value="player1LandSoft"/>
+	<property name="SoundLandHard" value="player1LandHard"/>
 	<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
 	<!-- <property name="CorpseBlock" value="air"/><property name="CorpseBlockChance" value="0"/> -->
 
@@ -4978,7 +4974,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 <entity_class name="npcTraderTest" extends="npcTraderTemplate">
 	<property name="UserSpawnType" value="None"/>
 	<property name="Tags" value="entity,npc,human,trader"/>
-	<property name="Mesh" value="@:Entities/Traders/Prefabs/TraderJoel.prefab"/>
+	<property name="Mesh" value="@:Entities/Traders/Prefabs/TraderHugh.prefab"/>
 	<property name="NPCID" value="traderTest"/>
 	<property name="DanceType" value="1" />
 </entity_class>

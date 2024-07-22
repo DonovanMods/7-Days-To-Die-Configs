@@ -5,49 +5,43 @@
 		<property name="world_size" value="0,5000"/>
 		<property name="border_step_distance" value="128"/>
 
+		<!-- clusters params: stamp count, offset from center in random direction (after the first), stamp strength -->
+
+		<property class="plains">
+			<property name="scale" value=".5, 1.5"/>
+			<property name="clusters" value="4, .6, .42"/>
+		</property>
+
+		<property class="hills">
+			<property name="scale" value="1.1, 1.4"/>
+			<property name="clusters" value="3, .3, 1"/>
+		</property>
+
 		<property class="forest_mountains">
-			<property name="scale" value="1,1.2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="400"/>
+			<property name="scale" value="1.15, 1.35"/>
+			<property name="clusters" value="3, .4, .38"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="burntforest_mountains">
-			<property name="scale" value="1,1.3"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="450"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="2, .4, .63"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="desert_mountains">
-			<property name="scale" value="1,1.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="500"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="3, .4, .6"/>
 			<property name="use_biome_mask" value="true"/>
-			<property name="biome_mask_min" value="0.1"/>
+			<property name="biome_mask_min" value=".1"/>
 		</property>
 
 		<property class="mountains">
-			<property name="scale" value="1,1.6"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="600"/>
+			<property name="scale" value="1.3, 1.5"/>
+			<property name="clusters" value="3, .5, .76"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
-		<property class="hills">
-			<property name="scale" value="1,2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="700"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-		
-		<property class="plains">
-			<property name="scale" value="2,3"/>
-			<property name="cluster_iterations" value="2"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-		
 		<property class="lakes">
 			<property name="scale" value=".5, .75"/>
 			<property name="count" value="2, 4, 8"/>
@@ -79,13 +73,13 @@
 
 		<property class="forest_countrytown">
 			<property name="count" value="2, 4, 6"/>
-			<property name="tiles" value="6, 6"/>
+			<property name="tiles" value="4, 4"/>
 			<property name="distance" value="4"/>
 		</property>
 
 		<property class="bforest_countrytown">
 			<property name="count" value="2, 2, 4"/>
-			<property name="tiles" value="5, 6"/>
+			<property name="tiles" value="4, 5"/>
 			<property name="distance" value="4"/>
 		</property>
 
@@ -133,49 +127,41 @@
 		<property name="world_size" value="5000,7000"/>
 		<property name="border_step_distance" value="256"/>
 
+		<property class="plains">
+			<property name="scale" value=".5, 1.5"/>
+			<property name="clusters" value="4, .6, .42"/>
+		</property>
+
+		<property class="hills">
+			<property name="scale" value="1.1, 1.4"/>
+			<property name="clusters" value="3, .3, 1"/>
+		</property>
+
 		<property class="forest_mountains">
-			<property name="scale" value="1,1.2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="500"/>
+			<property name="scale" value="1.15, 1.35"/>
+			<property name="clusters" value="3, .4, .38"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="burntforest_mountains">
-			<property name="scale" value="1,1.3"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="550"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="2, .4, .63"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="desert_mountains">
-			<property name="scale" value="1,1.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="600"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="3, .4, .6"/>
 			<property name="use_biome_mask" value="true"/>
-			<property name="biome_mask_min" value="0.1"/>
+			<property name="biome_mask_min" value=".1"/>
 		</property>
 
 		<property class="mountains">
-			<property name="scale" value="1,1.6"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="700"/>
+			<property name="scale" value="1.3, 1.5"/>
+			<property name="clusters" value="3, .5, .76"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
-		<property class="hills">
-			<property name="scale" value="1,2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-		
-		<property class="plains">
-			<property name="scale" value="2,3"/>
-			<property name="cluster_iterations" value="2"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-		
 		<property class="lakes">
 			<property name="scale" value=".8, 1.5"/>
 			<property name="count" value="2, 4, 8"/>
@@ -207,13 +193,13 @@
 
 		<property class="forest_countrytown">
 			<property name="count" value="2, 4, 6"/>
-			<property name="tiles" value="6, 6"/>
+			<property name="tiles" value="4, 4"/>
 			<property name="distance" value="4"/>
 		</property>
 
 		<property class="bforest_countrytown">
 			<property name="count" value="2, 2, 4"/>
-			<property name="tiles" value="5, 6"/>
+			<property name="tiles" value="4, 5"/>
 			<property name="distance" value="4"/>
 		</property>
 
@@ -261,47 +247,39 @@
 		<property name="world_size" value="7000,10000"/>
 		<property name="border_step_distance" value="256"/>
 
+		<property class="plains">
+			<property name="scale" value=".5, 1.5"/>
+			<property name="clusters" value="4, .6, .42"/>
+		</property>
+
+		<property class="hills">
+			<property name="scale" value="1.1, 1.4"/>
+			<property name="clusters" value="3, .3, 1"/>
+		</property>
+
 		<property class="forest_mountains">
-			<property name="scale" value="1,1.2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="500"/>
+			<property name="scale" value="1.15, 1.35"/>
+			<property name="clusters" value="3, .4, .38"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="burntforest_mountains">
-			<property name="scale" value="1,1.3"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="550"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="2, .4, .63"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="desert_mountains">
-			<property name="scale" value="1,1.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="600"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="3, .4, .6"/>
 			<property name="use_biome_mask" value="true"/>
-			<property name="biome_mask_min" value="0.1"/>
+			<property name="biome_mask_min" value=".1"/>
 		</property>
 
 		<property class="mountains">
-			<property name="scale" value="1,1.6"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="700"/>
+			<property name="scale" value="1.3, 1.5"/>
+			<property name="clusters" value="3, .5, .76"/>
 			<property name="use_biome_mask" value="true"/>
-		</property>
-
-		<property class="hills">
-			<property name="scale" value="1,2.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-
-		<property class="plains">
-			<property name="scale" value="2,3"/>
-			<property name="cluster_iterations" value="2"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
 		</property>
 
 		<property class="lakes">
@@ -335,7 +313,7 @@
 
 		<property class="forest_countrytown">
 			<property name="count" value="2, 4, 6"/>
-			<property name="tiles" value="6, 6"/>
+			<property name="tiles" value="4, 5"/>
 			<property name="distance" value="4"/>
 		</property>
 
@@ -386,50 +364,42 @@
 	</world>
 
 	<world name="large">
-		<property name="world_size" value="10000,16000"/>
+		<property name="world_size" value="10000,99000"/>
 		<property name="border_step_distance" value="256"/>
 
+		<property class="plains">
+			<property name="scale" value=".5, 1.5"/>
+			<property name="clusters" value="4, .6, .42"/>
+		</property>
+
+		<property class="hills">
+			<property name="scale" value="1.1, 1.4"/>
+			<property name="clusters" value="3, .3, 1"/>
+		</property>
+
 		<property class="forest_mountains">
-			<property name="scale" value="1,1.2"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="500"/>
+			<property name="scale" value="1.15, 1.35"/>
+			<property name="clusters" value="3, .4, .38"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="burntforest_mountains">
-			<property name="scale" value="1,1.3"/>
-			<property name="cluster_iterations" value="3"/>
-			<property name="cluster_range" value="550"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="2, .4, .63"/>
 			<property name="use_biome_mask" value="true"/>
 		</property>
 
 		<property class="desert_mountains">
-			<property name="scale" value="1,1.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="700"/>
+			<property name="scale" value="1.2, 1.4"/>
+			<property name="clusters" value="3, .4, .6"/>
 			<property name="use_biome_mask" value="true"/>
-			<property name="biome_mask_min" value="0.25"/>
+			<property name="biome_mask_min" value=".1"/>
 		</property>
 
 		<property class="mountains">
-			<property name="scale" value="1,1.6"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="750"/>
+			<property name="scale" value="1.3, 1.5"/>
+			<property name="clusters" value="3, .5, .76"/>
 			<property name="use_biome_mask" value="true"/>
-		</property>
-
-		<property class="hills">
-			<property name="scale" value="1,2.5"/>
-			<property name="cluster_iterations" value="4"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
-		</property>
-		
-		<property class="plains">
-			<property name="scale" value="2,3"/>
-			<property name="cluster_iterations" value="2"/>
-			<property name="cluster_range" value="800"/>
-			<property name="use_biome_mask" value="false"/>
 		</property>
 
 		<property class="lakes">
@@ -463,7 +433,7 @@
 
 		<property class="forest_countrytown">
 			<property name="count" value="3, 5, 7"/>
-			<property name="tiles" value="6, 6"/>
+			<property name="tiles" value="4, 5"/>
 		</property>
 
 		<property class="bforest_countrytown">
@@ -519,39 +489,42 @@
 
 	<township name="forest_countrytown">
 		<property name="biomes" value="forest"/>
+		<property name="outskirt_district" value="forest_rural, .35"/>
 	</township>
 
 	<township name="bforest_countrytown">
 		<property name="biomes" value="burntforest"/>
+		<property name="outskirt_district" value="rural, .4"/>
 	</township>
 
 	<township name="bforest_town">
-		<property name="outskirt_district" value="rural"/>
 		<property name="biomes" value="burntforest"/>
+		<property name="outskirt_district" value="rural"/>
 	</township>
 
 	<township name="countrytown">
 		<property name="biomes" value="desert,snow"/>
+		<property name="outskirt_district" value="rural, .5"/>
 	</township>
 
 	<township name="town">
-		<property name="outskirt_district" value="rural"/>
 		<property name="biomes" value="desert,snow"/>
+		<property name="outskirt_district" value="rural"/>
 	</township>
 
 	<township name="city">
-		<property name="outskirt_district" value="rural"/>
 		<property name="biomes" value="desert,snow"/>
+		<property name="outskirt_district" value="rural"/>
 	</township>
 
 	<township name="wasteland_city">
-		<property name="outskirt_district" value="rural"/>
 		<property name="biomes" value="wasteland"/>
+		<property name="outskirt_district" value="rural"/>
 	</township>
 
 	<township name="citybig">
-		<property name="outskirt_district" value="rural"/>
 		<property name="biomes" value="wasteland"/>
+		<property name="outskirt_district" value="rural"/>
 	</township>
 
 	<township name="roadside">
@@ -600,6 +573,14 @@
 		<property name="spawn_custom_size_prefabs" value="true"/>
 	</district>
 
+	<district name="forest_rural">
+		<property name="tag" value="rural"/>
+		<property name="district_spawn_weight" value="0"/>
+		<property name="district_required_township" value="forest_countrytown"/>
+		<property name="district_preview_color" value="0,1,1"/>
+		<property name="spawn_custom_size_prefabs" value="true"/>
+	</district>
+	
 	<district name="downtown">
 		<property name="district_spawn_weight" value="0.3"/>
 		<property name="district_required_township" value="citybig,wasteland_city,city"/>
@@ -619,7 +600,7 @@
 	</district>
 
 	<!-- streettile
-	mintiles, maxtiles limits the count to that range for the entire world
+	mintiles, maxtiles limits the count to that range for the entire world. mintiles 0 does not increase chance to get the tile
 	maxdensity sets the prefab budget for the tile (Score in previewer)
 	-->
 
@@ -629,29 +610,23 @@
 		<property name="maxtiles" value="30"/>
 	</streettile>
 	-->
-	
-	<streettile name="rwg_tile_gateway_straight3">
-		<property name="mintiles" value="1"/>
-		<property name="maxtiles" value="6"/>
-	</streettile>
-	
-	<streettile name="rwg_tile_gateway_straight3a">
-		<property name="mintiles" value="1"/>
-		<property name="maxtiles" value="4"/>
-	</streettile>
-	
-	<streettile name="rwg_tile_gateway_straight3b">
-		<property name="mintiles" value="1"/>
-		<property name="maxtiles" value="3"/>
-	</streettile>
-	
-	<!--
-	<streettile name="rwg_tile_gateway_straight3">
-		<property name="mintiles" value="1"/>
-		<property name="maxtiles" value="1"/>
-	</streettile> 
-	-->
 
+	<!-- limit these as they block traders from spawning -->
+	<streettile name="rwg_tile_gateway_straight3">
+		<property name="mintiles" value="0"/>
+		<property name="maxtiles" value="1"/>
+	</streettile>
+
+	<streettile name="rwg_tile_gateway_straight3a">
+		<property name="mintiles" value="0"/>
+		<property name="maxtiles" value="1"/>
+	</streettile>
+
+	<streettile name="rwg_tile_gateway_straight3b">
+		<property name="mintiles" value="0"/>
+		<property name="maxtiles" value="1"/>
+	</streettile>
+	
 	<!-- prefab spawn weight info:
 	base score for a prefab is always 1, 
 	then additions are done; score += (bias + (tier / 5)), 
@@ -665,6 +640,8 @@
 	<prefab_spawn_adjust partial_name="trader_bob" biomeTags="desert" bias="20" min_count="2" max_count="4"/>
 	<prefab_spawn_adjust partial_name="trader_hugh" biomeTags="snow" bias="20" min_count="2" max_count="4"/>
 	<prefab_spawn_adjust partial_name="trader_joel" biomeTags="wasteland" bias="20" min_count="2" max_count="4"/>
+	<prefab_spawn_adjust partial_name="sawmill_01" biomeTags="forest,snow,burntforest" />
+	<prefab_spawn_adjust partial_name="rural_outdoor_wedding_01" biomeTags="forest,burntforest,snow" />
 
 	<!-- 
 	<prefab_spawn_adjust partial_name="remnant_downtown_filler" bias="1"/>

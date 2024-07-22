@@ -7428,6 +7428,20 @@
 	<item group="groupCooler02" loot_prob_template="med" force_prob="true"/>
 </lootgroup>
 
+<!-- *** Cooler_Loot -->
+<lootgroup name="groupCoolerMedical01">
+	<item name="foodRottingFlesh" count="3,6"/>
+</lootgroup>
+
+<lootgroup name="groupCoolerMedical02">
+	<item group="groupMedicalPileMed"/>
+</lootgroup>
+
+<lootgroup name="groupCoolerMedical" count="all">
+	<item group="groupCoolerMedical01" count="1"/>
+	<item group="groupCoolerMedical02" loot_prob_template="low" force_prob="true"/>
+</lootgroup>
+
 <!-- *** Oven_Loot -->
 <lootgroup name="groupOven01">
 	<item name="toolCookingPot" loot_prob_template="veryLow"/>
@@ -9297,6 +9311,11 @@
 <!-- cooler loot -->
 <lootcontainer name="cooler" count="1" size="6,2" sound_open="UseActions/open_cooler" sound_close="UseActions/close_cooler" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
 	<item group="groupCooler"/>
+</lootcontainer>
+
+<!-- Yellow Medical Cooler -->
+<lootcontainer name="coolerMedical" count="1" size="6,2" sound_open="UseActions/open_cooler" sound_close="UseActions/close_cooler" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
+	<item group="groupCoolerMedical"/>
 </lootcontainer>
 
 <!-- trash compactor, trash deluxe! -->

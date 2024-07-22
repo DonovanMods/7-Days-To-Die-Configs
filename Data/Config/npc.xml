@@ -73,7 +73,7 @@
 		name="Trader Test"
 		name_key="Trader Test"
 		faction="whiteriver"
-		portrait="npc_joel"
+		portrait="npc_hugh"
 		greeting_type="nearby"
 		trader_id="9"
 		stance="Like" voice_set="trader_hugh"

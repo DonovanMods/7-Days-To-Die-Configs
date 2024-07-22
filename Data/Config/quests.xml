@@ -155,9 +155,9 @@
 	</quest>
 
 	<quest id="challengegroup_reward_crafting" template="challengegroup_reward_homesteading">
-		<variable name="name_key" value="crafting_name"/>
-		<variable name="subtitle_key" value="crafting_subtitle"/>
-		<variable name="description_key" value="crafting_desc"/>
+		<variable name="name" value="crafting_name"/>
+		<variable name="subtitle" value="crafting_subtitle"/>
+		<variable name="description" value="crafting_desc"/>
 		<property name="completion_key" value="crafting_completion"/>
 		
 		<reward type="Exp" value="1000"/>

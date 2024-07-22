@@ -6506,12 +6506,28 @@
 	<AudioClip ClipName="Sounds/Items/boneknife_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
+<SoundDataNode name="book_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/book_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="book_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/book_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
 <SoundDataNode name="bow_wooden_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/bow_wooden_grab"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="bow_wooden_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/bow_wooden_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="coal_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/coal_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="coal_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/coal_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="pickaxe_iron_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -6746,12 +6762,140 @@
 	<AudioClip ClipName="Sounds/Items/diamonds_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
+<SoundDataNode name="doorknob_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/doorknob_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="doorknob_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/doorknob_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_antibiotics_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_antibiotics_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_antibiotics_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_antibiotics_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_atomjunkies_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_atomjunkies_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_atomjunkies_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_atomjunkies_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_covertcats_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_covertcats_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_covertcats_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_covertcats_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_eyecandy_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_eyecandy_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_eyecandy_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_eyecandy_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_fortbites_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_fortbites_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_fortbites_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_fortbites_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_hackers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_hackers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_hackers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_hackers_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_healthbar_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_healthbar_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_healthbar_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_healthbar_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_jailbreakers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_jailbreakers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_jailbreakers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_jailbreakers_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_nerdtats_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_nerdtats_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_nerdtats_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_nerdtats_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_ohshitz_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_ohshitz_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_ohshitz_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_ohshitz_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_painkillers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_painkillers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_painkillers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_painkillers_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_rockbusters_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_rockbusters_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_rockbusters_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_rockbusters_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_skullcrushers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_skullcrushers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_skullcrushers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_skullcrushers_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_sugarbutts_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_sugarbutts_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="drug_sugarbutts_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/drug_sugarbutts_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
 <SoundDataNode name="ducttape_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/ducttape_grab"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="ducttape_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/ducttape_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="dye_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/dye_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="dye_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/dye_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="dynamite_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -6864,6 +7008,14 @@
 
 <SoundDataNode name="forgedmetal_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/forgedmetal_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="gascan_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/gascan_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="gascan_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/gascan_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="gloves_cloth_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -6992,6 +7144,14 @@
 
 <SoundDataNode name="impactdriver_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/impactdriver_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="ironpipe_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/ironpipe_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="ironpipe_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/ironpipe_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="item_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -7172,6 +7332,14 @@
 
 <SoundDataNode name="oldcash_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/oldcash_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="oil_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/oil_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="oil_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/oil_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="outfit_cloth_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -7492,6 +7660,14 @@
 
 <SoundDataNode name="torch_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/torch_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="trophy_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/trophy_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="trophy_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/trophy_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="tunafishgravytoast_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>

@@ -6859,15 +6859,15 @@
 	<property name="CreativeMode" value="None"/>
 	<property class="Action0">
 		<property name="Range" value="3.6"/>
-		<property name="DamageEntity" value="50"/>
+		<property name="DamageEntity" value="60"/>
 		<property name="DamageBlock" value="80"/>
 	</property>
 	<effect_group name="meleeHandAnimalZombieBear" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/> A16 1.5 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-			buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
-			weights=".11,.07,.07,.05,.29,.36,.11"/>
+			buff="buffArmBroken,buffLegBroken,buffLaceration,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+			weights=".1,.1,.25,.40,.15"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
 			<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
@@ -7136,14 +7136,14 @@
 	<property class="Action0">
 		<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
 		<property name="Range" value="2.2"/>
-		<property name="DamageEntity" value="40"/>
+		<property name="DamageEntity" value="60"/>
 		<property name="DamageBlock" value="40"/>
 	</property>
 	<effect_group name="meleeHandAnimalWolf" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-			buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
-			weights=".11,.07,.07,.05,.29,.36,.11"/>
+			buff="buffArmBroken,buffLegBroken,buffLaceration,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+			weights=".1,.1,.25,.40,.15"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="150"><!--InfectionRegular-->
 			<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
@@ -7759,6 +7759,8 @@
 	<property name="Group" value="Resources,Chemicals,CFChemicals,Ammo"/>
 	<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey,ammoGasCanSchematic, -->
 	<property name="CraftingIngredientTime" value=".05"/>
+	<property name="SoundPickup" value="gascan_grab"/>
+	<property name="SoundPlace" value="gascan_place"/>
 </item>
 
 <item name="ammoArrowStone">
@@ -9313,6 +9315,8 @@
 	<property name="EconomicValue" value="9000"/>
 	<property name="TraderStageTemplate" value="vehicleTier3"/><!-- vehicleTruck4x4Chassis -->
 	<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey -->
+	<property name="SoundPickup" value="chassis_grab"/>
+	<property name="SoundPlace" value="chassis_place"/>
 </item>
 
 <item name="vehicleTruck4x4Accessories">
@@ -9346,6 +9350,8 @@
 	<property name="EconomicValue" value="15000"/>
 	<property name="TraderStageTemplate" value="vehicleTier4"/><!-- vehicleGyroCopterChassis -->
 	<property name="UnlockedBy" value="craftingVehicles"/><!-- perkGreaseMonkey,vehicleGyroCopterChassisSchematic, -->
+	<property name="SoundPickup" value="chassis_grab"/>
+	<property name="SoundPlace" value="chassis_place"/>
 </item>
 
 <item name="vehicleGyroCopterAccessories">
@@ -13040,6 +13046,8 @@
 	<property name="EconomicValue" value="80"/>
 	<property name="Stacknumber" value="10"/> <!-- STK loot -->
 	<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
+	<property name="SoundPickup" value="drug_antibiotics_grab"/>
+	<property name="SoundPlace" value="drug_antibiotics_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13067,6 +13075,8 @@
 	<property name="EconomicValue" value="80"/>
 	<property name="Stacknumber" value="10"/> <!-- STK loot -->
 	<property name="Group" value="Science,CFChemicals,Medical,TCMedical"/>
+	<property name="SoundPickup" value="drug_painkillers_grab"/>
+	<property name="SoundPlace" value="drug_painkillers_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13100,6 +13110,8 @@
 	<property name="DisplayType" value="cureInfection"/>
 	<property name="TintColor" value="120,255,120"/>
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
+	<property name="SoundPickup" value="drug_painkillers_grab"/>
+	<property name="SoundPlace" value="drug_painkillers_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -13124,6 +13136,8 @@
 	<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician,drugAntibioticsSchematic, -->
 	<property name="DisplayType" value="cureInfection"/>
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
+	<property name="SoundPickup" value="drug_antibiotics_grab"/>
+	<property name="SoundPlace" value="drug_antibiotics_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13167,6 +13181,8 @@
 	<property name="Stacknumber" value="10"/> <!-- STK loot -->
 	<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician, -->
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
+	<property name="SoundPickup" value="grandpas_fergitn_grab"/>
+	<property name="SoundPlace" value="grandpas_fergitn_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13196,6 +13212,8 @@
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDrugFortBites"/>
 	</effect_group>
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
+	<property name="SoundPickup" value="drug_fortbites_grab"/>
+	<property name="SoundPlace" value="drug_fortbites_place"/>
 </item>
 
 <!-- *** Candy -->
@@ -13210,6 +13228,8 @@
 	<property name="EconomicValue" value="100"/>
 	<property name="Stacknumber" value="10"/> <!-- STK loot -->
 	<property name="Group" value="Science,Medical"/>
+	<property name="SoundPickup" value="drug_atomjunkies_grab"/>
+	<property name="SoundPlace" value="drug_atomjunkies_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -13232,6 +13252,8 @@
 <item name="drugCovertCats">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugCovertCats"/>
+	<property name="SoundPickup" value="drug_covertcats_grab"/>
+	<property name="SoundPlace" value="drug_covertcats_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dEntityDamageSneak" value=".5"/>
 		<display_value name="dDuration" value="360"/>
@@ -13248,6 +13270,8 @@
 <item name="drugEyeKandy">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugEyeKandy"/>
+	<property name="SoundPickup" value="drug_eyecandy_grab"/>
+	<property name="SoundPlace" value="drug_eyecandy_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dLootStageFlat" value="5"/>
 		<display_value name="dLootStagePerc" value=".1"/>
@@ -13266,6 +13290,8 @@
 <item name="drugHackers">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugHackers"/>
+	<property name="SoundPickup" value="drug_hackers_grab"/>
+	<property name="SoundPlace" value="drug_hackers_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dHarvestSalvage" value=".2"/>
 		<display_value name="dDuration" value="360"/>
@@ -13282,6 +13308,8 @@
 <item name="drugHealthBar">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugHealthBar"/>
+	<property name="SoundPickup" value="drug_healthbar_grab"/>
+	<property name="SoundPlace" value="drug_healthbar_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dMaxHealthBonus" value="10"/>
 		<display_value name="dBuffResistance" value=".25"/>
@@ -13300,6 +13328,8 @@
 <item name="drugJailBreakers">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugJailBreakers"/>
+	<property name="SoundPickup" value="drug_jailbreakers_grab"/>
+	<property name="SoundPlace" value="drug_jailbreakers_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dLockpickSuccess" value="1"/>
 		<display_value name="dDuration" value="360"/>
@@ -13316,6 +13346,8 @@
 <item name="drugNerdTats">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugNerdTats"/>
+	<property name="SoundPickup" value="drug_nerdtats_grab"/>
+	<property name="SoundPlace" value="drug_nerdtats_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dShockAOERadius" value="1.2"/>
 		<display_value name="dDuration" value="360"/>
@@ -13332,6 +13364,8 @@
 <item name="drugOhShitzDrops">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugOhShitzDrops"/>
+	<property name="SoundPickup" value="drug_ohshitz_grab"/>
+	<property name="SoundPlace" value="drug_ohshitz_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dFallDamage" value="-1"/>
 		<display_value name="dDuration" value="360"/>
@@ -13348,6 +13382,8 @@
 <item name="drugRockBusters">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugRockBusters"/>
+	<property name="SoundPickup" value="drug_rockbusters_grab"/>
+	<property name="SoundPlace" value="drug_rockbusters_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dHarvestMining" value=".2"/>
 		<display_value name="dDuration" value="360"/>
@@ -13364,6 +13400,8 @@
 <item name="drugSkullCrushers">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugSkullCrushers"/>
+	<property name="SoundPickup" value="drug_skullcrushers_grab"/>
+	<property name="SoundPlace" value="drug_skullcrushers_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dEntityDamage" value=".5"/>
 		<display_value name="dDuration" value="360"/>
@@ -13380,6 +13418,8 @@
 <item name="drugSugarButts">
 	<property name="Extends" value="drugAtomJunkies"/>
 	<property name="DisplayType" value="drugSugarButts"/>
+	<property name="SoundPickup" value="drug_sugarbutts_grab"/>
+	<property name="SoundPlace" value="drug_sugarbutts_place"/>
 	<effect_group tiered="false" name="Candy Tier 1">
 		<display_value name="dBarteringSellBuy" value=".1"/>
 		<display_value name="dDuration" value="360"/>
@@ -16482,6 +16522,8 @@
 	<property name="Group" value="Resources"/>
 	<property name="RepairTime" value="1"/>
 	<property name="RepairAmount" value="800"/>
+	<property name="SoundPickup" value="ironpipe_grab"/>
+	<property name="SoundPlace" value="ironpipe_place"/>
 </item>
 
 <item name="resourceForgedSteel">
@@ -16963,6 +17005,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value="0.5"/>
+	<property name="SoundPickup" value="coal_grab"/>
+	<property name="SoundPlace" value="coal_place"/>
 </item>
 
 <item name="resourcePotassiumNitratePowder">
@@ -17142,6 +17186,8 @@
 	<property name="Stacknumber" value="50"/> <!-- STK resource -->
 	<property name="EconomicValue" value="100"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+	<property name="SoundPickup" value="oil_grab"/>
+	<property name="SoundPlace" value="oil_place"/>
 </item>
 
 <item name="resourcePaint"> <!-- scrap material -->
@@ -17171,6 +17217,8 @@
 	<property name="Weight" value="50"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="doorknob_grab"/>
+	<property name="SoundPlace" value="doorknob_place"/>
 </item>
 
 <item name="resourceCandleStick">
@@ -17227,6 +17275,8 @@
 	<property name="Weight" value="50"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="trophy_grab"/>
+	<property name="SoundPlace" value="trophy_place"/>
 </item>
 
 <!-- Lead -->
@@ -17241,6 +17291,8 @@
 	<property name="Weight" value="10"/>
 	<property name="EconomicValue" value="48"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="trophy_grab"/>
+	<property name="SoundPlace" value="trophy_place"/>
 </item>
 
 <item name="resourceSilverNugget">
@@ -17695,6 +17747,8 @@
 	<property name="Unlocks" value="perkFiremansAlmanacHeat"/>
 	<property name="Tags" value="firemansProb"/>
 	<property name="Group" value="Books,BooksOnly,TCReading"/>
+	<property name="SoundPickup" value="book_grab"/>
+	<property name="SoundPlace" value="book_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>

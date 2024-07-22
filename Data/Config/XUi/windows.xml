@@ -846,14 +846,16 @@
 			<label depth="3" name="windowName" pos="42,-6" width="180" height="32" text="INVENTORY" text_key="xuiInventory" font_size="32" />
 
 
-			<rect pos="280,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true" is_backpack="true">
-				<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-45, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" />
+			<rect pos="320,0" width="300" controller="ContainerStandardControls" move_start_bottom_left="true" is_backpack="true">
+				<button depth="3" name="btnClearInventory" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="-45, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}" defaultcolor="[iconColor]" hovercolor="[hoverColor]" selectedcolor="[selectedColor]" />
 
-				<button depth="3" name="btnSort"           sprite="ui_game_symbol_sort"  tooltip_key="lblSortContainer"  pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+				<button   depth="3" name="btnToggleLockMode"          sprite="ui_game_symbol_lock"     tooltip_key="xuiStashLockModeToggle"             pos="0, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" selected="{userlockmode}" />
+
+				<button depth="3" name="btnSort"           sprite="ui_game_symbol_sort"  tooltip_key="lblSortContainer"  pos="50, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
 				
 				<rect pos="0, 0" visible="{lootingorvehiclestorage}">
-					<button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="80, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
-					<button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="40, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					<button   depth="3" name="btnMoveFillAndSmart" sprite="ui_game_symbol_store_similar_down" tooltip_key="lblStashFillAndSmart" pos="100, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
+					<button   depth="3" name="btnMoveAll"          sprite="ui_game_symbol_store_all_down"     tooltip_key="lblStashAll"             pos="150, -22" style="icon32px, press, hover" pivot="center" sound="[paging_click]" />
 
 <!--
 					<rect pos="0,30">
@@ -862,8 +864,6 @@
 					</rect>
 -->
 				</rect>
-
-				<combobox depth="3" name="cbxLockedSlots" pos="105,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" />
 			</rect>
 
 			<label depth="2" pos="492,-8" width="80" height="28" text="{currencyamount}" justify="right" />
@@ -1987,7 +1987,7 @@
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
 
 				<panel pos="524,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="-16,-6" primary_pager="false"/>
+					<pager name="pager" pos="-16,-6" contents_parent="content"/>
 				</panel>
 			</rect>
 		</rect>
@@ -2113,7 +2113,7 @@
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
 
 				<panel pos="524,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="-16,-6" primary_pager="false" />
+					<pager name="pager" pos="-16,-6" contents_parent="content" />
 				</panel>
 			</rect>
 		</rect>
@@ -2173,7 +2173,7 @@
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
 
 				<panel pos="524,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="-16,-6" primary_pager="false" />
+					<pager name="pager" pos="-16,-6" contents_parent="content" />
 				</panel>
 			</rect>
 		</rect>
@@ -2324,7 +2324,7 @@
 				<sprite depth="0" name="backgroundMain" sprite="menu_empty3px" pos="-3,2" width="647" height="47" color="[black]" type="sliced" fillcenter="false" />
 
 				<panel pos="524,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="-16,-6" primary_pager="false" />
+					<pager name="pager" pos="-16,-6" contents_parent="content" />
 				</panel>
 			</rect>
 		</rect>
@@ -2400,7 +2400,7 @@
 				<!--*#$-IGS END.-$#-->
 
 				<panel pos="338,0" width="104" height="43" disableautobackground="true">
-					<pager name="pager" pos="4,-6" primary_pager="false" />
+					<pager name="pager" pos="4,-6" contents_parent="content" />
 				</panel>
 			</rect>
 
@@ -3787,7 +3787,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 							<panel pos="432,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" contents_parent="content"/>
+								<pager name="pager" pos="1,-6" contents_parent="spawners"/>
 							</panel>
 						</rect>
 
@@ -3807,7 +3807,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 							<panel pos="302,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" primary_pager="false" />
+								<pager name="pager" pos="1,-6" contents_parent="triggeredBy" />
 							</panel>
 						</rect>
 
@@ -4024,7 +4024,7 @@
               <textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
               <panel pos="302,0" width="98" height="43" disableautobackground="true">
-                <pager name="pager" pos="1,-6" primary_pager="false" />
+                <pager name="pager" pos="1,-6" contents_parent="triggers" />
               </panel>
             </rect>
 
@@ -4058,7 +4058,7 @@
 					<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 					<panel pos="302,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" primary_pager="false" />
+						<pager name="pager" pos="1,-6" contents_parent="triggeredBy" />
 					</panel>
 				</rect>
 
@@ -4114,7 +4114,7 @@
 							<textfield name="searchInput" depth="5" pos="40,-22" width="280" height="30" pivot="Left" />
 
 							<panel pos="972,0" width="98" height="43" disableautobackground="true">
-								<pager name="pager" pos="1,-6" primary_pager="false" />
+								<pager name="pager" pos="1,-6" contents_parent="xuiPrefabGroups" />
 							</panel>
 						</rect>
 
@@ -4154,6 +4154,11 @@
 							<textfield name="addInput" depth="4" pos="105,0" width="250" height="30" pivot="left" />
 							<button depth="4" name="addButton" style="icon30px, press" pos="370,0" sprite="ui_game_symbol_add" pivot="left" sound="[paging_click]" />
 						</rect>
+					</rect>
+
+					<rect pos="8,-520">
+						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiDuplicateRepeatDistance" tooltip_key="xuiDuplicateRepeatDistanceTooltip" font_size="30" color="[white]" pivot="left" />
+						<textfield pos="155,0" width="200" height="32" name="txtDuplicateRepeatDistance" validation="integer" />
 					</rect>
 				</rect>
 
@@ -4218,11 +4223,6 @@
 					<rect pos="8,-520">
 						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiThemeRepeatDistance" tooltip_key="xuiThemeRepeatDistanceTooltip" font_size="30" color="[white]" pivot="left" />
 						<textfield pos="155,0" width="200" height="32" name="txtThemeRepeatDistance" validation="integer" />
-					</rect>
-
-					<rect pos="8,-552">
-						<label pos="0,-16" depth="4" width="150" height="32" style="hover" text_key="xuiDuplicateRepeatDistance" tooltip_key="xuiDuplicateRepeatDistanceTooltip" font_size="30" color="[white]" pivot="left" />
-						<textfield pos="155,0" width="200" height="32" name="txtDuplicateRepeatDistance" validation="integer" />
 					</rect>
 				</rect>
 
@@ -4634,7 +4634,7 @@
 					<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 					<panel pos="202,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" primary_pager="false" />
+						<pager name="pager" pos="1,-6" contents_parent="groups" />
 					</panel>
 				</rect>
 
@@ -4651,7 +4651,7 @@
 					<textfield name="searchInput" depth="5" pos="40,-22" width="160" height="30" pivot="Left" />
 
 					<panel pos="202,0" width="98" height="43" disableautobackground="true">
-						<pager name="pager" pos="1,-6" primary_pager="false" />
+						<pager name="pager" pos="1,-6" contents_parent="files" />
 					</panel>
 				</rect>
 

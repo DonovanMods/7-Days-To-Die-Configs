@@ -4966,6 +4966,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B108"/>
 	<property name="SortOrder2" value="0008"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_residential,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 			<!-- %%% RED_CUPBOARD_TOP_HELPER -->
@@ -5246,7 +5248,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<!-- *** SINKS -->
 <block name="utilitySink">
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
-	<property name="IndexName" value="challenge_sinks"/>
 	<property name="Material" value="Mmetal"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Plumbing/utility_sinkPrefab"/>
@@ -5267,8 +5268,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder1" value="B109"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="sinkKitchen">
@@ -5280,7 +5282,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="pedestalSink">
 	<property name="Extends" value="stoneNoUpgradeMaster" param1="SortOrder1,SortOrder2"/>
-	<property name="IndexName" value="challenge_sinks"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="Material" value="MstoneFurniture"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -5302,8 +5303,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="5,10"/>
 	<property name="SortOrder1" value="B109"/>
 	<property name="SortOrder2" value="0002"/>
-	<property name="Tags" value="challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="wallMountSinkCommercial">
@@ -5504,7 +5506,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="cntToilet01">
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="toilet"/>
-	<property name="IndexName" value="challenge_sinks"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="Material" value="MstoneFurniture"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -5527,8 +5528,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B109"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-	<property name="Tags" value="challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="cntToilet02">
@@ -5573,6 +5575,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0500"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="drinkingfountainDouble">
@@ -7499,7 +7503,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B113"/>
 	<property name="SortOrder2" value="1100"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial,SC_industrial"/>
-	<property name="Tags" value="challenge_polymers,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_polymers,challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_polymers"/>
 </block>
 
@@ -7946,6 +7950,15 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="1603"/>
 </block>
 
+<!-- Yellow_POI -->
+<block name="cntCoolerOpenYellow">
+	<property name="Extends" value="cntCoolerOpen"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIconTint" value="A2994B"/>
+	<property name="TintColor" value="A2994B"/>
+	<property name="SortOrder2" value="1604"/>
+</block>
+
 <!-- Blue_POI -->
 <block name="cntCoolerClosed">
 	<property name="Extends" value="cntCoolerOpen"/>
@@ -7955,7 +7968,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIcon" value="cntCoolerClosed"/>
 	<property name="Model" value="@:Entities/LootContainers/coolerContainerPlasticFullPrefab.prefab"/>
 	<property name="DowngradeBlock" value="cntCoolerOpen"/>
-	<property name="SortOrder2" value="1604"/>
+	<property name="SortOrder2" value="1605"/>
 </block>
 
 <!-- Red_POI -->
@@ -7965,7 +7978,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIconTint" value="5A282C"/>
 	<property name="TintColor" value="5A282C"/>
 	<property name="DowngradeBlock" value="cntCoolerOpenRed"/>
-	<property name="SortOrder2" value="1605"/>
+	<property name="SortOrder2" value="1606"/>
 </block>
 
 <!-- Green_POI -->
@@ -7975,7 +7988,18 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CustomIconTint" value="22461E"/>
 	<property name="TintColor" value="22461E"/>
 	<property name="DowngradeBlock" value="cntCoolerOpenGreen"/>
-	<property name="SortOrder2" value="1606"/>
+	<property name="SortOrder2" value="1607"/>
+</block>
+
+<!-- Yellow_POI -->
+<block name="cntCoolerClosedYellow">
+	<property name="Extends" value="cntCoolerClosed"/>
+	<property name="LootList" value="coolerMedical"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIconTint" value="A2994B"/>
+	<property name="TintColor" value="A2994B"/>
+	<property name="DowngradeBlock" value="cntCoolerOpenYellow"/>
+	<property name="SortOrder2" value="1608"/>
 </block>
 
 <!-- Blue_Player -->
@@ -7989,7 +8013,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MaxDamage" value="300"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="cntCoolerVariantHelper" count="1"/>
-	<property name="SortOrder2" value="1607"/>
+	<property name="SortOrder2" value="1609"/>
 </block>
 
 <!-- Red_Player -->
@@ -7998,7 +8022,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CreativeMode" value="Player"/>
 	<property name="CustomIconTint" value="5A282C"/>
 	<property name="TintColor" value="5A282C"/>
-	<property name="SortOrder2" value="1608"/>
+	<property name="SortOrder2" value="1610"/>
 </block>
 
 <!-- Green_Player -->
@@ -8007,7 +8031,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CreativeMode" value="Player"/>
 	<property name="CustomIconTint" value="22461E"/>
 	<property name="TintColor" value="22461E"/>
-	<property name="SortOrder2" value="1609"/>
+	<property name="SortOrder2" value="1611"/>
 </block>
 
 <block name="cntCoolerVariantHelper">
@@ -8439,7 +8463,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_elec_parts"/>
 </block>
 
 <block name="electricalBox02">
@@ -8542,7 +8567,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks,challenge_cars"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="airConditionVentFan">
@@ -8564,7 +8590,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B150"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_decor,MC_outdoor,SC_decor"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="airConditionVentFanDouble">
@@ -8639,7 +8666,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B151"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="controlPanelBase02">
@@ -9389,7 +9417,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B152"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_electrical"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <!-- Breaker Box Open -->
@@ -10774,7 +10803,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="5,20"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="SortOrder2" value="0002"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="cntRetroFridgeRandomLootHelper">
@@ -11057,7 +11087,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0200"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <!-- Grey -->
@@ -11103,7 +11134,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B158"/>
 	<property name="SortOrder2" value="0300"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <!-- Grey -->
@@ -11593,7 +11625,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B160"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="cntWasherClosed">
@@ -11874,7 +11907,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B161"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_electrical"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="cntMiniBeverageCoolerEmpty">
@@ -12400,13 +12434,37 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0100"/>
 </block>
 
+<!-- Player Non Powered TV Off -->
+<block name="tvCRT_PlayerOff">
+	<property name="Extends" value="tvCRT"/>
+	<property name="CreativeMode" value="Player"/>
+	<!-- Needs to have a blank class to allow the light to turn on automatically when placed -->
+	<property name="Class" value=""/>
+	<property name="CustomIcon" value="tvCRT"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Model" value="Entities/Electrical/tvCRTPlayerOffPrefab"/>
+	<property name="SortOrder2" value="0101"/>
+</block>
+
+<!-- Player Non Powered TV On -->
+<block name="tvCRT_PlayerOn">
+	<property name="Extends" value="tvCRT"/>
+	<property name="CreativeMode" value="Player"/>
+	<!-- Needs to have a blank class to allow the light to turn on automatically when placed -->
+	<property name="Class" value=""/>
+	<property name="CustomIcon" value="tvCRT_Player"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Model" value="Entities/Electrical/tvCRTPlayerOnPrefab"/>
+	<property name="SortOrder2" value="0102"/>
+</block>
+
 <block name="tvBlockVariantHelper">
 	<property name="Extends" value="tvSmallStand1x1"/>
 	<property name="CustomIcon" value="tvSmallStand1x1"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
 	<property name="SelectAlternates" value="true"/>
-	<property name="PlaceAltBlockValue" value="tvSmallStand1x1,tvSmallWall1x1,tvSmallStand2x1,tvSmallWall2x1,tvLargeStand2x2,tvLargeWall2x2,tvLargeStand3x2,tvLargeWall3x2,tvExtraSmallStand1x1,tvExtraSmallWall1x1,tvCRT"/>
+	<property name="PlaceAltBlockValue" value="tvSmallStand1x1,tvSmallWall1x1,tvSmallStand2x1,tvSmallWall2x1,tvLargeStand2x2,tvLargeWall2x2,tvLargeStand3x2,tvLargeWall3x2,tvExtraSmallStand1x1,tvExtraSmallWall1x1,tvCRT_PlayerOff,tvCRT_PlayerOn"/>
 	<property name="SortOrder1" value="U200"/>
 	<property name="FilterTags" value="MC_helpers,SC_residential,MC_playerBlocks,SC_playerHelpers"/>
 </block>
@@ -21345,6 +21403,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B262"/>
 	<property name="SortOrder2" value="0008"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_cars"/>
 </block>
 
 <block name="decoCarRadiatorFlipped">
@@ -21429,7 +21488,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B262"/>
 	<property name="SortOrder2" value="0016"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -21644,7 +21703,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<property name="SortOrder1" value="B264"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -22348,7 +22407,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 	<!-- *** ROPE -->
 <block name="modularRopeTiled">
-	<property name="Extends" value="decoEntityPolymerMaster" param1="RepairItems,CustomIcon"/>
+	<property name="Extends" value="decoEntityPolymerMaster" param1="RepairItems,CustomIcon,Tags,IndexName"/>
 	<property name="Material" value="MclothStable"/>
 	<property name="Model" value="Entities/OutdoorDecor/modularRopeTiledPrefab"/>
 	<property name="WaterFlow" value="permitted"/>
@@ -23472,6 +23531,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B278"/>
 	<property name="SortOrder2" value="0409"/>
 	<property name="FilterTags" value="MC_building,SC_construction,SC_decor"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="metalPipeStackLoose">
@@ -44503,6 +44564,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="bunkBedMade">
@@ -44565,6 +44628,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0004"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 	<!-- *** BUNK_BED_HELPER -->
@@ -44629,6 +44694,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0008"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="hospitalBed">
@@ -44641,7 +44708,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapPolymers" count="3,6" tag="allHarvest"/>
 	<drop event="Destroy" name="resourceScrapIron" count="5,20"/>
 	<property name="SortOrder2" value="0009"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -44667,6 +44734,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <!-- Brown -->
@@ -44751,6 +44820,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B436"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <!-- Red -->
@@ -44798,11 +44869,12 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B436"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="bodyBagBlack">
 	<property name="DisplayType" value="blockMulti"/>
-	<property name="IndexName" value="challenge_gore"/>
 	<property name="Material" value="Morganic"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="Entities/Misc/body_bagPrefab"/>
@@ -44820,8 +44892,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B437"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_gore"/>
 	<property name="FilterTags" value="MC_building,SC_decor,SC_commercial"/>
+	<property name="Tags" value="challenge_gore"/>
+	<property name="IndexName" value="challenge_gore"/>
 </block>
 
 <block name="bodyBagYellow">
@@ -47203,7 +47276,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_electrical,SC_commercial"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
 </block>
 
 <block name="cntFreezerGroceriesMiddleEmptyClosed">
@@ -50075,7 +50148,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B472"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_industrial"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
 </block>
 
 <block name="escalatorFiller">
@@ -53627,7 +53700,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B500"/>
 	<property name="SortOrder2" value="0200"/>
 	<property name="FilterTags" value="MC_building,SC_industrial"/>
-	<property name="Tags" value="challenge_elec_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_sinks"/>
 </block>
 
 <block name="factoryConveyorCap">
@@ -55743,6 +55816,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="resourceRadiator" count="1" tag="salvageHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder2" value="0301"/>
 	<property name="FilterTags" value="MC_building,SC_residential"/>
+	<property name="Tags" value="challenge_cars"/>
 </block>
 
 	<!-- *** LARGE_PIPES -->
@@ -55762,6 +55836,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0400"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="metalPipeValve"> <!-- large -->
@@ -55780,7 +55855,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B650"/>
 	<property name="SortOrder2" value="0401"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -55831,6 +55906,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" count="0" prob="0"/>
 	<property name="SortOrder1" value="B651"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3">
@@ -55990,6 +56066,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B652"/>
 	<property name="SortOrder2" value="2000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3Red">
@@ -56165,6 +56242,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B654"/>
 	<property name="SortOrder2" value="4000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3Yellow">
@@ -56340,6 +56418,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B655"/>
 	<property name="SortOrder2" value="5000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3Green">
@@ -56515,6 +56594,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B656"/>
 	<property name="SortOrder2" value="6000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3Blue">
@@ -56690,6 +56770,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B658"/>
 	<property name="SortOrder2" value="8000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
+	<property name="Tags" value="challenge_sinks"/>
 </block>
 
 <block name="pipeSmall1x3Grey">
@@ -57695,7 +57776,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B670"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -57887,7 +57968,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B672"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_plumbing"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -57915,7 +57996,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B673"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_residential,SC_commercial,SC_industrial,MC_outdoor,SC_decor"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks"/>
 	<property name="IndexName" value="challenge_mech_parts"/>
 </block>
 
@@ -61361,7 +61442,6 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="cntCar03SedanDamage2Master"> <!-- car wreck -->
 	<property name="CreativeMode" value="None"/>
 	<property name="Class" value="CarExplode"/>
-	<property name="IndexName" value="challenge_cars"/>
 	<property name="TerrainAlignment" value="Vehicle"/>
 	<property class="Explosion">
 		<property name="ParticleIndex" value="30"/> <!-- which prefab/particle is used -->
@@ -61401,8 +61481,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="1" stick_chance="1"/>
 	<property name="SortOrder1" value="B853"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
+	<property name="IndexName" value="challenge_cars"/>
 </block>
 
 	<!-- *** OLD_SEDAN_DAMAGE_00_COLORS -->
@@ -62000,7 +62081,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B855"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -62134,7 +62215,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B856"/>
 	<property name="SortOrder2" value="0000a"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 	<!-- *** ABANDONED_SUV -->
@@ -62735,7 +62816,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B857"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -62870,7 +62951,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B858"/>
 	<property name="SortOrder2" value="0000a"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_mech_parts"/>
+	<property name="Tags" value="challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 	<!-- *** ABANDONED_3M_WIDE_SUV -->
@@ -63471,7 +63552,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B859"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -63656,7 +63737,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B860"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -63842,7 +63923,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B861"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64027,7 +64108,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B862"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64203,7 +64284,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B863"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64378,7 +64459,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B864"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64554,7 +64635,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B865"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -64726,7 +64807,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B866"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -65050,7 +65131,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B867"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 <!-- SMASHED_POLICE_CAR_WITH_ALARM_THAT_SPAWNS_ZOMBIES -->
@@ -65148,7 +65229,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B867"/>
 	<property name="SortOrder2" value="0003"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 	<!-- *** FIRE_TRUCK -->
@@ -65230,7 +65311,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B868"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -65566,7 +65647,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="ShowModelOnFall" value="false"/>
 	<property name="SortOrder1" value="B871"/>
 	<property name="SortOrder2" value="0000"/>
-	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_cars,challenge_elec_parts,challenge_mech_parts,challenge_sinks"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
 </block>
 
@@ -65904,7 +65985,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceAcid" prob=".08" count="1" tag="WasteTreasuresAcidHarvest"/>
 	<drop event="Harvest" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<property name="SortOrder1" value="B873"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_cars"/>
 </block>
 
 <block name="cntArmyTruckClosed">
@@ -65953,7 +66034,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Harvest" name="resourceScrapIron" count="17,35" tag="allHarvest"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder2" value="0002"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_cars"/>
 </block>
 
 <block name="cntFarmTruckRandomLootHelper">
@@ -66286,7 +66367,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B878"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 <!-- Red -->
@@ -66379,7 +66460,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B878"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_building,SC_automotive"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts"/>
+	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_sinks,challenge_cars"/>
 </block>
 
 <!-- Red -->
@@ -70592,6 +70673,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="LD04"/>
 	<property name="SortOrder2" value="0002"/>
 	<property name="FilterTags" value="MC_outdoor,SC_decor"/>
+	<property name="Tags" value="challenge_sinks"/>
+	<property name="IndexName" value="challenge_sinks"/>
 </block>
 
 <block name="flagWallHungUSA">
