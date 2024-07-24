@@ -10493,7 +10493,7 @@
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_09" Subtitle="trader_bob_trade_09"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_10" Subtitle="trader_bob_trade_10"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_11" Subtitle="trader_bob_trade_11"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_12" Subtitle="trader_bob_trade_12"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_12" Subtitle="trader_bob_trade_12" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_13" Subtitle="trader_bob_trade_13"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_14" Subtitle="trader_bob_trade_14"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_trade_15" Subtitle="trader_bob_trade_15"/>
@@ -10617,7 +10617,7 @@
 <SoundDataNode name="trader_bob_greetbloodmoon"> <AudioSource name="Sounds/AudioSource_VO_TraderBob"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_01" Subtitle="trader_bob_greetbloodmoon_01"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_02" Subtitle="trader_bob_greetbloodmoon_02"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_02" Subtitle="trader_bob_greetbloodmoon_02" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_03" Subtitle="trader_bob_greetbloodmoon_03"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_04" Subtitle="trader_bob_greetbloodmoon_04" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Bob/trader_bob_greetbloodmoon_05" Subtitle="trader_bob_greetbloodmoon_05" profanity="true"/>
@@ -11347,7 +11347,7 @@
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_01" Subtitle="trader_hugh_stolen_bark_01"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_02" Subtitle="trader_hugh_stolen_bark_02"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_03" Subtitle="trader_hugh_stolen_bark_03"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_03" Subtitle="trader_hugh_stolen_bark_03" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_04" Subtitle="trader_hugh_stolen_bark_04"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Hugh/trader_hugh_stolen_bark_05" Subtitle="trader_hugh_stolen_bark_05"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
@@ -12787,7 +12787,7 @@
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_29" Subtitle="trader_rekt_trade_29"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_30" Subtitle="trader_rekt_trade_30" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_31" Subtitle="trader_rekt_trade_31"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_32" Subtitle="trader_rekt_trade_32"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_32" Subtitle="trader_rekt_trade_32" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_trade_33" Subtitle="trader_rekt_trade_33"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
 
@@ -12848,7 +12848,7 @@
 
 <SoundDataNode name="trader_rekt_quest_offer"> <AudioSource name="Sounds/AudioSource_VO_TraderRekt"/>
 	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_quest_offer_01" Subtitle="trader_rekt_quest_offer_01"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_quest_offer_01" Subtitle="trader_rekt_quest_offer_01" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_quest_offer_02" Subtitle="trader_rekt_quest_offer_02"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_quest_offer_03" Subtitle="trader_rekt_quest_offer_03"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_quest_offer_04" Subtitle="trader_rekt_quest_offer_04"/>

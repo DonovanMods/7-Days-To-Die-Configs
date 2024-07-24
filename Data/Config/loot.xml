@@ -1609,7 +1609,7 @@
 		</qualitytemplate>
 		<qualitytemplate level="212,213" default_quality="1">
 			<loot quality="4" prob="0.315"/>
-			<loot quality="5" prob="1"/>>
+			<loot quality="5" prob="1"/>
 		</qualitytemplate>
 		<qualitytemplate level="214,999999" default_quality="1">
 			<loot quality="4" prob="0.3"/>

@@ -2548,7 +2548,7 @@
 	<property name="ChestExplosionDamageMultiplier" value="2"/>
 
   <!-- Dismemberment -->
-  <property name ="DismemberTag_L_HeadGore" value="Cop/Blade/Head;Cop/Blunt/Head" data="type=blade+target=head+atp=true+detach=true;type=blunt+target=head+atp=true"/>
+  <property name ="DismemberTag_L_HeadGore" value="Cop/Blade/Head;Cop/Blunt/Head" data="type=blade+target=head+atp=true+detach=true+ico=neck;type=blunt+target=head+atp=true"/>
   <property name ="DismemberTag_L_LeftLowerArmGore" value="Cop/Blade/LeftLowerArm" data="type=blade+target=leftforearmroll+atp=true+detach=true+mask=true"/>
   <property name ="DismemberTag_L_LeftUpperArmGore" value="Cop/Blade/LeftUpperArm" data="type=blade+target=leftarmroll+atp=true+detach=true+mask=true"/>
   <property name ="DismemberTag_L_LeftUpperLegGore" value="Cop/Blade/LeftUpperLeg" data="type=blade+target=leftupleg+detach=true+mask=true"/>
@@ -3888,7 +3888,7 @@
 </entity_class>
 
 		<!-- *** MOUNTAIN_LION -->
-<entity_class name="animalMountainLion" extends="animalDireWolf">
+<entity_class name="animalMountainLion" extends="animalWolf">
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Tags" value="entity,animal,hostile,mountainlion,perkAT03"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_mountain_lion"/>
@@ -3925,6 +3925,7 @@
 	<property name="MoveSpeedAggro" value="2.1, 2.3"/>
 	<property name="JumpDelay" value=".1"/>
 	<property name="JumpMaxDistance" value="6, 7"/>
+	<property name="HandItem" value="meleeHandAnimalMountainLion"/>
 	<property name="PainResistPerHit" value=".8"/>
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>

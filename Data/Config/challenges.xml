@@ -5,9 +5,9 @@
 
 <challenges default_reward="challenge_reward_default" default_reward_text_key="challenge_reward_100xp">
 
-	<challenge_category name="Basics" title="Basics" icon="ui_game_symbol_challenge_category1"/>
-	<challenge_category name="Advanced" title="Advanced" icon="ui_game_symbol_challenge_category2"/>
-	<challenge_category name="Twitch" title="Twitch" icon="ui_game_symbol_challenge_category_twitch" show_type="twitch"/>
+	<challenge_category name="Basics" title_key="xuiBasics" icon="ui_game_symbol_challenge_category1"/>
+	<challenge_category name="Advanced" title_key="xuiGameSettingsAdvanced" icon="ui_game_symbol_challenge_category2"/>
+	<challenge_category name="Twitch" title_key="TwitchInfo_Header" icon="ui_game_symbol_challenge_category_twitch" show_type="twitch"/>
 
 	<!-- *** CHALLENGE_REWARDS_PAGE_01 -->
 	<challenge_group category="Basics" name="Basics" title_key="challengeGroupBasics"

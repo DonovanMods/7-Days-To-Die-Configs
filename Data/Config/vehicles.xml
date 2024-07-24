@@ -347,11 +347,9 @@ Forces:
 		<property class="pedals">
 			<property name="class" value="Pedals"/>
 			<property name="transform" value="M/Crank"/>
-			<property name="pedalLPosition" value="-.182, 0, -.217"/>
-			<property name="pedalRPosition" value=".182, 0, .217"/>
-			<property name="IKFootLPosition" value="0, .1, -.05"/>
+			<property name="IKFootLPosition" value="-.06, .1, -.05"/>
 			<property name="IKFootLRotation" value="0, 0, 0"/>
-			<property name="IKFootRPosition" value="0, .1, -.05"/>
+			<property name="IKFootRPosition" value="-.06, .1, -.05"/>
 			<property name="IKFootRRotation" value="0, 0, 0"/>
 			<property name="pedalSound" value="bicycle_pedal"/>
 			<property name="staminaDrain" value="0,0"/><!-- stamina drain walking/running. It now uses movement tags so regular passives apply -->

@@ -6163,33 +6163,17 @@
 		</effect_group>
 	</buff>
 
-	<!-- *** buffBurningEnvironment -->
-	<!-- TRIGGERED_BY: Props = campfire, forge, emberPileDeco1 & 2, emberPileLightPOI1 & 2  -->
-	<!-- Trigger buff for blocks and props that cause burning -->
-	<buff name="buffBurningEnvironment" hidden="true"> <!-- remove when blocks proc buffs correctly -->
-		<damage_type value="heat"/>
-		<stack_type value="ignore"/>
-		<duration value=".5"/>
-
-		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningEnvironmentHack"/>
-		</effect_group>
-	</buff>
-
-<!-- *** Allan_TO_DO: Was this ever fixed? -->
-	<!-- *** buffBurningEnvironmentHack -->
-	<!-- TRIGGERED_BY: Buffs = buffBurningEnvironment -->
 	<!-- Handler for blocks/props that cause burning -->
-	<buff name="buffBurningEnvironmentHack" hidden="true"> <!-- rename to "buffBurningEnvironment" when blocks process buffs correctly -->
+	<buff name="buffBurningEnvironment" hidden="true">
 		<damage_type value="heat"/>
 		<stack_type value="replace"/>
 		<duration value="2"/>
 
 		<effect_group>
-			<!-- Setup or increase counters -->
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveCVar" cvar=".BurningEnvironmentCounter"/>
+			<!-- Increase counters -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".BurningEnvironmentCounter" operation="set" value="0"/>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".BurningEnvironmentCounter" operation="add" value="1"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".BurningEnvironmentCounter,$BurningEnvironmentDuration"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".BurningEnvironmentCounter,$BurningEnvironmentDuration" operation="set" value="0"/>
 			<!-- Reduce water and adjust thermal resistance stats -->
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".3"/>
 			<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
@@ -6198,7 +6182,7 @@
 
 		<effect_group>
 			<!-- If counter is GTE 5, add buff and  set duration -->
-			<requirement name="CVarCompare" cvar=".BurningEnvironmentCounter" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar=".BurningEnvironmentCounter" operation="GTE" value="2.5"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffIsOnFire"/>
 				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffIsOnFire"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$BurningEnvironmentDuration" operation="set" value="1"/>
@@ -6207,7 +6191,7 @@
 				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
 		</effect_group>
 	</buff>
-
+	
 	<!-- *** buffBurningFlamingArrow -->
 	<!-- TRIGGERED_BY: Items = ammoCrossbowBoltFlaming, ammoArrowFlaming -->
 	<!-- Handler for flaming arrow burning -->
