@@ -6379,6 +6379,14 @@
 	<AudioClip ClipName="Sounds/Items/aloe_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
+<SoundDataNode name="aloeleaf_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/aloeleaf_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="aloeleaf_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/aloeleaf_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
 <SoundDataNode name="ammobox_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/ammobox_grab"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
@@ -6393,6 +6401,14 @@
 
 <SoundDataNode name="ammocan_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/ammocan_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="animalfat_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/animalfat_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="animalfat_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/animalfat_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="anvil_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -6520,6 +6536,14 @@
 
 <SoundDataNode name="bow_wooden_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/bow_wooden_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="brokenglass_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/brokenglass_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="brokenglass_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/brokenglass_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="coal_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -7034,6 +7058,14 @@
 	<AudioClip ClipName="Sounds/Items/gloves_leather_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
+<SoundDataNode name="glue_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/glue_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="glue_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/glue_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
 <SoundDataNode name="grandpas_awesome_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/grandpas_awesome_grab"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
@@ -7192,6 +7224,14 @@
 
 <SoundDataNode name="knuckles_wraps_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/knuckles_wraps_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="leather_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/leather_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="leather_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/leather_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="lockpicks_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
@@ -7420,6 +7460,22 @@
 
 <SoundDataNode name="pistol_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
 	<AudioClip ClipName="Sounds/Items/pistol_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="plantfibers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/plantfibers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="plantfibers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/plantfibers_place"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="polymers_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/polymers_grab"/>
+	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
+
+<SoundDataNode name="polymers_place"> <AudioSource name="Sounds/AudioSource_UI_Item"/>
+	<AudioClip ClipName="Sounds/Items/polymers_place"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.1"/> </SoundDataNode>
 
 <SoundDataNode name="poop_grab"> <AudioSource name="Sounds/AudioSource_UI_Item"/>

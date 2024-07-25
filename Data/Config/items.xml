@@ -8041,6 +8041,8 @@
 	<property name="TraderStageTemplate" value="arrowsTier0"/><!-- ammoCrossbowBoltStone -->
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+	<property name="SoundPickup" value="arrows_grab"/>
+	<property name="SoundPlace" value="arrows_place"/>
 	
 	<property class="Action1">
 		<property name="Class" value="Projectile"/>
@@ -8079,6 +8081,8 @@
 	<property name="TraderStageTemplate" value="arrowsTier1"/><!-- ammoCrossbowBoltIron -->
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+	<property name="SoundPickup" value="arrows_grab"/>
+	<property name="SoundPlace" value="arrows_place"/>
 	
 	<property class="Action1">
 		<property name="Class" value="Projectile"/>
@@ -9034,6 +9038,8 @@
 	<property name="TraderStageTemplate" value="ammoTier1"/><!-- ammoDartIron -->
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="DisplayType" value="ammoDart"/>
+	<property name="SoundPickup" value="nails_grab"/>
+	<property name="SoundPlace" value="nails_place"/>
 	<property class="Action1">
 		<property name="Velocity" value="55"/>
 		<property name="Gravity" value="-4"/>
@@ -16435,6 +16441,8 @@
 	<property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="plantfibers_grab"/>
+	<property name="SoundPlace" value="plantfibers_place"/>
 </item>
 
 <item name="resourceWood"> <!-- scrap material -->
@@ -16481,6 +16489,8 @@
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="brokenglass_grab"/>
+	<property name="SoundPlace" value="brokenglass_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -16569,6 +16579,8 @@
 	<property name="EconomicValue" value="16"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="polymers_grab"/>
+	<property name="SoundPlace" value="polymers_place"/>
 	<!-- <property name="RepairTime" value="2"/>
 	<property name="RepairAmount" value="400"/> -->
 </item>
@@ -16659,6 +16671,8 @@
 	<property name="EconomicValue" value="22"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="leather_grab"/>
+	<property name="SoundPlace" value="leather_place"/>
 </item>
 
 <item name="resourceAnimalFat">
@@ -16672,6 +16686,8 @@
 	<property name="EconomicValue" value="20"/>
 	<property name="CraftingIngredientTime" value="15"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="animalfat_grab"/>
+	<property name="SoundPlace" value="animalfat_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1"/>
@@ -16710,6 +16726,8 @@
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="CraftingIngredientTime" value="20"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="plantfibers_grab"/>
+	<property name="SoundPlace" value="plantfibers_place"/>
 </item>
 
 <item name="resourceCropAloeLeaf">
@@ -16722,6 +16740,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
 	<property name="Group" value="Science"/>
+	<property name="SoundPickup" value="aloeleaf_grab"/>
+	<property name="SoundPlace" value="aloeleaf_place"/>
 </item>
 
 <item name="resourceCropChrysanthemumPlant">
@@ -16735,6 +16755,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="plantfibers_grab"/>
+	<property name="SoundPlace" value="plantfibers_place"/>
 </item>
 
 <item name="resourceCropCottonPlant">
@@ -16748,6 +16770,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="2"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="plantfibers_grab"/>
+	<property name="SoundPlace" value="plantfibers_place"/>
 </item>
 
 <item name="resourceCropGoldenrodPlant">
@@ -16762,6 +16786,8 @@
 	<!-- <property name="EconomicBundleSize" value="5"/> -->
 	<property name="CraftingIngredientTime" value="5"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="plantfibers_grab"/>
+	<property name="SoundPlace" value="plantfibers_place"/>
 </item>
 
 <item name="resourceCropCoffeeBeans">
@@ -16955,6 +16981,8 @@
 	<property name="Stacknumber" value="500"/> <!-- STK resource -->
 	<property name="EconomicValue" value="20"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+	<property name="SoundPickup" value="glue_grab"/>
+	<property name="SoundPlace" value="glue_place"/>
 </item>
 
 <item name="resourceDuctTape">
