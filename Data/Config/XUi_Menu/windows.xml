@@ -10,7 +10,7 @@
 		</rect>
 	</window>
 	
-	<window name="toolTip" width="100" height="25" depth="310" controller="ToolTip" >
+	<window name="toolTip" width="100" height="25" depth="25001" controller="ToolTip" >
 		<rect>
 			<sprite depth="0" name="sprBackgroundBorder" sprite="ui_game_header_fill" type="sliced" color="[black]" />
 			<sprite depth="1" name="sprBackground" sprite="ui_game_header_fill" type="sliced" pos="3,-3" color="[lightGrey]"/>

@@ -1845,8 +1845,8 @@
 
 	<window name="windowThrow" anchor="CenterCenter" controller="ThrowPower">
 		<rect pos="0,-60">
-			<sprite depth="1" pos="-152,0" width="304" height="14" pivot="left" name="background" sprite="menu_empty" type="sliced" color="0,0,0,150" />
-			<filledsprite depth="2" pos="-150,0" width="300" height="10" pivot="left" name="bar" color="0,180,0,120" fill="{fill}" filldirection="horizontal" foregroundlayer="true" />
+			<sprite depth="1" pos="-152,0" width="304" height="14" pivot="left" name="background" sprite="menu_empty" type="sliced" color="0,0,0,160" />
+			<filledsprite depth="2" pos="-150,0" width="300" height="10" pivot="left" name="bar" color="0,180,0,210" fill="{fill}" filldirection="horizontal" foregroundlayer="true" />
 		</rect>
 	</window>
 
