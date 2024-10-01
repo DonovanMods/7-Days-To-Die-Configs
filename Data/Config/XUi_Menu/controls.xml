@@ -348,4 +348,20 @@
 		</rect>
 	</rwg_biome>
 
+	<bugreport_saves_list_entry width="520" height="60" name_width="220" date_width="180" size_width="100" >
+		<rect height="${height}" style="press, doubleclick, hover, scroll" disabled_font_color="[disabledLabelColor]" enabled_font_color="[labelColor]" sound="[recipe_click]" controller="ListEntry`1[XUiC_BugReportSavesList+ListEntry]">
+			<sprite depth="3" name="backgroundMain" sprite="menu_empty2px" height="${1+height}" pos="2,0" width="${width-4}" color="[black]" type="sliced" fillcenter="false" />
+			<sprite depth="2" name="background" color="[darkGrey]" pos="2,0" width="${width-4}" type="sliced" />
+
+			<grid pos="8,-4" rows="2" cols="1" cell_width="${name_width-16}" cell_height="28" repeat_content="false" arrangement="vertical" visible="{hasentry}" >
+				<label depth="4" name="Name" text="{savename}" width="${name_width-16}" height="28" font_size="24" justify="left" pivot="topleft" color="[tan]" />
+				<label depth="4" name="World" text="{worldname}" width="${name_width-16}" height="28" font_size="24" justify="left" pivot="topleft" />
+			</grid>
+			<grid pos="${name_width},-4" rows="2" cols="1" cell_width="${date_width}" cell_height="28" repeat_content="false" arrangement="vertical" visible="{hasentry}" >
+				<label depth="4" name="LastPlayed" text_key="xuiDmLastPlayed" font_size="24" justify="left" pivot="topleft" color="255,255,255,192" />
+				<label depth="4" name="LastPlayed" text="{lastplayed}" font_size="24" justify="left" pivot="topleft" color="255,255,255,255" />
+			</grid>
+		</rect>
+	</bugreport_saves_list_entry>
+
 </controls>

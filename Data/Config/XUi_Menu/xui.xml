@@ -163,6 +163,11 @@
 		<window_group name="uiLimitsTest">
 			<window name="uiLimitsTest" />
 		</window_group>
-		
+
+		<window_group name="bugReportWindow" defaultSelected="txtDescription">
+			<window name="bugReport"/>
+			<window name="bugReportSaveSelect" />
+		</window_group>
+
 	</ruleset>
 </xui>

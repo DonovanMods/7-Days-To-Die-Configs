@@ -10017,6 +10017,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property class="RepairItems">
@@ -10093,6 +10094,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<drop event="Harvest" name="resourceScrapIron" count="120" tag="allHarvest"/>
@@ -10168,6 +10170,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property class="RepairItems">
@@ -10592,6 +10595,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Science,TCScience"/>
 	<property name="Tags" value="trapsSkill"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_electrical,SC_traps"/>
+	<property name="SoundPickup" value="darttrap_grab"/>
+	<property name="SoundPlace" value="darttrap_place"/>
 </block>
 
 <block name="flamethrowerTrap">
@@ -10654,6 +10659,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Science,TCScience"/>
 	<property name="Tags" value="trapsSkill"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_electrical,SC_traps"/>
+	<property name="SoundPickup" value="bladetrap_grab"/>
+	<property name="SoundPlace" value="bladetrap_place"/>
 </block>
 
 <block name="autoTurret">
@@ -10717,6 +10724,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Science,TCScience"/>
 	<property name="Tags" value="trapsSkill"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_electrical,SC_traps"/>
+	<property name="SoundPickup" value="autoturret_grab"/>
+	<property name="SoundPlace" value="autoturret_place"/>
 </block>
 
 <block name="shotgunTurret">
@@ -15167,6 +15176,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Class" value="TorchHeatMap"/>
 	<property name="HeatMapStrength" value="1"/>
 	<property name="HeatMapTime" value="4000"/>
+	<property name="TintColor" value="732525"/>
 	<property name="DescriptionKey" value="torchPlayerGroupDesc"/>
 	<property name="Stacknumber" value="50"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -18872,6 +18882,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="ToBlock" value="cobblestoneShapes:pillar100"/>
 	</property>
 	<property name="SortOrder1" value="B252"/>
+	<property name="SoundPickup" value="log_grab"/>
+	<property name="SoundPlace" value="log_place"/>
 </block>
 
 	<!-- *** Log_Wall_Gate -->
@@ -21015,13 +21027,14 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Class" value="CarExplodeLoot"/>
 	<property name="LootList" value="gasBarrel"/>
 	<property class="Explosion">
-		<property name="ParticleIndex" value="14"/>
+		<property name="ParticleIndex" value="64"/>
 		<property name="RadiusBlocks" value="5"/>
 		<property name="BlockDamage" value="500"/>
 		<property name="RadiusEntities" value="5"/>
 		<property name="EntityDamage" value="250"/>
 	</property>
 	<property name="CustomIcon" value="cntBarrelAcidSingle00"/>
+	<property name="TintColor" value="575757"/>
 	<property name="ItemTypeIcon" value="explosion"/>
 	<property name="DescriptionKey" value="cntBarrelGroupDesc"/>
 	<property name="Material" value="MFuelBarrelMetal"/>
@@ -21035,6 +21048,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="CanDecorateOnSlopes" value="false"/>
 	<drop event="Harvest" name="resourceScrapIron" count="3,6" tag="allToolsHarvest"/>
 	<drop event="Destroy" count="0"/>
+	<property name="ShowModelOnFall" value="false"/>
 	<drop event="Fall" name="scrapMetalPile" count="1,5" prob="0.75" stick_chance="1"/>
 	<property name="Tags" value="barrelExplosive"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
@@ -21063,9 +21077,11 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="CanDecorateOnSlopes" value="false"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="2,5" tag="allToolsHarvest"/>
 	<drop event="Destroy" count="0"/>
+	<property name="ShowModelOnFall" value="false"/>
 	<drop event="Fall" name="resourceScrapPolymers" count="3" prob="0.3" stick_chance="0"/>
 	<property name="FilterTags" value="MC_building,SC_loot"/>
 	<property name="Tags" value="challenge_polymers"/>
@@ -21075,7 +21091,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Acid -->
 <block name="cntBarrelAcidSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="TintColor" value="566550"/>
+	<property name="Explosion.ParticleIndex" value="60"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidPrefab"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder1" value="B260"/>
@@ -21084,7 +21101,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelAcidSingle45">
 	<property name="Extends" value="cntBarrelAcidSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="TintColor" value="566550"/>
+	<property name="Explosion.ParticleIndex" value="61"/>
 	<property name="Model" value="Entities/Industrial/barrelAcid45Prefab"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder2" value="0001"/>
@@ -21092,7 +21110,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelAcidQuadA">
 	<property name="Extends" value="cntBarrelAcidSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="566550"/>
+	<property name="Explosion.ParticleIndex" value="62"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadAPrefab"/>
 	<drop event="Harvest" name="resourceAcid" prob=".5" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder2" value="0002"/>
@@ -21100,7 +21119,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelAcidQuadB">
 	<property name="Extends" value="cntBarrelAcidSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="566550"/>
+	<property name="Explosion.ParticleIndex" value="63"/>
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadBPrefab"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
 	<property name="SortOrder2" value="0003"/>
@@ -21109,34 +21129,39 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Gas -->
 <block name="cntBarrelGasSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="TintColor" value="894040"/>
+	<property name="Explosion.ParticleIndex" value="64"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0100"/>
 </block>
 
 <block name="cntBarrelGasSingle45">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="TintColor" value="894040"/>
+	<property name="Explosion.ParticleIndex" value="65"/>
 	<property name="Model" value="Entities/Industrial/barrelGas45Prefab"/>
 	<property name="SortOrder2" value="0101"/>
 </block>
 
 <block name="cntBarrelGasQuadA">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="894040"/>
+	<property name="Explosion.ParticleIndex" value="66"/>
 	<property name="Model" value="Entities/Industrial/barrelGasQuadAPrefab"/>
 	<property name="SortOrder2" value="0102"/>
 </block>
 
 <block name="cntBarrelGasQuadB">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="894040"/>
+	<property name="Explosion.ParticleIndex" value="67"/>
 	<property name="Model" value="Entities/Industrial/barrelGasQuadBPrefab"/>
 	<property name="SortOrder2" value="0103"/>
 </block>
 
 <block name="cntBarrelGasOld">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
+	<property name="TintColor" value="894040"/>
 	<property name="Model" value="Entities/Industrial/barrel03Prefab"/>
 	<property name="SortOrder2" value="0104"/>
 </block>
@@ -21144,7 +21169,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Generic -->
 <block name="cntBarrelGenericSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="Explosion.ParticleIndex" value="64"/>
 	<property name="Model" value="Entities/Industrial/barrelGenericPrefab"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0200"/>
@@ -21152,21 +21177,21 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelGenericSingle45">
 	<property name="Extends" value="cntBarrelGenericSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="Explosion.ParticleIndex" value="65"/>
 	<property name="Model" value="Entities/Industrial/barrelGeneric45Prefab"/>
 	<property name="SortOrder2" value="0201"/>
 </block>
 
 <block name="cntBarrelGenericQuadA">
 	<property name="Extends" value="cntBarrelGenericSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="Explosion.ParticleIndex" value="66"/>
 	<property name="Model" value="Entities/Industrial/barrelGenericQuadAPrefab"/>
 	<property name="SortOrder2" value="0202"/>
 </block>
 
 <block name="cntBarrelGenericQuadB">
 	<property name="Extends" value="cntBarrelGenericSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="Explosion.ParticleIndex" value="67"/>
 	<property name="Model" value="Entities/Industrial/barrelGenericQuadBPrefab"/>
 	<property name="SortOrder2" value="0203"/>
 </block>
@@ -21174,7 +21199,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Oil -->
 <block name="cntBarrelOilSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="TintColor" value="3D3D3D"/>
+	<property name="Explosion.ParticleIndex" value="68"/>
 	<property name="Model" value="Entities/Industrial/barrelOilPrefab"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0300"/>
@@ -21182,21 +21208,24 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelOilSingle45">
 	<property name="Extends" value="cntBarrelOilSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="TintColor" value="3D3D3D"/>
+	<property name="Explosion.ParticleIndex" value="69"/>
 	<property name="Model" value="Entities/Industrial/barrelOil45Prefab"/>
 	<property name="SortOrder2" value="0301"/>
 </block>
 
 <block name="cntBarrelOilQuadA">
 	<property name="Extends" value="cntBarrelOilSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="3D3D3D"/>
+	<property name="Explosion.ParticleIndex" value="70"/>
 	<property name="Model" value="Entities/Industrial/barrelOilQuadAPrefab"/>
 	<property name="SortOrder2" value="0302"/>
 </block>
 
 <block name="cntBarrelOilQuadB">
 	<property name="Extends" value="cntBarrelOilSingle00"/>
-	<property name="Explosion.ParticleIndex" value="16"/>
+	<property name="TintColor" value="3D3D3D"/>
+	<property name="Explosion.ParticleIndex" value="71"/>
 	<property name="Model" value="Entities/Industrial/barrelOilQuadBPrefab"/>
 	<property name="SortOrder2" value="0303"/>
 </block>
@@ -21204,7 +21233,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- Radiated -->
 <block name="cntBarrelRadiatedSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="TintColor" value="A78146"/>
+	<property name="Explosion.ParticleIndex" value="72"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiatedPrefab"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0400"/>
@@ -21212,19 +21242,24 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelRadiatedSingle45">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="TintColor" value="A78146"/>
+	<property name="Explosion.ParticleIndex" value="73"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiated45Prefab"/>
 	<property name="SortOrder2" value="0401"/>
 </block>
 
 <block name="cntBarrelRadiatedQuadA">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
+	<property name="TintColor" value="A78146"/>
+	<property name="Explosion.ParticleIndex" value="74"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiatedQuadAPrefab"/>
 	<property name="SortOrder2" value="0402"/>
 </block>
 
 <block name="cntBarrelRadiatedQuadB">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
+	<property name="TintColor" value="A78146"/>
+	<property name="Explosion.ParticleIndex" value="75"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiatedQuadBPrefab"/>
 	<property name="SortOrder2" value="0403"/>
 </block>
@@ -21232,7 +21267,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <!-- White -->
 <block name="cntBarrelWhiteSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
-	<property name="Explosion.ParticleIndex" value="14"/>
+	<property name="TintColor" value="B2B2AB"/>
+	<property name="Explosion.ParticleIndex" value="76"/>
 	<property name="Model" value="Entities/Industrial/barrelWhitePrefab"/>
 	<property name="SortOrder1" value="B260"/>
 	<property name="SortOrder2" value="0500"/>
@@ -21240,19 +21276,24 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="cntBarrelWhiteSingle45">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
-	<property name="Explosion.ParticleIndex" value="15"/>
+	<property name="TintColor" value="B2B2AB"/>
+	<property name="Explosion.ParticleIndex" value="77"/>
 	<property name="Model" value="Entities/Industrial/barrelWhite45Prefab"/>
 	<property name="SortOrder2" value="0501"/>
 </block>
 
 <block name="cntBarrelWhiteQuadA">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
+	<property name="TintColor" value="B2B2AB"/>
+	<property name="Explosion.ParticleIndex" value="78"/>
 	<property name="Model" value="Entities/Industrial/barrelWhiteQuadAPrefab"/>
 	<property name="SortOrder2" value="0502"/>
 </block>
 
 <block name="cntBarrelWhiteQuadB">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
+	<property name="TintColor" value="B2B2AB"/>
+	<property name="Explosion.ParticleIndex" value="79"/>
 	<property name="Model" value="Entities/Industrial/barrelWhiteQuadBPrefab"/>
 	<property name="SortOrder2" value="0503"/>
 </block>
@@ -21268,6 +21309,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="CanDecorateOnSlopes" value="false"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="2,4" tag="allToolsHarvest"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="2,4" tag="oreWoodHarvest"/>
@@ -25848,6 +25890,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder2" value="0000"/>
 	<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="campfire_grab"/>
+	<property name="SoundPlace" value="campfire_place"/>
 </block>
 
 <block name="cntCollapsedCampfire">
@@ -25906,6 +25950,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
 	<property name="Tags" value="workstationSkill,twitch_workstation"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="dewcollector_grab"/>
+	<property name="SoundPlace" value="dewcollector_place"/>
 </block>
 
 <block name="cntCollapsedDewCollector">
@@ -25922,6 +25968,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowedRotations" value="Basic90"/>
 	<property name="Path" value="solid"/>
 	<property name="IsDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="200"/>
 	<property class="RepairItems">
@@ -25998,6 +26045,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Building,TCScience,advBuilding"/>
 	<property name="Tags" value="workstationSkill,twitch_workstation"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="forge_grab"/>
+	<property name="SoundPlace" value="forge_place"/>
 </block>
 
 <block name="cntForgeWorkstationBroken">
@@ -26015,6 +26064,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="true"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property class="RepairItems">
@@ -26089,6 +26139,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Building,TCScience,advBuilding"/>
 	<property name="Tags" value="workstationSkill,twitch_workstation"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="workbench_grab"/>
+	<property name="SoundPlace" value="workbench_place"/>
 </block>
 
 <block name="cntCollapsedWorkbench">
@@ -26108,6 +26160,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="MaxDamage" value="500"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property class="RepairItems">
 		<property name="resourceForgedIron" value="25"/>
@@ -26140,6 +26193,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="MaxDamage" value="500"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property class="RepairItems">
 		<property name="resourceForgedIron" value="25"/>
@@ -26221,6 +26275,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Building,TCScience,advBuilding"/>
 	<property name="Tags" value="workstationSkill,twitch_workstation"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="cementmixer_grab"/>
+	<property name="SoundPlace" value="cementmixer_place"/>
 </block>
 
 <block name="cntCollapsedCementMixer">
@@ -26239,6 +26295,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="StabilitySupport" value="true"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property class="RepairItems">
@@ -26325,6 +26382,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Group" value="Building,Science,TCScience,advBuilding"/>
 	<property name="Tags" value="workstationSkill,twitch_workstation"/>
 	<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+	<property name="SoundPickup" value="chemistrystation_grab"/>
+	<property name="SoundPlace" value="chemistrystation_place"/>
 </block>
 
 <block name="cntCollapsedChemistryStation">
@@ -26343,6 +26402,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="MaxDamage" value="500"/>
 	<property class="RepairItems">
@@ -26826,6 +26886,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
@@ -26888,6 +26949,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
@@ -26955,6 +27017,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="5000"/>
@@ -27131,6 +27194,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="5000"/>
@@ -27304,6 +27368,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -27371,6 +27436,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -27435,6 +27501,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
@@ -27490,6 +27557,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="5000"/>
@@ -27545,6 +27613,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -27702,6 +27771,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -27850,6 +27922,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -27996,6 +28071,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -28135,6 +28213,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -28284,6 +28365,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -28432,6 +28516,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -28573,6 +28660,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="100"/>
 	<property name="StartDamage" value="0"/>
@@ -28639,6 +28729,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="100"/>
 	<property name="StartDamage" value="0"/>
@@ -28706,6 +28799,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -28853,6 +28949,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -29001,6 +29100,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -29149,6 +29251,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -29294,6 +29399,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -29441,6 +29549,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -29587,6 +29698,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1"/>
 	<property name="StartDamage" value="0"/>
@@ -29727,6 +29841,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="2"/>
 	<property name="StartDamage" value="0"/>
@@ -29862,6 +29979,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="2"/>
 	<property name="StartDamage" value="0"/>
@@ -29999,6 +30119,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="2"/>
 	<property name="StartDamage" value="0"/>
@@ -30134,6 +30257,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="100"/>
 	<property name="StartDamage" value="0"/>
@@ -30191,6 +30317,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="3250"/>
 	<property name="StartDamage" value="0"/>
@@ -30248,6 +30377,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="100"/>
 	<property name="StartDamage" value="0"/>
@@ -30363,6 +30495,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="100"/>
 	<property name="StartDamage" value="0"/>
@@ -30419,6 +30554,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="3250"/>
 	<property name="StartDamage" value="0"/>
@@ -30477,6 +30615,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -30625,6 +30766,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -30773,6 +30917,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -30921,6 +31068,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -31070,6 +31220,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -31218,6 +31371,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -31367,6 +31523,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -31515,6 +31674,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="1000"/>
 	<property name="StartDamage" value="0"/>
@@ -31662,6 +31824,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="10000"/>
 	<property name="StartDamage" value="0"/>
@@ -31708,6 +31873,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="10000"/>
 	<property name="StartDamage" value="0"/>
@@ -31755,6 +31923,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="10000"/>
 	<property name="StartDamage" value="0"/>
@@ -31786,6 +31957,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,2,1"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Place" value="TowardsPlacerInverted"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapIron" count="1,2" tag="allHarvest"/>
 	<drop event="Harvest" name="resourceElectricParts" count="1" tag="salvageHarvest"/>
@@ -31915,6 +32088,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="300"/>
 	<property name="StartDamage" value="0"/>
@@ -32064,6 +32240,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="250"/>
 	<property name="StartDamage" value="0"/>
@@ -32197,6 +32376,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="10000"/>
@@ -32498,6 +32678,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="7500"/>
@@ -32626,6 +32807,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="7500"/>
@@ -32755,6 +32937,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="7500"/>
@@ -33210,6 +33393,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
@@ -33348,6 +33532,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
@@ -33486,6 +33671,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
@@ -33938,6 +34124,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="Collide" value="movement,melee,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
 	<property name="StartDamage" value="0"/>
@@ -33991,6 +34180,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="Collide" value="movement,melee,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
 	<property name="StartDamage" value="0"/>
@@ -34056,6 +34248,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="Collide" value="movement,melee,rocket"/>
 	<property name="StabilitySupport" value="false"/>
+	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="30000"/>
 	<property name="StartDamage" value="0"/>
@@ -34110,6 +34305,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -34254,6 +34450,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="StabilitySupport" value="true"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -34398,6 +34595,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="15000"/>
@@ -34543,6 +34741,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="AllowAllRotations" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="MaxDamage" value="750"/>
@@ -34607,6 +34806,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<!-- Interaction -->
 	<property name="PassThroughDamage" value="true"/>
@@ -34775,6 +34975,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Place" value="TowardsPlacerInverted"/>
 	<property name="PlaceEverywhere" value="true"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="SellableToTrader" value="false"/>
 	<property name="OnlySimpleRotations" value="true"/>
 	<property class="RepairItems">
 		<property name="resourceForgedIron" value="5"/>
@@ -34812,6 +35014,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Place" value="DrawBridge"/>
 	<property name="PlaceEverywhere" value="true"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="ActivationDistance" value="14"/> <!-- This is how far away you can PLACE the block and how far away you can ACTIVATE it -->
@@ -37403,6 +37606,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B356"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_building,SC_windows"/>
+	<property name="Tags" value="challenge_polymers"/>
 </block>
 
 <block name="commercialBlindsBottom">
@@ -37428,6 +37632,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B356"/>
 	<property name="SortOrder2" value="0002"/>
 	<property name="FilterTags" value="MC_building,SC_windows"/>
+	<property name="Tags" value="challenge_polymers"/>
 </block>
 
 <block name="miniblindBottomSheet">
@@ -37450,6 +37655,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B356"/>
 	<property name="SortOrder2" value="0100"/>
 	<property name="FilterTags" value="MC_building,SC_windows"/>
+	<property name="Tags" value="challenge_polymers"/>
 </block>
 
 <block name="verticalBlindsTop2White">
@@ -37517,6 +37723,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B356"/>
 	<property name="SortOrder2" value="0800"/>
 	<property name="FilterTags" value="MC_building,SC_windows"/>
+	<property name="Tags" value="challenge_polymers"/>
 </block>
 
 <block name="verticalBlindsTop2Grey">
@@ -37608,6 +37815,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B356"/>
 	<property name="SortOrder2" value="0900"/>
 	<property name="FilterTags" value="MC_building,SC_windows"/>
+	<property name="Tags" value="challenge_polymers"/>
 </block>
 
 <block name="verticalBlindsTop2Black">
@@ -47590,7 +47798,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntStoreShelfSingleBottomEmpty"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="shamwayShelves"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/storeShelfBottomGoodsPrefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourceScrapIron" count="3,6"/>
@@ -47712,7 +47920,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntStoreShelfSingleBottomEmpty"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="toolBox"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/storeShelfBottomHardwareGoods01Prefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="3,6"/>
@@ -47869,7 +48077,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntStoreShelfSingleBottomEmpty"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="popnpillsShelves"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/ShelfPharmaGoods01Prefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="3,6"/>
@@ -47944,7 +48152,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntStoreShelfSingleBottomEmpty"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="trashShelves"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/storeShelfBottomTrash01Prefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourceCloth" count="3,6"/>
@@ -48602,7 +48810,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntGunRackSmallEmpty01"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="armorRack"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/gunrackWallVestPrefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourceCloth" count="3,6"/>
@@ -48720,7 +48928,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntStoreShelfSingleBottomEmpty"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="mopowerShelves"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="Entities/Commercial/electronicsShelfPCPrefab"/>
 	<dropextendsoff/>
 	<drop event="Destroy" name="resourcePaper" count="3,6"/>
@@ -49049,7 +49257,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="decoEntityClothMaster" param1="CustomIcon"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="clothesRacks"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="@:Entities/LootContainers/clothsRackWallJeansPrefab.prefab"/>
 	<property name="WaterFlow" value="permitted"/>
 	<drop event="Destroy" name="resourceCloth" count="3,6"/>
@@ -49062,7 +49270,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="decoEntityClothMaster" param1="CustomIcon"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="clothesRacks"/>
-	<property name="Material" value="Mfurniture"/>
+	<property name="Material" value="Mmetal"/>
 	<property name="Model" value="@:Entities/LootContainers/clothsRackWallLongSleevePrefab.prefab"/>
 	<property name="WaterFlow" value="permitted"/>
 	<drop event="Destroy" name="resourceCloth" count="3,6"/>
@@ -49987,7 +50195,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Extends" value="cntBookPile03" param1="DescriptionKey"/>
 	<property name="CreativeMode" value="Dev"/>
 	<property name="CustomIcon" value="cntBookPile03"/>
-	<property name="CustomIconTint" value="ff8080"/>
+	<property name="CustomIconTint" value="8080FF"/>
 	<property name="ItemTypeIcon" value="other"/>
 	<property name="DisplayInfo" value="Name"/>
 	<property name="SortOrder1" value="B470"/>
@@ -50004,7 +50212,56 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="DisplayInfo" value="Name"/>
 	<property name="DescriptionKey" value="cntBookPileRandomLootHelperDesc"/>
 	<property name="SortOrder1" value="B470"/>
-	<property name="SortOrder2" value="0001"/>
+	<property name="SortOrder2" value="0002"/>
+	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
+</block>
+
+	<!-- *** BOOK_PILE_HELPERS_vs_AIR -->
+<block name="cntBookPile01AirRandomLootHelper">
+	<property name="Extends" value="cntBookPile01" param1="DescriptionKey"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="cntBookPile01"/>
+	<property name="CustomIconTint" value="8080FF"/>
+	<property name="ItemTypeIcon" value="other"/>
+	<property name="DisplayInfo" value="Name"/>
+	<property name="SortOrder1" value="B470"/>
+	<property name="SortOrder2" value="0100"/>
+	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
+</block>
+
+<block name="cntBookPile02AirRandomLootHelper">
+	<property name="Extends" value="cntBookPile02" param1="DescriptionKey"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="cntBookPile02"/>
+	<property name="CustomIconTint" value="8080FF"/>
+	<property name="ItemTypeIcon" value="other"/>
+	<property name="DisplayInfo" value="Name"/>
+	<property name="SortOrder1" value="B470"/>
+	<property name="SortOrder2" value="0101"/>
+	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
+</block>
+
+<block name="cntBookPile03AirRandomLootHelper">
+	<property name="Extends" value="cntBookPile03" param1="DescriptionKey"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="cntBookPile03"/>
+	<property name="CustomIconTint" value="8080FF"/>
+	<property name="ItemTypeIcon" value="other"/>
+	<property name="DisplayInfo" value="Name"/>
+	<property name="SortOrder1" value="B470"/>
+	<property name="SortOrder2" value="0102"/>
+	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
+</block>
+
+<block name="cntBookPile04AirRandomLootHelper">
+	<property name="Extends" value="cntBookPile04" param1="DescriptionKey"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="cntBookPile04"/>
+	<property name="CustomIconTint" value="8080FF"/>
+	<property name="ItemTypeIcon" value="other"/>
+	<property name="DisplayInfo" value="Name"/>
+	<property name="SortOrder1" value="B470"/>
+	<property name="SortOrder2" value="0103"/>
 	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
 </block>
 
@@ -51444,7 +51701,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<!-- *** GAS_PUMPS -->
 <block name="cntGasPumpRandomLootHelper">
 	<property name="CreativeMode" value="Dev"/>
-	<property name="Class" value="Loot"/>
+	<property name="Class" value="CarExplodeLoot"/>
 	<property name="LootList" value="gasPump"/>
 	<property class="Explosion">
 		<property name="ParticleIndex" value="30"/> <!-- which prefab/particle is used -->
@@ -51483,14 +51740,16 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="SortOrder1" value="B477"/>
 	<property name="SortOrder2" value="0000"/>
 	<property name="FilterTags" value="MC_helpers,SC_loot,SC_helperCommercial"/>
-	<property name="Tags" value="challenge_elec_parts,challenge_mech_parts,challenge_steel"/>
+	<property name="Tags" value="barrelExplosive,challenge_elec_parts,challenge_mech_parts,challenge_steel"/>
 	<property name="IndexName" value="challenge_steel"/>
 </block>
 
 <block name="cntGasPumpEmpty">
 	<property name="Extends" value="cntGasPumpRandomLootHelper" param1="Class,LootList,DescriptionKey,DisplayInfo,CustomIcon,CustomIconTint,ItemTypeIcon"/>
 	<property name="CreativeMode" value="Dev"/>
+	<property name="Class" value="CarExplode"/>
 	<property name="Model" value="Entities/Industrial/gasPumpEmptyPrefab"/>
+	<property name="Explosion.ParticleIndex" value="30"/>
 	<property name="SortOrder2" value="0001"/>
 	<property name="FilterTags" value="MC_building,SC_loot,SC_commercial"/>
 </block>
@@ -51498,9 +51757,10 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="cntGasPumpFull">
 	<property name="Extends" value="cntGasPumpEmpty"/>
 	<property name="CreativeMode" value="Dev"/>
-	<property name="Class" value="Loot"/>
+	<property name="Class" value="CarExplodeLoot"/>
 	<property name="LootList" value="gasPump"/>
 	<property name="Model" value="Entities/Industrial/gasPumpFullPrefab"/>
+	<property name="Explosion.ParticleIndex" value="30"/>
 	<property name="SortOrder2" value="0002"/>
 </block>
 
@@ -57847,7 +58107,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="tankPropaneWhite">
 	<property name="Class" value="CarExplode"/>
 	<property class="Explosion">
-		<property name="ParticleIndex" value="30"/>
+		<property name="ParticleIndex" value="35"/>
 		<property name="RadiusBlocks" value="5"/>
 		<property name="BlockDamage" value="500"/>
 		<property name="RadiusEntities" value="5"/>
@@ -61217,7 +61477,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="DisplayType" value="blockLandmine"/>
 	<property name="TriggerDelay" value="0.5"/>
 	<property name="TriggerSound" value="landmine_trigger"/>
-	<property name="Explosion.ParticleIndex" value="20"/>
+	<property name="Explosion.ParticleIndex" value="15"/>
 	<property name="Explosion.RadiusBlocks" value="2"/>
 	<property name="Explosion.BlockDamage" value="10"/>
 	<property name="Explosion.RadiusEntities" value="5"/>
@@ -61239,6 +61499,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="EconomicValue" value="97"/>
 	<property name="MaxDamage" value="4"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="10"/>
+	</property>
 	<property name="CanPickup" value="false"/>
 	<drop event="Destroy" count="0"/>
 	<property name="SortOrder1" value="B757"/>
@@ -61250,17 +61513,22 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <block name="mineCookingPot">
 	<property name="Extends" value="mineCandyTin"/>
+	<property name="Explosion.ParticleIndex" value="16"/> <!-- VFX adding custom explosion -->
 	<property name="Explosion.RadiusEntities" value="3"/>
 	<property name="Explosion.EntityDamage" value="300"/>
 	<property name="UnlockedBy" value="craftingExplosives"/>
 	<property name="Model" value="@:Other/Items/Weapons/Explosive/trapMineCookingPot_01Prefab.prefab"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket"/>
 	<property name="EconomicValue" value="120"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="10"/>
+	</property>
 	<property name="SortOrder2" value="0002"/>
 </block>
 
 <block name="mineHubcap">
 	<property name="Extends" value="mineCandyTin"/>
+	<property name="Explosion.ParticleIndex" value="17"/> <!-- VFX adding custom explosion -->
 	<property name="Explosion.RadiusBlocks" value="3"/>
 	<property name="Explosion.EntityDamage" value="450"/>
 	<property name="UnlockedBy" value="craftingExplosives"/>
@@ -61268,11 +61536,15 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Model" value="@:Other/Items/Weapons/Explosive/trapMineHubCap_01Prefab.prefab"/>
 	<property name="EconomicValue" value="146"/>
 	<property name="MaxDamage" value="5"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="10"/>
+	</property>
 	<property name="SortOrder2" value="0003"/>
 </block>
 
 <block name="mineAirFilter">
 	<property name="Extends" value="mineCandyTin"/>
+	<property name="Explosion.ParticleIndex" value="18"/> <!-- VFX adding custom explosion -->
 	<property name="Explosion.RadiusBlocks" value="4"/>
 	<property name="Explosion.EntityDamage" value="690"/>
 	<property name="EconomicValue" value="182"/>
@@ -61280,6 +61552,9 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Stacknumber" value="10"/> <!-- STK explosives -->
 	<property name="Model" value="@:Other/Items/Weapons/Explosive/trapMineAirFilter_01Prefab.prefab"/>
 	<property name="MaxDamage" value="6"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="10"/>
+	</property>
 	<property name="SortOrder2" value="0004"/>
 </block>
 
@@ -61397,7 +61672,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="TerrainAlignment" value="Vehicle"/>
 	<property name="LootList" value="cars"/>
 	<property class="Explosion">
-		<property name="ParticleIndex" value="30"/> <!-- which prefab/particle is used -->
+		<property name="ParticleIndex" value="31"/> <!-- which prefab/particle is used -->
 		<property name="RadiusBlocks" value="3.5"/> <!-- damage radius for blocks -->
 		<property name="BlockDamage" value="500"/> <!-- damage for blocks in the center of the explosion -->
 		<property name="RadiusEntities" value="5"/> <!-- damage radius for entities -->
@@ -61414,6 +61689,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(-0.5,0.5,-0.5),(2,2,6)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg2"/> <!-- VFX putback in play, added *dmg2-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="6"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -61444,7 +61720,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="Class" value="CarExplode"/>
 	<property name="TerrainAlignment" value="Vehicle"/>
 	<property class="Explosion">
-		<property name="ParticleIndex" value="30"/> <!-- which prefab/particle is used -->
+		<property name="ParticleIndex" value="32"/> <!-- which prefab/particle is used -->
 		<property name="RadiusBlocks" value="3.5"/> <!-- damage radius for blocks -->
 		<property name="BlockDamage" value="500"/> <!-- damage for blocks in the center of the explosion -->
 		<property name="RadiusEntities" value="5"/> <!-- damage radius for entities -->
@@ -61461,6 +61737,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(-0.5,0.5,-0.5),(2,2,6)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg2"/> <!-- VFX putback in play, added *dmg2-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="6"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -64432,7 +64709,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(-0.5,0.5,-0.5),(2,2,6)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
-	<!-- <property name="ParticleOnDeath" value="car_destruction_dmg1"/> -->
+	<property name="ParticleOnDeath" value="car_destruction_dmg1"/>  <!-- VFX putback in play-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="6"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -64608,7 +64885,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(0,0.5,-0.5),(3,2,6)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
-	<!-- <property name="ParticleOnDeath" value="car_destruction_dmg1"/> -->
+	<property name="ParticleOnDeath" value="car_destruction_dmg1"/> <!-- VFX putback in play-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="6"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -64782,6 +65059,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(0,1.5,-0.5),(3,4,8)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg3"/> <!-- VFX putback in play, added for semiTruck *dmg3-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="10"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -65058,7 +65336,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(-0.5,0.5,0),(2,2,5)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
-	<!-- <property name="ParticleOnDeath" value="car_destruction_dmg1"/> -->
+	<property name="ParticleOnDeath" value="car_destruction_dmg1"/> <!-- VFX putback in play-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="6"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -65286,6 +65564,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(0,1,-0.5),(3,3,10)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg4"/> <!-- VFX putback in play, added for fireTruck *dmg4-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="10"/>
 	<property name="BigDecorationRadius" value="5"/>
@@ -65622,6 +65901,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="OversizedBounds" value="(0,1.5,-0.5),(3,4,12)"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg5"/> <!-- VFX putback in play, added for bus*dmg5-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="15"/>
 	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
@@ -66346,6 +66626,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,2,2"/>
 	<property name="ImposterDontBlock" value="true"/>
 	<property name="WaterFlow" value="permitted"/>
+	<property name="ParticleOnDeath" value="car_destruction_dmg6"/> <!-- VFX putback in play, added for bus*dmg6-->
 	<property name="Place" value="TowardsPlacer"/>
 	<property name="PlacementDistance" value="10"/>
 	<property name="IsTerrainDecoration" value="true"/>
@@ -68474,6 +68755,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 <block name="treeStumpPOI">
 	<property name="Material" value="MtreeWoodSmall"/>
 	<property name="IsPlant" value="true"/> <!-- it shall never be placed on rocks -->
+	<property name="IndexName" value="challenge_stump"/>
 	<property name="CustomIcon" value="treeStump"/>
 	<property name="CustomIconTint" value="996600"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -68488,7 +68770,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="foodHoney" count="1" prob=".2"/>
 	<property name="SortOrder1" value="B907"/>
 	<property name="SortOrder2" value="0001"/>
-	<property name="Tags" value="wood"/>
+	<property name="Tags" value="wood,challenge_stump"/>
 	<property name="FilterTags" value="MC_outdoor,SC_trees"/>
 </block>
 
@@ -69826,6 +70108,8 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<drop event="Destroy" name="decoPumpkinJackOLantern" count="1"/>
 	<property name="SortOrder1" value="B964"/>
 	<property name="SortOrder2" value="0100"/>
+	<property name="SoundPickup" value="pumpkin_grab"/>
+	<property name="SoundPlace" value="pumpkin_place"/>
 </block>
 
 <block name="farmPlotBlock">
@@ -70731,6 +71015,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="TintColor" value="404040"/>
 	<property name="DescriptionKey" value="flagThick44Desc"/>
 	<property name="Model" value="Entities/Decor/flagThick44Prefab"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="SortOrder2" value="0044a"/>
 </block>
@@ -70741,6 +71026,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="TintColor" value="5A4B88"/>
 	<property name="DescriptionKey" value="flagThick44Desc"/>
 	<property name="Model" value="Entities/Decor/flagThick44Prefab"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="SortOrder2" value="0044b"/>
 </block>
@@ -70906,6 +71192,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="TintColor" value="404040"/>
 	<property name="DescriptionKey" value="flagThick44Desc"/>
 	<property name="Model" value="Entities/Decor/flagThick44Prefab"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="SortOrder2" value="0244a"/>
 </block>
@@ -70917,6 +71204,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="TintColor" value="5A4B88"/>
 	<property name="DescriptionKey" value="flagThick44Desc"/>
 	<property name="Model" value="Entities/Decor/flagThick44Prefab"/>
+	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="SortOrder2" value="0244b"/>
 </block>

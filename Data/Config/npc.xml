@@ -11,6 +11,7 @@
 		trader_id="1" dialog_id="trader" quest_faction="1" 
 		localization_id="npcTraderJoel"
 		quest_list="trader_joel_quests"
+		dms_section_type="TraderJoel"
 		/>
 		
 	<npc_info
@@ -24,6 +25,7 @@
 		trader_id="2" dialog_id="trader" quest_faction="1" 
 		localization_id="npcTraderJen"
 		quest_list="trader_jen_quests"
+		dms_section_type="TraderJen"
 		/>
 
 	<npc_info
@@ -37,6 +39,7 @@
 		trader_id="6" dialog_id="trader" quest_faction="1"
 		localization_id="npcTraderBob"
 		quest_list="trader_bob_quests"
+		dms_section_type="TraderBob"
 		/>
 
 
@@ -51,6 +54,7 @@
 		trader_id="7" dialog_id="trader" quest_faction="1" 
 		localization_id="npcTraderHugh"
 		quest_list="trader_hugh_quests"
+		dms_section_type="TraderHugh"
 		/>
 
 
@@ -65,6 +69,7 @@
 		trader_id="8" dialog_id="trader" quest_faction="1"
 		localization_id="npcTraderRekt" 
 		quest_list="trader_rekt_quests"
+		dms_section_type="TraderRekt"
 		/>
 
 

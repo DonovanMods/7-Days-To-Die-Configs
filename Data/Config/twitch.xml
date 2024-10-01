@@ -1656,13 +1656,14 @@
 		<property name="title_key" value="TwitchAction_BuffNewbie" />
 		<property name="description_key" value="TwitchAction_BuffNewbieDesc" />
 		<property name="category" value="Buffs,Debuffs" />
+		<property name="display_category" value="Extras" />
 		<property name="start_gamestage" value="60" />
 		<property name="event_name" value="buff_newbie" />
 		<property name="point_type" value="Bits" />
-		<property name="default_cost" value="300" />
+		<property name="default_cost" value="500" />
+		<property name="is_positive" value="false" />
 		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
-		<property name="presets" value="standard,hardcore" />
 		
 		<cooldown_addition name="twitch_buffMindWipe" time="300" />
 	</action>
@@ -2179,6 +2180,7 @@
 	
 	<action name="twitch_Dance">
 		<property name="command_key" value="TwitchAction_BuffDanceOffCommand" />
+		<property name="command" value="#dance_off" />
 		<property name="title" value="Dance Off" />
 		<property name="title_key" value="TwitchAction_BuffDanceOff" />
 		<property name="description_key" value="TwitchAction_BuffDanceOffDesc" />
@@ -3851,7 +3853,7 @@
 		<property name="start_gamestage" value="40" />
 		<property name="event_name" value="action_mind_wipe" />
 		<property name="point_type" value="Bits" />
-		<property name="default_cost" value="500" />
+		<property name="default_cost" value="750" />
 		<property name="cooldown" value="600" />
 		<property name="cooldown_blocked" value="true" />
 		

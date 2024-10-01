@@ -331,8 +331,8 @@
 		</property>
 	</property>
 	<effect_group name="meleeToolAxeT1IronFireaxe">
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="60" tags="perkMiner69r,axe"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="19.9" tags="primary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="65" tags="perkMiner69r,axe"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="18.4" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="500,1000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
@@ -358,7 +358,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/> -->
-		<passive_effect name="StaminaLoss" operation="base_set" value="39.9" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="31.3" tags="secondary"/>
 		<!-- Moaning and grunting sounds moved to buffs.xml, <effect_group name="Power Attack Grunt"> -->
 	</effect_group>
 </item>
@@ -383,8 +383,8 @@
 		<property name="Sound_start" value="axe_steel_swingheavy"/>
 	</property>
 	<effect_group name="meleeToolAxeT2SteelAxe">
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="47" tags="perkMiner69r,axe"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="30.9" tags="primary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkMiner69r,axe"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="26.4" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
@@ -411,7 +411,7 @@
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/> -->
-		<passive_effect name="StaminaLoss" operation="base_set" value="61.7" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="52.7" tags="secondary"/>
 	</effect_group>
 </item>
 
@@ -833,6 +833,8 @@
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="5" tags="perkMiner69r"/>
 
+		<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="oreWoodHarvest"/>
+
 		<passive_effect name="DismemberChance" operation="base_add" value="1"/>
 	</effect_group>
 </item>
@@ -923,6 +925,8 @@
 
 		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1" tags="perkMiner69r"/>
 		<passive_effect name="WeaponHandling" operation="base_set" value="5" tags="perkMiner69r"/>
+		
+		<passive_effect name="HarvestCount" operation="perc_add" value=".2"/>
 	</effect_group>
 </item>
 
@@ -2980,7 +2984,7 @@
 	<property name="Meshfile" value="@:Other/Items/Weapons/Melee/KnuckleWraps/knuckleWrapsRight_Prefab.prefab"/>
 	<property name="HoldType" value="70"/>
 	<property name="ScrapTimeOverride" value="10.0"/>
-	<property name="RepairTools" value="resourceLeather"/>
+	<property name="RepairTools" value="resourceCloth"/>
 	<property name="DegradationBreaksAfter" value="false"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="wooddestroy1"/>
@@ -3240,6 +3244,8 @@
 	<property name="Group" value="Tools/Traps"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="flashlight_grab"/>
+	<property name="SoundPlace" value="flashlight_place"/>
 	
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
@@ -3280,9 +3286,8 @@
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
 		<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="lightSource"/>
-		<!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
-		<!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
-		<!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+		<triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
+		<triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false"/>
 	</effect_group>
 
 	<effect_group name="Power Attack">
@@ -3355,7 +3360,7 @@
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
 			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10">
 				<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
-			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="12">
 				<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 	</effect_group>
 	<effect_group name="always refresh existing Fire Proc" tiered="false">
@@ -3364,7 +3369,7 @@
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
 			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10">
 				<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
-			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="12">
 				<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 	</effect_group>
 	<effect_group name="light/douse torch flame" tiered="false">
@@ -5771,6 +5776,8 @@
 	<property name="ShowQuality" value="true"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="robotic_sledge_grab"/>
+	<property name="SoundPlace" value="robotic_sledge_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
@@ -5902,6 +5909,8 @@
 	<property name="IgnoreKeystoneSound" value="true"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="robotic_turret_grab"/>
+	<property name="SoundPlace" value="robotic_turret_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
@@ -5994,6 +6003,8 @@
 	<property name="TintColor" value="255,167,0"/>
 	<property name="SoundUnholster" value="weapon_unholster"/>
 	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="robotic_drone_grab"/>
+	<property name="SoundPlace" value="robotic_drone_place"/>
 
 	<!--
 	<property class="Action0">
@@ -7708,6 +7719,8 @@
 	<property name="TraderStageTemplate" value="ammoTier2"/><!-- ammoRocketHE -->
 	<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
 	<property name="UnlockedBy" value="craftingExplosives"/><!-- perkDemolitionsExpert,gunExplosivesT3RocketLauncherSchematic -->
+	<property name="SoundPickup" value="rocket_grab"/>
+	<property name="SoundPlace" value="rocket_place"/>
 	
 	<property class="Action1">
 		<property name="Class" value="Projectile"/>
@@ -7927,7 +7940,7 @@
 
 		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="14">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
-		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="15">
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="16">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 
 		<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffBurningFlamingArrow">
@@ -8184,7 +8197,7 @@
 
 		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="14">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
-		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="15">
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="other" cvar="$buffBurningFlamingArrowDuration" operation="set" value="16">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
 
 		<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffBurningFlamingArrow">
@@ -9011,9 +9024,9 @@
 	</property> -->
 
 	<effect_group tiered="false">
-		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="16">
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="$buffBurningMolotovDuration" operation="set" value="16">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
-		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="17">
+		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="$buffBurningMolotovDuration" operation="set" value="18">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="NotEquals" value="0"/></triggered_effect>
 		<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2.7" buff="buffBurningMolotov">
 			<requirement name="CVarCompare" target="other" cvar="_underwater" operation="LT" value="0.3"/>
@@ -9957,18 +9970,18 @@
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="lightArmorDeg"/>
 		<passive_effect name="HypothermalResist" operation="base_add" value="20"/>
 		<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
-		
-		<display_value name="dSneakEffectiveness" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
+
+		<display_value name="dSneakEffectiveness" value=".05,.1,.14,.18,.22,.3" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<effect_group>
 		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
-			<passive_effect name="LightMultiplier" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6">
+			<passive_effect name="LightMultiplier" operation="perc_add" value="-.05,-.1,-.14,-.18,-.22,-.3" tier="1,2,3,4,5,6">
 				<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
 			</passive_effect>
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.03,-.05,-.07,-.1,-.13,-.2" tier="1,2,3,4,5,6"/>
 			<passive_effect name="CrouchSpeed" operation="perc_add" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
-			<passive_effect name="EnemySearchDuration" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="EnemySearchDuration" operation="perc_add" value=".05,.1,.14,.18,.22,.3" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<property class="SDCS">
@@ -11464,17 +11477,17 @@
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="-.0562" tags="running"/>
 		<display_value name="dStaminaChangeOT" value="-.56"/>
 		
-		<display_value name="dSneakEffectiveness" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
+		<display_value name="dSneakEffectiveness" value=".05,.1,.14,.18,.22,.3" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<effect_group>
 		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
-			<passive_effect name="LightMultiplier" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6">
+			<passive_effect name="LightMultiplier" operation="perc_add" value="-.05,-.1,-.14,-.18,-.22,-.3" tier="1,2,3,4,5,6">
 				<requirement name="CVarCompare" cvar="_lightlevel" operation="LTE" value="65"/>
 			</passive_effect>
-			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.03,-.05,-.07,-.1,-.13,-.2" tier="1,2,3,4,5,6"/>
 			<passive_effect name="CrouchSpeed" operation="perc_add" value=".02,.04,.06,.08,.1,.2" tier="1,2,3,4,5,6"/>
-			<passive_effect name="EnemySearchDuration" operation="perc_add" value="-.02,-.04,-.06,-.08,-.1,-.2" tier="1,2,3,4,5,6"/>
+			<passive_effect name="EnemySearchDuration" operation="perc_add" value=".05,.1,.14,.18,.22,.3" tier="1,2,3,4,5,6"/>
 	</effect_group>
 
 	<property class="SDCS">
@@ -12907,6 +12920,7 @@
 
 <item name="medicalPlasterCast">
 	<property name="Extends" value="medicalSplint"/>
+	<property name="Tags" value="medical,cast"/>
 	<property name="UnlockedBy" value="craftingMedical"/><!-- perkPhysician,medicalPlasterCastSchematic, -->
 	<property name="Group" value="Science,CFMedical,Medical,TCMedical"/>
 	<property name="SoundPickup" value="cast_grab"/>
@@ -13459,7 +13473,7 @@
 <!-- *** Food -->
 
 <item name="foodHoney">
-	<property name="Tags" value="food,medical,medicalSkill,fitness"/>
+	<property name="Tags" value="food,medical,medicalSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodCureInfection"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13478,7 +13492,9 @@
 	</property>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
 		<display_value name="dCureInfection" value=".05"/>
@@ -13488,7 +13504,7 @@
 </item>
 
 <item name="foodCanBeef">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13510,6 +13526,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13519,6 +13537,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13528,6 +13548,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13540,6 +13562,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13552,6 +13576,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13563,6 +13589,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13574,7 +13602,9 @@
 	<property name="EconomicValue" value="20"/>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13585,6 +13615,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13596,6 +13628,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13605,6 +13639,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13617,6 +13653,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13630,6 +13668,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13642,6 +13682,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13655,6 +13697,8 @@
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13667,7 +13711,9 @@
 	<property name="SoundPlace" value="canfoodsmall_place"/>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13675,7 +13721,7 @@
 
 <!-- Grilled Corn -->
 <item name="foodCornOnTheCob">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<!-- <property name="DisplayType" value="food"/> -->
 	<property name="DisplayType" value="foodWaterNegative"/>
@@ -13698,6 +13744,8 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13706,7 +13754,7 @@
 </item>
 
 <item name="foodCornBread">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13728,6 +13776,8 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13770,7 +13820,7 @@
 </item>
 
 <item name="foodCharredMeat">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWaterNegative"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13790,6 +13840,8 @@
 	<effect_group tiered="false" name="Food Tier 0/1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13798,7 +13850,7 @@
 </item>
 
 <item name="foodGrilledMeat">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13819,13 +13871,15 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodBoiledMeat">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWater"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13847,6 +13901,8 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="15">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13854,7 +13910,7 @@
 </item>
 
 <item name="foodMeatStew">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWater"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13876,6 +13932,8 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="25"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="25">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13883,7 +13941,7 @@
 </item>
 
 <item name="foodSteakAndPotato">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13907,6 +13965,8 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="25"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="25">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -13923,6 +13983,8 @@
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="53"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="80"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="80">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 
@@ -13936,7 +13998,7 @@
 </item>
 
 <item name="foodHoboStew">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWater"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13958,6 +14020,8 @@
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="64"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="32"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="32">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13965,7 +14029,7 @@
 </item>
 
 <item name="foodFishTacos">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -13988,6 +14052,8 @@
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="46"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="40"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="40">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
@@ -14003,13 +14069,15 @@
 	<effect_group tiered="false" name="Food Tier 3">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="53"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="30"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="30">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="30"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodBakedPotato">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<!-- <property name="DisplayType" value="food"/> -->
 	<property name="DisplayType" value="foodWaterNegative"/>
@@ -14032,6 +14100,8 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-5"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -14040,7 +14110,7 @@
 </item>
 
 <item name="foodBlueberryPie">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14061,13 +14131,15 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="45"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="22"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="22">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodPumpkinPie">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14088,13 +14160,15 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="25"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="25">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodPumpkinCheesecake">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodPumpkinCheesecake"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14116,6 +14190,8 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="42"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="21"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="21">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
@@ -14129,7 +14205,7 @@
 </item>
 
 <item name="foodPumpkinBread">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14151,13 +14227,15 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="6"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="6">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodGumboStew">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWater"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14181,6 +14259,8 @@
 	<effect_group tiered="false" name="Food Tier 4">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="112"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="56"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="56">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="40"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -14188,7 +14268,7 @@
 </item>
 
 <item name="foodShepardsPie">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14212,13 +14292,15 @@
 	<effect_group tiered="false" name="Food Tier 4">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="104"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="52"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="52">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="40"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodSpaghetti">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14241,13 +14323,15 @@
 	<effect_group tiered="false" name="Food Tier 4">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="122"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="61"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="61">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="40"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodTunaFishGravyToast">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14271,13 +14355,15 @@
 	<effect_group tiered="false" name="Food Tier 4">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="90"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="45"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="45">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="40"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodEggBoiled">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14298,13 +14384,15 @@
 	<effect_group tiered="false" name="Food Tier 0/1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodBaconAndEggs">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="food"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14326,13 +14414,15 @@
 	<effect_group tiered="false" name="Food Tier 1">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="36"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="18"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="18">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="10"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodVegetableStew">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWater"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14354,6 +14444,8 @@
 	<effect_group tiered="false" name="Food Tier 2">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="31"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="15">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="20"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -14433,7 +14525,7 @@
 </item>
 
 <item name="foodEgg">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14452,13 +14544,15 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodCornMeal">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodWaterRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14479,7 +14573,9 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="add" value="-3"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 		<display_value name="$waterAmountAdd" value="-3"/>
@@ -14507,13 +14603,13 @@
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
 	<effect_group tiered="false" name="Food Tier 0">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodCropCorn">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14534,13 +14630,15 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodCropGraceCorn">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="CustomIcon" value="foodCropCorn"/> <property name="CustomIconTint" value="ff9f9f"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="HoldType" value="31"/>
@@ -14562,7 +14660,9 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -14595,7 +14695,7 @@
 </item>
 
 <item name="foodCropMushrooms">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14616,13 +14716,15 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodCropYuccaFruit">
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="HoldType" value="31"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14641,15 +14743,17 @@
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/> <!-- ,Medicine -->
 
 	<effect_group tiered="false" name="Food Tier 0">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="1"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="0"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
 
 <item name="foodCropPumpkin">
 	<property name="CustomIcon" value="plantedPumpkin3Harvest"/>
-	<property name="Tags" value="food,foodSkill,fitness"/>
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="HoldType" value="31"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -14669,7 +14773,9 @@
 
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -14953,7 +15059,7 @@
 </item>
 
 <item name="drinkYuccaJuiceSmoothie">
-	<property name="Tags" value="drinks,foodSkill,fitness"/>
+	<property name="Tags" value="drinks,foodSkill,fitness,farmerFoodBonus"/>
 	<property name="HoldType" value="3"/>
 	<property name="DisplayType" value="drinkYuccaSmoothie"/>
 	<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
@@ -14976,6 +15082,8 @@
 		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="22"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="11"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="11">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="78"/>
 			<display_value name="dStaminaRegen" value=".15"/>
 			<display_value name="dHypothermalResist" value="30"/>
@@ -15271,6 +15379,8 @@
 	<property name="EconomicValue" value="84"/>
 	<property name="Class" value="ItemClassWaterContainer"/>
 	<property name="WaterCapacity" value="1"/>
+	<property name="SoundPickup" value="bucket_grab"/>
+	<property name="SoundPlace" value="bucket_place"/>
 	<property class="Action0">
 		<property name="Class" value="BailLiquid"/>
 		<property name="Delay" value=".35"/>
@@ -15295,6 +15405,8 @@
 	<property name="Class" value="ItemClassWaterContainer"/>
 	<property name="WaterCapacity" value="1"/>
 	<property name="InitialFillRatio" value="1.0"/>
+	<property name="SoundPickup" value="bucket_water_grab"/>
+	<property name="SoundPlace" value="bucket_water_place"/>
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="DumpWater"/>
 		<property name="Delay" value=".5"/>
@@ -15320,6 +15432,8 @@
 	<property name="Stacknumber" value="5"/> <!-- STK book -->
 	<property name="EconomicValue" value="800"/>
 	<property name="Group" value="Books,SchematicsOnly,TCReading"/>
+	<property name="SoundPickup" value="schematics_grab"/>
+	<property name="SoundPlace" value="schematics_place"/>
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -16212,6 +16326,8 @@
 
 <item name="qt_taylor">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_taylor"/>
 	</property>
@@ -16219,6 +16335,8 @@
 
 <item name="qt_nickole">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_nickole"/>
 	</property>
@@ -16226,6 +16344,8 @@
 
 <item name="qt_stephan">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_stephan"/>
 	</property>
@@ -16233,6 +16353,8 @@
 
 <item name="qt_jennifer">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_jennifer"/>
 	</property>
@@ -16240,6 +16362,8 @@
 
 <item name="qt_claude">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_claude"/>
 	</property>
@@ -16247,6 +16371,8 @@
 
 <item name="qt_sarah">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_sarah"/>
 	</property>
@@ -16254,6 +16380,8 @@
 
 <item name="qt_raphael">
 	<property name="Extends" value="treasureQuestMaster"/>
+	<property name="SoundPickup" value="map_grab"/>
+	<property name="SoundPlace" value="map_place"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="treasure_raphael"/>
 	</property>
@@ -16394,6 +16522,8 @@
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="150"/>
 	<property name="SellableToTrader" value="false"/>
+	<property name="SoundPickup" value="snowball_grab"/>
+	<property name="SoundPlace" value="snowball_place"/>
 	<property class="Action0">
 		<property name="Class" value="ThrowAway"/>
 		<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
@@ -16475,6 +16605,8 @@
 	<property name="EconomicValue" value="50"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="sand_grab"/>
+	<property name="SoundPlace" value="sand_place"/>
 </item>
 
 <item name="resourceBrokenGlass"> <!-- scrap material -->
@@ -16596,6 +16728,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="scopelens_grab"/>
+	<property name="SoundPlace" value="scopelens_place"/>
 </item>
 
 <item name="resourceSewingKit">
@@ -16607,6 +16741,8 @@
 	<property name="Stacknumber" value="50"/> <!-- STK resource -->
 	<property name="EconomicValue" value="50"/>
 	<property name="Group" value="Resources,Medical"/>
+	<property name="SoundPickup" value="sewingkit_grab"/>
+	<property name="SoundPlace" value="sewingkit_place"/>
 
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
@@ -16638,6 +16774,8 @@
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="oilshale_grab"/>
+	<property name="SoundPlace" value="oilshale_place"/>
 </item>
 
 <item name="resourceBone"> <!-- scrap material -->
@@ -16676,6 +16814,7 @@
 </item>
 
 <item name="resourceAnimalFat">
+	<property name="Tags" value="farmerFoodBonus"/>
 	<property name="HoldType" value="31"/>
 	<property name="DisplayType" value="foodRaw"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
@@ -16713,6 +16852,8 @@
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
 	<property name="CraftingIngredientTime" value="2"/>
+	<property name="SoundPickup" value="testosterone_grab"/>
+	<property name="SoundPlace" value="testosterone_place"/>
 </item>
 
 <item name="resourceCropHopsFlower">
@@ -16817,6 +16958,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="brass_grab"/>
+	<property name="SoundPlace" value="brass_place"/>
 </item>
 
 <item name="resourceScrapLead"> <!-- scrap material -->
@@ -16831,6 +16974,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="lead_grab"/>
+	<property name="SoundPlace" value="lead_place"/>
 </item>
 
 <item name="resourceClayLump"> <!-- scrap material -->
@@ -16844,6 +16989,8 @@
 	<property name="EconomicBundleSize" value="150"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="clay_grab"/>
+	<property name="SoundPlace" value="clay_place"/>
 </item>
 
 <item name="resourceCobblestones">
@@ -16856,6 +17003,8 @@
 	<property name="EconomicBundleSize" value="100"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".25"/>
+	<property name="SoundPickup" value="cobblestones_grab"/>
+	<property name="SoundPlace" value="cobblestones_place"/>
 </item>
 
 <item name="resourceCement">
@@ -16867,6 +17016,8 @@
 	<property name="EconomicValue" value="25"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="cement_grab"/>
+	<property name="SoundPlace" value="cement_place"/>
 </item>
 
 <item name="resourceConcreteMix">
@@ -16880,6 +17031,8 @@
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="TraderStageTemplate" value="midTier1"/><!-- resourceConcreteMix -->
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="cementmix_grab"/>
+	<property name="SoundPlace" value="cementmix_place"/>
 </item>
 
 <item name="resourceCloth"> <!-- scrap material -->
@@ -16896,6 +17049,8 @@
 	<property name="Group" value="Resources"/>
 	<property name="UnlockedBy" value="perkWasteTreasuresCloth"/> <!-- BOOK_PERK -->
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="cloth_grab"/>
+	<property name="SoundPlace" value="cloth_place"/>
 </item>
 
 <item name="resourcePaper"> <!-- scrap material -->
@@ -16911,6 +17066,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="paper_grab"/>
+	<property name="SoundPlace" value="paper_place"/>
 </item>
 
 <item name="resourceElectricParts"> <!-- scrap material -->
@@ -16940,6 +17097,8 @@
 	<property name="Weight" value="10"/>
 	<property name="EconomicValue" value="150"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="headlight_grab"/>
+	<property name="SoundPlace" value="headlight_place"/>
 </item>
 
 <item name="resourceMechanicalParts"> <!-- scrap material -->
@@ -16969,6 +17128,8 @@
 	<property name="Weight" value="10"/>
 	<property name="EconomicValue" value="22"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="spring_grab"/>
+	<property name="SoundPlace" value="spring_place"/>
 </item>
 
 <item name="resourceGlue">
@@ -17011,6 +17172,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="TrackerIndexName" value="quest_feather"/>
+	<property name="SoundPickup" value="feather_grab"/>
+	<property name="SoundPlace" value="feather_place"/>
 </item>
 
 <item name="resourceArrowHeadIron">
@@ -17064,6 +17227,8 @@
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value="0.5"/>
+	<property name="SoundPickup" value="nitratepowder_grab"/>
+	<property name="SoundPlace" value="nitratepowder_place"/>
 </item>
 
 <item name="resourceGunPowder">
@@ -17075,6 +17240,8 @@
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+	<property name="SoundPickup" value="gunpowder_grab"/>
+	<property name="SoundPlace" value="gunpowder_place"/>
 </item>
 
 <item name="resourceBuckshot">
@@ -17156,6 +17323,8 @@
 	<property name="Stacknumber" value="500"/> <!-- STK resource -->
 	<property name="EconomicValue" value="50"/>
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
+	<property name="SoundPickup" value="rockettip_grab"/>
+	<property name="SoundPlace" value="rockettip_place"/>
 </item>
 
 <item name="resourceRocketCasing">
@@ -17167,6 +17336,8 @@
 	<property name="Stacknumber" value="50"/> <!-- STK resource -->
 	<property name="EconomicValue" value="77"/>
 	<property name="Group" value="Ammo/Weapons,Ammo"/>
+	<property name="SoundPickup" value="rocketcasing_grab"/>
+	<property name="SoundPlace" value="rocketcasing_place"/>
 </item>
 
 <item name="resourceWaterFilter">
@@ -17248,6 +17419,8 @@
 	<property name="EconomicValue" value="12"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="CraftingIngredientTime" value=".2"/>
+	<property name="SoundPickup" value="paint_grab"/>
+	<property name="SoundPlace" value="paint_place"/>
 </item>
 
 <item name="resourceDoorKnob">
@@ -17294,6 +17467,8 @@
 	<property name="Weight" value="250"/>
 	<property name="EconomicValue" value="200"/>
 	<property name="Group" value="Resources"/>
+	<property name="SoundPickup" value="radiator_grab"/>
+	<property name="SoundPlace" value="radiator_place"/>
 </item>
 
 <item name="resourceFishingWeight">
@@ -17454,6 +17629,8 @@
 	<property name="Group" value="Resources,Chemicals"/>
 	<property name="DegradationBreaksAfter" value="false"/>
 	<property name="ShowQuality" value="true"/>
+	<property name="SoundPickup" value="battery_lead_grab"/>
+	<property name="SoundPlace" value="battery_lead_place"/>
 	<property class="Attributes">
 		<property name="DegradationMax" value="1000,6000"/> <!-- needed for electrical calculations -->
 		<property name="BatteryMaxLoadInVolts" value="24, 36"/>
@@ -21347,7 +21524,7 @@
 	<property class="Action0">
 		<property name="Create_item" value="resourcePaper"/>
 		<property name="Create_item_count" value="0"/>
-		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadFootwear,bookNeedleAndThreadLegwear,bookNeedleAndThreadPockets,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadWinterWear,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
+		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
 		<property name="Random_item_count" value="1,1,1"/>
 		<property name="Random_count" value="3"/>
 		<property name="Unique_random_only" value="true"/>
@@ -21364,7 +21541,7 @@
 	<property class="Action0">
 		<property name="Create_item" value="resourcePaper"/>
 		<property name="Create_item_count" value="0"/>
-		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadFootwear,bookNeedleAndThreadLegwear,bookNeedleAndThreadPockets,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadWinterWear,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
+		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
 		<property name="Random_item_count" value="1,1,1,1"/>
 		<property name="Random_count" value="4"/>
 		<property name="Unique_random_only" value="true"/>
@@ -21381,7 +21558,7 @@
 	<property class="Action0">
 		<property name="Create_item" value="resourcePaper"/>
 		<property name="Create_item_count" value="0"/>
-		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadFootwear,bookNeedleAndThreadLegwear,bookNeedleAndThreadPockets,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadWinterWear,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
+		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
 		<property name="Random_item_count" value="1,1,1,1,1"/>
 		<property name="Random_count" value="5"/>
 		<property name="Unique_random_only" value="true"/>
@@ -21398,7 +21575,7 @@
 	<property class="Action0">
 		<property name="Create_item" value="resourcePaper"/>
 		<property name="Create_item_count" value="0"/>
-		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadFootwear,bookNeedleAndThreadLegwear,bookNeedleAndThreadPockets,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadWinterWear,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
+		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
 		<property name="Random_item_count" value="1,1,1,1,1,1"/>
 		<property name="Random_count" value="6"/>
 		<property name="Unique_random_only" value="true"/>
@@ -21415,7 +21592,7 @@
 	<property class="Action0">
 		<property name="Create_item" value="resourcePaper"/>
 		<property name="Create_item_count" value="0"/>
-		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadFootwear,bookNeedleAndThreadLegwear,bookNeedleAndThreadPockets,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadWinterWear,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
+		<property name="Random_item" value="bookRangersArrowRecovery,bookRangersCripplingShot,bookRangersKnockdown,bookRangersFlamingArrows,bookRangersAPAmmo,bookRangersExplodingBolts,bookRangersForestGuide,bookSpearHunter1Damage,bookSpearHunter2Maintenance,bookSpearHunter3Bleed,bookSpearHunter4KillMove,bookSpearHunter5RapidStrike,bookSpearHunter6PenetratingShaft,bookSpearHunter7QuickStrike,bookHuntingJournalBears,bookHuntingJournalCoyotes,bookHuntingJournalDeer,bookHuntingJournalMountainLions,bookHuntingJournalVultures,bookHuntingJournalWolves,bookHuntingJournalSelfDefense,bookArtOfMiningLuckyStrike,bookArtOfMiningDiamondTools,bookArtOfMiningCoffee,bookArtOfMiningBlackStrap,bookArtOfMiningPallets,bookArtOfMiningAvalanche,bookArtOfMiningDamage,bookBatterUpFoulBalls,bookBatterUpBigHits,bookBatterUpStealingBases,bookBatterUpKnockdown,bookBatterUpSlowPitch,bookBatterUpMaintenance,bookBatterUpMetalChain,bookPistolPeteAPAmmo,bookPistolPeteDamage,bookPistolPeteHPAmmo,bookPistolPeteMaintenance,bookPistolPeteSteadyHand,bookPistolPeteSwissKnees,bookPistolPeteTakeAim,bookWasteTreasuresAcid,bookWasteTreasuresCloth,bookWasteTreasuresCoffins,bookWasteTreasuresDoors,bookWasteTreasuresHoney,bookWasteTreasuresSinks,bookWasteTreasuresWater,bookUrbanCombatAdrenalineRush,bookUrbanCombatCigar,bookUrbanCombatRoomClearing,bookUrbanCombatJumping,bookUrbanCombatLandMines,bookUrbanCombatLanding,bookUrbanCombatSneaking,bookNightStalkerArchery,bookNightStalkerBlades,bookNightStalkerSilentNight,bookNightStalkerSlumberParty,bookNightStalkerStealthDamage,bookNightStalkerThiefAdrenaline,bookNightStalkerTwilightThief,bookFiremansAlmanacSpeed,bookFiremansAlmanacAxes,bookFiremansAlmanacEquipment,bookFiremansAlmanacPrevention,bookFiremansAlmanacHarvest,bookFiremansAlmanacHeat,bookFiremansAlmanacMolotov,bookBarBrawling1BasicMoves,bookBarBrawling2DropABomb,bookBarBrawling3KillerInstinct,bookBarBrawling4FinishingMoves,bookBarBrawling5AdrenalineHealing,bookBarBrawling6RageMode,bookBarBrawling7BoozedUp,bookLuckyLooterAmmunition,bookLuckyLooterBooks,bookLuckyLooterBrass,bookLuckyLooterDukes,bookLuckyLooterFood,bookLuckyLooterLead,bookLuckyLooterMedical,bookEnforcerAPAmmo,bookEnforcerApparel,bookEnforcerCriminalPursuit,bookEnforcerHPAmmo,bookEnforcerDamage,bookEnforcerIntimidation,bookEnforcerPunks,bookShotgunMessiahBreachingSlugs,bookShotgunMessiahDamage,bookShotgunMessiahLimbShot,bookShotgunMessiahMaintenance,bookShotgunMessiahMagazine,bookShotgunMessiahPartyStarter,bookShotgunMessiahSlugs,bookGreatHeistAdrenalineFall,bookGreatHeistGoldRush,bookGreatHeistClaimed,bookGreatHeistGems,bookGreatHeistMotionDetection,bookGreatHeistSafes,bookGreatHeistSprintSneak,bookSniperAPAmmo,bookSniperControlledBreathing,bookSniperCripplingShot,bookSniperDamage,bookSniperHeadShot,bookSniperReload,bookSniperHPAmmo,bookAutoWeaponsDamage,bookAutoWeaponsRagdoll,bookAutoWeaponsMaintenance,bookAutoWeaponsRecoil,bookAutoWeaponsDrumMag,bookAutoWeaponsUncontrolledBurst,bookAutoWeaponsMachineGuns,bookTechJunkie1Damage,bookTechJunkie2Maintenance,bookTechJunkie3APAmmo,bookTechJunkie4Shells,bookTechJunkie5Repulsor,bookTechJunkie6BatonCharge,bookTechJunkie7Hydraulics"/>
 		<property name="Random_item_count" value="1,1,1,1,1,1,1"/>
 		<property name="Random_count" value="7"/>
 		<property name="Unique_random_only" value="true"/>
