@@ -358,128 +358,135 @@
 		</rect>
 	</invites_entry>
 
-	<players_header>
-		<panel name="header" depth="0" pos="-3,-3" height="746" disableautobackground="true"> <!-- backgroundcolor="[lightGrey]" bordercolor="[black]" borderthickness="3" -->
-			<sprite depth="10" name="backgroundMain" sprite="menu_empty3px" pos="3,-43" width="1292" height="52" color="[black]" type="sliced" fillcenter="false" />
-			<sprite color="[mediumGrey]" type="sliced" pos="6,-46" height="49" width="1287" />
-			<rect depth="1" name="steamId" width="154" height="46" pos="6,-6">
-				<label depth="1" name="text" pos="4,-63" height="42" text="STEAM ID" text_key="xuiSteamID" font_size="26" pivot="left" />
+	<players_header pos="0,0">
+		<panel name="header" depth="0" pos="${pos}" width="1320" height="50" disableautobackground="true"> <!-- backgroundcolor="[lightGrey]" bordercolor="[black]" borderthickness="3" -->
+			<sprite depth="10" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="1320" height="47" color="[black]" type="sliced" fillcenter="false" />
+			<sprite color="[mediumGrey]" type="sliced" pos="3,-3" height="44" width="1314" />
+			<rect depth="1" name="steamId" width="154" height="44" pos="3,-3">
+				<label depth="1" name="text" pos="4,-22" text="STEAM ID" text_key="xuiSteamID" font_size="26" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="level" width="70" height="46" pos="213,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="LEVEL" text_key="xuiLevel" font_size="24" justify="center" pivot="left" />
+			<rect depth="1" name="level" width="70" height="44" pos="255,-3">
+				<label depth="1" name="text" pos="0,-22" text="LEVEL" text_key="xuiLevel" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="gamestage" width="100" height="46" pos="283,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="GAME STAGE" text_key="xuiGameStage" font_size="24" justify="center" pivot="left" />
+			<rect depth="1" name="gamestage" width="100" height="44" pos="328,-3">
+				<label depth="1" name="text" pos="0,-22" text="GAME STAGE" text_key="xuiGameStage" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="party" width="70" height="46" pos="391,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="PARTY" text_key="xuiParty" font_size="24" justify="center" pivot="left" />
+			<rect depth="1" name="party" width="70" height="44" pos="435,-3">
+				<label depth="1" name="text" pos="0,-22" text="PARTY" text_key="xuiParty" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="allies" width="70" height="46" pos="469,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="ALLIES" text_key="xuiAllies" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="allies" width="70" height="44" pos="510,-3">
+				<label depth="1" name="text" pos="0,-22" text="ALLIES" text_key="xuiAllies" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="voice" width="80" height="46" pos="552,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="VOICE" text_key="xuiVoice" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="voice" width="80" height="44" pos="585,-3">
+				<label depth="1" name="text" pos="0,-22" text="VOICE" text_key="xuiVoice" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="km" width="50" height="46" pos="638,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="KM" text_key="xuiKM" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="km" width="50" height="44" pos="680,-3">
+				<label depth="1" name="text" pos="0,-22" text="KM" text_key="xuiKM" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="map" width="80" height="86" pos="691,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="MAP" text_key="xuiMap" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="map" width="80" height="44" pos="735,-3">
+				<label depth="1" name="text" pos="0,-22" text="MAP" text_key="xuiMap" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="zombieKills" width="140" height="46" pos="765,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="zombieKills" width="140" height="44" pos="805,-3">
+				<label depth="1" name="text" pos="0,-22" text="ZOMBIE KILLS" text_key="xuiEnemyKills" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="playerKills" width="140" height="46" pos="893,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="24" justify="center" pivot="left" />
+			<rect depth="1" name="playerKills" width="140" height="44" pos="935,-3">
+				<label depth="1" name="text" pos="0,-22" text="PLAYER KILLS" text_key="xuiPlayerKills" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="deaths" width="90" height="86" pos="1036,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="DEATHS" text_key="xuiDeaths" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="deaths" width="90" height="44" pos="1075,-3">
+				<label depth="1" name="text" pos="0,-22" text="DEATHS" text_key="xuiDeaths" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="ping" width="80" height="46" pos="1129,-6">
-				<label depth="1" name="text" pos="0,-63" height="42" text="PING" text_key="xuiPing" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="ping" width="80" height="44" pos="1170,-3">
+				<label depth="1" name="text" pos="0,-22" text="PING" text_key="xuiPing" font_size="24" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="reportheader" width="80" height="46" pos="1212,-6" color="[darkGrey]" type="sliced">
-				<label depth="1" name="text" pos="0,-63" height="42" text_key="xuiPlayersReportPlayerCol" font_size="26" justify="center" pivot="left" />
+			<rect depth="1" name="reportheader" width="80" height="44" pos="1245,-3" color="[darkGrey]" type="sliced">
+				<label depth="1" name="text" pos="0,-22" text_key="xuiPlayersReportPlayerCol" font_size="24" justify="center" pivot="left" />
 			</rect>
 		</panel>
 	</players_header>
-
+	
+	<player_name width="175" height="46">
+		<rect controller="PlayerName" name="playerName" pos="0,0" width="${width}" height="${height}" on_press="true" disablefallthrough="true">
+			<label depth="1" name="name" pos="5,-23" width="${width}" height="${height}" text="" font_size="26" pivot="left" justify="left"/>
+			<sprite name="iconCrossplay" depth="50" width="25" height="25" pos="5,-10" globalopacity="false"/>
+			<label depth="1" name="nameCrossplay" pos="40,-23" width="${width-40}" height="${height}" text="" font_size="26" pivot="left" justify="left" />
+		</rect>
+	</player_name>
+	
 	<players_entry>
-		<rect depth="1" width="1290" height="43" pos="-3,-6" disabled_color="[disabledLabelColor]" alternating_color="[darkestGrey]" controller="PlayersListEntry">
-			<sprite depth="10" name="backgroundMain" sprite="menu_empty3px" pos="3,3" width="1292" height="49" color="[black]" type="sliced" fillcenter="false" />
-			<sprite name="background" color="[darkGrey]" height="46" width="1290" pos="4,2" type="sliced" />
-			<rect depth="1" name="steamId" width="154" height="46" pos="6,-8">
-				<label controller="PlayerName" on_press="true" depth="1" name="steamIdText" pos="4, -15" width="136" height="38" text="" font_size="26" pivot="left" />
-				<grid depth="0" pos="140, -6" cols="3" cell_width="20" cell_height="20" repeat_content="false" arrangement="horizontal">
-					<sprite name="admin" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_star" tooltip_key="xuiIsAdmin" />
-					<sprite name="twitch" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_twitch_actions" tooltip_key="xuiTwitchEnabled" />
-					<sprite name="twitchDisabled" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_twitch_action_disabled" tooltip_key="xuiTwitchDisabled" />
+		<rect depth="1" width="1320" height="46" pos="0,0" disabled_color="[disabledLabelColor]" alternating_color="[darkestGrey]" controller="PlayersListEntry">
+			<sprite depth="10" name="backgroundMain" sprite="menu_empty3px" width="1320" height="46" color="[black]" type="sliced" fillcenter="false" />
+			<sprite name="background" color="[darkGrey]" height="46" width="1320" type="sliced" />
+			<rect depth="1" name="playerDetails" width="250" height="46" pos="0,0">
+				<player_name />
+				<grid depth="0" pos="185, -13" cols="3" cell_width="20" cell_height="20" repeat_content="false" arrangement="horizontal">
+					<sprite name="admin" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_star" tooltip_key="xuiIsAdmin" foregroundlayer="true" />
+					<sprite name="twitch" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_twitch_actions" tooltip_key="xuiTwitchEnabled" foregroundlayer="true" />
+					<sprite name="twitchDisabled" width="20" height="20" color="[selectedColor]" sprite="ui_game_symbol_twitch_action_disabled" tooltip_key="xuiTwitchDisabled" foregroundlayer="true" />
 				</grid>
 			</rect>
 
-			<rect depth="1" name="level" width="70" height="46" pos="213,-6">
+			<rect depth="1" name="level" width="70" height="46" pos="258,-6">
 				<label depth="1" name="levelText" pos="0,-18" height="38" text="" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="gamestage" width="100" height="46" pos="283,-6">
+			<rect depth="1" name="gamestage" width="100" height="46" pos="328,-6">
 				<label depth="1" name="gamestageText" pos="0,-18" height="38" text="" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="party" width="70" height="46" pos="391,-6">
+			<rect depth="1" name="party" width="70" height="46" pos="436,-6">
 				<label depth="1" name="labelPartyIcon" pos="0,-15" height="38" text="--" font_size="26" justify="center" pivot="left" />
 				<button depth="1" name="iconPartyIcon" style="icon32px, press, hover" pos="34,-16" pivot="center" sprite="ui_game_symbol_party" color="[lightGrey]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" />
 			</rect>
 
-			<rect depth="1" name="allies" width="70" height="46" pos="469,-6">
+			<rect depth="1" name="allies" width="70" height="46" pos="508,-6">
 				<label depth="1" name="labelAllyIcon" pos="0,-15" height="38" text="--" font_size="26" justify="center" pivot="left" />
 				<button depth="1" name="iconAllyIcon" style="icon32px, press, hover" pos="34,-16" pivot="center" sprite="ui_game_symbol_players" color="[lightGrey]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" />
 			</rect>
 
-			<rect depth="1" name="voice" width="80" height="46" pos="552,-6">
+			<rect depth="1" name="voice" width="80" height="46" pos="597,-6">
 				<button depth="1" name="iconChat" style="icon32px, press, hover" pos="20,-16" sprite="ui_game_symbol_shape_text" pivot="center" color="[lightGrey]" sound="[craft_click]" />
 				<button depth="1" name="iconVoice" style="icon32px, press, hover" pos="60,-16" sprite="ui_game_symbol_mic" pivot="center" color="[lightGrey]" sound="[craft_click]" />
 			</rect>
 
-			<rect depth="1" name="km" width="50" height="46" pos="638,-6">
+			<rect depth="1" name="km" width="50" height="46" pos="683,-6">
 				<label depth="1" name="labelDistanceWalked" pos="0,-18" height="38" text="-" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="map" width="80" height="86" pos="691,-6">
+			<rect depth="1" name="map" width="80" height="86" pos="736,-6">
 				<label depth="0" name="labelShowOnMap" pos="0,-15" height="38" text="--" font_size="26" justify="center" pivot="left" />
 				<button depth="1" name="iconShowOnMap" style="icon32px, press, hover" pos="40,-16" pivot="center" sprite="ui_game_symbol_map" color="[lightGrey]" disabledcolor="[disabledLabelColor]" sound="[craft_click]" tooltip="Show on Map" tooltip_key="lblShowOnMap" />
 			</rect>
 
-			<rect depth="1" name="zombieKills" width="140" height="46" pos="765,-6">
+			<rect depth="1" name="zombieKills" width="140" height="46" pos="810,-6">
 				<label depth="1" name="zombieKillsText" pos="0,-18" height="38" text="" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="playerKills" width="140" height="46" pos="893,-6">
+			<rect depth="1" name="playerKills" width="140" height="46" pos="938,-6">
 				<label depth="1" name="playerKillsText" pos="0,-18" height="38" text="" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="deaths" width="90" height="86" pos="1036,-6">
+			<rect depth="1" name="deaths" width="90" height="86" pos="1081,-6">
 				<label depth="1" name="deathsText" pos="0,-18" height="38" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="ping" width="80" height="46" pos="1129,-6">
+			<rect depth="1" name="ping" width="80" height="46" pos="1174,-6">
 				<label depth="1" name="pingText" pos="0,-18" height="38" text="--" font_size="26" justify="center" pivot="left" />
 			</rect>
 
-			<rect depth="1" name="reportheader" width="80" height="46" pos="1212,-6" color="[darkGrey]" type="sliced">
-				<label depth="0" name="labelReportPlayer" pos="0,-18" height="38" text="--" font_size="26" justify="center" pivot="left" />
-				<button depth="1" name="iconReportPlayer" style="icon32px, press, hover" pos="40,-16" pivot="center" sprite="ui_game_symbol_report" color="[lightGrey]" sound="[craft_click]" tooltip_key="xuiPlayersReportPlayer" />
+			<rect depth="1" name="reportPlayer" width="80" height="46" pos="1257,-6" color="[darkGrey]" type="sliced">
+				<button depth="1" name="btnReportPlayer" style="icon32px, press, hover" pos="40,-16" pivot="center" sprite="ui_game_symbol_report" color="[lightGrey]" sound="[craft_click]" tooltip_key="xuiPlayersReportPlayer" />
 			</rect>
 		</rect>
 	</players_entry>

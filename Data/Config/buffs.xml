@@ -379,6 +379,17 @@
 				<requirement name="!IsLocalPlayer"/>
 			</triggered_effect>
 
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="p_electric_shock">
+				<requirement name="!HasBuff" buff="buffShocked"/>
+				<requirement name="!HasBuff" buff="buffTwitchShocked"/>
+				<requirement name="!IsLocalPlayer"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="p_bleeding">
+				<requirement name="!HasBuff" buff="buffInjuryBleedingParticle"/>
+				<requirement name="!IsLocalPlayer"/>
+			</triggered_effect>
+
 			<!--<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_sheltered"/>-->
 			<!--<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_shaded"/>-->
 			<!--<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_wetness"/>-->

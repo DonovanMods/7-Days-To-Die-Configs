@@ -10,6 +10,10 @@
 			<window name="saveIndicator" />
 		</window_group>
 		
+		<window_group name="exitingGame" actionSet="false">
+			<window name="exitingGame" />
+		</window_group>
+		
 		<window_group name="mainMenuPlayerName" actionSet="false">
 			<window name="mainMenuPlayerName" />
 		</window_group>
@@ -43,8 +47,8 @@
 			<window name="dataManagement" />
 		</window_group>
 		
-		<window_group name="confirmLocalSave" defaultSelected="btnStart">
-			<window name="confirmLocalSave" />
+		<window_group name="saveSpaceNeeded" defaultSelected="btnStart">
+			<window name="saveSpaceNeeded" />
 		</window_group>
 		
 		<window_group name="loginWindow" defaultSelected="btnRetry">
@@ -128,6 +132,10 @@
 			<window name="eacWarning" />
 		</window_group>
 		
+		<window_group name="crossplayWarning" actionSet="false">
+			<window name="crossplayWarning" />
+		</window_group>
+		
 		<window_group name="progress" actionSet="false">
 			<window name="progress" />
 		</window_group>
@@ -169,5 +177,12 @@
 			<window name="bugReportSaveSelect" />
 		</window_group>
 
+		<window_group name="blockedPlayersList">
+			<window name="optionsBlockedPlayers"/>
+		</window_group>
+		
+		<window_group name="reportPlayer" defaultSelected="btnCancel">
+			<window name="reportPlayer" />
+		</window_group>
 	</ruleset>
 </xui>

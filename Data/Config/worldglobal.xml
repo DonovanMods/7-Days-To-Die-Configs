@@ -12,7 +12,7 @@
 		<property name="ambientSkyScale" value="1, .7"/>
 		<property name="ambientSkyDesat" value=".7, .7"/>
 
-		<property name="ambientMoon" value=".9, .3"/><!-- add, scale -->
+		<property name="ambientMoon" value=".8, .4"/><!-- add, scale -->
 
 		<property name="ambientInsideSpeed" value=".3"/>
 		<property name="ambientInsideThreshold" value=".2"/>

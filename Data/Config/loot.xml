@@ -4876,6 +4876,7 @@
 	<item name="foodCornMeal" count="1,2" loot_prob_template="medLow"/>
 	<item name="foodCropCorn" count="1,2" loot_prob_template="low"/>
 	<item name="foodCropPotato" count="1,2" loot_prob_template="low"/>
+	<item name="foodCropYuccaFruit" count="1,2" loot_prob_template="low"/>
 	<item name="foodCropPumpkin" count="1,2" loot_prob_template="veryLow"/>
 </lootgroup>
 
@@ -4899,6 +4900,7 @@
 	<item name="foodCropBlueberries" count="3,6"/>
 	<item name="foodCropCorn" count="1,4"/>
 	<item name="foodCropPotato" count="1,4"/>
+	<item name="foodCropYuccaFruit" count="1,4"/>
 	<item name="foodCropMushrooms" count="1,4"/>
 	<item name="foodCropPumpkin" count="1,4"/>
 </lootgroup>

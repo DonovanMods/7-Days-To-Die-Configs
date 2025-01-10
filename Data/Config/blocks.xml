@@ -18922,6 +18922,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 		<property name="resourceWood" value="50"/>
 	</property>
 	<drop event="Harvest" name="resourceWood" count="20,40" tag="allHarvest,lumberjackHarvest"/>
+	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 	<!-- Sorting -->
 	<property name="SortOrder1" value="B253"/>
@@ -21739,6 +21740,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="MultiBlockDim" value="1,3,1"/>
 	<property name="WaterFlow" value="permitted"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
+	<property name="MaxDamage" value="1000"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceMechanicalParts" count="1,2" tag="salvageHarvest"/>
 	<drop event="Harvest" name="resourceMetalPipe" count="1,2" prob="0.5" tag="salvageHarvest"/>
@@ -21904,7 +21906,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 
 <!-- White -->
 <block name="corpseHangingLog1White">
-	<property name="Extends" value="woodNoUpgradeMaster"/>
+	<property name="Extends" value="woodNoUpgradeMaster" param1="RepairItems"/>
 	<property name="CustomIconTint" value="CCCCC4"/>
 	<property name="TintColor" value="CCCCC4"/>
 	<property name="DisplayType" value="blockMulti"/>
@@ -22401,7 +22403,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 </block>
 
 <block name="decoCowSkull">
-	<property name="Extends" value="decoEntityPolymerMaster" param1="RepairItems,CustomIcon"/>
+	<property name="Extends" value="decoEntityPolymerMaster" param1="RepairItems,CustomIcon,Tags,IndexName"/>
 	<property name="Material" value="Mrubble"/>
 	<property name="Model" value="Entities/OutdoorDecor/cowSkullPrefab"/>
 	<property name="WaterFlow" value="permitted"/>
@@ -34448,7 +34450,7 @@ MC_playerBlocks - SC_electrical,SC_traps,SC_decor,SC_playerHelpers
 	<property name="PlaceEverywhere" value="true"/>
 	<property name="PlacementDistance" value="7"/>
 	<property name="OnlySimpleRotations" value="true"/>
-	<property name="StabilitySupport" value="true"/>
+	<property name="StabilitySupport" value="false"/>
 	<!-- Value -->
 	<property name="EconomicValue" value="1"/>
 	<property name="SellableToTrader" value="false"/>

@@ -178,7 +178,7 @@
 			<window name="mapInvites" />
 		</window_group>
 		
-		<window_group name="players" defaultSelected="playersList">
+		<window_group name="players" defaultSelected="playerList">
 			<window name="players" />
 		</window_group>
 		
@@ -387,10 +387,6 @@
 	
 		<window_group name="triggerProperties" defaultSelected="content">
 			<window name="triggerProperties" />
-		</window_group>
-
-		<window_group name="reportPlayer" defaultSelected="btnCancel">
-			<window name="reportPlayer" />
 		</window_group>
 
 		<window_group name="chatoutput" actionSet="false">

@@ -19,18 +19,21 @@ lower game stages.
 		// Starting spawn stage is in this first entry.
 		// It will spawn up to 300 zombies, but only 8 can be alive at any one time due to performance reasons.
 		// Zombies will be spawned from the ZombiesNight spawn group defined in entitygroups.xml
-		// (Optional) The duration of this stage is 1 game hour, after that game hour the next spawn will start OR the spawning will complete
-		// if there are no more spawns.
-		// (Optional) Interval is a delay in seconds between the end of a spawn group and the next one
-		// If we have a use for it this could also trigger a stinger sound.
+		//
+		// num (optional, default 1) - The total number to spawn
+		// maxAlive (optional, default 1) - The max that can be alive at any time per player
+		// duration (optional, default 1) - The duration of this stage is 1 game hour, after that game hour the next spawn will start OR
+		//   the spawning will complete if there are no more spawns.
+		// interval (optional, default 0) - The delay in seconds between the end of a spawn group and the next one.
+		//   If we have a use for it this could also trigger a stinger sound.
 
-		<spawn group="ZombiesNight" num="300" maxAlive ="8" duration="1" interval="60"/>
+		<spawn group="ZombiesNight" num="300" maxAlive="8" duration="1" interval="60"/>
 
 		// After 300 zombies have been killed this defines a kind of "station keeping" mode
 		// where there will be one zombie sent to harass the players until sunrise.
 
 		<spawn group="ZombiesNight" num="9999999" maxAlive="1"/>
-			maxAlive is now per player, not per party
+		
 	</gamestage>
 </spawner>
 

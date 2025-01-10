@@ -3334,16 +3334,19 @@
 	<property name="Tags" value="entity,animal,rabbit,perkAT01,perkAT02,perkAT03"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_rabbit"/>
 	<property name="TrackerIcon" value="ui_game_symbol_tracking_rabbit"/>
-	<property name="Prefab" value="/Entities/Animals/Rabbit/RABBIT"/>
+	<property name="AvatarController" value="AvatarAnimalController"/>
+	<property name="ModelType" value="Standard"/>
+	<property name="Prefab" value="/Entities/Animals/Rabbit/animalRabbitPrefab"/>
 	<property name="Parent" value="Animals"/>
 	<property name="Faction" value="animals"/>
 	<property name="PhysicsBody" value="rabbit"/>
-	<property name="Mass" value="12"/>
-	<property name="Weight" value="10"/>
+	<property name="Mass" value="33"/>
+	<property name="Weight" value="11"/>
 	<property name="SoundHurt" value="rabbitpain"/>
 	<property name="SoundDeath" value="rabbitdeath"/>
 	<property name="SwimOffset" value="2"/>
-	<property name="HasRagdoll" value="false"/>
+	<property name="HasDeathAnim" value="true"/>
+	<property name="HasRagdoll" value="true"/>
 	<property name="CanBigHead" value="false" />
 
 	<property name="AITask-1" value="RunawayWhenHurt"/>
@@ -3377,17 +3380,21 @@
 	<property name="Tags" value="entity,animal,chicken,perkAT01,perkAT02,perkAT03"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_chicken"/>
 	<property name="TrackerIcon" value="ui_game_symbol_tracking_chicken"/>
-	<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
+	<property name="AvatarController" value="AvatarAnimalController"/>
+	<property name="ModelType" value="Standard"/>
+	<property name="Prefab" value="/Entities/Animals/Bird/animalBirdChickenPrefab"/>
 	<property name="Parent" value="Animals"/>
+	<property name="HasDeathAnim" value="true"/>
+	<property name="HasRagdoll" value="true"/>
 	<property name="Faction" value="animals"/>
 	<property name="PhysicsBody" value="chicken"/>
-	<property name="Mass" value="15"/>
-	<property name="Weight" value="10"/>
+	<property name="Mass" value="36"/>
+	<property name="Weight" value="12"/>
 	<property name="SoundHurt" value="chickenpain"/>
 	<property name="SoundDeath" value="chickendeath"/>
 	<property name="SwimOffset" value="2"/>
-	<property name="HasRagdoll" value="false"/>
-	<property name="HasDeathAnim" value="false"/>
+	<property name="HasRagdoll" value="true"/>
+	<property name="HasDeathAnim" value="true"/>
 	<property name="CanBigHead" value="false" />
 
 	<!-- Gameplay  -->
@@ -3798,18 +3805,19 @@
 	<property name="Tags" value="entity,animal,chicken,hostile,perkAT01,perkAT02,perkAT03"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_chicken"/>
 	<property name="TrackerIcon" value="ui_game_symbol_tracking_chicken"/>
-	<property name="Prefab" value="/Entities/Animals/CHICKEN/chickenPrefab"/>
-	<property name="SizeScale" value="1.4"/>
+	<property name="AvatarController" value="AvatarAnimalController"/>
+	<property name="ModelType" value="Standard"/>
+	<property name="Prefab" value="/Entities/Animals/Bird/animalBirdChickenPrefab"/>
 	<property name="Parent" value="Animals"/>
+	<property name="HasDeathAnim" value="true"/>
+	<property name="HasRagdoll" value="true"/>
 	<property name="Faction" value="animals"/>
 	<property name="PhysicsBody" value="chicken"/>
-	<property name="Mass" value="30"/>
-	<property name="Weight" value="20"/>
+	<property name="Mass" value="40"/>
+	<property name="Weight" value="15"/>
 	<property name="SoundHurt" value="chickenpain"/>
 	<property name="SoundDeath" value="chickendeath"/>
 	<property name="SwimOffset" value="2"/>
-	<property name="HasRagdoll" value="false"/>
-	<property name="HasDeathAnim" value="false"/>
 	<property name="CanBigHead" value="false" />
 	<property name="AIFeralSense" value="1.6"/>
 	<property name="AIGroupCircle" value="0"/>
@@ -3964,8 +3972,8 @@
 	<property name="ModelType" value="Standard"/>
 	<property name="HasRagdoll" value="true"/>
 	<property name="PhysicsBody" value="vulture"/>
-	<property name="Mass" value="35"/>
-	<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
+	<property name="Mass" value="45"/>
+	<property name="Prefab" value="/Entities/Animals/Vulture/animalBirdVulturePrefab"/>
 	<property name="SizeScale" value=".7"/>
 
 	<property name="AITask-1" value=""/>
@@ -4012,7 +4020,7 @@
 	<property name="Tags" value="entity,animal,zombie,hostile,radiated,vulture"/>
 	<!-- hardcoded to use the vomit attack if isRadiated=true -->
 	<property name="Radiated" value=""/>
-	<property name="Mass" value="50"/>
+	<property name="Mass" value="90"/>
 	<property name="SizeScale" value="1.2"/>
 	<!--<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>-->
 
@@ -4116,8 +4124,8 @@
 	<property name="RagdollOnDeathChance" value="0"/>
 	<property name="Parent" value="Enemies"/>
 	<property name="PhysicsBody" value="snake"/>
-	<property name="Mass" value="30"/>
-	<property name="Weight" value="70"/>
+	<property name="Mass" value="40"/>
+	<property name="Weight" value="20"/>
 	<property name="LookAtAngle" value="0"/>
 
 	<property name="Faction" value="undead"/>
@@ -4224,6 +4232,7 @@
 		<!-- *** GRACE -->
 <entity_class name="animalBossGrace" extends="animalBoar">
 	<property name="UserSpawnType" value="Menu"/>
+	<property name="EntityFlags" value="animal,zombie"/>
 	<property name="Tags" value="entity,animal,hostile,boar,perkAT03,boss"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="Prefab" value="/Entities/Animals/Boar/AnimalBossGrace"/>
@@ -4303,7 +4312,6 @@
 <entity_class name="vehicleBicycle">
 	<property name="Class" value="EntityBicycle"/>
 	<property name="Tags" value="vehicle"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VBikeMountain/VBikeMountainP.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4323,7 +4331,6 @@
 <entity_class name="vehicleMinibike">
 	<property name="Class" value="EntityMinibike"/>
 	<property name="Tags" value="vehicle,usesGas,bikerSetBonus"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VBikeMini/VBikeMiniP.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4345,7 +4352,6 @@
 <entity_class name="vehicleMotorcycle">
 	<property name="Class" value="EntityMotorcycle"/>
 	<property name="Tags" value="vehicle,usesGas,bikerSetBonus"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VMotorcycle/VMotorcycleP.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4367,7 +4373,6 @@
 <entity_class name="vehicleTruck4x4">
 	<property name="Class" value="EntityVJeep"/>
 	<property name="Tags" value="vehicle,usesGas"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VTruck4x4/VTruck4x4P.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4389,7 +4394,6 @@
 <entity_class name="vehicleGyrocopter">
 	<property name="Class" value="EntityVGyroCopter"/>
 	<property name="Tags" value="vehicle,usesGas"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VGyrocopter/VGyrocopterP.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4412,7 +4416,6 @@
 <entity_class name="vehicleHelicopter">
 	<property name="Class" value="EntityVHelicopter"/>
 	<property name="Tags" value="vehicle,usesGas"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/VGyrocopter/VGyrocopterP.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4433,7 +4436,6 @@ Kinda sorta works but is buggy and we don't have time for that.
 <entity_class name="vehicleJokeblimp">
 	<property name="Class" value="EntityVBlimp"/>
 	<property name="Tags" value="vehicle"/>
-	<property name="Parent" value="Cars"/>
 	<property name="Prefab" value="@:Entities/Vehicles/jokeblimp_Prefab.prefab"/>
 	<property name="ModelType" value="Standard"/>
 	<property name="SurfaceCategory" value="metal"/>
@@ -4671,63 +4673,6 @@ Kinda sorta works but is buggy and we don't have time for that.
 </entity_class>
 -->
 
-		<!-- *** NPC_TEMPLATE -->
-<entity_class name="npcTraderUMATemplate">
-	<property name="Class" value="EntityTrader"/>
-	<property name="UserSpawnType" value="None"/>
-	<property name="Tags" value="entity,npc,human"/>
-	<property name="EntityType" value="Player"/>
-	<property name="Faction" value="trader"/>
-	<property name="Mesh" value="Player/Male/player_maleRagdoll"/>
-	<property name="AvatarController" value="AvatarUMAController"/>
-	<property name="ModelType" value="NpcUMA"/>
-	<property name="HasRagdoll" value="false"/>
-	<property name="Prefab" value="NPC"/>
-	<property name="Parent" value="Players"/>
-	<property name="PhysicsBody" value="Player"/>
-	<property name="Weight" value="70"/>
-	<property name="DanceType" value="1" />
-
-	<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityAlive"/>
-	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityAlive"/>
-
-	<property name="IsEnemyEntity" value="true"/>
-	<property name="SurfaceCategory" value="organic"/>
-	<property name="WalkType" value="7"/>
-	<property name="HasDeathAnim" value="true"/>
-	<property name="ParticleOnDeath" value="blood_death"/>
-	<property name="SoundRandomTime" value="200"/>
-	<property name="Archetype" value="TraderJoel"/>
-	<property name="SoundHurt" value="Player_Male/player1painlg"/>
-	<property name="SoundHurtSmall" value="Player_Male/player1painsm"/>
-	<property name="SoundDeath" value="Player_Male/player1death"/>
-	<property name="SoundStamina" value="Player_Male/player1stamina"/>
-	<property name="SoundDrownPain" value="Player_Male/player1drownpain"/>
-	<property name="SoundWaterSurface" value="Player_Male/player1drownsurface"/>
-	<property name="SoundDrownDeath" value="Player_Male/player1drowndeath"/>
-	<property name="SoundJump" value="Player_Male/player1Jump"/>
-	<property name="SoundLandSoft" value="Player_Male/player1LandSoft"/>
-	<property name="SoundLandHard" value="Player_Male/player1LandHard"/>
-	<property name="SoundPlayerLandThump" value="PlayerLandThump"/>
-
-	<property name="MaxViewAngle" value="180"/>
-
-	<property name="LootListAlive" value="traderNPC"/>
-
-	<property name="MoveSpeed" value="0.75"/>
-	<property name="MoveSpeedAggro" value="1.15, 1.15"/>
-	<property name="MoveSpeedPanic" value="1.35"/>
-	<property name="CanClimbLadders" value="true"/>
-
-	<property name="ExperienceGain" value="130"/>
-	<property name="TimeStayAfterDeath" value="30"/>
-	<property name="DeadBodyHitPoints" value="251"/>
-	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="150"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingOne,buffInjuryBleedingTwo,buffInjuryBleeding,buffBurningZombie,buffBurningElement,buffBurningEnvironment,buffBurningEnvironmentHack,buffBurningFlamingArrow,buffBurningMolotov,buffIsOnFire,buffShocked,buffRadiationPool"/>
-	</effect_group>
-</entity_class>
-
 		<!-- *** JUNK_SLEDGE -->
 <entity_class name="junkTurretSledge">
 	<property name="Class" value="EntityTurret"/>
@@ -4890,8 +4835,8 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Weight" value="70"/>
 	<property name="LookAtAngle" value="60"/>
 
-	<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityAlive"/>
-	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityAlive"/>
+	<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityHuman"/>
+	<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityHuman"/>
 
 	<property name="NPCID" value="traderric"/>
 	<property name="IsEnemyEntity" value="true"/>
