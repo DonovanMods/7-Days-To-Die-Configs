@@ -13139,7 +13139,7 @@
 	<Noise ID="4" noise="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_announce_closing_01" Subtitle="trader_rekt_announce_closing_01" profanity="true"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_announce_closing_02" Subtitle="trader_rekt_announce_closing_02" profanity="true"/>
-	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_announce_closing_03" Subtitle="trader_rekt_announce_closing_03" profanity="true"/>
+	<AudioClip ClipName="Sounds/VO/Trader/Rekt/trader_rekt_announce_closing_03" Subtitle="trader_rekt_announce_closing_03"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="5.79"/> </SoundDataNode>
 
 <SoundDataNode name="trader_rekt_announce_open"> <AudioSource name="Sounds/AudioSource_VO_Announce"/>
