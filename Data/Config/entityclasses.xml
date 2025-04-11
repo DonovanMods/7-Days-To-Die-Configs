@@ -5346,6 +5346,7 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="LootListOnDeath" value="twitch_vote_rewardsT4"/>
 </entity_class>
 
+
 <!-- *** TWITCH_HOME_RUN_REWARDS -->
 <entity_class name="TwitchAction_HomeRunRewardT1" extends="twitch_crate_template">
 	<property name="UserSpawnType" value="Console"/>
@@ -5403,6 +5404,5 @@ Kinda sorta works but is buggy and we don't have time for that.
 	<property name="Size" value="2"/>
 	<property name="IsMoving" value="false"/>
 </entity_class>
-
 
 </entity_classes>

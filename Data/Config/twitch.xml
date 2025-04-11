@@ -30,6 +30,7 @@
 		description_key - The localized description of the Preset that is displayed in the UI.
 		default - If this is the default preset.
 		is_empty - If this is the "None" preset.
+		allow_point_generation - If this preset allows you to generate PP by chatting.
 		
 		cooldown_modifier example:
 		
@@ -53,6 +54,16 @@
 		<cooldown_modifier category="Supplies" modifier="perc_add" value="1" />
 		<!-- <cooldown_modifier action="twitch_buffRegen" modifier="base_set" value="10000" /> -->
 	</actions_preset>
+	
+	<!-- Twitch Command Permission Overrides
+		command_permission example:
+		
+		<command_permission command="#addpp" permission="Everyone" />
+		command - The command you are overriding the permission for.
+		permission - The permission you want the command to be set to: (Broadcaster,Mod,VIP,Sub,Everyone)
+	-->
+	
+	
 
 	<!-- Categories must be defined at the top. Must at least have one. Safe bet you should probably keep "Commands" in there and at the top. -->
 	<!-- Used to define the order the categories show in the UI and icon -->
@@ -82,10 +93,10 @@
 		enabled - If this action is enabled. If this action shows in the UI you can re-enable it.
 		event_name - Game event that is called by this Twitch Action.
 		ignore_discount - Ignores the discount on bit commands.
-		is_crate - This is used to handle the crate stealing code. Only use for crates.
 		is_positive - This defines if it shows red/blue in the UI.
 		only_usable_type - This defines who the twitch command can be used by: Everyone, Broadcaster, Mods, VIPs, Subs, Name
 		only_usable_by - If "Name" is defined for only_usable_type then this is a comma delimted list of names that can use it.
+		play_bit_sound - If the Bit action should play the good or bad bit sound.
 		random_group - Random groups are defined below the action list. This groups actions into random group lists and randomly picks a defined number of
 			these actions to show per day.
 		replaces - Replaces the defined command (ie. #spawn_normal) with this action if its available.
@@ -570,6 +581,7 @@
 		<property name="default_cost" value="100" />
 		<property name="is_positive" value="true" />
 		<property name="is_crate" value="true" />
+		<property name="special_requirement" value="Safe" />
 		<property name="cooldown" value="900" />
 		<property name="presets" value="casual,standard" />
 	</action>
@@ -736,12 +748,13 @@
 		<property name="description_key" value="TwitchAction_SupplyMedicine1Desc" />
 		<property name="start_gamestage" value="5" />
 		<property name="event_name" value="spawn_medicine1" />
+		<property name="special_requirement" value="None" />
 		<property name="default_cost" value="100" />
 		<property name="cooldown" value="900" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_spawnMedicine2" extends="twitch_spawnWeapon1">
+	<action name="twitch_spawnMedicine2" extends="twitch_spawnMedicine1">
 		<property name="command" value="#supply_meds" />
 		<property name="command_key" value="TwitchAction_SupplyMedicineCommand" />
 		<property name="title_key" value="TwitchAction_SupplyMedicine2" />
@@ -753,7 +766,7 @@
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_spawnMedicine3" extends="twitch_spawnWeapon1">
+	<action name="twitch_spawnMedicine3" extends="twitch_spawnMedicine1">
 		<property name="command" value="#supply_meds" />
 		<property name="command_key" value="TwitchAction_SupplyMedicineCommand" />
 		<property name="title_key" value="TwitchAction_SupplyMedicine3" />
@@ -772,12 +785,13 @@
 		<property name="description_key" value="TwitchAction_SupplyFoodWater1Desc" />
 		<property name="start_gamestage" value="6" />
 		<property name="event_name" value="spawn_foodwater1" />
+		<property name="special_requirement" value="None" />
 		<property name="default_cost" value="75" />
 		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_spawnFoodWater2" extends="twitch_spawnWeapon1">
+	<action name="twitch_spawnFoodWater2" extends="twitch_spawnFoodWater">
 		<property name="command" value="#supply_meal" />
 		<property name="command_key" value="TwitchAction_SupplyFoodWaterCommand" />
 		<property name="title_key" value="TwitchAction_SupplyFoodWater2" />
@@ -789,7 +803,7 @@
 		<property name="presets" value="casual,standard" />
 	</action>
 	
-	<action name="twitch_spawnFoodWater3" extends="twitch_spawnWeapon1">
+	<action name="twitch_spawnFoodWater3" extends="twitch_spawnFoodWater">
 		<property name="command" value="#supply_meal" />
 		<property name="command_key" value="TwitchAction_SupplyFoodWaterCommand" />
 		<property name="title_key" value="TwitchAction_SupplyFoodWater3" />
@@ -801,7 +815,7 @@
 		<property name="presets" value="casual,standard" />
 	</action>
 	
-	<action name="twitch_spawnFoodWater4" extends="twitch_spawnWeapon1">
+	<action name="twitch_spawnFoodWater4" extends="twitch_spawnFoodWater">
 		<property name="command" value="#supply_meal" />
 		<property name="command_key" value="TwitchAction_SupplyFoodWaterCommand" />
 		<property name="title_key" value="TwitchAction_SupplyFoodWater4" />
@@ -899,6 +913,7 @@
 		<property name="display_category" value="Extras" />
 		<property name="start_gamestage" value="10" />
 		<property name="event_name" value="spawn_gyro" />
+		<property name="special_requirement" value="None" />
 		<property name="point_type" value="Bits" />
 		<property name="default_cost" value="1000" />
 		<property name="cooldown" value="300" />
@@ -1041,12 +1056,13 @@
 		<property name="title_key" value="TwitchAction_SupplyAmmo1" />
 		<property name="description_key" value="TwitchAction_SupplyAmmo1Desc" />
 		<property name="event_name" value="spawn_ammo1" />
+		<property name="special_requirement" value="None" />
 		<property name="default_cost" value="75" />
 		<property name="cooldown" value="600" />
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_AmmoCrate1" extends="twitch_spawnWeapon1">
+	<action name="twitch_AmmoCrate1" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_ammo" />
 		<property name="command_key" value="TwitchAction_SupplyAmmoCommand" />
 		<property name="title_key" value="TwitchAction_SupplyAmmo2" />
@@ -1058,7 +1074,7 @@
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_AmmoCrate2" extends="twitch_spawnWeapon1">
+	<action name="twitch_AmmoCrate2" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_ammo" />
 		<property name="command_key" value="TwitchAction_SupplyAmmoCommand" />
 		<property name="title_key" value="TwitchAction_SupplyAmmo3" />
@@ -1070,7 +1086,7 @@
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_AmmoCrate3" extends="twitch_spawnWeapon1">
+	<action name="twitch_AmmoCrate3" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_ammo" />
 		<property name="command_key" value="TwitchAction_SupplyAmmoCommand" />
 		<property name="title_key" value="TwitchAction_SupplyAmmo4" />
@@ -1082,7 +1098,7 @@
 		<property name="presets" value="casual,standard,hardcore" />
 	</action>
 	
-	<action name="twitch_SpecialAmmoCrate1" extends="twitch_spawnWeapon1">
+	<action name="twitch_SpecialAmmoCrate1" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_sammo" />
 		<property name="command_key" value="TwitchAction_SupplySpecialAmmoCommand" />
 		<property name="title_key" value="TwitchAction_SupplySpecialAmmo1" />
@@ -1093,7 +1109,7 @@
 		<property name="cooldown" value="600" />
 	</action>
 	
-	<action name="twitch_SpecialAmmoCrate2" extends="twitch_spawnWeapon1">
+	<action name="twitch_SpecialAmmoCrate2" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_sammo" />
 		<property name="command_key" value="TwitchAction_SupplySpecialAmmoCommand" />
 		<property name="title_key" value="TwitchAction_SupplySpecialAmmo2" />
@@ -1104,7 +1120,7 @@
 		<property name="cooldown" value="600" />
 	</action>
 	
-	<action name="twitch_Explosives1" extends="twitch_spawnWeapon1">
+	<action name="twitch_Explosives1" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_explosives" />
 		<property name="command_key" value="TwitchAction_SupplyExplosivesCommand" />
 		<property name="title_key" value="TwitchAction_SupplyExplosives1" />
@@ -1115,7 +1131,7 @@
 		<property name="cooldown" value="900" />
 	</action>
 	
-	<action name="twitch_Explosives2" extends="twitch_spawnWeapon1">
+	<action name="twitch_Explosives2" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_explosives" />
 		<property name="command_key" value="TwitchAction_SupplyExplosivesCommand" />
 		<property name="title_key" value="TwitchAction_SupplyExplosives2" />
@@ -1126,7 +1142,7 @@
 		<property name="cooldown" value="900" />
 	</action>
 	
-	<action name="twitch_Explosives3" extends="twitch_spawnWeapon1">
+	<action name="twitch_Explosives3" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_explosives" />
 		<property name="command_key" value="TwitchAction_SupplyExplosivesCommand" />
 		<property name="title_key" value="TwitchAction_SupplyExplosives3" />
@@ -1137,7 +1153,7 @@
 		<property name="cooldown" value="900" />
 	</action>
 	
-	<action name="twitch_Explosives4" extends="twitch_spawnWeapon1">
+	<action name="twitch_Explosives4" extends="twitch_AmmoCrate0">
 		<property name="command" value="#supply_explosives" />
 		<property name="command_key" value="TwitchAction_SupplyExplosivesCommand" />
 		<property name="title_key" value="TwitchAction_SupplyExplosives4" />
@@ -2977,7 +2993,7 @@
 		<property name="max_respawn_count" value="3" />
 		<property name="presets" value="standard,hardcore" />
 	</action>
-	
+
 	<action name="twitch_hordeChickens">
 		<property name="command" value="#horde_chickens" />
 		<property name="command_key" value="TwitchAction_SpawnHordeChickensCommand" />
@@ -4074,7 +4090,7 @@
 	<random_group name="special_bad" random_count="3" />
 	<random_group name="buff_vision" random_count="2" />
 	<random_group name="near_helper" random_count="2" />
-
+	
 	<!-- 
 	
 		Cooldown Presets - These define the presets for the cooldown settings used for twitch integration.

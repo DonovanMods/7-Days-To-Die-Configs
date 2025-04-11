@@ -1812,6 +1812,10 @@
 		<variable name="alertsound" value="zombiemalealert" />
 	</action_sequence>
 
+ <action_sequence name="spawn_tough" template="spawn_single">
+    <variable name="zombiename" value="zombieFemaleFat,zombieLumberjack,zombieSpider,zombieFatHawaiian,zombieSoldier,zombieBiker" />
+    <variable name="alertsound" value="zombiemalealert" />
+  </action_sequence>
 	<action_sequence name="spawn_crawler" template="spawn_single">
 		<variable name="zombiename" value="zombieSteveCrawler" />
 		<variable name="alertsound" value="crawler_alert" />

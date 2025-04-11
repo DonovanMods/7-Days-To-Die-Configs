@@ -7750,6 +7750,22 @@
 	<item group="twitch_tier3ammo"/>
 </lootgroup>
 
+<lootgroup name="twitch_762ammo" count="all">
+	<item name="ammo762mmBulletBall" count="150,200"/>
+</lootgroup>
+
+<lootgroup name="twitch_9mmammo" count="all">
+	<item name="ammo9mmBulletBall" count="100,150"/>
+</lootgroup>
+
+<lootgroup name="twitch_shotgunammo" count="all">
+	<item name="ammoShotgunShell" count="60,90"/>
+</lootgroup>
+
+<lootgroup name="twitch_44magnumammo" count="all">
+	<item name="ammo44MagnumBulletBall" count="100,150"/>
+</lootgroup>	
+	
 <lootgroup name="twitch_specialarrows" count="1">
 	<item name="ammoArrowSteelAP" count="10,20"/>
 	<item name="ammoArrowFlaming" count="10,20"/>
@@ -10170,5 +10186,7 @@
 <lootcontainer name="twitch_home_run_rewardsT5" count="1" size="6,2" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" open_time="0.25" loot_quality_template="qualBaseTemplate" ignore_loot_abundance="true" unmodified_lootstage="true">
 	<item group="twitch_T5_Home_Run_Rewards"/>
 </lootcontainer>
+
+
 
 </lootcontainers>
